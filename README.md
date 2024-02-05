@@ -3,8 +3,9 @@
 > 为脆骨症整合包制作的独立扩充包
 
 需要模组 **机械动力：彩虹化合物**（Create: Rainbow Compound）支持
-前置模组下载链接：https://www.curseforge.com/minecraft/mc-mods/create-rainbow-compound
-前置模组百科链接：https://www.mcmod.cn/class/8445.html
+
+ - 前置模组下载链接：https://www.curseforge.com/minecraft/mc-mods/create-rainbow-compound
+ - 前置模组百科链接：https://www.mcmod.cn/class/8445.html
 
 ## 使用说明
  > 安装
