@@ -1,7 +1,0 @@
-{
-  "config": {
-    "fallDamageReductionPercentage": 10.0,
-    "generalDamageReductionPercentage": 5.0,
-    "isEnable": true
-  }
-}
