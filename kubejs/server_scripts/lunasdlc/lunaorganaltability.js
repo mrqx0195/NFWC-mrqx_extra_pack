@@ -55,4 +55,27 @@ const lunaorganPlayerBearStrategies = {
         getPlayerMagicData(event.entity).addMana(event.amount * 5)
     },
 };
-var result2=Object.assign(organPlayerBearStrategies,lunaorganPlayerBearStrategies);
+var result2 = Object.assign(organPlayerBearStrategies, lunaorganPlayerBearStrategies);
+
+/**
+ * 主动策略
+ * @constant
+ * @type {Object<string,function(Internal.NetworkEventJS, organ):void>}
+ */
+const lunaorganPlayerKeyPressedOnlyStrategies = {
+
+    'luna_flesh_reforged:archotech_warden_core': function (event, organ) {
+        let player = event.player
+        let magicData = getPlayerMagicData(player)
+        let manaCost = magicData.getMana()
+        let amplifier = Math.max(Math.cbrt(manaCost), 3)
+        overLimitSpellCast(new ResourceLocation('irons_spellbooks', 'sonic_boom'), amplifier, player, false)
+        magicData.setMana(Math.max((manaCost - 500), 0))
+        if (manaCost < 500) {
+            player.setHealth(Math.max((player.getHealth() - (500 - manaCost) * 0.5), 1))
+        }
+        player.addItemCooldown('luna_flesh_reforged:archotech_warden_core', 20 * 30)
+    },
+
+}
+var result3 = Object.assign(organPlayerKeyPressedOnlyStrategies, lunaorganPlayerKeyPressedOnlyStrategies);

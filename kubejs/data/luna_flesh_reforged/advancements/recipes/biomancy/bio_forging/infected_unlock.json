@@ -1,0 +1,38 @@
+{
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+        "has_flesh_bits": {
+            "conditions": {
+                "items": [
+                    {
+                      "items": [
+                        "biomancy:malignant_flesh"
+                      ]
+                    }
+                ]
+            },
+            "trigger": "minecraft:inventory_changed"
+        }
+    },
+    "requirements": [
+        [
+            "has_flesh_bits"
+        ]
+    ],
+    "rewards": {
+      "recipes": [
+        "luna_flesh_reforged:bio_forging/infected_flesh",
+        "luna_flesh_reforged:bio_forging/infested_lung",
+        "luna_flesh_reforged:bio_forging/infested_muscle",
+        "luna_flesh_reforged:bio_forging/infested_heart",
+        "luna_flesh_reforged:bio_forging/infested_intestine",
+        "luna_flesh_reforged:bio_forging/infested_rib",
+        "luna_flesh_reforged:bio_forging/infested_spine",
+        "luna_flesh_reforged:bio_forging/infested_spleen",
+        "luna_flesh_reforged:bio_forging/infested_stomach",
+        "luna_flesh_reforged:bio_forging/infested_kidney",
+        "luna_flesh_reforged:bio_forging/infested_liver",
+        "luna_flesh_reforged:bio_forging/infested_appendix"
+      ]
+    }
+}

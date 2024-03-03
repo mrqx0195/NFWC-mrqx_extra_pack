@@ -1,0 +1,1 @@
+$CreativeTabRegistry.create(Utils.id("kubejs:lunadlc"), () => Item.of("luna_flesh_reforged:psylink_neuro"))

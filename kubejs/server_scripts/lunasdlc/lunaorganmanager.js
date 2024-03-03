@@ -1,4 +1,4 @@
-// priority: 999
+// priority: 1000
 
 // 只有当玩家手持开胸器并打开gui界面的时候才触发初始化效果
 PlayerEvents.inventoryClosed((event) => {
@@ -7,9 +7,9 @@ PlayerEvents.inventoryClosed((event) => {
     if (player.mainHandItem != 'chestcavity:chest_opener' && player.offHandItem != 'chestcavity:chest_opener') {
         return;
     }
-    initChestCavityIntoMap(player, true);
+    global.initChestCavityIntoMap(player, true)
     let itemMap = getPlayerChestCavityItemMap(player)
-    if (itemMap.has('luna_flesh_reforged:archotech_lastinger')) {
+    if (itemMap.has('luna_flesh_reforged:archotech_lastinger') || itemMap.has('luna_flesh_reforged:archotech_dragon_appendix')) {
         global.updatePlayerActiveStatus(event.player)
         player.persistentData.putInt(organActive, 1)
     }
