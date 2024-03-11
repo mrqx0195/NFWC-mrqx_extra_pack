@@ -116,5 +116,18 @@
 	"luna_flesh_reforged.tooltips.archotech_warden_core.5": "激活时提供100法力上限",
 	"luna_flesh_reforged.tooltips.infested_organ_distortion.1": "Technocyte病毒进一步感染了这种扭曲的器官……欢迎加入Infestation，“我们的血肉”……",
 	"luna_flesh_reforged.tooltips.infested_heart_distortion.1": "激活时每存在一个§6感染§7器官，得到1 §6Infestation计数",
-	"luna_flesh_reforged.tooltips.infested_heart_distortion.2": "设Infestation计数为n，提升§6(√n)*((3)√n)*3§7点生命值或§62n§7点生命值（取高值）"
+	"luna_flesh_reforged.tooltips.infested_heart_distortion.2": "设Infestation计数为n，提升§6(√n)*((3)√n)*3§7点生命值或§62n§7点生命值（取高值）",
+	"luna_flesh_reforged.tooltips.operation_box.1": "只有这种手术盒可以正常加载LunaDLC的激活器官（可随时与原版形态间切换）",
+	"luna_flesh_reforged.tooltips.ghost_ingot.0":"仅有坟土生成的幽灵掉落",
+	"luna_flesh_reforged.tooltips.unholy_grail.0":"不是神秘遗物！需要配合器官“禁忌之果”使用",
+	"luna_flesh_reforged.tooltips.chicken_flavor_powder.0":"在维度地牢的奖励箱中获得",
+	"luna_flesh_reforged.tooltips.eerie_shard.0":"使用纳米融合的武器击杀§6监守者§7有概率获得",
+	"luna_flesh_reforged.tooltips.heart_of_ender.0":"使用纳米融合的武器击杀§6末影人§7有概率获得",
+	"luna_flesh_reforged.tooltips.potent_mixture.0":"使用纳米融合的武器击杀§6苦力怕§7有概率获得",
+	"luna_flesh_reforged.tooltips.devils_soul_gem.0":"使用纳米融合的武器击杀§6凋零§7有概率获得",
+	"luna_flesh_reforged.tooltips.nano_insectoid.0":"可以通过打磨为Tetra武器注入§6纳米融合",
+	"luna_flesh_reforged.tooltips.phantoplasm.0":"由迎战的BOSS§6敲钟人§7掉落",
+	"luna_flesh_reforged.tooltips.fortunes_favor.0":"由迎战的BOSS§6福尔图娜女爵§7掉落",
+	"luna_flesh_reforged.tooltips.mossy_tooth.0":"由迎战的BOSS§6沼泽巨颚怪§7掉落",
+	"luna_flesh_reforged.tooltips.violet_bloom.0":"由迎战的BOSS§6薄暮之锋，罗莎琳§7掉落"
 }

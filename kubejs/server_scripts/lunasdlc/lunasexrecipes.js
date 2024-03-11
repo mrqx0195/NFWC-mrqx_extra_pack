@@ -1,5 +1,31 @@
 ServerEvents.recipes(event => {
 	
+    event.shapeless('luna_flesh_reforged:operation_box', ['kubejs:operation_box'])
+        .modifyResult((grid, stack) => {
+            let nbt = grid.find('kubejs:operation_box').nbt
+            stack = Item.of('luna_flesh_reforged:operation_box', nbt)
+                return stack;
+        });
+    event.shapeless('kubejs:operation_box', ['luna_flesh_reforged:operation_box'])
+        .modifyResult((grid, stack) => {
+            let nbt = grid.find('kubejs:operation_box').nbt
+            stack = Item.of('luna_flesh_reforged:operation_box', nbt)
+                return stack;
+        });
+	
+	event.recipes.create.mechanical_crafting('irons_spellbooks:ancient_knowledge_fragment', [
+            '  A  ',    
+            ' BCB ',   
+            'ACDCA',
+            ' BCB ',
+            '  A  '
+        ], {
+            A: 'art_of_forging:eerie_shard',
+            B: 'irons_spellbooks:arcane_essence',
+            C: 'minecraft:book',
+            D: 'goety:forbidden_fragment'
+        })
+	
 	event.recipes.create.sequenced_assembly([
 		Item.of('luna_flesh_reforged:archotech_framework')
 	], 'create_crystal_clear:brass_glass_casing', [
@@ -14,12 +40,12 @@ ServerEvents.recipes(event => {
 
 	event.recipes.summoningrituals
         .altar('luna_flesh_reforged:archotech_framework')
-        .id('luna_flesh_reforged:ritual_archotech_cube')
-        .input('64x biomancy:exotic_compound')
-        .input('32x kubejs:mysterious_trinket')
-        .input('16x lightmanscurrency:coinpile_gold')
-        .input('8x cataclysm:mech_eye')
+        .id('luna_flesh_reforged:ritual_archotech_cub')
+        .input('16x kubejs:mysterious_trinket')
         .input('4x cataclysm:witherite_ingot')
+        .input('kubejs:nether_star_shard')
+        .input('art_of_forging:enigmatic_construct')
+        .input('kubejs:god_consciousness')
         .itemOutput('luna_flesh_reforged:archotech_cube')
         .recipeTime(500);
 	

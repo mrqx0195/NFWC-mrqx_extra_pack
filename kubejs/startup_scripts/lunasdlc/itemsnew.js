@@ -1,4 +1,33 @@
 StartupEvents.registry('item', event => {
+
+	event.create('luna_flesh_reforged:operation_box').texture('kubejs:item/operation_box').maxStackSize(1).group("kubejs.lunadlc")
+	.useAnimation('bow')
+	.use((level, player, hand) => {
+		return true;
+	})
+	.useDuration(itemStack => 20)
+	.finishUsing((itemstack, level, entity) => {
+		if (level.isClientSide()) return itemstack
+		if (!entity.isPlayer()) return itemstack
+		let instance = entity.getChestCavityInstance()
+		let oriInv = instance.inventory.getTags()
+		let replaceInv = itemstack?.nbt?.inventory
+		if (!replaceInv) {
+			replaceInv = []
+		}
+		if (oriInv && replaceInv) {
+			instance.inventory.readTags(replaceInv)
+			itemstack.setNbt({ inventory: oriInv })
+		}
+		global.initChestCavityIntoMap(entity, true)
+		if (entity.getChestCavityInstance().inventory.hasAnyMatching(item => {
+			return pillList_luna.some(ele => ele == item.id.toString())
+		})) {
+			global.updatePlayerActiveStatus(entity)
+			entity.persistentData.putInt(organActive, 1)
+		}
+		return itemstack
+	})
 	
 	event.create('luna_flesh_reforged:incomplete_archotech_framework', 'create:sequenced_assembly').texture('luna_flesh_reforged:item/incomplete_archotech_framework')
 	event.create('luna_flesh_reforged:incomplete_archotech_capsule', 'create:sequenced_assembly').texture('luna_flesh_reforged:item/incomplete_archotech_capsule')
