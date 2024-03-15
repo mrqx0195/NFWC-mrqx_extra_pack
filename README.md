@@ -14,7 +14,7 @@
 
 解压下载的luna's flesh reforged vx.x.x.zip命名的压缩包，解压后将内部的kubejs文件夹复制到整合包版本目录下（即.minecraft\versions\No Flesh Within Chest）
 
-更新版本相同步骤选择覆盖文件。
+更新版本相同步骤选择覆盖文件；服务器与客户端安装方式相同，继续询问一律不予回答。
 
  > 卸载
 
