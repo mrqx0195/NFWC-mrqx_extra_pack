@@ -12,7 +12,7 @@
 
 在此下载：https://github.com/LunaGlaze/NoFleshWithinChest-Luna-s-Expansion-pack/releases
 
-解压下载的luna's flesh reforged vx.x.x.zip命名的压缩包，解压后将内部的kubejs文件夹复制到整合包版本目录下（即.minecraft\versions\No Flesh Within Chest）
+解压下载的luna's flesh reforged vx.x.x.zip命名的压缩包，解压后将内部的kubejs文件夹复制到整合包版本目录下（即.minecraft\versions\No Flesh Within Chest）；如果希望使用CRC模组装备的额外套装效果，可将config文件一同复制。
 
 更新版本相同步骤选择覆盖文件；服务器与客户端安装方式相同，继续询问一律不予回答。
 
@@ -28,3 +28,5 @@ B站视频：
 v1.0.0发布：https://www.bilibili.com/video/BV1PF4m1g7Ed
 
 v1.1.0更新：https://www.bilibili.com/video/BV16u4m137ZT
+
+v1.2.0更新：https://www.bilibili.com/video/BV1Am411C7bR/
