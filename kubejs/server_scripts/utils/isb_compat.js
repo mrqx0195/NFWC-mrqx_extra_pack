@@ -1,4 +1,7 @@
-// priority: -1
+const $AttributeRegistry = Java.loadClass("io.redspace.ironsspellbooks.api.registry.AttributeRegistry");
+const $MagicData = Java.loadClass("io.redspace.ironsspellbooks.api.magic.MagicData");
+const $SpellRegistry= Java.loadClass("io.redspace.ironsspellbooks.api.registry.SpellRegistry")
+const $CastSource= Java.loadClass("io.redspace.ironsspellbooks.api.spells.CastSource")
 
 function getPlayerMagicData(player) {
     return $MagicData.getPlayerMagicData(player)
@@ -17,9 +20,5 @@ function overLimitSpellCast(resourceLocation, amplifier, player, consume) {
     if (itemMap.has('luna_flesh_reforged:enchanted_psylink_neuro') && typeMap.has('kubejs:archotech')) {
         amplifier = amplifier + typeMap.get('kubejs:archotech').length
     }
-    $SpellRegistry["getSpell(net.minecraft.resources.ResourceLocation)"](resourceLocation).attemptInitiateCast(Item.of('air'), amplifier, player.level, player, $CastSource.NONE, consume, "main_hand")
-}
-
-function overOrangeCommonSpellCast(resourceLocation, amplifier, player, consume) {
     $SpellRegistry["getSpell(net.minecraft.resources.ResourceLocation)"](resourceLocation).attemptInitiateCast(Item.of('air'), amplifier, player.level, player, $CastSource.NONE, consume, "main_hand")
 }

@@ -1,0 +1,31 @@
+{
+  "key": "luna_ectoplasm_wooden_shard",
+  "category": "wood",
+  "primary": 3.2,
+  "secondary": 1.0,
+  "tertiary": 8.8,
+  "durability": 320,
+  "integrityCost": 2,
+  "integrityGain": 8,
+  "magicCapacity": 135,
+  "toolLevel": 3,
+  "toolEfficiency": 4,
+  "tints": {
+    "glyph": "017478",
+    "texture": "017478"
+  },
+  "effects": {
+    "speed": 7,
+    "velocity": 7
+  },
+  "textures": [
+    "crude",
+    "default"
+  ],
+  "material": {
+    "items": [ "luna_flesh_reforged:ectoplasm_wooden_shard" ]
+  },
+  "requiredTools": {
+    "axe_dig": "minecraft:iron"
+  }
+}

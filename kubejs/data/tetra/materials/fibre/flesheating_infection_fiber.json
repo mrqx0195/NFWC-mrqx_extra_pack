@@ -1,0 +1,34 @@
+{
+  "key": "luna_flesheating_infection_fiber",
+  "category": "fibre",
+  "primary": "7.8",
+  "secondary": "1.6",
+  "tertiary": "8.0",
+  "durability": "1471",
+  "integrityCost": "1",
+  "integrityGain": "9",
+  "magicCapacity": "190",
+  "toolLevel": "0",
+  "toolEfficiency": "0",
+  "effects": {
+    "suspend": 3,
+    "art_of_forging:feasting": 3,
+    "stabilizing": 3
+  },
+  "tints": {
+    "glyph": "860c1f",
+    "texture": "860c1f"
+  },
+  "textures": [
+    "crude",
+    "default"
+  ],
+  "material": {
+    "items": [
+      "luna_flesh_reforged:flesheating_infection_fiber"
+    ]
+  },
+  "requiredTools": {
+    "cut": "minecraft:diamond"
+  }
+}

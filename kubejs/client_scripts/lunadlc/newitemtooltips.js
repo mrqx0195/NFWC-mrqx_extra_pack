@@ -26,6 +26,10 @@ ItemEvents.tooltip((tooltip) => {
         text.add(Text.gray({ "translate": "luna_flesh_reforged.tooltips.operation_box.1" }));
     })
 
+    tooltip.addAdvanced('luna_flesh_reforged:silverheart_charm', (item, advanced, text) => {
+        text.add(Text.gray({ "translate": "luna_flesh_reforged.tooltips.silverwood_heart.1" }));
+    })
+
 })
 ItemEvents.tooltip((tooltip) => {
     tooltip.addAdvanced('iceandfire:ghost_ingot', (item, advanced, text) => {
@@ -63,5 +67,8 @@ ItemEvents.tooltip((tooltip) => {
     })
     tooltip.addAdvanced('meetyourfight:violet_bloom', (item, advanced, text) => {
         text.add(Text.gray({ "translate": "luna_flesh_reforged.tooltips.violet_bloom.0" }));
+    })
+    tooltip.addAdvanced('bookwyrms:chad_bolus', (item, advanced, text) => {
+        text.add(Text.gray({ "translate": "luna_flesh_reforged.tooltips.chad_bolus.0" }));
     })
 })

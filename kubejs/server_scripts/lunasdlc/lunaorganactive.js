@@ -44,19 +44,25 @@ const lunaorganActiveStrategies = {
     'luna_flesh_reforged:archotech_mana_reactor': function (player, organ, attributeMap) {
         attributeMapValueAddition(attributeMap, global.REGENERATION, 0.04)
     },
+    'luna_flesh_reforged:archotech_magic_digestive_system': function (player, organ, attributeMap) {
+        attributeMapValueAddition(attributeMap, global.REGENERATION, 0.25)
+    },
     'luna_flesh_reforged:archotech_warden_core': function (player, organ, attributeMap) {
-        attributeMapValueAddition(attributeMap, global.MAX_MANA, 50)
+        attributeMapValueAddition(attributeMap, global.MAX_MANA, 100)
+    },
+    'luna_flesh_reforged:dragon_heartstring': function (player, organ, attributeMap) {
+        attributeMapValueAddition(attributeMap, global.COOLDOWN_REDUCTION, 0.01)
+        attributeMapValueAddition(attributeMap, global.SPELL_POWER, 0.01)
+        attributeMapValueAddition(attributeMap, global.lunaCAST_TIME_REDUCTION, 0.01)
+    },
+    'luna_flesh_reforged:abyssalwarlock_eye': function (player, organ, attributeMap) {
+        attributeMapValueAddition(attributeMap, global.COOLDOWN_REDUCTION, 0.025)
+        attributeMapValueAddition(attributeMap, global.SPELL_POWER, 0.025)
+        attributeMapValueAddition(attributeMap, global.lunaCAST_TIME_REDUCTION, 0.025)
     },
     'luna_flesh_reforged:chromatic_rose_heart': function (player, organ, attributeMap) {
-        let typeMap = getPlayerChestCavityTypeMap(player);
-        if (typeMap.has('kubejs:machine')) {
-            let value = typeMap.get('kubejs:machine').length * 2
-            attributeMapValueAddition(attributeMap, global.HEALTH_UP, value)
-        }
-        if (typeMap.has('kubejs:rose') || typeMap.has('kubejs:chromatic')) {
-            let value1 = typeMap.get('kubejs:rose').length * 1
-            let value2 = typeMap.get('kubejs:chromatic').length * 1
-            let value = value1 + value2
+        if (typeMap.has('kubejs:chromatic')) {
+            let value = typeMap.get('kubejs:chromatic').length * 2
             attributeMapValueAddition(attributeMap, global.ATTACK_UP, value)
         }
     },
@@ -72,6 +78,33 @@ var result1=Object.assign(organActiveStrategies,lunaorganActiveStrategies);
  */
 const lunaorganActiveOnlyStrategies = {
 	
+    'luna_flesh_reforged:warped_battery': function (player, organ, attributeMap) {
+        let warp = player.persistentData.getInt(warpCount) ?? 0
+        let maxCount = player.persistentData.getInt(resourceCountMax) ?? defaultResourceMax
+        if(warp>80){player.persistentData.putInt(resourceCountMax, maxCount + 250)}
+        else if(warp>60){player.persistentData.putInt(resourceCountMax, maxCount + 200)}
+        else if(warp>40){player.persistentData.putInt(resourceCountMax, maxCount + 150)}
+        else if(warp>24){player.persistentData.putInt(resourceCountMax, maxCount + 100)}
+        else if(warp>12){player.persistentData.putInt(resourceCountMax, maxCount + 50)}
+        else {player.persistentData.putInt(resourceCountMax, maxCount + 25)}
+    },
+    'luna_flesh_reforged:chromatic_rose_heart': function (player, organ, attributeMap) {
+        let typeMap = getPlayerChestCavityTypeMap(player);
+        if (typeMap.has('kubejs:machine')) {
+            let value = typeMap.get('kubejs:machine').length * 2
+            attributeMapValueAddition(attributeMap, global.HEALTH_UP, value)
+        }
+        if (typeMap.has('kubejs:rose')) {
+            let value = typeMap.get('kubejs:rose').length * 1
+            attributeMapValueAddition(attributeMap, global.ATTACK_UP, value)
+        }
+    },
+    'luna_flesh_reforged:archotech_abyssal_core': function (player, organ, attributeMap) {
+        attributeMapValueAddition(attributeMap, global.COOLDOWN_REDUCTION, 0.05)
+        attributeMapValueAddition(attributeMap, global.SPELL_POWER, 0.05)
+        attributeMapValueAddition(attributeMap, global.lunaCAST_TIME_REDUCTION, 0.05)
+        attributeMapValueAddition(attributeMap, global.lunaMAX_MANA, 0.1)
+    },
     'luna_flesh_reforged:archotech_toughskin_gland': function (player, organ, attributeMap) {
         let typeMap = getPlayerChestCavityTypeMap(player);
         if (typeMap.has('kubejs:archotech')) {
@@ -79,6 +112,67 @@ const lunaorganActiveOnlyStrategies = {
             attributeMapValueAddition(attributeMap, global.ARMOR, value)
         }
 		attributeMapValueAddition(attributeMap, global.ARMOR_TOUGHNESS, 3)
+    },
+    'luna_flesh_reforged:archotech_toughspine': function (player, organ, attributeMap) {
+        let typeMap = getPlayerChestCavityTypeMap(player);
+        if (typeMap.has('kubejs:archotech')) {
+            let value = typeMap.get('kubejs:archotech').length * 2
+            attributeMapValueAddition(attributeMap, global.ARMOR, value)
+        }
+        attributeMapValueAddition(attributeMap, global.ARMOR_TOUGHNESS, 3)
+    },
+    'luna_flesh_reforged:archotech_doublerib_right': function (player, organ, attributeMap) {
+        let posMap = getPlayerChestCavityPosMap(player);
+        let pos = organ.Slot
+        // 取对称位置坐标
+        let opPos = getOppoPos(pos)
+        if (posMap.has(opPos) && posMap.get(opPos).id == 'luna_flesh_reforged:archotech_doublerib_left') {
+            attributeMapValueAddition(attributeMap, global.ARMOR, 4)
+            attributeMapValueAddition(attributeMap, global.lunaSPELL_RESIST, 0.1)
+        }
+        attributeMapValueAddition(attributeMap, global.ARMOR, 2)
+    },
+    'luna_flesh_reforged:archotech_doublerib_left': function (player, organ, attributeMap) {
+        let posMap = getPlayerChestCavityPosMap(player);
+        let pos = organ.Slot
+        // 取对称位置坐标
+        let opPos = getOppoPos(pos)
+        if (posMap.has(opPos) && posMap.get(opPos).id == 'luna_flesh_reforged:archotech_doublerib_right') {
+            attributeMapValueAddition(attributeMap, global.ARMOR_TOUGHNESS, 4)
+            attributeMapValueAddition(attributeMap, global.lunaSPELL_RESIST, 0.1)
+        }
+        attributeMapValueAddition(attributeMap, global.ARMOR, 2)
+    },
+    'luna_flesh_reforged:archotech_kidney_left': function (player, organ, attributeMap) {
+        let posMap = getPlayerChestCavityPosMap(player);
+        let pos = organ.Slot
+        // 取对称位置坐标
+        let opPos = getOppoPos(pos)
+        if (posMap.has(opPos) && posMap.get(opPos).id == 'luna_flesh_reforged:archotech_kidney_right') {
+            let itemMap = getPlayerChestCavityItemMap(player)
+            if(itemMap.has('luna_flesh_reforged:archotech_muscle')){
+                let value = itemMap.get('luna_flesh_reforged:archotech_muscle').length * 1.5
+                attributeMapValueAddition(attributeMap, global.ATTACK_UP, value)
+            }
+        }
+        attributeMapValueAddition(attributeMap, global.COOLDOWN_REDUCTION, 0.06)
+    },
+    'luna_flesh_reforged:archotech_kidney_right': function (player, organ, attributeMap) {
+        let posMap = getPlayerChestCavityPosMap(player);
+        let pos = organ.Slot
+        // 取对称位置坐标
+        let opPos = getOppoPos(pos)
+        if (posMap.has(opPos) && posMap.get(opPos).id == 'luna_flesh_reforged:archotech_kidney_left') {
+            let itemMap = getPlayerChestCavityItemMap(player)
+            if(itemMap.has('luna_flesh_reforged:archotech_muscle')){
+                let playerChestInstance = player.getChestCavityInstance()
+                let value1 = playerChestInstance.getOrganScore('chestcavity:nerves') / 50
+                let value2 = Math.min(itemMap.get('luna_flesh_reforged:archotech_muscle').length*0.03,0.24)
+                let value = value1 + value2
+                attributeMapValueAddition(attributeMap, global.lunaATTACK_UP_MULTI_TOTAL, value)
+            }
+        }
+        attributeMapValueAddition(attributeMap, global.COOLDOWN_REDUCTION, 0.06)
     },
 	'luna_flesh_reforged:psylink_neuro': function (player, organ, attributeMap) {
         let typeMap = getPlayerChestCavityTypeMap(player);
@@ -106,8 +200,41 @@ const lunaorganActiveOnlyStrategies = {
         attributeMapValueAddition(attributeMap, global.lunaCAST_TIME_REDUCTION, 0.25)
         attributeMapValueAddition(attributeMap, global.MANA_REGEN, 0.25)
     },
+    'luna_flesh_reforged:jump_second_spiritual_heart': function (player, organ, attributeMap) {
+        let typeMap = getPlayerChestCavityTypeMap(player);
+        if (typeMap.has('kubejs:heart')) {
+            attributeMapValueAddition(attributeMap, global.HEALTH_UP, 4)
+        }
+        attributeMapValueAddition(attributeMap, global.lunaICE_SPELL_POWER_INDEMULT, -0.25)
+        attributeMapValueAddition(attributeMap, global.lunaFIRE_SPELL_POWER_INDEMULT, -0.25)
+        attributeMapValueAddition(attributeMap, global.lunaLIGHTNING_SPELL_POWER_INDEMULT, -0.25)
+        attributeMapValueAddition(attributeMap, global.lunaHOLY_SPELL_POWER_INDEMULT, -0.25)
+        attributeMapValueAddition(attributeMap, global.lunaENDER_SPELL_POWER_INDEMULT, -0.25)
+        attributeMapValueAddition(attributeMap, global.lunaBLOOD_SPELL_POWER_INDEMULT, -0.25)
+        attributeMapValueAddition(attributeMap, global.lunaEVOCATION_SPELL_POWER_INDEMULT, -0.25)
+        attributeMapValueAddition(attributeMap, global.lunaNATURE_SPELL_POWER_INDEMULT, -0.25)
+        attributeMapValueAddition(attributeMap, global.lunaSPELL_POWER_INDEMULT, 0.5)
+    },
     'luna_flesh_reforged:infested_heart_distortion': function (player, organ, attributeMap) {
         let typeMap = getPlayerChestCavityTypeMap(player);
+        let itemMap = getPlayerChestCavityItemMap(player)
+        let playerChestInstance = player.getChestCavityInstance()
+        let thekey = 'chestcavity:fire_resistant'
+        if(itemMap.has('kubejs:prismarine_crown')){
+            playerChestInstance.organScores.forEach((key, value) => {
+                if(key == thekey){
+                    playerChestInstance.organScores.put(key, new $Float(0))
+                }
+            })
+        } else {
+            playerChestInstance.organScores.forEach((key, value) => {
+                if (value > 0){
+                    if(key == thekey){
+                        playerChestInstance.organScores.put(key, new $Float(0))
+                    }
+                }
+            })
+        }
         if (typeMap.has('kubejs:infected')) {
             let value0 = typeMap.get('kubejs:infected').length
             let value1 = Math.sqrt(value0)
@@ -116,6 +243,20 @@ const lunaorganActiveOnlyStrategies = {
             let value = Math.max(value3, value0 * 2)
             attributeMapValueAddition(attributeMap, global.HEALTH_UP, value)
         }
+    },
+    'luna_flesh_reforged:infested_spine_distortion': function (player, organ, attributeMap) {
+        let typeMap = getPlayerChestCavityTypeMap(player);
+        let itemMap = getPlayerChestCavityItemMap(player)
+        if(itemMap.has('luna_flesh_reforged:infested_heart_distortion')){
+            if (typeMap.has('kubejs:infected')) { let infected = typeMap.get('kubejs:infected').length
+                if(infected > 4){attributeMapValueAddition(attributeMap, global.HEALTH_UP, 4)}}}
+    },
+    'luna_flesh_reforged:infested_stomach_distortion': function (player, organ, attributeMap) {
+        let typeMap = getPlayerChestCavityTypeMap(player);
+        let itemMap = getPlayerChestCavityItemMap(player)
+        if(itemMap.has('luna_flesh_reforged:infested_heart_distortion')){
+            if (typeMap.has('kubejs:infected')) { let infected = typeMap.get('kubejs:infected').length
+                if(infected > 4){attributeMapValueAddition(attributeMap, global.HEALTH_UP, 4)}}}
     },
 
 }
