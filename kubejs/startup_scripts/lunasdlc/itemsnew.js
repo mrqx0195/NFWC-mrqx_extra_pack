@@ -542,7 +542,8 @@ StartupEvents.registry('item', event => {
 		.addScore('fire_resistant', -1).addScore('metabolism', 1)
 		.addScore('digestion', 0.025).addScore('nutrition', 0.025).build())
 		.texture('luna_flesh_reforged:item/organs/infested/infested_heart_distortion')
-		.tag('kubejs:active_only').tag('kubejs:infected').tag('kubejs:heart').tag('kubejs:player_tick_only');
+		.tag('kubejs:active_only').tag('kubejs:infected').tag('kubejs:heart').tag('kubejs:player_tick_only')
+		.tag('itemborders:diamond');
 	
 	registerOrgan(new Organ('luna_flesh_reforged:infested_spine_distortion')
 		.addTextLines('default', [Text.gray({ "translate": "luna_flesh_reforged.tooltips.infested_organ_distortion.1" })])
@@ -554,7 +555,8 @@ StartupEvents.registry('item', event => {
 		.addScore('defense', 2.5).addScore('nerves', 2)
 		.addScore('fire_resistant', -1).addScore('health', 0.25).addScore('metabolism', 0.125).build())
 		.texture('luna_flesh_reforged:item/organs/infested/infested_spine_distortion')
-		.tag('kubejs:infected').tag('kubejs:spine').tag('kubejs:bear_only').tag('kubejs:player_tick_only').tag('kubejs:active_only');
+		.tag('kubejs:infected').tag('kubejs:spine').tag('kubejs:bear_only').tag('kubejs:player_tick_only').tag('kubejs:active_only')
+		.tag('itemborders:diamond');
 	
 	registerOrgan(new Organ('luna_flesh_reforged:infested_stomach_distortion')
 		.addTextLines('default', [Text.gray({ "translate": "luna_flesh_reforged.tooltips.infested_organ_distortion.1" })])
@@ -565,7 +567,28 @@ StartupEvents.registry('item', event => {
 		.addScore('digestion', 2).addScore('nutrition', 0.25)
 		.addScore('fire_resistant', -1).addScore('health', 0.25).addScore('metabolism', 0.125).build())
 		.texture('luna_flesh_reforged:item/organs/infested/infested_stomach_distortion')
-		.tag('kubejs:infected').tag('kubejs:stomach').tag('kubejs:damage_only').tag('kubejs:active_only');
+		.tag('kubejs:infected').tag('kubejs:stomach').tag('kubejs:damage_only').tag('kubejs:active_only')
+		.tag('itemborders:diamond');
 	
+//其他或玩具
+	//草泥马
+	registerOrgan(new Organ('luna_flesh_reforged:llama_in_chestcavity')
+		.addTextLines('default', [Text.gray({ "translate": "luna_flesh_reforged.tooltips.llama_in_chestcavity.1" })])
+		.addTextLines('ctrl', [Text.gray({ "translate": "luna_flesh_reforged.tooltips.llama_in_chestcavity.2" })])
+		.addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.llama_in_chestcavity.3" })])
+		.addScore('breath_recovery', 1).addScore('breath_capacity', 1).addScore('endurance', 1).addScore('forceful_spit', 1).build())
+		.texture('luna_flesh_reforged:item/organs/toys/llama_in_chestcavity').tag('kubejs:lung').tag('kubejs:damage_only').tag('kubejs:active_only').tag('itemborders:iron');
+	//TNT
+	registerOrgan(new Organ('luna_flesh_reforged:tnt_in_chestcavity')
+		.addTextLines('default', [Text.gray({ "translate": "luna_flesh_reforged.tooltips.tnt_in_chestcavity.1" })])
+		.addTextLines('ctrl', [Text.gray({ "translate": "luna_flesh_reforged.tooltips.tnt_in_chestcavity.2" })])
+		.addScore('explosive', 2).addScore('creepy', 1).build())
+		.modelJson('minecraft:item/tnt').tag('kubejs:active_only').tag('itemborders:diamond');
+	//泥土
+	registerOrgan(new Organ('luna_flesh_reforged:dirt_in_chestcavity')
+		.addTextLines('default', [Text.gray({ "translate": "luna_flesh_reforged.tooltips.dirt_in_chestcavity.1" })])
+		.addTextLines('ctrl', [Text.gray({ "translate": "luna_flesh_reforged.tooltips.dirt_in_chestcavity.2" })])
+		.build())
+		.modelJson('minecraft:item/dirt').tag('kubejs:active_only').tag('itemborders:iron');
 
 })

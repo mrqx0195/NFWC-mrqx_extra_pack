@@ -10,8 +10,8 @@ ServerEvents.recipes(event => {
         });
     event.shapeless('kubejs:operation_box', ['luna_flesh_reforged:operation_box'])
         .modifyResult((grid, stack) => {
-            let nbt = grid.find('kubejs:operation_box').nbt
-            stack = Item.of('luna_flesh_reforged:operation_box', nbt)
+            let nbt = grid.find('luna_flesh_reforged:operation_box').nbt
+            stack = Item.of('kubejs:operation_box', nbt)
                 return stack;
         });
 
@@ -732,9 +732,20 @@ ServerEvents.recipes(event => {
     registerCustomRecipe(new MixingCauldronRecipe(
         [Ingredient.of('minecraft:snowball'), Ingredient.of('minecraft:snowball'), Ingredient.of('minecraft:snowball'), Ingredient.of('minecraft:snowball'), Ingredient.of('minecraft:snowball'), Ingredient.of('minecraft:snowball'), Ingredient.of('minecraft:snowball'), Ingredient.of('minecraft:snowball')],
         Item.of('minecraft:ice').withCount(4)).setFluid('minecraft:water', 2000))
-        registerCustomRecipe(new MixingCauldronRecipe(
-            [Ingredient.of('minecraft:ice'), Ingredient.of('minecraft:ice'), Ingredient.of('minecraft:ice'), Ingredient.of('minecraft:ice'), Ingredient.of('minecraft:ice'), Ingredient.of('minecraft:ice'), Ingredient.of('minecraft:ice'), Ingredient.of('minecraft:ice')],
-            Item.of('minecraft:ice').withCount(10)).setFluid('minecraft:water', 2000))
+    registerCustomRecipe(new MixingCauldronRecipe(
+        [Ingredient.of('minecraft:ice'), Ingredient.of('minecraft:ice'), Ingredient.of('minecraft:ice'), Ingredient.of('minecraft:ice'), Ingredient.of('minecraft:ice'), Ingredient.of('minecraft:ice'), Ingredient.of('minecraft:ice'), Ingredient.of('minecraft:ice')],
+        Item.of('minecraft:ice').withCount(10)).setFluid('minecraft:water', 2000))
+    
+    registerCustomRecipe(new MixingCauldronRecipe(
+        [Ingredient.of('#minecraft:wool'), Ingredient.of('chestcavity:llama_lung'), Ingredient.of('#minecraft:wool'), Ingredient.of('minecraft:leather_horse_armor'), Ingredient.of('minecraft:dirt'), Ingredient.of('minecraft:grass'), Ingredient.of('#minecraft:wool'), Ingredient.of('chestcavity:llama_lung')],
+        Item.of('luna_flesh_reforged:llama_in_chestcavity')))
+    registerCustomRecipe(new MixingCauldronRecipeWithFluidNBTa(
+        [Ingredient.of('chestcavity:creeper_appendix'), Ingredient.of('minecraft:tnt'), Ingredient.of('biomancy:volatile_gland'), Ingredient.of('minecraft:tnt'), Ingredient.of('art_of_forging:potent_mixture'), Ingredient.of('minecraft:tnt'), Ingredient.of('biomancy:volatile_gland'), Ingredient.of('minecraft:tnt')],
+        Item.of('luna_flesh_reforged:tnt_in_chestcavity')).setFluid('hexerei:potion', 1000, '{"Bottle": "SPLASH","Potion":"minecraft:water"}'))
+    registerCustomRecipe(new MixingCauldronRecipe(
+        [Ingredient.of('#minecraft:dirt'), Ingredient.of('minecraft:dirt'), Ingredient.of('minecraft:dirt'), Ingredient.of('minecraft:dirt'), Ingredient.of('minecraft:dirt'), Ingredient.of('minecraft:dirt'), Ingredient.of('minecraft:dirt'), Ingredient.of('minecraft:dirt')],
+        Item.of('luna_flesh_reforged:dirt_in_chestcavity')))
+
     registerCustomRecipe(new MixingCauldronRecipeWithFluidNBTa(
         [Ingredient.of('luna_flesh_reforged:infested_appendix'), Ingredient.of('minecraft:nether_wart'), Ingredient.of('minecraft:golden_carrot'), Ingredient.of('minecraft:golden_carrot'), Ingredient.of('minecraft:golden_carrot'), Ingredient.of('minecraft:golden_carrot'), Ingredient.of('minecraft:golden_carrot'), Ingredient.of('minecraft:fermented_spider_eye')],
         Item.of('luna_flesh_reforged:nightvision_cholecyst').withCount(1)).setFluid('hexerei:potion', 1000, '{"Bottle": "REGULAR","Potion":"minecraft:night_vision"}').addHeatRequirement())
@@ -753,7 +764,7 @@ ServerEvents.recipes(event => {
     registerCustomRecipe(new MixingCauldronRecipeWithFluidNBTa(
         [Ingredient.of('luna_flesh_reforged:silverwood_heart'), Ingredient.of('kubejs:god_bless_full_necklace'), Ingredient.of('irons_spellbooks:arcane_essence'), Ingredient.of('luna_flesh_reforged:purifying_bath_salts'), Ingredient.of('kubejs:polished_amber'), Ingredient.of('luna_flesh_reforged:purifying_bath_salts'), Ingredient.of('irons_spellbooks:arcane_essence'), Ingredient.of('kubejs:empty_organ_charm')],
         Item.of('luna_flesh_reforged:silverheart_charm').withCount(1)).setFluid('hexerei:potion', 1000, '{"Bottle": "LINGERING","Potion":"minecraft:strong_regeneration"}').setFluidOutput('minecraft:water').addHeatRequirement())
-        registerCustomRecipe(new MixingCauldronRecipe(
-            [Ingredient.of('extraarmor:blacksmith_hammer'), Ingredient.of('waystones:warp_dust'), Ingredient.of('luna_flesh_reforged:zombie_brain'), Ingredient.of('irons_spellbooks:arcane_essence'), Ingredient.of('goety:eerie_pickaxe'), Ingredient.of('irons_spellbooks:arcane_essence'), Ingredient.of('luna_flesh_reforged:zombie_brain'), Ingredient.of('goety:magic_emerald')],
-            Item.of('luna_flesh_reforged:eldritch_hammer').withCount(1)).setFluid('minecraft:water', 1000))
+    registerCustomRecipe(new MixingCauldronRecipe(
+        [Ingredient.of('extraarmor:blacksmith_hammer'), Ingredient.of('waystones:warp_dust'), Ingredient.of('luna_flesh_reforged:zombie_brain'), Ingredient.of('irons_spellbooks:arcane_essence'), Ingredient.of('goety:eerie_pickaxe'), Ingredient.of('irons_spellbooks:arcane_essence'), Ingredient.of('luna_flesh_reforged:zombie_brain'), Ingredient.of('goety:magic_emerald')],
+        Item.of('luna_flesh_reforged:eldritch_hammer').withCount(1)).setFluid('minecraft:water', 1000))
 })

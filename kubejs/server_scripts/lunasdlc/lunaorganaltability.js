@@ -189,6 +189,22 @@ const lunaorganPlayerDamageOnlyStrategies = {
             }
         }
     },
+
+    
+    'luna_flesh_reforged:llama_in_chestcavity': function (event, organ, data) {
+        if (event.source.type != 'mob') {
+            return
+        }
+        let player = event.source.player
+		let playerChestInstance = player.getChestCavityInstance()
+        let forceful_spit = playerChestInstance.organScores.get(new ResourceLocation('chestcavity', 'forceful_spit'))
+        let breath_capacity = playerChestInstance.organScores.get(new ResourceLocation('chestcavity', 'breath_capacity'))
+        let amount = event.amount
+        let spit = forceful_spit * breath_capacity
+        if(amount < spit && player.hasEffect('chestcavity:forceful_spit_cooldown')){
+            event.amount = spit
+        }
+    },
 	
 };
 var damageonly =Object.assign(organPlayerDamageOnlyStrategies,lunaorganPlayerDamageOnlyStrategies);
