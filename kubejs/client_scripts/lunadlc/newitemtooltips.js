@@ -9,6 +9,12 @@ ItemEvents.tooltip((tooltip) => {
 	tooltip.addAdvanced('luna_flesh_reforged:archotech_capsule', (item, advanced, text) => {
         text.add(Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_capsule.1" }));
     })
+	tooltip.addAdvanced('luna_flesh_reforged:dark_archotech_shard', (item, advanced, text) => {
+        text.add(Text.gray({ "translate": "luna_flesh_reforged.tooltips.dark_archotech_shard.1" }));
+    })
+	tooltip.addAdvanced('luna_flesh_reforged:bioferrite_shard', (item, advanced, text) => {
+        text.add(Text.gray({ "translate": "luna_flesh_reforged.tooltips.bioferrite_shard.1" }));
+    })
     tooltip.addAdvanced('luna_flesh_reforged:infected_flesh', (item, advanced, text) => {
         text.add(Text.gray({ "translate": "luna_flesh_reforged.tooltips.infected_flesh.1" }));
     })
@@ -22,8 +28,8 @@ ItemEvents.tooltip((tooltip) => {
         text.add(Text.gray({ "translate": "luna_flesh_reforged.tooltips.nano_plastids.1" }));
     })
 
-    tooltip.addAdvanced('luna_flesh_reforged:operation_box', (item, advanced, text) => {
-        text.add(Text.gray({ "translate": "luna_flesh_reforged.tooltips.operation_box.1" }));
+    tooltip.addAdvanced('luna_flesh_reforged:fallen_paradise', (item, advanced, text) => {
+        text.add(1, [Text.gold({ "translate": "item.kubejs.infinity_force" }), Text.yellow(` +${item.nbt?.forgeTimes ? item.nbt.forgeTimes : 0}`)]);
     })
 
     tooltip.addAdvanced('luna_flesh_reforged:silverheart_charm', (item, advanced, text) => {
@@ -70,5 +76,8 @@ ItemEvents.tooltip((tooltip) => {
     })
     tooltip.addAdvanced('bookwyrms:chad_bolus', (item, advanced, text) => {
         text.add(Text.gray({ "translate": "luna_flesh_reforged.tooltips.chad_bolus.0" }));
+    })
+    tooltip.addAdvanced('kubejs:blood_extractor', (item, advanced, text) => {
+        text.add(Text.gray({ "translate": "luna_flesh_reforged.tooltips.blood_extractor.0" }));
     })
 })

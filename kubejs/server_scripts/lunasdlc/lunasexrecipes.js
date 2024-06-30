@@ -1,19 +1,34 @@
 ServerEvents.recipes(event => {
-
-    event.shapeless('luna_flesh_reforged:warp_switch', ['luna_flesh_reforged:zombie_brain','minecraft:iron_nugget','luna_flesh_reforged:purifying_bath_salts'])
-
-    event.shapeless('luna_flesh_reforged:operation_box', ['kubejs:operation_box'])
+    
+    event.shapeless('luna_flesh_reforged:fallen_paradise', ['luna_flesh_reforged:fallen_paradise', 'kubejs:infinity_force'])
         .modifyResult((grid, stack) => {
-            let nbt = grid.find('kubejs:operation_box').nbt
-            stack = Item.of('luna_flesh_reforged:operation_box', nbt)
+            let item1 = grid.find('luna_flesh_reforged:fallen_paradise')
+            let item2 = grid.find('kubejs:infinity_force')
+            let forgeTimes1 = item1.nbt?.forgeTimes ?? 0
+            let forgeTimes2 = item2.nbt?.forgeTimes ?? 0
+            if (forgeTimes1 == forgeTimes2) {
+                stack = Item.of('luna_flesh_reforged:fallen_paradise', { forgeTimes: forgeTimes2 + 1 })
                 return stack;
-        });
-    event.shapeless('kubejs:operation_box', ['luna_flesh_reforged:operation_box'])
-        .modifyResult((grid, stack) => {
-            let nbt = grid.find('luna_flesh_reforged:operation_box').nbt
-            stack = Item.of('kubejs:operation_box', nbt)
+            }
+            if (forgeTimes1 < forgeTimes2) {
+                stack = Item.of('luna_flesh_reforged:fallen_paradise', { forgeTimes: forgeTimes2 })
                 return stack;
+            }
+            return;
         });
+    
+    event.shaped(Item.of('luna_flesh_reforged:dark_archotech_wand', 1), [
+        ' DR',
+        ' HB',
+        'AB '
+    ],
+        {
+            A: 'irons_spellbooks:artificer_cane',
+            B: 'luna_flesh_reforged:bioferrite_shard',
+            H: 'luna_flesh_reforged:dragon_heartstring',
+            R: 'kubejs:rapier_wand',
+            D: 'luna_flesh_reforged:dark_archotech_shard'
+        })
 
     event.shaped('luna_flesh_reforged:sanity_checker', [
             'BG ',
@@ -41,6 +56,44 @@ ServerEvents.recipes(event => {
             D: 'goety:forbidden_fragment'
         })
 
+	
+	event.recipes.create.sequenced_assembly([
+		Item.of('irons_spellbooks:blank_rune').withChance(75.0),
+		Item.of('kubejs:relic_metal_ingot').withChance(20.0),
+		Item.of('irons_spellbooks:arcane_ingot').withChance(5.0),
+		Item.of('create:sturdy_sheet').withChance(10.0),
+	], 'create:sturdy_sheet', [
+		event.recipes.createDeploying('create:sturdy_sheet', ['create:sturdy_sheet', 'kubejs:relic_metal_ingot']),
+		event.recipes.createPressing('create:sturdy_sheet', 'create:sturdy_sheet'),
+		event.recipes.createDeploying('create:sturdy_sheet', ['create:sturdy_sheet', 'irons_spellbooks:arcane_ingot']),
+		event.recipes.createDeploying('create:sturdy_sheet', ['create:sturdy_sheet', 'irons_spellbooks:arcane_essence']),
+		event.recipes.createDeploying('create:sturdy_sheet', ['create:sturdy_sheet', 'rainbowcompound:lapis_sheet']),
+		event.recipes.createCutting('create:sturdy_sheet', 'create:sturdy_sheet')
+	]).transitionalItem('create:sturdy_sheet').loops(2)
+
+	event.recipes.create.sequenced_assembly([
+		Item.of('3x rainbowcompound:strange_colored_ingot').withChance(50.0),
+		Item.of('create:chromatic_compound').withChance(50.0)
+	], 'create:chromatic_compound', [
+		event.recipes.createDeploying('create:chromatic_compound', ['create:chromatic_compound', 'rainbowcompound:rainbow_knife']),
+		event.recipes.createPressing('create:chromatic_compound', 'create:chromatic_compound'),
+		event.recipes.createCutting('create:chromatic_compound', 'create:chromatic_compound'),
+		event.recipes.createCutting('create:chromatic_compound', 'create:chromatic_compound'),
+		event.recipes.createCutting('create:chromatic_compound', 'create:chromatic_compound')
+	]).transitionalItem('create:chromatic_compound').loops(3)
+
+    event.recipes.summoningrituals
+        .altar('irons_spellbooks:blank_rune')
+        .id('luna_flesh_reforged:ritual_charm_azathoth')
+        .input('rainbowcompound:shadow_ring')
+        .input('3x luna_flesh_reforged:bioferrite_shard')
+        .input('#luna_flesh_reforged:greatone_charm')
+        .input('hexerei:blood_bucket')
+        .itemOutput('2x luna_flesh_reforged:charm_azathoth')
+        .sacrifice('minecraft:villager', 1)
+        .sacrificeRegion(3, 3)
+        .dayTime('night')
+        .recipeTime(500);
 	
 	event.recipes.create.sequenced_assembly([
 		Item.of('luna_flesh_reforged:archotech_framework')
@@ -134,6 +187,43 @@ ServerEvents.recipes(event => {
         O: 'luna_flesh_reforged:archotech_adrenaline',
         Z: 'luna_flesh_reforged:ender_bottle_max'
     })
+    event.recipes.create.mechanical_crafting('luna_flesh_reforged:archotech_void_heart_engine', [
+        ' MLM ',
+        'KIAIK',
+        'JHBHJ',
+        'HFCFH',
+        'HGDGH',
+        ' HEH '
+    ], {
+        A: 'kubejs:prismarine_crown',
+        B: 'witherstormmod:command_block_book',
+        C: 'luna_flesh_reforged:dark_archotech_shard',
+        D: 'luna_flesh_reforged:stardust_core',
+        E: 'luna_flesh_reforged:warped_battery',
+        F: 'luna_flesh_reforged:archotech_heart',
+        G: 'luna_flesh_reforged:irradiant_stardust_fragment',
+        H: 'luna_flesh_reforged:bioferrite_shard',
+        I: 'create:flywheel',
+        J: 'create:steam_engine',
+        K: 'createaddition:small_light_connector',
+        L: 'createaddition:electric_motor',
+        M: 'createaddition:redstone_relay'
+    })
+    
+    event.recipes.create.mechanical_crafting('luna_flesh_reforged:archotech_lung_double', [
+        ' DPD ',
+        'CLSLC',
+        'EFBFE'
+    ], {
+        L: 'luna_flesh_reforged:archotech_lung',
+        B: 'kubejs:harbinger_lung',
+        C: 'luna_flesh_reforged:archotech_framework',
+        D: 'kubejs:dragon_blood_lung',
+        E: 'luna_flesh_reforged:archotech_capsule',
+        F: 'kubejs:fantasy_lung',
+        P: 'kubejs:weird_paperman',
+        S: 'kubejs:dreadsteel_ingot'
+    })
 
 
     event.recipes.create.mechanical_crafting('luna_flesh_reforged:ender_bottle_max', [
@@ -165,6 +255,17 @@ ServerEvents.recipes(event => {
 		D: 'rainbowcompound:shadow_mechanism',
 	})
 
+	event.recipes.create.sequenced_assembly([
+		Item.of('luna_flesh_reforged:chromatic_piston').withChance(80.0),
+		Item.of('luna_flesh_reforged:chromatic_rose_muscle').withChance(20.0)
+	], 'luna_flesh_reforged:chromatic_rose_muscle', [
+		event.recipes.createDeploying('luna_flesh_reforged:incomplete_chromatic_piston', ['luna_flesh_reforged:incomplete_chromatic_piston', 'chestcavity:piston_muscle']),
+		event.recipes.createDeploying('luna_flesh_reforged:incomplete_chromatic_piston', ['luna_flesh_reforged:incomplete_chromatic_piston', 'createaddition:copper_wire']),
+		event.recipes.createDeploying('luna_flesh_reforged:incomplete_chromatic_piston', ['luna_flesh_reforged:incomplete_chromatic_piston', 'createaddition:gold_wire']),
+		event.recipes.createDeploying('luna_flesh_reforged:incomplete_chromatic_piston', ['luna_flesh_reforged:incomplete_chromatic_piston', 'create:mechanical_piston']),
+		event.recipes.createPressing('luna_flesh_reforged:incomplete_chromatic_piston', 'luna_flesh_reforged:incomplete_chromatic_piston'),
+		event.recipes.createDeploying('luna_flesh_reforged:incomplete_chromatic_piston', ['luna_flesh_reforged:incomplete_chromatic_piston', 'create:chromatic_compound'])
+	]).transitionalItem('luna_flesh_reforged:incomplete_chromatic_piston').loops(4)
 
     event.recipes.create.mechanical_crafting('luna_flesh_reforged:warped_battery', [
 		' OAO ',
@@ -190,7 +291,7 @@ ServerEvents.recipes(event => {
         .input('kubejs:bad_ink')
         .input('kubejs:ancient_chip')
         .input('6x kubejs:ritual_catalyst')
-        .input('6x kubejs:stardust_fragment')
+        .input('6x luna_flesh_reforged:stardust_fragment')
         .input('2x luna_flesh_reforged:archotech_capsule')
         .itemOutput('luna_flesh_reforged:psylink_neuro')
         .recipeTime(800);
@@ -212,12 +313,14 @@ ServerEvents.recipes(event => {
         .input('create:precision_mechanism')
         .input('4x biomancy:rejuvenation_serum')
         .input('4x biomancy:absorption_boost')
+        .input('kubejs:rose_quartz_muscle')
         .itemOutput('luna_flesh_reforged:chromatic_rose_heart')
         .recipeTime(300);
 
     event.recipes.summoningrituals
         .altar('kubejs:rose_quartz_muscle')
         .id('luna_flesh_reforged:ritual_chromatic_rose_muscle')
+        .input('kubejs:rose_quartz_muscle')
         .input('8x create:chromatic_compound')
         .input('4x biomancy:rejuvenation_serum')
         .input('kubejs:fantasy_muscle')
@@ -247,9 +350,10 @@ ServerEvents.recipes(event => {
         .altar('irons_spellbooks:upgrade_orb')
         .id('luna_flesh_reforged:ritual_stardust_core')
         .input('16x kubejs:dark_stardust_fragment')
-        .input('16x kubejs:stardust_fragment')
+        .input('16x luna_flesh_reforged:stardust_fragment')
         .input('rainbowcompound:enchanted_golden_apple_stew')
         .input('16x goety:ectoplasm')
+        .input('irons_spellbooks:legendary_ink')
         .itemOutput('luna_flesh_reforged:stardust_core')
         .recipeTime(300);
 
@@ -262,7 +366,17 @@ ServerEvents.recipes(event => {
         .input('#kubejs:spine')
         .itemOutput('luna_flesh_reforged:dragon_heartstring')
         .recipeTime(500);
-		
+
+    event.recipes.summoningrituals
+        .altar('luna_flesh_reforged:zombie_brain')
+        .id('luna_flesh_reforged:ritual_bioferrite_shard')
+        .input('16x luna_flesh_reforged:enchanted_infected_flesh')
+        .input('kubejs:dreadsteel_ingot')
+        .input('goety:dark_ingot')
+        .input('2x graveyard:dark_iron_ingot')
+        .input('3x luna_flesh_reforged:ectoplasm_wooden_shard')
+        .itemOutput('luna_flesh_reforged:bioferrite_shard')
+        .recipeTime(100);
 })
 
 function BioForgingRecipe(ingredients, output) {
@@ -602,7 +716,102 @@ ServerEvents.recipes(event => {
             "item": "luna_flesh_reforged:archotech_abyssal_core"
         }
     })
-
+    event.custom({
+        "type": "goety:brazier",
+        "soulCost": 6666,
+        "ingredients": [
+            {
+                "item": "luna_flesh_reforged:bioferrite_shard"
+            },
+            {
+                "item": "rainbowcompound:shadow_resonant_assembly"
+            },
+            {
+                "tag": "luna_flesh_reforged:greatone_charm"
+            },
+            {
+                "item": "luna_flesh_reforged:archotech_capsule"
+            },
+            {
+                "item": "luna_flesh_reforged:nano_plastids"
+            }
+        ],
+        "result": {
+            "item": "luna_flesh_reforged:dark_archotech_shard"
+        }
+    })
+    event.custom({
+        "type": "goety:brazier",
+        "soulCost": 10000,
+        "ingredients": [
+            {
+                "item": "luna_flesh_reforged:archotech_spleen"
+            },
+            {
+                "item": "kubejs:magic_hippocampus"
+            },
+            {
+                "item": "luna_flesh_reforged:stardust_core"
+            },
+            {
+                "item": "luna_flesh_reforged:dark_archotech_shard"
+            },
+            {
+                "item": "kubejs:lust_shard"
+            }
+        ],
+        "result": {
+            "item": "luna_flesh_reforged:archotech_void_spleen"
+        }
+    })
+    event.custom({
+        "type": "goety:brazier",
+        "soulCost": 10000,
+        "ingredients": [
+            {
+                "item": "luna_flesh_reforged:archotech_liver"
+            },
+            {
+                "item": "kubejs:embers_liver"
+            },
+            {
+                "item": "art_of_forging:heart_of_ender"
+            },
+            {
+                "item": "luna_flesh_reforged:dark_archotech_shard"
+            },
+            {
+                "item": "kubejs:wrath_shard"
+            }
+        ],
+        "result": {
+            "item": "luna_flesh_reforged:archotech_void_liver"
+        }
+    })
+    event.custom({
+        "type": "goety:brazier",
+        "soulCost": 10000,
+        "ingredients": [
+            {
+                "item": "kubejs:pride_shard"
+            },
+            {
+                "item": "luna_flesh_reforged:archotech_warden_core"
+            },
+            {
+                "item": "kubejs:god_consciousness"
+            },
+            {
+                "item": "luna_flesh_reforged:dark_archotech_shard"
+            },
+            {
+                "item": "goety:philosophers_stone"
+            }
+        ],
+        "result": {
+            "item": "luna_flesh_reforged:void_shock_core"
+        }
+    })
 })
 
 function GoetyRitualRecipe(craftType, ingredients, activation_item, output) {
@@ -660,12 +869,28 @@ ServerEvents.recipes(event => {
     registerCustomRecipe(new GoetyRitualRecipe('necroturgy', [Ingredient.of('luna_flesh_reforged:nano_plastids'), Ingredient.of('biomancy:malignant_flesh_veins'), Ingredient.of('biomancy:creator_mix'),
         Ingredient.of('hexerei:blood_bottle'), Ingredient.of('luna_flesh_reforged:flesheating_infection_fiber'), Ingredient.of('luna_flesh_reforged:enchanted_infected_flesh'), Ingredient.of('goety:hunger_core')],
         Item.of('luna_flesh_reforged:infested_stomach'), Item.of('luna_flesh_reforged:infested_stomach_distortion')).setSoulCost(100))
-    
+
+    registerCustomRecipe(new GoetyRitualRecipe('necroturgy', 
+        [Ingredient.of('kubejs:long_lasting_pill_gold'), Ingredient.of('luna_flesh_reforged:infested_kidney'), Ingredient.of('luna_flesh_reforged:infested_muscle'), Ingredient.of('kubejs:origin_of_tumor'), Ingredient.of('kubejs:worm_neuron'), Ingredient.of('luna_flesh_reforged:infested_appendix'), Ingredient.of('luna_flesh_reforged:nano_plastids'), Ingredient.of('kubejs:random_tumor')],
+        Item.of('kubejs:random_tumor'), Item.of('luna_flesh_reforged:infested_tumour_distortion')).setSoulCost(100))
+
     registerCustomRecipe(new GoetyRitualRecipe('magic', 
         [Ingredient.of('luna_flesh_reforged:mini_silverwood'), Ingredient.of('luna_flesh_reforged:mini_silverwood'), Ingredient.of('luna_flesh_reforged:mini_silverwood'), 
         Ingredient.of('luna_flesh_reforged:purifying_bath_salts'), Ingredient.of('luna_flesh_reforged:purifying_bath_salts'), Ingredient.of('luna_flesh_reforged:purifying_bath_salts'), Ingredient.of('irons_spellbooks:arcane_essence'), 
         Ingredient.of('hexerei:quicksilver_bucket'), Ingredient.of('kubejs:magic_hippocampus'), 
         Ingredient.of('chestcavity:shifting_leaves'), Ingredient.of('chestcavity:shifting_leaves'), Ingredient.of('chestcavity:shifting_leaves')],Item.of('kubejs:fantasy_heart'), Item.of('luna_flesh_reforged:silverwood_heart')).setSoulCost(100))
+
+    registerCustomRecipe(new GoetyRitualRecipe('animation', 
+        [Ingredient.of('kubejs:mini_slime'), Ingredient.of('kubejs:magic_muscle'), Ingredient.of('luna_flesh_reforged:chromatic_rose_muscle'), Ingredient.of('kubejs:warden_muscle'), Ingredient.of('luna_flesh_reforged:bioferrite_shard'), Ingredient.of('luna_flesh_reforged:bioferrite_shard'), Ingredient.of('luna_flesh_reforged:bioferrite_shard'), Ingredient.of('art_of_forging:potent_mixture')],
+        Item.of('luna_flesh_reforged:archotech_muscle'), Item.of('luna_flesh_reforged:bioferrite_fluid_muscle')).setSoulCost(100))
+        
+
+    registerCustomRecipe(new GoetyRitualRecipe('magic', 
+        [Ingredient.of('luna_flesh_reforged:dark_archotech_shard'), Ingredient.of('kubejs:greed_shard'), Ingredient.of('kubejs:paradise_regained'), 
+        Ingredient.of('kubejs:infinity_force'), Ingredient.of('kubejs:infinity_force'), Ingredient.of('kubejs:infinity_force'), 
+        Ingredient.of('luna_flesh_reforged:zombie_brain'), Ingredient.of('goety:undeath_potion'), Ingredient.of('kubejs:holy_potion'), 
+        Ingredient.of('kubejs:storm_metal_plate'), Ingredient.of('kubejs:storm_metal_plate'), Ingredient.of('kubejs:storm_metal_plate')],
+        Item.of('kubejs:lost_paradise'), Item.of('luna_flesh_reforged:fallen_paradise')).setSoulCost(666).setDuration(13))
 
 })
 
@@ -736,6 +961,13 @@ ServerEvents.recipes(event => {
         [Ingredient.of('minecraft:ice'), Ingredient.of('minecraft:ice'), Ingredient.of('minecraft:ice'), Ingredient.of('minecraft:ice'), Ingredient.of('minecraft:ice'), Ingredient.of('minecraft:ice'), Ingredient.of('minecraft:ice'), Ingredient.of('minecraft:ice')],
         Item.of('minecraft:ice').withCount(10)).setFluid('minecraft:water', 2000))
     
+    registerCustomRecipe(new MixingCauldronRecipeWithFluidNBTa(
+        [Ingredient.of('bosses_of_mass_destruction:soul_star'), Ingredient.of('createaddition:diamond_grit'), Ingredient.of('hexerei:selenite_shard'), Ingredient.of('irons_spellbooks:arcane_essence'), Ingredient.of('biomancy:exotic_dust'), Ingredient.of('hexerei:mindful_trance_blend'), Ingredient.of('create:experience_nugget'), Ingredient.of('minecraft:end_crystal')],
+        Item.of('luna_flesh_reforged:stardust_fragment').withCount(1)).setFluid('hexerei:potion', 1000, '{"Bottle": "REGULAR","Potion":"irons_spellbooks:instant_mana_four"}').addHeatRequirement())
+    registerCustomRecipe(new MixingCauldronRecipeWithFluidNBTa(
+        [Ingredient.of('luna_flesh_reforged:stardust_fragment'), Ingredient.of('irons_spellbooks:arcane_essence'), Ingredient.of('hexerei:moon_dust'), Ingredient.of('create:experience_nugget'), Ingredient.of('luna_flesh_reforged:stardust_fragment'), Ingredient.of('create:experience_nugget'), Ingredient.of('hexerei:moon_dust'), Ingredient.of('irons_spellbooks:arcane_essence')],
+        Item.of('luna_flesh_reforged:stardust_fragment').withCount(4)).setFluid('hexerei:potion', 1000, '{"Bottle": "REGULAR","Potion":"irons_spellbooks:instant_mana_one"}').addHeatRequirement())
+    
     registerCustomRecipe(new MixingCauldronRecipe(
         [Ingredient.of('#minecraft:wool'), Ingredient.of('chestcavity:llama_lung'), Ingredient.of('#minecraft:wool'), Ingredient.of('minecraft:leather_horse_armor'), Ingredient.of('minecraft:dirt'), Ingredient.of('minecraft:grass'), Ingredient.of('#minecraft:wool'), Ingredient.of('chestcavity:llama_lung')],
         Item.of('luna_flesh_reforged:llama_in_chestcavity')))
@@ -750,7 +982,7 @@ ServerEvents.recipes(event => {
         [Ingredient.of('luna_flesh_reforged:infested_appendix'), Ingredient.of('minecraft:nether_wart'), Ingredient.of('minecraft:golden_carrot'), Ingredient.of('minecraft:golden_carrot'), Ingredient.of('minecraft:golden_carrot'), Ingredient.of('minecraft:golden_carrot'), Ingredient.of('minecraft:golden_carrot'), Ingredient.of('minecraft:fermented_spider_eye')],
         Item.of('luna_flesh_reforged:nightvision_cholecyst').withCount(1)).setFluid('hexerei:potion', 1000, '{"Bottle": "REGULAR","Potion":"minecraft:night_vision"}').addHeatRequirement())
     registerCustomRecipe(new MixingCauldronRecipeWithFluidNBTa(
-        [Ingredient.of('kubejs:god_consciousness'), Ingredient.of('irons_spellbooks:cooldown_upgrade_orb'), Ingredient.of('irons_spellbooks:mana_upgrade_orb'), Ingredient.of('irons_spellbooks:cooldown_upgrade_orb'), Ingredient.of('kubejs:stardust_fragment'), Ingredient.of('irons_spellbooks:cooldown_upgrade_orb'), Ingredient.of('irons_spellbooks:mana_upgrade_orb'), Ingredient.of('irons_spellbooks:cooldown_upgrade_orb')],
+        [Ingredient.of('kubejs:god_consciousness'), Ingredient.of('irons_spellbooks:cooldown_upgrade_orb'), Ingredient.of('irons_spellbooks:mana_upgrade_orb'), Ingredient.of('irons_spellbooks:cooldown_upgrade_orb'), Ingredient.of('luna_flesh_reforged:stardust_fragment'), Ingredient.of('irons_spellbooks:cooldown_upgrade_orb'), Ingredient.of('irons_spellbooks:mana_upgrade_orb'), Ingredient.of('irons_spellbooks:cooldown_upgrade_orb')],
         Item.of('luna_flesh_reforged:irradiant_stardust_fragment').withCount(1)).setFluid('hexerei:potion', 1000, '{"Bottle": "LINGERING","Potion":"irons_spellbooks:instant_mana_four"}').addHeatRequirement())
     registerCustomRecipe(new MixingCauldronRecipe(
         [Ingredient.of('biomancy:cleansing_serum'), Ingredient.of('irons_spellbooks:arcane_essence'), Ingredient.of('hexerei:moon_dust'), Ingredient.of('goety:ectoplasm'), Ingredient.of('hexerei:mindful_trance_blend'), Ingredient.of('goety:ectoplasm'), Ingredient.of('hexerei:moon_dust'), Ingredient.of('irons_spellbooks:arcane_essence')],
@@ -767,4 +999,11 @@ ServerEvents.recipes(event => {
     registerCustomRecipe(new MixingCauldronRecipe(
         [Ingredient.of('extraarmor:blacksmith_hammer'), Ingredient.of('waystones:warp_dust'), Ingredient.of('luna_flesh_reforged:zombie_brain'), Ingredient.of('irons_spellbooks:arcane_essence'), Ingredient.of('goety:eerie_pickaxe'), Ingredient.of('irons_spellbooks:arcane_essence'), Ingredient.of('luna_flesh_reforged:zombie_brain'), Ingredient.of('goety:magic_emerald')],
         Item.of('luna_flesh_reforged:eldritch_hammer').withCount(1)).setFluid('minecraft:water', 1000))
+        
+    registerCustomRecipe(new MixingCauldronRecipe(
+        [Ingredient.of('luna_flesh_reforged:dark_archotech_shard'), Ingredient.of('luna_flesh_reforged:flesh_tentacle'), Ingredient.of('luna_flesh_reforged:flesh_tentacle'), Ingredient.of('luna_flesh_reforged:flesh_tentacle'), Ingredient.of('luna_flesh_reforged:bioferrite_fluid_muscle'), Ingredient.of('hexerei:blood_bucket'), Ingredient.of('luna_flesh_reforged:archotech_muscle'), Ingredient.of('hexerei:blood_bucket')],
+        Item.of('luna_flesh_reforged:archotech_void_tentacle').withCount(2)).setFluid('hexerei:quicksilver_fluid', 1666).setFluidOutput('hexerei:blood_fluid'))
+    registerCustomRecipe(new MixingCauldronRecipe(
+        [Ingredient.of('luna_flesh_reforged:dark_archotech_shard'), Ingredient.of('luna_flesh_reforged:flesh_whip'), Ingredient.of('luna_flesh_reforged:flesh_whip'), Ingredient.of('luna_flesh_reforged:flesh_whip'), Ingredient.of('luna_flesh_reforged:bioferrite_fluid_muscle'), Ingredient.of('hexerei:blood_bucket'), Ingredient.of('luna_flesh_reforged:archotech_muscle'), Ingredient.of('hexerei:blood_bucket')],
+        Item.of('luna_flesh_reforged:archotech_void_whip').withCount(2)).setFluid('hexerei:quicksilver_fluid', 1666).setFluidOutput('hexerei:blood_fluid'))
 })

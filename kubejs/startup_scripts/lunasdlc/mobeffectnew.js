@@ -5,6 +5,9 @@ StartupEvents.registry('mob_effect', event => {
         .modifyAttribute('forge:attack_range', 'kubejsAttackRange', 2, "addition")
         .color(Color.DARK_RED)
 
+    event.create('luna_flesh_reforged:harvest_markers')
+        .color(Color.DARK_RED)
+
     event.create('luna_flesh_reforged:warpward')
         .beneficial()
         .color(Color.GOLD)

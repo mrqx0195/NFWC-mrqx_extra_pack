@@ -1,54 +1,30 @@
 StartupEvents.registry('item', event => {
 
-	event.create('luna_flesh_reforged:operation_box').texture('kubejs:item/operation_box').maxStackSize(1).group("kubejs.lunadlc")
-	.useAnimation('bow')
-	.use((level, player, hand) => {
-		return true;
-	})
-	.useDuration(itemStack => 20)
-	.finishUsing((itemstack, level, entity) => {
-		if (level.isClientSide()) return itemstack
-		if (!entity.isPlayer()) return itemstack
-		let instance = entity.getChestCavityInstance()
-		let oriInv = instance.inventory.getTags()
-		let replaceInv = itemstack?.nbt?.inventory
-		if (!replaceInv) {
-			replaceInv = []
-		}
-		if (oriInv && replaceInv) {
-			instance.inventory.readTags(replaceInv)
-			itemstack.setNbt({ inventory: oriInv })
-		}
-		global.initChestCavityIntoMap(entity, true)
-		if (entity.getChestCavityInstance().inventory.hasAnyMatching(item => {
-			return pillList_luna.some(ele => ele == item.id.toString())
-		})) {
-			global.updatePlayerActiveStatus(entity)
-			entity.persistentData.putInt(organActive, 1)
-		}
-		return itemstack
-	})
-
-	event.create('luna_flesh_reforged:charm_azathoth').rarity('epic').maxStackSize(1).group("kubejs.lunadlc")
+    event.create('luna_flesh_reforged:stardust_fragment').texture('luna_flesh_reforged:item/stardust_fragment').group("kubejs.lunadlc")
+	event.create('luna_flesh_reforged:charm_azathoth').rarity('epic').maxStackSize(2).group("kubejs.lunadlc")
 		.texture('luna_flesh_reforged:item/abyssalcraft/charm_azathoth').tag('luna_flesh_reforged:greatone_charm')
-	event.create('luna_flesh_reforged:charm_cthulhu').rarity('epic').maxStackSize(1).group("kubejs.lunadlc")
+	event.create('luna_flesh_reforged:charm_cthulhu').rarity('epic').maxStackSize(2).group("kubejs.lunadlc")
 		.texture('luna_flesh_reforged:item/abyssalcraft/charm_cthulhu').tag('luna_flesh_reforged:greatone_charm')
-	event.create('luna_flesh_reforged:charm_hastur').rarity('epic').maxStackSize(1).group("kubejs.lunadlc")
+	event.create('luna_flesh_reforged:charm_hastur').rarity('epic').maxStackSize(2).group("kubejs.lunadlc")
 		.texture('luna_flesh_reforged:item/abyssalcraft/charm_hastur').tag('luna_flesh_reforged:greatone_charm')
-	event.create('luna_flesh_reforged:charm_nyarlathotep').rarity('epic').maxStackSize(1).group("kubejs.lunadlc")
+	event.create('luna_flesh_reforged:charm_nyarlathotep').rarity('epic').maxStackSize(2).group("kubejs.lunadlc")
 		.texture('luna_flesh_reforged:item/abyssalcraft/charm_nyarlathotep').tag('luna_flesh_reforged:greatone_charm')
-	event.create('luna_flesh_reforged:charm_shubniggurath').rarity('epic').maxStackSize(1).group("kubejs.lunadlc")
+	event.create('luna_flesh_reforged:charm_shubniggurath').rarity('epic').maxStackSize(2).group("kubejs.lunadlc")
 		.texture('luna_flesh_reforged:item/abyssalcraft/charm_shubniggurath').tag('luna_flesh_reforged:greatone_charm')
-	event.create('luna_flesh_reforged:charm_yogsothoth').rarity('epic').maxStackSize(1).group("kubejs.lunadlc")
+	event.create('luna_flesh_reforged:charm_yogsothoth').rarity('epic').maxStackSize(2).group("kubejs.lunadlc")
 		.texture('luna_flesh_reforged:item/abyssalcraft/charm_yogsothoth').tag('luna_flesh_reforged:greatone_charm')
 
 	event.create('luna_flesh_reforged:incomplete_archotech_framework', 'create:sequenced_assembly').texture('luna_flesh_reforged:item/incomplete_archotech_framework')
 	event.create('luna_flesh_reforged:incomplete_archotech_capsule', 'create:sequenced_assembly').texture('luna_flesh_reforged:item/incomplete_archotech_capsule')
 	event.create('luna_flesh_reforged:incomplete_archotech_adrenaline', 'create:sequenced_assembly').texture('biomancy:item/serum/genetic_compound')
+	event.create('luna_flesh_reforged:incomplete_chromatic_piston', 'create:sequenced_assembly').texture('luna_flesh_reforged:item/incomplete_chromatic_piston')
 
 	event.create('luna_flesh_reforged:archotech_framework').maxStackSize(8).texture('luna_flesh_reforged:item/archotech_framework').rarity('uncommon').group("kubejs.lunadlc")
 	event.create('luna_flesh_reforged:archotech_cube').maxStackSize(16).glow(true).texture('luna_flesh_reforged:item/archotech_cube').rarity('uncommon').group("kubejs.lunadlc")
 	event.create('luna_flesh_reforged:archotech_capsule').maxStackSize(13).glow(true).texture('luna_flesh_reforged:item/archotech_capsule').rarity('uncommon').group("kubejs.lunadlc")
+	
+	event.create('luna_flesh_reforged:dark_archotech_shard').maxStackSize(1).glow(true).texture('luna_flesh_reforged:item/dark_archotech_shard').rarity('uncommon').group("kubejs.lunadlc")
+	event.create('luna_flesh_reforged:bioferrite_shard').maxStackSize(32).glow(true).texture('luna_flesh_reforged:item/bioferrite_shard').group("kubejs.lunadlc")
 
 	event.create('luna_flesh_reforged:archotech_adrenaline').texture('luna_flesh_reforged:item/archotech_adrenaline').maxStackSize(1).group("kubejs.lunadlc").glow(true).rarity('epic')
 	.useAnimation('bow')
@@ -81,8 +57,18 @@ StartupEvents.registry('item', event => {
 	event.create('luna_flesh_reforged:ectoplasm_wooden_shard').texture('luna_flesh_reforged:item/tetra/ectoplasm_wooden_shard').group("kubejs.lunadlc")
 	event.create('luna_flesh_reforged:flesheating_infection_fiber').texture('luna_flesh_reforged:item/tetra/flesheating_infection_fiber').group("kubejs.lunadlc")
 
+    event.create('luna_flesh_reforged:dark_archotech_wand', "irons_spells_js:staff").group("kubejs.lunadlc")
+		.attackDamageBaseline(25)
+        .speedBaseline(-1.5)
+        .speed(6.5)
+        .addAdditionalAttribute('minecraft:generic.attack_damage', 'DarkArchotechWand', 10, 'addition')
+        .addAdditionalAttribute('irons_spellbooks:spell_power', 'DarkArchotechWand', 0.25, 'multiply_base')
+        .addAdditionalAttribute('irons_spellbooks:cooldown_reduction', 'DarkArchotechWand', 0.25, 'multiply_total')
+        .addAdditionalAttribute('irons_spellbooks:cast_time_reduction', 'DarkArchotechWand', 0.25, 'multiply_total')
+        .addAdditionalAttribute('irons_spellbooks:eldritch_spell_power', 'DarkArchotechWand', 0.5, 'addition')
+        .rarity('epic')
+
 //扭曲学
-	event.create('luna_flesh_reforged:warp_switch').texture('luna_flesh_reforged:item/warp/pure_tear').group("kubejs.lunadlc").tag('luna_flesh_reforged:warp').displayName('扭曲系统内测中，右键使用开关发生扭曲功能').maxStackSize(1)
 	event.create('luna_flesh_reforged:zombie_brain').texture('luna_flesh_reforged:item/warp/zombie_brain').group("kubejs.lunadlc").tag('luna_flesh_reforged:warp').food(food => {
         food
             .hunger(4).saturation(0.1).meat().alwaysEdible()
@@ -102,7 +88,20 @@ StartupEvents.registry('item', event => {
 	})
 	event.create('luna_flesh_reforged:sanity_checker').texture('luna_flesh_reforged:item/warp/sanity_checker').group("kubejs.lunadlc").tag('luna_flesh_reforged:warp').maxStackSize(1)
 	event.create('luna_flesh_reforged:mini_silverwood').texture('luna_flesh_reforged:item/warp/mini_silverwood').group("kubejs.lunadlc").tag('luna_flesh_reforged:warp').maxStackSize(1)
-	event.create('luna_flesh_reforged:silverheart_charm').texture('luna_flesh_reforged:item/warp/silverheart_charm').group("kubejs.lunadlc").tag('luna_flesh_reforged:warp').tag('curios:extra').tag('curios:trinkets').tag('curios:charm').maxStackSize(1)
+    event.create('luna_flesh_reforged:silverheart_charm')
+        .texture('luna_flesh_reforged:item/warp/silverheart_charm').group("kubejs.lunadlc")
+        .maxStackSize(1)
+        .tag('curios:charm').tag('luna_flesh_reforged:warp').tag('curios:extra').tag('curios:trinkets')
+        .attachCapability(CuriosCapabilityBuilder.CURIOS.itemStack()
+            .canEquip(() => true)
+            .onEquip((itemFrom, ctx, itemTo) => {
+                if (ctx.entity().level.isClientSide()) return
+                global.silverHeartCharmOnEquip(itemFrom, ctx, itemTo)
+            })
+            .curioTick((item, ctx) => {
+                if (ctx.entity().level.isClientSide()) return
+                global.silverHeartCharmTick(item, ctx)
+            }))
 	
 //器官	
 	function registerOrgan(organ) {
@@ -121,9 +120,10 @@ StartupEvents.registry('item', event => {
 
 	registerOrgan(new Organ('luna_flesh_reforged:test_organ')
 	.addScore('health', 0.25).addScore('breath_recovery', 0.25).addScore('nerves', 0.25).addScore('strength', 0.25).addScore('filtration', 0.25).addScore('detoxification', 0.25).addScore('defense', 0.125).addScore('nutrition', 0.125).addScore('endurance', 0.25).addScore('digestion', 0.125).addScore('metabolism', 0.125).addScore('breath_capacity', 0.125).addScore('speed', 0.25)
+	.addTextLines('default', [Text.gray({ "translate": "luna_flesh_reforged.tooltips.test_organ.0" })])
 	.build()).texture('luna_flesh_reforged:item/test_item')
 	.tag('kubejs:archotech')
-	.tag('kubejs:damage_only').tag('kubejs:bear_only');
+	.tag('kubejs:damage').tag('kubejs:bear');
 
 //超凡仿生
     
@@ -136,7 +136,7 @@ StartupEvents.registry('item', event => {
     registerOrgan(new Organ('luna_flesh_reforged:archotech_muscle').addScore('strength', 2.5).addScore('speed', 2.5).addScore('fire_resistant', 0.25).addScore('impact_resistant', 0.125).addScore('swim_speed', 0.125)
 	.addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_muscle.1" }), Text.gold(1), Text.yellow({ "translate": "luna_flesh_reforged.tooltips.archotech_muscle.2" })])
 	.build()).texture('luna_flesh_reforged:item/organs/archotech/archotech_muscle')
-	.tag('kubejs:muscle').tag('kubejs:archotech').tag('itemborders:gold')
+	.tag('kubejs:muscle').tag('kubejs:archotech').tag('itemborders:gold').tag('kubejs:archomuscle')
 	.tag('kubejs:active');
 
     registerOrgan(new Organ('luna_flesh_reforged:archotech_heart').addScore('health', 3).addScore('hydroallergenic', -2.5).addScore('nerves', 0.25)
@@ -208,6 +208,42 @@ StartupEvents.registry('item', event => {
 		.build()).texture('luna_flesh_reforged:item/organs/archotech/archotech_toughspine').rarity('epic')
 		.tag('kubejs:archotech').tag('kubejs:spine')
 		.tag('kubejs:active_only');
+	//超凡对称肺
+	event.create('luna_flesh_reforged:archotech_lung_double').texture('luna_flesh_reforged:item/organs/archotech/archotech_lung_double').group("kubejs.lunadlc").tag('luna_flesh_reforged:archotech').maxStackSize(1).rarity('epic')
+		.useAnimation('bow')
+		.use((level, player, hand) => {
+			return true;
+		})
+		.useDuration(itemStack => 20)
+		.finishUsing((itemstack, level, entity) => {
+			if (level.isClientSide()) return itemstack
+			if (!entity.isPlayer()) return itemstack
+			entity.give("luna_flesh_reforged:archotech_lung_left")
+			entity.give("luna_flesh_reforged:archotech_lung_right")
+			itemstack.shrink(1)
+			return itemstack
+		})
+	registerOrgan(new Organ('luna_flesh_reforged:archotech_lung_left')
+		.addScore('breath_recovery', 3).addScore('breath_capacity', 2.5).addScore('endurance', 2.5).addScore('water_breath', 2)
+		.addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_lung.1" }), Text.gold(2), Text.yellow({ "translate": "luna_flesh_reforged.tooltips.archotech_lung.2" })])
+		.addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_lung_left.1" })])
+		.addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_lung_left.2" })])
+		.addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_lung_left.3" })])
+		.addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_lung_left.4" })])
+		.addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_lung_left.5" })])
+		.build()).texture('luna_flesh_reforged:item/organs/archotech/archotech_lung_left').rarity('epic')
+		.tag('kubejs:lung').tag('kubejs:archotech')
+		.tag('kubejs:active_only').tag('kubejs:bear_only');
+	registerOrgan(new Organ('luna_flesh_reforged:archotech_lung_right')
+		.addScore('breath_recovery', 3).addScore('breath_capacity', 2.5).addScore('endurance', 2.5).addScore('water_breath', 2)
+		.addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_lung.1" }), Text.gold(2), Text.yellow({ "translate": "luna_flesh_reforged.tooltips.archotech_lung.2" })])
+		.addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_lung_right.1" })])
+		.addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_lung_right.2" })])
+		.addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_lung_right.3" })])
+		.addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_lung_right.4" })])
+		.build()).texture('luna_flesh_reforged:item/organs/archotech/archotech_lung_right').rarity('epic')
+		.tag('kubejs:lung').tag('kubejs:archotech')
+		.tag('kubejs:active_only').tag('kubejs:bear_only');
 	//对称超凡肋骨
 	registerOrgan(new Organ('luna_flesh_reforged:archotech_doublerib_left')
 		.addScore('defense', 4).addScore('impact_resistant', 1).addScore('strength', 1).addScore('health', 0.25)
@@ -246,6 +282,7 @@ StartupEvents.registry('item', event => {
 		.tag('kubejs:kidney').tag('kubejs:archotech')
 		.tag('kubejs:active_only');
 
+	//启灵神经
     registerOrgan(new Organ('luna_flesh_reforged:psylink_neuro').addScore('nerves', 5).addScore('luck', 1.25)
 		.addTextLines('default', [Text.gray({ "translate": "luna_flesh_reforged.tooltips.psylink_neuro.0" })])
 		.addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.organlink_per.1" }), Text.yellow({ "translate": "luna_flesh_reforged.tooltips.archotech" }), Text.gray({ "translate": "luna_flesh_reforged.tooltips.organlink_per.2" }), Text.yellow(35), Text.gray({ "translate": "luna_flesh_reforged.tooltips.psylink_neuro.1" })])
@@ -254,7 +291,6 @@ StartupEvents.registry('item', event => {
 		.build()).texture('luna_flesh_reforged:item/organs/archotech/psylink_neuro').rarity('epic')
 		.tag('kubejs:archotech').tag('kubejs:magic')
 		.tag('kubejs:active_only');
-
 	registerOrgan(new Organ('luna_flesh_reforged:enchanted_psylink_neuro').addScore('nerves', 6).addScore('luck', 1.5)
 		.addTextLines('default', [Text.gray({ "translate": "luna_flesh_reforged.tooltips.psylink_neuro.0" })])
 		.addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.organlink_per.1" }), Text.yellow({ "translate": "luna_flesh_reforged.tooltips.archotech" }), Text.gray({ "translate": "luna_flesh_reforged.tooltips.organlink_per.2" }), Text.yellow(45), Text.gray({ "translate": "luna_flesh_reforged.tooltips.psylink_neuro.1" })])
@@ -263,36 +299,35 @@ StartupEvents.registry('item', event => {
 		.addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.enchanted_psylink_neuro.1" })])
 		.build()).texture('luna_flesh_reforged:item/organs/archotech/psylink_neuro').rarity('epic').glow(true)
 		.tag('kubejs:archotech').tag('kubejs:magic')
-		.tag('kubejs:active_only');
-	
+		.tag('kubejs:active_only').tag('kubejs:overmagic_only');
+	//激活药
 	registerOrgan(new Organ('luna_flesh_reforged:archotech_lastinger').addScore('luck', 2.5).addScore('speed', 0.5).addScore('health', 0.25)
 		.addTextLines('default', [Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_lastinger.0" })])
 		.addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "kubejs.tooltips.long_lasting_pill_gold.1" })])
 		.build()).texture('luna_flesh_reforged:item/organs/archotech/archotech_lastinger').rarity('epic')
-		.tag('kubejs:appendix').tag('kubejs:archotech');
-	
+		.tag('kubejs:appendix').tag('kubejs:archotech').tag('kubejs:player_tick_only');
+	registerOrgan(new Organ('luna_flesh_reforged:archotech_dragon_appendix')
+		.addScore('luck', 2.75).addScore('speed', 0.5).addScore('health', 0.25).addScore('strength', 0.125).addScore('defense', 0.125)
+		.addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "kubejs.tooltips.long_lasting_pill_gold.1" })])
+		.build()).texture('luna_flesh_reforged:item/organs/archotech/archotech_dragon_appendix').rarity('epic')
+		.tag('kubejs:appendix').tag('kubejs:archotech').tag('kubejs:dragon').tag('kubejs:player_tick_only');
+	//消化系统
 	registerOrgan(new Organ('luna_flesh_reforged:archotech_mana_reactor').addScore('nutrition', 2.75).addScore('detoxification', 0.25).addScore('crystalsynthesis', 0.75)
 		.addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_intestine.1" })])
-		.addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "kubejs.tooltips.red_ink.1" }), Text.gold({ "translate": "kubejs.tooltips.red_ink.2" }), Text.gray({ "translate": "kubejs.tooltips.red_ink.3" })])
+		.addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "kubejs.tooltips.red_ink.1" })])
 		.build()).texture('luna_flesh_reforged:item/organs/archotech/archotech_mana_reactor')
 		.tag('kubejs:intestine').tag('kubejs:archotech').tag('kubejs:magic').rarity('epic')
 		.tag('kubejs:bear').tag('kubejs:active');
-
 	registerOrgan(new Organ('luna_flesh_reforged:archotech_magic_digestive_system')
 		.addScore('digestion', 3).addScore('nutrition', 6).addScore('crystalsynthesis', 2).addScore('detoxification', 0.5)
 		.addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_stomach.1" })])
-		.addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "kubejs.tooltips.red_ink.1" }), Text.gold({ "translate": "kubejs.tooltips.red_ink.2" }), Text.gray({ "translate": "kubejs.tooltips.red_ink.3" })])
+		.addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "kubejs.tooltips.red_ink.1" })])
 		.addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_magic_digestive_system.1" })])
 		.addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_magic_digestive_system.2" })])
 		.build()).texture('luna_flesh_reforged:item/organs/archotech/archotech_magic_digestive_system').glow(true)
 		.tag('kubejs:intestine').tag('kubejs:stomach').tag('kubejs:archotech').tag('kubejs:magic').rarity('epic')
 		.tag('kubejs:bear').tag('kubejs:active').tag('kubejs:rclick_only');
 
-	registerOrgan(new Organ('luna_flesh_reforged:archotech_dragon_appendix')
-		.addScore('luck', 2.75).addScore('speed', 0.5).addScore('health', 0.25).addScore('strength', 0.125).addScore('defense', 0.125)
-		.addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "kubejs.tooltips.long_lasting_pill_gold.1" })])
-		.build()).texture('luna_flesh_reforged:item/organs/archotech/archotech_dragon_appendix').rarity('epic')
-		.tag('kubejs:appendix').tag('kubejs:archotech').tag('kubejs:dragon');
 
 	registerOrgan(new Organ('luna_flesh_reforged:jump_second_spiritual_heart')
 		.addScore('health', 2.5).addScore('nerves', 2).addScore('luck', 1.5)
@@ -317,6 +352,116 @@ StartupEvents.registry('item', event => {
 		.texture('luna_flesh_reforged:item/organs/archotech/archotech_warden_core')
 		.tag('kubejs:archotech').tag('kubejs:magic').tag('kubejs:relics').rarity('epic')
 		.tag('kubejs:key_pressed').tag('kubejs:active');
+
+//黑暗超凡
+	//黑暗超凡心
+    registerOrgan(new Organ('luna_flesh_reforged:archotech_void_heart_engine')
+		.addScore('health', 4).addScore('nerves', 2).addScore('endurance', 1.5)
+		.addTextLines('default', [Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_void_heart_engine.0" })])
+		.addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_void_heart_engine.1" })])
+		.addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_void_heart_engine.2" })])
+		.addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_void_heart_engine.3" })])
+		.addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_void_heart_engine.4" })])
+		.addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_void_heart_engine.5" })])
+		.addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_void_heart_engine.6" })])
+		.addTextLines('alt', [Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_void_heart_engine.7" })])
+		.build()).texture('luna_flesh_reforged:item/organs/dark_archotech/archotech_void_heart_engine')
+		.tag('kubejs:heart').tag('kubejs:archotech').tag('kubejs:warp').tag('kubejs:magic').rarity('epic').glow(true)
+		.tag('kubejs:active_only').tag('kubejs:damage_only');
+	//黑暗超凡脾
+    registerOrgan(new Organ('luna_flesh_reforged:archotech_void_spleen')
+		.addScore('metabolism', 4).addScore('health', 0.5)
+		.addTextLines('default', [Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_void_spleen.0" })])
+		.addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_void_spleen.1" })])
+		.addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_void_spleen.2" })])
+		.addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_void_spleen.3" })])
+		.addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_void_spleen.4" })])
+		.addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_void_spleen.5" })])
+		.build()).texture('luna_flesh_reforged:item/organs/dark_archotech/archotech_void_spleen')
+		.tag('kubejs:spleen').tag('kubejs:archotech').tag('kubejs:warp').tag('kubejs:magic').tag('luna_flesh_reforged:warp').rarity('epic')
+		.tag('kubejs:active_only').tag('kubejs:damage_only').tag('kubejs:bear_only');
+	//黑暗超凡肝
+	registerOrgan(new Organ('luna_flesh_reforged:archotech_void_liver')
+		.addScore('detoxification', 4).addScore('fire_resistant', 0.5).addScore('health', 0.5).addScore('metabolism',0.25)
+		.addTextLines('default', [Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_void_liver.0" })])
+		.addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_void_liver.1" })])
+		.addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_void_liver.2" })])
+		.addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_void_liver.3" })])
+		.addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_void_liver.4" })])
+		.build()).texture('luna_flesh_reforged:item/organs/dark_archotech/archotech_void_liver')
+		.tag('kubejs:liver').tag('kubejs:archotech').tag('kubejs:warp').rarity('epic')
+		.tag('kubejs:active_only').tag('kubejs:damage_only');
+
+	//黑暗超凡肌肉类
+    registerOrgan(new Organ('luna_flesh_reforged:bioferrite_fluid_muscle')
+		.addScore('strength', 3.25).addScore('speed', 2.5).addScore('fire_resistant', 0.25).addScore('nerves', 0.25).addScore('impact_resistant', 0.125).addScore('swim_speed', 0.125)
+		.addTextLines('default', [Text.gray({ "translate": "luna_flesh_reforged.tooltips.bioferrite_fluid_muscle.0" })])
+		.addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.bioferrite_fluid_muscle.1" })])
+		.addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.bioferrite_fluid_muscle.2" })])
+		.addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.bioferrite_fluid_muscle.3" })])
+		.addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.bioferrite_fluid_muscle.4" })])
+		.build()).texture('luna_flesh_reforged:item/organs/dark_archotech/bioferrite_fluid_muscle')
+		.tag('kubejs:muscle').tag('kubejs:archotech').tag('kubejs:warp').tag('kubejs:archomuscle').rarity('epic')
+		.tag('kubejs:active').tag('kubejs:active_only');
+		//虚空触手
+    registerOrgan(new Organ('luna_flesh_reforged:archotech_void_tentacle')
+		.addScore('strength', 4).addScore('speed', 2.5).addScore('nerves', 0.5).addScore('fire_resistant', 0.25).addScore('swim_speed', 0.25)
+		.addTextLines('default', [Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_void_tentacle.0" })])
+		.addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.void_archomuscle.0" })])
+		.addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_void_tentacle.1" })])
+		.addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_void_tentacle.2" })])
+		.addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_void_tentacle.3" })])
+		.addTextLines('alt', [Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_void_tentacle.4" })])
+		.build()).texture('luna_flesh_reforged:item/organs/dark_archotech/archotech_void_tentacle')
+		.tag('kubejs:muscle').tag('kubejs:archotech').tag('kubejs:warp').tag('kubejs:archomuscle').rarity('epic')
+		.tag('kubejs:active_only').tag('kubejs:damage');
+		//虚空触鞭
+    registerOrgan(new Organ('luna_flesh_reforged:archotech_void_whip')
+		.addScore('strength', 4.5).addScore('speed', 2).addScore('nerves', 0.5).addScore('fire_resistant', 0.25).addScore('impact_resistant', 0.25)
+		.addTextLines('default', [Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_void_whip.0" })])
+		.addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.void_archomuscle.0" })])
+		.addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_void_whip.1" })])
+		.addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_void_whip.2" })])
+		.addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_void_whip.3" })])
+		.addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_void_whip.4" })])
+		.build()).texture('luna_flesh_reforged:item/organs/dark_archotech/archotech_void_whip')
+		.tag('kubejs:muscle').tag('kubejs:archotech').tag('kubejs:warp').tag('kubejs:archomuscle').rarity('epic')
+		.tag('kubejs:active_only').tag('kubejs:damage');
+
+	//虚空震击核心
+	registerOrgan(new Organ('luna_flesh_reforged:void_shock_core')
+		.addScore('health', 2).addScore('endurance', 2).addScore('nerves', 2).addScore('luck', 2)
+		.addTextLines('default', [Text.gray({ "translate": "luna_flesh_reforged.tooltips.void_shock_core.0" })])
+		.addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.void_shock_core.1" })])
+        .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "kubejs.tooltips.pride_shard.1" })])
+		.addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.void_shock_core.2" })])
+		.addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.void_shock_core.3" })])
+		.addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.void_shock_core.4" })])
+		.addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.void_shock_core.5" })])
+		.build())
+		.texture('luna_flesh_reforged:item/organs/dark_archotech/void_shock_core')
+		.tag('kubejs:archotech').tag('kubejs:magic').tag('kubejs:warp').rarity('epic').glow(true)
+		.tag('kubejs:key_pressed').tag('kubejs:active_only');
+	
+	//堕乐园
+	registerOrgan(new Organ('luna_flesh_reforged:fallen_paradise')
+		.addScore('health', 5).addScore('strength', 5).addScore('luck', 5).addScore('nerves', 3)
+		.addTextLines('default', [Text.gray({ "translate": "luna_flesh_reforged.tooltips.fallen_paradise.0" })])
+		.addTextLines('default', [Text.gray({ "translate": "luna_flesh_reforged.tooltips.fallen_paradise.1" })])
+		.addTextLines('default', [Text.gray({ "translate": "luna_flesh_reforged.tooltips.fallen_paradise.2" })])
+		.addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.fallen_paradise.3" })])
+		.addTextLines('alt', [LEADING_SYMBOL, Text.red({ "translate": "luna_flesh_reforged.tooltips.fallen_paradise.4" })])
+		.addTextLines('alt', [LEADING_SYMBOL, Text.gold({ "translate": "luna_flesh_reforged.tooltips.fallen_paradise.5" })])
+		.addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.fallen_paradise.6" })])
+		.addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.fallen_paradise.7" })])
+		.addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.fallen_paradise.8" })])
+		.addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.fallen_paradise.9" })])
+		.addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.fallen_paradise.10" })])
+		.build())
+		.texture('luna_flesh_reforged:item/organs/dark_archotech/fallen_paradise')
+		.tag('kubejs:archotech').tag('kubejs:magic').tag('kubejs:warp')
+		.tag('kubejs:infinity').tag('kubejs:legends').rarity('epic').glow(true)
+        .tag('kubejs:damage_only').tag('kubejs:active_only').tag('kubejs:loot_entity_only');
 
 //未进阶
 	
@@ -372,7 +517,8 @@ StartupEvents.registry('item', event => {
 		.addTextLines('alt', [Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_abyssal_core.3" })])
 		.addTextLines('alt', [Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_abyssal_core.4" })])
 		.addTextLines('alt', [Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_abyssal_core.5" })])
-		.build()).texture('luna_flesh_reforged:item/organs/warp/archotech_abyssal_core').rarity('epic')
+		.addTextLines('alt', [Text.gray({ "translate": "luna_flesh_reforged.tooltips.archotech_abyssal_core.6" })])
+		.build()).texture('luna_flesh_reforged:item/organs/warp/archotech_abyssal_core').rarity('epic').glow(true)
 		.tag('kubejs:archotech').tag('kubejs:warp').tag('kubejs:magic').tag('kubejs:active_only').tag('kubejs:damage_only');
 	//位能电池
 	registerOrgan(new Organ('luna_flesh_reforged:warped_battery')
@@ -397,9 +543,8 @@ StartupEvents.registry('item', event => {
 	registerOrgan(new Organ('luna_flesh_reforged:chromatic_rose_heart')
         .addScore('health', 1.75).addScore('nerves', -0.5)
         .addTextLines('default', [Text.gray({ "translate": "luna_flesh_reforged.tooltips.chromatic_rose_heart.0" })])
-        .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "kubejs.tooltips.rose_quartz_heart.4" }), Text.yellow({ "translate": "kubejs.tooltips.rose_quartz_heart.5" }), Text.gray({ "translate": "kubejs.tooltips.rose_quartz_heart.6" }), Text.yellow(2), Text.gray({ "translate": "kubejs.tooltips.rose_quartz_heart.7" }), Text.yellow({ "translate": "kubejs.tooltips.rose_quartz_heart.8" })])
-        .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "kubejs.tooltips.rose_quartz_heart.9" }), Text.yellow({ "translate": "kubejs.tooltips.rose_quartz_heart.10" }), Text.gray('/'), Text.yellow({ "translate": "luna_flesh_reforged.tooltips.chromatic" }), Text.gray({ "translate": "kubejs.tooltips.rose_quartz_heart.11" }), Text.yellow(1), Text.gray({ "translate": "kubejs.tooltips.rose_quartz_heart.12" }), Text.yellow({ "translate": "kubejs.tooltips.rose_quartz_heart.13" })])
-        .addTextLines('ctrl', [LEADING_SYMBOL, Text.red({ "translate": "luna_flesh_reforged.tooltips.chromatic_rose_heart.1" }), Text.gray({ "translate": "kubejs.tooltips.rose_quartz_heart.9" }),Text.yellow({ "translate": "luna_flesh_reforged.tooltips.chromatic" }), Text.gray({ "translate": "kubejs.tooltips.rose_quartz_heart.11" }), Text.yellow(2), Text.gray({ "translate": "kubejs.tooltips.rose_quartz_heart.12" }), Text.yellow({ "translate": "kubejs.tooltips.rose_quartz_heart.13" })])
+        .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.chromatic_rose_heart.1" })])
+        .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.chromatic_rose_heart.2" })])
         .build())
         .texture('luna_flesh_reforged:item/organs/chromatic/chromatic_rose_heart')
         .tag('kubejs:heart')
@@ -411,14 +556,17 @@ StartupEvents.registry('item', event => {
 		.addScore('strength', 1.75).addScore('speed', 1).addScore('crystalsynthesis', 0.125)
         .addScore('endurance', 1).addScore('nerves', -0.5).addScore('breath_recovery', -0.5)
         .addTextLines('default', [Text.gray({ "translate": "luna_flesh_reforged.tooltips.chromatic_rose_muscle.0" })])
+        .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.chromatic_rose_muscle.1" })])
+        .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.chromatic_rose_muscle.2" })])
         .build())
         .texture('luna_flesh_reforged:item/organs/chromatic/chromatic_rose_muscle')
-        .tag('kubejs:muscle').tag('itemborders:gold').tag('kubejs:rose').tag('kubejs:chromatic');
+        .tag('kubejs:muscle').tag('itemborders:gold').tag('kubejs:rose').tag('kubejs:chromatic').tag('kubejs:active');
 
 	registerOrgan(new Organ('luna_flesh_reforged:lights_bane').addScore('strength', 1)
 		.addTextLines('default', [Text.gray({ "translate": "luna_flesh_reforged.tooltips.lights_bane.0" })])
         .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.lights_bane.1" })])
-        .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "kubejs.tooltips.blade_of_heart.2" }), Text.gold('25%')])
+        .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "kubejs.tooltips.blade_of_heart.2" }), Text.gold('5%')])
+        .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.lights_bane.2" })])
         .addTextLines('alt', [LEADING_SYMBOL, Text.red({ "translate": "luna_flesh_reforged.tooltips.tonly.0" })])
 		.build()).texture('luna_flesh_reforged:item/organs/chromatic/lights_bane')
 		.tag('kubejs:chromatic').tag('kubejs:damage_only')
@@ -427,7 +575,8 @@ StartupEvents.registry('item', event => {
 	registerOrgan(new Organ('luna_flesh_reforged:radiance_reaper').addScore('strength', 2)
 		.addTextLines('default', [Text.gray({ "translate": "luna_flesh_reforged.tooltips.radiance_reaper.0" })])
         .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.radiance_reaper.1" }), Text.gold({ "translate": "luna_flesh_reforged.tooltips.radiance_reaper.2" }), Text.gray({ "translate": "luna_flesh_reforged.tooltips.radiance_reaper.3" })])
-        .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.radiance_reaper.4" }), Text.gold({ "translate": "luna_flesh_reforged.tooltips.radiance_reaper.5" }), Text.gray({ "translate": "luna_flesh_reforged.tooltips.radiance_reaper.3" })])
+        .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.radiance_reaper.4" }), Text.gold({ "translate": "luna_flesh_reforged.tooltips.radiance_reaper.5" })])
+        .addTextLines('alt', [LEADING_SYMBOL, Text.red({ "translate": "luna_flesh_reforged.tooltips.radiance_reaper.6" })])
         .addTextLines('alt', [LEADING_SYMBOL, Text.red({ "translate": "luna_flesh_reforged.tooltips.tonly.0" })])
 		.build()).texture('luna_flesh_reforged:item/organs/chromatic/radiance_reaper')
 		.tag('kubejs:muscle').tag('kubejs:chromatic').tag('kubejs:damage_only')
@@ -449,8 +598,8 @@ StartupEvents.registry('item', event => {
         .addScore('filtration', 1.5).addScore('detoxification', 0.5)
 		.addScore('arrow_dodging', 1).addScore('hydroallergenic', 1)
         .addTextLines('default', [Text.gray({ "translate": "luna_flesh_reforged.tooltips.ender_bottle_max.1" })])
-        .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "kubejs.tooltips.enery_bottle_max.2" }), Text.darkPurple({ "translate": "luna_flesh_reforged.tooltips.chromatic" }), Text.gray({ "translate": "kubejs.tooltips.enery_bottle_max.3" })])
-        .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "kubejs.tooltips.enery_bottle_max.4" }), Text.gold({ "translate": "effect.kubejs.flaring_heart" }), Text.gold('/'), Text.gold({ "translate": "effect.kubejs.burning_heart" }), Text.gray({ "translate": "kubejs.tooltips.enery_bottle_max.5" })])
+        .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "kubejs.tooltips.energy_bottle_max.2" }), Text.darkPurple({ "translate": "luna_flesh_reforged.tooltips.chromatic" }), Text.gray({ "translate": "kubejs.tooltips.energy_bottle_max.3" })])
+        .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "kubejs.tooltips.energy_bottle_max.4" }), Text.gold({ "translate": "effect.kubejs.flaring_heart" }), Text.gold('/'), Text.gold({ "translate": "effect.kubejs.burning_heart" }), Text.gray({ "translate": "kubejs.tooltips.energy_bottle_max.5" })])
         .build())
         .texture('luna_flesh_reforged:item/organs/chromatic/ender_bottle_max')
         .tag('kubejs:machine').tag('kubejs:damage_only').tag('kubejs:kidney').tag('kubejs:chromatic')
@@ -466,6 +615,18 @@ StartupEvents.registry('item', event => {
         .texture('luna_flesh_reforged:item/organs/chromatic/variable_speed_gear')
         .tag('itemborders:diamond').tag('kubejs:bear_only').tag('kubejs:damage_only').tag('kubejs:player_tick_only')
         .tag('kubejs:machine').tag('kubejs:chromatic');
+	//异彩活塞
+	registerOrgan(new Organ('luna_flesh_reforged:chromatic_piston')
+		.addScore('strength', 1.75).addScore('speed', 1).addScore('crystalsynthesis', 0.125)
+        .addScore('endurance', 1).addScore('nerves', -0.5).addScore('breath_recovery', -0.5)
+        .addTextLines('default', [Text.gray({ "translate": "luna_flesh_reforged.tooltips.chromatic_piston.0" })])
+        .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.chromatic_rose_muscle.1" })])
+        .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.chromatic_rose_muscle.2" })])
+        .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.chromatic_piston.1" })])
+        .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.chromatic_piston.2" })])
+        .build())
+        .texture('luna_flesh_reforged:item/organs/chromatic/chromatic_piston')
+        .tag('kubejs:muscle').tag('itemborders:diamond').tag('kubejs:chromatic').tag('kubejs:damage_only').tag('kubejs:active');
 
 //Infested感染
 	registerOrgan(new Organ('luna_flesh_reforged:infested_lung').addTextLines('default', [Text.gray({ "translate": "luna_flesh_reforged.tooltips.infested_organ.1" })])
@@ -476,7 +637,14 @@ StartupEvents.registry('item', event => {
 	registerOrgan(new Organ('luna_flesh_reforged:infested_muscle').addTextLines('default', [Text.gray({ "translate": "luna_flesh_reforged.tooltips.infested_organ.1" })])
 		.addScore('strength', 1.75).addScore('speed', 1.75)
 		.addScore('fire_resistant', -0.5).addScore('health', 0.25).addScore('metabolism', 0.125).build())
-		.texture('luna_flesh_reforged:item/organs/infested/infested_muscle').tag('kubejs:muscle').tag('kubejs:infected');
+		.texture('luna_flesh_reforged:item/organs/infested/infested_muscle').tag('kubejs:muscle').tag('kubejs:infected')
+        .food(food => {
+            food.hunger(4).saturation(2)
+            food.effect('minecraft:poison', 20 * 15, 2, 3)
+            food.effect('minecraft:hunger', 20 * 15, 2, 1)
+            food.effect('minecraft:wither', 20 * 15, 2, 0)
+            food.alwaysEdible()
+        });
 
 	registerOrgan(new Organ('luna_flesh_reforged:infested_heart').addTextLines('default', [Text.gray({ "translate": "luna_flesh_reforged.tooltips.infested_organ.1" })])
 		.addScore('health', 2)
@@ -569,6 +737,39 @@ StartupEvents.registry('item', event => {
 		.texture('luna_flesh_reforged:item/organs/infested/infested_stomach_distortion')
 		.tag('kubejs:infected').tag('kubejs:stomach').tag('kubejs:damage_only').tag('kubejs:active_only')
 		.tag('itemborders:diamond');
+	//感染畸瘤
+	registerOrgan(new Organ('luna_flesh_reforged:infested_tumour_distortion')
+		.addScore('metabolism', 3).addScore('health', 2).addScore('luck', 2).addScore('filtration', 2)
+		.addScore('nerves', -0.5).addScore('fire_resistant', -10)
+		.addTextLines('default', [Text.gray({ "translate": "luna_flesh_reforged.tooltips.infested_tumour_distortion.0" })])
+		.addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.infested_tumour_distortion.1" })])
+		.addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.infested_tumour_distortion.2" })])
+		.addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.infested_tumour_distortion.3" })])
+		.addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.infested_tumour_distortion.4" })])
+		.addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.infested_tumour_distortion.5" })])
+		.addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.infested_tumour_distortion.6" })])
+		.build()).texture('luna_flesh_reforged:item/organs/infested/infested_tumour_distortion')
+		.tag('kubejs:infected').tag('kubejs:warp')
+		.tag('kubejs:eat_effect_only').tag('kubejs:player_tick_only').tag('kubejs:active_only');
+	//血肉触手
+	registerOrgan(new Organ('luna_flesh_reforged:flesh_tentacle')
+		.addScore('strength', 0.5).addScore('speed', 2).addScore('nerves', 0.5)
+		.addScore('fire_resistant', -0.5).addScore('health', 0.25).addScore('metabolism', 0.25)
+		.addTextLines('default', [Text.gray({ "translate": "luna_flesh_reforged.tooltips.infested_organ.1" })])
+		.addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.flesh_tentacle.1" })])
+		.addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.flesh_tentacle.2" })])
+		.addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.flesh_tentacleandwhip.0" })])
+		.build()).texture('luna_flesh_reforged:item/organs/infested/flesh_tentacle')
+		.tag('kubejs:muscle').tag('kubejs:infected').tag('kubejs:warp').tag('kubejs:active_only').tag('kubejs:active');
+	//血肉触鞭
+	registerOrgan(new Organ('luna_flesh_reforged:flesh_whip')
+		.addScore('strength', 1).addScore('speed', 1.5)
+		.addScore('fire_resistant', -0.5).addScore('health', 0.25).addScore('metabolism', 0.25).addScore('nerves', 0.25)
+		.addTextLines('default', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.infested_organ.1" })])
+		.addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.flesh_whip.1" })])
+		.addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "luna_flesh_reforged.tooltips.flesh_tentacleandwhip.0" })])
+		.build()).texture('luna_flesh_reforged:item/organs/infested/flesh_whip')
+		.tag('kubejs:muscle').tag('kubejs:infected').tag('kubejs:warp').tag('kubejs:active_only').tag('kubejs:active');
 	
 //其他或玩具
 	//草泥马

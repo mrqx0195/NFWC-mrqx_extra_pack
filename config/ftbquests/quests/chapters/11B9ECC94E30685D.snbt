@@ -1,0 +1,131 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "11B9ECC94E30685D"
+	group: "2358ECA720E3F23E"
+	icon: "minecraft:book"
+	id: "11B9ECC94E30685D"
+	images: [{
+		click: ""
+		corner: false
+		dev: false
+		height: 6.32258064516129d
+		hover: [ ]
+		image: "kubejs:textures/task/brief_introduction.png"
+		rotation: 0.0d
+		width: 4.0d
+		x: 0.0d
+		y: -0.25d
+	}]
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"No Flesh Within Chest (译名：胸无成物) 是一款围绕&c生物器官&r的&2主题&r整合包。通过和谐的融入冒险与科技内容，引导玩家体验了解&6胸腔mod&r的游戏内容，以及其延伸的魔改玩法。"
+				""
+				"整合包内通过大量&2新奇的游戏模式&r，引领玩家体验从未体验过的游戏历程；同时又通过和谐、合理的游戏内容设计，让玩家能够有充足的机会去了解绝大部分作者所设计的游戏内容。"
+				"{@pagebreak}"
+				"最后，本整合包也希望通过这种方式，向现行大量的整合包作者证明："
+				""
+				"即便不通过&cmod堆料&r的方式，仍旧能够塑造出人意料且趣味横生的游戏模式。"
+			]
+			hide_dependent_lines: true
+			icon: "chestcavity:kidney"
+			id: "72D090FF4C44DAAD"
+			shape: "rsquare"
+			subtitle: "一切开始的介绍"
+			tasks: [{
+				id: "6BB639ACDD430937"
+				title: "我已了解"
+				type: "checkmark"
+			}]
+			title: "引言"
+			x: -0.25d
+			y: 0.0d
+		}
+		{
+			dependencies: ["72D090FF4C44DAAD"]
+			description: [
+				"整个整合包的内容都是围绕着生物器官而展开的。为了能够修改自身的器官以及窃取其他生物的器官，&2开胸器&r成了不得不使用的一个重要道具。"
+				""
+				"当生物的血量低于一定&5阈值&r之后，你就可以使用开胸器右键生物，以打开他们的胸膛。"
+				""
+				"值得注意的是，打开胸膛的操作会造成一定的伤害，这意味着某些中立生物会因此与你为敌。"
+				""
+				"如果需要打开自己的胸膛，则需要&5右键空气&r。"
+				""
+				"&2器官并非是必须要发展的一项内容，但会为你的属性带来巨量提升。&r"
+			]
+			icon: "chestcavity:chest_opener"
+			id: "223B674D5878BF14"
+			subtitle: "使用开胸器，修改自己的器官吧"
+			tasks: [{
+				id: "374D70042AFB2C64"
+				title: "我已了解"
+				type: "checkmark"
+			}]
+			title: "胸腔"
+			x: -0.25d
+			y: -2.0d
+		}
+		{
+			dependencies: ["72D090FF4C44DAAD"]
+			description: [
+				"为了符合整体整合包的风格，几乎所有的内容都是与类如&2巫术、魔法&r之类的东西进行关联。"
+				""
+				"比如为了获得更高级的器官，你需要使用巫术里的炼金内容以强化他们。为了获得罕见的生物，你可能需要举行一些仪式以召唤它们。"
+			]
+			icon: "hexerei:mixing_cauldron"
+			id: "4F3935E1F6952D24"
+			subtitle: "不得不讨论的巫术话题"
+			tasks: [{
+				id: "31847ABE24F228A2"
+				title: "我已了解"
+				type: "checkmark"
+			}]
+			title: "巫术与魔法"
+			x: 1.75d
+			y: 0.0d
+		}
+		{
+			dependencies: ["72D090FF4C44DAAD"]
+			description: ["虽然器官都是源于生物，但可以通过模仿的方式，用科技制品来模拟器官的工作，进而生产出&2机械器官&r。"]
+			icon: "create:wrench"
+			id: "2A21CFD22EBD8054"
+			subtitle: "机械、蒸汽、爱、与生命"
+			tasks: [{
+				id: "7809BE2FCAD98331"
+				title: "我已了解"
+				type: "checkmark"
+			}]
+			title: "机械与蒸汽"
+			x: -2.25d
+			y: 0.0d
+		}
+		{
+			dependencies: ["72D090FF4C44DAAD"]
+			description: [
+				"在某些服务器中，游戏难度可能对你来说&e较低&r（本整合本身难度不高），此时可以通过一系列&2定制化的选项&r来调整对于你个人的难度。"
+				""
+				"同时，本整合也欢迎各种玩家来挑战其不同的难度。"
+				""
+				"值得注意的是：很多Boss采用的是&e机制伤害&r，并不会受到伤害倍数的影响，影响其伤害的仅有&e存档难度&r。"
+				""
+				"&c建议使用&r&d困难难度&r&c游玩本整合包，以获取完全的游戏体验！！！！！！！&r"
+			]
+			icon: "minecraft:crimson_fungus"
+			id: "0C769BB94D282CC6"
+			subtitle: "选择适合你的"
+			tasks: [{
+				id: "630A170F7FDD662D"
+				title: "我已了解"
+				type: "checkmark"
+			}]
+			title: "独立难度选择"
+			x: -0.25d
+			y: 1.75d
+		}
+	]
+	title: "简介"
+}

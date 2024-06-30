@@ -12,7 +12,6 @@ PlayerEvents.tick(event => {
 //是否发生扭曲
 function lunaWhetherWarpappen(player,warp,maxWarp,event,num) {
     if(player.hasEffect('luna_flesh_reforged:warpward')) return;
-    if(player.persistentData.getBoolean('lunadisablewarphappen')) return;
     let perwarp = (warp / maxWarp)*100
     if(perwarp < num) return;
     if((Math.sqrt(warp)*8)<(Math.random()*100)) return;
@@ -198,16 +197,23 @@ function lunaSpawnMobNear(player,mobid,a,b,c){
     let spawn = player.level.addFreshEntity(Ent)
     console.log(Ent,spawn)
 }
-//在附近生成三免生物
+//在附近生成强化生物
 function lunaSpawnMobNearpardon(player,mobid,a,b,c){
     let pos = player.position()
     let x = (pos.x()+((Math.random() -0.5)*a))|0
     let y = (pos.y()+((Math.random() -0.5)*b)) |0
     let z = (pos.z()+((Math.random() -0.5)*c))|0
     let Ent = player.level.getBlock(x,y,z).createEntity(mobid)
-    Ent.potionEffects.add('kubejs:pardon_of_god_melee', 600 , 0 , false, false)
-    Ent.potionEffects.add('kubejs:pardon_of_god_magic', 600 , 0 , false, false)
-    Ent.potionEffects.add('kubejs:pardon_of_god_projectile', 600 , 0 , false, false)
+    if (Math.random()*3<1){
+        Ent.potionEffects.add('kubejs:pardon_of_god_melee', 6000 , 0 , false, false)
+    }else if(Math.random()<0.5){
+        Ent.potionEffects.add('kubejs:pardon_of_god_magic', 6000 , 0 , false, false)
+    }else{
+        Ent.potionEffects.add('kubejs:pardon_of_god_projectile', 6000 , 0 , false, false)}
+    let randomChampionType = randomGet(championTypeMap)
+    Ent.persistentData.put('champion', [randomChampionType.type])
+    Ent.setCustomName([randomChampionType.name, Text.gray('精英')])
+    Ent.setCustomNameVisible(true)
     let spawn = player.level.addFreshEntity(Ent)
     console.log(Ent,spawn)
 }

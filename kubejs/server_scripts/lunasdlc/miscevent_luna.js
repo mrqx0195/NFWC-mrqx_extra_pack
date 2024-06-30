@@ -1,19 +1,3 @@
-//ban掉嬗变台
-BlockEvents.rightClicked('alexsmobs:transmutation_table', event => {
-    event.block.set('minecraft:air')
-})
-//扭曲开关
-ItemEvents.rightClicked('luna_flesh_reforged:warp_switch',event => {
-    let player = event.player
-    let tof = player.persistentData.getBoolean('lunadisablewarphappen')
-    if(tof){
-        player.persistentData.putBoolean('lunadisablewarphappen',false)
-        player.tell('已开启扭曲发生系统')
-    }else{
-        player.persistentData.putBoolean('lunadisablewarphappen',true)
-        player.tell('已关闭扭曲发生系统')
-    }
-})
 //吃僵尸之脑
 ItemEvents.foodEaten('luna_flesh_reforged:zombie_brain', event => {
     let player = event.player
@@ -30,12 +14,12 @@ ItemEvents.foodEaten('luna_flesh_reforged:zombie_brain', event => {
             player.potionEffects.add('luna_flesh_reforged:unnatural_hunger', time , lvl , false, false)
         }
     }
-    if(Math.random()<0.2) return;
+    if(Math.random()>0.8) return;
     if(warp<50){updateWarpCount(player, warp + 1)}
     else{
-        if(Math.random()<0.5) return;
+        if(Math.random()>0.6) return;
         if(warp>75){
-            if(Math.random()<0.7) return;
+            if(Math.random()>0.5) return;
         }
         updateWarpCount(player, warp + 1)
     }
@@ -65,14 +49,92 @@ EntityEvents.death(event => {
                 player.potionEffects.add('minecraft:saturation', 1 , lvl)
             }
     }
-})
-//饰品栏玩家tick事件
-const lunacuriosEquippedStrategies = {
-    'luna_flesh_reforged:silverheart_charm': function (event, curios, slot, item) {
-        if (!event.player || event.player.age % 80 != 0) {
-            return
+    //光辉收割者
+    if(itemMap.has('luna_flesh_reforged:infested_heart_distortion')){
+        if(event.entity.hasEffect('luna_flesh_reforged:harvest_markers')){
+            let lvl = event.entity.potionEffects.getActive('goety:sapped').getAmplifier()
+            if(Math.random()<0.4){player.heal(Math.min(lvl,3))}
         }
-        event.player.potionEffects.add('luna_flesh_reforged:warpward', 20 * 10, 0, false, false)
-    },
+    }
+})
+
+//饰品全局效果注册
+
+/**
+ * @param {Internal.ItemStack} itemFrom 
+ * @param {Internal.SlotContext} ctx 
+ * @param {Internal.ItemStack} itemTo 
+ */
+global.silverHeartCharmOnEquip = (itemFrom, ctx, itemTo) => {
+    let entity = ctx.entity()
+    entity.potionEffects.add('luna_flesh_reforged:warpward', 20 * 10, 0, false, false)
 }
-var curiostick = Object.assign(curiosEquippedStrategies, lunacuriosEquippedStrategies);
+
+/**
+ * @param {Internal.ItemStack} item
+ * @param {Internal.SlotContext} ctx 
+ */
+global.silverHeartCharmTick = (item, ctx) => {
+    let entity = ctx.entity()
+    if (entity.level.isClientSide()) return
+    if (entity.age % 80 != 0) return
+    entity.potionEffects.add('luna_flesh_reforged:warpward', 20 * 10, 0, false, false)
+}
+
+const $EldritchBlast = Java.loadClass("io.redspace.ironsspellbooks.entity.spells.eldritch_blast.EldritchBlastVisualEntity")
+//虚空震击
+/**
+ * @param {Internal.CustomSpell$CastContext} ctx 
+ * @returns 
+ */
+global.EldritchVoidShock = (ctx) => {
+    /** @type {Internal.ServerPlayer} */
+    let player = ctx.entity
+    let spellLevel = ctx.getSpellLevel()
+    let warp = player.persistentData.getInt(warpCount) ?? 0
+    let powerModifier = player.getAttributeValue('irons_spellbooks:spell_power')
+    let eldritchpowerModifier = player.getAttributeValue('irons_spellbooks:eldritch_spell_power')
+    let magicData = getPlayerMagicData(player)
+    let manaCost = magicData.getMana()
+    let amplifier = Math.max(Math.cbrt(manaCost), 3)
+    let damage = warp/4 + amplifier
+    if(spellLevel<=5){damage = damage + spellLevel*0.5 + 2.5
+    }else{damage = damage + 5 + (spellLevel-5) * Math.max(1,warp/32) }
+    damage = damage * (1 + powerModifier)* (1 + eldritchpowerModifier)
+    let itemMap = getPlayerChestCavityItemMap(player)
+
+    // 限制数量上限，避免性能问题
+    let count = Math.min(13, 3 + spellLevel * 2)
+    let degreesPer = 360 / count
+    let damageSource = new DamageSource.sonicBoom(player)
+
+    // 根据法术等级，产生新的释放环，限制上下限
+    let castTimes = Math.min(Math.max(Math.ceil(spellLevel / 5), 1), 5)
+    for (let j = 1; j < castTimes + 1; j++) {
+        for (let i = 0; i < count; i++) {
+            let rotation = degreesPer * i - (degreesPer / 2)
+            let startpos = new Vec3(0, j, 0).zRot(rotation * JavaMath.PI / 180).xRot(-player.xRot * JavaMath.PI / 180).yRot(-player.yRot * JavaMath.PI / 180)
+            let endpos = player.getLookAngle().normalize().scale(32).add(player.getEyePosition())
+            let eldritchblast = new $EldritchBlast(player.level,startpos,endpos,player)
+            for (let i = 0; i < 33; i++) {
+                let vec3 = player.getLookAngle().normalize().scale(i).add(player.getEyePosition())
+                let entityInRadius = getLivingWithinRadius(player.level, vec3, 3)
+                if (i % 3 == 0) {
+                    entityInRadius.forEach(e => {
+                        if (e != player) {
+                            e.attack(damageSource , damage )
+                            e.invulnerableTime = 0
+                            if(itemMap.has('luna_flesh_reforged:archotech_abyssal_core')){
+                                e.causeFallDamage(4,damage/2, DamageSource.indirectMagic(e,player))
+                                e.invulnerableTime = 0
+                            }
+                        }
+                    })
+                }
+            }
+            let spawn = player.getEyePosition().add(new Vec3(0, j, 0).zRot(rotation * JavaMath.PI / 180).xRot(-player.xRot * JavaMath.PI / 180).yRot(-player.yRot * JavaMath.PI / 180))
+            eldritchblast.moveTo(spawn)
+            player.level.addFreshEntity(eldritchblast)
+        }
+    }
+}

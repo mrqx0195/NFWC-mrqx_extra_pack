@@ -1,0 +1,63 @@
+{
+	icon: "luna_flesh_reforged:zombie_brain"
+	id: "6B65029DA01E6697"
+	loot_size: 1
+	order_index: 4
+	rewards: [
+		{
+			command: "/lunaexpack champion @p default"
+			icon: "luna_flesh_reforged:zombie_brain"
+			title: "启用扭曲"
+			type: "command"
+		}
+		{
+			command: "/lunaexpack champion @p warponly"
+			icon: "luna_flesh_reforged:zombie_brain"
+			title: "全局开启-扭曲"
+			type: "command"
+		}
+		{
+			command: "/lunaexpack champion @p 1"
+			icon: "luna_flesh_reforged:zombie_brain"
+			title: "全局开启-1%"
+			type: "command"
+		}
+		{
+			command: "/lunaexpack champion @p 5"
+			icon: "luna_flesh_reforged:zombie_brain"
+			title: "全局开启-5%"
+			type: "command"
+		}
+		{
+			command: "/lunaexpack champion @p 10"
+			icon: "luna_flesh_reforged:zombie_brain"
+			title: "全局开启-10%"
+			type: "command"
+		}
+		{
+			command: "/lunaexpack champion @p 25"
+			icon: "luna_flesh_reforged:zombie_brain"
+			title: "全局开启-25%"
+			type: "command"
+		}
+		{
+			command: "/lunaexpack champion @p 50"
+			icon: "luna_flesh_reforged:zombie_brain"
+			title: "全局开启-50%"
+			type: "command"
+		}
+		{
+			command: "/lunaexpack champion @p 100"
+			icon: "luna_flesh_reforged:zombie_brain"
+			title: "全部开启"
+			type: "command"
+		}
+		{
+			command: "/lunaexpack champion @p disable"
+			icon: "luna_flesh_reforged:zombie_brain"
+			title: "全部关闭"
+			type: "command"
+		}
+	]
+	title: "精英怪设置"
+}

@@ -1,0 +1,501 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "52B82AC988B2DA95"
+	group: "0241B51B931E1ED2"
+	icon: "weaponmaster:workstation"
+	id: "52B82AC988B2DA95"
+	images: [{
+		click: ""
+		corner: false
+		dev: false
+		height: 15.0d
+		hover: [ ]
+		image: "kubejs:textures/task/weapon_master_background.png"
+		rotation: 0.0d
+		width: 15.0d
+		x: 1.0d
+		y: 3.5d
+	}]
+	order_index: 1
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["4C370F7BB4E56798"]
+			description: [
+				"相对于其他装备Mod，武器大师能够提供&5长久的成长&r，给予玩家养成的成就感。"
+				""
+				"除此之外，武器大师拥有着其他装备Mod难以企及的贴图以及装备的高自定义。任何游玩过武器大师武器的玩家都会对该Mod内的物品印象深刻。"
+			]
+			icon: "weaponmaster:workstation"
+			id: "1C3CABF6FA4DBB44"
+			rewards: [{
+				count: 4
+				id: "2319A4D71F76480F"
+				item: {
+					Count: 1b
+					id: "lightmanscurrency:coin_iron"
+					tag: { }
+				}
+				type: "item"
+			}]
+			shape: "rsquare"
+			subtitle: "为什么要成为武器大师"
+			tasks: [{
+				id: "3D01795BE150312C"
+				title: "我已了解"
+				type: "checkmark"
+			}]
+			title: "引言：何为武器大师"
+			x: 1.0d
+			y: 3.25d
+		}
+		{
+			dependencies: ["1C3CABF6FA4DBB44"]
+			description: [
+				"为了开启武器大师的游玩历程，仅仅有武器工作台可不行，你需要制作一个&5武器套件&r，来选择你的武器。"
+				""
+				"&2右键&r使用武器套件，可以弹出包含四种武器的选择页面。根据你的喜好，你可以选择不同的武器作为你的伙伴。当然，你也完全可以直接制作四个武器套件，每种各来一个！"
+			]
+			id: "4B92B6F9C9EDC46E"
+			rewards: [{
+				id: "20A85C308C640405"
+				item: {
+					Count: 1b
+					id: "lightmanscurrency:coin_gold"
+					tag: { }
+				}
+				type: "item"
+			}]
+			subtitle: "选择陪伴你一生的武器"
+			tasks: [{
+				id: "4408346A4E2B3C20"
+				item: "weaponmaster:weaponkit"
+				type: "item"
+			}]
+			title: "选择你的武器！"
+			x: 2.75d
+			y: 3.25d
+		}
+		{
+			dependencies: ["4B92B6F9C9EDC46E"]
+			description: [
+				"当你选择好你的武器之后，你会发现武器的默认耐久是0点。为了恢复武器的耐久，你需要使用前文提到的武器工作室保养你的武器。"
+				""
+				"右键武器工作室，将你所选择的武器放置进入GUI界面的凹槽内，选择正下方的按钮，便可以进入武器&2保养模式&r。"
+				""
+				"在该模式下，首先使用&2武器修补泥&r对武器的整体进行涂抹，而后使用&2抹布&r(砂纸?)对武器进行擦拭。完成后，武器会发出&6闪光效果&r。"
+				""
+				"当你保养了一面之后，需要点击&2右侧的按钮&r，将其翻面，再次进行保养。全部完成之后，武器的耐久便会恢复到最大值。"
+				"{image:kubejs:textures/task/weapon_master_1.png width:160 height:90 align:1}"
+			]
+			icon: "hexerei:cloth"
+			id: "2C8054AE6C57197F"
+			rewards: [{
+				count: 3
+				id: "361C99A0FA76F713"
+				item: {
+					Count: 1b
+					id: "lightmanscurrency:coin_iron"
+					tag: { }
+				}
+				type: "item"
+			}]
+			subtitle: "第一次武器保养"
+			tasks: [{
+				id: "4D956F29048CE985"
+				title: "我已了解"
+				type: "checkmark"
+			}]
+			title: "擦拭你的武器"
+			x: 1.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["2C8054AE6C57197F"]
+			description: [
+				"当你修复好你的武器之后，可以在武器工作室的右侧按钮，查看武器的四样属性，分别对应武器&2伤害、攻速、耐久以及抢夺&r。鼠标&2选中不同的右侧属性条&r，就会使得接下来使用时的经验积累到该项之中。"
+				""
+				"比如，如果我需要提高武器的伤害，那么我就需要选择伤害的一行。"
+				"{image:kubejs:textures/task/weapon_master_2.png width:160 height:90 align:1}"
+				"{@pagebreak}"
+				"当武器的经验条积累满时，其对应的属性等级会提升。此时，将武器重新放置到武器工作室中，便会弹出升级页面。在该页面内可以在上方选择自己想要的&2三种武器样式&r以及在下方选择&2一种技能&r。"
+				""
+				"武器样式和技能会在每次升级中出现，直到你获取了所有的样式和技能。"
+				""
+				"当你获得了样式和技能之后，在正上方的按钮内可以配置样式，左侧按钮内则可以配置技能。"
+				"{image:kubejs:textures/task/weapon_master_3.png width:160 height:90 align:1}"
+			]
+			icon: "modulargolems:quartz"
+			id: "09F28AC07C32FAB3"
+			rewards: [{
+				count: 3
+				id: "01F5CA3B2A4C633C"
+				item: {
+					Count: 1b
+					id: "lightmanscurrency:coin_iron"
+					tag: { }
+				}
+				type: "item"
+			}]
+			subtitle: "武器的升级、样式、技能"
+			tasks: [{
+				id: "229906B9C02325A9"
+				title: "我已了解"
+				type: "checkmark"
+			}]
+			title: "武器升级"
+			x: -0.75d
+			y: 3.25d
+		}
+		{
+			dependencies: ["09F28AC07C32FAB3"]
+			description: [
+				"到此，武器大师几乎所有的游戏内容就已经介绍完毕了。作为一款轻量级的武器类Mod，武器大师无疑做到了&5短小精悍&r。"
+				""
+				"在本整合中，武器的最大等级上限由默认的&610&r提升到了&630&r，以延缓玩家的发展速度。"
+				""
+				"武器大师本身提供了相当全面的配置文件，且材质精美，武器属性成长的设置也满足了玩家的多方面需求，同时其本身武器的多功能性使得就算在数据膨胀的后期也有用武之地，&2希望在本次介绍之后能够使你对该Mod燃起兴趣&r！"
+			]
+			icon: "weaponmaster:workstation"
+			id: "1E13C34A1DBB2224"
+			rewards: [{
+				id: "218893B2BCD2628A"
+				item: "simplehats:hatbag_epic"
+				type: "item"
+			}]
+			subtitle: "武器大师的极限"
+			tasks: [{
+				id: "50517FD1B3BF2E2C"
+				title: "我已了解"
+				type: "checkmark"
+			}]
+			title: "武器大师！"
+			x: 1.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["4B92B6F9C9EDC46E"]
+			description: [
+				"拥有着与常规剑类武器相似的性能，最短的攻击距离，一定的横扫攻击，较快的攻击速度。"
+				""
+				"适合喜欢原版武器手感的玩家。"
+			]
+			hide_dependency_lines: true
+			id: "71E8F25467157B23"
+			rewards: [{
+				id: "16CA015A57FA44D3"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "中规中矩的武器"
+			tasks: [{
+				id: "3F799555E56CF0DB"
+				item: {
+					Count: 1b
+					id: "weaponmaster:wm_broadsword"
+					tag: {
+						Ability: "none"
+						AicData: {
+							AgressiveAbility: 25.0f
+							AttackHostile: 25.0f
+							AttackPassive: 25.0f
+							Farming: 0.0f
+							Fishing: 0.0f
+							LowDurability: 5.0f
+							LowHealth: 5.0f
+							Mining: 0.0f
+							NearHostile: 5.0f
+							PassiveAbility: 25.0f
+							Respawn: 0.0f
+							TakeDamage: 5.0f
+							VersionNumber: 2
+						}
+						AicMood: ""
+						AicPersonality: ""
+						BonusDucks: 0
+						CoreWeaponUUID: [I;
+							2021018507
+							-1881259459
+							-1131749424
+							1388561065
+						]
+						CoreWeaponlevels: {
+							f29bc625-66b3-4252-863f-c66cd87d1380: {
+								AttackLevel: 0
+								DefenseLevel: 0
+								MobilityLevel: 0
+								UtilityLevel: 0
+							}
+						}
+						CoreWeaponlevelsPlayerless: { }
+						Damage: 0
+						LastAicMessageTime: 0L
+						PartList: {
+							blade: "iron0"
+							guard: "iron0"
+							handle: "default"
+						}
+						PhanToolStatus: 0b
+						PreviousPlayerUUID: "f29bc625-66b3-4252-863f-c66cd87d1380"
+						Rerolls: 0
+						SelectedLevel: "AttackLevel"
+						UnlockedAICs: { }
+						UnlockedAbilities: "none"
+						WeaponID: "sword"
+						display: {
+							Name: "{\"text\":\"Broadsword\"}"
+						}
+					}
+				}
+				type: "item"
+			}]
+			title: "宽剑"
+			x: -3.0d
+			y: 3.5d
+		}
+		{
+			dependencies: ["4B92B6F9C9EDC46E"]
+			description: [
+				"刺剑拥有着最快的攻击速度，但代价便是没有任何的横扫攻击效果，且攻击距离仅仅比宽剑好一点点。"
+				""
+				"但刺剑可以搭配各种与近战特效相关的器官，打出不俗的效果。"
+			]
+			hide_dependency_lines: true
+			id: "6BDC3F62E25B4614"
+			rewards: [{
+				id: "34512ECB18E579AE"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "唯快不破"
+			tasks: [{
+				id: "6181DFB68557736F"
+				item: {
+					Count: 1b
+					id: "weaponmaster:wm_rapier"
+					tag: {
+						Ability: "none"
+						AicData: {
+							AgressiveAbility: 25.0f
+							AttackHostile: 25.0f
+							AttackPassive: 25.0f
+							Farming: 0.0f
+							Fishing: 0.0f
+							LowDurability: 5.0f
+							LowHealth: 5.0f
+							Mining: 0.0f
+							NearHostile: 5.0f
+							PassiveAbility: 25.0f
+							Respawn: 0.0f
+							TakeDamage: 5.0f
+							VersionNumber: 2
+						}
+						AicMood: ""
+						AicPersonality: ""
+						BonusDucks: 0
+						CoreWeaponUUID: [I;
+							-1780722738
+							1837255725
+							-1336349047
+							-304297163
+						]
+						CoreWeaponlevels: {
+							f29bc625-66b3-4252-863f-c66cd87d1380: {
+								AttackLevel: 0
+								DefenseLevel: 0
+								MobilityLevel: 0
+								UtilityLevel: 0
+							}
+						}
+						CoreWeaponlevelsPlayerless: { }
+						Damage: 0
+						LastAicMessageTime: 0L
+						PartList: {
+							blade: "iron0"
+							guard: "iron0"
+							handle: "default"
+						}
+						PhanToolStatus: 0b
+						PreviousPlayerUUID: "f29bc625-66b3-4252-863f-c66cd87d1380"
+						Rerolls: 0
+						SelectedLevel: "AttackLevel"
+						UnlockedAICs: { }
+						UnlockedAbilities: "none"
+						WeaponID: "rapier"
+						display: {
+							Name: "{\"text\":\"Rapier\"}"
+						}
+					}
+				}
+				type: "item"
+			}]
+			title: "刺剑"
+			x: 1.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["4B92B6F9C9EDC46E"]
+			description: [
+				"镰刀拥有着全游戏最大的横扫攻击范围，同时也有着相对较远的攻击距离——仅次于长戟。"
+				""
+				"在面对大量的敌人时，使用镰刀能够轻松地造成相当可观的伤害。"
+				""
+				"同时完成某些器官进化的伤害任务时，使用镰刀可能是最快速的选项之一。"
+			]
+			hide_dependency_lines: true
+			id: "676512BA0A3EA2D1"
+			rewards: [{
+				id: "71D112C5719E5ACE"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "收割灵魂的武器"
+			tasks: [{
+				id: "17C6446F0E116ED4"
+				item: {
+					Count: 1b
+					id: "weaponmaster:wm_broadswordlarge"
+					tag: {
+						Ability: "none"
+						AicData: {
+							AgressiveAbility: 25.0f
+							AttackHostile: 25.0f
+							AttackPassive: 25.0f
+							Farming: 0.0f
+							Fishing: 0.0f
+							LowDurability: 5.0f
+							LowHealth: 5.0f
+							Mining: 0.0f
+							NearHostile: 5.0f
+							PassiveAbility: 25.0f
+							Respawn: 0.0f
+							TakeDamage: 5.0f
+							VersionNumber: 2
+						}
+						AicMood: ""
+						AicPersonality: ""
+						BonusDucks: 0
+						CoreWeaponUUID: [I;
+							110135072
+							911035529
+							-1189592933
+							-262846751
+						]
+						CoreWeaponlevels: {
+							f29bc625-66b3-4252-863f-c66cd87d1380: {
+								AttackLevel: 0
+								DefenseLevel: 0
+								MobilityLevel: 0
+								UtilityLevel: 0
+							}
+						}
+						CoreWeaponlevelsPlayerless: { }
+						Damage: 0
+						LastAicMessageTime: 0L
+						PartList: {
+							blade: "iron0"
+							guard: "iron0"
+							handle: "basic"
+						}
+						PhanToolStatus: 0b
+						PreviousPlayerUUID: "f29bc625-66b3-4252-863f-c66cd87d1380"
+						Rerolls: 0
+						SelectedLevel: "AttackLevel"
+						UnlockedAICs: { }
+						UnlockedAbilities: "none"
+						WeaponID: "scythe"
+						display: {
+							Name: "{\"text\":\"Scythe\"}"
+						}
+					}
+				}
+				type: "item"
+			}]
+			title: "镰刀"
+			x: 5.25d
+			y: 3.5d
+		}
+		{
+			dependencies: ["4B92B6F9C9EDC46E"]
+			description: [
+				"拥有着最长的攻击距离，在某些Boss战斗中，一丝丝的攻击距离便可提供巨大的战斗优势。"
+				""
+				"唯一的缺点便是其攻击速度较慢——但这也方便了某些单次高伤的效果，能够借助其基础的高伤害面板打出不俗的输出。"
+			]
+			hide_dependency_lines: true
+			id: "744396A152946AE7"
+			rewards: [{
+				id: "28EDB0AFC23AD9A4"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "一寸长一寸强"
+			tasks: [{
+				id: "05190F65BDFD8849"
+				item: {
+					Count: 1b
+					id: "weaponmaster:wm_rapierlarge"
+					tag: {
+						Ability: "none"
+						AicData: {
+							AgressiveAbility: 25.0f
+							AttackHostile: 25.0f
+							AttackPassive: 25.0f
+							Farming: 0.0f
+							Fishing: 0.0f
+							LowDurability: 5.0f
+							LowHealth: 5.0f
+							Mining: 0.0f
+							NearHostile: 5.0f
+							PassiveAbility: 25.0f
+							Respawn: 0.0f
+							TakeDamage: 5.0f
+							VersionNumber: 2
+						}
+						AicMood: ""
+						AicPersonality: ""
+						BonusDucks: 0
+						CoreWeaponUUID: [I;
+							872272325
+							-747485479
+							-1568508959
+							-2086797240
+						]
+						CoreWeaponlevels: {
+							f29bc625-66b3-4252-863f-c66cd87d1380: {
+								AttackLevel: 0
+								DefenseLevel: 0
+								MobilityLevel: 0
+								UtilityLevel: 0
+							}
+						}
+						CoreWeaponlevelsPlayerless: { }
+						Damage: 0
+						LastAicMessageTime: 0L
+						PartList: {
+							blade: "iron0"
+							guard: "iron0"
+							handle: "basic"
+						}
+						PhanToolStatus: 0b
+						PreviousPlayerUUID: "f29bc625-66b3-4252-863f-c66cd87d1380"
+						Rerolls: 0
+						SelectedLevel: "AttackLevel"
+						UnlockedAICs: { }
+						UnlockedAbilities: "none"
+						WeaponID: "polearm"
+						display: {
+							Name: "{\"text\":\"Polearm\"}"
+						}
+					}
+				}
+				type: "item"
+			}]
+			title: "戟（长柄武器）"
+			x: 1.25d
+			y: 7.25d
+		}
+	]
+	title: "武器大师：陪伴一生的伙伴"
+}
