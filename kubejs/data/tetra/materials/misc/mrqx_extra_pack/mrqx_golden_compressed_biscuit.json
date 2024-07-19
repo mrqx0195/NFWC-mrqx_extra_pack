@@ -1,0 +1,33 @@
+{
+    "key": "mrqx_golden_compressed_biscuit",
+    "category": "misc",
+    "primary": 7,
+    "secondary": 7,
+    "tertiary": 7,
+    "durability": 500,
+    "integrityCost": 4,
+    "integrityGain": 8,
+    "magicCapacity": 250,
+    "toolLevel": "minecraft:diamond",
+    "toolEfficiency": 6,
+    "tints": {
+        "glyph": "F4D004",
+        "texture": "EBC204"
+    },
+    "textures": [
+        "shiny",
+        "crude",
+        "metal"
+    ],
+    "effects": {
+        "stabilizing": 15
+    },
+    "material": {
+        "items": [
+            "mrqx_extra_pack:golden_compressed_biscuit"
+        ]
+    },
+    "requiredTools": {
+        "hammer_dig": "minecraft:iron"
+    }
+}

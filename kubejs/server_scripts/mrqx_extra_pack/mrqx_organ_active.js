@@ -1,3 +1,8 @@
+/**
+ * 器官激活策略
+ * @constant
+ * @type {Object<string,function(Internal.ServerPlayer, organ, Map):void>}
+ */
 const mrqxOrganActiveStrategies = {
     // 噩梦醇
     //实际运行逻辑不在这，这只是为了防止报错
@@ -14,15 +19,15 @@ const mrqxOrganActiveStrategies = {
         eightDirectionList.forEach(direction => {
             let currentPos = lookPos(direction, pos)
             if (posMap.has(currentPos)) {
-                let currentId = posMap.get(currentPos).id
-                if (currentId < 0 || currentId >= 27 || (currentId != 'kubejs:random_tumor' && currentId != 'kubejs:stomach_tumor')) {
+                let currentId = posMap.get(currentPos)
+                if (currentPos < 0 || currentPos >= 27 || !Item.of(currentId).hasTag('kubejs:infected')) {
                     count -= 0.12
                 }
             }
         })
         posMap.forEach(pos => {
             let currentId = pos.id
-            if ((currentId == 'kubejs:random_tumor')) {
+            if ((currentId == 'kubejs:random_tumor' || currentId == 'mrqx_extra_pack:malignant_tumor')) {
                 let organData = pos.tag.organData
                 for (let key in organData) {
                     playerChestInstance.organScores.put(new ResourceLocation(key), new $Float(organData[key] + playerChestInstance.getOrganScores().get(new ResourceLocation(key))))
@@ -71,29 +76,38 @@ const mrqxOrganActiveStrategies = {
             }
         })
     },
-}
 
-function getAllMethods(obj) {
-    let result = [];
-    for (let id in obj) {
-        try {
-            result.push(id + ": " + obj[id].toString());
-        } catch (err) {
-            result.push(id + ": Not accessible");
+    // “肉斩骨断”肌肉
+    'mrqx_extra_pack:muscle_bone_fracture': function (player, organ, attributeMap) {
+        attributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, 0.05)
+        if (mrqxCheckOrganSuit(player, 'seaborn')) {
+            attributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, 0.05)
         }
-    }
-    return result;
+    },
+
+    // “生存的重压”肋骨
+    'mrqx_extra_pack:rib_the_pressure_to_survive': function (player, organ, attributeMap) {
+        attributeMapValueAddition(attributeMap, global.mrqx_HEALTH_UP_MULTI_BASE, 0.05)
+        if (mrqxCheckOrganSuit(player, 'seaborn')) {
+            attributeMapValueAddition(attributeMap, global.mrqx_HEALTH_UP_MULTI_BASE, 0.05)
+        }
+    },
 }
 
 var assign1 = Object.assign(organActiveStrategies, mrqxOrganActiveStrategies);
 
+/**
+ * 器官激活唯一策略
+ * @constant
+ * @type {Object<string,function(Internal.ServerPlayer, organ, Map):void>}
+ */
 const mrqxOrganActiveOnlyStrategies = {
     // 裂变反应堆
     'mrqx_extra_pack:fission_reactor': function (player, organ, attributeMap) {
         if (player.hasEffect('mrqx_extra_pack:nuclear_power')) {
             let effect = player.getEffect('mrqx_extra_pack:nuclear_power')
-            let amplifier = effect.getAmplifier()
-            attributeMapValueAddition(attributeMap, global.mrqx_ATTACK_UP_MULTI_BASE, amplifier * 0.4)
+            let amplifier = effect.getAmplifier() + 1
+            attributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, amplifier * 0.4)
         }
     },
 
@@ -129,7 +143,7 @@ const mrqxOrganActiveOnlyStrategies = {
         }
         while (diffLevelNum--) {
             attributeMapValueAddition(attributeMap, global.mrqx_HEALTH_UP_MULTI_BASE, 0.1)
-            attributeMapValueAddition(attributeMap, global.mrqx_ATTACK_UP_MULTI_BASE, 0.1)
+            attributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, 0.1)
         }
     },
 
@@ -167,7 +181,100 @@ const mrqxOrganActiveOnlyStrategies = {
     // 暗日种子
     'mrqx_extra_pack:dark_sun_seed': function (player, organ, attributeMap) {
         let playerChestInstance = player.getChestCavityInstance()
-        attributeMapValueAddition(attributeMap, global.mrqx_ATTACK_UP_MULTI_BASE, playerChestInstance.organScores.get(new ResourceLocation('chestcavity', 'photosynthesis') ?? 0) / (player.getArmorValue() + 1))
+        attributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, playerChestInstance.organScores.get(new ResourceLocation('chestcavity', 'photosynthesis') ?? 0) / (player.getArmorValue() + 1))
+    },
+
+    // “涌潮悲歌”心脏
+    'mrqx_extra_pack:heart_tidal_elegy': function (player, organ, attributeMap) {
+        let typeMap = getPlayerChestCavityTypeMap(player)
+        let amplifier = 0
+        if (typeMap.has('kubejs:mrqx_seaborn')) {
+            amplifier += typeMap.get('kubejs:mrqx_seaborn').length
+        }
+        if (mrqxCheckOrganSuit(player, 'seaborn')) {
+            amplifier *= 2
+        }
+        attributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, amplifier * 0.1)
+        attributeMapValueAddition(attributeMap, global.mrqx_HEALTH_UP_MULTI_BASE, amplifier * 0.1)
+        attributeMapValueAddition(attributeMap, global.ARMOR_MULTI_BASE, amplifier * 0.1)
+    },
+
+    // “潮汐守望”肝
+    'mrqx_extra_pack:liver_tide_observation': function (player, organ, attributeMap) {
+        let typeMap = getPlayerChestCavityTypeMap(player)
+        let amplifier = 0
+        if (typeMap.has('kubejs:mrqx_seaborn')) {
+            amplifier += typeMap.get('kubejs:mrqx_seaborn').length
+        }
+        if (mrqxCheckOrganSuit(player, 'seaborn')) {
+            amplifier *= 2
+        }
+        attributeMapValueAddition(attributeMap, global.mrqx_MANA_REGEN_MULTI_BASE, amplifier * 0.2)
+    },
+
+    // “集群狩猎”胰
+    'mrqx_extra_pack:pancreas_group_hunting': function (player, organ, attributeMap) {
+        let typeMap = getPlayerChestCavityTypeMap(player)
+        let amplifier = 0
+        if (typeMap.has('kubejs:mrqx_seaborn')) {
+            amplifier += typeMap.get('kubejs:mrqx_seaborn').length
+        }
+        if (mrqxCheckOrganSuit(player, 'seaborn')) {
+            amplifier *= 2
+        }
+        attributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, amplifier * 0.1)
+    },
+
+    // “深海直觉”脊柱
+    'mrqx_extra_pack:spine_abyssal_intuition': function (player, organ, attributeMap) {
+        let playerChestInstance = player.getChestCavityInstance()
+        let typeMap = getPlayerChestCavityTypeMap(player)
+        let amplifier = 0
+        if (typeMap.has('kubejs:mrqx_seaborn')) {
+            amplifier += typeMap.get('kubejs:mrqx_seaborn').length
+        }
+        if (mrqxCheckOrganSuit(player, 'seaborn')) {
+            amplifier *= 2
+        }
+        playerChestInstance.organScores.put(new ResourceLocation('chestcavity', 'nerves'), new $Float(playerChestInstance.getOrganScores().get(new ResourceLocation('chestcavity', 'nerves')) + amplifier))
+    },
+
+    // “同化，变异”阑尾
+    'mrqx_extra_pack:appendix_assimilation_mutation': function (player, organ, attributeMap) {
+        let typeMap = getPlayerChestCavityTypeMap(player)
+        let amplifier = 0
+        let chestInventory = player.getChestCavityInstance().inventory.tags
+        for (let i = 0; i < chestInventory.length; i++) {
+            let organ = chestInventory[i];
+            let itemId = String(organ.getString('id'))
+            let tagList = Item.of(itemId).getTags().toArray()
+            let b = true
+            for (let i = 0; i < tagList.length; i++) {
+                let tag = tagList[i].location()
+                if (tag == 'kubejs:legends' || tag == 'kubejs:relics' || tag == 'kubejs:warp') {
+                    b = false
+                    break
+                }
+            }
+            if (b) {
+                if (typeMap.has('kubejs:mrqx_seaborn')) {
+                    let itemList = typeMap.get('kubejs:mrqx_seaborn')
+                    itemList.push(organ)
+                    typeMap.set('kubejs:mrqx_seaborn', itemList)
+                } else {
+                    typeMap.set('kubejs:mrqx_seaborn', [organ])
+                }
+            }
+        }
+        let uuid = String(player.getUuid())
+        playerChestCavityTypeMap.set(uuid, typeMap)
+        if (typeMap.has('kubejs:mrqx_seaborn')) {
+            amplifier += typeMap.get('kubejs:mrqx_seaborn').length
+        }
+        if (mrqxCheckOrganSuit(player, 'seaborn')) {
+            amplifier *= 2
+        }
+        attributeMapValueAddition(attributeMap, global.MAX_MANA, amplifier * 50)
     },
 }
 

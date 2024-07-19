@@ -1,0 +1,29 @@
+{
+    "key": "mrqx_compressed_biscuit",
+    "category": "misc",
+    "primary": 5,
+    "secondary": 5,
+    "tertiary": 5,
+    "durability": 124,
+    "integrityCost": 3,
+    "integrityGain": 4,
+    "magicCapacity": 50,
+    "toolLevel": "minecraft:iron",
+    "toolEfficiency": 4,
+    "tints": {
+        "glyph": "C39E38",
+        "texture": "9F7607"
+    },
+    "textures": [
+        "crude",
+        "wooden"
+    ],
+    "material": {
+        "items": [
+            "mrqx_extra_pack:compressed_biscuit"
+        ]
+    },
+    "requiredTools": {
+        "hammer_dig": "minecraft:stone"
+    }
+}

@@ -1,9 +1,19 @@
+/**
+ * 器官右键事件策略
+ * @constant
+ * @type {Object<string,function(Internal.ItemClickedEventJS, organ):void>}
+ */
 const mrqxOrganRightClickedStrategies = {
 
 }
 
 var assign1 = Object.assign(organRightClickedStrategies, mrqxOrganRightClickedStrategies);
 
+/**
+ * 器官右键事件唯一策略
+ * @constant
+ * @type {Object<string,function(Internal.ItemClickedEventJS, organ):void>}
+ */
 const mrqxOrganRightClickedOnlyStrategies = {
 	// 神之笔
 	'mrqx_extra_pack:divine_pen': function (event, organ) {
@@ -14,19 +24,16 @@ const mrqxOrganRightClickedOnlyStrategies = {
 				player.tell(Text.gray({ "translate": "mrqx_extra_pack.msg.divine_pen.1" }))
 				return
 			}
-			/*if (typeMap.has('kubejs:paper')) {
+			if (typeMap.has('kubejs:paper')) {
 				player.tell(Text.gray({ "translate": "mrqx_extra_pack.msg.divine_pen.2" }))
 				return
-			}*/
+			}
 			let writtenItem = Item.of(mrqxDivinePenOrgan[event.item.getId()], { organData: {} })
 			let inkPower = mrqxDivinePenInkPower[player.getOffHandItem().getId()]
-			player.tell(String(inkPower))
 			let playerChestInstance = player.getChestCavityInstance()
 			mrqxDivinePenAttriBute[event.item.getId()].forEach(attriBute => {
 				let attriButeScore = (inkPower ** 2) - (inkPower ** 4) / (Math.abs(playerChestInstance.getOrganScores().get(new ResourceLocation(attriBute)) ?? 0.0) + (inkPower ** 2))
 				let symbol = (playerChestInstance.getOrganScores().get(new ResourceLocation(attriBute)) ?? 0.0) >= 0 ? 1 : -1
-				player.tell(String(playerChestInstance.getOrganScores().get(new ResourceLocation(attriBute))))
-				player.tell(String(attriButeScore))
 				if (!isFinite(attriButeScore)) {
 					attriButeScore = 0.0
 				}
@@ -36,7 +43,7 @@ const mrqxOrganRightClickedOnlyStrategies = {
 			writtenItem.nbt.organData.put('chestcavity:fire_resistant', -1.5)
 			player.give(writtenItem)
 			event.item.shrink(1)
-			//player.setOffHandItem(player.getOffHandItem().setCount(player.getOffHandItem().getCount()))
+			player.getOffHandItem().count--
 		}
 	},
 
@@ -89,7 +96,13 @@ const mrqxOrganRightClickedOnlyStrategies = {
 		}
 		else {
 			Utils.server.runCommandSilent('playsound minecraft:entity.blaze.shoot player @a ' + player.x + ' ' + player.y + ' ' + player.z)
-			player.potionEffects.add('mrqx_extra_pack:nuclear_power', duration * durationMultiplier, amplifier)
+			let itemMap = getPlayerChestCavityItemMap(player)
+			if (itemMap.has('mrqx_extra_pack:steam_turbine')) {
+				player.potionEffects.add('mrqx_extra_pack:nuclear_power_generation', duration * durationMultiplier, amplifier, false, false)
+			}
+			else {
+				player.potionEffects.add('mrqx_extra_pack:nuclear_power', duration * durationMultiplier, amplifier, false, false)
+			}
 			event.item.shrink(count)
 			global.updatePlayerActiveStatus(player)
 			player.persistentData.putInt(organActive, 1)
@@ -99,3 +112,34 @@ const mrqxOrganRightClickedOnlyStrategies = {
 };
 
 var assign2 = Object.assign(organRightClickedOnlyStrategies, mrqxOrganRightClickedOnlyStrategies);
+
+// 肿瘤诱变剂
+ItemEvents.foodEaten('mrqx_extra_pack:tumor_mutagen', event => {
+	let entity = event.entity
+	if (event.level.isClientSide()) return
+	if (!entity.isPlayer()) return
+	let instance = entity.getChestCavityInstance()
+	let tumorList = getPlayerChestCavityItemMap(entity).get('kubejs:random_tumor')
+	if (tumorList && tumorList.length <= 0) {
+		return
+	}
+	let organTumor = randomGet(tumorList)
+	let index = organTumor.getInt('Slot')
+	let item = instance.inventory.getItem(index)
+	let tumor = Item.of('mrqx_extra_pack:malignant_tumor', { organData: {} })
+	if (index > 0 && item.hasNBT()) {
+		let itemData = item.nbt.organData
+		let organData = tumor.nbt.organData
+		itemData.allKeys.forEach(key => {
+			organData[key] = itemData[key] * 1.5
+		})
+		tumor.nbt.put('organData', organData)
+		instance.inventory.setItem(index, tumor)
+		global.initChestCavityIntoMap(entity, false)
+		if (entity.persistentData.contains(organActive) &&
+			entity.persistentData.getInt(organActive) == 1) {
+			global.updatePlayerActiveStatus(entity)
+		}
+	}
+	return
+})

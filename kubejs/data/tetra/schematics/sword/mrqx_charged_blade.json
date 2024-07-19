@@ -1,0 +1,30 @@
+{
+    "replace": true,
+    "slots": [
+        "sword/blade"
+    ],
+    "materialSlotCount": 1,
+    "materialRevealSlot": 0,
+    "rarity": "temporary",
+    "displayType": "major",
+    "glyph": {
+        "tint": "3ED4F9",
+        "textureLocation": "tetra:textures/gui/aof_glyph.png",
+        "textureX": 208,
+        "textureY": 0
+    },
+    "outcomes": [
+        {
+            "material": {
+                "items": [
+                    "mrqx_extra_pack:charged_blade"
+                ]
+            },
+            "requiredTools": {
+                "hammer_dig": "minecraft:diamond"
+            },
+            "moduleKey": "sword/mrqx_charged_blade",
+            "moduleVariant": "mrqx_charged_blade"
+        }
+    ]
+}

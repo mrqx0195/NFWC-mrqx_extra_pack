@@ -9,8 +9,8 @@
 /screenshots/
 /shaderpacks/
 /PCL/
-/No Flesh Within Chest.jar
-/No Flesh Within Chest.json
+/NFWC_mrqx_extra_pack.jar
+/NFWC_mrqx_extra_pack.json
 /modernfix/
 /resourcepacks/
 /rhino.local.properties
@@ -18,16 +18,13 @@
 /TrashSlotSaveState.json
 /lightspeed-cache/
 /XaeroWaypoints*
-/config/oculus.properties
-/config/inventoryprofilesnext
-/config/xaerominimap_entities.json
-/No Flesh Within Chest-natives
+/NFWC_mrqx_extra_pack
 /quests_structures
 /schematics
 /fancymenu_data
 /fancymenu_setups
 /servers*
+/config/
+/defaultconfigs/
 /patchouli_data.json
 /hmclversion.cfg
-/config/inventoryprofilesnext/*
-!/config/inventoryprofilesnext/inventoryprofiles.json

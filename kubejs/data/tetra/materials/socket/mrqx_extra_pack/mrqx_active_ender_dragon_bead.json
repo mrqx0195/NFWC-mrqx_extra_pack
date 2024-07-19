@@ -1,0 +1,33 @@
+{
+    "key": "mrqx_active_ender_dragon_bead",
+    "category": "socket",
+    "primary": 0,
+    "secondary": 0,
+    "tertiary": 0,
+    "durability": 0,
+    "integrityCost": 1,
+    "integrityGain": 0,
+    "magicCapacity": 480,
+    "toolLevel": 0,
+    "toolEfficiency": 0,
+    "attributes": {
+        "irons_spellbooks:max_mana": 480,
+        "irons_spellbooks:ender_spell_power": 2.3,
+        "irons_spellbooks:ender_magic_resist": 2.3,
+        "irons_spellbooks:spell_power": 0.3,
+        "irons_spellbooks:spell_resist": 0.3
+    },
+    "tints": {
+        "glyph": "6E1668",
+        "texture": "BF33B6"
+    },
+    "textures": [
+        "pristine"
+    ],
+    "experienceCost": 4,
+    "material": {
+        "items": [
+            "mrqx_extra_pack:active_ender_dragon_bead"
+        ]
+    }
+}

@@ -1,9 +1,14 @@
+/**
+ * 主动策略
+ * @constant
+ * @type {Object<string,function(Internal.NetworkEventJS, organ):void>}
+ */
 const mrqxOrganPlayerKeyPressedOnlyStrategies = {
     // 暗日种子
     'mrqx_extra_pack:dark_sun_seed': function (event, organ) {
         let player = event.player
         let playerChestInstance = player.getChestCavityInstance()
-        let entityList = getLivingWithinRadius(player.getLevel(), player.position(), 5)
+        let entityList = getLivingWithinRadius(player.getLevel(), new Vec3(player.x, player.y, player.z), 5)
         entityList.forEach(entity => {
             if (entity.stringUuid != player.stringUuid) {
                 if (player.persistentData.organActive == 1) {
