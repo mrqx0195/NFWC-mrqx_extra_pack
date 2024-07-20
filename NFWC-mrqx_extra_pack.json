@@ -53,7 +53,7 @@
       "--launchTarget",
       "forgeclient",
       "--fml.forgeVersion",
-      "43.3.5",
+      "43.3.8",
       "--fml.mcVersion",
       "1.19.2",
       "--fml.forgeGroup",
@@ -166,7 +166,7 @@
       "url": "https://piston-data.mojang.com/v1/objects/ed5e6e8334ad67f5af0150beed0f3d156d74bd57/server.txt"
     }
   },
-  "id": "No Flesh Within Chest",
+  "id": "NFWC_mrqx_extra_pack",
   "javaVersion": {
     "component": "java-runtime-gamma",
     "majorVersion": 17
@@ -1787,13 +1787,13 @@
       }
     },
     {
-      "name": "net.minecraftforge:fmlloader:1.19.2-43.3.5",
+      "name": "net.minecraftforge:fmlloader:1.19.2-43.3.8",
       "downloads": {
         "artifact": {
-          "path": "net/minecraftforge/fmlloader/1.19.2-43.3.5/fmlloader-1.19.2-43.3.5.jar",
-          "url": "https://maven.minecraftforge.net/net/minecraftforge/fmlloader/1.19.2-43.3.5/fmlloader-1.19.2-43.3.5.jar",
-          "sha1": "6c2c277bb01f4307dce958576b97132cf276507e",
-          "size": 261212
+          "path": "net/minecraftforge/fmlloader/1.19.2-43.3.8/fmlloader-1.19.2-43.3.8.jar",
+          "url": "https://maven.minecraftforge.net/net/minecraftforge/fmlloader/1.19.2-43.3.8/fmlloader-1.19.2-43.3.8.jar",
+          "sha1": "3b68878f6228c88c62d2bca3566ef6d2c2ffc07f",
+          "size": 261211
         }
       }
     }

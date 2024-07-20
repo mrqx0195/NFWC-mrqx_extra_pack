@@ -669,7 +669,7 @@ StartupEvents.registry('item', event => {
             .build())
             .texture('mrqx_extra_pack:item/organs/seaborn/rib_the_pressure_to_survive')
             .tag('itemborders:diamond')
-            .tag('kubejs:muscle')
+            .tag('kubejs:rib')
             .tag('kubejs:mrqx_seaborn')
             .tag('kubejs:active')
             .tag('kubejs:damage_only');

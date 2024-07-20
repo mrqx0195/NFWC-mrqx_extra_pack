@@ -15,7 +15,7 @@
             "integrity": -2,
             "attributes": {
                 "generic.attack_speed": 10,
-                "generic.attack_damage": 9
+                "generic.attack_damage": 7
             },
             "material": {
                 "items": [

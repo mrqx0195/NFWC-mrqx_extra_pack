@@ -1,8 +1,26 @@
 {
-    "size": "large",
-    "color": "#0000FF",
-    "leash_range": 64,
     "allow_discarding": true,
+    "color": "#0000FF",
+    "completion_xp": 20000,
+    "failures": [
+        {
+            "block_damage": true,
+            "fire": false,
+            "strength": 10,
+            "type": "gateways:explosion"
+        }
+    ],
+    "leash_range": 64,
+    "rewards": [
+        {
+            "desc": "深海器官",
+            "loot_table": "mrqx_extra_pack:seaborn_organs",
+            "rolls": 4,
+            "type": "gateways:loot_table"
+        }
+    ],
+    "size": "large",
+    "spawn_range": 8,
     "waves": [
         {
             "entities": [
@@ -187,6 +205,7 @@
                     "entity": "alexsmobs:seal"
                 }
             ],
+            "max_wave_time": 6000,
             "modifiers": [
                 {
                     "attribute": "generic.max_health",
@@ -200,7 +219,6 @@
                 }
             ],
             "rewards": [],
-            "max_wave_time": 6000,
             "setup_time": 200
         },
         {
@@ -326,6 +344,7 @@
                     "entity": "alexsmobs:giant_squid"
                 }
             ],
+            "max_wave_time": 6000,
             "modifiers": [
                 {
                     "attribute": "generic.max_health",
@@ -344,7 +363,6 @@
                 }
             ],
             "rewards": [],
-            "max_wave_time": 6000,
             "setup_time": 200
         },
         {
@@ -410,6 +428,7 @@
                     "entity": "iceandfire:hippocampus"
                 }
             ],
+            "max_wave_time": 6000,
             "modifiers": [
                 {
                     "attribute": "generic.max_health",
@@ -424,16 +443,15 @@
                 {
                     "attribute": "generic.armor",
                     "operation": "ADDITION",
-                    "value": 25
+                    "value": 35
                 },
                 {
                     "attribute": "irons_spellbooks:spell_resist",
                     "operation": "ADDITION",
-                    "value": 0.8
+                    "value": 0.7
                 }
             ],
             "rewards": [],
-            "max_wave_time": 6000,
             "setup_time": 200
         },
         {
@@ -553,6 +571,7 @@
                     "entity": "somebosses:prismarine_watcher"
                 }
             ],
+            "max_wave_time": 12000,
             "modifiers": [
                 {
                     "attribute": "generic.max_health",
@@ -581,7 +600,6 @@
                 }
             ],
             "rewards": [],
-            "max_wave_time": 12000,
             "setup_time": 400
         },
         {
@@ -615,6 +633,7 @@
                     "entity": "cataclysm:the_baby_leviathan"
                 }
             ],
+            "max_wave_time": 30000,
             "modifiers": [
                 {
                     "attribute": "generic.max_health",
@@ -624,12 +643,12 @@
                 {
                     "attribute": "generic.attack_damage",
                     "operation": "MULTIPLY_BASE",
-                    "value": 5
+                    "value": 6
                 },
                 {
                     "attribute": "generic.armor",
                     "operation": "ADDITION",
-                    "value": 100
+                    "value": 120
                 },
                 {
                     "attribute": "irons_spellbooks:spell_resist",
@@ -648,26 +667,7 @@
                 }
             ],
             "rewards": [],
-            "max_wave_time": 30000,
             "setup_time": 600
         }
-    ],
-    "rewards": [
-        {
-            "type": "gateways:loot_table",
-            "loot_table": "mrqx_extra_pack:seaborn_organs",
-            "rolls": 9,
-            "desc": "深海器官"
-        }
-    ],
-    "failures": [
-        {
-            "type": "gateways:explosion",
-            "strength": 10,
-            "fire": false,
-            "block_damage": true
-        }
-    ],
-    "completion_xp": 20000,
-    "spawn_range": 8
+    ]
 }
