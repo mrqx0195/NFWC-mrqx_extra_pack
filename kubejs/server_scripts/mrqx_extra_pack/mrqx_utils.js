@@ -36,12 +36,14 @@ function mrqxCauseElementDamage(entity, damage, type) {
 function mrqxCheckOrganSuit(player, type) {
     let playerChest = getPlayerChestCavityItemMap(player)
     let organList = mrqxOrganSuit[type]
+    let count = 0
     organList.forEach(organ => {
         if (!playerChest.has(organ)) {
-            return false
+            return 0
         }
+        count++
     })
-    return true
+    return count
 }
 
 /**

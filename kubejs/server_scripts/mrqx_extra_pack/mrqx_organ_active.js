@@ -26,6 +26,9 @@ const mrqxOrganActiveStrategies = {
                     count -= 0.12
                 }
             }
+            else {
+                count -= 0.12
+            }
         })
         posMap.forEach(pos => {
             let currentId = pos.id
@@ -36,7 +39,7 @@ const mrqxOrganActiveStrategies = {
                 }
             }
         })
-        playerChestInstance.organScores.put(new ResourceLocation('chestcavity', 'health'), Math.max(playerChestInstance.getOrganScores().get(new ResourceLocation('chestcavity', 'health')), 1))
+        playerChestInstance.organScores.put(new ResourceLocation('chestcavity', 'health'), new $Float(Math.max(playerChestInstance.getOrganScores().get(new ResourceLocation('chestcavity', 'health')), 1)))
         attributeMapValueAddition(attributeMap, global.mrqx_HEALTH_UP_MULTI_BASE, count)
     },
 
@@ -58,12 +61,6 @@ const mrqxOrganActiveStrategies = {
         attributeMapValueAddition(attributeMap, global.mrqx_SPELL_POWER_MULTI_BASE, 9)
     },
 
-    // 重锤
-    //实际运行逻辑不在这，这只是为了防止报错
-    'mrqx_extra_pack:mace': function (player, organ, attributeMap) {
-        return
-    },
-
     // 反物质心脏
     'mrqx_extra_pack:heart_antimatter': function (player, organ, attributeMap) {
         let playerChestInstance = player.getChestCavityInstance()
@@ -81,16 +78,20 @@ const mrqxOrganActiveStrategies = {
 
     // “肉斩骨断”肌肉
     'mrqx_extra_pack:muscle_bone_fracture': function (player, organ, attributeMap) {
-        attributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, 0.05)
         if (mrqxCheckOrganSuit(player, 'seaborn')) {
+            attributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, 0.1)
+        }
+        else {
             attributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, 0.05)
         }
     },
 
     // “生存的重压”肋骨
     'mrqx_extra_pack:rib_the_pressure_to_survive': function (player, organ, attributeMap) {
-        attributeMapValueAddition(attributeMap, global.mrqx_HEALTH_UP_MULTI_BASE, 0.05)
         if (mrqxCheckOrganSuit(player, 'seaborn')) {
+            attributeMapValueAddition(attributeMap, global.mrqx_HEALTH_UP_MULTI_BASE, 0.1)
+        }
+        else {
             attributeMapValueAddition(attributeMap, global.mrqx_HEALTH_UP_MULTI_BASE, 0.05)
         }
     },
@@ -246,6 +247,7 @@ const mrqxOrganActiveOnlyStrategies = {
         let typeMap = getPlayerChestCavityTypeMap(player)
         let amplifier = 0
         let chestInventory = player.getChestCavityInstance().inventory.tags
+        typeMap.delete('kubejs:mrqx_seaborn')
         for (let i = 0; i < chestInventory.length; i++) {
             let organ = chestInventory[i];
             let itemId = String(organ.getString('id'))
