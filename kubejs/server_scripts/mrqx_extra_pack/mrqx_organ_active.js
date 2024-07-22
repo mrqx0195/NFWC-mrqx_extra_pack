@@ -1,3 +1,5 @@
+// priority: 9
+
 /**
  * 器官激活策略
  * @constant

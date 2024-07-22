@@ -1,3 +1,5 @@
+// priority: 9
+
 /**
  * 玩家承受伤害处理策略
  * @constant

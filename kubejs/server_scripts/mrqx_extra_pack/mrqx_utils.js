@@ -1,3 +1,4 @@
+// priority: 99
 /**
  * 造成元素损伤
  * @param {Internal.LivingEntity} entity 

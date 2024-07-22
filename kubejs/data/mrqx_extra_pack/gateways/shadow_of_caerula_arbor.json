@@ -10,7 +10,7 @@
             "type": "gateways:explosion"
         }
     ],
-    "leash_range": 64,
+    "leash_range": 128,
     "rewards": [
         {
             "desc": "深海器官",
@@ -606,7 +606,7 @@
             "entities": [
                 {
                     "entity": "cataclysm:the_leviathan",
-                    "nbt": "{ActiveEffects:[{\"forge:id\":\"kubejs:glimpse_of_god\",Amplifier: 0,Duration: 72000,ShowParticles: 0b}]}"
+                    "nbt": "{ActiveEffects:[{\"forge:id\":\"kubejs:glare_of_god\",Amplifier: 0,Duration: 42,ShowParticles: 0b}]}"
                 },
                 {
                     "entity": "cataclysm:the_baby_leviathan"
@@ -638,7 +638,7 @@
                 {
                     "attribute": "generic.max_health",
                     "operation": "MULTIPLY_BASE",
-                    "value": 10
+                    "value": 8
                 },
                 {
                     "attribute": "generic.attack_damage",
@@ -653,7 +653,7 @@
                 {
                     "attribute": "irons_spellbooks:spell_resist",
                     "operation": "ADDITION",
-                    "value": 0.9
+                    "value": 0.8
                 },
                 {
                     "attribute": "generic.movement_speed",

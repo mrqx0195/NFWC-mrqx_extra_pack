@@ -1,3 +1,5 @@
+// priority: 9
+
 /**
  * @param {Internal.ItemStack} itemFrom 
  * @param {Internal.SlotContext} ctx 

@@ -1,3 +1,5 @@
+// priority: 9
+
 /**
  * 器官实体掉落策略
  * @constant
@@ -61,8 +63,8 @@ var assign4 = Object.assign(chestLootOnlyStrategies, mrqxChestLootOnlyStrategies
 LootJS.modifiers(event => {
     event.addLootTypeModifier(LootType.CHEST)
         .anyStructure(['#tetra:forged_ruins'], false)
-        .addLoot(LootEntry.of('mrqx_extra_pack:cpu').when((c) => c.randomChance(0.03)))
-        .addLoot(LootEntry.of('mrqx_extra_pack:magic_fast_charging_cpu').when((c) => c.randomChance(0.01)))
-        .addLoot(LootEntry.of('mrqx_extra_pack:magic_overload_cpu').when((c) => c.randomChance(0.01)))
-        .addLoot(LootEntry.of('mrqx_extra_pack:magic_glass_cannon_cpu').when((c) => c.randomChance(0.01)))
+        .addLoot(LootEntry.of('mrqx_extra_pack:cpu').when((c) => c.randomChance(0.06)))
+        .addLoot(LootEntry.of('mrqx_extra_pack:magic_fast_charging_cpu').when((c) => c.randomChance(0.02)))
+        .addLoot(LootEntry.of('mrqx_extra_pack:magic_overload_cpu').when((c) => c.randomChance(0.02)))
+        .addLoot(LootEntry.of('mrqx_extra_pack:magic_glass_cannon_cpu').when((c) => c.randomChance(0.02)))
 })

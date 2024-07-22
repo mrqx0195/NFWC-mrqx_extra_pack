@@ -1,3 +1,5 @@
+// priority: -1
+
 global.mrqxTYPE_MAP = {
     'kubejs:mrqx_paper': Text.of({ "translate": "mrqx_extra_pack.tooltips.mrqx_paper" }).color('#ffffff'),
     'kubejs:mrqx_nuclear': Text.of({ "translate": "mrqx_extra_pack.tooltips.mrqx_nuclear" }).color('#a92c24'),

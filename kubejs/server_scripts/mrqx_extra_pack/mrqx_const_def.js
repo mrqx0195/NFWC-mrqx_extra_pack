@@ -1,3 +1,5 @@
+// priority: 100
+
 const mrqxDivinePenAttriBute = {
     'mrqx_extra_pack:lung_paper': [
         'chestcavity:breath_recovery',

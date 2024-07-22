@@ -1,3 +1,5 @@
+// priority: 9
+
 /**
  * 主动策略
  * @constant

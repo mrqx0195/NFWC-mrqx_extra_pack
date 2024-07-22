@@ -1,3 +1,5 @@
+// priority: -1
+
 StartupEvents.registry('mob_effect', event => {
         event.create('mrqx_extra_pack:nuclear_power')
                 .beneficial()

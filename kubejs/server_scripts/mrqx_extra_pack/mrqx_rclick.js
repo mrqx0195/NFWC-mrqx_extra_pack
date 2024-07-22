@@ -1,3 +1,5 @@
+// priority: 9
+
 /**
  * 器官右键事件策略
  * @constant

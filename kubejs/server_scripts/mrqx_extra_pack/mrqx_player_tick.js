@@ -1,3 +1,5 @@
+// priority: 9
+
 /**
  * 玩家Tick秒级策略
  * @constant
