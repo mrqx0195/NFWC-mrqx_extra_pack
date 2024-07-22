@@ -67,7 +67,7 @@ const mrqxOrganActiveStrategies = {
         let typeMap = getPlayerChestCavityTypeMap(player);
         playerChestInstance.organScores.forEach((key, value) => {
             if (value < 0) {
-                let antimatterValue = typeMap.get('kubejs:antimatter').length * 1
+                let antimatterValue = typeMap.get('kubejs:mrqx_antimatter').length * 1
                 playerChestInstance.organScores.put(key, new $Float(-value + antimatterValue))
             }
             else {
