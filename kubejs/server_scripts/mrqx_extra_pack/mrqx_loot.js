@@ -9,7 +9,7 @@ const mrqxEntityLootStrategies = {
 
 }
 
-var assign1 = Object.assign(entityLootStrategies, mrqxEntityLootStrategies);
+var assign_entity_loot = Object.assign(entityLootStrategies, mrqxEntityLootStrategies);
 
 /**
  * 器官实体掉落唯一策略
@@ -36,7 +36,7 @@ const mrqxEntityLootOnlyStrategies = {
     },
 }
 
-var assign2 = Object.assign(entityLootOnlyStrategies, mrqxEntityLootOnlyStrategies);
+var assign_entity_loot_only = Object.assign(entityLootOnlyStrategies, mrqxEntityLootOnlyStrategies);
 
 /**
  * 器官箱子掉落策略
@@ -47,7 +47,7 @@ const mrqxChestLootStrategies = {
 
 }
 
-var assign3 = Object.assign(chestLootStrategies, mrqxChestLootStrategies);
+var assign_chest_loot = Object.assign(chestLootStrategies, mrqxChestLootStrategies);
 
 /**
  * 器官箱子掉落唯一策略
@@ -58,7 +58,7 @@ const mrqxChestLootOnlyStrategies = {
 
 }
 
-var assign4 = Object.assign(chestLootOnlyStrategies, mrqxChestLootOnlyStrategies);
+var assign_chest_loot_only = Object.assign(chestLootOnlyStrategies, mrqxChestLootOnlyStrategies);
 
 LootJS.modifiers(event => {
     event.addLootTypeModifier(LootType.CHEST)

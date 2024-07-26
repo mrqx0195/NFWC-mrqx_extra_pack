@@ -4,6 +4,7 @@ StartupEvents.registry('mob_effect', event => {
         event.create('mrqx_extra_pack:nuclear_power')
                 .beneficial()
                 .color(Color.GOLD)
+                .modifyAttribute('minecraft:generic.attack_damage', 'mrqxNuclearPower', 0.4, "multiply_total")
 
         event.create('mrqx_extra_pack:nuclear_power_generation')
                 .beneficial()

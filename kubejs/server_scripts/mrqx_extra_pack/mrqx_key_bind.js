@@ -26,4 +26,4 @@ const mrqxOrganPlayerKeyPressedOnlyStrategies = {
     }
 }
 
-var assign1 = Object.assign(organPlayerKeyPressedOnlyStrategies, mrqxOrganPlayerKeyPressedOnlyStrategies);
+var assign_organ_player_key_pressed_only = Object.assign(organPlayerKeyPressedOnlyStrategies, mrqxOrganPlayerKeyPressedOnlyStrategies);

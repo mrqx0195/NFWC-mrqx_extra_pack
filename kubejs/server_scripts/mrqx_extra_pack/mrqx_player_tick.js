@@ -100,7 +100,7 @@ const mrqxOrganPlayerTickStrategies = {
     },
 }
 
-var assign1 = Object.assign(organPlayerTickStrategies, mrqxOrganPlayerTickStrategies);
+var assign_organ_player_tick = Object.assign(organPlayerTickStrategies, mrqxOrganPlayerTickStrategies);
 
 /**
  * 玩家Tick秒级唯一策略
@@ -143,7 +143,7 @@ const mrqxOrganPlayerTickOnlyStrategies = {
     },
 }
 
-var assign2 = Object.assign(organPlayerTickOnlyStrategies, mrqxOrganPlayerTickOnlyStrategies);
+var assign_organ_player_tick_only = Object.assign(organPlayerTickOnlyStrategies, mrqxOrganPlayerTickOnlyStrategies);
 
 
 // 核能检测

@@ -75,7 +75,7 @@ const mrqxOrganPlayerDamageStrategies = {
 	}
 }
 
-var assign1 = Object.assign(organPlayerDamageStrategies, mrqxOrganPlayerDamageStrategies);
+var assign_organ_player_damage = Object.assign(organPlayerDamageStrategies, mrqxOrganPlayerDamageStrategies);
 
 /**
  * 造成伤害唯一处理策略
@@ -338,4 +338,4 @@ const mrqxOrganPlayerDamageOnlyStrategies = {
 	}
 }
 
-var assign2 = Object.assign(organPlayerDamageOnlyStrategies, mrqxOrganPlayerDamageOnlyStrategies);
+var assign_organ_player_damage_only = Object.assign(organPlayerDamageOnlyStrategies, mrqxOrganPlayerDamageOnlyStrategies);

@@ -9,7 +9,7 @@ const mrqxOrganRightClickedStrategies = {
 
 }
 
-var assign1 = Object.assign(organRightClickedStrategies, mrqxOrganRightClickedStrategies);
+var assign_organ_right_clicked = Object.assign(organRightClickedStrategies, mrqxOrganRightClickedStrategies);
 
 /**
  * 器官右键事件唯一策略
@@ -113,7 +113,7 @@ const mrqxOrganRightClickedOnlyStrategies = {
 
 };
 
-var assign2 = Object.assign(organRightClickedOnlyStrategies, mrqxOrganRightClickedOnlyStrategies);
+var assign_organ_right_clicked_only = Object.assign(organRightClickedOnlyStrategies, mrqxOrganRightClickedOnlyStrategies);
 
 // 肿瘤诱变剂
 ItemEvents.foodEaten('mrqx_extra_pack:tumor_mutagen', event => {

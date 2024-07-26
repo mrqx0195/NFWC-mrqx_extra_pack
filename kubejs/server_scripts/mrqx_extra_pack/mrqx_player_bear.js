@@ -27,7 +27,7 @@ const mrqxOrganPlayerBearStrategies = {
 
 }
 
-var assign1 = Object.assign(organPlayerBearStrategies, mrqxOrganPlayerBearStrategies);
+var assign_organ_player_bear = Object.assign(organPlayerBearStrategies, mrqxOrganPlayerBearStrategies);
 
 /**
  * 玩家承受伤害唯一处理策略
@@ -81,4 +81,4 @@ const mrqxOrganPlayerBearOnlyStrategies = {
     },
 }
 
-var assign2 = Object.assign(organPlayerBearOnlyStrategies, mrqxOrganPlayerBearOnlyStrategies);
+var assign_organ_player_bear_only = Object.assign(organPlayerBearOnlyStrategies, mrqxOrganPlayerBearOnlyStrategies);

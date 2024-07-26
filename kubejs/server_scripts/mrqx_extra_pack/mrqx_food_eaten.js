@@ -29,7 +29,7 @@ const mrqxOrganFoodEatenStrategies = {
     },
 }
 
-var assign1 = Object.assign(organFoodEatenStrategies, mrqxOrganFoodEatenStrategies);
+var assign_organ_food_eaten = Object.assign(organFoodEatenStrategies, mrqxOrganFoodEatenStrategies);
 
 /**
  * 器官食物食用唯一策略
@@ -63,4 +63,4 @@ const mrqxOrganFoodEatenOnlyStrategies = {
     },
 }
 
-var assign2 = Object.assign(organFoodEatenOnlyStrategies, mrqxOrganFoodEatenOnlyStrategies);
+var assign_organ_food_eaten_only = Object.assign(organFoodEatenOnlyStrategies, mrqxOrganFoodEatenOnlyStrategies);

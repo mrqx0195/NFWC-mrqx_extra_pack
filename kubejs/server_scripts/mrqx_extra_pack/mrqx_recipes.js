@@ -203,14 +203,14 @@ ServerEvents.recipes(event => {
         .biomeWhitelist('minecraft:is_overworld')
         .id('kubejs:drilling_raw_uranium');
 
-    //铀
+    // 铀
     event.recipes.createMixing('mrqx_extra_pack:uranium', [
         'create:powdered_obsidian',
         'createaddition:diamond_grit',
         'mrqx_extra_pack:raw_uranium'
     ]).superheated();
 
-    //核反应燃料
+    // 反应燃料
     event.recipes.create.sequenced_assembly([
         Item.of('mrqx_extra_pack:nuclear_fuel').withChance(70.0),
         Item.of('createaddition:iron_rod').withChance(29.9),
@@ -522,7 +522,7 @@ ServerEvents.recipes(event => {
         'kubejs:archivist_eyeglass',
         Ingredient.of('#kubejs:mrqx_cpu'),
     ])
-    event.recipes.kubejs.shapeless(Item.of('mrqx_extra_pack:advanced_eyeglass'), [
+    event.recipes.kubejs.shapeless(Item.of('mrqx_extra_pack:advanced_eyeglass', '{mrqxAAEGSweetDream:1b}'), [
         'mrqx_extra_pack:advanced_eyeglass',
         Ingredient.of('#kubejs:candy_focus'),
     ])
@@ -533,8 +533,9 @@ ServerEvents.recipes(event => {
             }
             result.getNbt().putBoolean('mrqxAAEGSweetDream', true)
             return result
-        });
-    event.recipes.kubejs.shapeless(Item.of('mrqx_extra_pack:advanced_eyeglass'), [
+        })
+        .id('mrqx_advanced_eyeglass_sweet_dream');
+    event.recipes.kubejs.shapeless(Item.of('mrqx_extra_pack:advanced_eyeglass', '{mrqxAAEGElement:1b}'), [
         'mrqx_extra_pack:advanced_eyeglass',
         Ingredient.of('#kubejs:mrqx_element_damage'),
     ])
@@ -545,8 +546,9 @@ ServerEvents.recipes(event => {
             }
             result.getNbt().putBoolean('mrqxAAEGElement', true)
             return result
-        });
-    event.recipes.kubejs.shapeless(Item.of('mrqx_extra_pack:advanced_eyeglass'), [
+        })
+        .id('mrqx_advanced_eyeglass_a');
+    event.recipes.kubejs.shapeless(Item.of('mrqx_extra_pack:advanced_eyeglass', '{mrqxAAEGDragonPower:1b}'), [
         'mrqx_extra_pack:advanced_eyeglass',
         Ingredient.of('#kubejs:dragon'),
     ])
@@ -557,8 +559,9 @@ ServerEvents.recipes(event => {
             }
             result.getNbt().putBoolean('mrqxAAEGDragonPower', true)
             return result
-        });
-    event.recipes.kubejs.shapeless(Item.of('mrqx_extra_pack:advanced_eyeglass'), [
+        })
+        .id('mrqx_advanced_eyeglass_d');
+    event.recipes.kubejs.shapeless(Item.of('mrqx_extra_pack:advanced_eyeglass', '{mrqxAAEGInfinityBeats:1b}'), [
         'mrqx_extra_pack:advanced_eyeglass',
         'kubejs:infinity_beats',
     ])
@@ -569,8 +572,9 @@ ServerEvents.recipes(event => {
             }
             result.getNbt().putBoolean('mrqxAAEGInfinityBeats', true)
             return result
-        });
-    event.recipes.kubejs.shapeless(Item.of('mrqx_extra_pack:advanced_eyeglass'), [
+        })
+        .id('mrqx_advanced_eyeglass_infinity_beats');
+    event.recipes.kubejs.shapeless(Item.of('mrqx_extra_pack:advanced_eyeglass', '{mrqxAAEGNuclear:1b}'), [
         'mrqx_extra_pack:advanced_eyeglass',
         Ingredient.of('#kubejs:mrqx_nuclear'),
     ])
@@ -581,8 +585,9 @@ ServerEvents.recipes(event => {
             }
             result.getNbt().putBoolean('mrqxAAEGNuclear', true)
             return result
-        });
-    event.recipes.kubejs.shapeless(Item.of('mrqx_extra_pack:advanced_eyeglass'), [
+        })
+        .id('mrqx_advanced_eyeglass_b');
+    event.recipes.kubejs.shapeless(Item.of('mrqx_extra_pack:advanced_eyeglass', '{mrqxAAEGBurningAndFlaringHeart:1b}'), [
         'mrqx_extra_pack:advanced_eyeglass',
         Ingredient.of('#kubejs:machine'),
     ])
@@ -593,8 +598,9 @@ ServerEvents.recipes(event => {
             }
             result.getNbt().putBoolean('mrqxAAEGBurningAndFlaringHeart', true)
             return result
-        });
-    event.recipes.kubejs.shapeless(Item.of('mrqx_extra_pack:advanced_eyeglass'), [
+        })
+        .id('mrqx_advanced_eyeglass_c');
+    event.recipes.kubejs.shapeless(Item.of('mrqx_extra_pack:advanced_eyeglass', '{mrqxAAEGPrisonSoul:1b}'), [
         'mrqx_extra_pack:advanced_eyeglass',
         'mrqx_extra_pack:prison_soul',
     ])
@@ -605,8 +611,9 @@ ServerEvents.recipes(event => {
             }
             result.getNbt().putBoolean('mrqxAAEGPrisonSoul', true)
             return result
-        });
-    event.recipes.kubejs.shapeless(Item.of('mrqx_extra_pack:advanced_eyeglass'), [
+        })
+        .id('mrqx_advanced_eyeglass_prison_soul');
+    event.recipes.kubejs.shapeless(Item.of('mrqx_extra_pack:advanced_eyeglass', '{mrqxAAEGMoonSoul:1b}'), [
         'mrqx_extra_pack:advanced_eyeglass',
         'mrqx_extra_pack:moon_soul',
     ])
@@ -617,8 +624,9 @@ ServerEvents.recipes(event => {
             }
             result.getNbt().putBoolean('mrqxAAEGMoonSoul', true)
             return result
-        });
-    event.recipes.kubejs.shapeless(Item.of('mrqx_extra_pack:advanced_eyeglass'), [
+        })
+        .id('mrqx_advanced_eyeglass_moon_soul');
+    event.recipes.kubejs.shapeless(Item.of('mrqx_extra_pack:advanced_eyeglass', '{mrqxAAEGMarenol:1b}'), [
         'mrqx_extra_pack:advanced_eyeglass',
         'mrqx_extra_pack:marenol',
     ])
@@ -629,5 +637,6 @@ ServerEvents.recipes(event => {
             }
             result.getNbt().putBoolean('mrqxAAEGMarenol', true)
             return result
-        });
+        })
+        .id('mrqx_advanced_eyeglass_marenol');
 })

@@ -7,7 +7,7 @@
  */
 const mrqxOrganActiveStrategies = {
     // 噩梦醇
-    //实际运行逻辑不在这，这只是为了防止报错
+    // 实际运行逻辑不在这，这只是为了防止报错
     'mrqx_extra_pack:marenol': function (player, organ, attributeMap) {
         return
     },
@@ -97,7 +97,7 @@ const mrqxOrganActiveStrategies = {
     },
 }
 
-var assign1 = Object.assign(organActiveStrategies, mrqxOrganActiveStrategies);
+var assign_organ_active = Object.assign(organActiveStrategies, mrqxOrganActiveStrategies);
 
 /**
  * 器官激活唯一策略
@@ -106,12 +106,9 @@ var assign1 = Object.assign(organActiveStrategies, mrqxOrganActiveStrategies);
  */
 const mrqxOrganActiveOnlyStrategies = {
     // 裂变反应堆
+    // 实际运行逻辑不在这，这只是为了防止报错
     'mrqx_extra_pack:fission_reactor': function (player, organ, attributeMap) {
-        if (player.hasEffect('mrqx_extra_pack:nuclear_power')) {
-            let effect = player.getEffect('mrqx_extra_pack:nuclear_power')
-            let amplifier = effect.getAmplifier() + 1
-            attributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, amplifier * 0.4)
-        }
+        return
     },
 
     // 黄金天秤
@@ -151,25 +148,25 @@ const mrqxOrganActiveOnlyStrategies = {
     },
 
     // 荣耀之魂
-    //实际运行逻辑不在这，这只是为了防止报错
+    // 实际运行逻辑不在这，这只是为了防止报错
     'mrqx_extra_pack:proud_soul': function (player, organ, attributeMap) {
         return
     },
 
     // 死狱之魂
-    //实际运行逻辑不在这，这只是为了防止报错
+    // 实际运行逻辑不在这，这只是为了防止报错
     'mrqx_extra_pack:prison_soul': function (player, organ, attributeMap) {
         return
     },
 
     // 灵狐之魂
-    //实际运行逻辑不在这，这只是为了防止报错
+    // 实际运行逻辑不在这，这只是为了防止报错
     'mrqx_extra_pack:fox_soul': function (player, organ, attributeMap) {
         return
     },
 
     // 山月之魂
-    //实际运行逻辑不在这，这只是为了防止报错
+    // 实际运行逻辑不在这，这只是为了防止报错
     'mrqx_extra_pack:moon_soul': function (player, organ, attributeMap) {
         return
     },
@@ -282,4 +279,4 @@ const mrqxOrganActiveOnlyStrategies = {
     },
 }
 
-var assign2 = Object.assign(organActiveOnlyStrategies, mrqxOrganActiveOnlyStrategies);
+var assign_organ_active_only = Object.assign(organActiveOnlyStrategies, mrqxOrganActiveOnlyStrategies);
