@@ -1,0 +1,39 @@
+{
+    "displayType": "minor",
+    "replace": true,
+    "slots": [
+        "sword/pommel"
+    ],
+    "type": "tetra:basic_module",
+    "variants": [
+        {
+            "attributes": {
+                "irons_spellbooks:max_mana": 500
+            },
+            "durability": 500,
+            "effects": {
+                "art_of_forging:devouring": 1,
+                "art_of_forging:nano_fused": 100
+            },
+            "glyph": {
+                "textureLocation": "tetra:textures/gui/aof_glyph.png",
+                "textureX": 21,
+                "textureY": 36,
+                "tint": "83BFEE"
+            },
+            "integrity": -1,
+            "key": "mrqx_kings_crystal",
+            "magicCapacity": 250,
+            "material": {
+                "items": [
+                    "mrqx_extra_pack:kings_crystal"
+                ]
+            },
+            "models": [
+                {
+                    "location": "tetra:items/module/sword/mrqx_extra_pack/mrqx_kings_crystal"
+                }
+            ]
+        }
+    ]
+}

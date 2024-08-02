@@ -58,7 +58,7 @@ const mrqxOrganPlayerTickStrategies = {
         if (typeMap.has('kubejs:mrqx_seaborn')) {
             amplifier += typeMap.get('kubejs:mrqx_seaborn').length
         }
-        if (mrqxCheckOrganSuit(player, 'seaborn')) {
+        if (mrqxCheckOrganSuit(player, 'seaborn', true)) {
             amplifier *= 2
         }
         player.heal(player.getMaxHealth() * amplifier * 0.001)
@@ -141,6 +141,108 @@ const mrqxOrganPlayerTickOnlyStrategies = {
             updateResourceCount(player, count)
         }
     },
+
+    // “道士十五狗”
+    'mrqx_extra_pack:taoist_fifteen_dogs': function (event, organ) {
+        let player = event.player
+        if (player.age % 1200 != 0) return
+        for (let i = 0; i < 15; i++) {
+            let entity = event.getLevel().createEntity('minecraft:wolf')
+            entity.getPersistentData().putString('mrqxTaoistFifteenDogs', player.getStringUuid())
+            entity.setPosition(player.x, player.y, player.z)
+            entity.spawn()
+        }
+    },
+
+    // 幽匿引痕体
+    'mrqx_extra_pack:sculk_brandguider': function (event, organ) {
+        let player = event.player
+        let directions = [
+            [0, -1, 0],
+            [0, 1, 0],
+            [-1, 0, 0],
+            [1, 0, 0],
+            [0, 0, -1],
+            [0, 0, 1],
+            [0, 0, 0]
+        ]
+        for (let dir of directions) {
+            let block = player.getLevel().getBlock(player.getBlockX() + dir[0], player.getBlockY() - 1 + dir[1], player.getBlockZ() + dir[2])
+            if (block.getTags().find(tag => (tag == 'minecraft:sculk_replaceable'))) {
+                block.set('minecraft:sculk')
+            }
+        }
+    },
+
+    // 幽匿之心
+    'mrqx_extra_pack:sculk_heart': function (event, organ) {
+        return
+    },
+
+    // 幽匿集养体
+    'mrqx_extra_pack:sculk_collectors': function (event, organ) {
+        let player = event.player
+        player.setFoodLevel(Math.min(player.getFoodLevel() + mrqxGetSculkCount(player) * 0.01, 20))
+        player.setSaturation(Math.min(player.getSaturation() + mrqxGetSculkCount(player) * 0.005, player.getFoodLevel()))
+        player.setAirSupply(Math.min(player.getAirSupply() + mrqxGetSculkCount(player) * 0.01, 300))
+        let magicData = getPlayerMagicData(player)
+        magicData.setMana(Math.min(magicData.getMana() + mrqxGetSculkCount(player) * 0.1, player.getAttributeTotalValue('irons_spellbooks:max_mana')))
+    },
+
+    // 国王的新枪
+    'mrqx_extra_pack:kings_new_lance': function (event, organ) {
+        let player = event.player;
+        let attriMap = getPlayerAttributeMap(player)
+        if (Math.floor(player.getHealth()) <= 1) {
+            let value = 1
+            attriMap.set(global.mrqx_KINGS_NEW_LANCE.name, value)
+            player.modifyAttribute(global.mrqx_KINGS_NEW_LANCE.key, global.mrqx_KINGS_NEW_LANCE.name, value, global.mrqx_KINGS_NEW_LANCE.operation)
+            setPlayerAttributeMap(player, attriMap)
+        } else {
+            player.removeAttribute(global.mrqx_KINGS_NEW_LANCE.key, global.mrqx_KINGS_NEW_LANCE.name)
+            attriMap.set(global.mrqx_KINGS_NEW_LANCE.name, 0)
+            setPlayerAttributeMap(player, attriMap)
+        }
+    },
+
+    // 国王的圆饼
+    'mrqx_extra_pack:kings_buckler': function (event, organ) {
+        let player = event.player
+        let attriMap = getPlayerAttributeMap(player)
+        if (Math.floor(player.getHealth()) <= 1) {
+            let value = 1
+            attriMap.set(global.mrqx_KINGS_BUCKLER_A.name, value)
+            player.modifyAttribute(global.mrqx_KINGS_BUCKLER_A.key, global.mrqx_KINGS_BUCKLER_A.name, value, global.mrqx_KINGS_BUCKLER_A.operation)
+            attriMap.set(global.mrqx_KINGS_BUCKLER_B.name, value)
+            player.modifyAttribute(global.mrqx_KINGS_BUCKLER_B.key, global.mrqx_KINGS_BUCKLER_B.name, value, global.mrqx_KINGS_BUCKLER_B.operation)
+            setPlayerAttributeMap(player, attriMap)
+        } else {
+            player.removeAttribute(global.mrqx_KINGS_BUCKLER_A.key, global.mrqx_KINGS_BUCKLER_A.name)
+            attriMap.set(global.mrqx_KINGS_BUCKLER_A.name, 0)
+            player.removeAttribute(global.mrqx_KINGS_BUCKLER_B.key, global.mrqx_KINGS_BUCKLER_B.name)
+            attriMap.set(global.mrqx_KINGS_BUCKLER_B.name, 0)
+            setPlayerAttributeMap(player, attriMap)
+        }
+    },
+
+    // 国王的枝条
+    'mrqx_extra_pack:kings_staff': function (event, organ) {
+        let player = event.player
+        let magicData = getPlayerMagicData(player)
+        magicData.setMana(Math.min(magicData.getMana() + 100, player.getAttributeTotalValue('irons_spellbooks:max_mana')))
+    },
+
+    // 国王的延伸
+    'mrqx_extra_pack:kings_extension': function (event, organ) {
+        let player = event.player
+        let magicData = getPlayerMagicData(player)
+        magicData.setMana(Math.min(magicData.getMana() + 200, player.getAttributeTotalValue('irons_spellbooks:max_mana')))
+        if (player.getAbsorptionAmount() >= player.getMaxHealth()) {
+            return
+        }
+        let amount = Math.min(player.getAbsorptionAmount() + 3, player.getMaxHealth())
+        player.setAbsorptionAmount(amount)
+    },
 }
 
 var assign_organ_player_tick_only = Object.assign(organPlayerTickOnlyStrategies, mrqxOrganPlayerTickOnlyStrategies);
@@ -149,9 +251,12 @@ var assign_organ_player_tick_only = Object.assign(organPlayerTickOnlyStrategies,
 // 核能检测
 PlayerEvents.tick(event => {
     let player = event.player
+    if (event.getServer().getTickCount() <= (mrqxGetLoggedInTime(player) + 6)) {
+        return
+    }
     let playerChest = getPlayerChestCavityItemMap(player)
     if ((player.hasEffect('mrqx_extra_pack:nuclear_power') || player.hasEffect('mrqx_extra_pack:nuclear_power_generation')) && !playerChest.has("mrqx_extra_pack:fission_reactor")) {
-        Utils.server.runCommandSilent('playsound minecraft:entity.generic.explode player @a ' + player.x + ' ' + player.y + ' ' + player.z)
+        player.getServer().runCommandSilent('playsound minecraft:entity.generic.explode player @a ' + player.x + ' ' + player.y + ' ' + player.z)
         event.level.spawnParticles('minecraft:explosion', true, player.x, player.y + 1, player.z, 1, 1, 1, 10, 0.5)
         let explosion = event.player.block.createExplosion()
         let effect = player.getEffect('mrqx_extra_pack:nuclear_power')
@@ -192,4 +297,24 @@ PlayerEvents.tick(event => {
             }
         }
     })
+})
+
+// 永恒灵魂之翼检测
+PlayerEvents.tick(event => {
+    let player = event.player
+    player.onUpdateAbilities()
+    if (player.age % 5 != 0) return
+    if (!player.getPersistentData().getBoolean('mrqxEternalWingOfSoul')) {
+        return
+    }
+    if (event.getServer().getTickCount() <= (mrqxGetLoggedInTime(player) + 6)) {
+        return
+    }
+    let playerChest = getPlayerChestCavityItemMap(player)
+    if (!playerChest.has('mrqx_extra_pack:eternal_wing_of_soul')) {
+        player.abilities.mayfly = false
+        player.abilities.flying = false
+        player.onUpdateAbilities()
+        player.getPersistentData().putBoolean('mrqxEternalWingOfSoul', false)
+    }
 })

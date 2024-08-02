@@ -1,0 +1,43 @@
+{
+	"improvements": [
+		"tetra:sword/mrqx_kings_crown",
+		"tetra:shared/"
+	],
+	"renderLayer": "higher",
+	"replace": true,
+	"slots": [
+		"sword/guard"
+	],
+	"type": "tetra:basic_major_module",
+	"variants": [
+		{
+			"attributes": {
+				"generic.armor": 5,
+				"generic.armor_toughness": 5
+			},
+			"durability": 120,
+			"effects": {
+				"quickStrike": 1,
+				"unbreaking": 3
+			},
+			"glyph": {
+				"textureLocation": "tetra:textures/gui/aof_glyph.png",
+				"textureX": 69,
+				"textureY": 36,
+				"tint": "7DAFC6"
+			},
+			"integrity": -1,
+			"key": "mrqx_kings_crown",
+			"material": {
+				"items": [
+					"mrqx_extra_pack:kings_crown"
+				]
+			},
+			"models": [
+				{
+					"location": "tetra:items/module/sword/mrqx_extra_pack/mrqx_kings_crown"
+				}
+			]
+		}
+	]
+}

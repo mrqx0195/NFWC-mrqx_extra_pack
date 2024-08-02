@@ -72,7 +72,31 @@ const mrqxOrganPlayerDamageStrategies = {
 			}
 			player.attack(0.001)
 		}
-	}
+	},
+
+	// 幽匿裂岩体
+	'mrqx_extra_pack:sculk_rock_breaker': function (event, organ, data) {
+		event.amount += Math.min(mrqxGetSculkCount(event.source.player), 100)
+	},
+
+	// 幽匿寄染体
+	'mrqx_extra_pack:sculk_infester': function (event, organ, data) {
+		let player = event.source.player
+		let entity = event.entity
+		let count = Math.sqrt(Math.sqrt(mrqxGetSculkCount(player)))
+		if (event.amount > entity.getHealth()) {
+			let level = entity.getLevel()
+			for (let i = 0; i < Math.max(count * Math.sqrt(entity.getMaxHealth()) / 10, 1); i++) {
+				for (let j = 0; j < 100; j++) {
+					let block = level.getBlock(entity.getX() + (Math.random() - 0.5) * count, entity.getY() - 1 + (Math.random() - 0.5) * count, entity.getZ() + (Math.random() - 0.5) * count)
+					if (block.getTags().find(tag => (tag == 'minecraft:sculk_replaceable')) && mrqxIsBlockExposedToAir(level, block.getX(), block.getY(), block.getZ())) {
+						block.set('minecraft:sculk')
+						break
+					}
+				}
+			}
+		}
+	},
 }
 
 var assign_organ_player_damage = Object.assign(organPlayerDamageStrategies, mrqxOrganPlayerDamageStrategies);
@@ -90,8 +114,7 @@ const mrqxOrganPlayerDamageOnlyStrategies = {
 		if (player.persistentData.organActive != 1) {
 			return
 		}
-		let itemMap = getPlayerChestCavityItemMap(player)
-		if (mrqxCheckOrganSuit(player, 'four_soul')) {
+		if (mrqxCheckOrganSuit(player, 'four_soul', true)) {
 			if (item?.id == 'tetra:modular_sword' && item.nbt && (item.nbt.contains('sword/katana_blade_material') || item.nbt.contains('sword/blade:sword/murasama_imprv') || item.nbt.contains('sword/blade:sword/thousand_cold_'))) {
 				event.entity.invulnerableTime = 0
 			}
@@ -107,7 +130,7 @@ const mrqxOrganPlayerDamageOnlyStrategies = {
 	'mrqx_extra_pack:prison_soul': function (event, organ, data) {
 		let player = event.source.player
 		let count = player.persistentData.getInt('mrqx_kill_count') ?? 0
-		if (mrqxCheckOrganSuit(player, 'four_soul')) {
+		if (mrqxCheckOrganSuit(player, 'four_soul', true)) {
 			event.amount += Math.sqrt(count) * 0.1
 		}
 		if (event.amount > event.entity.getHealth()) {
@@ -119,21 +142,19 @@ const mrqxOrganPlayerDamageOnlyStrategies = {
 	// 灵狐之魂
 	'mrqx_extra_pack:fox_soul': function (event, organ, data) {
 		let player = event.source.player
-		let itemMap = getPlayerChestCavityItemMap(player)
-		if (mrqxCheckOrganSuit(player, 'four_soul')) {
-			player.setSaturation(player.getSaturation() + event.amount * 0.05)
+		if (mrqxCheckOrganSuit(player, 'four_soul', true)) {
+			player.setSaturation(Math.min(player.getSaturation() + event.amount * 0.05, player.getFoodLevel()))
 		}
 		else {
-			player.setSaturation(player.getSaturation() + event.amount * 0.25)
+			player.setSaturation(Math.min(player.getSaturation() + event.amount * 0.25, player.getFoodLevel()))
 		}
 	},
 
 	// 山月之魂
 	'mrqx_extra_pack:moon_soul': function (event, organ, data) {
 		let player = event.source.player
-		let itemMap = getPlayerChestCavityItemMap(player)
 		let combo = player.persistentData.getInt('mrqx_moon_soul_combo') ?? 0
-		if (mrqxCheckOrganSuit(player, 'four_soul')) {
+		if (mrqxCheckOrganSuit(player, 'four_soul', true)) {
 			if (combo >= 100) {
 				combo = 100
 			}
@@ -187,7 +208,7 @@ const mrqxOrganPlayerDamageOnlyStrategies = {
 		if (typeMap.has('kubejs:mrqx_seaborn')) {
 			amplifier += typeMap.get('kubejs:mrqx_seaborn').length
 		}
-		if (mrqxCheckOrganSuit(player, 'seaborn')) {
+		if (mrqxCheckOrganSuit(player, 'seaborn', true)) {
 			amplifier *= 2
 		}
 		let entityList = getLivingWithinRadius(player.getLevel(), new Vec3(player.x, player.y, player.z), 5)
@@ -215,7 +236,7 @@ const mrqxOrganPlayerDamageOnlyStrategies = {
 		let entityList = getLivingWithinRadius(player.getLevel(), new Vec3(player.x, player.y, player.z), 8)
 		entityList.forEach(entity => {
 			if (amplifier > 0 && !entity.isPlayer()) {
-				if (mrqxCheckOrganSuit(player, 'seaborn')) {
+				if (mrqxCheckOrganSuit(player, 'seaborn', true)) {
 					event.entity.getServer().scheduleInTicks(1, () => {
 						entity.attack(DamageSource.playerAttack(player), player.getAttributeTotalValue('minecraft:generic.attack_damage') * 2)
 					})
@@ -229,9 +250,6 @@ const mrqxOrganPlayerDamageOnlyStrategies = {
 				amplifier--
 			}
 		})
-		if (amplifier > 0) {
-			player.setHealth(player.getHealth() - player.getMaxHealth() * 0.05)
-		}
 	},
 
 	// “生存的重压”肋骨
@@ -247,7 +265,7 @@ const mrqxOrganPlayerDamageOnlyStrategies = {
 		if (typeMap.has('kubejs:mrqx_seaborn')) {
 			amplifier += typeMap.get('kubejs:mrqx_seaborn').length
 		}
-		if (mrqxCheckOrganSuit(player, 'seaborn')) {
+		if (mrqxCheckOrganSuit(player, 'seaborn', true)) {
 			amplifier *= 2
 		}
 		if ((entity.getHealth() / entity.getMaxHealth()) >= ((player.getHealth() / player.getMaxHealth()))) {
@@ -263,8 +281,7 @@ const mrqxOrganPlayerDamageOnlyStrategies = {
 	// “深海掠食者”胃
 	'mrqx_extra_pack:stomach_abyssal_predator': function (event, organ, data) {
 		let player = event.source.player
-		let entity = event.entity
-		if (mrqxCheckOrganSuit(player, 'seaborn')) {
+		if (mrqxCheckOrganSuit(player, 'seaborn', true)) {
 			event.amount *= 1 + ((1 - player.getFoodLevel() / 20) + (player.getFoodLevel() - player.getSaturation()) / player.getFoodLevel()) * 2
 		}
 		else {
@@ -281,7 +298,7 @@ const mrqxOrganPlayerDamageOnlyStrategies = {
 		if (typeMap.has('kubejs:mrqx_seaborn')) {
 			amplifier += typeMap.get('kubejs:mrqx_seaborn').length
 		}
-		if (mrqxCheckOrganSuit(player, 'seaborn')) {
+		if (mrqxCheckOrganSuit(player, 'seaborn', true)) {
 			amplifier *= 2
 		}
 		if ((entity.getHealth() / entity.getMaxHealth()) < ((player.getHealth() / player.getMaxHealth())) || entity.getMaxHealth() < player.getMaxHealth()) {
@@ -314,7 +331,7 @@ const mrqxOrganPlayerDamageOnlyStrategies = {
 			amplifier += typeMap.get('kubejs:mrqx_seaborn').length
 		}
 		amplifier = Math.min(Math.floor(manaCost / 50), amplifier)
-		if (mrqxCheckOrganSuit(player, 'seaborn')) {
+		if (mrqxCheckOrganSuit(player, 'seaborn', true)) {
 			event.entity.getServer().scheduleInTicks(1, () => {
 				entity.attack(DamageSource.indirectMagic(player, player), player.getAttributeTotalValue('minecraft:generic.attack_damage') * 0.01 * amplifier * 2)
 			})
@@ -335,7 +352,47 @@ const mrqxOrganPlayerDamageOnlyStrategies = {
 		}
 		player.addItemCooldown(organ.id, 10)
 		player.potionEffects.add('mrqx_extra_pack:charged_blade_effect', 2, 0, false, false)
-	}
+	},
+
+	// “战士输出高”
+	'mrqx_extra_pack:warrior_output_high': function (event, organ, data) {
+		let player = event.source.player
+		player.getServer().getEntities().forEach(entity => {
+			if (entity.getPersistentData().getString('mrqxTaoistFifteenDogs') && entity.getPersistentData().getString('mrqxTaoistFifteenDogs') == player.getStringUuid()) {
+				event.amount += 1
+				entity.attack(1)
+			}
+		})
+	},
+
+	// “法师控制强”
+	'mrqx_extra_pack:mage_control_strong': function (event, organ, data) {
+		mrqxCauseElementDamage(event.entity, event.amount * event.source.player.getAttributeTotalValue('irons_spellbooks:ice_spell_power'), 'ice')
+	},
+
+	// “战士输出高”
+	'mrqx_extra_pack:warrior_output_high': function (event, organ, data) {
+		let damageModifier = event.source.player.getAttribute('minecraft:generic.attack_damage').getModifier(new UUID.fromString('cb3f55d3-645c-4f38-a497-9c13a33db5cf'))
+		event.amount = (((damageModifier) ? damageModifier.getAmount() : 0) + 1) * 10
+		event.entity.setSecondsOnFire(10)
+		event.entity.getServer().scheduleInTicks(1, () => {
+			let explosion = event.entity.block.createExplosion()
+			explosion.strength(1)
+			explosion.causesFire(true)
+			explosion.explode()
+		})
+	},
+
+	// 国王的铠甲
+	'mrqx_extra_pack:kings_armor': function (event, organ, data) {
+		let player = event.source.player
+		if (Math.floor(player.getHealth()) > 1 || player.getAbsorptionAmount() >= player.getMaxHealth()) {
+			return
+		}
+		let amount = Math.min(player.getAbsorptionAmount() + 2, player.getMaxHealth())
+		player.setAbsorptionAmount(amount)
+		player.setHealth(Math.max(player.getHealth() - 2, 1))
+	},
 }
 
 var assign_organ_player_damage_only = Object.assign(organPlayerDamageOnlyStrategies, mrqxOrganPlayerDamageOnlyStrategies);

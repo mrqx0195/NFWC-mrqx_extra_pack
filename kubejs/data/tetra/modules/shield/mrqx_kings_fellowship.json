@@ -1,0 +1,48 @@
+{
+    "improvements": [
+        "tetra:shield/grip/shared/",
+        "tetra:shared/"
+    ],
+    "replace": true,
+    "slots": [
+        "shield/grip"
+    ],
+    "type": "tetra:basic_major_module",
+    "variants": [
+        {
+            "aspects": {
+                "bluntWeapon": 1,
+                "breakable": 4
+            },
+            "attributes": {
+                "tetra:ability_cooldown": 0.4
+            },
+            "durability": 180,
+            "effects": {
+                "bashing": [
+                    5,
+                    2
+                ]
+            },
+            "glyph": {
+                "textureX": 160,
+                "textureY": 0,
+                "tint": "4D5D6D"
+            },
+            "integrity": 2,
+            "key": "mrqx_kings_fellowship",
+            "magicCapacity": 20,
+            "material": {
+                "items": [
+                    "mrqx_extra_pack:kings_fellowship"
+                ]
+            },
+            "models": [
+                {
+                    "location": "tetra:items/module/shield/mrqx_extra_pack/mrqx_kings_fellowship",
+                    "type": "tetra:grip/grip"
+                }
+            ]
+        }
+    ]
+}

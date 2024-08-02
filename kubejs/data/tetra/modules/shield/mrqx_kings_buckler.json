@@ -1,0 +1,46 @@
+{
+    "improvements": [
+        "tetra:shield/plate/buckler/",
+        "tetra:shield/plate/shared/",
+        "tetra:shared/"
+    ],
+    "replace": true,
+    "slots": [
+        "shield/plate"
+    ],
+    "type": "tetra:basic_major_module",
+    "variants": [
+        {
+            "aspects": {
+                "bluntWeapon": 1,
+                "breakable": 2
+            },
+            "attributes": {
+                "generic.armor": 10,
+                "generic.armor_toughness": 10,
+                "tetra:ability_cooldown": -0.2,
+                "tetra:ability_damage": 10
+            },
+            "durability": 80,
+            "glyph": {
+                "textureX": 48,
+                "textureY": 48,
+                "tint": "575B5B"
+            },
+            "integrity": 2,
+            "key": "mrqx_kings_buckler",
+            "magicCapacity": 100,
+            "material": {
+                "items": [
+                    "mrqx_extra_pack:kings_buckler"
+                ]
+            },
+            "models": [
+                {
+                    "location": "tetra:items/module/shield/mrqx_extra_pack/mrqx_kings_buckler",
+                    "type": "tetra:plate/buckler"
+                }
+            ]
+        }
+    ]
+}

@@ -1,4 +1,8 @@
 // priority: 99
+const $mrqxArrayList = Java.loadClass('java.util.ArrayList')
+const $mrqxInteger = Java.loadClass('java.lang.Integer')
+
+const mrqxPlayerLoginTime = new Map()
 /**
  * 造成元素损伤
  * @param {Internal.LivingEntity} entity 
@@ -32,13 +36,15 @@ function mrqxCauseElementDamage(entity, damage, type) {
  * 检测器官套装
  * @param {Internal.ServerPlayer} player 
  * @param {String} type 
+ * @param {Boolean} isAll 
  */
-function mrqxCheckOrganSuit(player, type) {
+function mrqxCheckOrganSuit(player, type, isAll) {
+    isAll = typeof isAll !== "undefined" ? isAll : true;
     let playerChest = getPlayerChestCavityItemMap(player)
     let organList = mrqxOrganSuit[type]
     let count = 0
     organList.forEach(organ => {
-        if (!playerChest.has(organ)) {
+        if (!playerChest.has(organ) && isAll) {
             return 0
         }
         count++
@@ -106,4 +112,93 @@ function mrqxGetMarenolCount(player) {
     })
     count *= player.persistentData.getInt(warpCount) * 0.1
     return count
+}
+
+/**
+ * 获取幽匿指数
+ * @param {Internal.ServerPlayer} player 
+ * @returns {Number}
+ */
+function mrqxGetSculkCount(player) {
+    let count = 0
+    let itemMap = getPlayerChestCavityItemMap(player)
+    let typeMap = getPlayerChestCavityTypeMap(player)
+    if (itemMap.has('mrqx_extra_pack:sculk_heart') && typeMap.has('kubejs:mrqx_sculk')) {
+        count = typeMap.get('kubejs:mrqx_sculk').length
+    }
+    let blockSet = new Set()
+    count *= mrqxGetConnectedBlocksCount(0, player.getBlockX(), player.getBlockY() - 1, player.getBlockZ(), 100, 'minecraft:sculk', player.getLevel(), blockSet)
+    return count
+}
+
+/**
+ * 相连方块获取
+ * @param {Number} count
+ * @param {Number} x
+ * @param {Number} y
+ * @param {Number} z
+ * @param {Number} max
+ * @param {String} id
+ * @param {Internal.Level} level
+ * @param {Set<(Number,Number,Number)>} set
+ * @returns {Number}
+ */
+function mrqxGetConnectedBlocksCount(count, x, y, z, max, id, level, set) {
+    let key = `${x}_${y}_${z}`
+    if (set.has(key)) {
+        return count
+    }
+    set.add(key);
+    if (count <= max && level.getBlock(x, y, z).getId() == id) {
+        return (mrqxGetConnectedBlocksCount(count, x + 1, y, z, max, id, level, set) + mrqxGetConnectedBlocksCount(count, x - 1, y, z, max, id, level, set) + mrqxGetConnectedBlocksCount(count, x, y + 1, z, max, id, level, set) + mrqxGetConnectedBlocksCount(count, x, y - 1, z, max, id, level, set) + mrqxGetConnectedBlocksCount(count, x, y, z + 1, max, id, level, set) + mrqxGetConnectedBlocksCount(count, x, y, z - 1, max, id, level, set) + 1)
+    }
+    return count
+}
+
+/**
+ * 检测方块是否暴露在空气中
+ * @param {Internal.Level} level
+ * @param {Number} x
+ * @param {Number} y
+ * @param {Number} z
+ * @returns {Boolean}
+ */
+function mrqxIsBlockExposedToAir(level, x, y, z) {
+    let directions = [
+        [0, -1, 0],
+        [0, 1, 0],
+        [-1, 0, 0],
+        [1, 0, 0],
+        [0, 0, -1],
+        [0, 0, 1]
+    ]
+    for (let dir of directions) {
+        let blockX = x + dir[0]
+        let blockY = y + dir[1]
+        let blockZ = z + dir[2]
+        let blockState = level.getBlock(blockX, blockY, blockZ)
+        if (blockState.getId() == 'minecraft:air') {
+            return true
+        }
+    }
+    return false
+}
+
+/**
+ * 处理玩家登录时间
+ */
+PlayerEvents.loggedIn(event => {
+    let player = event.player
+    let uuid = String(player.getUuid())
+    mrqxPlayerLoginTime.set(uuid, event.getServer().getTickCount())
+})
+
+/**
+ * 获取玩家登录时间
+ * @param {Internal.ServerPlayer} player 
+ * @returns {Number}
+ */
+function mrqxGetLoggedInTime(player) {
+    let uuid = String(player.getUuid())
+    return mrqxPlayerLoginTime.get(uuid)
 }

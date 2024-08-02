@@ -1,0 +1,58 @@
+{
+    "improvements": [
+        "tetra:shared/"
+    ],
+    "renderLayer": "higher",
+    "replace": true,
+    "slots": [
+        "crossbow/string"
+    ],
+    "type": "tetra:basic_module",
+    "variants": [
+        {
+            "attributes": {
+                "tetra:draw_speed": -5.5,
+                "tetra:draw_strength": 8
+            },
+            "durability": 0.3,
+            "effects": {
+                "suspend": 1,
+                "piercing": 3,
+                "velocity": 150
+            },
+            "glyph": {
+                "textureX": 55,
+                "textureY": 16,
+                "tint": "5B483B"
+            },
+            "integrity": 1,
+            "key": "mrqx_thermal_injector",
+            "material": {
+                "items": [
+                    "mrqx_extra_pack:thermal_injector"
+                ]
+            },
+            "models": [
+                {
+                    "location": "tetra:items/module/crossbow/mrqx_extra_pack/mrqx_thermal_injector"
+                },
+                {
+                    "location": "tetra:items/module/crossbow/mrqx_extra_pack/mrqx_thermal_injector_0",
+                    "type": "draw_0"
+                },
+                {
+                    "location": "tetra:items/module/crossbow/mrqx_extra_pack/mrqx_thermal_injector_1",
+                    "type": "draw_1"
+                },
+                {
+                    "location": "tetra:items/module/crossbow/mrqx_extra_pack/mrqx_thermal_injector_2",
+                    "type": "draw_2"
+                },
+                {
+                    "location": "tetra:items/module/crossbow/mrqx_extra_pack/mrqx_thermal_injector_3",
+                    "type": "loaded"
+                }
+            ]
+        }
+    ]
+}

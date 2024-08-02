@@ -1,0 +1,18 @@
+[
+    {
+        "key": "crossbow_tweak/mrqx_thermal_barrier",
+        "properties": {
+            "attributes": {
+                "tetra:draw_speed": -0.1,
+                "tetra:draw_strength": -0.85
+            },
+            "durabilityMultiplier": 1.05,
+            "effects": {
+                "fierySelf": -0.05,
+                "velocity": -10
+            }
+        },
+        "steps": 10,
+        "variant": "mrqx_thermal_barrier"
+    }
+]

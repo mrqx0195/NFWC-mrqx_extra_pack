@@ -97,7 +97,7 @@ const mrqxOrganRightClickedOnlyStrategies = {
 			return
 		}
 		else {
-			Utils.server.runCommandSilent('playsound minecraft:entity.blaze.shoot player @a ' + player.x + ' ' + player.y + ' ' + player.z)
+			player.getServer().runCommandSilent('playsound minecraft:entity.blaze.shoot player @a ' + player.x + ' ' + player.y + ' ' + player.z)
 			let itemMap = getPlayerChestCavityItemMap(player)
 			if (itemMap.has('mrqx_extra_pack:steam_turbine')) {
 				player.potionEffects.add('mrqx_extra_pack:nuclear_power_generation', duration * durationMultiplier, amplifier, false, false)

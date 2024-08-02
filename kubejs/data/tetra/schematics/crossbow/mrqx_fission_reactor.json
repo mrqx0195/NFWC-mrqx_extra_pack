@@ -1,0 +1,29 @@
+{
+    "displayType": "major",
+    "glyph": {
+        "textureLocation": "tetra:textures/gui/aof_glyph.png",
+        "textureX": 64,
+        "textureY": 32
+    },
+    "materialRevealSlot": 0,
+    "materialSlotCount": 1,
+    "outcomes": [
+        {
+            "material": {
+                "items": [
+                    "mrqx_extra_pack:fission_reactor"
+                ]
+            },
+            "moduleKey": "crossbow/mrqx_fission_reactor",
+            "moduleVariant": "mrqx_fission_reactor",
+            "requiredTools": {
+                "hammer_dig": "minecraft:diamond"
+            }
+        }
+    ],
+    "rarity": "temporary",
+    "replace": true,
+    "slots": [
+        "crossbow/stock"
+    ]
+}

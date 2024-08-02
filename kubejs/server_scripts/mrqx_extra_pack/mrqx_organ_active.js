@@ -78,7 +78,7 @@ const mrqxOrganActiveStrategies = {
 
     // “肉斩骨断”肌肉
     'mrqx_extra_pack:muscle_bone_fracture': function (player, organ, attributeMap) {
-        if (mrqxCheckOrganSuit(player, 'seaborn')) {
+        if (mrqxCheckOrganSuit(player, 'seaborn', true)) {
             attributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, 0.1)
         }
         else {
@@ -88,7 +88,7 @@ const mrqxOrganActiveStrategies = {
 
     // “生存的重压”肋骨
     'mrqx_extra_pack:rib_the_pressure_to_survive': function (player, organ, attributeMap) {
-        if (mrqxCheckOrganSuit(player, 'seaborn')) {
+        if (mrqxCheckOrganSuit(player, 'seaborn', true)) {
             attributeMapValueAddition(attributeMap, global.mrqx_HEALTH_UP_MULTI_BASE, 0.1)
         }
         else {
@@ -191,7 +191,7 @@ const mrqxOrganActiveOnlyStrategies = {
         if (typeMap.has('kubejs:mrqx_seaborn')) {
             amplifier += typeMap.get('kubejs:mrqx_seaborn').length
         }
-        if (mrqxCheckOrganSuit(player, 'seaborn')) {
+        if (mrqxCheckOrganSuit(player, 'seaborn', true)) {
             amplifier *= 2
         }
         attributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, amplifier * 0.1)
@@ -206,7 +206,7 @@ const mrqxOrganActiveOnlyStrategies = {
         if (typeMap.has('kubejs:mrqx_seaborn')) {
             amplifier += typeMap.get('kubejs:mrqx_seaborn').length
         }
-        if (mrqxCheckOrganSuit(player, 'seaborn')) {
+        if (mrqxCheckOrganSuit(player, 'seaborn', true)) {
             amplifier *= 2
         }
         attributeMapValueAddition(attributeMap, global.mrqx_MANA_REGEN_MULTI_BASE, amplifier * 0.2)
@@ -219,7 +219,7 @@ const mrqxOrganActiveOnlyStrategies = {
         if (typeMap.has('kubejs:mrqx_seaborn')) {
             amplifier += typeMap.get('kubejs:mrqx_seaborn').length
         }
-        if (mrqxCheckOrganSuit(player, 'seaborn')) {
+        if (mrqxCheckOrganSuit(player, 'seaborn', true)) {
             amplifier *= 2
         }
         attributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, amplifier * 0.1)
@@ -233,7 +233,7 @@ const mrqxOrganActiveOnlyStrategies = {
         if (typeMap.has('kubejs:mrqx_seaborn')) {
             amplifier += typeMap.get('kubejs:mrqx_seaborn').length
         }
-        if (mrqxCheckOrganSuit(player, 'seaborn')) {
+        if (mrqxCheckOrganSuit(player, 'seaborn', true)) {
             amplifier *= 2
         }
         playerChestInstance.organScores.put(new ResourceLocation('chestcavity', 'nerves'), new $Float(playerChestInstance.getOrganScores().get(new ResourceLocation('chestcavity', 'nerves')) + amplifier))
@@ -272,10 +272,94 @@ const mrqxOrganActiveOnlyStrategies = {
         if (typeMap.has('kubejs:mrqx_seaborn')) {
             amplifier += typeMap.get('kubejs:mrqx_seaborn').length
         }
-        if (mrqxCheckOrganSuit(player, 'seaborn')) {
+        if (mrqxCheckOrganSuit(player, 'seaborn', true)) {
             amplifier *= 2
         }
         attributeMapValueAddition(attributeMap, global.MAX_MANA, amplifier * 50)
+    },
+
+    // 灵魂之翼
+    'mrqx_extra_pack:wing_of_soul': function (player, organ, attributeMap) {
+        attributeMapValueAddition(attributeMap, global.mrqx_FLYING_SPEED, 2)
+        attributeMapValueAddition(attributeMap, global.mrqx_FALL_FLYING, 1)
+    },
+
+    // 永恒灵魂之翼
+    'mrqx_extra_pack:eternal_wing_of_soul': function (player, organ, attributeMap) {
+        attributeMapValueAddition(attributeMap, global.mrqx_FLYING_SPEED, 3)
+        player.getPersistentData().putBoolean('mrqxEternalWingOfSoul', true)
+        player.abilities.mayfly = true
+        player.onUpdateAbilities()
+    },
+
+    // 指令施法核心
+    'mrqx_extra_pack:command_spell_core': function (player, organ, attributeMap) {
+        attributeMapValueAddition(attributeMap, global.mrqx_SPELL_POWER_MULTI_BASE, 0.5)
+    },
+
+    // 金酒之杯
+    'mrqx_extra_pack:golden_chalice': function (player, organ, attributeMap) {
+        let count = Math.floor(organ.tag.getInt('mrqxGoldenChaliceMoney') / 5)
+        attributeMapValueAddition(attributeMap, global.ATTACK_SPEED, count * 0.1)
+    },
+
+    // 复激活药丸
+    'mrqx_extra_pack:re_active_pill': function (player, organ, attributeMap) {
+        let typeMap = getPlayerChestCavityTypeMap(player)
+        let list = []
+        let map = new Map()
+        if (typeMap.has('kubejs:active_only')) {
+            typeMap.get('kubejs:active_only').forEach(organs => {
+                if (!list.find((organId) => (organId == organs.id))) {
+                    list.push(organs.id)
+                    map.set(organs.id, organs)
+                }
+            })
+        }
+        let randomOrgan = randomGet(list)
+        organActiveOnlyStrategies[randomOrgan](player, map[randomOrgan], attributeMap)
+    },
+
+    // “法师控制强”
+    'mrqx_extra_pack:mage_control_strong': function (player, organ, attributeMap) {
+        attributeMapValueAddition(attributeMap, global.ICE_SPELL_POWER, 1)
+    },
+
+    // 诸王的冠冕
+    'mrqx_extra_pack:kings_crown': function (player, organ, attributeMap) {
+        let typeMap = getPlayerChestCavityTypeMap(player)
+        if (typeMap.has('kubejs:mrqx_king')) {
+            if (typeMap.get('kubejs:mrqx_king').length >= 5) {
+                attributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, 2.5)
+            }
+            else if (typeMap.get('kubejs:mrqx_king').length >= 3) {
+                attributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, 1.5)
+            }
+            return
+        }
+        attributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, 0.5)
+    },
+
+    // 国王的护戒
+    'mrqx_extra_pack:kings_fellowship': function (player, organ, attributeMap) {
+        if ((player.getHealth() / player.getMaxHealth()) > 0.5) {
+            if (player.getAbsorptionAmount() >= player.getMaxHealth()) {
+                return
+            }
+            let amount = Math.min(player.getAbsorptionAmount() + (player.getHealth() - player.getMaxHealth() / 2), player.getMaxHealth())
+            player.setAbsorptionAmount(amount)
+            player.setHealth(player.getMaxHealth() / 2)
+        }
+    },
+
+    // 国王的铠甲
+    'mrqx_extra_pack:kings_armor': function (player, organ, attributeMap) {
+        if (player.getAbsorptionAmount() >= player.getMaxHealth()) {
+            return
+        }
+        let amount = Math.min(player.getAbsorptionAmount() + player.getHealth() - 1, player.getMaxHealth())
+        player.setAbsorptionAmount(amount)
+        player.setHealth(1)
     },
 }
 

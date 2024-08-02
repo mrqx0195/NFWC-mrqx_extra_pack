@@ -1,0 +1,31 @@
+{
+    "attributes": {
+        "irons_spellbooks:eldritch_spell_power": 2,
+        "irons_spellbooks:eldritch_spell_resist": 2,
+        "irons_spellbooks:max_mana": 500
+    },
+    "category": "socket",
+    "durability": 0,
+    "experienceCost": 3,
+    "integrityCost": 2,
+    "integrityGain": 0,
+    "key": "mrqx_sculk_growler",
+    "magicCapacity": 50,
+    "material": {
+        "items": [
+            "mrqx_extra_pack:sculk_growler"
+        ]
+    },
+    "primary": 0,
+    "secondary": 0,
+    "tertiary": 0,
+    "textures": [
+        "default"
+    ],
+    "tints": {
+        "glyph": "052027",
+        "texture": "1CACB2"
+    },
+    "toolEfficiency": 0,
+    "toolLevel": 0
+}

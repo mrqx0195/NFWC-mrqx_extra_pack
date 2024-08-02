@@ -40,4 +40,17 @@ ItemEvents.tooltip((tooltip) => {
             }
         }
     })
+    tooltip.addAdvanced('mrqx_extra_pack:golden_chalice', (item, advanced, text) => {
+        if (item.nbt) {
+            if (item.nbt?.mrqxGoldenChaliceMoney) {
+                text.add([Text.gold({ "translate": "mrqx_extra_pack.tooltips.golden_chalice.4" }), Text.gold(item.nbt?.mrqxGoldenChaliceMoney)])
+            }
+        }
+    })
+    tooltip.addAdvanced('mrqx_extra_pack:crispy_belly', (item, advanced, text) => {
+        addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.crispy_belly.1" })]], 1)
+        if (tooltip.shift) {
+            addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.crispy_belly.2" })]], 2)
+        }
+    })
 })

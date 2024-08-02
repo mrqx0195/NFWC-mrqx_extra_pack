@@ -1,0 +1,36 @@
+{
+    "renderLayer": "higher",
+    "replace": false,
+    "slots": [
+        "crossbow/attachment_0"
+    ],
+    "tweakKey": "tetra:crossbow/mrqx_thermal_barrier",
+    "type": "tetra:basic_module",
+    "variants": [
+        {
+            "attributes": {
+                "tetra:draw_speed": 1,
+                "tetra:draw_strength": 8
+            },
+            "durability": 12,
+            "glyph": {
+                "textureX": 37,
+                "textureY": 52,
+                "tint": "494949"
+            },
+            "integrity": -4,
+            "key": "mrqx_thermal_barrier",
+            "material": {
+                "items": [
+                    "mrqx_extra_pack:thermal_barrier"
+                ]
+            },
+            "models": [
+                {
+                    "location": "tetra:items/module/crossbow/mrqx_extra_pack/mrqx_thermal_barrier",
+                    "type": "static"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,48 @@
+{
+    "improvements": [
+        "tetra:crossbow/stave/",
+        "tetra:crossbow/shared/",
+        "tetra:shared/"
+    ],
+    "renderLayer": "higher",
+    "replace": true,
+    "slots": [
+        "crossbow/stave"
+    ],
+    "type": "tetra:basic_major_module",
+    "variants": [
+        {
+            "aspects": {
+                "breakable": 2,
+                "crossbow": 2
+            },
+            "attributes": {
+                "tetra:draw_speed": 1,
+                "tetra:draw_strength": 3
+            },
+            "durability": 0.6,
+            "effects": {
+                "velocity": 100
+            },
+            "glyph": {
+                "textureX": 96,
+                "textureY": 48,
+                "tint": "343433"
+            },
+            "integrity": 3,
+            "key": "mrqx_reactor_chamber",
+            "magicCapacity": 1,
+            "material": {
+                "items": [
+                    "mrqx_extra_pack:reactor_chamber"
+                ]
+            },
+            "models": [
+                {
+                    "location": "tetra:items/module/crossbow/mrqx_extra_pack/mrqx_reactor_chamber",
+                    "type": "static"
+                }
+            ]
+        }
+    ]
+}

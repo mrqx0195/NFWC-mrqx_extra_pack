@@ -23,7 +23,19 @@ const mrqxOrganPlayerKeyPressedOnlyStrategies = {
                 }
             }
         })
-    }
+    },
+
+    // 幽匿咆哮体
+    'mrqx_extra_pack:sculk_growler': function (event, organ) {
+        let player = event.player
+        let magicData = getPlayerMagicData(player)
+        let manaCost = magicData.getMana()
+        let count = mrqxGetSculkCount(player)
+        let amplifier = Math.max(Math.sqrt(manaCost), 1) + count * 0.1
+        overLimitSpellCast(new ResourceLocation('irons_spellbooks', 'sonic_boom'), amplifier, player, false)
+        magicData.setMana(0)
+        player.addItemCooldown('mrqx_extra_pack:sculk_growler', 20 * 25 / Math.max(count * 0.1, 1))
+    },
 }
 
 var assign_organ_player_key_pressed_only = Object.assign(organPlayerKeyPressedOnlyStrategies, mrqxOrganPlayerKeyPressedOnlyStrategies);

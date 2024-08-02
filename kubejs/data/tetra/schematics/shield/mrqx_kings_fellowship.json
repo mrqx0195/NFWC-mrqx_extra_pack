@@ -1,0 +1,28 @@
+{
+    "displayType": "major",
+    "glyph": {
+        "textureX": 160,
+        "textureY": 0
+    },
+    "materialRevealSlot": 0,
+    "materialSlotCount": 1,
+    "outcomes": [
+        {
+            "material": {
+                "items": [
+                    "mrqx_extra_pack:kings_fellowship"
+                ]
+            },
+            "moduleKey": "shield/mrqx_kings_fellowship",
+            "moduleVariant": "mrqx_kings_fellowship",
+            "requiredTools": {
+                "hammer_dig": "minecraft:diamond"
+            }
+        }
+    ],
+    "rarity": "temporary",
+    "replace": true,
+    "slots": [
+        "shield/grip"
+    ]
+}

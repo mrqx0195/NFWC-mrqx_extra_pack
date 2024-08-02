@@ -1,4 +1,29 @@
-// priority: 0
+// priority: -1
+
+function CookingRecipe(container, ingredients, output) {
+    this.type = 'farmersdelight:cooking'
+    this.container = container
+    this.cookingtime = 200
+    this.experience = 1.0
+    this.ingredients = ingredients
+    this.result = output
+    this.recipe_book_tab = COOKING_MISC
+}
+
+CookingRecipe.prototype = {
+    setRecipeBookTab: function (recipeBookTab) {
+        this.recipe_book_tab = recipeBookTab
+        return this
+    },
+    setCookingtime: function (cookingtime) {
+        this.cookingtime = cookingtime
+        return this
+    },
+    setExperience: function (experience) {
+        this.experience = experience
+        return this
+    },
+}
 
 function GoetyRitualRecipe(craftType, ingredients, activation_item, output) {
     this.type = 'goety:ritual'
@@ -281,10 +306,10 @@ ServerEvents.recipes(event => {
 
     // 暗日种子
     registerCustomRecipe(new GoetyRitualRecipe('lich', [
-        Ingredient.of('kubejs:pandora_active'),
-        Ingredient.of('biomancy:corrosive_additive'),
-        Ingredient.of('goety:undeath_potion'),
-        Ingredient.of('goety:philosophers_stone')],
+        Item.of('kubejs:pandora_active'),
+        Item.of('biomancy:corrosive_additive'),
+        Item.of('goety:undeath_potion'),
+        Item.of('goety:philosophers_stone')],
         Item.of('mrqx_extra_pack:sun_seed'),
         Item.of('mrqx_extra_pack:dark_sun_seed')).setSoulCost(2000))
 
@@ -339,8 +364,8 @@ ServerEvents.recipes(event => {
 
     // 风暴重锤
     registerCustomRecipe(new GoetyRitualRecipe('storm', [
-        Ingredient.of('goety:discharge_focus'),
-        Ingredient.of('irons_spellbooks:lightning_bottle'),
+        Item.of('goety:discharge_focus'),
+        Item.of('irons_spellbooks:lightning_bottle'),
         Ingredient.of('#forge:storage_blocks/copper'),
         Ingredient.of('#forge:storage_blocks/iron')],
         Item.of('kubejs:mace'),
@@ -389,7 +414,7 @@ ServerEvents.recipes(event => {
 
     // 激活·火龙宝玉
     event.recipes.summoningrituals
-        .altar('kubejs:ice_dragon_bead')
+        .altar('kubejs:fire_dragon_bead')
         .id('mrqx_extra_pack:active_fire_dragon_bead')
         .input('nameless_trinkets:blaze_nucleus')
         .input('goety:fire_breath_focus')
@@ -401,7 +426,7 @@ ServerEvents.recipes(event => {
 
     // 激活·电龙宝玉
     event.recipes.summoningrituals
-        .altar('kubejs:ice_dragon_bead')
+        .altar('kubejs:lightning_dragon_bead')
         .id('mrqx_extra_pack:active_lightning_dragon_bead')
         .input('nameless_trinkets:pocket_lightning_rod')
         .input('goety:thunderbolt_focus')
@@ -508,9 +533,9 @@ ServerEvents.recipes(event => {
         .altar('witherstormmod:withered_nether_star')
         .id('mrqx_extra_pack:genesis')
         .input('mrqx_extra_pack:sun_seed')
+        .input('mrqx_extra_pack:dark_sun_seed')
         .sacrifice('witherstormmod:wither_storm', 1)
         .sacrifice('goety:apostle', 1)
-        .input('mrqx_extra_pack:dark_sun_seed')
         .sacrifice('invasioncodered:gashslit', 1)
         .sacrifice('minecraft:warden', 1)
         .itemOutput(Item.of('kubejs:genesis'))
@@ -639,4 +664,301 @@ ServerEvents.recipes(event => {
             return result
         })
         .id('mrqx_advanced_eyeglass_marenol');
+
+    event.recipes.kubejs.shapeless(Item.of('mrqx_extra_pack:golden_chalice'), [
+        'mrqx_extra_pack:golden_chalice',
+        'lightmanscurrency:coin_gold',
+    ])
+        .modifyResult((grid, result_) => {
+            let result = grid.find(Item.of("mrqx_extra_pack:golden_chalice"));
+            if (!result.getNbt()) {
+                result.setNbt({})
+            }
+            result.getNbt().putInt('mrqxGoldenChaliceMoney', result.getNbt().getInt('mrqxGoldenChaliceMoney') + 1)
+            return result
+        });
+
+    // 灵魂之翼
+    registerCustomRecipe(new GoetyRitualRecipe('sky', [
+        Item.of('goety:ectoplasm'),
+        Item.of('goety:ectoplasm'),
+        Item.of('goety:ectoplasm'),
+        Item.of('goety:ectoplasm')],
+        Item.of('minecraft:elytra'),
+        Item.of('mrqx_extra_pack:wing_of_soul')).setSoulCost(200))
+
+    // 永恒灵魂之翼
+    registerCustomRecipe(new GoetyRitualRecipe('sky', [
+        Item.of('goety:ectoplasm'),
+        Item.of('goety:philosophers_stone'),
+        Item.of('minecraft:feather'),
+        Item.of('nameless_trinkets:ethereal_wings')],
+        Item.of('mrqx_extra_pack:wing_of_soul'),
+        Item.of('mrqx_extra_pack:eternal_wing_of_soul')).setSoulCost(1000))
+
+    // 指令施法核心
+    event.recipes.create.sequenced_assembly([
+        Item.of('mrqx_extra_pack:command_spell_core').withChance(70.0),
+        Item.of('minecraft:book').withChance(30.0),
+    ], 'kubejs:command_spell_book', [
+        event.recipes.createDeploying('mrqx_extra_pack:incomplete_command_spell_core', ['mrqx_extra_pack:incomplete_command_spell_core', 'tetra:planar_stabilizer']),
+        event.recipes.createDeploying('mrqx_extra_pack:incomplete_command_spell_core', ['mrqx_extra_pack:incomplete_command_spell_core', 'tetra:chthonic_extractor']),
+        event.recipes.createPressing('mrqx_extra_pack:incomplete_command_spell_core', 'mrqx_extra_pack:incomplete_command_spell_core'),
+    ]).transitionalItem('mrqx_extra_pack:incomplete_command_spell_core').loops(1);
+
+    // 金酒之杯
+    event.recipes.minecraft.crafting_shaped(Item.of('mrqx_extra_pack:golden_chalice', 1), [
+        'CCC',
+        'BGB',
+        'BBB'
+    ],
+        {
+            C: 'lightmanscurrency:coinblock_gold',
+            G: 'kubejs:unholy_grail',
+            B: 'minecraft:gold_block'
+        });
+
+    // 复激活药丸
+    registerCustomRecipe(new BioForgingRecipe([
+        {
+            'count': 16, 'item': 'biomancy:hormone_secretion'
+        }, {
+            'count': 16, 'item': 'biomancy:exotic_dust'
+        }, {
+            'count': 1, 'item': 'kubejs:long_lasting_pill_gold'
+        }],
+        Item.of('mrqx_extra_pack:re_active_pill'))
+        .setNutrientsCost(32))
+
+    // “道士十五狗”
+    event.recipes.summoningrituals
+        .altar('moblassos:diamond_lasso')
+        .id('mrqx_extra_pack:taoist_fifteen_dogs')
+        .sacrifice('minecraft:wolf', 15)
+        .input('15x minecraft:lead')
+        .itemOutput('mrqx_extra_pack:taoist_fifteen_dogs')
+        .recipeTime(500);
+
+    // “法师控制强”
+    event.recipes.summoningrituals
+        .altar('goety:nameless_staff')
+        .id('mrqx_extra_pack:mage_control_strong')
+        .input('4x irons_spellbooks:ice_upgrade_orb')
+        .input('16x irons_spellbooks:frozen_bone')
+        .input('goety:hail_focus')
+        .input('goety:frost_robe')
+        .itemOutput('mrqx_extra_pack:mage_control_strong')
+        .recipeTime(500);
+
+    // “战士输出高”
+    event.recipes.summoningrituals
+        .altar('chestcavity:netherite_cleaver')
+        .id('mrqx_extra_pack:warrior_output_high')
+        .input('8x #iceandfire:dragon_bloods')
+        .input('16x iceandfire:dragonbone')
+        .input('cataclysm:the_incinerator')
+        .input('#iceandfire:dragon_skulls')
+        .itemOutput('mrqx_extra_pack:warrior_output_high')
+        .recipeTime(500);
+
+    // 幽匿引痕体
+    registerCustomRecipe(new GoetyRitualRecipe('necroturgy', [
+        Item.of('goety:sculk_converter'),
+        Item.of('minecraft:sculk_catalyst'),
+        Item.of('minecraft:sculk'),
+        Item.of('kubejs:sculk_pieces')],
+        Item.of('kubejs:warped_spine'),
+        Item.of('mrqx_extra_pack:sculk_brandguider')).setSoulCost(1000))
+
+    // 幽匿之心
+    registerCustomRecipe(new GoetyRitualRecipe('necroturgy', [
+        Item.of('goety:sculk_devourer'),
+        Item.of('minecraft:sculk_sensor'),
+        Item.of('goety:sculk_relay'),
+        Item.of('kubejs:sculk_soul')],
+        Item.of('kubejs:warped_heart'),
+        Item.of('mrqx_extra_pack:sculk_heart')).setSoulCost(1000))
+
+    // 幽匿裂岩体
+    registerCustomRecipe(new GoetyRitualRecipe('necroturgy', [
+        Item.of('goety:sculk_converter'),
+        Item.of('minecraft:sculk_catalyst'),
+        Item.of('minecraft:sculk'),
+        Item.of('kubejs:warden_muscle')],
+        Item.of('kubejs:warden_muscle'),
+        Item.of('mrqx_extra_pack:sculk_rock_breaker')).setSoulCost(1000))
+
+    // 幽匿沉积体
+    registerCustomRecipe(new GoetyRitualRecipe('necroturgy', [
+        Item.of('goety:sculk_converter'),
+        Item.of('minecraft:sculk_catalyst'),
+        Item.of('minecraft:sculk'),
+        Item.of('kubejs:warden_rib')],
+        Item.of('kubejs:warden_rib'),
+        Item.of('mrqx_extra_pack:sculk_depositer')).setSoulCost(1000))
+
+    // 幽匿寄染体
+    registerCustomRecipe(new GoetyRitualRecipe('necroturgy', [
+        Item.of('goety:sculk_converter'),
+        Item.of('minecraft:sculk_catalyst'),
+        Item.of('minecraft:sculk'),
+        Item.of('chestcavity:venom_gland')],
+        Item.of('kubejs:warden_rib'),
+        Item.of('mrqx_extra_pack:sculk_infester')).setSoulCost(1000))
+
+    // 幽匿集养体
+    registerCustomRecipe(new GoetyRitualRecipe('necroturgy', [
+        Item.of('goety:sculk_converter'),
+        Item.of('minecraft:sculk_catalyst'),
+        Item.of('minecraft:sculk'),
+        Item.of('kubejs:sculk_pieces')],
+        Item.of('kubejs:sculk_soul'),
+        Item.of('mrqx_extra_pack:sculk_collectors')).setSoulCost(1000))
+
+    // 幽匿咆哮体
+    registerCustomRecipe(new GoetyRitualRecipe('necroturgy', [
+        Item.of('irons_spellbooks:eldritch_manuscript'),
+        Item.of('minecraft:sculk_shrieker'),
+        Item.of('minecraft:sculk'),
+        Item.of('kubejs:sculk_soul')],
+        Item.of('kubejs:warden_core'),
+        Item.of('mrqx_extra_pack:sculk_growler')).setSoulCost(1000))
+
+    // 诸王的冠冕
+    event.recipes.summoningrituals
+        .altar('irons_spellbooks:tarnished_helmet')
+        .id('mrqx_extra_pack:kings_crown')
+        .input('bosses_of_mass_destruction:ancient_anima')
+        .input('16x goety:ectoplasm')
+        .input('3x irons_spellbooks:ancient_knowledge_fragment')
+        .input('5x cataclysm:ancient_metal_ingot')
+        .itemOutput('mrqx_extra_pack:kings_crown')
+        .recipeTime(500);
+
+    // 国王的新枪
+    event.recipes.summoningrituals
+        .altar('alexsmobs:skelewag_sword')
+        .id('mrqx_extra_pack:kings_new_lance')
+        .input('bosses_of_mass_destruction:ancient_anima')
+        .input('2x irons_spellbooks:cinder_essence')
+        .input('createaddition:gold_rod')
+        .input('6x cataclysm:ancient_metal_ingot')
+        .itemOutput('mrqx_extra_pack:kings_new_lance')
+        .recipeTime(500);
+
+    // 国王的护戒
+    event.recipes.summoningrituals
+        .altar('irons_spellbooks:emerald_stoneplate_ring')
+        .id('mrqx_extra_pack:kings_fellowship')
+        .input('bosses_of_mass_destruction:ancient_anima')
+        .input('irons_spellbooks:invisibility_ring')
+        .input('irons_spellbooks:affinity_ring')
+        .input('4x cataclysm:ancient_metal_ingot')
+        .itemOutput('mrqx_extra_pack:kings_fellowship')
+        .recipeTime(500);
+
+    // 国王的铠甲
+    event.recipes.summoningrituals
+        .altar('bygonenether:gilded_netherite_chestplate')
+        .id('mrqx_extra_pack:kings_armor')
+        .input('bosses_of_mass_destruction:ancient_anima')
+        .input('minecraft:golden_chestplate')
+        .input('cataclysm:ignitium_chestplate')
+        .input('8x cataclysm:ancient_metal_ingot')
+        .itemOutput('mrqx_extra_pack:kings_armor')
+        .recipeTime(500);
+
+    // 国王的圆饼
+    event.recipes.summoningrituals
+        .altar('cataclysm:bulwark_of_the_flame')
+        .id('mrqx_extra_pack:kings_buckler')
+        .input('bosses_of_mass_destruction:ancient_anima')
+        .input('goety:star_amulet')
+        .input('meetyourfight:ace_of_iron')
+        .input('6x cataclysm:ancient_metal_ingot')
+        .itemOutput('mrqx_extra_pack:kings_buckler')
+        .recipeTime(500);
+
+    // 国王的枝条
+    event.recipes.summoningrituals
+        .altar('#forge:tools/shovels')
+        .id('mrqx_extra_pack:kings_staff')
+        .input('bosses_of_mass_destruction:ancient_anima')
+        .input('goety:dark_wand')
+        .input('createaddition:electrum_rod')
+        .input('3x cataclysm:ancient_metal_ingot')
+        .itemOutput('mrqx_extra_pack:kings_staff')
+        .recipeTime(500);
+
+    // 国王的延伸
+    event.recipes.summoningrituals
+        .altar('mrqx_extra_pack:kings_staff')
+        .id('mrqx_extra_pack:kings_extension')
+        .input('bosses_of_mass_destruction:ancient_anima')
+        .input('goety:nameless_staff')
+        .input('irons_spellbooks:blood_staff')
+        .input('3x cataclysm:ancient_metal_ingot')
+        .itemOutput('mrqx_extra_pack:kings_extension')
+        .recipeTime(500);
+
+    // 国王的水晶
+    event.recipes.summoningrituals
+        .altar('cataclysm:abyssal_sacrifice')
+        .id('mrqx_extra_pack:kings_crystal')
+        .input('bosses_of_mass_destruction:ancient_anima')
+        .input('goety:soul_emerald')
+        .input('cataclysm:void_stone')
+        .input('3x cataclysm:ancient_metal_ingot')
+        .itemOutput('mrqx_extra_pack:kings_crystal')
+        .recipeTime(500);
+
+    // 脆肚
+    registerCustomRecipe(new CookingRecipe(
+        Item.of('minecraft:bowl'),
+        [
+            Item.of('kubejs:king_of_stomach'),
+            Ingredient.of('#kubejs:stomach'),
+            Ingredient.of('#minecraft:saplings'),
+            Item.of('extradelight:cooking_oil'),
+            Item.of('extradelight:cooking_oil'),
+            Item.of('extradelight:grated_ginger')],
+        Item.of('mrqx_extra_pack:crispy_belly').withCount(1))
+        .setCookingtime(149 * 20))
 })
+
+/**
+ * 祭坛完成召唤事件
+ * @constant
+ * @type {Object<string,function(Internal.SummoningEventJS):void>}
+ */
+const mrqxRitualsCompleteStrategies = {
+
+}
+
+var assign_rituals_complete_strategies = Object.assign(ritualsCompleteStrategies, mrqxRitualsCompleteStrategies);
+
+/**
+ * 祭坛开始召唤事件
+ * @constant
+ * @type {Object<string,function(Internal.SummoningEventJS):void>}
+ */
+const mrqxRitualsStartStrategies = {
+    'mrqx_extra_pack:genesis': function (event) {
+        let player = event.player
+        let b = true
+        for (let adv in mrqxGenesisAdvancementsCheck) {
+            if (!player.isAdvancementDone(adv)) {
+                if (b) {
+                    player.tell(Text.of({ "translate": "mrqx_extra_pack.genesis_advancements_check.0" }))
+                    b = false
+                }
+                player.tell(mrqxGenesisAdvancementsCheck[adv])
+            }
+        }
+        if (!b) {
+            event.cancel()
+        }
+    }
+}
+
+var assign_rituals_start_strategies = Object.assign(ritualsStartStrategies, mrqxRitualsStartStrategies);

@@ -1,47 +1,47 @@
 {
-    "replace": true,
-    "slots": [
-        "sword/blade"
-    ],
-    "type": "tetra:basic_major_module",
     "improvements": [
         "tetra:sword/shared_blade/",
         "tetra:sword/shared/",
         "tetra:shared/"
     ],
+    "replace": true,
+    "slots": [
+        "sword/blade"
+    ],
+    "type": "tetra:basic_major_module",
     "variants": [
         {
-            "key": "mrqx_charged_blade",
-            "integrity": -2,
-            "attributes": {
-                "generic.attack_speed": 10,
-                "generic.attack_damage": 7
-            },
-            "material": {
-                "items": [
-                    "mrqx_extra_pack:charged_blade"
-                ]
-            },
             "aspects": {
-                "edgedWeapon": 2,
-                "breakable": 2
+                "breakable": 2,
+                "edgedWeapon": 2
+            },
+            "attributes": {
+                "generic.attack_damage": 7,
+                "generic.attack_speed": 10
             },
             "durability": 200,
             "effects": {
-                "truesweep": 2,
-                "sweeping": 8,
+                "armorPenetration": 20,
                 "stun": [
                     100,
                     1
                 ],
-                "armorPenetration": 20
+                "sweeping": 8,
+                "truesweep": 2
             },
-            "magicCapacity": 100,
             "glyph": {
-                "tint": "3ED4F9",
                 "textureLocation": "tetra:textures/gui/aof_glyph.png",
                 "textureX": 208,
-                "textureY": 0
+                "textureY": 0,
+                "tint": "3ED4F9"
+            },
+            "integrity": -2,
+            "key": "mrqx_charged_blade",
+            "magicCapacity": 100,
+            "material": {
+                "items": [
+                    "mrqx_extra_pack:charged_blade"
+                ]
             },
             "models": [
                 {

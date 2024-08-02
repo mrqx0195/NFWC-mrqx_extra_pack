@@ -1,0 +1,28 @@
+{
+    "displayType": "major",
+    "glyph": {
+        "textureX": 80,
+        "textureY": 48
+    },
+    "materialRevealSlot": 0,
+    "materialSlotCount": 1,
+    "outcomes": [
+        {
+            "material": {
+                "items": [
+                    "mrqx_extra_pack:thermal_injector"
+                ]
+            },
+            "moduleKey": "crossbow/mrqx_thermal_injector",
+            "moduleVariant": "mrqx_thermal_injector",
+            "requiredTools": {
+                "hammer_dig": "minecraft:diamond"
+            }
+        }
+    ],
+    "rarity": "temporary",
+    "replace": true,
+    "slots": [
+        "crossbow/string"
+    ]
+}

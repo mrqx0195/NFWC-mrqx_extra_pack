@@ -10,8 +10,8 @@ const mrqxOrganFoodEatenStrategies = {
     'kubejs:compressed_biscuit': function (event, organ) {
         let typeMap = getPlayerChestCavityTypeMap(event.player)
         if (typeMap.has('kubejs:food')) {
-            event.player.setFoodLevel(event.player.getFoodLevel() + typeMap.get('kubejs:food').length * 0.5)
-            event.player.setSaturation(event.player.getSaturation() + typeMap.get('kubejs:food').length * 0.5)
+            event.player.setFoodLevel(Math.min(event.player.getFoodLevel() + typeMap.get('kubejs:food').length * 0.5, 20))
+            event.player.setSaturation(Math.min(event.player.getSaturation() + typeMap.get('kubejs:food').length * 0.5, player.getFoodLevel()))
         }
     },
 
@@ -19,12 +19,12 @@ const mrqxOrganFoodEatenStrategies = {
     'kubejs:golden_compressed_biscuit': function (event, organ) {
         let typeMap = getPlayerChestCavityTypeMap(event.player)
         if (typeMap.has('kubejs:food')) {
-            event.player.setFoodLevel(event.player.getFoodLevel() + typeMap.get('kubejs:food').length)
-            event.player.setSaturation(event.player.getSaturation() + typeMap.get('kubejs:food').length)
+            event.player.setFoodLevel(Math.min(event.player.getFoodLevel() + typeMap.get('kubejs:food').length, 20))
+            event.player.setSaturation(Math.min(event.player.getSaturation() + typeMap.get('kubejs:food').length, player.getFoodLevel()))
         }
         if (typeMap.has('kubejs:magic')) {
-            event.player.setFoodLevel(event.player.getFoodLevel() + typeMap.get('kubejs:magic').length)
-            event.player.setSaturation(event.player.getSaturation() + typeMap.get('kubejs:magic').length)
+            event.player.setFoodLevel(Math.min(event.player.getFoodLevel() + typeMap.get('kubejs:magic').length, 20))
+            event.player.setSaturation(Math.min(event.player.getSaturation() + typeMap.get('kubejs:magic').length, player.getFoodLevel()))
         }
     },
 }

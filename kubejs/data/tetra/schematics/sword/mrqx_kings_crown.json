@@ -1,0 +1,28 @@
+{
+    "displayType": "major",
+    "glyph": {
+        "textureX": 112,
+        "textureY": 48
+    },
+    "materialRevealSlot": 0,
+    "materialSlotCount": 1,
+    "outcomes": [
+        {
+            "material": {
+                "items": [
+                    "mrqx_extra_pack:kings_crown"
+                ]
+            },
+            "moduleKey": "sword/mrqx_kings_crown",
+            "moduleVariant": "mrqx_kings_crown",
+            "requiredTools": {
+                "hammer_dig": "minecraft:diamond"
+            }
+        }
+    ],
+    "rarity": "temporary",
+    "replace": true,
+    "slots": [
+        "sword/guard"
+    ]
+}

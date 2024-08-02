@@ -1,33 +1,33 @@
 {
-    "key": "mrqx_sun_seed",
-    "category": "socket",
-    "primary": 0,
-    "secondary": 0,
-    "tertiary": 0,
-    "durability": 0,
-    "integrityCost": 1,
-    "integrityGain": 0,
-    "magicCapacity": 320,
-    "toolLevel": 0,
-    "toolEfficiency": 0,
     "attributes": {
-        "irons_spellbooks:max_mana": 320,
-        "irons_spellbooks:holy_spell_power": 2,
         "irons_spellbooks:holy_magic_resist": 2,
+        "irons_spellbooks:holy_spell_power": 2,
+        "irons_spellbooks:max_mana": 320,
         "irons_spellbooks:spell_power": 0.5,
         "irons_spellbooks:spell_resist": 0.5
     },
-    "tints": {
-        "glyph": "E9E45D",
-        "texture": "73711E"
-    },
-    "textures": [
-        "pristine"
-    ],
+    "category": "socket",
+    "durability": 0,
     "experienceCost": 3,
+    "integrityCost": 1,
+    "integrityGain": 0,
+    "key": "mrqx_sun_seed",
+    "magicCapacity": 320,
     "material": {
         "items": [
             "mrqx_extra_pack:sun_seed"
         ]
-    }
+    },
+    "primary": 0,
+    "secondary": 0,
+    "tertiary": 0,
+    "textures": [
+        "shiny"
+    ],
+    "tints": {
+        "glyph": "E9E45D",
+        "texture": "73711E"
+    },
+    "toolEfficiency": 0,
+    "toolLevel": 0
 }

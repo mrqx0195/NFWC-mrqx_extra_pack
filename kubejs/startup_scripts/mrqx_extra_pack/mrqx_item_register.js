@@ -767,74 +767,354 @@ StartupEvents.registry('item', event => {
         .tag('kubejs:damage_only')
         .tag('kubejs:bear_only');
 
-    // 便携式体检仪
-    event.create('mrqx_extra_pack:portable_medical_checkup_device').texture('mrqx_extra_pack:item/portable_medical_checkup_device')
-        .maxStackSize(1)
-        .useAnimation('bow')
-        .use((level, player, hand) => {
-            return true;
-        })
-        .useDuration(itemStack => 20)
-        .finishUsing((itemstack, level, entity) => {
-            if (level.isClientSide()) return itemstack
-            let ray = entity.rayTrace(4, true)
-            let target = entity
-            if (ray.entity && ray.entity.isLiving()) {
-                target = ray.entity
-            }
-            target.getChestCavityInstance().getOrganScores().forEach((key, value) => {
-                entity.tell([LEADING_SYMBOL, Text.yellow(global.SCORE_MAP[key]).hover(global.SCORE_HOVER_MAP[key]), Text.white(' : '), Text.white(value)])
-            })
-            entity.addItemCooldown(itemstack, 20 * 15)
-            return itemstack;
-        })
+    // 灵魂之翼
+    registerOrgan(new Organ('mrqx_extra_pack:wing_of_soul')
+        .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.wing_of_soul.1" })])
+        .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.wing_of_soul.2" })])
+        .addScore('speed', 2)
+        .addScore('defense', -0.5)
+        .build())
+        .texture('mrqx_extra_pack:item/organs/wing_of_soul')
+        .tag('itemborders:gold')
+        .tag('kubejs:active_only');
 
-    // 肿瘤诱变剂
-    event.create('mrqx_extra_pack:tumor_mutagen').texture('mrqx_extra_pack:item/tumor_mutagen')
-        .maxStackSize(64)
-        .useAnimation('drink')
-        .use((level, player, hand) => {
-            return true;
-        })
-        .useDuration(itemStack => 20)
-        .food(food => {
-            food.hunger(1).saturation(0.5)
-            food.effect('minecraft:poison', 20 * 30, 3, 1)
-            food.effect('minecraft:hunger', 20 * 30, 3, 1)
-            food.alwaysEdible()
-        })
+    // 永恒灵魂之翼
+    registerOrgan(new Organ('mrqx_extra_pack:eternal_wing_of_soul')
+        .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.eternal_wing_of_soul.1" })])
+        .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.eternal_wing_of_soul.2" })])
+        .addScore('speed', 3)
+        .addScore('defense', 1)
+        .build())
+        .texture('mrqx_extra_pack:item/organs/eternal_wing_of_soul')
+        .tag('itemborders:gold')
+        .tag('kubejs:active_only');
 
-    // 先进单片镜
-    event.create('mrqx_extra_pack:advanced_eyeglass')
-        .texture('mrqx_extra_pack:item/advanced_eyeglass')
-        .maxStackSize(1)
-        .tag('curios:head')
+    // 指令施法核心
+    registerOrgan(new Organ('mrqx_extra_pack:command_spell_core')
+        .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.command_spell_core.1" })])
+        .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.command_spell_core.2" })])
+        .addScore('defense', 3)
+        .build())
+        .texture('mrqx_extra_pack:item/organs/command_spell_core')
         .tag('itemborders:diamond')
-        .attachCapability(CuriosCapabilityBuilder.CURIOS.itemStack()
-            .canEquip(() => true)
-            .onEquip((itemFrom, ctx, itemTo) => {
-                if (ctx.entity().level.isClientSide()) return
-                global.mrqxAdvancedArchivistEyeGlassOnEquip(itemFrom, ctx, itemTo)
+        .tag('kubejs:active_only');
+
+    // 金酒之杯
+    registerOrgan(new Organ('mrqx_extra_pack:golden_chalice')
+        .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.golden_chalice.1" })])
+        .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.golden_chalice.2" })])
+        .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.golden_chalice.3" })])
+        .addScore('nerves', 3)
+        .build())
+        .texture('mrqx_extra_pack:item/organs/golden_chalice')
+        .tag('itemborders:gold')
+        .tag('kubejs:active_only');
+
+    // 复激活药丸
+    registerOrgan(new Organ('mrqx_extra_pack:re_active_pill')
+        .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.re_active_pill.1" })])
+        .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.re_active_pill.2" })])
+        .addScore('health', -5)
+        .build())
+        .texture('mrqx_extra_pack:item/organs/re_active_pill')
+        .tag('itemborders:diamond')
+        .tag('kubejs:active_only');
+
+    {// 传奇三件套
+        // “道士十五狗”
+        registerOrgan(new Organ('mrqx_extra_pack:taoist_fifteen_dogs')
+            .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.taoist_fifteen_dogs.1" })])
+            .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.taoist_fifteen_dogs.2" })])
+            .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.taoist_fifteen_dogs.3" })])
+            .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.taoist_fifteen_dogs.4" })])
+            .addScore('health', 1)
+            .build())
+            .texture('mrqx_extra_pack:item/organs/taoist_fifteen_dogs')
+            .tag('itemborders:gold')
+            .tag('kubejs:legends')
+            .tag('kubejs:player_tick_only')
+            .tag('kubejs:damage_only');
+
+        // “法师控制强”
+        registerOrgan(new Organ('mrqx_extra_pack:mage_control_strong')
+            .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.mage_control_strong.1" })])
+            .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.mage_control_strong.2" })])
+            .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.mage_control_strong.3" })])
+            .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.mage_control_strong.4" })])
+            .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.mage_control_strong.5" })])
+            .addScore('nerves', 1)
+            .build())
+            .texture('mrqx_extra_pack:item/organs/mage_control_strong')
+            .tag('itemborders:gold')
+            .tag('kubejs:legends')
+            .tag('kubejs:damage_only')
+            .tag('kubejs:active_only');
+
+        // “战士输出高”
+        registerOrgan(new Organ('mrqx_extra_pack:warrior_output_high')
+            .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.warrior_output_high.1" })])
+            .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.warrior_output_high.2" })])
+            .addScore('strength', 1)
+            .build())
+            .texture('mrqx_extra_pack:item/organs/warrior_output_high')
+            .tag('itemborders:gold')
+            .tag('kubejs:legends')
+            .tag('kubejs:damage_only');
+    }
+
+    {// 幽匿套
+        // 幽匿引痕体
+        registerOrgan(new Organ('mrqx_extra_pack:sculk_brandguider')
+            .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.sculk_brandguider.1" })])
+            .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.sculk_brandguider.2" })])
+            .addScore('speed', 2.5)
+            .addScore('nerves', 2)
+            .build())
+            .texture('mrqx_extra_pack:item/organs/sculk/sculk_brandguider')
+            .tag('kubejs:mrqx_sculk')
+            .tag('kubejs:player_tick_only');
+
+        // 幽匿之心
+        registerOrgan(new Organ('mrqx_extra_pack:sculk_heart')
+            .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.sculk_heart.1" })])
+            .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.sculk_heart.2" })])
+            .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.sculk_heart.3" })])
+            .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.sculk_heart.4" })])
+            .addScore('health', 2)
+            .build())
+            .texture('mrqx_extra_pack:item/organs/sculk/sculk_heart')
+            .tag('kubejs:mrqx_sculk')
+            .tag('kubejs:player_tick_only');
+
+        // 幽匿裂岩体
+        registerOrgan(new Organ('mrqx_extra_pack:sculk_rock_breaker')
+            .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.sculk_rock_breaker.1" })])
+            .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.sculk_rock_breaker.2" })])
+            .addScore('strength', 2)
+            .addScore('speed', 0.5)
+            .build())
+            .texture('mrqx_extra_pack:item/organs/sculk/sculk_rock_breaker')
+            .tag('kubejs:mrqx_sculk')
+            .tag('kubejs:muscle')
+            .tag('kubejs:damage');
+
+        // 幽匿沉积体
+        registerOrgan(new Organ('mrqx_extra_pack:sculk_depositer')
+            .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.sculk_depositer.1" })])
+            .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.sculk_depositer.2" })])
+            .addScore('defense', 1.5)
+            .addScore('impact_resistant', 2)
+            .build())
+            .texture('mrqx_extra_pack:item/organs/sculk/sculk_depositer')
+            .tag('kubejs:mrqx_sculk')
+            .tag('kubejs:rib')
+            .tag('kubejs:bear');
+
+        // 幽匿寄染体
+        registerOrgan(new Organ('mrqx_extra_pack:sculk_infester')
+            .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.sculk_infester.1" })])
+            .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.sculk_infester.2" })])
+            .addScore('strength', 0.5)
+            .addScore('venomous', 2)
+            .build())
+            .texture('mrqx_extra_pack:item/organs/sculk/sculk_infester')
+            .tag('kubejs:mrqx_sculk')
+            .tag('kubejs:damage');
+
+        // 幽匿集养体
+        registerOrgan(new Organ('mrqx_extra_pack:sculk_collectors')
+            .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.sculk_collectors.1" })])
+            .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.sculk_collectors.2" })])
+            .addScore('digestion', 1)
+            .addScore('nutrition', 1)
+            .addScore('metabolism', 1)
+            .addScore('filtration', 1)
+            .addScore('detoxification', 1)
+            .build())
+            .texture('mrqx_extra_pack:item/organs/sculk/sculk_collectors')
+            .tag('kubejs:mrqx_sculk')
+            .tag('kubejs:player_tick_only');
+
+        // 幽匿咆哮体
+        registerOrgan(new Organ('mrqx_extra_pack:sculk_growler')
+            .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.sculk_growler.1" })])
+            .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.sculk_growler.2" })])
+            .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.sculk_growler.3" })])
+            .addScore('strength', 1)
+            .build())
+            .texture('mrqx_extra_pack:item/organs/sculk/sculk_growler')
+            .tag('kubejs:mrqx_sculk')
+            .tag('kubejs:key_pressed');
+    }
+
+    {// 国王套
+        // 诸王的冠冕
+        registerOrgan(new Organ('mrqx_extra_pack:kings_crown')
+            .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.kings_crown.1" })])
+            .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.kings_crown.2" })])
+            .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.kings_crown.3" })])
+            .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.kings_crown.4" })])
+            .addScore('health', 2)
+            .build())
+            .texture('mrqx_extra_pack:item/organs/king/kings_crown')
+            .tag('kubejs:mrqx_king')
+            .tag('kubejs:active_only');
+
+        // 国王的新枪
+        registerOrgan(new Organ('mrqx_extra_pack:kings_new_lance')
+            .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.kings_new_lance.1" })])
+            .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.kings_new_lance.2" })])
+            .addScore('strength', 2)
+            .build())
+            .texture('mrqx_extra_pack:item/organs/king/kings_new_lance')
+            .tag('kubejs:mrqx_king')
+            .tag('kubejs:player_tick_only');
+
+        // 国王的护戒
+        registerOrgan(new Organ('mrqx_extra_pack:kings_fellowship')
+            .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.kings_fellowship.1" })])
+            .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.kings_fellowship.2" })])
+            .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.kings_fellowship.3" })])
+            .addScore('defense', 1)
+            .build())
+            .texture('mrqx_extra_pack:item/organs/king/kings_fellowship')
+            .tag('kubejs:mrqx_king')
+            .tag('kubejs:active_only');
+
+        // 国王的铠甲
+        registerOrgan(new Organ('mrqx_extra_pack:kings_armor')
+            .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.kings_armor.1" })])
+            .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.kings_armor.2" })])
+            .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.kings_armor.3" })])
+            .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.kings_armor.4" })])
+            .addScore('defense', 2)
+            .build())
+            .texture('mrqx_extra_pack:item/organs/king/kings_armor')
+            .tag('kubejs:mrqx_king')
+            .tag('kubejs:active_only')
+            .tag('kubejs:damage_only');
+
+        // 国王的圆饼
+        registerOrgan(new Organ('mrqx_extra_pack:kings_buckler')
+            .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.kings_buckler.1" })])
+            .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.kings_buckler.2" })])
+            .addScore('defense', 1)
+            .addScore('impact_resistant', 1.5)
+            .build())
+            .texture('mrqx_extra_pack:item/organs/king/kings_buckler')
+            .tag('kubejs:mrqx_king')
+            .tag('kubejs:player_tick_only');
+
+        // 国王的枝条
+        registerOrgan(new Organ('mrqx_extra_pack:kings_staff')
+            .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.kings_staff.1" })])
+            .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.kings_staff.2" })])
+            .addScore('nerves', 1)
+            .build())
+            .texture('mrqx_extra_pack:item/organs/king/kings_staff')
+            .tag('kubejs:mrqx_king')
+            .tag('kubejs:player_tick_only');
+
+        // 国王的延伸
+        registerOrgan(new Organ('mrqx_extra_pack:kings_extension')
+            .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.kings_extension.1" })])
+            .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.kings_extension.2" })])
+            .addScore('nerves', 2)
+            .build())
+            .texture('mrqx_extra_pack:item/organs/king/kings_extension')
+            .tag('kubejs:mrqx_king')
+            .tag('kubejs:player_tick_only');
+
+        // 国王的水晶
+        registerOrgan(new Organ('mrqx_extra_pack:kings_crystal')
+            .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.kings_crystal.1" })])
+            .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.kings_crystal.2" })])
+            .addScore('detoxification', 1)
+            .addScore('filtration', 1)
+            .build())
+            .texture('mrqx_extra_pack:item/organs/king/kings_crystal')
+            .tag('kubejs:mrqx_king')
+            .tag('kubejs:loot_entity_only');
+    }
+
+    {// 非器官物品
+        // 便携式体检仪
+        event.create('mrqx_extra_pack:portable_medical_checkup_device').texture('mrqx_extra_pack:item/portable_medical_checkup_device')
+            .maxStackSize(1)
+            .useAnimation('bow')
+            .use((level, player, hand) => {
+                return true;
             })
-            .onUnequip((itemFrom, ctx, itemTo) => {
-                if (ctx.entity().level.isClientSide()) return
-                global.mrqxAdvancedArchivistEyeGlassOnUnequip(itemFrom, ctx, itemTo)
+            .useDuration(itemStack => 20)
+            .finishUsing((itemstack, level, entity) => {
+                if (level.isClientSide()) return itemstack
+                let ray = entity.rayTrace(4, true)
+                let target = entity
+                if (ray.entity && ray.entity.isLiving()) {
+                    target = ray.entity
+                }
+                target.getChestCavityInstance().getOrganScores().forEach((key, value) => {
+                    entity.tell([LEADING_SYMBOL, Text.yellow(global.SCORE_MAP[key]).hover(global.SCORE_HOVER_MAP[key]), Text.white(' : '), Text.white(value)])
+                })
+                entity.addItemCooldown(itemstack, 20 * 15)
+                return itemstack;
             })
-            .curioTick((item, ctx) => {
-                if (ctx.entity().level.isClientSide()) return
-                global.mrqxAdvancedArchivistEyeGlassTick(item, ctx)
-            }))
 
-    // 散发着光亮的种子
-    event.create('mrqx_extra_pack:shining_seed').texture('mrqx_extra_pack:item/shining_seed')
+        // 肿瘤诱变剂
+        event.create('mrqx_extra_pack:tumor_mutagen').texture('mrqx_extra_pack:item/tumor_mutagen')
+            .maxStackSize(64)
+            .useAnimation('drink')
+            .use((level, player, hand) => {
+                return true;
+            })
+            .useDuration(itemStack => 20)
+            .food(food => {
+                food.hunger(1).saturation(0.5)
+                food.effect('minecraft:poison', 20 * 30, 3, 1)
+                food.effect('minecraft:hunger', 20 * 30, 3, 1)
+                food.alwaysEdible()
+            })
 
-    // 风暴金属锭
-    event.create('mrqx_extra_pack:storm_metal_ingot').texture('mrqx_extra_pack:item/storm_metal_ingot')
+        // 先进单片镜
+        event.create('mrqx_extra_pack:advanced_eyeglass')
+            .texture('mrqx_extra_pack:item/advanced_eyeglass')
+            .maxStackSize(1)
+            .tag('curios:head')
+            .tag('itemborders:diamond')
+            .attachCapability(CuriosCapabilityBuilder.CURIOS.itemStack()
+                .canEquip(() => true)
+                .onEquip((itemFrom, ctx, itemTo) => {
+                    if (ctx.entity().level.isClientSide()) return
+                    global.mrqxAdvancedArchivistEyeGlassOnEquip(itemFrom, ctx, itemTo)
+                })
+                .onUnequip((itemFrom, ctx, itemTo) => {
+                    if (ctx.entity().level.isClientSide()) return
+                    global.mrqxAdvancedArchivistEyeGlassOnUnequip(itemFrom, ctx, itemTo)
+                })
+                .curioTick((item, ctx) => {
+                    if (ctx.entity().level.isClientSide()) return
+                    global.mrqxAdvancedArchivistEyeGlassTick(item, ctx)
+                }))
 
-    // 未完成的物品
-    event.create('mrqx_extra_pack:incomplete_storm_metal_ingot').texture('mrqx_extra_pack:item/storm_metal_ingot')
-    event.create('mrqx_extra_pack:incomplete_fission_reactor').texture('mrqx_extra_pack:item/organs/nuclear/fission_reactor')
-    event.create('mrqx_extra_pack:incomplete_nuclear_fuel').texture('mrqx_extra_pack:item/nuclear_fuel')
-    event.create('mrqx_extra_pack:incomplete_compressed_biscuit').texture('mrqx_extra_pack:item/organs/compressed_biscuit')
-    event.create('mrqx_extra_pack:incomplete_golden_compressed_biscuit').texture('mrqx_extra_pack:item/organs/golden_compressed_biscuit')
+        // 脆肚
+        event.create('mrqx_extra_pack:crispy_belly').texture('mrqx_extra_pack:item/crispy_belly')
+            .maxStackSize(64)
+            .food(food => {
+                food.hunger(20).saturation(1)
+            })
+
+        // 散发着光亮的种子
+        event.create('mrqx_extra_pack:shining_seed').texture('mrqx_extra_pack:item/shining_seed')
+
+        // 风暴金属锭
+        event.create('mrqx_extra_pack:storm_metal_ingot').texture('mrqx_extra_pack:item/storm_metal_ingot')
+
+        // 未完成的物品
+        event.create('mrqx_extra_pack:incomplete_storm_metal_ingot').texture('mrqx_extra_pack:item/storm_metal_ingot')
+        event.create('mrqx_extra_pack:incomplete_fission_reactor').texture('mrqx_extra_pack:item/organs/nuclear/fission_reactor')
+        event.create('mrqx_extra_pack:incomplete_nuclear_fuel').texture('mrqx_extra_pack:item/nuclear_fuel')
+        event.create('mrqx_extra_pack:incomplete_compressed_biscuit').texture('mrqx_extra_pack:item/organs/compressed_biscuit')
+        event.create('mrqx_extra_pack:incomplete_golden_compressed_biscuit').texture('mrqx_extra_pack:item/organs/golden_compressed_biscuit')
+        event.create('mrqx_extra_pack:incomplete_command_spell_core').texture('kubejs:item/spell_book_models/command_spell_book')
+    }
 })

@@ -1,33 +1,33 @@
 {
-    "key": "mrqx_active_ice_dragon_bead",
-    "category": "socket",
-    "primary": 0,
-    "secondary": 0,
-    "tertiary": 0,
-    "durability": 0,
-    "integrityCost": 1,
-    "integrityGain": 0,
-    "magicCapacity": 480,
-    "toolLevel": 0,
-    "toolEfficiency": 0,
     "attributes": {
-        "irons_spellbooks:max_mana": 480,
-        "irons_spellbooks:ice_spell_power": 2.3,
         "irons_spellbooks:ice_magic_resist": 2.3,
+        "irons_spellbooks:ice_spell_power": 2.3,
+        "irons_spellbooks:max_mana": 480,
         "irons_spellbooks:spell_power": 0.3,
         "irons_spellbooks:spell_resist": 0.3
     },
-    "tints": {
-        "glyph": "307BB4",
-        "texture": "16486E"
-    },
-    "textures": [
-        "pristine"
-    ],
+    "category": "socket",
+    "durability": 0,
     "experienceCost": 4,
+    "integrityCost": 1,
+    "integrityGain": 0,
+    "key": "mrqx_active_ice_dragon_bead",
+    "magicCapacity": 480,
     "material": {
         "items": [
             "mrqx_extra_pack:active_ice_dragon_bead"
         ]
-    }
+    },
+    "primary": 0,
+    "secondary": 0,
+    "tertiary": 0,
+    "textures": [
+        "shiny"
+    ],
+    "tints": {
+        "glyph": "307BB4",
+        "texture": "16486E"
+    },
+    "toolEfficiency": 0,
+    "toolLevel": 0
 }

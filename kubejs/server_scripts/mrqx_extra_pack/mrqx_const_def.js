@@ -131,3 +131,22 @@ const mrqxOrganSuit = {
         "mrqx_extra_pack:appendix_mutation",
     ],
 }
+
+const mrqxGenesisAdvancementsCheck = {
+    'minecraft:nether/netherite_armor': Text.of({ "translate": "mrqx_extra_pack.genesis_advancements_check.1" }),
+    'minecraft:nether/create_full_beacon': Text.of({ "translate": "mrqx_extra_pack.genesis_advancements_check.2" }),
+    'minecraft:nether/all_effects': Text.of({ "translate": "mrqx_extra_pack.genesis_advancements_check.3" }),
+    'minecraft:nether/explore_nether': Text.of({ "translate": "mrqx_extra_pack.genesis_advancements_check.4" }),
+    'minecraft:end/respawn_dragon': Text.of({ "translate": "mrqx_extra_pack.genesis_advancements_check.5" }),
+    'minecraft:adventure/kill_all_mobs': Text.of({ "translate": "mrqx_extra_pack.genesis_advancements_check.6" }),
+    'minecraft:adventure/arbalistic': Text.of({ "translate": "mrqx_extra_pack.genesis_advancements_check.7" }),
+    'minecraft:adventure/adventuring_time': Text.of({ "translate": "mrqx_extra_pack.genesis_advancements_check.8" }),
+    'minecraft:husbandry/bred_all_animals': Text.of({ "translate": "mrqx_extra_pack.genesis_advancements_check.9" }),
+    'minecraft:husbandry/balanced_diet': Text.of({ "translate": "mrqx_extra_pack.genesis_advancements_check.a" }),
+    'minecraft:husbandry/obtain_netherite_hoe': Text.of({ "translate": "mrqx_extra_pack.genesis_advancements_check.b" }),
+    'witherstormmod:main/wither_storm_defeated': Text.of({ "translate": "mrqx_extra_pack.genesis_advancements_check.c" }),
+    'create:steam_engine_maxed': Text.of({ "translate": "mrqx_extra_pack.genesis_advancements_check.d" }),
+    'unusualprehistory:main/rex_passify': Text.of({ "translate": "mrqx_extra_pack.genesis_advancements_check.e" }),
+    'irons_spellbooks:irons_spellbooks/staff_blood_staff': Text.of({ "translate": "mrqx_extra_pack.genesis_advancements_check.f" }),
+    'alexsmobs:alexsmobs/farseer': Text.of({ "translate": "mrqx_extra_pack.genesis_advancements_check.g" }),
+}

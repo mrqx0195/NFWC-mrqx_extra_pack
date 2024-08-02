@@ -1,0 +1,28 @@
+{
+    "displayType": "major",
+    "glyph": {
+        "textureX": 96,
+        "textureY": 48
+    },
+    "materialRevealSlot": 0,
+    "materialSlotCount": 1,
+    "outcomes": [
+        {
+            "material": {
+                "items": [
+                    "mrqx_extra_pack:reactor_chamber"
+                ]
+            },
+            "moduleKey": "crossbow/mrqx_reactor_chamber",
+            "moduleVariant": "mrqx_reactor_chamber",
+            "requiredTools": {
+                "hammer_dig": "minecraft:diamond"
+            }
+        }
+    ],
+    "rarity": "temporary",
+    "replace": true,
+    "slots": [
+        "crossbow/stave"
+    ]
+}

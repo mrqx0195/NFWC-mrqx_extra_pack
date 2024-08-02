@@ -1,0 +1,28 @@
+{
+    "displayType": "major",
+    "glyph": {
+        "textureX": 208,
+        "textureY": 0
+    },
+    "materialRevealSlot": 0,
+    "materialSlotCount": 1,
+    "outcomes": [
+        {
+            "material": {
+                "items": [
+                    "mrqx_extra_pack:kings_crystal"
+                ]
+            },
+            "moduleKey": "sword/mrqx_kings_crystal",
+            "moduleVariant": "mrqx_kings_crystal",
+            "requiredTools": {
+                "hammer_dig": "minecraft:diamond"
+            }
+        }
+    ],
+    "rarity": "temporary",
+    "replace": true,
+    "slots": [
+        "sword/pommel"
+    ]
+}

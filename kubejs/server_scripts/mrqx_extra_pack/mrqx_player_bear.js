@@ -25,6 +25,10 @@ const mrqxOrganPlayerBearStrategies = {
         }
     },
 
+    // 幽匿沉积体
+    'mrqx_extra_pack:sculk_depositer': function (event, organ, data) {
+        event.amount *= 1 - Math.max(mrqxGetSculkCount(event.entity), 0.1)
+    },
 }
 
 var assign_organ_player_bear = Object.assign(organPlayerBearStrategies, mrqxOrganPlayerBearStrategies);
@@ -42,7 +46,7 @@ const mrqxOrganPlayerBearOnlyStrategies = {
             return
         }
         if (event.amount >= player.getHealth()) {
-            if (mrqxCheckOrganSuit(player, 'seaborn')) {
+            if (mrqxCheckOrganSuit(player, 'seaborn', true)) {
                 player.addItemCooldown(organ.id, 400)
             }
             else {
@@ -61,7 +65,7 @@ const mrqxOrganPlayerBearOnlyStrategies = {
         if (typeMap.has('kubejs:mrqx_seaborn')) {
             amplifier += typeMap.get('kubejs:mrqx_seaborn').length
         }
-        if (mrqxCheckOrganSuit(player, 'seaborn')) {
+        if (mrqxCheckOrganSuit(player, 'seaborn', true)) {
             amplifier *= 2
         }
         if (player.getHealth() / player.getMaxHealth() < 0.5) {

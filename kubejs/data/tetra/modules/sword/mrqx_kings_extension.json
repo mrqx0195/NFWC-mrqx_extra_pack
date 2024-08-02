@@ -1,0 +1,52 @@
+{
+    "improvements": [
+        "tetra:sword/shared_hilt/",
+        "tetra:sword/shared/",
+        "tetra:shared/"
+    ],
+    "renderLayer": "lower",
+    "replace": true,
+    "slots": [
+        "sword/hilt"
+    ],
+    "type": "tetra:basic_major_module",
+    "variants": [
+        {
+            "aspects": {
+                "breakable": 2,
+                "edgedWeapon": 2
+            },
+            "attributes": {
+                "generic.attack_speed": 0.3
+            },
+            "durability": 10,
+            "effects": {
+                "art_of_forging:resolve": [
+                    1,
+                    1
+                ],
+                "art_of_forging:vengeance": [
+                    1,
+                    50
+                ]
+            },
+            "glyph": {
+                "textureX": 16,
+                "tint": "AC6C1C"
+            },
+            "integrity": 10,
+            "key": "mrqx_kings_extension",
+            "magicCapacity": 160,
+            "material": {
+                "items": [
+                    "mrqx_extra_pack:kings_extension"
+                ]
+            },
+            "models": [
+                {
+                    "location": "tetra:items/module/sword/mrqx_extra_pack/mrqx_kings_extension"
+                }
+            ]
+        }
+    ]
+}

@@ -20,7 +20,7 @@ const mrqxEntityLootOnlyStrategies = {
     // 冒险者证章
     'mrqx_extra_pack:adventurers_badge': function (event, organ) {
         let count = 1
-        let diffStage = event.player.stages.getAll().toArray().find(ele => ele.startsWith('difficult_level_'))
+        let diffStage = event.getPlayer().stages.getAll().toArray().find(ele => ele.startsWith('difficult_level_'))
         let diffLevelNum = 1
         if (diffStage) {
             diffLevelNum = diffStage.match('difficult_level_(\\d+)')[1]
@@ -33,6 +33,28 @@ const mrqxEntityLootOnlyStrategies = {
         event.loot.forEach(loot => {
             loot.setCount(loot.getCount() * count)
         })
+    },
+
+    // 死狱之魂
+    'mrqx_extra_pack:prison_soul': function (event, organ) {
+        let player = event.getPlayer()
+        let count = player.persistentData.getInt('mrqx_kill_count') ?? 0
+        count++
+        player.persistentData.putInt('mrqx_kill_count', count)
+    },
+
+    // “镜花水月”肾
+    'mrqx_extra_pack:kidney_moon_in_the_water': function (event, organ) {
+        let player = event.getPlayer()
+        player.setHealth(player.getHealth() - player.getMaxHealth() * 0.05)
+    },
+
+    // 国王的水晶
+    'mrqx_extra_pack:kings_crystal': function (event, organ) {
+        let player = event.getPlayer()
+        if (Math.floor(player.getHealth()) <= 1) {
+            event.addLoot('lightmanscurrency:coin_copper')
+        }
     },
 }
 

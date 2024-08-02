@@ -1,0 +1,30 @@
+{
+    "displayType": "major",
+    "glyph": {
+        "textureLocation": "tetra:textures/gui/aof_glyph.png",
+        "textureX": 176,
+        "textureY": 0,
+        "tint": "3ED4F9"
+    },
+    "materialRevealSlot": 0,
+    "materialSlotCount": 1,
+    "outcomes": [
+        {
+            "material": {
+                "items": [
+                    "mrqx_extra_pack:kings_new_lance"
+                ]
+            },
+            "moduleKey": "sword/mrqx_kings_new_lance",
+            "moduleVariant": "mrqx_kings_new_lance",
+            "requiredTools": {
+                "hammer_dig": "minecraft:diamond"
+            }
+        }
+    ],
+    "rarity": "temporary",
+    "replace": true,
+    "slots": [
+        "sword/blade"
+    ]
+}

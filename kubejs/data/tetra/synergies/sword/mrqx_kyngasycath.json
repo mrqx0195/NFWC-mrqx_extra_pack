@@ -1,0 +1,62 @@
+[
+    {
+        "attributes": {
+            "generic.armor": 5,
+            "generic.armor_toughness": 5,
+            "generic.attack_damage": 10,
+            "generic.attack_speed": -0.5
+        },
+        "durability": 2000,
+        "effects": {
+            "abilityCombo": [
+                10,
+                10
+            ],
+            "abilityDefensive": [
+                600,
+                30
+            ],
+            "abilityEcho": 15,
+            "abilityExhilaration": [
+                20,
+                50
+            ],
+            "abilityMomentum": [
+                30,
+                3
+            ],
+            "abilityOvercharge": [
+                10,
+                10
+            ],
+            "abilityOverextend": 101,
+            "abilityPerformance": 1,
+            "abilityRevenge": [
+                200,
+                30
+            ],
+            "abilitySpeed": [
+                10,
+                30
+            ],
+            "art_of_forging:vengeance": [
+                1,
+                50
+            ],
+            "reap": [
+                1000,
+                10
+            ],
+            "stabilizing": 100,
+            "sweeping": 8,
+            "truesweep": 3
+        },
+        "moduleVariants": [
+            "mrqx_kings_crown",
+            "mrqx_kings_extension",
+            "mrqx_kings_crystal",
+            "mrqx_kings_new_lance"
+        ],
+        "name": "sword/mrqx_kyngasycath"
+    }
+]

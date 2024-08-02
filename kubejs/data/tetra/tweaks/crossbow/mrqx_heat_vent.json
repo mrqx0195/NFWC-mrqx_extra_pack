@@ -1,0 +1,18 @@
+[
+    {
+        "key": "crossbow_tweak/mrqx_heat_vent",
+        "properties": {
+            "attributes": {
+                "tetra:draw_speed": 0.2,
+                "tetra:draw_strength": 0.5
+            },
+            "durabilityMultiplier": 0.95,
+            "effects": {
+                "fierySelf": -0.05,
+                "velocity": 10
+            }
+        },
+        "steps": 10,
+        "variant": "mrqx_heat_vent"
+    }
+]
