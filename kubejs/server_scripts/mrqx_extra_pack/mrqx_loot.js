@@ -46,7 +46,7 @@ const mrqxEntityLootOnlyStrategies = {
     // “镜花水月”肾
     'mrqx_extra_pack:kidney_moon_in_the_water': function (event, organ) {
         let player = event.getPlayer()
-        player.setHealth(player.getHealth() - player.getMaxHealth() * 0.05)
+        player.setHealth(player.getHealth() + player.getMaxHealth() * 0.05)
     },
 
     // 国王的水晶

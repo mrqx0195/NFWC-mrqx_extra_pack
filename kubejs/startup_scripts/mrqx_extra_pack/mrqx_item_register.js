@@ -283,8 +283,7 @@ StartupEvents.registry('item', event => {
         .texture('mrqx_extra_pack:item/organs/dark_sun_seed')
         .tag('itemborders:diamond')
         .tag('kubejs:key_pressed')
-        .tag('kubejs:legends')
-        .tag('kubejs:active_only');
+        .tag('kubejs:legends');
 
     // 噩梦醇
     registerOrgan(new Organ('mrqx_extra_pack:marenol')
@@ -339,7 +338,7 @@ StartupEvents.registry('item', event => {
             .tag('kubejs:magic')
             .tag('kubejs:active');
 
-        // 魔能过载处理器
+        // 魔能速射处理器
         registerOrgan(new Organ('mrqx_extra_pack:magic_overload_cpu')
             .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.magic_overload_cpu.1" })])
             .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.magic_overload_cpu.2" })])
@@ -355,8 +354,9 @@ StartupEvents.registry('item', event => {
         // 魔能“玻璃大炮”处理器
         registerOrgan(new Organ('mrqx_extra_pack:magic_glass_cannon_cpu')
             .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.magic_glass_cannon_cpu.1" })])
-            .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.magic_glass_cannon_cpu.2" })])
-            .addScore('nerves', 2)
+            .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.magic_glass_cannon_cpu.2" })])
+            .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.magic_glass_cannon_cpu.3" })])
+            .addScore('nerves', 1.5)
             .build())
             .texture('mrqx_extra_pack:item/organs/cpu/magic_glass_cannon_cpu')
             .tag('itemborders:gold')

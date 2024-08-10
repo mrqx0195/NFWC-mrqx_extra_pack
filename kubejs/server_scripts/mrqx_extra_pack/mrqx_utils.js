@@ -8,6 +8,7 @@ const mrqxPlayerLoginTime = new Map()
  * @param {Internal.LivingEntity} entity 
  * @param {Number} damage
  * @param {String} type 
+ * @returns {number}
  */
 function mrqxCauseElementDamage(entity, damage, type) {
     let count = (entity.persistentData.getInt("mrqx_" + type + "_damage") ?? 0) + damage
@@ -23,13 +24,13 @@ function mrqxCauseElementDamage(entity, damage, type) {
             if (entity.hasEffect(effect)) {
                 amplifier += entity.getEffect(effect).getAmplifier() + 1
             }
-            entity.potionEffects.add(effect, duration, amplifier)
+            entity.potionEffects.add(effect, duration, Math.min(amplifier, 255))
         })
         entity.persistentData.putInt("mrqx_" + type + "_damage", count)
-        return true
+        return damageCount
     }
     entity.persistentData.putInt("mrqx_" + type + "_damage", count)
-    return false
+    return 0
 }
 
 /**
@@ -37,9 +38,9 @@ function mrqxCauseElementDamage(entity, damage, type) {
  * @param {Internal.ServerPlayer} player 
  * @param {String} type 
  * @param {Boolean} isAll 
+ * @returns {number}
  */
 function mrqxCheckOrganSuit(player, type, isAll) {
-    isAll = typeof isAll !== "undefined" ? isAll : true;
     let playerChest = getPlayerChestCavityItemMap(player)
     let organList = mrqxOrganSuit[type]
     let count = 0
@@ -123,11 +124,16 @@ function mrqxGetSculkCount(player) {
     let count = 0
     let itemMap = getPlayerChestCavityItemMap(player)
     let typeMap = getPlayerChestCavityTypeMap(player)
+    if (player.getPersistentData().getLong('mrqxSculkCountLastUpdateTime') <= player.age + 20) {
+        return player.getPersistentData().getLong('mrqxSculkCount')
+    }
     if (itemMap.has('mrqx_extra_pack:sculk_heart') && typeMap.has('kubejs:mrqx_sculk')) {
         count = typeMap.get('kubejs:mrqx_sculk').length
     }
     let blockSet = new Set()
     count *= mrqxGetConnectedBlocksCount(0, player.getBlockX(), player.getBlockY() - 1, player.getBlockZ(), 100, 'minecraft:sculk', player.getLevel(), blockSet)
+    player.getPersistentData().putLong('mrqxSculkCountLastUpdateTime', player.age)
+    player.getPersistentData().putLong('mrqxSculkCount', count)
     return count
 }
 

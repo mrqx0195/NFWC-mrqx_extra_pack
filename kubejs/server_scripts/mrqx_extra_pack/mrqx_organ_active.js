@@ -178,12 +178,6 @@ const mrqxOrganActiveOnlyStrategies = {
         attributeMapValueAddition(attributeMap, global.HOLY_SPELL_DAMAGE, playerChestInstance.organScores.get(new ResourceLocation('chestcavity', 'photosynthesis') ?? 0) * 0.05)
     },
 
-    // 暗日种子
-    'mrqx_extra_pack:dark_sun_seed': function (player, organ, attributeMap) {
-        let playerChestInstance = player.getChestCavityInstance()
-        attributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, playerChestInstance.organScores.get(new ResourceLocation('chestcavity', 'photosynthesis') ?? 0) / (player.getArmorValue() + 1))
-    },
-
     // “涌潮悲歌”心脏
     'mrqx_extra_pack:heart_tidal_elegy': function (player, organ, attributeMap) {
         let typeMap = getPlayerChestCavityTypeMap(player)

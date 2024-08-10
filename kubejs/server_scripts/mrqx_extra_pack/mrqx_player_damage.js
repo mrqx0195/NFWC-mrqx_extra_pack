@@ -175,9 +175,7 @@ const mrqxOrganPlayerDamageOnlyStrategies = {
 
 	// 激活·火龙宝玉
 	'mrqx_extra_pack:active_fire_dragon_bead': function (event, organ, data) {
-		if (mrqxCauseElementDamage(event.entity, event.amount, 'fire')) {
-			event.entity.setSecondsOnFire(10)
-		}
+		mrqxCauseElementDamage(event.entity, event.amount, 'fire')
 	},
 
 	// 激活·电龙宝玉
@@ -215,7 +213,9 @@ const mrqxOrganPlayerDamageOnlyStrategies = {
 		entityList.forEach(entity => {
 			if (!entity.isPlayer()) {
 				event.entity.getServer().scheduleInTicks(1, () => {
-					entity.attack(DamageSource.playerAttack(player).bypassArmor().bypassEnchantments().bypassInvul().bypassMagic(), player.getAttributeTotalValue('minecraft:generic.attack_damage') * amplifier * 0.05)
+					if (entity.isLiving()) {
+						entity.attack(DamageSource.playerAttack(player).bypassArmor().bypassEnchantments().bypassInvul().bypassMagic(), player.getAttributeTotalValue('minecraft:generic.attack_damage') * amplifier * 0.05)
+					}
 				})
 			}
 		})
@@ -238,12 +238,16 @@ const mrqxOrganPlayerDamageOnlyStrategies = {
 			if (amplifier > 0 && !entity.isPlayer()) {
 				if (mrqxCheckOrganSuit(player, 'seaborn', true)) {
 					event.entity.getServer().scheduleInTicks(1, () => {
-						entity.attack(DamageSource.playerAttack(player), player.getAttributeTotalValue('minecraft:generic.attack_damage') * 2)
+						if (entity.isLiving()) {
+							entity.attack(DamageSource.playerAttack(player), player.getAttributeTotalValue('minecraft:generic.attack_damage') * 2)
+						}
 					})
 				}
 				else {
 					event.entity.getServer().scheduleInTicks(1, () => {
-						entity.attack(DamageSource.playerAttack(player), player.getAttributeTotalValue('minecraft:generic.attack_damage'))
+						if (entity.isLiving()) {
+							entity.attack(DamageSource.playerAttack(player), player.getAttributeTotalValue('minecraft:generic.attack_damage'))
+						}
 					})
 				}
 				entity.potionEffects.add('cataclysm:stun', 20, 0)
@@ -270,7 +274,9 @@ const mrqxOrganPlayerDamageOnlyStrategies = {
 		}
 		if ((entity.getHealth() / entity.getMaxHealth()) >= ((player.getHealth() / player.getMaxHealth()))) {
 			event.entity.getServer().scheduleInTicks(1, () => {
-				entity.attack(DamageSource.playerAttack(player), player.getAttributeTotalValue('minecraft:generic.attack_damage') * amplifier * 0.1)
+				if (entity.isLiving()) {
+					entity.attack(DamageSource.playerAttack(player), player.getAttributeTotalValue('minecraft:generic.attack_damage') * amplifier * 0.1)
+				}
 			})
 		}
 		else {
@@ -333,12 +339,16 @@ const mrqxOrganPlayerDamageOnlyStrategies = {
 		amplifier = Math.min(Math.floor(manaCost / 50), amplifier)
 		if (mrqxCheckOrganSuit(player, 'seaborn', true)) {
 			event.entity.getServer().scheduleInTicks(1, () => {
-				entity.attack(DamageSource.indirectMagic(player, player), player.getAttributeTotalValue('minecraft:generic.attack_damage') * 0.01 * amplifier * 2)
+				if (entity.isLiving()) {
+					entity.attack(DamageSource.indirectMagic(player, player), player.getAttributeTotalValue('minecraft:generic.attack_damage') * 0.01 * amplifier * 2)
+				}
 			})
 		}
 		else {
 			event.entity.getServer().scheduleInTicks(1, () => {
-				entity.attack(DamageSource.indirectMagic(player, player), player.getAttributeTotalValue('minecraft:generic.attack_damage') * 0.01 * amplifier)
+				if (entity.isLiving()) {
+					entity.attack(DamageSource.indirectMagic(player, player), player.getAttributeTotalValue('minecraft:generic.attack_damage') * 0.01 * amplifier)
+				}
 			})
 		}
 		magicData.setMana(Math.max((manaCost - amplifier * 50), 0))
@@ -354,8 +364,8 @@ const mrqxOrganPlayerDamageOnlyStrategies = {
 		player.potionEffects.add('mrqx_extra_pack:charged_blade_effect', 2, 0, false, false)
 	},
 
-	// “战士输出高”
-	'mrqx_extra_pack:warrior_output_high': function (event, organ, data) {
+	// “道士十五狗”
+	'mrqx_extra_pack:taoist_fifteen_dogs': function (event, organ, data) {
 		let player = event.source.player
 		player.getServer().getEntities().forEach(entity => {
 			if (entity.getPersistentData().getString('mrqxTaoistFifteenDogs') && entity.getPersistentData().getString('mrqxTaoistFifteenDogs') == player.getStringUuid()) {

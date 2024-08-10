@@ -12,15 +12,13 @@ const mrqxOrganPlayerKeyPressedOnlyStrategies = {
         let playerChestInstance = player.getChestCavityInstance()
         let entityList = getLivingWithinRadius(player.getLevel(), new Vec3(player.x, player.y, player.z), 5)
         entityList.forEach(entity => {
-            if (entity.stringUuid != player.stringUuid) {
+            if (entity.stringUuid != player.stringUuid && entity.isLiving()) {
+                let count = player.getAttributeTotalValue('minecraft:generic.attack_damage') * 0.05
                 if (player.persistentData.organActive == 1) {
-                    entity.attack(player, playerChestInstance.organScores.get(new ResourceLocation('chestcavity', 'photosynthesis') ?? 0) / (player.getArmorValue() + 1) * 3)
-                    entity.invulnerableTime = 0
+                    count *= playerChestInstance.organScores.get(new ResourceLocation('chestcavity', 'photosynthesis') ?? 0) / (player.getArmorValue() + 1)
                 }
-                else {
-                    entity.attack(player, 1)
-                    entity.invulnerableTime = 0
-                }
+                entity.attack(DamageSource.playerAttack(player).bypassArmor().bypassEnchantments().bypassInvul().bypassMagic(), count)
+                entity.invulnerableTime = 0
             }
         })
     },

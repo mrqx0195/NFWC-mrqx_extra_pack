@@ -145,7 +145,7 @@ function mrqxAdvancedArchivistEyeGlassPaint(item, player) {
             alignX: 'left',
             alignY: 'bottom',
             color: Color.GOLD.getHexJS(),
-            text: `${Text.of({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.1" }).getString()}${playerResourceCount} / ${playerResourceCountMax}`,
+            text: `${'资源值：'}${playerResourceCount} / ${playerResourceCountMax}`,
             visible: visible
         },
         warpText: {
@@ -157,7 +157,7 @@ function mrqxAdvancedArchivistEyeGlassPaint(item, player) {
             alignX: 'left',
             alignY: 'bottom',
             color: Color.DARK_PURPLE.getHexJS(),
-            text: `${Text.of({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.2" }).getString()}${playerWarpCount} / ${playerWarpCountMax}`,
+            text: `${'扭曲值：'}${playerWarpCount} / ${playerWarpCountMax}`,
             visible: visible
         },
         sweetDreamText: {
@@ -169,7 +169,7 @@ function mrqxAdvancedArchivistEyeGlassPaint(item, player) {
             alignX: 'left',
             alignY: 'bottom',
             color: Color.PINK_DYE.getHexJS(),
-            text: `${Text.of({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.3" }).getString()}${player.hasEffect('kubejs:sweet_dream') ? `${Text.of({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.01" }).getString()}${player.getEffect('kubejs:sweet_dream').getAmplifier() + 1} | ${Text.of({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.02" }).getString()}${(player.getEffect('kubejs:sweet_dream').getDuration() / 20).toFixed(2)}s` : Text.of({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.00" }).getString()}`,
+            text: `${'甜蜜之梦：'}${player.hasEffect('kubejs:sweet_dream') ? `${'等级：'}${player.getEffect('kubejs:sweet_dream').getAmplifier() + 1} | ${'剩余时长：'}${(player.getEffect('kubejs:sweet_dream').getDuration() / 20).toFixed(2)}s` : '未持有'}`,
             visible: visibleList[0]
         },
         dragonPowerText: {
@@ -181,7 +181,7 @@ function mrqxAdvancedArchivistEyeGlassPaint(item, player) {
             alignX: 'left',
             alignY: 'bottom',
             color: Color.RED.getHexJS(),
-            text: `${Text.of({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.4" }).getString()}${player.hasEffect('kubejs:dragon_power') ? `${Text.of({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.01" }).getString()}${player.getEffect('kubejs:dragon_power').getAmplifier() + 1} | ${Text.of({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.02" }).getString()}${(player.getEffect('kubejs:dragon_power').getDuration() / 20).toFixed(2)}s${Text.of({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.04" }).getString()}${Math.min((player.getEffect('kubejs:dragon_power').getAmplifier() + 1) * 0.2, 1) * 100}%` : Text.of({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.00" }).getString()}`,
+            text: `${'龙化：'}${player.hasEffect('kubejs:dragon_power') ? `${'等级：'}${player.getEffect('kubejs:dragon_power').getAmplifier() + 1} | ${'剩余时长：'}${(player.getEffect('kubejs:dragon_power').getDuration() / 20).toFixed(2)}s${'减伤：'}${Math.min((player.getEffect('kubejs:dragon_power').getAmplifier() + 1) * 0.2, 1) * 100}%` : '未持有'}`,
             visible: visibleList[1]
         },
         infinityBeatsText: {
@@ -193,7 +193,7 @@ function mrqxAdvancedArchivistEyeGlassPaint(item, player) {
             alignX: 'left',
             alignY: 'bottom',
             color: Color.DARK_AQUA.getHexJS(),
-            text: `${Text.of({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.5" }).getString()}${Text.of({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.03" }).getString()}+${getPlayerAttributeMap(player).get(global.TEMP_ATTACK_UP.name) ?? 0}`,
+            text: `${'无尽节律：'}${'伤害加成：'}+${getPlayerAttributeMap(player).get(global.TEMP_ATTACK_UP.name) ?? 0}`,
             visible: visibleList[2]
         },
         burningHeartText: {
@@ -205,7 +205,7 @@ function mrqxAdvancedArchivistEyeGlassPaint(item, player) {
             alignX: 'left',
             alignY: 'bottom',
             color: Color.ORANGE_DYE.getHexJS(),
-            text: `${Text.of({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.60" }).getString()}${player.hasEffect('kubejs:burning_heart') ? `${Text.of({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.01" }).getString()}${player.getEffect('kubejs:burning_heart').getAmplifier() + 1} | ${Text.of({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.02" }).getString()}${(player.getEffect('kubejs:burning_heart').getDuration() / 20).toFixed(2)}s | ${Text.of({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.03" }).getString()}+${player.getEffect('kubejs:burning_heart').getAmplifier() * 4 + 4}` : Text.of({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.00" }).getString()}`,
+            text: `${'熔火：'}${player.hasEffect('kubejs:burning_heart') ? `${'等级：'}${player.getEffect('kubejs:burning_heart').getAmplifier() + 1} | ${'剩余时长：'}${(player.getEffect('kubejs:burning_heart').getDuration() / 20).toFixed(2)}s | ${'伤害加成：'}+${player.getEffect('kubejs:burning_heart').getAmplifier() * 4 + 4}` : '未持有'}`,
             visible: visibleList[3]
         },
         flaringHeartText: {
@@ -217,7 +217,7 @@ function mrqxAdvancedArchivistEyeGlassPaint(item, player) {
             alignX: 'left',
             alignY: 'bottom',
             color: Color.RED_DYE.getHexJS(),
-            text: `${Text.of({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.61" }).getString()}${player.hasEffect('kubejs:flaring_heart') ? `${Text.of({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.01" }).getString()}${player.getEffect('kubejs:flaring_heart').getAmplifier() + 1} | ${Text.of({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.02" }).getString()}${(player.getEffect('kubejs:flaring_heart').getDuration() / 20).toFixed(2)}s | ${Text.of({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.03" }).getString()}×${(player.getEffect('kubejs:flaring_heart').getDuration() < 100) ? (player.getEffect('kubejs:flaring_heart').getAmplifier() * 1.0 + 1.5) : 1}` : Text.of({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.00" }).getString()
+            text: `${'心火：'}${player.hasEffect('kubejs:flaring_heart') ? `${'等级：'}${player.getEffect('kubejs:flaring_heart').getAmplifier() + 1} | ${'剩余时长：'}${(player.getEffect('kubejs:flaring_heart').getDuration() / 20).toFixed(2)}s | ${'伤害加成：'}×${(player.getEffect('kubejs:flaring_heart').getDuration() < 100) ? (player.getEffect('kubejs:flaring_heart').getAmplifier() * 1.0 + 1.5) : 1}` : '未持有'
                 }`,
             visible: visibleList[3]
         },
@@ -230,7 +230,7 @@ function mrqxAdvancedArchivistEyeGlassPaint(item, player) {
             alignX: 'left',
             alignY: 'bottom',
             color: Color.DARK_RED.getHexJS(),
-            text: `${Text.of({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.7" }).getString()}${getPlayerChestCavityItemMap(player).has('mrqx_extra_pack:prison_soul') ? `${Text.of({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.03" }).getString()}+${(Math.sqrt(player.persistentData.getInt('mrqx_kill_count') ?? 0) * 0.1).toFixed(2)}` : Text.of({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.00" }).getString()}`,
+            text: `${'死狱之魂：'}${getPlayerChestCavityItemMap(player).has('mrqx_extra_pack:prison_soul') ? `${'伤害加成：'}+${(Math.sqrt(player.persistentData.getInt('mrqx_kill_count') ?? 0) * 0.1).toFixed(2)}` : '未持有'}`,
             visible: visibleList[4]
         },
         moonSoulText: {
@@ -242,7 +242,7 @@ function mrqxAdvancedArchivistEyeGlassPaint(item, player) {
             alignX: 'left',
             alignY: 'bottom',
             color: Color.GREEN_DYE.getHexJS(),
-            text: `${Text.of({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.8" }).getString()}${getPlayerChestCavityItemMap(player).has('mrqx_extra_pack:moon_soul') ? `${Text.of({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.03" }).getString()}×${Math.min(Math.max((player.persistentData.getInt('mrqx_moon_soul_combo') ?? 0) / 10, 1), 10) * 100}%` : Text.of({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.00" }).getString()}`,
+            text: `${'山月之魂：'}${getPlayerChestCavityItemMap(player).has('mrqx_extra_pack:moon_soul') ? `${'伤害加成：'}×${Math.min(Math.max((player.persistentData.getInt('mrqx_moon_soul_combo') ?? 0) / 10, 1), 10) * 100}%` : '未持有'}`,
             visible: visibleList[4]
         },
         marenolText: {
@@ -254,7 +254,7 @@ function mrqxAdvancedArchivistEyeGlassPaint(item, player) {
             alignX: 'left',
             alignY: 'bottom',
             color: Color.BLACK_DYE.getHexJS(),
-            text: `${Text.of({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.9" }).getString()}${getPlayerChestCavityItemMap(player).has('mrqx_extra_pack:marenol') ? `${Text.of({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.03" }).getString()}×${(1 + mrqxGetMarenolCount(player) * 0.1) * 100}%` : Text.of({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.00" }).getString()}`,
+            text: `${'噩梦醇：'}${getPlayerChestCavityItemMap(player).has('mrqx_extra_pack:marenol') ? `${'伤害加成：'}×${(1 + mrqxGetMarenolCount(player) * 0.1) * 100}%` : '未持有'}`,
             visible: visibleList[6]
         },
         nuclearPowerText: {
@@ -266,7 +266,7 @@ function mrqxAdvancedArchivistEyeGlassPaint(item, player) {
             alignX: 'left',
             alignY: 'bottom',
             color: Color.YELLOW_DYE.getHexJS(),
-            text: `${Text.of({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.a0" }).getString()}${player.hasEffect('mrqx_extra_pack:nuclear_power') ? `${Text.of({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.01" }).getString()}${player.getEffect('mrqx_extra_pack:nuclear_power').getAmplifier() + 1} | ${Text.of({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.02" }).getString()}${(player.getEffect('mrqx_extra_pack:nuclear_power').getDuration() / 20).toFixed(2)} s | ${Text.of({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.03" }).getString()} +${(player.getEffect('mrqx_extra_pack:nuclear_power').getAmplifier() + 1) * 0.4 * 100}% ` : Text.of({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.00" }).getString()}`,
+            text: `${'核能动力：'}${player.hasEffect('mrqx_extra_pack:nuclear_power') ? `${'等级：'}${player.getEffect('mrqx_extra_pack:nuclear_power').getAmplifier() + 1} | ${'剩余时长：'}${(player.getEffect('mrqx_extra_pack:nuclear_power').getDuration() / 20).toFixed(2)} s | ${'伤害加成：'} +${(player.getEffect('mrqx_extra_pack:nuclear_power').getAmplifier() + 1) * 0.4 * 100}% ` : '未持有'}`,
             visible: visibleList[7]
         },
         nuclearPowerGenerText: {
@@ -278,7 +278,7 @@ function mrqxAdvancedArchivistEyeGlassPaint(item, player) {
             alignX: 'left',
             alignY: 'bottom',
             color: Color.YELLOW_DYE.getHexJS(),
-            text: `${Text.of({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.a1" }).getString()}${player.hasEffect('mrqx_extra_pack:nuclear_power_generation') ? `${Text.of({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.01" }).getString()}${player.getEffect('mrqx_extra_pack:nuclear_power_generation').getAmplifier() + 1} | ${Text.of({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.02" }).getString()}${(player.getEffect('mrqx_extra_pack:nuclear_power_generation').getDuration() / 20).toFixed(2)} s | ${Text.of({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.05" }).getString()}${player.getEffect('mrqx_extra_pack:nuclear_power_generation').getAmplifier() * player.getEffect('mrqx_extra_pack:nuclear_power_generation').getDuration() / 20} ` : Text.of({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.00" }).getString()}`,
+            text: `${'核能发电：'}${player.hasEffect('mrqx_extra_pack:nuclear_power_generation') ? `${'等级：'}${player.getEffect('mrqx_extra_pack:nuclear_power_generation').getAmplifier() + 1} | ${'剩余时长：'}${(player.getEffect('mrqx_extra_pack:nuclear_power_generation').getDuration() / 20).toFixed(2)} s | ${'剩余可提供资源点数：'}${player.getEffect('mrqx_extra_pack:nuclear_power_generation').getAmplifier() * player.getEffect('mrqx_extra_pack:nuclear_power_generation').getDuration() / 20} ` : '未持有'}`,
             visible: visibleList[7]
         },
         elementSelfText: {
@@ -289,7 +289,7 @@ function mrqxAdvancedArchivistEyeGlassPaint(item, player) {
             scale: 1,
             alignX: 'left',
             alignY: 'bottom',
-            text: `${Text.lightPurple({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.b0" }).getString()}${Text.lightPurple(player.getPersistentData().getInt("mrqx_ender_damage") ?? 0).getString()} / 100 | ${Text.lightPurple({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.b1" }).getString()}${Text.lightPurple(player.getPersistentData().getInt("mrqx_fire_damage") ?? 0).getString()} / 100 | ${Text.lightPurple({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.b2" }).getString()}${Text.lightPurple(player.getPersistentData().getInt("mrqx_ice_damage") ?? 0).getString()} / 100 | ${Text.lightPurple({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.b3" }).getString()}${Text.lightPurple(player.getPersistentData().getInt("mrqx_lighting_damage") ?? 0).getString()} / 100 | ${Text.lightPurple({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.b4" }).getString()}${Text.lightPurple(player.getPersistentData().getInt("mrqx_wither_damage") ?? 0).getString()} / 100`,
+            text: `${'末影损伤：'}${player.getPersistentData().getInt("mrqx_ender_damage") ?? 0} / 100 | ${'灼燃损伤：'}${player.getPersistentData().getInt("mrqx_fire_damage") ?? 0} / 100 | ${'冻结损伤：'}${player.getPersistentData().getInt("mrqx_ice_damage") ?? 0} / 100 | ${'雷霆损伤：'}${player.getPersistentData().getInt("mrqx_lighting_damage") ?? 0} / 100 | ${'凋亡损伤：'}${player.getPersistentData().getInt("mrqx_wither_damage") ?? 0} / 100`,
             visible: visibleList[8]
         },
         elementTargetText: {
@@ -300,7 +300,7 @@ function mrqxAdvancedArchivistEyeGlassPaint(item, player) {
             scale: 1,
             alignX: 'center',
             alignY: 'bottom',
-            text: `${target ? `${Text.lightPurple({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.b0" }).getString()}${Text.lightPurple(target.getPersistentData().getInt("mrqx_ender_damage") ?? 0).getString()} / 100 | ${Text.lightPurple({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.b1" }).getString()}${Text.lightPurple(target.getPersistentData().getInt("mrqx_fire_damage") ?? 0).getString()} / 100 | ${Text.lightPurple({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.b2" }).getString()}${Text.lightPurple(target.getPersistentData().getInt("mrqx_ice_damage") ?? 0).getString()} / 100 | ${Text.lightPurple({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.b3" }).getString()}${Text.lightPurple(target.getPersistentData().getInt("mrqx_lighting_damage") ?? 0).getString()} / 100 | ${Text.lightPurple({ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.b4" }).getString()}${Text.lightPurple(target.getPersistentData().getInt("mrqx_wither_damage") ?? 0).getString()} / 100` : ''}`,
+            text: `${target ? `${'末影损伤：'}${target.getPersistentData().getInt("mrqx_ender_damage") ?? 0} / 100 | ${'灼燃损伤：'}${target.getPersistentData().getInt("mrqx_fire_damage") ?? 0} / 100 | ${'冻结损伤：'}${target.getPersistentData().getInt("mrqx_ice_damage") ?? 0} / 100 | ${'雷霆损伤：'}${target.getPersistentData().getInt("mrqx_lighting_damage") ?? 0} / 100 | ${'凋亡损伤：'}${target.getPersistentData().getInt("mrqx_wither_damage") ?? 0} / 100` : ''}`,
             visible: visibleList[8]
         }
     })
