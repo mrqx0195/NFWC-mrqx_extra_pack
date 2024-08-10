@@ -26,7 +26,7 @@ const mrqxEntityLootOnlyStrategies = {
             diffLevelNum = diffStage.match('difficult_level_(\\d+)')[1]
         }
         while (diffLevelNum--) {
-            if (Math.random() > 0.1) {
+            if (Math.random() < 0.1) {
                 count++
             }
         }
