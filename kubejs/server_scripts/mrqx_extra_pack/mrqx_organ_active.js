@@ -20,14 +20,11 @@ const mrqxOrganActiveStrategies = {
         let count = 0
         eightDirectionList.forEach(direction => {
             let currentPos = lookPos(direction, pos)
-            if (posMap.has(currentPos)) {
-                let currentId = posMap.get(currentPos)
-                if (currentPos < 0 || currentPos >= 27 || !Item.of(currentId).hasTag('kubejs:infected')) {
-                    count -= 0.12
-                }
-            }
-            else {
-                count -= 0.12
+            let currentId = posMap.get(currentPos)
+            currentId = currentId ?? null
+            if (currentPos < 0 || currentPos >= 27 || currentId == null || !Item.of(currentId.get('id')).hasTag('kubejs:infected')) {
+                count++
+
             }
         })
         posMap.forEach(pos => {
@@ -40,7 +37,9 @@ const mrqxOrganActiveStrategies = {
             }
         })
         playerChestInstance.organScores.put(new ResourceLocation('chestcavity', 'health'), new $Float(Math.max(playerChestInstance.getOrganScores().get(new ResourceLocation('chestcavity', 'health')), 1)))
-        attributeMapValueAddition(attributeMap, global.mrqx_HEALTH_UP_MULTI_BASE, count)
+        if (count != 8) {
+            attributeMapValueAddition(attributeMap, global.mrqx_HEALTH_UP_MULTI_BASE, -(1 - (count * +0.12)))
+        }
     },
 
     // 魔能速充处理器

@@ -9,8 +9,6 @@
 /screenshots/
 /shaderpacks/
 /PCL/
-/NFWC_mrqx_extra_pack.jar
-/NFWC_mrqx_extra_pack.json
 /modernfix/
 /resourcepacks/
 /rhino.local.properties
@@ -29,3 +27,4 @@
 /patchouli_data.json
 /hmclversion.cfg
 /mods/*
+/kubejs_/

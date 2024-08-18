@@ -406,7 +406,7 @@ ServerEvents.recipes(event => {
         .id('mrqx_extra_pack:active_ice_dragon_bead')
         .input('nameless_trinkets:ice_cube')
         .input('goety:frost_breath_focus')
-        .input('8x iceandfire:summoning_crystal_ice')
+        .input('iceandfire:summoning_crystal_ice')
         .input('16x iceandfire:frost_lily')
         .input('4x irons_spellbooks:ice_upgrade_orb')
         .itemOutput('mrqx_extra_pack:active_ice_dragon_bead')
@@ -418,7 +418,7 @@ ServerEvents.recipes(event => {
         .id('mrqx_extra_pack:active_fire_dragon_bead')
         .input('nameless_trinkets:blaze_nucleus')
         .input('goety:fire_breath_focus')
-        .input('8x iceandfire:summoning_crystal_fire')
+        .input('iceandfire:summoning_crystal_fire')
         .input('16x iceandfire:fire_lily')
         .input('4x irons_spellbooks:fire_upgrade_orb')
         .itemOutput('mrqx_extra_pack:active_fire_dragon_bead')
@@ -430,7 +430,7 @@ ServerEvents.recipes(event => {
         .id('mrqx_extra_pack:active_lightning_dragon_bead')
         .input('nameless_trinkets:pocket_lightning_rod')
         .input('goety:thunderbolt_focus')
-        .input('8x iceandfire:summoning_crystal_lightning')
+        .input('iceandfire:summoning_crystal_lightning')
         .input('16x iceandfire:lightning_lily')
         .input('4x irons_spellbooks:lightning_upgrade_orb')
         .itemOutput('mrqx_extra_pack:active_lightning_dragon_bead')
@@ -665,19 +665,6 @@ ServerEvents.recipes(event => {
         })
         .id('mrqx_advanced_eyeglass_marenol');
 
-    event.recipes.kubejs.shapeless(Item.of('mrqx_extra_pack:golden_chalice'), [
-        'mrqx_extra_pack:golden_chalice',
-        'lightmanscurrency:coin_gold',
-    ])
-        .modifyResult((grid, result_) => {
-            let result = grid.find(Item.of("mrqx_extra_pack:golden_chalice"));
-            if (!result.getNbt()) {
-                result.setNbt({})
-            }
-            result.getNbt().putInt('mrqxGoldenChaliceMoney', result.getNbt().getInt('mrqxGoldenChaliceMoney') + 1)
-            return result
-        });
-
     // 灵魂之翼
     registerCustomRecipe(new GoetyRitualRecipe('sky', [
         Item.of('goety:ectoplasm'),
@@ -716,6 +703,39 @@ ServerEvents.recipes(event => {
             C: 'lightmanscurrency:coinblock_gold',
             G: 'kubejs:unholy_grail',
             B: 'minecraft:gold_block'
+        });
+
+    event.recipes.kubejs.shapeless(Item.of('mrqx_extra_pack:golden_chalice'), [
+        'mrqx_extra_pack:golden_chalice',
+        'lightmanscurrency:coin_gold',
+    ])
+        .modifyResult((grid, result_) => {
+            let result = grid.find(Item.of("mrqx_extra_pack:golden_chalice"))
+            let mrqxGoldenChaliceMoney = result.nbt?.mrqxGoldenChaliceMoney ?? 0
+            result = Item.of('mrqx_extra_pack:golden_chalice', { mrqxGoldenChaliceMoney: mrqxGoldenChaliceMoney + 1 })
+            return result
+        });
+
+    event.recipes.kubejs.shapeless(Item.of('mrqx_extra_pack:golden_chalice'), [
+        'mrqx_extra_pack:golden_chalice',
+        'lightmanscurrency:coinpile_gold',
+    ])
+        .modifyResult((grid, result_) => {
+            let result = grid.find(Item.of("mrqx_extra_pack:golden_chalice"))
+            let mrqxGoldenChaliceMoney = result.nbt?.mrqxGoldenChaliceMoney ?? 0
+            result = Item.of('mrqx_extra_pack:golden_chalice', { mrqxGoldenChaliceMoney: mrqxGoldenChaliceMoney + 9 })
+            return result
+        });
+
+    event.recipes.kubejs.shapeless(Item.of('mrqx_extra_pack:golden_chalice'), [
+        'mrqx_extra_pack:golden_chalice',
+        'lightmanscurrency:coinblock_gold',
+    ])
+        .modifyResult((grid, result_) => {
+            let result = grid.find(Item.of("mrqx_extra_pack:golden_chalice"))
+            let mrqxGoldenChaliceMoney = result.nbt?.mrqxGoldenChaliceMoney ?? 0
+            result = Item.of('mrqx_extra_pack:golden_chalice', { mrqxGoldenChaliceMoney: mrqxGoldenChaliceMoney + 36 })
+            return result
         });
 
     // 复激活药丸

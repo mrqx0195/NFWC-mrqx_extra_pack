@@ -208,3 +208,12 @@ function mrqxGetLoggedInTime(player) {
     let uuid = String(player.getUuid())
     return mrqxPlayerLoginTime.get(uuid)
 }
+
+/**
+ * 空值检测
+ * @param {Number} value
+ * @returns {Boolean}
+ */
+function mrqxIsEmpty(value) {
+    return (value == null || (typeof value === "string" && value.trim().length === 0) || value == 0);
+}

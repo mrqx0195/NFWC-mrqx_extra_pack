@@ -317,4 +317,9 @@ PlayerEvents.tick(event => {
         player.onUpdateAbilities()
         player.getPersistentData().putBoolean('mrqxEternalWingOfSoul', false)
     }
+    else {
+        player.abilities.mayfly = true
+        player.abilities.flying = true
+        player.onUpdateAbilities()
+    }
 })
