@@ -331,7 +331,7 @@
     "mrqx_extra_pack.tooltips.malignant_tumor.1": "蔓延，增生，直到死亡，永不停息……",
     "mrqx_extra_pack.tooltips.malignant_tumor.2": "每分钟有(§2感染§r器官数)%的概率的概率触发：",
     "mrqx_extra_pack.tooltips.malignant_tumor.3": "随机选取相邻四格中的一个器官，如果其不为§2感染§r或§5禁忌§r或§f传说§r或§6遗物§r器官",
-    "mrqx_extra_pack.tooltips.malignant_tumor.4": "则将其覆盖为一个属性为本器官50%的§2恶性肿瘤§r或§2无形肿瘤§r（概率相等）",
+    "mrqx_extra_pack.tooltips.malignant_tumor.4": "则将其覆盖为一个属性为本器官50%~75%的§2恶性肿瘤§r或§2无形肿瘤§r（概率相等）",
     "mrqx_extra_pack.tooltips.marenol.1": "建议用量：1mg/次",
     "mrqx_extra_pack.tooltips.marenol.2": "激活后，攻击敌人时，伤害增加§c噩梦指数§r×10%",
     "mrqx_extra_pack.tooltips.marenol.3": "并有10%的概率将敌人的负面效果转移至自身（相同效果等级相加，持续时间相加）",

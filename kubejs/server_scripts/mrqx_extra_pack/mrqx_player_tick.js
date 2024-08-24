@@ -23,7 +23,11 @@ const mrqxOrganPlayerTickStrategies = {
         let posList = []
         fourDirectionList.forEach(direction => {
             let currentPos = lookPos(direction, pos)
-            if (posMap.has(currentPos) && !(Item.of(posMap.get(currentPos).id).hasTag('kubejs:infected') || Item.of(posMap.get(currentPos).id).hasTag('kubejs:legends') || Item.of(posMap.get(currentPos).id).hasTag('kubejs:relics') || Item.of(posMap.get(currentPos).id).hasTag('kubejs:warp'))) {
+            if (posMap.has(currentPos) && !(
+                Item.of(posMap.get(currentPos).id).hasTag('kubejs:infected') ||
+                Item.of(posMap.get(currentPos).id).hasTag('kubejs:legends') ||
+                Item.of(posMap.get(currentPos).id).hasTag('kubejs:relics') ||
+                Item.of(posMap.get(currentPos).id).hasTag('kubejs:warp'))) {
                 posList.push(currentPos)
             }
         })
@@ -37,7 +41,7 @@ const mrqxOrganPlayerTickStrategies = {
                 let organData = organ.tag.organData
                 let tumorData = tumor.nbt.organData
                 organData.allKeys.forEach(key => {
-                    tumorData[key] = organData[key] * 0.75
+                    tumorData[key] = organData[key] * (0.5 + Math.random() * 0.25)
                 })
                 tumor.nbt.put('organData', tumorData)
                 instance.inventory.setItem(index, tumor)
@@ -319,7 +323,6 @@ PlayerEvents.tick(event => {
     }
     else {
         player.abilities.mayfly = true
-        player.abilities.flying = true
         player.onUpdateAbilities()
     }
 })

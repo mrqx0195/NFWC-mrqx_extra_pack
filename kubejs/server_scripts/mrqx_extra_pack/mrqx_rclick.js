@@ -26,7 +26,7 @@ const mrqxOrganRightClickedOnlyStrategies = {
 				player.tell(Text.gray({ "translate": "mrqx_extra_pack.msg.divine_pen.1" }))
 				return
 			}
-			if (typeMap.has('kubejs:paper')) {
+			if (typeMap.has('kubejs:mrqx_paper')) {
 				player.tell(Text.gray({ "translate": "mrqx_extra_pack.msg.divine_pen.2" }))
 				return
 			}

@@ -24,7 +24,6 @@ const mrqxOrganActiveStrategies = {
             currentId = currentId ?? null
             if (currentPos < 0 || currentPos >= 27 || currentId == null || !Item.of(currentId.get('id')).hasTag('kubejs:infected')) {
                 count++
-
             }
         })
         posMap.forEach(pos => {
@@ -37,9 +36,7 @@ const mrqxOrganActiveStrategies = {
             }
         })
         playerChestInstance.organScores.put(new ResourceLocation('chestcavity', 'health'), new $Float(Math.max(playerChestInstance.getOrganScores().get(new ResourceLocation('chestcavity', 'health')), 1)))
-        if (count != 8) {
-            attributeMapValueAddition(attributeMap, global.mrqx_HEALTH_UP_MULTI_BASE, -(1 - (count * +0.12)))
-        }
+        attributeMapValueAddition(attributeMap, global.mrqx_HEALTH_UP_MULTI_BASE, -count * 0.12)
     },
 
     // 魔能速充处理器
