@@ -274,6 +274,7 @@ ServerEvents.recipes(event => {
     event.recipes.summoningrituals
         .altar('kubejs:nether_star_shard')
         .id('mrqx_extra_pack:ritual_mini_end_crystal')
+        .input('minecraft:end_crystal')
         .itemOutput('mrqx_extra_pack:mini_end_crystal')
         .sacrifice('minecraft:end_crystal', 1)
         .sacrificeRegion(3, 3)
