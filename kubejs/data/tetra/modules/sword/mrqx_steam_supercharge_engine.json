@@ -1,0 +1,40 @@
+{
+    "replace": true,
+    "slots": [
+        "sword/fuller"
+    ],
+    "type": "tetra:basic_major_module",
+    "variants": [
+        {
+            "key": "mrqx_steam_supercharge_engine",
+            "attributes": {
+                "**tetra:ability_cooldown": -0.9,
+                "**generic.attack_speed": 1.5
+            },
+            "effects": {
+                "abilitySpeed": [
+                    90,
+                    90
+                ]
+            },
+            "durability": 10,
+            "integrity": 1,
+            "magicCapacity": -100,
+            "glyph": {
+                "tint": "034150",
+                "textureX": 72,
+                "textureY": 16
+            },
+            "material": {
+                "items": [
+                    "mrqx_extra_pack:steam_supercharge_engine"
+                ]
+            },
+            "models": [
+                {
+                    "location": "tetra:items/module/sword/mrqx_extra_pack/mrqx_steam_supercharge_engine"
+                }
+            ]
+        }
+    ]
+}

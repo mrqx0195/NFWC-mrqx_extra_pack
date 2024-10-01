@@ -1,0 +1,46 @@
+{
+	"improvements": [
+		"tetra:sword/mrqx_steam_armor",
+		"tetra:shared/"
+	],
+	"renderLayer": "higher",
+	"replace": true,
+	"slots": [
+		"sword/guard"
+	],
+	"type": "tetra:basic_major_module",
+	"variants": [
+		{
+			"attributes": {
+				"generic.armor": 8,
+				"generic.armor_toughness": 10
+			},
+			"durability": 230,
+			"effects": {
+				"abilityDefensive": [
+					100,
+					30
+				],
+				"unbreaking": 3
+			},
+			"glyph": {
+				"textureLocation": "tetra:textures/gui/aof_glyph.png",
+				"textureX": 69,
+				"textureY": 36,
+				"tint": "7DAFC6"
+			},
+			"integrity": -1,
+			"key": "mrqx_steam_armor",
+			"material": {
+				"items": [
+					"mrqx_extra_pack:steam_armor"
+				]
+			},
+			"models": [
+				{
+					"location": "tetra:items/module/sword/mrqx_extra_pack/mrqx_steam_armor"
+				}
+			]
+		}
+	]
+}

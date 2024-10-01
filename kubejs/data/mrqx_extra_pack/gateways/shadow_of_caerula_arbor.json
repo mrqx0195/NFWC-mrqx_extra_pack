@@ -1,7 +1,7 @@
 {
     "allow_discarding": true,
     "color": "#0000FF",
-    "completion_xp": 20000,
+    "completion_xp": 50000,
     "failures": [
         {
             "block_damage": true,
@@ -633,7 +633,7 @@
                     "entity": "cataclysm:the_baby_leviathan"
                 }
             ],
-            "max_wave_time": 30000,
+            "max_wave_time": 72000,
             "modifiers": [
                 {
                     "attribute": "generic.max_health",
@@ -663,7 +663,7 @@
                 {
                     "attribute": "obscure_api:penetration",
                     "operation": "ADDITION",
-                    "value": 50
+                    "value": 70
                 }
             ],
             "rewards": [],

@@ -1,85 +1,61 @@
 {
     "pools": [
         {
-            "rolls": {
-                "min": 1,
-                "max": 1
-            },
-            "name": "mrqx_extra_pack:seaborn_organs",
             "entries": [
                 {
-                    "type": "item",
                     "name": "mrqx_extra_pack:heart_tidal_elegy",
-                    "entryName": "mrqx_extra_pack:heart_tidal_elegy",
-                    "weight": 1
+                    "type": "item"
                 },
                 {
-                    "type": "item",
                     "name": "mrqx_extra_pack:lung_the_tide_surges_the_tide_recedes",
-                    "entryName": "mrqx_extra_pack:lung_the_tide_surges_the_tide_recedes",
-                    "weight": 1
+                    "type": "item"
                 },
                 {
-                    "type": "item",
                     "name": "mrqx_extra_pack:kidney_moon_in_the_water",
-                    "entryName": "mrqx_extra_pack:kidney_moon_in_the_water",
-                    "weight": 1
+                    "type": "item"
                 },
                 {
-                    "type": "item",
                     "name": "mrqx_extra_pack:liver_tide_observation",
-                    "entryName": "mrqx_extra_pack:liver_tide_observation",
-                    "weight": 1
+                    "type": "item"
                 },
                 {
-                    "type": "item",
                     "name": "mrqx_extra_pack:pancreas_group_hunting",
-                    "entryName": "mrqx_extra_pack:pancreas_group_hunting",
-                    "weight": 1
+                    "type": "item"
                 },
                 {
-                    "type": "item",
                     "name": "mrqx_extra_pack:muscle_bone_fracture",
-                    "entryName": "mrqx_extra_pack:muscle_bone_fracture",
-                    "weight": 1
+                    "type": "item"
                 },
                 {
-                    "type": "item",
                     "name": "mrqx_extra_pack:rib_the_pressure_to_survive",
-                    "entryName": "mrqx_extra_pack:rib_the_pressure_to_survive",
-                    "weight": 1
+                    "type": "item"
                 },
                 {
-                    "type": "item",
                     "name": "mrqx_extra_pack:spleen_adhering_to_nature",
-                    "entryName": "mrqx_extra_pack:spleen_adhering_to_nature",
-                    "weight": 1
+                    "type": "item"
                 },
                 {
-                    "type": "item",
                     "name": "mrqx_extra_pack:stomach_abyssal_predator",
-                    "entryName": "mrqx_extra_pack:stomach_abyssal_predator",
-                    "weight": 1
+                    "type": "item"
                 },
                 {
-                    "type": "item",
                     "name": "mrqx_extra_pack:spine_abyssal_intuition",
-                    "entryName": "mrqx_extra_pack:spine_abyssal_intuition",
-                    "weight": 1
+                    "type": "item"
                 },
                 {
-                    "type": "item",
                     "name": "mrqx_extra_pack:intestine_survival_of_the_fittest",
-                    "entryName": "mrqx_extra_pack:intestine_survival_of_the_fittest",
-                    "weight": 1
+                    "type": "item"
                 },
                 {
-                    "type": "item",
                     "name": "mrqx_extra_pack:appendix_assimilation_mutation",
-                    "entryName": "mrqx_extra_pack:appendix_assimilation_mutation",
-                    "weight": 1
+                    "type": "item"
                 }
-            ]
+            ],
+            "name": "mrqx_extra_pack:seaborn_organs",
+            "rolls": {
+                "max": 1,
+                "min": 1
+            }
         }
     ]
 }

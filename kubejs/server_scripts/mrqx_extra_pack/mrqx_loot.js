@@ -56,6 +56,45 @@ const mrqxEntityLootOnlyStrategies = {
             event.addLoot('lightmanscurrency:coin_copper')
         }
     },
+
+    // 墨染
+    'mrqx_extra_pack:mrqx0195': function (event, organ) {
+        let player = event.player
+        if (player.persistentData.organActive != 1) {
+            return
+        }
+        event.removeLoot(ItemFilter.ALWAYS_TRUE)
+    },
+
+    // ‌“记录者”
+    'mrqx_extra_pack:recorder': function (event, organ) {
+        let entityType = event.getEntity().getType()
+        let player = event.getPlayer()
+        let tag = player.persistentData.getCompound('mrqxRecorder')
+        tag.putInt(entityType, (tag.getInt(entityType) ?? 0) + 1)
+        player.persistentData.put('mrqxRecorder', tag)
+    },
+
+    // ‌原罪·贪婪「玛门」
+    'mrqx_extra_pack:sin_avaritia_mammon': function (event, organ) {
+        let player = event.player
+        if (player.persistentData.organActive != 1) {
+            return
+        }
+        event.loot.forEach(loot => {
+            loot.setCount(loot.getCount() * 2)
+        })
+    },
+
+    // ‌原罪·罪源
+    'mrqx_extra_pack:origin_sin': function (event, organ) {
+        entityLootOnlyStrategies['mrqx_extra_pack:sin_avaritia_mammon'](event, organ)
+    },
+
+    // ‌“罪与罚”
+    'mrqx_extra_pack:sin_and_judgement': function (event, organ) {
+        entityLootOnlyStrategies['mrqx_extra_pack:origin_sin'](event, organ)
+    },
 }
 
 var assign_entity_loot_only = Object.assign(entityLootOnlyStrategies, mrqxEntityLootOnlyStrategies);
@@ -77,16 +116,35 @@ var assign_chest_loot = Object.assign(chestLootStrategies, mrqxChestLootStrategi
  * @type {Object<string,function(Internal.LootContextJS, organ):void>}
  */
 const mrqxChestLootOnlyStrategies = {
+    // 墨染
+    'mrqx_extra_pack:mrqx0195': function (event, organ) {
+        let player = event.player
+        if (player.persistentData.organActive != 1) {
+            return
+        }
+        event.removeLoot(ItemFilter.ALWAYS_TRUE)
+    },
 
+    // ‌原罪·贪婪「玛门」
+    'mrqx_extra_pack:sin_avaritia_mammon': function (event, organ) {
+        let player = event.player
+        if (player.persistentData.organActive != 1) {
+            return
+        }
+        event.loot.forEach(loot => {
+            loot.setCount(loot.getCount() * 2)
+        })
+    },
+
+    // ‌原罪·罪源
+    'mrqx_extra_pack:origin_sin': function (event, organ) {
+        chestLootOnlyStrategies['mrqx_extra_pack:sin_avaritia_mammon'](event, organ)
+    },
+
+    // ‌“罪与罚”
+    'mrqx_extra_pack:sin_and_judgement': function (event, organ) {
+        chestLootOnlyStrategies['mrqx_extra_pack:origin_sin'](event, organ)
+    },
 }
 
 var assign_chest_loot_only = Object.assign(chestLootOnlyStrategies, mrqxChestLootOnlyStrategies);
-
-LootJS.modifiers(event => {
-    event.addLootTypeModifier(LootType.CHEST)
-        .anyStructure(['#tetra:forged_ruins'], false)
-        .addLoot(LootEntry.of('mrqx_extra_pack:cpu').when((c) => c.randomChance(0.06)))
-        .addLoot(LootEntry.of('mrqx_extra_pack:magic_fast_charging_cpu').when((c) => c.randomChance(0.02)))
-        .addLoot(LootEntry.of('mrqx_extra_pack:magic_overload_cpu').when((c) => c.randomChance(0.02)))
-        .addLoot(LootEntry.of('mrqx_extra_pack:magic_glass_cannon_cpu').when((c) => c.randomChance(0.02)))
-})

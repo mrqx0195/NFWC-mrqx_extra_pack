@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:item/generated",
+  "display": {
+    "gui": {
+      "scale": [
+        1.3,
+        1.3,
+        1.3
+      ]
+    }
+  }
+}

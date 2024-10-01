@@ -181,7 +181,7 @@
 	/**
 	 * The pages in the right sidebar
 	 */
-	right-sidebar-pages: index, craftables;
+	right-sidebar-pages: index, craftables, craft-history, lookup-history;
 
 	/**
 	 * The subpanels in the right sidebar
@@ -447,14 +447,14 @@
 	/**
 	 * Whether hovering the output of a recipe should show the recipe's EMI ID.
 	 */
-	show-recipe-ids: false;
+	show-recipe-ids: true;
 
 	/**
 	 * Whether to display additional widgets added to recipes from other mods.
 	 * These are typically developer facing and compatibility related, and not useful
 	 * for players.
 	 */
-	show-recipe-decorators: false;
+	show-recipe-decorators: true;
 
 	/**
 	 * Whether stacks in the index should display a highlight if they have a recipe

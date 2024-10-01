@@ -51,17 +51,23 @@ const mrqxOrganRightClickedOnlyStrategies = {
 
 	// 裂变反应堆
 	'mrqx_extra_pack:fission_reactor': function (event, organ) {
+		let player = event.player
 		if (event.item != 'mrqx_extra_pack:nuclear_fuel') {
 			return
 		}
-		if (event.player.persistentData.organActive != 1) {
+		if (player.persistentData.organActive != 1) {
 			return
 		}
-		if (event.player.hasEffect('mrqx_extra_pack:nuclear_power') || event.player.hasEffect('mrqx_extra_pack:nuclear_power_generation')) {
+		if (player.hasEffect('mrqx_extra_pack:nuclear_power')) {
 			player.tell(Text.gray({ "translate": "mrqx_extra_pack.msg.fission_reactor.2" }))
 			return
 		}
-		let posMap = getPlayerChestCavityPosMap(event.player);
+		if (player.getCooldowns().isOnCooldown(Item.of(organ.id))) {
+			return
+		}
+		player.addItemCooldown(organ.id, 6000)
+		let posMap = getPlayerChestCavityPosMap(player)
+		let itemMap = getPlayerChestCavityItemMap(player)
 		let amplifier = 0
 		let count = 1
 		let duration = 6000
@@ -69,7 +75,6 @@ const mrqxOrganRightClickedOnlyStrategies = {
 		let rc = 0
 		let pos = organ.Slot
 		let onlySet = new Set()
-		let player = event.player
 		fourDirectionList.forEach(direction => {
 			let currentPos = lookPos(direction, pos)
 			if (posMap.has(currentPos) && posMap.get(currentPos).id == 'mrqx_extra_pack:reactor_chamber') {
@@ -92,56 +97,93 @@ const mrqxOrganRightClickedOnlyStrategies = {
 				})
 			}
 		})
+		if (itemMap.has('mrqx_extra_pack:machine_nuclear_heart_cpu')) {
+			amplifier += Math.floor(mrqxGetComputingPower(player) / 15)
+			duration += mrqxGetComputingPower(player) * 3
+		}
 		if (event.item.count < count) {
 			player.tell(Text.gray({ "translate": "mrqx_extra_pack.msg.fission_reactor.1" }))
 			return
 		}
 		else {
-			player.getServer().runCommandSilent('playsound minecraft:entity.blaze.shoot player @a ' + player.x + ' ' + player.y + ' ' + player.z)
-			let itemMap = getPlayerChestCavityItemMap(player)
-			if (itemMap.has('mrqx_extra_pack:steam_turbine')) {
-				player.potionEffects.add('mrqx_extra_pack:nuclear_power_generation', duration * durationMultiplier, amplifier, false, false)
-			}
-			else {
-				player.potionEffects.add('mrqx_extra_pack:nuclear_power', duration * durationMultiplier, amplifier, false, false)
-			}
+			player.level.playSound(player, player.blockPosition(), 'minecraft:entity.blaze.shoot', 'players', 1, 1)
+			player.potionEffects.add('mrqx_extra_pack:nuclear_power', duration * durationMultiplier, amplifier, false, false)
 			event.item.shrink(count)
 			global.updatePlayerActiveStatus(player)
 			player.persistentData.putInt(organActive, 1)
 		}
 	},
 
+	// ‌蒸汽动力机
+	'mrqx_extra_pack:steam_power_engine': function (event, organ) {
+		let player = event.player
+		let itemMap = getPlayerChestCavityItemMap(player)
+		if (event.item != Item.of('minecraft:potion', '{Potion:"minecraft:water"}')) {
+			return
+		}
+		if (player.hasEffect('kubejs:burning_heart')) {
+			let duration = player.getEffect('kubejs:burning_heart').getDuration()
+			let amplifier = player.getEffect('kubejs:burning_heart').getAmplifier()
+			if (player.hasEffect('mrqx_extra_pack:steam_power')) {
+				duration /= 2
+				duration += player.getEffect('mrqx_extra_pack:steam_power').getDuration()
+				amplifier = player.getEffect('mrqx_extra_pack:steam_power').getAmplifier() + 1
+				event.player.removeEffect('mrqx_extra_pack:steam_power')
+			}
+			if (itemMap.has('mrqx_extra_pack:steam_engine')) {
+				amplifier = Math.min(amplifier, itemMap.get('mrqx_extra_pack:steam_engine').length * 1 + 1)
+				duration = Math.min(duration, amplifier * 2 * 20 * 60)
+				player.level.playSound(player, player.blockPosition(), 'minecraft:entity.player.splash', 'players', 1, 1)
+				player.potionEffects.add('mrqx_extra_pack:steam_power', duration, amplifier, false, false)
+			}
+			event.player.removeEffect('kubejs:burning_heart')
+			event.item.shrink(1)
+		}
+		if (player.hasEffect('kubejs:flaring_heart')) {
+			let duration = player.getEffect('kubejs:flaring_heart').getDuration()
+			let amplifier = player.getEffect('kubejs:flaring_heart').getAmplifier()
+			if (player.hasEffect('mrqx_extra_pack:steam_power')) {
+				duration /= 2
+				duration += player.getEffect('mrqx_extra_pack:steam_power').getDuration()
+				amplifier = player.getEffect('mrqx_extra_pack:steam_power').getAmplifier() + 1
+				event.player.removeEffect('mrqx_extra_pack:steam_power')
+			}
+			if (itemMap.has('mrqx_extra_pack:steam_engine')) {
+				amplifier = Math.min(amplifier, itemMap.get('mrqx_extra_pack:steam_engine').length * 1 + 1)
+				duration = Math.min(duration, amplifier * 2 * 20 * 60)
+				player.level.playSound(player, player.blockPosition(), 'minecraft:entity.player.splash', 'players', 1, 1)
+				player.potionEffects.add('mrqx_extra_pack:steam_power', duration, amplifier, false, false)
+			}
+			event.player.removeEffect('kubejs:flaring_heart')
+			event.item.shrink(1)
+		}
+	},
+
+	// ‌蒸汽动力涡轮
+	'mrqx_extra_pack:steam_power_turbine': function (event, organ) {
+		let player = event.player
+		let itemMap = getPlayerChestCavityItemMap(player)
+		if (event.item != Item.of('minecraft:water_bucket')) {
+			return
+		}
+		if (player.hasEffect('mrqx_extra_pack:nuclear_power')) {
+			let duration = player.getEffect('mrqx_extra_pack:nuclear_power').getDuration()
+			let amplifier = player.getEffect('mrqx_extra_pack:nuclear_power').getAmplifier() * 2
+			if (player.hasEffect('mrqx_extra_pack:steam_power')) {
+				duration += player.getEffect('mrqx_extra_pack:steam_power').getDuration()
+				amplifier = player.getEffect('mrqx_extra_pack:steam_power').getAmplifier() + 2
+				event.player.removeEffect('mrqx_extra_pack:steam_power')
+			}
+			if (itemMap.has('mrqx_extra_pack:steam_engine')) {
+				amplifier = Math.min(amplifier, itemMap.get('mrqx_extra_pack:steam_engine').length * 2 + 2)
+				duration = Math.min(duration, amplifier * 2 * 20 * 60)
+				player.level.playSound(player, player.blockPosition(), 'minecraft:entity.player.splash.high_speed', 'players', 1, 1)
+				player.potionEffects.add('mrqx_extra_pack:steam_power', duration, amplifier, false, false)
+			}
+			event.player.removeEffect('mrqx_extra_pack:nuclear_power')
+			event.item.shrink(1)
+		}
+	},
 };
 
 var assign_organ_right_clicked_only = Object.assign(organRightClickedOnlyStrategies, mrqxOrganRightClickedOnlyStrategies);
-
-// 肿瘤诱变剂
-ItemEvents.foodEaten('mrqx_extra_pack:tumor_mutagen', event => {
-	let entity = event.entity
-	if (event.level.isClientSide()) return
-	if (!entity.isPlayer()) return
-	let instance = entity.getChestCavityInstance()
-	let tumorList = getPlayerChestCavityItemMap(entity).get('kubejs:random_tumor')
-	if (tumorList && tumorList.length <= 0) {
-		return
-	}
-	let organTumor = randomGet(tumorList)
-	let index = organTumor.getInt('Slot')
-	let item = instance.inventory.getItem(index)
-	let tumor = Item.of('mrqx_extra_pack:malignant_tumor', { organData: {} })
-	if (index > 0 && item.hasNBT()) {
-		let itemData = item.nbt.organData
-		let organData = tumor.nbt.organData
-		itemData.allKeys.forEach(key => {
-			organData[key] = itemData[key] * 1.5
-		})
-		tumor.nbt.put('organData', organData)
-		instance.inventory.setItem(index, tumor)
-		global.initChestCavityIntoMap(entity, false)
-		if (entity.persistentData.contains(organActive) &&
-			entity.persistentData.getInt(organActive) == 1) {
-			global.updatePlayerActiveStatus(entity)
-		}
-	}
-	return
-})

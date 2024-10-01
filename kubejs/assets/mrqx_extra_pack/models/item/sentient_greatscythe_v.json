@@ -1,0 +1,33 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "item/handheld",
+	"textures": {
+		"layer0": "mrqx_extra_pack:item/sentient_greatscythe_v"
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [-32, -90, 0],
+			"translation": [0, 10, 5.25],
+			"scale": [1.7, 1.7, 0.85]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [-32, 90, 0],
+			"translation": [0, 10, 5.25],
+			"scale": [1.7, 1.7, 0.85]
+		},
+		"firstperson_righthand": {
+			"rotation": [-41.75, -90, 0],
+			"translation": [1.13, 8.2, 1.88],
+			"scale": [1.36, 1.36, 0.68]
+		},
+		"firstperson_lefthand": {
+			"rotation": [-41.75, 90, 0],
+			"translation": [1.13, 8.2, 1.88],
+			"scale": [1.36, 1.36, 0.68]
+		},
+		"ground": {
+			"translation": [0, 4.25, 0],
+			"scale": [1, 1, 0.5]
+		}
+	}
+}

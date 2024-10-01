@@ -21,13 +21,18 @@ const mrqxOrganPlayerTickStrategies = {
         let instance = player.getChestCavityInstance()
         let pos = organ.Slot
         let posList = []
+        let typeMap = getPlayerChestCavityTypeMap(player)
+        if (!typeMap.has('kubejs:infected') || (Math.random() > typeMap.get('kubejs:infected').length * 0.01)) {
+            return
+        }
         fourDirectionList.forEach(direction => {
             let currentPos = lookPos(direction, pos)
-            if (posMap.has(currentPos) && !(
-                Item.of(posMap.get(currentPos).id).hasTag('kubejs:infected') ||
-                Item.of(posMap.get(currentPos).id).hasTag('kubejs:legends') ||
-                Item.of(posMap.get(currentPos).id).hasTag('kubejs:relics') ||
-                Item.of(posMap.get(currentPos).id).hasTag('kubejs:warp'))) {
+            if (posMap.has(currentPos) &&
+                Item.of(posMap.get(currentPos).id).hasTag('kubejs:organ') && !(
+                    Item.of(posMap.get(currentPos).id).hasTag('kubejs:infected') ||
+                    Item.of(posMap.get(currentPos).id).hasTag('kubejs:legends') ||
+                    Item.of(posMap.get(currentPos).id).hasTag('kubejs:relics') ||
+                    Item.of(posMap.get(currentPos).id).hasTag('kubejs:warp'))) {
                 posList.push(currentPos)
             }
         })
@@ -40,9 +45,19 @@ const mrqxOrganPlayerTickStrategies = {
             if (organ.tag) {
                 let organData = organ.tag.organData
                 let tumorData = tumor.nbt.organData
+                let b = true
                 organData.allKeys.forEach(key => {
-                    tumorData[key] = organData[key] * (0.5 + Math.random() * 0.25)
+                    if (key == 'chestcavity:health') {
+                        tumorData[key] = Math.min(organData[key] - 2, organData[key] * (0.5 + Math.random() * 0.25))
+                        b = false
+                    }
+                    else {
+                        tumorData[key] = organData[key] * (0.5 + Math.random() * 0.25)
+                    }
                 })
+                if (b) {
+                    tumorData['chestcavity:health'] = -2
+                }
                 tumor.nbt.put('organData', tumorData)
                 instance.inventory.setItem(index, tumor)
                 global.initChestCavityIntoMap(player, false)
@@ -62,7 +77,7 @@ const mrqxOrganPlayerTickStrategies = {
         if (typeMap.has('kubejs:mrqx_seaborn')) {
             amplifier += typeMap.get('kubejs:mrqx_seaborn').length
         }
-        if (mrqxCheckOrganSuit(player, 'seaborn', true)) {
+        if (mrqxCheckOrganSuit(player, 'seaborn', 'isAll')) {
             amplifier *= 2
         }
         player.heal(player.getMaxHealth() * amplifier * 0.001)
@@ -102,6 +117,13 @@ const mrqxOrganPlayerTickStrategies = {
     'mrqx_extra_pack:appendix_paper_written': function (event, organ) {
         mrqxPaperOrganInWaterRainBubbleFireOrLava(event.player, organ)
     },
+
+    // ‌蒸汽液压杆
+    'mrqx_extra_pack:steam_hydraulic_rod': function (event, organ) {
+        let player = event.player
+        let criticalPunchCount = player.persistentData.getInt(criticalPunch)
+        player.persistentData.putInt(criticalPunch, criticalPunchCount + mrqxGetSteamCount(player))
+    },
 }
 
 var assign_organ_player_tick = Object.assign(organPlayerTickStrategies, mrqxOrganPlayerTickStrategies);
@@ -123,26 +145,30 @@ const mrqxOrganPlayerTickOnlyStrategies = {
     'mrqx_extra_pack:sun_seed': function (event, organ) {
         let player = event.player
         let playerChestInstance = player.getChestCavityInstance()
+        let typeMap = getPlayerChestCavityTypeMap(player)
         if (player.nbt?.ForgeCaps['goety:lichdom']?.lichdom == 1) {
-            player.attack(playerChestInstance.organScores.get(new ResourceLocation('chestcavity', 'photosynthesis')) ?? 0 + 5)
+            player.attack(playerChestInstance.organScores.get(new ResourceLocation('chestcavity', 'photosynthesis')) ?? 0 + typeMap.get('kubejs:mrqx_celestial_body').length + 5)
         }
         else {
-            if (event.player.persistentData.organActive != 1) {
-                return
-            }
-            player.heal(playerChestInstance.organScores.get(new ResourceLocation('chestcavity', 'photosynthesis')) ?? 0)
+            player.heal(playerChestInstance.organScores.get(new ResourceLocation('chestcavity', 'photosynthesis')) ?? 0 + typeMap.get('kubejs:mrqx_celestial_body').length)
         }
     },
 
-    // 汽轮机
+    // 蒸汽汽轮机
     'mrqx_extra_pack:steam_turbine': function (event, organ) {
         let player = event.player
-        if (player.hasEffect('mrqx_extra_pack:nuclear_power_generation')) {
-            let count = player.getEffect('mrqx_extra_pack:nuclear_power_generation').getAmplifier();
+        if (player.hasEffect('mrqx_extra_pack:steam_power')) {
+            let effect = player.getEffect('mrqx_extra_pack:steam_power')
+            let amplifier = effect.getAmplifier()
+            let duration = effect.getDuration()
+            let count = amplifier
             if (player.persistentData.contains(resourceCount)) {
                 count = player.persistentData.getInt(resourceCount) + count;
             }
             updateResourceCount(player, count)
+            duration -= 20
+            player.removeEffect('mrqx_extra_pack:steam_power')
+            player.potionEffects.add('mrqx_extra_pack:steam_power', duration, amplifier, false, false)
         }
     },
 
@@ -233,96 +259,346 @@ const mrqxOrganPlayerTickOnlyStrategies = {
     'mrqx_extra_pack:kings_staff': function (event, organ) {
         let player = event.player
         let magicData = getPlayerMagicData(player)
-        magicData.setMana(Math.min(magicData.getMana() + 100, player.getAttributeTotalValue('irons_spellbooks:max_mana')))
+        if (Math.floor(player.getHealth()) <= 1) {
+            magicData.setMana(Math.min(magicData.getMana() + 100, player.getAttributeTotalValue('irons_spellbooks:max_mana')))
+        }
     },
 
     // 国王的延伸
     'mrqx_extra_pack:kings_extension': function (event, organ) {
         let player = event.player
         let magicData = getPlayerMagicData(player)
-        magicData.setMana(Math.min(magicData.getMana() + 200, player.getAttributeTotalValue('irons_spellbooks:max_mana')))
-        if (player.getAbsorptionAmount() >= player.getMaxHealth()) {
+        if (Math.floor(player.getHealth()) <= 1) {
+            magicData.setMana(Math.min(magicData.getMana() + 200, player.getAttributeTotalValue('irons_spellbooks:max_mana')))
+            if (player.getAbsorptionAmount() >= player.getMaxHealth()) {
+                return
+            }
+            let amount = Math.min(player.getAbsorptionAmount() + 3, player.getMaxHealth())
+            player.setAbsorptionAmount(amount)
+        }
+    },
+
+    // 远古巫妖之心
+    'mrqx_extra_pack:ancient_lich_heart': function (event, organ) {
+        let player = event.player
+        if (player.nbt?.ForgeCaps['goety:lichdom']?.lichdom != 1) {
+            player.potionEffects.add('goety:cursed', 60, 4, false, false)
+            player.potionEffects.add('goety:soul_hunger', 60, 4, false, false)
+            player.potionEffects.add('kubejs:magic_forbiden', 60, 4, false, false)
+        }
+    },
+
+    // 残阳
+    'mrqx_extra_pack:broken_sun': function (event, organ) {
+        let player = event.player
+        let typeMap = getPlayerChestCavityTypeMap(player)
+        let strength = typeMap.get('kubejs:mrqx_celestial_body').length
+        getLivingWithinRadius(player.getLevel(), new Vec3(player.x, player.y, player.z), 16 + strength * 4).forEach(entity => {
+            if (entity.getType() == 'minecraft:player') {
+                entity.potionEffects.add('minecraft:regeneration', 60, 4, false, false)
+                entity.potionEffects.add('minecraft:strength', 60, 3, false, false)
+                entity.potionEffects.add('minecraft:resistance', 60, 2, false, false)
+                entity.potionEffects.add('minecraft:speed', 60, 1, false, false)
+                entity.potionEffects.add('minecraft:night_vision', 60, 0, false, false)
+            }
+        })
+    },
+
+    // 世界框架
+    'mrqx_extra_pack:framework_of_world': function (event, organ) {
+        let player = event.player
+        if ((Math.abs(player.x) + Math.abs(player.z)) >= 29999000 * 2 && player.y <= -128 && player.persistentData.getInt(organActive) == 1) {
+            let instance = player.getChestCavityInstance()
+            let item = instance.inventory.getItem(organ.Slot)
+            if (item.isEmpty()) return
+            let newItem = Item.of(organ.id)
+            if (item.getDamageValue() >= (60 * 60 * 24 - 2)) {
+                newItem = Item.of('kubejs:genesis')
+            }
+            else {
+                newItem.setDamageValue(item.getDamageValue() + 1)
+            }
+            mrqxEditChestItem(player, newItem, organ.Slot, false, false)
+        }
+        else {
+            let instance = player.getChestCavityInstance()
+            let item = instance.inventory.getItem(organ.Slot)
+            if (item.isEmpty()) return
+            let newItem = Item.of(organ.id)
+            newItem.setDamageValue(0)
+            mrqxEditChestItem(player, newItem, organ.Slot, false, false)
+        }
+    },
+
+    // ‌机械“午夜狂飙”处理器
+    'mrqx_extra_pack:machine_midnight_race_cpu': function (event, organ) {
+        let player = event.player
+        if (player.getLevel().getDayTime() >= 16000 && player.getLevel().getDayTime() <= 19000) {
+            player.potionEffects.add('minecraft:speed', 60, mrqxGetComputingPower(player), false, false)
+        }
+    },
+
+    // ‌月岩
+    'mrqx_extra_pack:moon_rock': function (event, organ) {
+        let player = event.player
+        if (player.isShiftKeyDown()) {
+            player.potionEffects.add('minecraft:slow_falling', 60, 0, false, false)
+        }
+    },
+
+    // ‌‌原罪·懒惰「贝尔芬格」
+    'mrqx_extra_pack:sin_acedia_belphegor': function (event, organ) {
+        let player = event.player
+        if (player.persistentData.organActive != 1) {
             return
         }
-        let amount = Math.min(player.getAbsorptionAmount() + 3, player.getMaxHealth())
-        player.setAbsorptionAmount(amount)
+        player.heal(player.getMaxHealth() * 0.03)
+        if (!organ.id == 'mrqx_extra_pack:sin_and_judgement' && mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
+            player.heal(player.getMaxHealth() * 0.03)
+        }
+    },
+
+    // ‌原罪·贪婪「玛门」
+    'mrqx_extra_pack:sin_avaritia_mammon': function (event, organ) {
+        let player = event.player
+        if (player.persistentData.organActive != 1) {
+            return
+        }
+        let entityList = mrqxGetLivingWithinRadius(player.getLevel(), new Vec3(player.x, player.y, player.z), 16)
+        entityList.forEach(entity => {
+            if (entity.getType() == 'minecraft:item' && player.age % (20 * 60) == 0) {
+                entity.kill()
+                player.getServer().scheduleInTicks(1, () => {
+                    player.attack(DamageSource.playerAttack(player).bypassArmor().bypassEnchantments().bypassInvul().bypassMagic(), player.getMaxHealth() * 0.05)
+                })
+                if (!organ.id == 'mrqx_extra_pack:sin_and_judgement' && mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
+                    player.getServer().scheduleInTicks(1, () => {
+                        player.attack(DamageSource.playerAttack(player).bypassArmor().bypassEnchantments().bypassInvul().bypassMagic(), player.getMaxHealth() * 0.05)
+                    })
+                }
+            }
+        })
+    },
+
+    // ‌原罪·色欲「阿斯莫德」
+    'mrqx_extra_pack:sin_luxuria_asmodeus': function (event, organ) {
+        let player = event.player
+        if (player.persistentData.organActive != 1) {
+            return
+        }
+        /** @type {Array<Internal.Animal>} */
+        let entityList = getLivingWithinRadius(player.getLevel(), new Vec3(player.x, player.y, player.z), 16)
+        entityList.forEach(entity => {
+            if (entity.isAnimal() && !mrqxIsEmpty(entity.nbt.Age)) {
+                if (entity.nbt.Age >= 0) {
+                    entity.setAge(0)
+                    entity.setInLove(player)
+                    entity.setHealth(entity.getHealth() - entity.getMaxHealth() * 0.05)
+                    if (!organ.id == 'mrqx_extra_pack:sin_and_judgement' && mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
+                        entity.setHealth(entity.getHealth() - entity.getMaxHealth() * 0.05)
+                    }
+                }
+                else {
+                    if (!organ.id == 'mrqx_extra_pack:sin_and_judgement' && mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
+                        entity.ageUp(100)
+                    }
+                }
+            }
+        })
+    },
+
+    // ‌原罪·罪源
+    'mrqx_extra_pack:origin_sin': function (event, organ) {
+        organPlayerTickOnlyStrategies['mrqx_extra_pack:sin_acedia_belphegor'](event, organ)
+        organPlayerTickOnlyStrategies['mrqx_extra_pack:sin_avaritia_mammon'](event, organ)
+        organPlayerTickOnlyStrategies['mrqx_extra_pack:sin_luxuria_asmodeus'](event, organ)
+    },
+
+    // ‌“罪与罚”
+    'mrqx_extra_pack:sin_and_judgement': function (event, organ) {
+        organPlayerTickOnlyStrategies['mrqx_extra_pack:origin_sin'](event, organ)
+        let player = event.player
+        if (player.getLevel().getDayTime() <= 21) {
+            player.removeEffect('kubejs:glimpse_of_god')
+            player.removeEffect('kubejs:gaze_of_god')
+            player.removeEffect('kubejs:glare_of_god')
+            player.removeEffect('kubejs:pardon_of_god_magic')
+            player.removeEffect('kubejs:pardon_of_god_melee')
+            player.removeEffect('kubejs:pardon_of_god_projectile')
+            player.potionEffects.add('kubejs:glimpse_of_god', 3600 * 20, 0, false, false)
+        }
+    },
+
+    // ‌星空棱镜
+    'mrqx_extra_pack:starry_sky_prism': function (event, organ) {
+        let player = event.player
+        let typeMap = getPlayerChestCavityTypeMap(player)
+        if (player.getLevel().getDayTime() >= 13000) {
+            switch (player.getLevel().getMoonPhase()) {
+                case 0:
+                    player.removeEffect('cataclysm:monstrous')
+                    player.potionEffects.add('cataclysm:monstrous', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
+                    break;
+                case 1:
+                    player.removeEffect('alexsmobs:soulsteal')
+                    player.potionEffects.add('alexsmobs:soulsteal', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
+                    break;
+                case 2:
+                    player.removeEffect('goety:insight')
+                    player.potionEffects.add('goety:insight', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
+                    break;
+                case 3:
+                    player.removeEffect('goety:soul_armor')
+                    player.potionEffects.add('goety:soul_armor', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
+                    break;
+                case 4:
+                    player.removeEffect('minecraft:regeneration')
+                    player.potionEffects.add('minecraft:regeneration', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
+                    break;
+                case 5:
+                    player.removeEffect('minecraft:haste')
+                    player.potionEffects.add('minecraft:haste', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
+                    break;
+                case 6:
+                    player.removeEffect('minecraft:strength')
+                    player.potionEffects.add('minecraft:strength', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
+                    break;
+                case 7:
+                    player.removeEffect('goety:corpse_eater')
+                    player.potionEffects.add('goety:corpse_eater', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
+                    break;
+                default:
+                    break;
+            }
+        }
+    },
+
+    // 日晷
+    'mrqx_extra_pack:sundial': function (event, organ) {
+        let player = event.player
+        let typeMap = getPlayerChestCavityTypeMap(player)
+        switch (Math.floor(player.getLevel().getDayTime() / 1000)) {
+            case 0:
+                player.removeEffect('minecraft:jump_boost')
+                player.potionEffects.add('minecraft:jump_boost', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
+                break;
+            case 1:
+                player.removeEffect('minecraft:speed')
+                player.potionEffects.add('minecraft:speed', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
+                break;
+            case 2:
+                player.removeEffect('alexsmobs:sunbird_blessing')
+                player.potionEffects.add('alexsmobs:sunbird_blessing', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
+                break;
+            case 3:
+                player.removeEffect('cataclysm:blessing_of_amethyst')
+                player.potionEffects.add('cataclysm:blessing_of_amethyst', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
+                break;
+            case 4:
+                player.removeEffect('alexsmobs:orcas_might')
+                player.potionEffects.add('alexsmobs:orcas_might', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
+                break;
+            case 5:
+                player.removeEffect('minecraft:health_boost')
+                player.potionEffects.add('minecraft:health_boost', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
+                break;
+            case 6:
+                player.removeEffect('minecraft:fire_resistance')
+                player.potionEffects.add('minecraft:fire_resistance', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
+                break;
+            case 7:
+                player.removeEffect('alexmobs:knockback_resistance')
+                player.potionEffects.add('alexmobs:knockback_resistance', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
+                break;
+            case 8:
+                player.removeEffect('goety:photosynthesis')
+                player.potionEffects.add('goety:photosynthesis', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
+                break;
+            case 9:
+                player.removeEffect('goety:fortunate')
+                player.potionEffects.add('goety:fortunate', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
+                break;
+            case 10:
+                player.removeEffect('goety:flame_hands')
+                player.potionEffects.add('goety:flame_hands', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
+                break;
+            case 11:
+                player.removeEffect('goety:rampage')
+                player.potionEffects.add('goety:rampage', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
+                break;
+            case 12:
+                player.removeEffect('goety:fiery_aura')
+                player.potionEffects.add('goety:fiery_aura', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
+                break;
+            case 13:
+                player.removeEffect('minecraft:saturation')
+                player.potionEffects.add('minecraft:saturation', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
+                break;
+            default:
+                break;
+        }
+    },
+
+    // 天师仪
+    'mrqx_extra_pack:tianshi_yi': function (event, organ) {
+        let player = event.player
+        let cropSet = new Set()
+        let count = mrqxGetComputingPower(player)
+        mrqxGetConnectedBlocksCount(
+            player.getBlockX(),
+            player.getBlockY(),
+            player.getBlockZ(),
+            count,
+            player.getLevel(),
+            cropSet,
+            /**
+             * @param {Number} count
+             * @param {Number} x
+             * @param {Number} y
+             * @param {Number} z
+             * @param {Number} max
+             * @param {Internal.Level} level
+             * @param {Set<String>} set
+             * @returns {Boolean}
+             */
+            (x, y, z, max, level, set) => {
+                if (level.getBlock(x, y, z).hasTag('minecraft:crops') && Math.random() < 0.01 * max) {
+                    let blockState = level.getBlockState(new BlockPos(x, y, z))
+                    /** @type {Internal.CropBlock} */
+                    let block = level.getBlockState(new BlockPos(x, y, z)).getBlock()
+                    block.performBonemeal(level, level.random, new BlockPos(x, y, z), blockState)
+                    return true
+                }
+                return false
+            })
+        mrqxGetConnectedBlocksCount(
+            player.getBlockX(),
+            player.getBlockY() + 1,
+            player.getBlockZ(),
+            count,
+            player.getLevel(),
+            cropSet,
+            /**
+             * @param {Number} count
+             * @param {Number} x
+             * @param {Number} y
+             * @param {Number} z
+             * @param {Number} max
+             * @param {Internal.Level} level
+             * @param {Set<String>} set
+             * @returns {Boolean}
+             */
+            (x, y, z, max, level, set) => {
+                if (level.getBlock(x, y, z).hasTag('minecraft:crops') && Math.random() < 0.01 * max) {
+                    let blockState = level.getBlockState(new BlockPos(x, y, z))
+                    /** @type {Internal.CropBlock} */
+                    let block = level.getBlockState(new BlockPos(x, y, z)).getBlock()
+                    block.performBonemeal(level, level.random, new BlockPos(x, y, z), blockState)
+                    return true
+                }
+                return false
+            })
     },
 }
 
 var assign_organ_player_tick_only = Object.assign(organPlayerTickOnlyStrategies, mrqxOrganPlayerTickOnlyStrategies);
-
-
-// 核能检测
-PlayerEvents.tick(event => {
-    let player = event.player
-    if (event.getServer().getTickCount() <= (mrqxGetLoggedInTime(player) + 6)) {
-        return
-    }
-    let playerChest = getPlayerChestCavityItemMap(player)
-    if ((player.hasEffect('mrqx_extra_pack:nuclear_power') || player.hasEffect('mrqx_extra_pack:nuclear_power_generation')) && !playerChest.has("mrqx_extra_pack:fission_reactor")) {
-        player.getServer().runCommandSilent('playsound minecraft:entity.generic.explode player @a ' + player.x + ' ' + player.y + ' ' + player.z)
-        event.level.spawnParticles('minecraft:explosion', true, player.x, player.y + 1, player.z, 1, 1, 1, 10, 0.5)
-        let explosion = event.player.block.createExplosion()
-        let effect = player.getEffect('mrqx_extra_pack:nuclear_power')
-        if (!effect) {
-            effect = player.getEffect('mrqx_extra_pack:nuclear_power_generation')
-        }
-        let amplifier = effect.getAmplifier()
-        let duration = effect.getDuration()
-        explosion.strength(amplifier * (duration / 1200 + 1))
-        player.attack(amplifier * (duration / 1200 + 1))
-        explosion.causesFire(true)
-        explosion.explode()
-        player.removeEffect('mrqx_extra_pack:nuclear_power')
-        player.removeEffect('mrqx_extra_pack:nuclear_power_generation')
-        /*let effectCloud = event.level.createEntity('minecraft:area_effect_cloud')
-        effectCloud.setNbt('{Radius:5,Duration:2147483640,RadiusOnUse:-0.000001f,RadiusPerTick:-0.000001f,potion_contents:{custom_effects:[{amplifier:4b,duration:6000,id:"minecraft:wither"},{amplifier:1b,duration:1,id:"minecraft:instant_damage"}]},ReapplicationDelay:20,WaitTime:1}')
-        effectCloud.setPosition(player.x, player.y, player.z)
-        effectCloud.spawn()*/
-    }
-})
-
-// 灵狐之魂获取
-PlayerEvents.tick(event => {
-    let player = event.player
-    let entityList = getLivingWithinRadius(player.getLevel(), new Vec3(player.x, player.y, player.z), 5)
-    entityList.forEach(entity => {
-        if (entity.getEncodeId() == 'minecraft:fox' && !entity.persistentData.getBoolean('mrqx_fox_soul')) {
-            entity.persistentData.putBoolean('mrqx_fox_soul', true)
-            if (entity?.nbt?.Trusted[0]) {
-                let trustPlayer = entity?.nbt?.Trusted[0]
-                let playerUuidString = player.stringUuid.split('-').join('')
-                let trustPlayerUuidString = ((trustPlayer[0] >>> 0).toString(16).padStart(8, '0') + (trustPlayer[1] >>> 0).toString(16).padStart(8, '0') + (trustPlayer[2] >>> 0).toString(16).padStart(8, '0') + (trustPlayer[3] >>> 0).toString(16)).padStart(8, '0')
-                if (trustPlayerUuidString == playerUuidString) {
-                    if (Math.random() < 0.3) {
-                        entity.setItemSlot('mainhand', Item.of('mrqx_extra_pack:fox_soul'))
-                    }
-                }
-            }
-        }
-    })
-})
-
-// 永恒灵魂之翼检测
-PlayerEvents.tick(event => {
-    let player = event.player
-    player.onUpdateAbilities()
-    if (player.age % 5 != 0) return
-    if (!player.getPersistentData().getBoolean('mrqxEternalWingOfSoul')) {
-        return
-    }
-    if (event.getServer().getTickCount() <= (mrqxGetLoggedInTime(player) + 6)) {
-        return
-    }
-    let playerChest = getPlayerChestCavityItemMap(player)
-    if (!playerChest.has('mrqx_extra_pack:eternal_wing_of_soul')) {
-        player.abilities.mayfly = false
-        player.abilities.flying = false
-        player.onUpdateAbilities()
-        player.getPersistentData().putBoolean('mrqxEternalWingOfSoul', false)
-    }
-    else {
-        player.abilities.mayfly = true
-        player.onUpdateAbilities()
-    }
-})

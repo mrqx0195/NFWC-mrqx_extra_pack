@@ -7,7 +7,7 @@
  */
 const mrqxOrganFoodEatenStrategies = {
     // 压缩饼干
-    'kubejs:compressed_biscuit': function (event, organ) {
+    'mrqx_extra_pack:compressed_biscuit': function (event, organ) {
         let typeMap = getPlayerChestCavityTypeMap(event.player)
         if (typeMap.has('kubejs:food')) {
             event.player.setFoodLevel(Math.min(event.player.getFoodLevel() + typeMap.get('kubejs:food').length * 0.5, 20))
@@ -16,7 +16,7 @@ const mrqxOrganFoodEatenStrategies = {
     },
 
     // 黄金压缩饼干
-    'kubejs:golden_compressed_biscuit': function (event, organ) {
+    'mrqx_extra_pack:golden_compressed_biscuit': function (event, organ) {
         let typeMap = getPlayerChestCavityTypeMap(event.player)
         if (typeMap.has('kubejs:food')) {
             event.player.setFoodLevel(Math.min(event.player.getFoodLevel() + typeMap.get('kubejs:food').length, 20))
@@ -38,7 +38,8 @@ var assign_organ_food_eaten = Object.assign(organFoodEatenStrategies, mrqxOrganF
  */
 const mrqxOrganFoodEatenOnlyStrategies = {
     // 黄金压缩饼干
-    'kubejs:golden_compressed_biscuit': function (event, organ) {
+    'mrqx_extra_pack:golden_compressed_biscuit': function (event, organ) {
+        let player = event.player
         let typeMap = getPlayerChestCavityTypeMap(event.player)
         if (typeMap.has('kubejs:food')) {
             player.potionEffects.map.forEach((effect, instance) => {
@@ -46,7 +47,9 @@ const mrqxOrganFoodEatenOnlyStrategies = {
                     let amplifier = instance.getAmplifier()
                     let duration = instance.getDuration()
                     let effect = instance.getEffect()
-                    player.potionEffects.add(effect, duration + typeMap.get('kubejs:food').length * 20, amplifier)
+                    let ambient = instance.isAmbient()
+                    let showParticles = instance.isVisible()
+                    player.potionEffects.add(effect, duration + typeMap.get('kubejs:food').length * 20, amplifier, ambient, showParticles)
                 }
             })
         }
@@ -56,7 +59,9 @@ const mrqxOrganFoodEatenOnlyStrategies = {
                     let amplifier = instance.getAmplifier()
                     let duration = instance.getDuration()
                     let effect = instance.getEffect()
-                    player.potionEffects.add(effect, duration + typeMap.get('kubejs:magic').length * 20, amplifier)
+                    let ambient = instance.isAmbient()
+                    let showParticles = instance.isVisible()
+                    player.potionEffects.add(effect, duration + typeMap.get('kubejs:magic').length * 20, amplifier, ambient, showParticles)
                 }
             })
         }

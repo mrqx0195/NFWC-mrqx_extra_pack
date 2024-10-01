@@ -1,0 +1,36 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "item/handheld",
+	"textures": {
+		"layer0": "mrqx_extra_pack:item/sentient_greatscythe"
+	},
+	"overrides": [
+		{"predicate": {"vinni": 1}, "model": "mrqx_extra_pack:item/sentient_greatscythe_v"}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [46, 90, 0],
+			"translation": [0, 16.5, 0.5],
+			"scale": [3.4, 3.4, 1]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [46, -90, 0],
+			"translation": [0, 16.5, 0.5],
+			"scale": [3.4, 3.4, 1]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, 90, 60],
+			"translation": [5, 3.5, -4.5],
+			"scale": [1.9, 1.9, 0.68]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, -90, -60],
+			"translation": [5, 3.5, -4.5],
+			"scale": [1.9, 1.9, 0.68]
+		},
+		"ground": {
+			"translation": [0, 12, 0],
+			"scale": [1.9, 1.9, 0.68]
+		}
+	}
+}

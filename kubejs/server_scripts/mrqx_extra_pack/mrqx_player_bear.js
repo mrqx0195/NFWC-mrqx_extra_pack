@@ -16,7 +16,7 @@ const mrqxOrganPlayerBearStrategies = {
                     let amplifier = instance.getAmplifier()
                     let duration = instance.getDuration()
                     let effect = instance.getEffect()
-                    player.potionEffects.add(effect, duration + event.amount * 10, amplifier)
+                    player.potionEffects.add(effect, duration + event.amount * 10, amplifier, false, false)
                     count += amplifier + 1
                 }
             })
@@ -28,6 +28,13 @@ const mrqxOrganPlayerBearStrategies = {
     // 幽匿沉积体
     'mrqx_extra_pack:sculk_depositer': function (event, organ, data) {
         event.amount *= 1 - Math.max(mrqxGetSculkCount(event.entity), 0.1)
+    },
+
+    // 蒸汽甲胄
+    'mrqx_extra_pack:steam_armor': function (event, organ, data) {
+        let player = event.entity
+        let count = Math.min(mrqxGetSteamCount(player) * 0.02, 0.2)
+        event.amount *= 1 - count
     },
 }
 
@@ -46,13 +53,13 @@ const mrqxOrganPlayerBearOnlyStrategies = {
             return
         }
         if (event.amount >= player.getHealth()) {
-            if (mrqxCheckOrganSuit(player, 'seaborn', true)) {
+            if (mrqxCheckOrganSuit(player, 'seaborn', 'isAll')) {
                 player.addItemCooldown(organ.id, 400)
             }
             else {
                 player.addItemCooldown(organ.id, 800)
             }
-            player.potionEffects.add('irons_spellbooks:heartstop', 300, 0)
+            player.potionEffects.add('irons_spellbooks:heartstop', 300, 0, false, false)
             event.amount = 0
         }
     },
@@ -65,7 +72,7 @@ const mrqxOrganPlayerBearOnlyStrategies = {
         if (typeMap.has('kubejs:mrqx_seaborn')) {
             amplifier += typeMap.get('kubejs:mrqx_seaborn').length
         }
-        if (mrqxCheckOrganSuit(player, 'seaborn', true)) {
+        if (mrqxCheckOrganSuit(player, 'seaborn', 'isAll')) {
             amplifier *= 2
         }
         if (player.getHealth() / player.getMaxHealth() < 0.5) {
@@ -81,6 +88,74 @@ const mrqxOrganPlayerBearOnlyStrategies = {
             data.returnDamage = data.returnDamage + event.amount * 2
             player.heal(event.amount * 0.5)
             event.amount = 0
+        }
+    },
+
+    // 墨染
+    'mrqx_extra_pack:mrqx0195': function (event, organ, data) {
+        let player = event.entity
+        if (player.persistentData.organActive != 1) {
+            return
+        }
+        if (event.source != 'outOfWorld') {
+            event.amount = 0
+        }
+    },
+
+    // ‌原罪·暴怒「萨迈尔」
+    'mrqx_extra_pack:sin_ira_samael': function (event, organ, data) {
+        let player = event.entity
+        if (player.persistentData.organActive != 1) {
+            return
+        }
+        event.amount *= 5
+        if (!organ.id == 'mrqx_extra_pack:sin_and_judgement' && mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
+            event.amount *= 5
+        }
+    },
+
+    // ‌原罪·傲慢「路西法」
+    'mrqx_extra_pack:sin_superbia_lucifer': function (event, organ, data) {
+        let player = event.entity
+        if (player.persistentData.organActive != 1) {
+            return
+        }
+        if (event.source.getActual()) {
+            event.amount *= 0.85
+            if (!organ.id == 'mrqx_extra_pack:sin_and_judgement' && mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
+                event.amount *= 0.85
+                event.source.bypassArmor().bypassEnchantments().bypassInvul().bypassMagic()
+            }
+            else {
+                event.source.setMagic()
+            }
+        }
+        else {
+            if (event.source != 'outOfWorld') {
+                if (!organ.id == 'mrqx_extra_pack:sin_and_judgement' && mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
+                    player.heal(event.amount)
+                }
+                event.amount = 0
+            }
+        }
+    },
+
+    // ‌原罪·罪源
+    'mrqx_extra_pack:origin_sin': function (event, organ) {
+        organPlayerBearOnlyStrategies['mrqx_extra_pack:sin_ira_samael'](event, organ)
+        organPlayerBearOnlyStrategies['mrqx_extra_pack:sin_superbia_lucifer'](event, organ)
+    },
+
+    // ‌“罪与罚”
+    'mrqx_extra_pack:sin_and_judgement': function (event, organ) {
+        organPlayerBearOnlyStrategies['mrqx_extra_pack:origin_sin'](event, organ)
+    },
+
+    // 世界框架
+    'mrqx_extra_pack:framework_of_world': function (event, organ, data) {
+        let player = event.entity
+        if (event.source == 'outOfWorld') {
+            player.invulnerableTime = 0
         }
     },
 }

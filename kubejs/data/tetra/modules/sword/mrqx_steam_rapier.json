@@ -1,0 +1,51 @@
+{
+    "improvements": [
+        "tetra:sword/shared_blade/",
+        "tetra:sword/shared/",
+        "tetra:shared/"
+    ],
+    "replace": true,
+    "slots": [
+        "sword/blade"
+    ],
+    "type": "tetra:basic_major_module",
+    "variants": [
+        {
+            "aspects": {
+                "breakable": 1,
+                "edgedWeapon": 3
+            },
+            "attributes": {
+                "generic.attack_damage": 12,
+                "generic.attack_speed": 0.6
+            },
+            "durability": 1000,
+            "effects": {
+                "puncture": [
+                    100,
+                    100
+                ],
+                "punctured": 20
+            },
+            "glyph": {
+                "textureLocation": "tetra:textures/gui/aof_glyph.png",
+                "textureX": 176,
+                "textureY": 0,
+                "tint": "8C8C84"
+            },
+            "integrity": -3,
+            "key": "mrqx_steam_rapier",
+            "magicCapacity": 0,
+            "material": {
+                "items": [
+                    "mrqx_extra_pack:steam_rapier"
+                ]
+            },
+            "models": [
+                {
+                    "location": "tetra:items/module/sword/mrqx_extra_pack/mrqx_steam_rapier"
+                }
+            ]
+        }
+    ]
+}

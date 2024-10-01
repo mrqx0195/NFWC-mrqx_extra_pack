@@ -181,7 +181,7 @@ function mrqxAdvancedArchivistEyeGlassPaint(item, player) {
             alignX: 'left',
             alignY: 'bottom',
             color: Color.RED.getHexJS(),
-            text: `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.4", "with": [${player.hasEffect('kubejs:dragon_power') ? `{"translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.01", "with": [${player.getEffect('kubejs:dragon_power').getAmplifier() + 1}]}, {"translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.02", "with": [${(player.getEffect('kubejs:dragon_power').getDuration() / 20).toFixed(2)}]}` : `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.00" }`}]}`,
+            text: `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.4", "with": [${player.hasEffect('kubejs:dragon_power') ? `{"translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.01", "with": [${player.getEffect('kubejs:dragon_power').getAmplifier() + 1}]}, {"translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.02", "with": [${(player.getEffect('kubejs:dragon_power').getDuration() / 20).toFixed(2)}]}, {"translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.04", "with": [${((player.getEffect('kubejs:dragon_power').getAmplifier() + 1) * 20)}, "%"]}` : `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.00" }`}]}`,
             visible: visibleList[1]
         },
         infinityBeatsText: {
@@ -229,7 +229,7 @@ function mrqxAdvancedArchivistEyeGlassPaint(item, player) {
             alignX: 'left',
             alignY: 'bottom',
             color: Color.DARK_RED.getHexJS(),
-            text: `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.7", "with": [${getPlayerChestCavityItemMap(player).has('mrqx_extra_pack:prison_soul') ? `{"translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.03", "with": ["+", ${(Math.sqrt(player.persistentData.getInt('mrqx_kill_count') ?? 0) * 0.1).toFixed(2)}]}` : `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.00"}`}]}`,
+            text: `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.7", "with": [${(getPlayerChestCavityItemMap(player).has('mrqx_extra_pack:prison_soul') && mrqxCheckOrganSuit(player, 'four_soul', 'isAll')) ? `{"translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.03", "with": ["+", ${(Math.sqrt(player.persistentData.getInt('mrqx_kill_count') ?? 0) * 0.1).toFixed(2)}]}` : `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.00"}`}]}`,
             visible: visibleList[4]
         },
         moonSoulText: {
@@ -253,7 +253,7 @@ function mrqxAdvancedArchivistEyeGlassPaint(item, player) {
             alignX: 'left',
             alignY: 'bottom',
             color: Color.BLACK_DYE.getHexJS(),
-            text: `{"translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.9", "with": [${getPlayerChestCavityItemMap(player).has('mrqx_extra_pack:marenol') ? `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.03", "with": ["×", ${(1 + mrqxGetMarenolCount(player) * 0.1) * 100}]}, "%"` : `{"translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.00" }`}]}`,
+            text: `{"translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.9", "with": [${getPlayerChestCavityItemMap(player).has('mrqx_extra_pack:marenol') ? `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.03", "with": ["×", ${(1 + mrqxGetMarenolCount(player) * 0.1) * getPlayerChestCavityItemMap(player).get('mrqx_extra_pack:marenol').length}]}, "%"` : `{"translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.00" }`}]}`,
             visible: visibleList[6]
         },
         nuclearPowerText: {
@@ -265,19 +265,31 @@ function mrqxAdvancedArchivistEyeGlassPaint(item, player) {
             alignX: 'left',
             alignY: 'bottom',
             color: Color.YELLOW_DYE.getHexJS(),
-            text: `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.a0", "with": [${player.hasEffect('mrqx_extra_pack:nuclear_power') ? `{"translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.01" , "with": [${player.getEffect('mrqx_extra_pack:nuclear_power').getAmplifier() + 1}]}, {"translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.02", "with": [${(player.getEffect('mrqx_extra_pack:nuclear_power').getDuration() / 20).toFixed(2)}]}, " | ", { "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.03", "with": ["+", ${(player.getEffect('mrqx_extra_pack:nuclear_power').getAmplifier() + 1) * 0.4 * 100}, "%" ]}]}` : `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.00"}`}]}`,
+            text: `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.a", "with": [${player.hasEffect('mrqx_extra_pack:nuclear_power') ? `{"translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.01" , "with": [${player.getEffect('mrqx_extra_pack:nuclear_power').getAmplifier() + 1}]}, {"translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.02", "with": [${(player.getEffect('mrqx_extra_pack:nuclear_power').getDuration() / 20).toFixed(2)}]}, { "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.03", "with": ["+", ${(player.getEffect('mrqx_extra_pack:nuclear_power').getAmplifier() + 1) * 0.4 * 100}, "%" ]}]}` : `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.00"}`}]}`,
             visible: visibleList[7]
         },
-        nuclearPowerGenerText: {
+        steamPowerText: {
             type: 'text',
             shadow: true,
             x: 11,
-            y: `-$screenH/2+${allCount + 30 + (count += visibleList[7]) * 10}`,
+            y: `-$screenH/2+${allCount + 30 + (count += visibleList[9]) * 10}`,
             scale: 1,
             alignX: 'left',
             alignY: 'bottom',
-            color: Color.YELLOW_DYE.getHexJS(),
-            text: `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.a1" , "with": [${player.hasEffect('mrqx_extra_pack:nuclear_power_generation') ? `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.01", "with": [${player.getEffect('mrqx_extra_pack:nuclear_power_generation').getAmplifier() + 1}]}, {"translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.02", "with": [${(player.getEffect('mrqx_extra_pack:nuclear_power_generation').getDuration() / 20).toFixed(2)}]}, " | ", { "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.05", "with": [${player.getEffect('mrqx_extra_pack:nuclear_power_generation').getAmplifier() * player.getEffect('mrqx_extra_pack:nuclear_power_generation').getDuration() / 20}]} ` : `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.00" }`}]}`,
+            color: Color.GRAY_DYE.getHexJS(),
+            text: `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.d0", "with": [${player.hasEffect('mrqx_extra_pack:steam_power') ? `{"translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.01" , "with": [${player.getEffect('mrqx_extra_pack:steam_power').getAmplifier() + 1}]}, {"translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.02", "with": [${(player.getEffect('mrqx_extra_pack:steam_power').getDuration() / 20).toFixed(2)}]}, { "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.d1", "with": [${mrqxGetSteamCount(player)}]}]}` : `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.00"}`}]}`,
+            visible: visibleList[7]
+        },
+        steamSuperChargeText: {
+            type: 'text',
+            shadow: true,
+            x: 11,
+            y: `-$screenH/2+${allCount + 30 + (count += visibleList[9]) * 10}`,
+            scale: 1,
+            alignX: 'left',
+            alignY: 'bottom',
+            color: Color.GRAY.getHexJS(),
+            text: `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.e", "with": [${player.hasEffect('mrqx_extra_pack:steam_supercharge') ? `{"translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.01", "with": [${player.getEffect('mrqx_extra_pack:steam_supercharge').getAmplifier() + 1}]}, {"translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.02", "with": [${(player.getEffect('mrqx_extra_pack:steam_supercharge').getDuration() / 20).toFixed(2)}]}` : `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.00" }`}]}`,
             visible: visibleList[7]
         },
         elementSelfText: {
@@ -289,14 +301,31 @@ function mrqxAdvancedArchivistEyeGlassPaint(item, player) {
             alignX: 'left',
             alignY: 'bottom',
             text: `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.c1" , "with": [
-            ${!mrqxIsEmpty(player.getPersistentData().getInt("mrqx_ender_damage")) || !mrqxIsEmpty(player.getPersistentData().getInt("mrqx_fire_damage")) || !mrqxIsEmpty(player.getPersistentData().getInt("mrqx_ice_damage")) || !mrqxIsEmpty(player.getPersistentData().getInt("mrqx_lighting_damage")) || !mrqxIsEmpty(player.getPersistentData().getInt("mrqx_wither_damage")) ? `
-            ${!mrqxIsEmpty(player.getPersistentData().getInt("mrqx_ender_damage")) ? `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.b0" , "with": [${Text.lightPurple(player.getPersistentData().getInt("mrqx_ender_damage") ?? 0).getString()}]}` : `""`}, 
-            ${!mrqxIsEmpty(player.getPersistentData().getInt("mrqx_fire_damage")) ? `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.b1" , "with": [${Text.lightPurple(player.getPersistentData().getInt("mrqx_fire_damage") ?? 0).getString()}]}` : `""`},
-            ${!mrqxIsEmpty(player.getPersistentData().getInt("mrqx_ice_damage")) ? `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.b2" , "with": [${Text.lightPurple(player.getPersistentData().getInt("mrqx_ice_damage") ?? 0).getString()}]}` : `""`},
-            ${!mrqxIsEmpty(player.getPersistentData().getInt("mrqx_lighting_damage")) ? `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.b3" , "with": [${Text.lightPurple(player.getPersistentData().getInt("mrqx_lighting_damage") ?? 0).getString()}]}` : `""`},
-            ${!mrqxIsEmpty(player.getPersistentData().getInt("mrqx_wither_damage")) ? `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.b4" , "with": [${Text.lightPurple(player.getPersistentData().getInt("mrqx_wither_damage") ?? 0).getString()}]}` : `""`}
-            `: `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.d"}`}
-            ]}`,
+                ${(!(
+                    mrqxIsEmpty(player.getPersistentData().getInt("mrqx_ender_damage")) ||
+                    mrqxIsEmpty(player.getPersistentData().getInt("mrqx_fire_damage")) ||
+                    mrqxIsEmpty(player.getPersistentData().getInt("mrqx_ice_damage")) ||
+                    mrqxIsEmpty(player.getPersistentData().getInt("mrqx_lighting_damage")) ||
+                    mrqxIsEmpty(player.getPersistentData().getInt("mrqx_wither_damage"))
+                ) && (
+                        player.getPersistentData().getInt("mrqx_ender_damage") != 0 ||
+                        player.getPersistentData().getInt("mrqx_fire_damage") != 0 ||
+                        player.getPersistentData().getInt("mrqx_ice_damage") != 0 ||
+                        player.getPersistentData().getInt("mrqx_lighting_damage") != 0 ||
+                        player.getPersistentData().getInt("mrqx_wither_damage") != 0
+                    )) ? `
+                ${(!mrqxIsEmpty(player.getPersistentData().getInt("mrqx_ender_damage")) && player.getPersistentData().getInt("mrqx_ender_damage")) ?
+                    `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.b0" , "with": [${Text.white(player.getPersistentData().getInt("mrqx_ender_damage") ?? 0).getString()}]}` : `""`}, 
+                ${(!mrqxIsEmpty(player.getPersistentData().getInt("mrqx_fire_damage")) && player.getPersistentData().getInt("mrqx_fire_damage")) ?
+                    `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.b1" , "with": [${Text.white(player.getPersistentData().getInt("mrqx_fire_damage") ?? 0).getString()}]}` : `""`},
+                ${(!mrqxIsEmpty(player.getPersistentData().getInt("mrqx_ice_damage")) && player.getPersistentData().getInt("mrqx_ice_damage")) ?
+                    `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.b2" , "with": [${Text.white(player.getPersistentData().getInt("mrqx_ice_damage") ?? 0).getString()}]}` : `""`},
+                ${(!mrqxIsEmpty(player.getPersistentData().getInt("mrqx_lighting_damage")) && player.getPersistentData().getInt("mrqx_lighting_damage")) ?
+                    `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.b3" , "with": [${Text.white(player.getPersistentData().getInt("mrqx_lighting_damage") ?? 0).getString()}]}` : `""`},
+                ${(!mrqxIsEmpty(player.getPersistentData().getInt("mrqx_wither_damage")) && player.getPersistentData().getInt("mrqx_wither_damage")) ?
+                    `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.b4" , "with": [${Text.white(player.getPersistentData().getInt("mrqx_wither_damage") ?? 0).getString()}]}` : `""`}
+                `: `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.c0"}`}
+                ]}`,
             visible: visibleList[8]
         },
         elementTargetText: {
@@ -308,15 +337,176 @@ function mrqxAdvancedArchivistEyeGlassPaint(item, player) {
             alignX: 'center',
             alignY: 'bottom',
             text: `${target ? `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.c1" , "with": [
-                ${!mrqxIsEmpty(target.getPersistentData().getInt("mrqx_ender_damage")) || !mrqxIsEmpty(target.getPersistentData().getInt("mrqx_fire_damage")) || !mrqxIsEmpty(target.getPersistentData().getInt("mrqx_ice_damage")) || !mrqxIsEmpty(target.getPersistentData().getInt("mrqx_lighting_damage")) || !mrqxIsEmpty(target.getPersistentData().getInt("mrqx_wither_damage")) ? `
-                ${!mrqxIsEmpty(target.getPersistentData().getInt("mrqx_ender_damage")) ? `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.b0" , "with": [${Text.lightPurple(target.getPersistentData().getInt("mrqx_ender_damage") ?? 0).getString()}]}` : `""`}, 
-                ${!mrqxIsEmpty(target.getPersistentData().getInt("mrqx_fire_damage")) ? `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.b1" , "with": [${Text.lightPurple(target.getPersistentData().getInt("mrqx_fire_damage") ?? 0).getString()}]}` : `""`},
-                ${!mrqxIsEmpty(target.getPersistentData().getInt("mrqx_ice_damage")) ? `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.b2" , "with": [${Text.lightPurple(target.getPersistentData().getInt("mrqx_ice_damage") ?? 0).getString()}]}` : `""`},
-                ${!mrqxIsEmpty(target.getPersistentData().getInt("mrqx_lighting_damage")) ? `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.b3" , "with": [${Text.lightPurple(target.getPersistentData().getInt("mrqx_lighting_damage") ?? 0).getString()}]}` : `""`},
-                ${!mrqxIsEmpty(target.getPersistentData().getInt("mrqx_wither_damage")) ? `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.b4" , "with": [${Text.lightPurple(target.getPersistentData().getInt("mrqx_wither_damage") ?? 0).getString()}]}` : `""`}
-                `: `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.d"}`}
+                ${(!(
+                    mrqxIsEmpty(target.getPersistentData().getInt("mrqx_ender_damage")) ||
+                    mrqxIsEmpty(target.getPersistentData().getInt("mrqx_fire_damage")) ||
+                    mrqxIsEmpty(target.getPersistentData().getInt("mrqx_ice_damage")) ||
+                    mrqxIsEmpty(target.getPersistentData().getInt("mrqx_lighting_damage")) ||
+                    mrqxIsEmpty(target.getPersistentData().getInt("mrqx_wither_damage"))
+                ) && (
+                        target.getPersistentData().getInt("mrqx_ender_damage") != 0 ||
+                        target.getPersistentData().getInt("mrqx_fire_damage") != 0 ||
+                        target.getPersistentData().getInt("mrqx_ice_damage") != 0 ||
+                        target.getPersistentData().getInt("mrqx_lighting_damage") != 0 ||
+                        target.getPersistentData().getInt("mrqx_wither_damage") != 0
+                    )) ? `
+                ${(!mrqxIsEmpty(target.getPersistentData().getInt("mrqx_ender_damage")) && target.getPersistentData().getInt("mrqx_ender_damage")) ?
+                    `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.b0" , "with": [${Text.white(target.getPersistentData().getInt("mrqx_ender_damage") ?? 0).getString()}]}` : `""`}, 
+                ${(!mrqxIsEmpty(target.getPersistentData().getInt("mrqx_fire_damage")) && target.getPersistentData().getInt("mrqx_fire_damage")) ?
+                    `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.b1" , "with": [${Text.white(target.getPersistentData().getInt("mrqx_fire_damage") ?? 0).getString()}]}` : `""`},
+                ${(!mrqxIsEmpty(target.getPersistentData().getInt("mrqx_ice_damage")) && target.getPersistentData().getInt("mrqx_ice_damage")) ?
+                    `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.b2" , "with": [${Text.white(target.getPersistentData().getInt("mrqx_ice_damage") ?? 0).getString()}]}` : `""`},
+                ${(!mrqxIsEmpty(target.getPersistentData().getInt("mrqx_lighting_damage")) && target.getPersistentData().getInt("mrqx_lighting_damage")) ?
+                    `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.b3" , "with": [${Text.white(target.getPersistentData().getInt("mrqx_lighting_damage") ?? 0).getString()}]}` : `""`},
+                ${(!mrqxIsEmpty(target.getPersistentData().getInt("mrqx_wither_damage")) && target.getPersistentData().getInt("mrqx_wither_damage")) ?
+                    `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.b4" , "with": [${Text.white(target.getPersistentData().getInt("mrqx_wither_damage") ?? 0).getString()}]}` : `""`}
+                `: `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.c0"}`}
                 ]}` : ''}`,
             visible: visibleList[8]
         }
     })
+}
+
+/**
+ * @param {Internal.ItemStack} item
+ * @param {Internal.SlotContext} ctx 
+ */
+global.mrqxResidualBreathOfDeadSoulTick = (item, ctx) => {
+    /**@type {Internal.ServerPlayer} */
+    let player = ctx.entity()
+    if (!player || player.level.isClientSide()) return
+    if (item.getDamageValue() > 0) {
+        item.setDamageValue(item.getDamageValue() - 1)
+        return
+    }
+    if (!player.isPlayer()) return
+    let entityList = getLivingWithinRadius(player.getLevel(), new Vec3(player.x, player.y, player.z), 16)
+    if (entityList.length == 0) return
+    /**@type {Internal.LivingEntity} */
+    let entity = randomGet(entityList)
+    if (!entity.isLiving() || entity.isPlayer() || !entity.isMonster()) return
+    item.setDamageValue(Math.floor(Math.random() * 5 * 20))
+    mrqxLinePos(player.x, player.y + 1, player.z, entity.x, entity.y + 1, entity.z, 0.4).forEach((pos) => {
+        /**@type {Special.ParticleType} */
+        let particles = 'goety:redstone_explode'
+        player.level.spawnParticles(particles, true, pos.x(), pos.y(), pos.z(), entity.x - player.x, entity.y - player.y, entity.z - player.z, 0, 10)
+    })
+    entity.attack(DamageSource.indirectMagic(player, player), 7)
+    entity.invulnerableTime = 0
+    let amplifier = 0
+    if (entity.hasEffect('mrqx_extra_pack:ghost_of_dead_soul')) amplifier += entity.getEffect('mrqx_extra_pack:ghost_of_dead_soul').getAmplifier() + 1
+    entity.removeEffect('mrqx_extra_pack:ghost_of_dead_soul')
+    entity.potionEffects.add('mrqx_extra_pack:ghost_of_dead_soul', 20 * 60 * 60, amplifier, false, false)
+    entity.potionEffects.add('minecraft:slowness', 10, 5, false, false)
+}
+
+/**
+ * @param {Internal.LivingHurtEvent} event
+ */
+function mrqxResidualBreathOfDeadSoulDamage(event) {
+    if (Math.random() > 0.3) return
+    let entity = event.entity
+    let player = event.source.player
+    if (!entity.hasEffect('mrqx_extra_pack:ghost_of_dead_soul')) return
+    let effect = entity.getEffect('mrqx_extra_pack:ghost_of_dead_soul')
+    let amplifier = effect.getAmplifier()
+    entity.removeEffect('mrqx_extra_pack:ghost_of_dead_soul')
+    if (mrqxGetCurioInfo(player, 'mrqx_extra_pack:residual_breath_of_dead_soul').count >= 3) {
+        let entityList = getLivingWithinRadius(player.getLevel(), new Vec3(entity.x, entity.y, entity.z), 8)
+        entity.level.spawnParticles('minecraft:explosion', true, entity.x, entity.y + 1, entity.z, 1.3, 1.3, 1.3, 20, 1)
+        entityList.forEach(entitys => {
+            entitys.attack(DamageSource.playerAttack(player), player.getAttributeTotalValue('minecraft:generic.attack_damage') * amplifier * 5)
+            entitys.attack(DamageSource.indirectMagic(player, player), player.getAttributeTotalValue('minecraft:generic.attack_damage') * amplifier * 5)
+            entitys.invulnerableTime = 0
+        })
+    }
+    else {
+        let entityList = getLivingWithinRadius(player.getLevel(), new Vec3(entity.x, entity.y, entity.z), 3)
+        entity.level.spawnParticles('minecraft:explosion', true, entity.x, entity.y + 1, entity.z, 0.5, 0.5, 0.5, 10, 1)
+        entityList.forEach(entitys => {
+            entitys.attack(DamageSource.indirectMagic(player, player), player.getAttributeTotalValue('minecraft:generic.attack_damage') * amplifier)
+            entitys.invulnerableTime = 0
+        })
+    }
+}
+
+/**
+ * @param {Internal.ItemStack} item
+ * @param {Internal.SlotContext} ctx 
+ */
+global.mrqxShieldGeneratorTick = (item, ctx) => {
+    /**@type {Internal.ServerPlayer} */
+    let player = ctx.entity()
+    if (!player || player.level.isClientSide()) return
+    if (item.getNbt().getInt('mrqxShieldGeneratorCoolDown') > 0) {
+        item.getNbt().putInt('mrqxShieldGeneratorCoolDown', item.getNbt().getInt('mrqxShieldGeneratorCoolDown') - 1)
+        return
+    }
+    if (item.getDamageValue() > 0) {
+        let playerResourceCount = player.persistentData.getInt(resourceCount) ?? 0
+        if (playerResourceCount > 0) {
+            let count = Math.min(playerResourceCount, item.getDamageValue())
+            item.setDamageValue(item.getDamageValue() - count)
+            updateResourceCount(player, playerResourceCount - count)
+        }
+    }
+}
+
+/**
+ * @param {Internal.LivingDamageEvent} event 
+ * @param {Internal.ItemStack} item
+ */
+function mrqxShieldGeneratorBear(event, item) {
+    let player = event.entity
+    if (!player || player.level.isClientSide()) return
+    if (event.amount == 0) return
+    let damage = Math.min(event.amount, item.getMaxDamage() - item.getDamageValue())
+    event.amount -= damage
+    if ((item.getMaxDamage() - damage) <= 0) {
+        item.setDamageValue(item.getMaxDamage())
+        event.amount = 0
+        item.getNbt().putInt('mrqxShieldGeneratorCoolDown', 200)
+        player.potionEffects.map.forEach((effect, instance) => {
+            if (effect.getCategory().name() == 'BENEFICIAL') {
+                let amplifier = instance.getAmplifier()
+                let duration = instance.getDuration()
+                let effect = instance.getEffect()
+                if (player.hasEffect(effect)) {
+                    amplifier += player.getEffect(effect).getAmplifier() + 1
+                    duration += player.getEffect(effect).getDuration()
+                }
+                player.removeEffect(effect)
+                player.potionEffects.add(effect, duration, amplifier, false, false)
+            }
+        })
+    }
+    else {
+        item.setDamageValue(item.getDamageValue() + damage)
+    }
+}
+
+/**
+ * @param {Internal.ItemStack} item
+ * @param {Internal.SlotContext} ctx 
+ */
+global.mrqxInfinityForceContainerTick = (item, ctx) => {
+    /**@type {Internal.ServerPlayer} */
+    let player = ctx.entity()
+    if (!player || player.level.isClientSide()) return
+    if (!player.isPlayer()) return
+    let inventory = player.inventory
+    let forces = inventory.getAllItems().filter(item => (item.id == 'kubejs:infinity_force'))
+    if (forces.length == 0) return
+    if (!item.getNbt()) item.setNbt({})
+    let count = item.nbt.getLong('mrqxInfinityForceContainerCount') ?? 0
+    forces.forEach(force => {
+        if (force.getNbt() && force.nbt?.forgeTimes) {
+            count += 2 ** force.nbt?.forgeTimes
+        }
+        else {
+            count += 1
+        }
+        force.shrink(1)
+    })
+    item.nbt.putLong('mrqxInfinityForceContainerCount', count)
 }
