@@ -52,7 +52,7 @@ const mrqxOrganPlayerTickStrategies = {
                         b = false
                     }
                     else {
-                        tumorData[key] = organData[key] * (0.5 + Math.random() * 0.25)
+                        tumorData[key] = organData[key] * (0.3 + Math.random() * 0.25)
                     }
                 })
                 if (b) {
@@ -308,9 +308,6 @@ const mrqxOrganPlayerTickOnlyStrategies = {
     'mrqx_extra_pack:framework_of_world': function (event, organ) {
         let player = event.player
         if ((Math.abs(player.x) + Math.abs(player.z)) >= 29999000 * 2 && player.y <= -128 && player.persistentData.getInt(organActive) == 1) {
-            let instance = player.getChestCavityInstance()
-            let item = instance.inventory.getItem(organ.Slot)
-            if (item.isEmpty()) return
             let newItem = Item.of(organ.id)
             if (item.getDamageValue() >= (60 * 60 * 24 - 2)) {
                 newItem = Item.of('kubejs:genesis')
@@ -318,15 +315,13 @@ const mrqxOrganPlayerTickOnlyStrategies = {
             else {
                 newItem.setDamageValue(item.getDamageValue() + 1)
             }
-            mrqxEditChestItem(player, newItem, organ.Slot, false, false)
+            mrqxEditChestItem(player, newItem, organ.Slot, false, false, false)
         }
         else {
             let instance = player.getChestCavityInstance()
-            let item = instance.inventory.getItem(organ.Slot)
-            if (item.isEmpty()) return
             let newItem = Item.of(organ.id)
             newItem.setDamageValue(0)
-            mrqxEditChestItem(player, newItem, organ.Slot, false, false)
+            mrqxEditChestItem(player, newItem, organ.Slot, false, false, false)
         }
     },
 

@@ -166,16 +166,24 @@ ItemEvents.rightClicked('mrqx_extra_pack:infinity_force_container', event => {
     /** @type {Internal.ServerPlayer} */
     let player = event.entity
     if (!player.isPlayer()) return
-    if (itemstack.getNbt() && itemstack.nbt.getLong('mrqxInfinityForceContainerCount')) {
-        let count = itemstack.nbt.getLong('mrqxInfinityForceContainerCount')
-        let power = 0
-        while (Math.pow(2, power + 1) <= count) {
-            power++
+    if (itemstack.getNbt() && itemstack.nbt.getCompound('mrqxInfinityForceContainerCountList')) {
+        let countList = itemstack.nbt.getCompound('mrqxInfinityForceContainerCountList') ?? mrqxGetEmptyCompound()
+        let forgeTimes = ((countList.getByte('max') ?? 0) == 0 ? 1 : (countList.getByte('max') ?? 0)) - 1
+        if (forgeTimes == 0 && (countList.getByte(0) ?? 0) == 0) return
+        countList.putByte(forgeTimes, (countList.getByte(forgeTimes) ?? 1) - 1)
+        let i = countList.getByte('max') ?? 0
+        countList.putByte('max', 0)
+        while (i >= 0) {
+            if ((countList.getByte(i) ?? 0) != 0) {
+                countList.putByte('max', i + 1)
+                break
+            }
+            i--
         }
-        itemstack.nbt.putLong('mrqxInfinityForceContainerCount', count - (2 ** power))
+        itemstack.nbt.put('mrqxInfinityForceContainerCountList', countList)
         let itemstack1 = Item.of('kubejs:infinity_force')
         itemstack1.setNbt({})
-        itemstack1.nbt.putInt('forgeTimes', power)
+        itemstack1.nbt.putInt('forgeTimes', forgeTimes)
         player.getServer().scheduleInTicks(1, () => {
             player.give(itemstack1)
         })
@@ -189,22 +197,30 @@ if (Utils.getRegistries().items().contains('luna_flesh_reforged:fallen_paradise'
         /** @type {Internal.ServerPlayer} */
         let player = event.entity
         if (!player.isPlayer()) return
-        if (itemstack.getNbt() && itemstack.nbt.getLong('mrqxInfinityForceContainerCount')) {
-            let count = itemstack.nbt.getLong('mrqxInfinityForceContainerCount')
-            let power = 0
-            while (Math.pow(2, power + 1) <= count) {
-                power++
+        if (itemstack.getNbt() && itemstack.nbt.getCompound('mrqxInfinityForceContainerCountList')) {
+            let countList = itemstack.nbt.getCompound('mrqxInfinityForceContainerCountList') ?? mrqxGetEmptyCompound()
+            let forgeTimes = ((countList.getByte('max') ?? 0) == 0 ? 1 : (countList.getByte('max') ?? 0)) - 1
+            if (forgeTimes == 0 && (countList.getByte(0) ?? 0) == 0) return
+            countList.putByte(forgeTimes, (countList.getByte(forgeTimes) ?? 1) - 1)
+            let i = countList.getByte('max') ?? 0
+            countList.putByte('max', 0)
+            while (i >= 0) {
+                if ((countList.getByte(i) ?? 0) != 0) {
+                    countList.putByte('max', i + 1)
+                    break
+                }
+                i--
             }
             let itemstack1 = Item.of('mrqx_extra_pack:infinity_force_container')
             itemstack1.setNbt({})
-            itemstack1.nbt.putLong('mrqxInfinityForceContainerCount', count - (2 ** power))
+            itemstack1.nbt.put('mrqxInfinityForceContainerCountList', countList)
             itemstack.shrink(1)
             player.getServer().scheduleInTicks(1, () => {
                 player.give(itemstack1)
             })
             let itemstack2 = Item.of('luna_flesh_reforged:fallen_paradise')
             itemstack2.setNbt({})
-            itemstack2.nbt.putInt('forgeTimes', power)
+            itemstack2.nbt.putInt('forgeTimes', forgeTimes)
             player.getServer().scheduleInTicks(1, () => {
                 player.give(itemstack2)
             })

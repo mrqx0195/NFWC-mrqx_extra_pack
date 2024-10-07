@@ -1718,6 +1718,35 @@ ServerEvents.recipes(event => {
 
     // ‌无尽之力容器
     event.recipes.kubejs.shapeless('mrqx_extra_pack:infinity_force_container', ['kubejs:empty_organ_charm', 'kubejs:infinity_force', 'minecraft:nether_star'])
+        .modifyResult((grid, stack) => {
+            let force = grid.find('kubejs:infinity_force', 0)
+            let countList = mrqxGetEmptyCompound()
+            if (force.getNbt() && force.nbt?.forgeTimes) {
+                countList.putByte(force.nbt?.forgeTimes, (countList.getByte(force.nbt?.forgeTimes) ?? 0) + 1)
+                countList.putByte('max', Math.max(countList.getByte('max') ?? 0, force.nbt?.forgeTimes))
+            }
+            else {
+                countList.putByte(0, (countList.getByte(0) ?? 0) + 1)
+                countList.putByte('max', Math.max(countList.getByte('max') ?? 0, 0))
+            }
+            let i = 0
+            while (i <= (countList.getByte('max') ?? 0) + 1) {
+                if ((countList.getByte(i) ?? 0) >= 2) {
+                    countList.putByte(i + 1, (countList.getByte(i + 1) ?? 0) + 1)
+                    countList.putByte(i, countList.getByte(i) - 2)
+                    countList.putByte('max', Math.max(countList.getByte('max') ?? 0, i + 2))
+                }
+                else {
+                    countList.putByte(i, countList.getByte(i) ?? 0)
+                    i++
+                }
+            }
+            countList.putByte('max', (countList.getByte('max') ?? 0) + 1)
+            stack = Item.of('mrqx_extra_pack:infinity_force_container', 1, {})
+            stack.nbt.put('mrqxInfinityForceContainerCountList', countList)
+            return stack
+        })
+        .id('mrqx_infinity_force_container_manual_only');
 
     // ‌（Luna's联动）堕乐园容器
     if (Utils.getRegistries().items().contains('luna_flesh_reforged:fallen_paradise')) {
@@ -1726,17 +1755,31 @@ ServerEvents.recipes(event => {
             .modifyResult((grid, stack) => {
                 let container = grid.find('mrqx_extra_pack:infinity_force_container', 0)
                 let paradise = grid.find('luna_flesh_reforged:fallen_paradise', 0)
-                let paraPower = 0
-                let count = 0
-                if (paradise.nbt) {
-                    paraPower = paradise.nbt.getInt('forgeTimes') ?? 0
+                if (!container.getNbt()) container.setNbt({})
+                let countList = container.nbt.getCompound('mrqxInfinityForceContainerCountList') ?? mrqxGetEmptyCompound()
+                if (paradise.getNbt() && paradise.nbt?.forgeTimes) {
+                    countList.putByte(paradise.nbt?.forgeTimes, (countList.getByte(paradise.nbt?.forgeTimes) ?? 0) + 1)
+                    countList.putByte('max', Math.max(countList.getByte('max') ?? 0, paradise.nbt?.forgeTimes))
                 }
-                if (container.nbt) {
-                    count = container.nbt.getLong('mrqxInfinityForceContainerCount') ?? 0
+                else {
+                    countList.putByte(0, (countList.getByte(0) ?? 0) + 1)
+                    countList.putByte('max', Math.max(countList.getByte('max') ?? 0, 0))
                 }
-                stack = Item.of('mrqx_extra_pack:fallen_paradise_container')
-                stack.setNbt({})
-                stack.nbt.putInt('mrqxInfinityForceContainerCount', 2 ** paraPower + count)
+                let i = 0
+                while (i <= (countList.getByte('max') ?? 0) + 1) {
+                    if ((countList.getByte(i) ?? 0) >= 2) {
+                        countList.putByte(i + 1, (countList.getByte(i + 1) ?? 0) + 1)
+                        countList.putByte(i, countList.getByte(i) - 2)
+                        countList.putByte('max', Math.max(countList.getByte('max') ?? 0, i + 2))
+                    }
+                    else {
+                        countList.putByte(i, countList.getByte(i) ?? 0)
+                        i++
+                    }
+                }
+                countList.putByte('max', (countList.getByte('max') ?? 0))
+                stack = Item.of('mrqx_extra_pack:fallen_paradise_container', 1, {})
+                stack.nbt.put('mrqxInfinityForceContainerCountList', countList)
                 return stack
             })
             .id('mrqx_fallen_paradise_container_manual_only');
@@ -1790,7 +1833,7 @@ ServerEvents.recipes(event => {
         .id('mrqx_extra_pack:ritual_mystery_soul')
         .input('64x iceandfire:ectoplasm')
         .input('64x meetyourfight:phantoplasm')
-        .input('64x alexsmobs:soul_heart')
+        .input('16x alexsmobs:soul_heart')
         .input('mrqx_extra_pack:prison_soul')
         .input('mrqx_extra_pack:fox_soul')
         .input('mrqx_extra_pack:moon_soul')

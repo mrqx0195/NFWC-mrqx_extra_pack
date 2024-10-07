@@ -239,7 +239,7 @@ const mrqxOrganActiveOnlyStrategies = {
             }
             if (b) {
                 if (typeMap.has('kubejs:mrqx_seaborn')) {
-                    let itemList = typeMap.get('kubejs:mrqx_seaborn')
+                    let itemList = getPlayerChestCavityTypeMap(player).get('kubejs:mrqx_seaborn')
                     itemList.push(organ)
                     typeMap.set('kubejs:mrqx_seaborn', itemList)
                 } else {
@@ -371,7 +371,7 @@ const mrqxOrganActiveOnlyStrategies = {
                 }
             }
         }
-        let itemList = typeMap.get('kubejs:mrqx_celestial_body')
+        let itemList = getPlayerChestCavityTypeMap(player).get('kubejs:mrqx_celestial_body')
         let uuid = String(player.getUuid())
         typeMap.set('kubejs:mrqx_celestial_body', itemList)
         playerChestCavityTypeMap.set(uuid, typeMap)
@@ -528,7 +528,7 @@ const mrqxOrganActiveOnlyStrategies = {
                 }
             }
         }
-        let itemList = typeMap.get('kubejs:rose')
+        let itemList = getPlayerChestCavityTypeMap(player).get('kubejs:rose')
         typeMap.set('kubejs:rose', itemList)
         let uuid = String(player.getUuid())
         playerChestCavityTypeMap.set(uuid, typeMap)
@@ -581,7 +581,7 @@ const mrqxOrganActiveOnlyStrategies = {
                 }
             }
         }
-        let itemList = typeMap.get('kubejs:mrqx_seaborn')
+        let itemList = getPlayerChestCavityTypeMap(player).get('kubejs:mrqx_seaborn')
         let uuid = String(player.getUuid())
         typeMap.set('kubejs:mrqx_seaborn', itemList)
         playerChestCavityTypeMap.set(uuid, typeMap)
@@ -613,7 +613,7 @@ const mrqxOrganActiveOnlyStrategies = {
                 }
             }
         }
-        let itemList = typeMap.get('kubejs:mrqx_steam')
+        let itemList = getPlayerChestCavityTypeMap(player).get('kubejs:mrqx_steam')
         let uuid = String(player.getUuid())
         typeMap.set('kubejs:mrqx_steam', itemList)
         playerChestCavityTypeMap.set(uuid, typeMap)
@@ -645,7 +645,7 @@ const mrqxOrganActiveOnlyStrategies = {
                 }
             }
         }
-        let itemList = typeMap.get('kubejs:mrqx_nuclear')
+        let itemList = getPlayerChestCavityTypeMap(player).get('kubejs:mrqx_nuclear')
         let uuid = String(player.getUuid())
         typeMap.set('kubejs:mrqx_nuclear', itemList)
         playerChestCavityTypeMap.set(uuid, typeMap)

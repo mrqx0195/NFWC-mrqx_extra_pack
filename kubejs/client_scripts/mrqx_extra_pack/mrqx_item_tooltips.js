@@ -144,30 +144,42 @@ ItemEvents.tooltip((tooltip) => {
         addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.mystery_future.1" })]], 1)
     })
 
-    tooltip.addAdvanced('mrqx_extra_pack:infinity_force_container', (item, advanced, text) => {
+    tooltip.addAdvanced('mrqx_extra_pack:infinity_force_container', (/** @type {Internal.ItemStack} */item, advanced, text) => {
         addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.infinity_force_container.1" })]], 1)
         if (item.nbt) {
-            if (item.nbt?.mrqxInfinityForceContainerCount) {
-                let count = item.nbt?.mrqxInfinityForceContainerCount
-                let power = 0
-                while (Math.pow(2, power + 1) <= count) {
-                    power++
+            if (item.nbt?.mrqxInfinityForceContainerCountList) {
+                let countList = item.nbt.getCompound('mrqxInfinityForceContainerCountList')
+                let i = 0
+                let count = 0
+                if ((countList.getByte('max') ?? 0) == 0 && (countList.getByte(0) ?? 0) == 0) return
+                while (i <= (countList.getByte('max') ?? 0)) {
+                    if ((countList.getByte(i) ?? 0) >= 1) {
+                        count++
+                    }
+                    count /= 2
+                    i++
                 }
-                text.add([Text.translate("mrqx_extra_pack.tooltips.infinity_force_container.2", power.toFixed(0), (((count - (2 ** power)) / (2 ** power)) * 100).toFixed(0)).string])
+                text.add([Text.translate("mrqx_extra_pack.tooltips.infinity_force_container.2", (((countList.getByte('max') ?? 0) == 0 ? 1 : (countList.getByte('max') ?? 0)) - 1).toFixed(0), ((count - 0.25) * ((countList.getByte('max') ?? 0) == 0 ? 2 : 4) * 100).toFixed(2)).string])
             }
         }
     })
 
-    tooltip.addAdvanced('mrqx_extra_pack:fallen_paradise_container', (item, advanced, text) => {
+    tooltip.addAdvanced('mrqx_extra_pack:fallen_paradise_container', (/** @type {Internal.ItemStack} */item, advanced, text) => {
         addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.fallen_paradise_container.1" })]], 1)
         if (item.nbt) {
-            if (item.nbt?.mrqxInfinityForceContainerCount) {
-                let count = item.nbt?.mrqxInfinityForceContainerCount
-                let power = 0
-                while (Math.pow(2, power + 1) <= count) {
-                    power++
+            if (item.nbt?.mrqxInfinityForceContainerCountList) {
+                let countList = item.nbt.getCompound('mrqxInfinityForceContainerCountList')
+                let i = 0
+                let count = 0
+                if ((countList.getByte('max') ?? 0) == 0 && (countList.getByte(0) ?? 0) == 0) return
+                while (i <= (countList.getByte('max') ?? 0)) {
+                    if ((countList.getByte(i) ?? 0) >= 1) {
+                        count++
+                    }
+                    count /= 2
+                    i++
                 }
-                text.add([Text.translate("mrqx_extra_pack.tooltips.fallen_paradise_container.2", power.toFixed(0), (((count - (2 ** power)) / (2 ** power)) * 100).toFixed(0)).string])
+                text.add([Text.translate("mrqx_extra_pack.tooltips.fallen_paradise_container.2", (((countList.getByte('max') ?? 0) == 0 ? 1 : (countList.getByte('max') ?? 0)) - 1).toFixed(0), ((count - 0.25) * ((countList.getByte('max') ?? 0) == 0 ? 2 : 4) * 100).toFixed(2)).string])
             }
         }
     })

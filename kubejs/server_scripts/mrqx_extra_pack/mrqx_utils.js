@@ -69,7 +69,7 @@ function mrqxPaperOrganInWaterRainBubbleFireOrLava(player, organ) {
         }
     })
     paper.nbt.put('organData', organData)
-    mrqxEditChestItem(player, paper, organ.Slot, false, false)
+    mrqxEditChestItem(player, paper, organ.Slot, false, false, false)
 }
 
 /**
@@ -429,12 +429,14 @@ function mrqxGetCurioInfo(player, id) {
  * @param {Internal.ItemStack} item
  * @param {number} slot
  * @param {boolean} ignoreEmpty
+ * @param {boolean} ignoreDifferent
  * @param {boolean} updateActive
  */
-function mrqxEditChestItem(player, item, slot, ignoreEmpty, updateActive) {
+function mrqxEditChestItem(player, item, slot, ignoreEmpty, ignoreDifferent, updateActive) {
     let instance = player.getChestCavityInstance()
     let oldItem = instance.inventory.getItem(slot)
     if (oldItem.isEmpty() && !ignoreEmpty) return
+    if (oldItem.getId() != item.getId() && !ignoreDifferent) return
     instance.inventory.setItem(slot, item)
     if (!updateActive) return
     global.initChestCavityIntoMap(player, false)
@@ -442,4 +444,12 @@ function mrqxEditChestItem(player, item, slot, ignoreEmpty, updateActive) {
         player.persistentData.getInt(organActive) == 1) {
         global.updatePlayerActiveStatus(player)
     }
+}
+
+/**
+ * 获取空组件
+ * @returns {Internal.CompoundTag}
+ */
+function mrqxGetEmptyCompound() {
+    return Item.of('minecraft:air').getOrCreateTag().copy()
 }

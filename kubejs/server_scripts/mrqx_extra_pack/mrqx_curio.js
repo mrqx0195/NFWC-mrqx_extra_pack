@@ -90,7 +90,7 @@ function mrqxAdvancedArchivistEyeGlassPaint(item, player) {
     let count = 0
     let allCount = 0
     for (let i = 0; i < visibleList.length; i++) {
-        allCount += visibleList[i] ? 1 : 0
+        allCount += visibleList.getByte(i) ? 1 : 0
     }
     allCount = -allCount * 4.5 + 35
     let ray = player.rayTrace(10, false)
@@ -485,6 +485,32 @@ function mrqxShieldGeneratorBear(event, item) {
     }
 }
 
+// /**
+//  * @param {Internal.ItemStack} item
+//  * @param {Internal.SlotContext} ctx 
+//  */
+// global.mrqxInfinityForceContainerTick = (item, ctx) => {
+//     /**@type {Internal.ServerPlayer} */
+//     let player = ctx.entity()
+//     if (!player || player.level.isClientSide()) return
+//     if (!player.isPlayer()) return
+//     let inventory = player.inventory
+//     let forces = inventory.getAllItems().filter(item => (item.id == 'kubejs:infinity_force'))
+//     if (forces.length == 0) return
+//     if (!item.getNbt()) item.setNbt({})
+//     let count = item.nbt.getLong('mrqxInfinityForceContainerCount') ?? 0
+//     forces.forEach(force => {
+//         if (force.getNbt() && force.nbt?.forgeTimes) {
+//             count += 2 ** force.nbt?.forgeTimes
+//         }
+//         else {
+//             count += 1
+//         }
+//         force.shrink(1)
+//     })
+//     item.nbt.putLong('mrqxInfinityForceContainerCount', count)
+// }
+
 /**
  * @param {Internal.ItemStack} item
  * @param {Internal.SlotContext} ctx 
@@ -492,21 +518,44 @@ function mrqxShieldGeneratorBear(event, item) {
 global.mrqxInfinityForceContainerTick = (item, ctx) => {
     /**@type {Internal.ServerPlayer} */
     let player = ctx.entity()
-    if (!player || player.level.isClientSide()) return
-    if (!player.isPlayer()) return
+    if (!player || !player.isPlayer() || player.level.isClientSide()) return
     let inventory = player.inventory
     let forces = inventory.getAllItems().filter(item => (item.id == 'kubejs:infinity_force'))
-    if (forces.length == 0) return
     if (!item.getNbt()) item.setNbt({})
-    let count = item.nbt.getLong('mrqxInfinityForceContainerCount') ?? 0
-    forces.forEach(force => {
-        if (force.getNbt() && force.nbt?.forgeTimes) {
-            count += 2 ** force.nbt?.forgeTimes
+    let countList = item.nbt.getCompound('mrqxInfinityForceContainerCountList') ?? mrqxGetEmptyCompound()
+    if (forces.length != 0) {
+        if (item.nbt.getLong('mrqxInfinityForceContainerCount')) {
+            let count = item.nbt.getLong('mrqxInfinityForceContainerCount')
+            let power = 0
+            while (Math.pow(2, power + 1) <= count) {
+                power++
+            }
+            countList.putByte(power, countList.getByte(power) ?? 0 + 1)
+            countList.putByte('max', Math.max(countList.getByte('max') ?? 0, power))
+        }
+        forces.forEach(force => {
+            if (force.getNbt() && force.nbt?.forgeTimes) {
+                countList.putByte(force.nbt?.forgeTimes, (countList.getByte(force.nbt?.forgeTimes) ?? 0) + 1)
+                countList.putByte('max', Math.max(countList.getByte('max') ?? 0, force.nbt?.forgeTimes))
+            }
+            else {
+                countList.putByte(0, (countList.getByte(0) ?? 0) + 1)
+                countList.putByte('max', Math.max(countList.getByte('max') ?? 0, 0))
+            }
+            force.shrink(1)
+        })
+    }
+    let i = 0
+    while (i <= (countList.getByte('max') ?? 0) + 1) {
+        if ((countList.getByte(i) ?? 0) >= 2) {
+            countList.putByte(i + 1, (countList.getByte(i + 1) ?? 0) + 1)
+            countList.putByte(i, countList.getByte(i) - 2)
+            countList.putByte('max', Math.max(countList.getByte('max') ?? 0, i + 2))
         }
         else {
-            count += 1
+            countList.putByte(i, countList.getByte(i) ?? 0)
+            i++
         }
-        force.shrink(1)
-    })
-    item.nbt.putLong('mrqxInfinityForceContainerCount', count)
+    }
+    item.nbt.put('mrqxInfinityForceContainerCountList', countList)
 }
