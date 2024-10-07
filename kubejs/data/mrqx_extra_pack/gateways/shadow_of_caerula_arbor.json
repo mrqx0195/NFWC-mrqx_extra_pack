@@ -210,7 +210,7 @@
                 {
                     "attribute": "generic.max_health",
                     "operation": "MULTIPLY_BASE",
-                    "value": 5
+                    "value": 10
                 },
                 {
                     "attribute": "generic.attack_damage",
@@ -349,12 +349,12 @@
                 {
                     "attribute": "generic.max_health",
                     "operation": "MULTIPLY_BASE",
-                    "value": 6
+                    "value": 16
                 },
                 {
                     "attribute": "generic.attack_damage",
                     "operation": "MULTIPLY_BASE",
-                    "value": 6
+                    "value": 8
                 },
                 {
                     "attribute": "generic.armor",
@@ -433,12 +433,12 @@
                 {
                     "attribute": "generic.max_health",
                     "operation": "MULTIPLY_BASE",
-                    "value": 8
+                    "value": 30
                 },
                 {
                     "attribute": "generic.attack_damage",
                     "operation": "MULTIPLY_BASE",
-                    "value": 4
+                    "value": 10
                 },
                 {
                     "attribute": "generic.armor",
@@ -576,22 +576,22 @@
                 {
                     "attribute": "generic.max_health",
                     "operation": "MULTIPLY_BASE",
-                    "value": 6
+                    "value": 24
                 },
                 {
                     "attribute": "generic.attack_damage",
                     "operation": "MULTIPLY_BASE",
-                    "value": 3
+                    "value": 9
                 },
                 {
                     "attribute": "generic.armor",
                     "operation": "ADDITION",
-                    "value": 25
+                    "value": 50
                 },
                 {
                     "attribute": "irons_spellbooks:spell_resist",
                     "operation": "ADDITION",
-                    "value": 1
+                    "value": 0.9
                 },
                 {
                     "attribute": "generic.movement_speed",
@@ -638,12 +638,12 @@
                 {
                     "attribute": "generic.max_health",
                     "operation": "MULTIPLY_BASE",
-                    "value": 8
+                    "value": 40
                 },
                 {
                     "attribute": "generic.attack_damage",
                     "operation": "MULTIPLY_BASE",
-                    "value": 6
+                    "value": 24
                 },
                 {
                     "attribute": "generic.armor",
@@ -658,7 +658,7 @@
                 {
                     "attribute": "generic.movement_speed",
                     "operation": "MULTIPLY_BASE",
-                    "value": 2
+                    "value": 4
                 },
                 {
                     "attribute": "obscure_api:penetration",

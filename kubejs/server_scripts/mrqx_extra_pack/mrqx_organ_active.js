@@ -77,9 +77,7 @@ const mrqxOrganActiveStrategies = {
         let typeMap = getPlayerChestCavityTypeMap(player)
         if (typeMap.has('kubejs:mrqx_celestial_body')) {
             let count = typeMap.get('kubejs:mrqx_celestial_body').length
-            for (let i = 0; i < count; i++) {
-                mrqxAttributeMapValueAddition(attributeMap, global.mrqx_GRAVITY_MULTI_TOTAL, 0.8)
-            }
+            mrqxAttributeMapValueAddition(attributeMap, global.mrqx_GRAVITY_MULTI_TOTAL, (0.8 ** count) - 1)
         }
     },
 }
@@ -374,10 +372,10 @@ const mrqxOrganActiveOnlyStrategies = {
             }
         }
         let itemList = typeMap.get('kubejs:mrqx_celestial_body')
+        let uuid = String(player.getUuid())
         typeMap.set('kubejs:mrqx_celestial_body', itemList)
         playerChestCavityTypeMap.set(uuid, typeMap)
         typeMap.set('kubejs:mrqx_celestial_body', itemList.concat(mrqxMultiplyArrayLength([organ], Math.floor(mrqxGetComputingPower(player)))))
-        let uuid = String(player.getUuid())
         playerChestCavityTypeMap.set(uuid, typeMap)
     },
 
@@ -422,8 +420,10 @@ const mrqxOrganActiveOnlyStrategies = {
             }
         }
         let itemList = itemMap.get('kubejs:revolution_gear')
-        itemMap.set('kubejs:revolution_gear', itemList + [organ] * Math.floor(mrqxGetComputingPower(player)))
         let uuid = String(player.getUuid())
+        itemMap.set('kubejs:revolution_gear', itemList)
+        playerChestCavityItemMap.set(uuid, itemMap)
+        itemMap.set('kubejs:revolution_gear', itemList + [organ] * Math.floor(mrqxGetComputingPower(player)))
         playerChestCavityItemMap.set(uuid, itemMap)
     },
 
@@ -530,9 +530,9 @@ const mrqxOrganActiveOnlyStrategies = {
         }
         let itemList = typeMap.get('kubejs:rose')
         typeMap.set('kubejs:rose', itemList)
+        let uuid = String(player.getUuid())
         playerChestCavityTypeMap.set(uuid, typeMap)
         typeMap.set('kubejs:rose', itemList.concat(mrqxMultiplyArrayLength([organ], Math.floor(mrqxGetComputingPower(player)))))
-        let uuid = String(player.getUuid())
         playerChestCavityTypeMap.set(uuid, typeMap)
     },
 
@@ -582,10 +582,10 @@ const mrqxOrganActiveOnlyStrategies = {
             }
         }
         let itemList = typeMap.get('kubejs:mrqx_seaborn')
+        let uuid = String(player.getUuid())
         typeMap.set('kubejs:mrqx_seaborn', itemList)
         playerChestCavityTypeMap.set(uuid, typeMap)
         typeMap.set('kubejs:mrqx_seaborn', itemList.concat(mrqxMultiplyArrayLength([organ], Math.floor(mrqxGetComputingPower(player)))))
-        let uuid = String(player.getUuid())
         playerChestCavityTypeMap.set(uuid, typeMap)
     },
 
@@ -614,10 +614,10 @@ const mrqxOrganActiveOnlyStrategies = {
             }
         }
         let itemList = typeMap.get('kubejs:mrqx_steam')
+        let uuid = String(player.getUuid())
         typeMap.set('kubejs:mrqx_steam', itemList)
         playerChestCavityTypeMap.set(uuid, typeMap)
         typeMap.set('kubejs:mrqx_steam', itemList.concat(mrqxMultiplyArrayLength([organ], Math.floor(mrqxGetComputingPower(player)))))
-        let uuid = String(player.getUuid())
         playerChestCavityTypeMap.set(uuid, typeMap)
     },
 
@@ -646,10 +646,10 @@ const mrqxOrganActiveOnlyStrategies = {
             }
         }
         let itemList = typeMap.get('kubejs:mrqx_nuclear')
+        let uuid = String(player.getUuid())
         typeMap.set('kubejs:mrqx_nuclear', itemList)
         playerChestCavityTypeMap.set(uuid, typeMap)
         typeMap.set('kubejs:mrqx_nuclear', itemList.concat(mrqxMultiplyArrayLength([organ], Math.floor(mrqxGetComputingPower(player)))))
-        let uuid = String(player.getUuid())
         playerChestCavityTypeMap.set(uuid, typeMap)
     },
 

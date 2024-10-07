@@ -75,7 +75,7 @@ PlayerEvents.tick(event => {
     entityList.forEach(entity => {
         if (entity.getEncodeId() == 'minecraft:fox' && !entity.persistentData.getBoolean('mrqx_fox_soul')) {
             entity.persistentData.putBoolean('mrqx_fox_soul', true)
-            if (entity?.nbt?.Trusted[0]) {
+            if (entity?.nbt?.Trusted && entity?.nbt?.Trusted[0]) {
                 let trustPlayer = entity?.nbt?.Trusted[0]
                 let playerUuidString = player.stringUuid.split('-').join('')
                 let trustPlayerUuidString = ((trustPlayer[0] >>> 0).toString(16).padStart(8, '0') + (trustPlayer[1] >>> 0).toString(16).padStart(8, '0') + (trustPlayer[2] >>> 0).toString(16).padStart(8, '0') + (trustPlayer[3] >>> 0).toString(16)).padStart(8, '0')
@@ -176,7 +176,9 @@ ItemEvents.rightClicked('mrqx_extra_pack:infinity_force_container', event => {
         let itemstack1 = Item.of('kubejs:infinity_force')
         itemstack1.setNbt({})
         itemstack1.nbt.putInt('forgeTimes', power)
-        player.give(itemstack1)
+        player.getServer().scheduleInTicks(1, () => {
+            player.give(itemstack1)
+        })
     }
 })
 
@@ -197,11 +199,15 @@ if (Utils.getRegistries().items().contains('luna_flesh_reforged:fallen_paradise'
             itemstack1.setNbt({})
             itemstack1.nbt.putLong('mrqxInfinityForceContainerCount', count - (2 ** power))
             itemstack.shrink(1)
-            player.give(itemstack1)
+            player.getServer().scheduleInTicks(1, () => {
+                player.give(itemstack1)
+            })
             let itemstack2 = Item.of('luna_flesh_reforged:fallen_paradise')
             itemstack2.setNbt({})
             itemstack2.nbt.putInt('forgeTimes', power)
-            player.give(itemstack2)
+            player.getServer().scheduleInTicks(1, () => {
+                player.give(itemstack2)
+            })
         }
     })
 }

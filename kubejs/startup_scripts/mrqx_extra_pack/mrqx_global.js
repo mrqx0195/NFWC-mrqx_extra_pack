@@ -30,6 +30,7 @@ global.mrqx_FALL_FLYING = { key: 'caelus:fall_flying', name: 'mrqxFallFlying', o
 global.mrqx_CAST_TIME = { key: 'irons_spellbooks:cast_time_reduction', name: 'mrqxCastTime', operation: 'addition' }
 global.mrqx_CAST_TIME_MULTI_BASE = { key: 'irons_spellbooks:cast_time_reduction', name: 'mrqxCastTimeMultiBase', operation: 'multiply_base' }
 global.mrqx_MOVEMENT_SPEED_MULTI_BASE = { key: 'minecraft:generic.movement_speed', name: 'mrqxMovementSpeedMultiBase', operation: 'multiply_base' }
+global.mrqx_GRAVITY_MULTI_BASE = { key: 'forge:entity_gravity', name: 'mrqxGravityMultiBase', operation: 'multiply_base' }
 global.mrqx_GRAVITY_MULTI_TOTAL = { key: 'forge:entity_gravity', name: 'mrqxGravityMultiTotal', operation: 'multiply_total' }
 global.mrqx_ATTACK_SPEED_MULTI_TOTAL = { key: 'minecraft:generic.attack_speed', name: 'mrqxAttackSpeedMultiTotal', operation: 'multiply_total' }
 global.mrqx_HEALTH_UP_MULTI_TOTAL = { key: 'minecraft:generic.max_health', name: 'mrqxMaxHealthMultiTotal', operation: 'multiply_total' }
@@ -49,6 +50,7 @@ global.mrqx_ATTRIBUTE_MAP = {
     'mrqxCastTime': global.mrqx_CAST_TIME,
     'mrqxCastTimeMultiBase': global.mrqx_CAST_TIME_MULTI_BASE,
     'mrqxMovementSpeedMultiBase': global.mrqx_MOVEMENT_SPEED_MULTI_BASE,
+    'mrqxGravityMultiBase': global.mrqx_GRAVITY_MULTI_BASE,
     'mrqxGravityMultiTotal': global.mrqx_GRAVITY_MULTI_TOTAL,
     'mrqxAttackSpeedMultiTotal': global.mrqx_ATTACK_SPEED_MULTI_TOTAL,
     'mrqxMaxHealthMultiTotal': global.mrqx_HEALTH_UP_MULTI_TOTAL,

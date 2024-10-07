@@ -1726,10 +1726,17 @@ ServerEvents.recipes(event => {
             .modifyResult((grid, stack) => {
                 let container = grid.find('mrqx_extra_pack:infinity_force_container', 0)
                 let paradise = grid.find('luna_flesh_reforged:fallen_paradise', 0)
-                let power = paradise.nbt.getLong('forgeTimes') ?? 0
+                let paraPower = 0
+                let count = 0
+                if (paradise.nbt) {
+                    paraPower = paradise.nbt.getInt('forgeTimes') ?? 0
+                }
+                if (container.nbt) {
+                    count = container.nbt.getLong('mrqxInfinityForceContainerCount') ?? 0
+                }
                 stack = Item.of('mrqx_extra_pack:fallen_paradise_container')
                 stack.setNbt({})
-                stack.nbt.putInt('mrqxInfinityForceContainerCount', 2 ** power + (container.nbt.getLong('mrqxInfinityForceContainerCount') ?? 0))
+                stack.nbt.putInt('mrqxInfinityForceContainerCount', 2 ** paraPower + count)
                 return stack
             })
             .id('mrqx_fallen_paradise_container_manual_only');
@@ -1741,16 +1748,16 @@ ServerEvents.recipes(event => {
     // 魔化人造矿簇
     event.recipes.create.mixing('mrqx_extra_pack:magic_artificial_mineral_cluster', ['mrqx_extra_pack:artificial_mineral_cluster', '64x irons_spellbooks:arcane_essence']).superheated()
     event.recipes.create.crushing([
-        Item.of('2x minecraft:emerald').withChance(0.5),
-        Item.of('2x minecraft:diamond').withChance(0.5),
-        Item.of('2x irons_spellbooks:arcane_salvage').withChance(0.5),
-        Item.of('2x minecraft:netherite_scrap').withChance(0.5),
-        Item.of('2x mrqx_extra_pack:uranium').withChance(0.5),
-        Item.of('2x minecraft:quartz').withChance(0.5),
-        Item.of('2x minecraft:iron_ingot').withChance(0.5),
-        Item.of('2x minecraft:gold_ingot').withChance(0.5),
-        Item.of('2x minecraft:coal').withChance(0.5),
-    ], 'mrqx_extra_pack:magic_artificial_mineral_cluster').processingTime(100)
+        Item.of('2x minecraft:emerald').withChance(Math.random()),
+        Item.of('2x minecraft:diamond').withChance(Math.random()),
+        Item.of('2x irons_spellbooks:arcane_salvage').withChance(Math.random()),
+        Item.of('2x minecraft:netherite_scrap').withChance(Math.random()),
+        Item.of('2x mrqx_extra_pack:uranium').withChance(Math.random()),
+        Item.of('2x minecraft:quartz').withChance(Math.random()),
+        Item.of('2x minecraft:iron_ingot').withChance(Math.random()),
+        Item.of('2x minecraft:gold_ingot').withChance(Math.random()),
+        Item.of('2x minecraft:coal').withChance(Math.random()),
+    ], 'mrqx_extra_pack:magic_artificial_mineral_cluster').processingTime(Math.floor(Math.random() * 1000))
 
     // 薄荷奶茶
     registerCustomRecipe(new MixingBowlRecipe(

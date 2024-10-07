@@ -310,7 +310,7 @@ function mrqxMultiplyArrayLength(arr, multiplier) {
 function mrqxAttributeMapValueAddition(attributeMap, attribute, modifyValue) {
     if (attributeMap.has(attribute.name)) {
         if (attribute.operation == 'multiply_total') {
-            modifyValue = modifyValue * attributeMap.get(attribute.name)
+            modifyValue = (1 + modifyValue) * (1 + attributeMap.get(attribute.name)) - 1
         }
         else {
             modifyValue = modifyValue + attributeMap.get(attribute.name)

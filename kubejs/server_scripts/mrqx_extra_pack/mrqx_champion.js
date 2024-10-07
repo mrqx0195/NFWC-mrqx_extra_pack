@@ -154,6 +154,7 @@ const mrqxChampionPlayerBearStrategies = {
     'mrqx_element_attack': function (event, data) {
         let player = event.entity
         let entity = event.source.actual
+        let type = randomGet(mrqxElementDamageTypes)
         if (!entity.persistentData.getString('champion_mrqx_element_attack_type')) {
             entity.persistentData.putString('champion_mrqx_element_attack_type', type)
         }

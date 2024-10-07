@@ -121,7 +121,7 @@ const mrqxOrganPlayerTickStrategies = {
     // ‌蒸汽液压杆
     'mrqx_extra_pack:steam_hydraulic_rod': function (event, organ) {
         let player = event.player
-        let criticalPunchCount = player.persistentData.getInt(criticalPunch)
+        let criticalPunchCount = player.persistentData.getInt(criticalPunch) ?? 0
         player.persistentData.putInt(criticalPunch, criticalPunchCount + mrqxGetSteamCount(player))
     },
 }
