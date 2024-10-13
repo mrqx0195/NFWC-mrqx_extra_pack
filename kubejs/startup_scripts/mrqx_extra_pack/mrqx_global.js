@@ -18,7 +18,7 @@ global.mrqxTYPE_MAP = {
     'kubejs:mrqx_change_target_only': Text.gold({ "translate": "mrqx_extra_pack.tooltips.mrqx_change_target_only" }),
 }
 
-var assign1 = Object.assign(global.TYPE_MAP, global.mrqxTYPE_MAP);
+var assign1 = Object.assign(global.TYPE_MAP, global.mrqxTYPE_MAP)
 
 global.mrqx_HEALTH_UP_MULTI_BASE = { key: 'minecraft:generic.max_health', name: 'mrqxMaxHealthMultiBase', operation: 'multiply_base' }
 global.mrqx_COOLDOWN_REDUCTION_MULTI_BASE = { key: 'irons_spellbooks:cooldown_reduction', name: 'mrqxCooldownReductionMultiBase', operation: 'multiply_base' }
@@ -60,4 +60,4 @@ global.mrqx_ATTRIBUTE_MAP = {
     'mrqxKingsBucklerB': global.mrqx_KINGS_BUCKLER_B,
 }
 
-var assign2 = Object.assign(global.ATTRIBUTE_MAP, global.mrqx_ATTRIBUTE_MAP);
+var assign2 = Object.assign(global.ATTRIBUTE_MAP, global.mrqx_ATTRIBUTE_MAP)

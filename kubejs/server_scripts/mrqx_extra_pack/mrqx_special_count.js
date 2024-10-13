@@ -6,7 +6,7 @@
  * @returns {Number}
  */
 function mrqxGetComputingPower(player) {
-    if (!player) return 0;
+    if (!player) return 0
     let typeMap = getPlayerChestCavityTypeMap(player)
     let playerChestInstance = player.getChestCavityInstance()
     let count = 0
@@ -19,7 +19,7 @@ function mrqxGetComputingPower(player) {
                 onlySet.add(organ.id)
                 count += mrqxComputingPowerStrategies[organ.id](player, organ)
             }
-        });
+        })
     }
     return count
 }

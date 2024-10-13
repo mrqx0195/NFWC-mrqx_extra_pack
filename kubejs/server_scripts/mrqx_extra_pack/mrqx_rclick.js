@@ -9,7 +9,7 @@ const mrqxOrganRightClickedStrategies = {
 
 }
 
-var assign_organ_right_clicked = Object.assign(organRightClickedStrategies, mrqxOrganRightClickedStrategies);
+var assign_organ_right_clicked = Object.assign(organRightClickedStrategies, mrqxOrganRightClickedStrategies)
 
 /**
  * 器官右键事件唯一策略
@@ -20,7 +20,7 @@ const mrqxOrganRightClickedOnlyStrategies = {
 	// 神之笔
 	'mrqx_extra_pack:divine_pen': function (event, organ) {
 		let player = event.player
-		let typeMap = getPlayerChestCavityTypeMap(player);
+		let typeMap = getPlayerChestCavityTypeMap(player)
 		if (event.item.getId() in mrqxDivinePenAttriBute) {
 			if (!(player.getOffHandItem().getId() in mrqxDivinePenInkPower)) {
 				player.tell(Text.gray({ "translate": "mrqx_extra_pack.msg.divine_pen.1" }))
@@ -184,6 +184,6 @@ const mrqxOrganRightClickedOnlyStrategies = {
 			event.item.shrink(1)
 		}
 	},
-};
+}
 
-var assign_organ_right_clicked_only = Object.assign(organRightClickedOnlyStrategies, mrqxOrganRightClickedOnlyStrategies);
+var assign_organ_right_clicked_only = Object.assign(organRightClickedOnlyStrategies, mrqxOrganRightClickedOnlyStrategies)

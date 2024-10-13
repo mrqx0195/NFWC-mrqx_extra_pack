@@ -4,9 +4,9 @@
  * @returns
  */
 global.mrqxLivingChangeTargetEvent = event => {
-    let player = event.originalTarget;
-    if (!(player && player.isPlayer())) return;
-    let typeMap = getPlayerChestCavityTypeMap(player);
+    let player = event.originalTarget
+    if (!(player && player.isPlayer())) return
+    let typeMap = getPlayerChestCavityTypeMap(player)
     let onlySet = new Set()
     if (typeMap.has('kubejs:mrqx_change_target_only')) {
         typeMap.get('kubejs:mrqx_change_target_only').forEach(organ => {

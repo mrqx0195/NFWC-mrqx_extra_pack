@@ -20,30 +20,30 @@ StartupEvents.registry('item', event => {
 
     {// 纸器官
         // 纸器官
-        registerOrgan(new Organ('mrqx_extra_pack:lung_paper').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.lung_paper.1" })]).addScore('breath_recovery', 0.5).addScore('breath_capacity', 0.5).addScore('endurance', 0.5).addScore('hydroallergenic', 3).addScore('fire_resistant', -1).build()).texture('mrqx_extra_pack:item/organs/paper/lung_paper').tag('itemborders:iron').tag('kubejs:lung').tag('kubejs:evolution').tag('kubejs:mrqx_paper');
-        registerOrgan(new Organ('mrqx_extra_pack:muscle_paper').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.muscle_paper.1" })]).addScore('strength', 0.5).addScore('speed', 0.5).addScore('hydroallergenic', 3).addScore('fire_resistant', -1).build()).texture('mrqx_extra_pack:item/organs/paper/muscle_paper').tag('itemborders:iron').tag('kubejs:muscle').tag('kubejs:evolution').tag('kubejs:mrqx_paper');
-        registerOrgan(new Organ('mrqx_extra_pack:heart_paper').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.heart_paper.1" })]).addScore('health', 0.5).addScore('hydroallergenic', 3).addScore('fire_resistant', -1).build()).texture('mrqx_extra_pack:item/organs/paper/heart_paper').tag('kubejs:evolution').tag('itemborders:iron').tag('kubejs:heart').tag('kubejs:mrqx_paper');
-        registerOrgan(new Organ('mrqx_extra_pack:intestine_paper').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.intestine_paper.1" })]).addScore('nutrition', 0.5).addScore('hydroallergenic', 3).addScore('fire_resistant', -1).build()).texture('mrqx_extra_pack:item/organs/paper/intestine_paper').tag('itemborders:iron').tag('kubejs:evolution').tag('kubejs:intestine').tag('kubejs:mrqx_paper');
-        registerOrgan(new Organ('mrqx_extra_pack:rib_paper').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.rib_paper.1" })]).addScore('defense', 0.5).addScore('hydroallergenic', 3).addScore('fire_resistant', -1).build()).texture('mrqx_extra_pack:item/organs/paper/rib_paper').tag('itemborders:iron').tag('kubejs:rib').tag('kubejs:evolution').tag('kubejs:mrqx_paper');
-        registerOrgan(new Organ('mrqx_extra_pack:spine_paper').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.spine_paper.1" })]).addScore('defense', 0.25).addScore('nerves', 0.5).addScore('hydroallergenic', 3).addScore('fire_resistant', -1).build()).texture('mrqx_extra_pack:item/organs/paper/spine_paper').tag('itemborders:iron').tag('kubejs:evolution').tag('kubejs:spine').tag('kubejs:mrqx_paper');
-        registerOrgan(new Organ('mrqx_extra_pack:spleen_paper').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.spleen_paper.1" })]).addScore('metabolism', 0.5).addScore('hydroallergenic', 3).addScore('fire_resistant', -1).build()).texture('mrqx_extra_pack:item/organs/paper/spleen_paper').tag('itemborders:iron').tag('kubejs:evolution').tag('kubejs:spleen').tag('kubejs:mrqx_paper');
-        registerOrgan(new Organ('mrqx_extra_pack:stomach_paper').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.stomach_paper.1" })]).addScore('digestion', 0.5).addScore('hydroallergenic', 3).addScore('fire_resistant', -1).build()).texture('mrqx_extra_pack:item/organs/paper/stomach_paper').tag('itemborders:iron').tag('kubejs:evolution').tag('kubejs:stomach').tag('kubejs:mrqx_paper');
-        registerOrgan(new Organ('mrqx_extra_pack:kidney_paper').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.kidney_paper.1" })]).addScore('filtration', 0.5).addScore('hydroallergenic', 3).addScore('fire_resistant', -1).build()).texture('mrqx_extra_pack:item/organs/paper/kidney_paper').tag('itemborders:iron').tag('kubejs:evolution').tag('kubejs:kidney').tag('kubejs:mrqx_paper');
-        registerOrgan(new Organ('mrqx_extra_pack:liver_paper').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.liver_paper.1" })]).addScore('detoxification', 0.5).addScore('hydroallergenic', 3).addScore('fire_resistant', -1).build()).texture('mrqx_extra_pack:item/organs/paper/liver_paper').tag('itemborders:iron').tag('kubejs:evolution').tag('kubejs:liver').tag('kubejs:mrqx_paper');
-        registerOrgan(new Organ('mrqx_extra_pack:appendix_paper').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.appendix_paper.1" })]).addScore('luck', 0.5).addScore('hydroallergenic', 3).addScore('fire_resistant', -1).build()).texture('mrqx_extra_pack:item/organs/paper/appendix_paper').tag('itemborders:iron').tag('kubejs:evolution').tag('kubejs:appendix').tag('kubejs:mrqx_paper');
+        registerOrgan(new Organ('mrqx_extra_pack:lung_paper').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.lung_paper.1" })]).addScore('breath_recovery', 0.5).addScore('breath_capacity', 0.5).addScore('endurance', 0.5).addScore('hydroallergenic', 3).addScore('fire_resistant', -1).build()).texture('mrqx_extra_pack:item/organs/paper/lung_paper').tag('itemborders:iron').tag('kubejs:lung').tag('kubejs:evolution').tag('kubejs:mrqx_paper')
+        registerOrgan(new Organ('mrqx_extra_pack:muscle_paper').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.muscle_paper.1" })]).addScore('strength', 0.5).addScore('speed', 0.5).addScore('hydroallergenic', 3).addScore('fire_resistant', -1).build()).texture('mrqx_extra_pack:item/organs/paper/muscle_paper').tag('itemborders:iron').tag('kubejs:muscle').tag('kubejs:evolution').tag('kubejs:mrqx_paper')
+        registerOrgan(new Organ('mrqx_extra_pack:heart_paper').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.heart_paper.1" })]).addScore('health', 0.5).addScore('hydroallergenic', 3).addScore('fire_resistant', -1).build()).texture('mrqx_extra_pack:item/organs/paper/heart_paper').tag('kubejs:evolution').tag('itemborders:iron').tag('kubejs:heart').tag('kubejs:mrqx_paper')
+        registerOrgan(new Organ('mrqx_extra_pack:intestine_paper').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.intestine_paper.1" })]).addScore('nutrition', 0.5).addScore('hydroallergenic', 3).addScore('fire_resistant', -1).build()).texture('mrqx_extra_pack:item/organs/paper/intestine_paper').tag('itemborders:iron').tag('kubejs:evolution').tag('kubejs:intestine').tag('kubejs:mrqx_paper')
+        registerOrgan(new Organ('mrqx_extra_pack:rib_paper').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.rib_paper.1" })]).addScore('defense', 0.5).addScore('hydroallergenic', 3).addScore('fire_resistant', -1).build()).texture('mrqx_extra_pack:item/organs/paper/rib_paper').tag('itemborders:iron').tag('kubejs:rib').tag('kubejs:evolution').tag('kubejs:mrqx_paper')
+        registerOrgan(new Organ('mrqx_extra_pack:spine_paper').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.spine_paper.1" })]).addScore('defense', 0.25).addScore('nerves', 0.5).addScore('hydroallergenic', 3).addScore('fire_resistant', -1).build()).texture('mrqx_extra_pack:item/organs/paper/spine_paper').tag('itemborders:iron').tag('kubejs:evolution').tag('kubejs:spine').tag('kubejs:mrqx_paper')
+        registerOrgan(new Organ('mrqx_extra_pack:spleen_paper').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.spleen_paper.1" })]).addScore('metabolism', 0.5).addScore('hydroallergenic', 3).addScore('fire_resistant', -1).build()).texture('mrqx_extra_pack:item/organs/paper/spleen_paper').tag('itemborders:iron').tag('kubejs:evolution').tag('kubejs:spleen').tag('kubejs:mrqx_paper')
+        registerOrgan(new Organ('mrqx_extra_pack:stomach_paper').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.stomach_paper.1" })]).addScore('digestion', 0.5).addScore('hydroallergenic', 3).addScore('fire_resistant', -1).build()).texture('mrqx_extra_pack:item/organs/paper/stomach_paper').tag('itemborders:iron').tag('kubejs:evolution').tag('kubejs:stomach').tag('kubejs:mrqx_paper')
+        registerOrgan(new Organ('mrqx_extra_pack:kidney_paper').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.kidney_paper.1" })]).addScore('filtration', 0.5).addScore('hydroallergenic', 3).addScore('fire_resistant', -1).build()).texture('mrqx_extra_pack:item/organs/paper/kidney_paper').tag('itemborders:iron').tag('kubejs:evolution').tag('kubejs:kidney').tag('kubejs:mrqx_paper')
+        registerOrgan(new Organ('mrqx_extra_pack:liver_paper').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.liver_paper.1" })]).addScore('detoxification', 0.5).addScore('hydroallergenic', 3).addScore('fire_resistant', -1).build()).texture('mrqx_extra_pack:item/organs/paper/liver_paper').tag('itemborders:iron').tag('kubejs:evolution').tag('kubejs:liver').tag('kubejs:mrqx_paper')
+        registerOrgan(new Organ('mrqx_extra_pack:appendix_paper').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.appendix_paper.1" })]).addScore('luck', 0.5).addScore('hydroallergenic', 3).addScore('fire_resistant', -1).build()).texture('mrqx_extra_pack:item/organs/paper/appendix_paper').tag('itemborders:iron').tag('kubejs:evolution').tag('kubejs:appendix').tag('kubejs:mrqx_paper')
 
         // 书写过的纸器官
-        registerOrgan(new Organ('mrqx_extra_pack:lung_paper_written').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.lung_paper_written.1" })]).addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.paper_written.1" })]).build()).texture('mrqx_extra_pack:item/organs/paper_written/lung_paper_written').tag('itemborders:gold').tag('kubejs:lung').tag('kubejs:mrqx_paper').tag('kubejs:player_tick');
-        registerOrgan(new Organ('mrqx_extra_pack:muscle_paper_written').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.muscle_paper_written.1" })]).addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.paper_written.1" })]).build()).texture('mrqx_extra_pack:item/organs/paper_written/muscle_paper_written').tag('itemborders:gold').tag('kubejs:muscle').tag('kubejs:mrqx_paper').tag('kubejs:player_tick');
-        registerOrgan(new Organ('mrqx_extra_pack:heart_paper_written').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.heart_paper_written.1" })]).addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.paper_written.1" })]).build()).texture('mrqx_extra_pack:item/organs/paper_written/heart_paper_written').tag('itemborders:gold').tag('kubejs:heart').tag('kubejs:mrqx_paper').tag('kubejs:player_tick');
-        registerOrgan(new Organ('mrqx_extra_pack:intestine_paper_written').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.intestine_paper_written.1" })]).addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.paper_written.1" })]).build()).texture('mrqx_extra_pack:item/organs/paper_written/intestine_paper_written').tag('itemborders:gold').tag('kubejs:intestine').tag('kubejs:mrqx_paper').tag('kubejs:player_tick');
-        registerOrgan(new Organ('mrqx_extra_pack:rib_paper_written').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.rib_paper_written.1" })]).addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.paper_written.1" })]).build()).texture('mrqx_extra_pack:item/organs/paper_written/rib_paper_written').tag('itemborders:gold').tag('kubejs:rib').tag('kubejs:mrqx_paper').tag('kubejs:player_tick');
-        registerOrgan(new Organ('mrqx_extra_pack:spine_paper_written').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.spine_paper_written.1" })]).addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.paper_written.1" })]).build()).texture('mrqx_extra_pack:item/organs/paper_written/spine_paper_written').tag('itemborders:gold').tag('kubejs:spine').tag('kubejs:mrqx_paper').tag('kubejs:player_tick');
-        registerOrgan(new Organ('mrqx_extra_pack:spleen_paper_written').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.spleen_paper_written.1" })]).addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.paper_written.1" })]).build()).texture('mrqx_extra_pack:item/organs/paper_written/spleen_paper_written').tag('itemborders:gold').tag('kubejs:spleen').tag('kubejs:mrqx_paper').tag('kubejs:player_tick');
-        registerOrgan(new Organ('mrqx_extra_pack:stomach_paper_written').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.stomach_paper_written.1" })]).addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.paper_written.1" })]).build()).texture('mrqx_extra_pack:item/organs/paper_written/stomach_paper_written').tag('itemborders:gold').tag('kubejs:stomach').tag('kubejs:mrqx_paper').tag('kubejs:player_tick');
-        registerOrgan(new Organ('mrqx_extra_pack:kidney_paper_written').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.kidney_paper_written.1" })]).addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.paper_written.1" })]).build()).texture('mrqx_extra_pack:item/organs/paper_written/kidney_paper_written').tag('itemborders:gold').tag('kubejs:kidney').tag('kubejs:mrqx_paper').tag('kubejs:player_tick');
-        registerOrgan(new Organ('mrqx_extra_pack:liver_paper_written').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.liver_paper_written.1" })]).addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.paper_written.1" })]).build()).texture('mrqx_extra_pack:item/organs/paper_written/liver_paper_written').tag('itemborders:gold').tag('kubejs:liver').tag('kubejs:mrqx_paper').tag('kubejs:player_tick');
-        registerOrgan(new Organ('mrqx_extra_pack:appendix_paper_written').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.appendix_paper_written.1" })]).addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.paper_written.1" })]).build()).texture('mrqx_extra_pack:item/organs/paper_written/appendix_paper_written').tag('itemborders:gold').tag('kubejs:appendix').tag('kubejs:mrqx_paper').tag('kubejs:player_tick');
+        registerOrgan(new Organ('mrqx_extra_pack:lung_paper_written').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.lung_paper_written.1" })]).addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.paper_written.1" })]).build()).texture('mrqx_extra_pack:item/organs/paper_written/lung_paper_written').tag('itemborders:gold').tag('kubejs:lung').tag('kubejs:mrqx_paper').tag('kubejs:player_tick')
+        registerOrgan(new Organ('mrqx_extra_pack:muscle_paper_written').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.muscle_paper_written.1" })]).addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.paper_written.1" })]).build()).texture('mrqx_extra_pack:item/organs/paper_written/muscle_paper_written').tag('itemborders:gold').tag('kubejs:muscle').tag('kubejs:mrqx_paper').tag('kubejs:player_tick')
+        registerOrgan(new Organ('mrqx_extra_pack:heart_paper_written').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.heart_paper_written.1" })]).addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.paper_written.1" })]).build()).texture('mrqx_extra_pack:item/organs/paper_written/heart_paper_written').tag('itemborders:gold').tag('kubejs:heart').tag('kubejs:mrqx_paper').tag('kubejs:player_tick')
+        registerOrgan(new Organ('mrqx_extra_pack:intestine_paper_written').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.intestine_paper_written.1" })]).addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.paper_written.1" })]).build()).texture('mrqx_extra_pack:item/organs/paper_written/intestine_paper_written').tag('itemborders:gold').tag('kubejs:intestine').tag('kubejs:mrqx_paper').tag('kubejs:player_tick')
+        registerOrgan(new Organ('mrqx_extra_pack:rib_paper_written').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.rib_paper_written.1" })]).addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.paper_written.1" })]).build()).texture('mrqx_extra_pack:item/organs/paper_written/rib_paper_written').tag('itemborders:gold').tag('kubejs:rib').tag('kubejs:mrqx_paper').tag('kubejs:player_tick')
+        registerOrgan(new Organ('mrqx_extra_pack:spine_paper_written').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.spine_paper_written.1" })]).addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.paper_written.1" })]).build()).texture('mrqx_extra_pack:item/organs/paper_written/spine_paper_written').tag('itemborders:gold').tag('kubejs:spine').tag('kubejs:mrqx_paper').tag('kubejs:player_tick')
+        registerOrgan(new Organ('mrqx_extra_pack:spleen_paper_written').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.spleen_paper_written.1" })]).addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.paper_written.1" })]).build()).texture('mrqx_extra_pack:item/organs/paper_written/spleen_paper_written').tag('itemborders:gold').tag('kubejs:spleen').tag('kubejs:mrqx_paper').tag('kubejs:player_tick')
+        registerOrgan(new Organ('mrqx_extra_pack:stomach_paper_written').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.stomach_paper_written.1" })]).addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.paper_written.1" })]).build()).texture('mrqx_extra_pack:item/organs/paper_written/stomach_paper_written').tag('itemborders:gold').tag('kubejs:stomach').tag('kubejs:mrqx_paper').tag('kubejs:player_tick')
+        registerOrgan(new Organ('mrqx_extra_pack:kidney_paper_written').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.kidney_paper_written.1" })]).addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.paper_written.1" })]).build()).texture('mrqx_extra_pack:item/organs/paper_written/kidney_paper_written').tag('itemborders:gold').tag('kubejs:kidney').tag('kubejs:mrqx_paper').tag('kubejs:player_tick')
+        registerOrgan(new Organ('mrqx_extra_pack:liver_paper_written').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.liver_paper_written.1" })]).addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.paper_written.1" })]).build()).texture('mrqx_extra_pack:item/organs/paper_written/liver_paper_written').tag('itemborders:gold').tag('kubejs:liver').tag('kubejs:mrqx_paper').tag('kubejs:player_tick')
+        registerOrgan(new Organ('mrqx_extra_pack:appendix_paper_written').addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.appendix_paper_written.1" })]).addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.paper_written.1" })]).build()).texture('mrqx_extra_pack:item/organs/paper_written/appendix_paper_written').tag('itemborders:gold').tag('kubejs:appendix').tag('kubejs:mrqx_paper').tag('kubejs:player_tick')
 
         // 神之笔
         registerOrgan(new Organ('mrqx_extra_pack:divine_pen')
@@ -57,7 +57,7 @@ StartupEvents.registry('item', event => {
             .texture('mrqx_extra_pack:item/organs/divine_pen')
             .tag('itemborders:diamond')
             .tag('kubejs:legends')
-            .tag('kubejs:rclick_only');
+            .tag('kubejs:rclick_only')
     }
 
     {// 核能套
@@ -79,7 +79,7 @@ StartupEvents.registry('item', event => {
             .tag('kubejs:machine')
             .tag('kubejs:mrqx_nuclear')
             .tag('kubejs:rclick_only')
-            .tag('kubejs:active_only');
+            .tag('kubejs:active_only')
 
         // 反应散热器
         registerOrgan(new Organ('mrqx_extra_pack:heat_vent')
@@ -91,7 +91,7 @@ StartupEvents.registry('item', event => {
             .texture('mrqx_extra_pack:item/organs/nuclear/heat_vent')
             .tag('itemborders:gold')
             .tag('kubejs:machine')
-            .tag('kubejs:mrqx_nuclear');
+            .tag('kubejs:mrqx_nuclear')
 
         // 反应热隔层
         registerOrgan(new Organ('mrqx_extra_pack:thermal_barrier')
@@ -104,7 +104,7 @@ StartupEvents.registry('item', event => {
             .texture('mrqx_extra_pack:item/organs/nuclear/thermal_barrier')
             .tag('itemborders:gold')
             .tag('kubejs:machine')
-            .tag('kubejs:mrqx_nuclear');
+            .tag('kubejs:mrqx_nuclear')
 
         // 反应热喷口
         registerOrgan(new Organ('mrqx_extra_pack:thermal_injector')
@@ -119,7 +119,7 @@ StartupEvents.registry('item', event => {
             .tag('itemborders:gold')
             .tag('kubejs:damage')
             .tag('kubejs:machine')
-            .tag('kubejs:mrqx_nuclear');
+            .tag('kubejs:mrqx_nuclear')
 
         // 反应舱室
         registerOrgan(new Organ('mrqx_extra_pack:reactor_chamber')
@@ -131,7 +131,7 @@ StartupEvents.registry('item', event => {
             .texture('mrqx_extra_pack:item/organs/nuclear/reactor_chamber')
             .tag('itemborders:iron')
             .tag('kubejs:machine')
-            .tag('kubejs:mrqx_nuclear');
+            .tag('kubejs:mrqx_nuclear')
     }
 
     {// 四魂
@@ -148,7 +148,7 @@ StartupEvents.registry('item', event => {
             .tag('itemborders:gold')
             .tag('kubejs:damage_only')
             .tag('kubejs:legends')
-            .tag('kubejs:active_only');
+            .tag('kubejs:active_only')
 
         // 死狱之魂
         registerOrgan(new Organ('mrqx_extra_pack:prison_soul')
@@ -163,7 +163,7 @@ StartupEvents.registry('item', event => {
             .tag('itemborders:gold')
             .tag('kubejs:damage_only')
             .tag('kubejs:legends')
-            .tag('kubejs:active_only');
+            .tag('kubejs:active_only')
 
         // 灵狐之魂
         registerOrgan(new Organ('mrqx_extra_pack:fox_soul')
@@ -178,7 +178,7 @@ StartupEvents.registry('item', event => {
             .tag('itemborders:gold')
             .tag('kubejs:damage_only')
             .tag('kubejs:legends')
-            .tag('kubejs:active_only');
+            .tag('kubejs:active_only')
 
         // 山月之魂
         registerOrgan(new Organ('mrqx_extra_pack:moon_soul')
@@ -194,7 +194,7 @@ StartupEvents.registry('item', event => {
             .tag('kubejs:damage_only')
             .tag('kubejs:player_tick_only')
             .tag('kubejs:legends')
-            .tag('kubejs:active_only');
+            .tag('kubejs:active_only')
     }
 
     {// 天体器官
@@ -213,7 +213,7 @@ StartupEvents.registry('item', event => {
             .tag('kubejs:player_tick_only')
             .tag('kubejs:legends')
             .tag('kubejs:mrqx_celestial_body')
-            .tag('kubejs:active_only');
+            .tag('kubejs:active_only')
 
         // 暗日种子
         registerOrgan(new Organ('mrqx_extra_pack:dark_sun_seed')
@@ -227,7 +227,7 @@ StartupEvents.registry('item', event => {
             .tag('itemborders:diamond')
             .tag('kubejs:key_pressed')
             .tag('kubejs:mrqx_celestial_body')
-            .tag('kubejs:legends');
+            .tag('kubejs:legends')
 
         // 残阳
         registerOrgan(new Organ('mrqx_extra_pack:broken_sun')
@@ -245,7 +245,7 @@ StartupEvents.registry('item', event => {
             .tag('itemborders:diamond')
             .tag('kubejs:player_tick_only')
             .tag('kubejs:mrqx_celestial_body')
-            .tag('kubejs:legends');
+            .tag('kubejs:legends')
 
         // ‌月岩
         registerOrgan(new Organ('mrqx_extra_pack:moon_rock')
@@ -259,7 +259,7 @@ StartupEvents.registry('item', event => {
             .tag('itemborders:gold')
             .tag('kubejs:mrqx_celestial_body')
             .tag('kubejs:player_tick_only')
-            .tag('kubejs:active');
+            .tag('kubejs:active')
 
         // 日晷
         registerOrgan(new Organ('mrqx_extra_pack:sundial')
@@ -271,7 +271,7 @@ StartupEvents.registry('item', event => {
             .texture('mrqx_extra_pack:item/organs/celestial_body/sundial')
             .tag('itemborders:gold')
             .tag('kubejs:mrqx_celestial_body')
-            .tag('kubejs:player_tick_only');
+            .tag('kubejs:player_tick_only')
 
         // ‌星空棱镜
         registerOrgan(new Organ('mrqx_extra_pack:starry_sky_prism')
@@ -283,7 +283,7 @@ StartupEvents.registry('item', event => {
             .texture('mrqx_extra_pack:item/organs/celestial_body/starry_sky_prism')
             .tag('itemborders:gold')
             .tag('kubejs:mrqx_celestial_body')
-            .tag('kubejs:player_tick_only');
+            .tag('kubejs:player_tick_only')
 
         // 黑洞
         registerOrgan(new Organ('mrqx_extra_pack:black_hole')
@@ -294,7 +294,7 @@ StartupEvents.registry('item', event => {
             .texture('mrqx_extra_pack:item/organs/celestial_body/black_hole')
             .tag('itemborders:gold')
             .tag('kubejs:mrqx_celestial_body')
-            .tag('kubejs:key_pressed');
+            .tag('kubejs:key_pressed')
 
         // 白洞
         registerOrgan(new Organ('mrqx_extra_pack:white_hole')
@@ -310,7 +310,7 @@ StartupEvents.registry('item', event => {
             .texture('mrqx_extra_pack:item/organs/celestial_body/white_hole')
             .tag('itemborders:gold')
             .tag('kubejs:mrqx_celestial_body')
-            .tag('kubejs:key_pressed');
+            .tag('kubejs:key_pressed')
 
         // ‌太阳光镜
         registerOrgan(new Organ('mrqx_extra_pack:solar_mirror')
@@ -320,7 +320,7 @@ StartupEvents.registry('item', event => {
             .build())
             .texture('mrqx_extra_pack:item/organs/celestial_body/solar_mirror')
             .tag('kubejs:mrqx_celestial_body')
-            .tag('kubejs:damage');
+            .tag('kubejs:damage')
 
         // ‌流星雨引导仪
         registerOrgan(new Organ('mrqx_extra_pack:meteor_shower_director')
@@ -331,7 +331,7 @@ StartupEvents.registry('item', event => {
             .texture('mrqx_extra_pack:item/organs/celestial_body/meteor_shower_director')
             .tag('itemborders:gold')
             .tag('kubejs:mrqx_celestial_body')
-            .tag('kubejs:key_pressed');
+            .tag('kubejs:key_pressed')
     }
 
     {// 处理器
@@ -343,7 +343,7 @@ StartupEvents.registry('item', event => {
             .texture('mrqx_extra_pack:item/organs/cpu/cpu')
             .tag('itemborders:iron')
             .tag('kubejs:machine')
-            .tag('kubejs:mrqx_cpu');
+            .tag('kubejs:mrqx_cpu')
 
         // 魔能速充处理器
         registerOrgan(new Organ('mrqx_extra_pack:magic_fast_charging_cpu')
@@ -356,7 +356,7 @@ StartupEvents.registry('item', event => {
             .tag('kubejs:machine')
             .tag('kubejs:mrqx_cpu')
             .tag('kubejs:magic')
-            .tag('kubejs:active_only');
+            .tag('kubejs:active_only')
 
         // 魔能过载处理器
         registerOrgan(new Organ('mrqx_extra_pack:magic_overload_cpu')
@@ -369,7 +369,7 @@ StartupEvents.registry('item', event => {
             .tag('kubejs:machine')
             .tag('kubejs:mrqx_cpu')
             .tag('kubejs:magic')
-            .tag('kubejs:active_only');
+            .tag('kubejs:active_only')
 
         // 魔能“玻璃大炮”处理器
         registerOrgan(new Organ('mrqx_extra_pack:magic_glass_cannon_cpu')
@@ -384,7 +384,7 @@ StartupEvents.registry('item', event => {
             .tag('kubejs:machine')
             .tag('kubejs:mrqx_cpu')
             .tag('kubejs:magic')
-            .tag('kubejs:active_only');
+            .tag('kubejs:active_only')
 
         // 玫瑰“再度绽放”处理器
         registerOrgan(new Organ('mrqx_extra_pack:rose_second_bloom_cpu')
@@ -399,7 +399,7 @@ StartupEvents.registry('item', event => {
             .tag('kubejs:machine')
             .tag('kubejs:mrqx_cpu')
             .tag('kubejs:rose')
-            .tag('kubejs:active_only');
+            .tag('kubejs:active_only')
 
         // ‌机械储能处理器
         registerOrgan(new Organ('mrqx_extra_pack:machine_storage_cpu')
@@ -412,7 +412,7 @@ StartupEvents.registry('item', event => {
             .tag('kubejs:machine')
             .tag('kubejs:mrqx_cpu')
             .tag('kubejs:resource')
-            .tag('kubejs:active_only');
+            .tag('kubejs:active_only')
 
         // ‌机械“午夜狂飙”处理器
         registerOrgan(new Organ('mrqx_extra_pack:machine_midnight_race_cpu')
@@ -428,7 +428,7 @@ StartupEvents.registry('item', event => {
             .tag('kubejs:machine')
             .tag('kubejs:mrqx_cpu')
             .tag('kubejs:active_only')
-            .tag('kubejs:player_tick_only');
+            .tag('kubejs:player_tick_only')
 
         // ‌机械“熔核之心”处理器
         registerOrgan(new Organ('mrqx_extra_pack:machine_burn_flare_heart_cpu')
@@ -442,7 +442,7 @@ StartupEvents.registry('item', event => {
             .tag('itemborders:gold')
             .tag('kubejs:machine')
             .tag('kubejs:mrqx_cpu')
-            .tag('kubejs:active_only');
+            .tag('kubejs:active_only')
 
         // ‌机械“核能之心”处理器
         registerOrgan(new Organ('mrqx_extra_pack:machine_nuclear_heart_cpu')
@@ -457,7 +457,7 @@ StartupEvents.registry('item', event => {
             .tag('kubejs:machine')
             .tag('kubejs:mrqx_cpu')
             .tag('kubejs:mrqx_nuclear')
-            .tag('kubejs:active_only');
+            .tag('kubejs:active_only')
 
         // ‌机械闪避处理器
         registerOrgan(new Organ('mrqx_extra_pack:machine_dodge_cpu')
@@ -469,7 +469,7 @@ StartupEvents.registry('item', event => {
             .tag('itemborders:iron')
             .tag('kubejs:machine')
             .tag('kubejs:mrqx_cpu')
-            .tag('kubejs:active_only');
+            .tag('kubejs:active_only')
 
         // ‌机械格挡处理器
         registerOrgan(new Organ('mrqx_extra_pack:machine_parry_cpu')
@@ -481,7 +481,7 @@ StartupEvents.registry('item', event => {
             .tag('itemborders:iron')
             .tag('kubejs:machine')
             .tag('kubejs:mrqx_cpu')
-            .tag('kubejs:active_only');
+            .tag('kubejs:active_only')
 
         // ‌机械“会心一击”处理器
         registerOrgan(new Organ('mrqx_extra_pack:machine_critical_cpu')
@@ -495,7 +495,7 @@ StartupEvents.registry('item', event => {
             .tag('itemborders:gold')
             .tag('kubejs:machine')
             .tag('kubejs:mrqx_cpu')
-            .tag('kubejs:active_only');
+            .tag('kubejs:active_only')
 
         // ‌机械“挖矿”处理器
         registerOrgan(new Organ('mrqx_extra_pack:machine_mine_cpu')
@@ -511,7 +511,7 @@ StartupEvents.registry('item', event => {
             .tag('kubejs:mrqx_cpu')
             .tag('kubejs:break_only')
             .tag('kubejs:resource')
-            .tag('kubejs:active_only');
+            .tag('kubejs:active_only')
 
         // 玫瑰“花语”处理器
         registerOrgan(new Organ('mrqx_extra_pack:rose_language_cpu')
@@ -526,7 +526,7 @@ StartupEvents.registry('item', event => {
             .tag('kubejs:machine')
             .tag('kubejs:mrqx_cpu')
             .tag('kubejs:rose')
-            .tag('kubejs:active_only');
+            .tag('kubejs:active_only')
 
         // ‌深海“灯塔”处理器
         registerOrgan(new Organ('mrqx_extra_pack:seaborn_beacon_cpu')
@@ -541,7 +541,7 @@ StartupEvents.registry('item', event => {
             .tag('kubejs:machine')
             .tag('kubejs:mrqx_cpu')
             .tag('kubejs:mrqx_seaborn')
-            .tag('kubejs:active_only');
+            .tag('kubejs:active_only')
 
         // 天体“占星”处理器
         registerOrgan(new Organ('mrqx_extra_pack:celestial_body_astrology_cpu')
@@ -556,7 +556,7 @@ StartupEvents.registry('item', event => {
             .tag('kubejs:machine')
             .tag('kubejs:mrqx_cpu')
             .tag('kubejs:mrqx_celestial_body')
-            .tag('kubejs:active_only');
+            .tag('kubejs:active_only')
 
         // 蒸汽“动力”处理器
         registerOrgan(new Organ('mrqx_extra_pack:steam_power_cpu')
@@ -571,7 +571,7 @@ StartupEvents.registry('item', event => {
             .tag('kubejs:machine')
             .tag('kubejs:mrqx_cpu')
             .tag('kubejs:mrqx_steam')
-            .tag('kubejs:active_only');
+            .tag('kubejs:active_only')
 
         // “降神”处理器
         registerOrgan(new Organ('mrqx_extra_pack:seance_cpu')
@@ -586,20 +586,20 @@ StartupEvents.registry('item', event => {
             .tag('kubejs:machine')
             .tag('kubejs:mrqx_cpu')
             .tag('kubejs:legends')
-            .tag('kubejs:key_pressed');
+            .tag('kubejs:key_pressed')
     }
 
     {// 反物质器官
-        registerOrgan(new Organ('mrqx_extra_pack:lung_antimatter').addScore('breath_recovery', -6).addScore('breath_capacity', -6).addScore('endurance', -6).addScore('endurance', -6).addScore('water_breath', -1).addScore('forceful_spit', -1).addScore('dragon_breath', -1).build()).texture('mrqx_extra_pack:item/organs/antimatter/lung_antimatter').tag('itemborders:iron').tag('kubejs:lung').tag('kubejs:mrqx_antimatter');
-        registerOrgan(new Organ('mrqx_extra_pack:muscle_antimatter').addScore('strength', -6).addScore('speed', -6).addScore('swim_speed', -1).addScore('leaping', -1).addScore('launching', -1).build()).texture('mrqx_extra_pack:item/organs/antimatter/muscle_antimatter').tag('itemborders:iron').tag('kubejs:muscle').tag('kubejs:mrqx_antimatter');
-        registerOrgan(new Organ('mrqx_extra_pack:intestine_antimatter').addScore('nutrition', -6).addScore('rotgut', -1).addScore('herbivorous_nutrition', -1).addScore('carnivorous_nutrition', -1).addScore('crystalsynthesis', -1).build()).texture('mrqx_extra_pack:item/organs/antimatter/intestine_antimatter').tag('itemborders:iron').tag('kubejs:intestine').tag('kubejs:mrqx_antimatter');
-        registerOrgan(new Organ('mrqx_extra_pack:rib_antimatter').addScore('defense', -6).addScore('impact_resistant', -1).addScore('furnace_powered', -1).addScore('iron_repair', -1).build()).texture('mrqx_extra_pack:item/organs/antimatter/rib_antimatter').tag('itemborders:iron').tag('kubejs:rib').tag('kubejs:mrqx_antimatter');
-        registerOrgan(new Organ('mrqx_extra_pack:spine_antimatter').addScore('defense', -3).addScore('nerves', -6).addScore('withered', -1).addScore('ghastly', -1).addScore('pyromancy', -1).build()).texture('mrqx_extra_pack:item/organs/antimatter/spine_antimatter').tag('itemborders:iron').tag('kubejs:spine').tag('kubejs:mrqx_antimatter');
-        registerOrgan(new Organ('mrqx_extra_pack:spleen_antimatter').addScore('metabolism', -6).addScore('venomous', -1).addScore('silk', -1).addScore('buoyant', -1).build()).texture('mrqx_extra_pack:item/organs/antimatter/spleen_antimatter').tag('itemborders:iron').tag('kubejs:spleen').tag('kubejs:mrqx_antimatter');
-        registerOrgan(new Organ('mrqx_extra_pack:stomach_antimatter').addScore('digestion', -6).addScore('herbivorous_digestion', -1).addScore('carnivorous_digestion', -1).addScore('rot_digestion', -1).build()).texture('mrqx_extra_pack:item/organs/antimatter/stomach_antimatter').tag('itemborders:iron').tag('kubejs:stomach').tag('kubejs:mrqx_antimatter');
-        registerOrgan(new Organ('mrqx_extra_pack:kidney_antimatter').addScore('filtration', -6).addScore('buff_purging', -1).addScore('glowing', -1).build()).texture('mrqx_extra_pack:item/organs/antimatter/kidney_antimatter').tag('itemborders:iron').tag('kubejs:kidney').tag('kubejs:mrqx_antimatter');
-        registerOrgan(new Organ('mrqx_extra_pack:liver_antimatter').addScore('detoxification', -6).addScore('fire_resistant', -1).addScore('shulker_bullets', -1).build()).texture('mrqx_extra_pack:item/organs/antimatter/liver_antimatter').tag('itemborders:iron').tag('kubejs:liver').tag('kubejs:mrqx_antimatter');
-        registerOrgan(new Organ('mrqx_extra_pack:appendix_antimatter').addScore('luck', -6).addScore('arrow_dodging', -1).addScore('dragon_bombs', -1).addScore('creepy', -1).addScore('explosive', -1).build()).texture('mrqx_extra_pack:item/organs/antimatter/appendix_antimatter').tag('itemborders:iron').tag('kubejs:appendix').tag('kubejs:mrqx_antimatter');
+        registerOrgan(new Organ('mrqx_extra_pack:lung_antimatter').addScore('breath_recovery', -6).addScore('breath_capacity', -6).addScore('endurance', -6).addScore('endurance', -6).addScore('water_breath', -1).addScore('forceful_spit', -1).addScore('dragon_breath', -1).build()).texture('mrqx_extra_pack:item/organs/antimatter/lung_antimatter').tag('itemborders:iron').tag('kubejs:lung').tag('kubejs:mrqx_antimatter')
+        registerOrgan(new Organ('mrqx_extra_pack:muscle_antimatter').addScore('strength', -6).addScore('speed', -6).addScore('swim_speed', -1).addScore('leaping', -1).addScore('launching', -1).build()).texture('mrqx_extra_pack:item/organs/antimatter/muscle_antimatter').tag('itemborders:iron').tag('kubejs:muscle').tag('kubejs:mrqx_antimatter')
+        registerOrgan(new Organ('mrqx_extra_pack:intestine_antimatter').addScore('nutrition', -6).addScore('rotgut', -1).addScore('herbivorous_nutrition', -1).addScore('carnivorous_nutrition', -1).addScore('crystalsynthesis', -1).build()).texture('mrqx_extra_pack:item/organs/antimatter/intestine_antimatter').tag('itemborders:iron').tag('kubejs:intestine').tag('kubejs:mrqx_antimatter')
+        registerOrgan(new Organ('mrqx_extra_pack:rib_antimatter').addScore('defense', -6).addScore('impact_resistant', -1).addScore('furnace_powered', -1).addScore('iron_repair', -1).build()).texture('mrqx_extra_pack:item/organs/antimatter/rib_antimatter').tag('itemborders:iron').tag('kubejs:rib').tag('kubejs:mrqx_antimatter')
+        registerOrgan(new Organ('mrqx_extra_pack:spine_antimatter').addScore('defense', -3).addScore('nerves', -6).addScore('withered', -1).addScore('ghastly', -1).addScore('pyromancy', -1).build()).texture('mrqx_extra_pack:item/organs/antimatter/spine_antimatter').tag('itemborders:iron').tag('kubejs:spine').tag('kubejs:mrqx_antimatter')
+        registerOrgan(new Organ('mrqx_extra_pack:spleen_antimatter').addScore('metabolism', -6).addScore('venomous', -1).addScore('silk', -1).addScore('buoyant', -1).build()).texture('mrqx_extra_pack:item/organs/antimatter/spleen_antimatter').tag('itemborders:iron').tag('kubejs:spleen').tag('kubejs:mrqx_antimatter')
+        registerOrgan(new Organ('mrqx_extra_pack:stomach_antimatter').addScore('digestion', -6).addScore('herbivorous_digestion', -1).addScore('carnivorous_digestion', -1).addScore('rot_digestion', -1).build()).texture('mrqx_extra_pack:item/organs/antimatter/stomach_antimatter').tag('itemborders:iron').tag('kubejs:stomach').tag('kubejs:mrqx_antimatter')
+        registerOrgan(new Organ('mrqx_extra_pack:kidney_antimatter').addScore('filtration', -6).addScore('buff_purging', -1).addScore('glowing', -1).build()).texture('mrqx_extra_pack:item/organs/antimatter/kidney_antimatter').tag('itemborders:iron').tag('kubejs:kidney').tag('kubejs:mrqx_antimatter')
+        registerOrgan(new Organ('mrqx_extra_pack:liver_antimatter').addScore('detoxification', -6).addScore('fire_resistant', -1).addScore('shulker_bullets', -1).build()).texture('mrqx_extra_pack:item/organs/antimatter/liver_antimatter').tag('itemborders:iron').tag('kubejs:liver').tag('kubejs:mrqx_antimatter')
+        registerOrgan(new Organ('mrqx_extra_pack:appendix_antimatter').addScore('luck', -6).addScore('arrow_dodging', -1).addScore('dragon_bombs', -1).addScore('creepy', -1).addScore('explosive', -1).build()).texture('mrqx_extra_pack:item/organs/antimatter/appendix_antimatter').tag('itemborders:iron').tag('kubejs:appendix').tag('kubejs:mrqx_antimatter')
 
         // 反物质心脏
         registerOrgan(new Organ('mrqx_extra_pack:heart_antimatter')
@@ -615,7 +615,7 @@ StartupEvents.registry('item', event => {
             .tag('itemborders:iron')
             .tag('kubejs:heart')
             .tag('kubejs:mrqx_antimatter')
-            .tag('kubejs:active');
+            .tag('kubejs:active')
     }
 
     {// 深海器官
@@ -631,7 +631,7 @@ StartupEvents.registry('item', event => {
             .tag('itemborders:diamond')
             .tag('kubejs:heart')
             .tag('kubejs:mrqx_seaborn')
-            .tag('kubejs:active_only');
+            .tag('kubejs:active_only')
 
         // “潮涌，潮枯”肺脏
         registerOrgan(new Organ('mrqx_extra_pack:lung_the_tide_surges_the_tide_recedes')
@@ -649,7 +649,7 @@ StartupEvents.registry('item', event => {
             .tag('itemborders:diamond')
             .tag('kubejs:lung')
             .tag('kubejs:mrqx_seaborn')
-            .tag('kubejs:damage_only');
+            .tag('kubejs:damage_only')
 
         // “镜花水月”肾
         registerOrgan(new Organ('mrqx_extra_pack:kidney_moon_in_the_water')
@@ -668,7 +668,7 @@ StartupEvents.registry('item', event => {
             .tag('kubejs:kidney')
             .tag('kubejs:mrqx_seaborn')
             .tag('kubejs:damage_only')
-            .tag('kubejs:loot_entity_only');
+            .tag('kubejs:loot_entity_only')
 
         // “潮汐守望”肝
         registerOrgan(new Organ('mrqx_extra_pack:liver_tide_observation')
@@ -682,7 +682,7 @@ StartupEvents.registry('item', event => {
             .tag('itemborders:diamond')
             .tag('kubejs:liver')
             .tag('kubejs:mrqx_seaborn')
-            .tag('kubejs:active_only');
+            .tag('kubejs:active_only')
 
         // “集群狩猎”胰
         registerOrgan(new Organ('mrqx_extra_pack:pancreas_group_hunting')
@@ -696,7 +696,7 @@ StartupEvents.registry('item', event => {
             .tag('itemborders:diamond')
             .tag('kubejs:pancreas')
             .tag('kubejs:mrqx_seaborn')
-            .tag('kubejs:active_only');
+            .tag('kubejs:active_only')
 
         // “肉斩骨断”肌肉
         registerOrgan(new Organ('mrqx_extra_pack:muscle_bone_fracture')
@@ -718,7 +718,7 @@ StartupEvents.registry('item', event => {
             .tag('kubejs:mrqx_seaborn')
             .tag('kubejs:active')
             .tag('kubejs:player_tick')
-            .tag('kubejs:bear_only');
+            .tag('kubejs:bear_only')
 
         // “生存的重压”肋骨
         registerOrgan(new Organ('mrqx_extra_pack:rib_the_pressure_to_survive')
@@ -737,7 +737,7 @@ StartupEvents.registry('item', event => {
             .tag('kubejs:rib')
             .tag('kubejs:mrqx_seaborn')
             .tag('kubejs:active')
-            .tag('kubejs:damage_only');
+            .tag('kubejs:damage_only')
 
         // “本性的坚守”脾
         registerOrgan(new Organ('mrqx_extra_pack:spleen_adhering_to_nature')
@@ -751,7 +751,7 @@ StartupEvents.registry('item', event => {
             .tag('itemborders:diamond')
             .tag('kubejs:spleen')
             .tag('kubejs:mrqx_seaborn')
-            .tag('kubejs:bear_only');
+            .tag('kubejs:bear_only')
 
         // “深海掠食者”胃
         registerOrgan(new Organ('mrqx_extra_pack:stomach_abyssal_predator')
@@ -766,7 +766,7 @@ StartupEvents.registry('item', event => {
             .tag('itemborders:diamond')
             .tag('kubejs:stomach')
             .tag('kubejs:mrqx_seaborn')
-            .tag('kubejs:damage_only');
+            .tag('kubejs:damage_only')
 
         // “深海直觉”脊柱
         registerOrgan(new Organ('mrqx_extra_pack:spine_abyssal_intuition')
@@ -780,7 +780,7 @@ StartupEvents.registry('item', event => {
             .tag('itemborders:diamond')
             .tag('kubejs:spine')
             .tag('kubejs:mrqx_seaborn')
-            .tag('kubejs:active_only');
+            .tag('kubejs:active_only')
 
         // “弱肉强食”肠
         registerOrgan(new Organ('mrqx_extra_pack:intestine_survival_of_the_fittest')
@@ -795,7 +795,7 @@ StartupEvents.registry('item', event => {
             .tag('itemborders:diamond')
             .tag('kubejs:intestine')
             .tag('kubejs:mrqx_seaborn')
-            .tag('kubejs:damage_only');
+            .tag('kubejs:damage_only')
 
         // “变异”阑尾
         registerOrgan(new Organ('mrqx_extra_pack:appendix_assimilation_mutation')
@@ -815,7 +815,7 @@ StartupEvents.registry('item', event => {
             .tag('kubejs:appendix')
             .tag('kubejs:mrqx_seaborn')
             .tag('kubejs:damage_only')
-            .tag('kubejs:active_only');
+            .tag('kubejs:active_only')
     }
 
     {// 传奇三件套
@@ -831,7 +831,7 @@ StartupEvents.registry('item', event => {
             .tag('itemborders:gold')
             .tag('kubejs:legends')
             .tag('kubejs:player_tick_only')
-            .tag('kubejs:damage_only');
+            .tag('kubejs:damage_only')
 
         // “法师控制强”
         registerOrgan(new Organ('mrqx_extra_pack:mage_control_strong')
@@ -844,7 +844,7 @@ StartupEvents.registry('item', event => {
             .tag('itemborders:gold')
             .tag('kubejs:legends')
             .tag('kubejs:damage_only')
-            .tag('kubejs:active_only');
+            .tag('kubejs:active_only')
 
         // “战士输出高”
         registerOrgan(new Organ('mrqx_extra_pack:warrior_output_high')
@@ -855,7 +855,7 @@ StartupEvents.registry('item', event => {
             .texture('mrqx_extra_pack:item/organs/warrior_output_high')
             .tag('itemborders:gold')
             .tag('kubejs:legends')
-            .tag('kubejs:damage_only');
+            .tag('kubejs:damage_only')
     }
 
     {// 幽匿套
@@ -868,7 +868,7 @@ StartupEvents.registry('item', event => {
             .build())
             .texture('mrqx_extra_pack:item/organs/sculk/sculk_brandguider')
             .tag('kubejs:mrqx_sculk')
-            .tag('kubejs:player_tick_only');
+            .tag('kubejs:player_tick_only')
 
         // 幽匿之心
         registerOrgan(new Organ('mrqx_extra_pack:sculk_heart')
@@ -880,7 +880,7 @@ StartupEvents.registry('item', event => {
             .build())
             .texture('mrqx_extra_pack:item/organs/sculk/sculk_heart')
             .tag('kubejs:mrqx_sculk')
-            .tag('kubejs:player_tick_only');
+            .tag('kubejs:player_tick_only')
 
         // 幽匿裂岩体
         registerOrgan(new Organ('mrqx_extra_pack:sculk_rock_breaker')
@@ -892,7 +892,7 @@ StartupEvents.registry('item', event => {
             .texture('mrqx_extra_pack:item/organs/sculk/sculk_rock_breaker')
             .tag('kubejs:mrqx_sculk')
             .tag('kubejs:muscle')
-            .tag('kubejs:damage');
+            .tag('kubejs:damage')
 
         // 幽匿沉积体
         registerOrgan(new Organ('mrqx_extra_pack:sculk_depositer')
@@ -904,7 +904,7 @@ StartupEvents.registry('item', event => {
             .texture('mrqx_extra_pack:item/organs/sculk/sculk_depositer')
             .tag('kubejs:mrqx_sculk')
             .tag('kubejs:rib')
-            .tag('kubejs:bear');
+            .tag('kubejs:bear')
 
         // 幽匿寄染体
         registerOrgan(new Organ('mrqx_extra_pack:sculk_infester')
@@ -915,7 +915,7 @@ StartupEvents.registry('item', event => {
             .build())
             .texture('mrqx_extra_pack:item/organs/sculk/sculk_infester')
             .tag('kubejs:mrqx_sculk')
-            .tag('kubejs:damage');
+            .tag('kubejs:damage')
 
         // 幽匿集养体
         registerOrgan(new Organ('mrqx_extra_pack:sculk_collectors')
@@ -929,7 +929,7 @@ StartupEvents.registry('item', event => {
             .build())
             .texture('mrqx_extra_pack:item/organs/sculk/sculk_collectors')
             .tag('kubejs:mrqx_sculk')
-            .tag('kubejs:player_tick_only');
+            .tag('kubejs:player_tick_only')
 
         // 幽匿咆哮体
         registerOrgan(new Organ('mrqx_extra_pack:sculk_growler')
@@ -940,7 +940,7 @@ StartupEvents.registry('item', event => {
             .build())
             .texture('mrqx_extra_pack:item/organs/sculk/sculk_growler')
             .tag('kubejs:mrqx_sculk')
-            .tag('kubejs:key_pressed');
+            .tag('kubejs:key_pressed')
     }
 
     {// 国王套
@@ -954,7 +954,7 @@ StartupEvents.registry('item', event => {
             .build())
             .texture('mrqx_extra_pack:item/organs/king/kings_crown')
             .tag('kubejs:mrqx_king')
-            .tag('kubejs:active_only');
+            .tag('kubejs:active_only')
 
         // 国王的新枪
         registerOrgan(new Organ('mrqx_extra_pack:kings_new_lance')
@@ -964,7 +964,7 @@ StartupEvents.registry('item', event => {
             .build())
             .texture('mrqx_extra_pack:item/organs/king/kings_new_lance')
             .tag('kubejs:mrqx_king')
-            .tag('kubejs:player_tick_only');
+            .tag('kubejs:player_tick_only')
 
         // 国王的护戒
         registerOrgan(new Organ('mrqx_extra_pack:kings_fellowship')
@@ -975,7 +975,7 @@ StartupEvents.registry('item', event => {
             .build())
             .texture('mrqx_extra_pack:item/organs/king/kings_fellowship')
             .tag('kubejs:mrqx_king')
-            .tag('kubejs:active_only');
+            .tag('kubejs:active_only')
 
         // 国王的铠甲
         registerOrgan(new Organ('mrqx_extra_pack:kings_armor')
@@ -988,7 +988,7 @@ StartupEvents.registry('item', event => {
             .texture('mrqx_extra_pack:item/organs/king/kings_armor')
             .tag('kubejs:mrqx_king')
             .tag('kubejs:active_only')
-            .tag('kubejs:damage_only');
+            .tag('kubejs:damage_only')
 
         // 国王的圆饼
         registerOrgan(new Organ('mrqx_extra_pack:kings_buckler')
@@ -999,7 +999,7 @@ StartupEvents.registry('item', event => {
             .build())
             .texture('mrqx_extra_pack:item/organs/king/kings_buckler')
             .tag('kubejs:mrqx_king')
-            .tag('kubejs:player_tick_only');
+            .tag('kubejs:player_tick_only')
 
         // 国王的枝条
         registerOrgan(new Organ('mrqx_extra_pack:kings_staff')
@@ -1009,7 +1009,7 @@ StartupEvents.registry('item', event => {
             .build())
             .texture('mrqx_extra_pack:item/organs/king/kings_staff')
             .tag('kubejs:mrqx_king')
-            .tag('kubejs:player_tick_only');
+            .tag('kubejs:player_tick_only')
 
         // 国王的延伸
         registerOrgan(new Organ('mrqx_extra_pack:kings_extension')
@@ -1019,7 +1019,7 @@ StartupEvents.registry('item', event => {
             .build())
             .texture('mrqx_extra_pack:item/organs/king/kings_extension')
             .tag('kubejs:mrqx_king')
-            .tag('kubejs:player_tick_only');
+            .tag('kubejs:player_tick_only')
 
         // 国王的水晶
         registerOrgan(new Organ('mrqx_extra_pack:kings_crystal')
@@ -1030,7 +1030,7 @@ StartupEvents.registry('item', event => {
             .build())
             .texture('mrqx_extra_pack:item/organs/king/kings_crystal')
             .tag('kubejs:mrqx_king')
-            .tag('kubejs:loot_entity_only');
+            .tag('kubejs:loot_entity_only')
     }
 
     {//‌ 七原罪
@@ -1049,7 +1049,7 @@ StartupEvents.registry('item', event => {
             .tag('kubejs:mrqx_seven_sins')
             .tag('kubejs:damage_only')
             .tag('kubejs:bear_only')
-            .tag('kubejs:active_only');
+            .tag('kubejs:active_only')
 
         // ‌‌原罪·懒惰「贝尔芬格」
         registerOrgan(new Organ('mrqx_extra_pack:sin_acedia_belphegor')
@@ -1065,7 +1065,7 @@ StartupEvents.registry('item', event => {
             .texture('mrqx_extra_pack:item/organs/seven_sins/sin_acedia_belphegor')
             .tag('kubejs:mrqx_seven_sins')
             .tag('kubejs:player_tick_only')
-            .tag('kubejs:active_only');
+            .tag('kubejs:active_only')
 
         // ‌‌原罪·嫉妒「利维坦」
         registerOrgan(new Organ('mrqx_extra_pack:sin_invidia_leviathan')
@@ -1081,7 +1081,7 @@ StartupEvents.registry('item', event => {
             .texture('mrqx_extra_pack:item/organs/seven_sins/sin_invidia_leviathan')
             .tag('kubejs:mrqx_seven_sins')
             .tag('kubejs:damage_only')
-            .tag('kubejs:active_only');
+            .tag('kubejs:active_only')
 
         // 原罪·贪食「别西卜」
         registerOrgan(new Organ('mrqx_extra_pack:sin_gula_beelzebub')
@@ -1097,7 +1097,7 @@ StartupEvents.registry('item', event => {
             .texture('mrqx_extra_pack:item/organs/seven_sins/sin_gula_beelzebub')
             .tag('kubejs:mrqx_seven_sins')
             .tag('kubejs:damage_only')
-            .tag('kubejs:active_only');
+            .tag('kubejs:active_only')
 
         // ‌原罪·贪婪「玛门」
         registerOrgan(new Organ('mrqx_extra_pack:sin_avaritia_mammon')
@@ -1114,7 +1114,7 @@ StartupEvents.registry('item', event => {
             .tag('kubejs:mrqx_seven_sins')
             .tag('kubejs:loot_entity_only')
             .tag('kubejs:loot_chest_only')
-            .tag('kubejs:active_only');
+            .tag('kubejs:active_only')
 
         // ‌原罪·色欲「阿斯莫德」
         registerOrgan(new Organ('mrqx_extra_pack:sin_luxuria_asmodeus')
@@ -1130,7 +1130,7 @@ StartupEvents.registry('item', event => {
             .texture('mrqx_extra_pack:item/organs/seven_sins/sin_luxuria_asmodeus')
             .tag('kubejs:mrqx_seven_sins')
             .tag('kubejs:player_tick_only')
-            .tag('kubejs:active_only');
+            .tag('kubejs:active_only')
 
         // ‌原罪·傲慢「路西法」
         registerOrgan(new Organ('mrqx_extra_pack:sin_superbia_lucifer')
@@ -1146,7 +1146,7 @@ StartupEvents.registry('item', event => {
             .texture('mrqx_extra_pack:item/organs/seven_sins/sin_superbia_lucifer')
             .tag('kubejs:mrqx_seven_sins')
             .tag('kubejs:bear_only')
-            .tag('kubejs:active_only');
+            .tag('kubejs:active_only')
 
         // ‌原罪·罪源
         registerOrgan(new Organ('mrqx_extra_pack:origin_sin')
@@ -1180,7 +1180,7 @@ StartupEvents.registry('item', event => {
             .tag('kubejs:bear_only')
             .tag('kubejs:loot_entity_only')
             .tag('kubejs:loot_chest_only')
-            .tag('kubejs:active_only');
+            .tag('kubejs:active_only')
 
         // ‌“罪与罚”
         registerOrgan(new Organ('mrqx_extra_pack:sin_and_judgement')
@@ -1215,7 +1215,7 @@ StartupEvents.registry('item', event => {
             .tag('kubejs:bear_only')
             .tag('kubejs:loot_entity_only')
             .tag('kubejs:loot_chest_only')
-            .tag('kubejs:active_only');
+            .tag('kubejs:active_only')
     }
 
     {// 蒸汽系列
@@ -1229,7 +1229,7 @@ StartupEvents.registry('item', event => {
             .texture('mrqx_extra_pack:item/organs/steam/steam_power_engine')
             .tag('kubejs:machine')
             .tag('kubejs:mrqx_steam')
-            .tag('kubejs:rclick_only');
+            .tag('kubejs:rclick_only')
 
         // ‌蒸汽动力涡轮
         registerOrgan(new Organ('mrqx_extra_pack:steam_power_turbine')
@@ -1241,7 +1241,7 @@ StartupEvents.registry('item', event => {
             .texture('mrqx_extra_pack:item/organs/steam/steam_power_turbine')
             .tag('kubejs:machine')
             .tag('kubejs:mrqx_steam')
-            .tag('kubejs:rclick_only');
+            .tag('kubejs:rclick_only')
 
         // 蒸汽汽轮机
         registerOrgan(new Organ('mrqx_extra_pack:steam_turbine')
@@ -1255,7 +1255,7 @@ StartupEvents.registry('item', event => {
             .tag('itemborders:iron')
             .tag('kubejs:machine')
             .tag('kubejs:mrqx_steam')
-            .tag('kubejs:player_tick_only');
+            .tag('kubejs:player_tick_only')
 
         // 蒸汽引擎
         registerOrgan(new Organ('mrqx_extra_pack:steam_engine')
@@ -1266,7 +1266,7 @@ StartupEvents.registry('item', event => {
             .build())
             .texture('mrqx_extra_pack:item/organs/steam/steam_engine')
             .tag('kubejs:machine')
-            .tag('kubejs:mrqx_steam');
+            .tag('kubejs:mrqx_steam')
 
         // 蒸汽甲胄
         registerOrgan(new Organ('mrqx_extra_pack:steam_armor')
@@ -1277,7 +1277,7 @@ StartupEvents.registry('item', event => {
             .texture('mrqx_extra_pack:item/organs/steam/steam_armor')
             .tag('kubejs:machine')
             .tag('kubejs:mrqx_steam')
-            .tag('kubejs:bear');
+            .tag('kubejs:bear')
 
         // 蒸汽刺剑
         registerOrgan(new Organ('mrqx_extra_pack:steam_rapier')
@@ -1288,7 +1288,7 @@ StartupEvents.registry('item', event => {
             .texture('mrqx_extra_pack:item/organs/steam/steam_rapier')
             .tag('kubejs:machine')
             .tag('kubejs:mrqx_steam')
-            .tag('kubejs:damage_only');
+            .tag('kubejs:damage_only')
 
         // ‌蒸汽液压杆
         registerOrgan(new Organ('mrqx_extra_pack:steam_hydraulic_rod')
@@ -1299,7 +1299,7 @@ StartupEvents.registry('item', event => {
             .texture('mrqx_extra_pack:item/organs/steam/steam_hydraulic_rod')
             .tag('kubejs:machine')
             .tag('kubejs:mrqx_steam')
-            .tag('kubejs:player_tick');
+            .tag('kubejs:player_tick')
 
         // ‌蒸汽增压引擎
         registerOrgan(new Organ('mrqx_extra_pack:steam_supercharge_engine')
@@ -1311,7 +1311,7 @@ StartupEvents.registry('item', event => {
             .texture('mrqx_extra_pack:item/organs/steam/steam_supercharge_engine')
             .tag('kubejs:machine')
             .tag('kubejs:mrqx_steam')
-            .tag('kubejs:key_pressed');
+            .tag('kubejs:key_pressed')
 
         // ‌“怒守”
         registerOrgan(new Organ('mrqx_extra_pack:furious_defense')
@@ -1322,7 +1322,7 @@ StartupEvents.registry('item', event => {
             .texture('mrqx_extra_pack:item/organs/steam/furious_defense')
             .tag('kubejs:machine')
             .tag('kubejs:mrqx_steam')
-            .tag('kubejs:damage_only');
+            .tag('kubejs:damage_only')
     }
 
     // 迷你末地水晶
@@ -1333,7 +1333,7 @@ StartupEvents.registry('item', event => {
         .build())
         .texture('mrqx_extra_pack:item/organs/mini_end_crystal')
         .tag('itemborders:iron')
-        .tag('kubejs:player_tick');
+        .tag('kubejs:player_tick')
 
     // 黄金天秤
     registerOrgan(new Organ('mrqx_extra_pack:golden_libra')
@@ -1346,7 +1346,7 @@ StartupEvents.registry('item', event => {
         .build())
         .texture('mrqx_extra_pack:item/organs/golden_libra')
         .tag('itemborders:gold')
-        .tag('kubejs:active_only');
+        .tag('kubejs:active_only')
 
     // 冒险者证章
     registerOrgan(new Organ('mrqx_extra_pack:adventurers_badge')
@@ -1365,7 +1365,7 @@ StartupEvents.registry('item', event => {
         .texture('mrqx_extra_pack:item/organs/adventurers_badge')
         .tag('itemborders:gold')
         .tag('kubejs:active_only')
-        .tag('kubejs:loot_entity_only');
+        .tag('kubejs:loot_entity_only')
 
     // 噩梦醇
     registerOrgan(new Organ('mrqx_extra_pack:marenol')
@@ -1379,7 +1379,7 @@ StartupEvents.registry('item', event => {
         .texture('mrqx_extra_pack:item/organs/marenol')
         .tag('itemborders:gold')
         .tag('kubejs:damage')
-        .tag('kubejs:active');
+        .tag('kubejs:active')
 
     // 活化巨瘤
     registerOrgan(new Organ('mrqx_extra_pack:activated_giant_tumor')
@@ -1393,7 +1393,7 @@ StartupEvents.registry('item', event => {
         .texture('mrqx_extra_pack:item/organs/activated_giant_tumor')
         .tag('itemborders:gold')
         .tag('kubejs:infected')
-        .tag('kubejs:active');
+        .tag('kubejs:active')
 
     // 风暴重锤
     registerOrgan(new Organ('mrqx_extra_pack:storm_mace')
@@ -1408,7 +1408,7 @@ StartupEvents.registry('item', event => {
         .build())
         .texture('mrqx_extra_pack:item/organs/storm_mace')
         .tag('itemborders:gold')
-        .tag('kubejs:damage');
+        .tag('kubejs:damage')
 
     // 梦魇之触
     registerOrgan(new Organ('mrqx_extra_pack:nightmare_tentacles')
@@ -1420,7 +1420,7 @@ StartupEvents.registry('item', event => {
         .build())
         .texture('mrqx_extra_pack:item/organs/nightmare_tentacles')
         .tag('itemborders:gold')
-        .tag('kubejs:bear');
+        .tag('kubejs:bear')
 
     // 激活·冰龙宝玉
     registerOrgan(new Organ('mrqx_extra_pack:active_ice_dragon_bead')
@@ -1435,7 +1435,7 @@ StartupEvents.registry('item', event => {
         .tag('kubejs:legends')
         .tag('kubejs:dragon')
         .tag('kubejs:mrqx_element_damage')
-        .tag('kubejs:damage_only');
+        .tag('kubejs:damage_only')
 
     // 激活·火龙宝玉
     registerOrgan(new Organ('mrqx_extra_pack:active_fire_dragon_bead')
@@ -1450,7 +1450,7 @@ StartupEvents.registry('item', event => {
         .tag('kubejs:legends')
         .tag('kubejs:dragon')
         .tag('kubejs:mrqx_element_damage')
-        .tag('kubejs:damage_only');
+        .tag('kubejs:damage_only')
 
     // 激活·电龙宝玉
     registerOrgan(new Organ('mrqx_extra_pack:active_lightning_dragon_bead')
@@ -1465,7 +1465,7 @@ StartupEvents.registry('item', event => {
         .tag('kubejs:legends')
         .tag('kubejs:dragon')
         .tag('kubejs:mrqx_element_damage')
-        .tag('kubejs:damage_only');
+        .tag('kubejs:damage_only')
 
     // 激活·末影龙宝玉
     registerOrgan(new Organ('mrqx_extra_pack:active_ender_dragon_bead')
@@ -1480,7 +1480,7 @@ StartupEvents.registry('item', event => {
         .tag('kubejs:legends')
         .tag('kubejs:dragon')
         .tag('kubejs:mrqx_element_damage')
-        .tag('kubejs:damage_only');
+        .tag('kubejs:damage_only')
 
     // 风暴之星碎片
     registerOrgan(new Organ('mrqx_extra_pack:withered_nether_star_shard')
@@ -1495,7 +1495,7 @@ StartupEvents.registry('item', event => {
         .tag('itemborders:diamond')
         .tag('kubejs:legends')
         .tag('kubejs:mrqx_element_damage')
-        .tag('kubejs:damage_only');
+        .tag('kubejs:damage_only')
 
     // 压缩饼干
     registerOrgan(new Organ('mrqx_extra_pack:compressed_biscuit')
@@ -1509,7 +1509,7 @@ StartupEvents.registry('item', event => {
         .food(food => { food.hunger(20).saturation(1) })
         .tag('itemborders:iron')
         .tag('kubejs:food')
-        .tag('kubejs:eat_effect');
+        .tag('kubejs:eat_effect')
 
     // 黄金压缩饼干
     registerOrgan(new Organ('mrqx_extra_pack:golden_compressed_biscuit')
@@ -1524,7 +1524,7 @@ StartupEvents.registry('item', event => {
         .tag('itemborders:gold')
         .tag('kubejs:food')
         .tag('kubejs:eat_effect')
-        .tag('kubejs:eat_effect_only');
+        .tag('kubejs:eat_effect_only')
 
     // 恶性肿瘤
     registerOrgan(new Organ('mrqx_extra_pack:malignant_tumor')
@@ -1542,7 +1542,7 @@ StartupEvents.registry('item', event => {
         })
         .tag('itemborders:gold')
         .tag('kubejs:player_tick')
-        .tag('kubejs:infected');
+        .tag('kubejs:infected')
 
     // 充能刀刃
     registerOrgan(new Organ('mrqx_extra_pack:charged_blade')
@@ -1554,7 +1554,7 @@ StartupEvents.registry('item', event => {
         .texture('mrqx_extra_pack:item/organs/charged_blade')
         .tag('itemborders:diamond')
         .tag('kubejs:damage_only')
-        .tag('kubejs:bear_only');
+        .tag('kubejs:bear_only')
 
     // 灵魂之翼
     registerOrgan(new Organ('mrqx_extra_pack:wing_of_soul')
@@ -1565,7 +1565,7 @@ StartupEvents.registry('item', event => {
         .build())
         .texture('mrqx_extra_pack:item/organs/wing_of_soul')
         .tag('itemborders:gold')
-        .tag('kubejs:active_only');
+        .tag('kubejs:active_only')
 
     // 永恒灵魂之翼
     registerOrgan(new Organ('mrqx_extra_pack:eternal_wing_of_soul')
@@ -1576,7 +1576,7 @@ StartupEvents.registry('item', event => {
         .build())
         .texture('mrqx_extra_pack:item/organs/eternal_wing_of_soul')
         .tag('itemborders:gold')
-        .tag('kubejs:active_only');
+        .tag('kubejs:active_only')
 
     // 指令施法核心
     registerOrgan(new Organ('mrqx_extra_pack:command_spell_core')
@@ -1586,7 +1586,7 @@ StartupEvents.registry('item', event => {
         .build())
         .texture('mrqx_extra_pack:item/organs/command_spell_core')
         .tag('itemborders:diamond')
-        .tag('kubejs:active_only');
+        .tag('kubejs:active_only')
 
     // 金酒之杯
     registerOrgan(new Organ('mrqx_extra_pack:golden_chalice')
@@ -1597,7 +1597,7 @@ StartupEvents.registry('item', event => {
         .build())
         .texture('mrqx_extra_pack:item/organs/golden_chalice')
         .tag('itemborders:gold')
-        .tag('kubejs:active_only');
+        .tag('kubejs:active_only')
 
     // 复激活药丸
     registerOrgan(new Organ('mrqx_extra_pack:re_active_pill')
@@ -1607,7 +1607,7 @@ StartupEvents.registry('item', event => {
         .build())
         .texture('mrqx_extra_pack:item/organs/re_active_pill')
         .tag('itemborders:diamond')
-        .tag('kubejs:active_only');
+        .tag('kubejs:active_only')
 
     // 天师仪
     registerOrgan(new Organ('mrqx_extra_pack:tianshi_yi')
@@ -1619,7 +1619,7 @@ StartupEvents.registry('item', event => {
         .texture('mrqx_extra_pack:item/organs/tianshi_yi')
         .tag('itemborders:diamond')
         .tag('kubejs:machine')
-        .tag('kubejs:player_tick_only');
+        .tag('kubejs:player_tick_only')
 
     // 长伸缩活塞臂
     registerOrgan(new Organ('mrqx_extra_pack:long_telescopic_piston_arm')
@@ -1630,7 +1630,7 @@ StartupEvents.registry('item', event => {
         .texture('mrqx_extra_pack:item/organs/long_telescopic_piston_arm')
         .tag('itemborders:diamond')
         .tag('kubejs:machine')
-        .tag('kubejs:active_only');
+        .tag('kubejs:active_only')
 
     // 长伸缩攻击臂
     registerOrgan(new Organ('mrqx_extra_pack:long_telescopic_attack_arm')
@@ -1641,7 +1641,7 @@ StartupEvents.registry('item', event => {
         .texture('mrqx_extra_pack:item/organs/long_telescopic_attack_arm')
         .tag('itemborders:diamond')
         .tag('kubejs:machine')
-        .tag('kubejs:active_only');
+        .tag('kubejs:active_only')
 
     // ‌巧克力铸币机
     registerOrgan(new Organ('mrqx_extra_pack:chocolate_coinage_machine')
@@ -1652,7 +1652,7 @@ StartupEvents.registry('item', event => {
         .texture('mrqx_extra_pack:item/organs/chocolate_coinage_machine')
         .tag('itemborders:iron')
         .tag('kubejs:machine')
-        .tag('kubejs:key_pressed');
+        .tag('kubejs:key_pressed')
 
     // ‌“记录者”
     registerOrgan(new Organ('mrqx_extra_pack:recorder')
@@ -1664,7 +1664,7 @@ StartupEvents.registry('item', event => {
         .tag('itemborders:diamond')
         .tag('kubejs:legends')
         .tag('kubejs:damage_only')
-        .tag('kubejs:loot_entity_only');
+        .tag('kubejs:loot_entity_only')
 
     // ‌复激活药丸·温和化
     registerOrgan(new Organ('mrqx_extra_pack:re_active_pill_moderation')
@@ -1674,7 +1674,7 @@ StartupEvents.registry('item', event => {
         .build())
         .texture('mrqx_extra_pack:item/organs/re_active_pill_moderation')
         .tag('itemborders:diamond')
-        .tag('kubejs:active_only');
+        .tag('kubejs:active_only')
 
     // 扭曲变电箱
     // 由于本体漏洞，本器官延后实现
@@ -1697,7 +1697,7 @@ StartupEvents.registry('item', event => {
         .build())
         .texture('mrqx_extra_pack:item/organs/automatic_wax_protector')
         .tag('itemborders:diamond')
-        .tag('kubejs:active_only');
+        .tag('kubejs:active_only')
 
     // 墨染
     registerOrgan(new Organ('mrqx_extra_pack:mrqx0195')
@@ -1721,7 +1721,7 @@ StartupEvents.registry('item', event => {
         .tag('kubejs:bear_only')
         .tag('kubejs:loot_entity_only')
         .tag('kubejs:loot_chest_only')
-        .tag('kubejs:active_only');
+        .tag('kubejs:active_only')
 
     // 世界框架
     registerOrgan(new Organ('mrqx_extra_pack:framework_of_world')
@@ -1733,7 +1733,7 @@ StartupEvents.registry('item', event => {
         .tag('itemborders:diamond')
         .tag('kubejs:player_tick_only')
         .tag('kubejs:bear_only')
-        .tag('kubejs:active_only');
+        .tag('kubejs:active_only')
 
     // 能量核心
     registerOrgan(new Organ('mrqx_extra_pack:energy_core')
@@ -1744,7 +1744,7 @@ StartupEvents.registry('item', event => {
         .tag('itemborders:diamond')
         .tag('kubejs:legends')
         .tag('kubejs:resource')
-        .tag('kubejs:active_only');
+        .tag('kubejs:active_only')
 
     // 远古巫妖之心
     registerOrgan(new Organ('mrqx_extra_pack:ancient_lich_heart')
@@ -1763,7 +1763,7 @@ StartupEvents.registry('item', event => {
         .tag('kubejs:damage_only')
         .tag('kubejs:player_tick_only')
         .tag('kubejs:mrqx_change_target_only')
-        .tag('kubejs:mrqx_obtain_effect_only');
+        .tag('kubejs:mrqx_obtain_effect_only')
 
     {// 装备
         {// 奥秘
@@ -1884,7 +1884,7 @@ StartupEvents.registry('item', event => {
             .maxStackSize(1)
             .useAnimation('bow')
             .use((level, player, hand) => {
-                return true;
+                return true
             })
             .useDuration(itemStack => 20)
             .finishUsing((itemstack, level, entity) => {
@@ -1898,7 +1898,7 @@ StartupEvents.registry('item', event => {
                     entity.tell([LEADING_SYMBOL, Text.yellow(global.SCORE_MAP[key]).hover(global.SCORE_HOVER_MAP[key]), Text.white(' : '), Text.white(value)])
                 })
                 entity.addItemCooldown(itemstack, 20 * 15)
-                return itemstack;
+                return itemstack
             })
 
         // 肿瘤诱变剂
@@ -1906,7 +1906,7 @@ StartupEvents.registry('item', event => {
             .maxStackSize(64)
             .useAnimation('drink')
             .use((level, player, hand) => {
-                return true;
+                return true
             })
             .useDuration(itemStack => 20)
             .food(food => {
@@ -1921,7 +1921,7 @@ StartupEvents.registry('item', event => {
             .maxStackSize(64)
             .useAnimation('drink')
             .use((level, player, hand) => {
-                return true;
+                return true
             })
             .useDuration(itemStack => 20)
             .food(food => {

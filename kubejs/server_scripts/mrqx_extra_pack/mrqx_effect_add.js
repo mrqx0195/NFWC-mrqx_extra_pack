@@ -4,9 +4,9 @@
  * @returns 
  */
 global.mrqxEffectAddedEvent = event => {
-    let player = event.entity;
-    if (!player && !player.isPlayer()) return;
-    let typeMap = getPlayerChestCavityTypeMap(player);
+    let player = event.entity
+    if (!player && !player.isPlayer()) return
+    let typeMap = getPlayerChestCavityTypeMap(player)
     let onlySet = new Set()
     if (typeMap.has('kubejs:mrqx_obtain_effect_only')) {
         typeMap.get('kubejs:mrqx_obtain_effect_only').forEach(organ => {

@@ -9,7 +9,7 @@ const mrqxOrganBlockBrokenStrategies = {
 
 }
 
-var assign_organ_block_broken = Object.assign(organBlockBrokenStrategies, mrqxOrganBlockBrokenStrategies);
+var assign_organ_block_broken = Object.assign(organBlockBrokenStrategies, mrqxOrganBlockBrokenStrategies)
 
 /**
  * 器官方块破坏唯一策略
@@ -31,11 +31,11 @@ const mrqxOrganBlockBrokenOnlyStrategies = {
             event.block.set('minecraft:air')
             event.cancel()
             if (player.persistentData.contains(resourceCount)) {
-                count = player.persistentData.getInt(resourceCount) + count;
+                count = player.persistentData.getInt(resourceCount) + count
             }
             updateResourceCount(player, count)
         }
     },
 }
 
-var assign_organ_block_broken_only = Object.assign(organBlockBrokenOnlyStrategies, mrqxOrganBlockBrokenOnlyStrategies);
+var assign_organ_block_broken_only = Object.assign(organBlockBrokenOnlyStrategies, mrqxOrganBlockBrokenOnlyStrategies)

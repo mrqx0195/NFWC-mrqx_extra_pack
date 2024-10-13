@@ -526,12 +526,15 @@ global.mrqxInfinityForceContainerTick = (item, ctx) => {
     if (forces.length != 0) {
         if (item.nbt.getLong('mrqxInfinityForceContainerCount')) {
             let count = item.nbt.getLong('mrqxInfinityForceContainerCount')
-            let power = 0
-            while (Math.pow(2, power + 1) <= count) {
-                power++
+            while (count > 0) {
+                let power = 0
+                while (Math.pow(2, power + 1) <= count) {
+                    power++
+                }
+                count -= 2 ** power
+                countList.putByte(power, countList.getByte(power) ?? 0 + 1)
+                countList.putByte('max', Math.max(countList.getByte('max') ?? 0, power))
             }
-            countList.putByte(power, countList.getByte(power) ?? 0 + 1)
-            countList.putByte('max', Math.max(countList.getByte('max') ?? 0, power))
         }
         forces.forEach(force => {
             if (force.getNbt() && force.nbt?.forgeTimes) {

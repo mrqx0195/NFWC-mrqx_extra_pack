@@ -142,7 +142,7 @@ const mrqxChampionPlayerDamageStrategies = {
     },
 }
 
-var champion_player_damage = Object.assign(championPlayerDamageStrategies, mrqxChampionPlayerDamageStrategies);
+var champion_player_damage = Object.assign(championPlayerDamageStrategies, mrqxChampionPlayerDamageStrategies)
 
 /**
  * 精英怪造成伤害处理策略
@@ -170,7 +170,7 @@ const mrqxChampionPlayerBearStrategies = {
     },
 }
 
-var champion_player_bear = Object.assign(championPlayerBearStrategies, mrqxChampionPlayerBearStrategies);
+var champion_player_bear = Object.assign(championPlayerBearStrategies, mrqxChampionPlayerBearStrategies)
 
 EntityEvents.spawned(event => {
     /*** @type {Internal.LivingEntity}*/
@@ -190,7 +190,7 @@ EntityEvents.spawned(event => {
                 typeNameList.push(Text.gray('·'))
             }
         })
-    });
+    })
     typeNameList.push(Text.gray('精英'))
     entity.setCustomName(typeNameList)
     entity.setCustomNameVisible(true)

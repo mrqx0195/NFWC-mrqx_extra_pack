@@ -11,7 +11,7 @@ const mrqxOrganPlayerDamageStrategies = {
 		let player = event.source.player
 		let flag = false
 		let pos = organ.Slot
-		let posMap = getPlayerChestCavityPosMap(event.source.player);
+		let posMap = getPlayerChestCavityPosMap(event.source.player)
 		fourDirectionList.forEach(direction => {
 			let currentPos = lookPos(direction, pos)
 			if (posMap.has(currentPos) && posMap.get(currentPos).id == 'mrqx_extra_pack:reactor_chamber') {
@@ -118,7 +118,7 @@ const mrqxOrganPlayerDamageStrategies = {
 	},
 }
 
-var assign_organ_player_damage = Object.assign(organPlayerDamageStrategies, mrqxOrganPlayerDamageStrategies);
+var assign_organ_player_damage = Object.assign(organPlayerDamageStrategies, mrqxOrganPlayerDamageStrategies)
 
 /**
  * 造成伤害唯一处理策略
@@ -539,4 +539,4 @@ const mrqxOrganPlayerDamageOnlyStrategies = {
 	},
 }
 
-var assign_organ_player_damage_only = Object.assign(organPlayerDamageOnlyStrategies, mrqxOrganPlayerDamageOnlyStrategies);
+var assign_organ_player_damage_only = Object.assign(organPlayerDamageOnlyStrategies, mrqxOrganPlayerDamageOnlyStrategies)

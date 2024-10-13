@@ -16,14 +16,26 @@ function CookingRecipe(container, ingredients, output) {
 }
 
 CookingRecipe.prototype = {
+    /**
+     * @param {string} recipeBookTab
+     * @returns {CookingRecipe}
+     */
     setRecipeBookTab: function (recipeBookTab) {
         this.recipe_book_tab = recipeBookTab
         return this
     },
+    /**
+     * @param {Number} cookingtime
+     * @returns {CookingRecipe}
+     */
     setCookingtime: function (cookingtime) {
         this.cookingtime = cookingtime
         return this
     },
+    /**
+     * @param {Number} experience
+     * @returns {CookingRecipe}
+     */
     setExperience: function (experience) {
         this.experience = experience
         return this
@@ -43,6 +55,10 @@ function MixingBowlRecipe(usedItem, ingredients, output) {
 }
 
 MixingBowlRecipe.prototype = {
+    /**
+     * @param {Number} stirs
+     * @returns {MixingBowlRecipe}
+     */
     setStirs: function (stirs) {
         this.stirs = stirs
         return this
@@ -206,49 +222,22 @@ DigestingRecipe.prototype = {
     },
 }
 
-// Ingredient.registerCustomIngredientAction('mrqx_extra_pack:infinity_force_container_recipe_action', (/**@type {Internal.ItemStack} */itemstack, index, inventory) => {
-//     let itemstack1 = itemstack.copy()
-//     if (itemstack1.getNbt() && itemstack1.nbt.getLong('mrqxInfinityForceContainerCount')) {
-//         let count = itemstack1.nbt.getLong('mrqxInfinityForceContainerCount')
-//         let power = 0
-//         while (Math.pow(2, power + 1) <= count) {
-//             power++
-//         }
-//         itemstack1.nbt.putLong('mrqxInfinityForceContainerCount', count - (2 ** power))
-//         return itemstack1
-//     }
-// })
-
-// Ingredient.registerCustomIngredientAction('mrqx_extra_pack:fallen_paradise_container_recipe_action', (/**@type {Internal.ItemStack} */itemstack, index, inventory) => {
-//     let itemstack1 = itemstack.copy()
-//     if (itemstack1.getNbt() && itemstack1.nbt.getLong('mrqxInfinityForceContainerCount')) {
-//         let count = itemstack1.nbt.getLong('mrqxInfinityForceContainerCount')
-//         let power = 0
-//         while (Math.pow(2, power + 1) <= count) {
-//             power++
-//         }
-//         itemstack1 = Item.of('mrqx_extra_pack:infinity_force_container')
-//         itemstack1.nbt.putLong('mrqxInfinityForceContainerCount', count - (2 ** power))
-//         return itemstack1
-//     }
-// })
-
 ServerEvents.recipes(event => {
     function registerCustomRecipe(recipeModel) {
         event.custom(recipeModel)
     }
     // 纸器官
-    event.recipes.create.mechanical_crafting('mrqx_extra_pack:appendix_paper', [' PPP ', ' PPP ', '  PP ', '  PP ', '  PPP'], { P: 'minecraft:paper' });
-    event.recipes.create.mechanical_crafting('mrqx_extra_pack:heart_paper', [' PPP ', 'PPPPP', 'PPPPP', 'PPPP ', ' PPP '], { P: 'minecraft:paper' });
-    event.recipes.create.mechanical_crafting('mrqx_extra_pack:intestine_paper', ['P PPP', 'PPPPP', 'PPPPP', 'PPP  ', 'PPPP '], { P: 'minecraft:paper' });
-    event.recipes.create.mechanical_crafting('mrqx_extra_pack:kidney_paper', [' PP  ', 'PPPP ', ' PPP ', 'PPPP ', ' PP  '], { P: 'minecraft:paper' });
-    event.recipes.create.mechanical_crafting('mrqx_extra_pack:liver_paper', [' PPPP', 'PPPPP', 'PPPP ', 'PPP  ', '     '], { P: 'minecraft:paper' });
-    event.recipes.create.mechanical_crafting('mrqx_extra_pack:lung_paper', ['  PP ', ' PPP ', ' PPP ', ' PPP ', ' PPP '], { P: 'minecraft:paper' });
-    event.recipes.create.mechanical_crafting('mrqx_extra_pack:muscle_paper', ['  PPP', ' PPPP', 'PPPPP', 'PPPPP', 'PPPP '], { P: 'minecraft:paper' });
-    event.recipes.create.mechanical_crafting('mrqx_extra_pack:rib_paper', ['     ', 'PPPP ', 'PPPPP', 'P   P', '     '], { P: 'minecraft:paper' });
-    event.recipes.create.mechanical_crafting('mrqx_extra_pack:spine_paper', ['   PP', '  PPP', ' PPPP', 'PPPP ', 'PPP  '], { P: 'minecraft:paper' });
-    event.recipes.create.mechanical_crafting('mrqx_extra_pack:spleen_paper', [' PPP ', 'PPPPP', ' PPPP', 'PPPPP', ' PPP '], { P: 'minecraft:paper' });
-    event.recipes.create.mechanical_crafting('mrqx_extra_pack:stomach_paper', [' PPP ', '  PPP', 'P PPP', 'PPPPP', ' PPP '], { P: 'minecraft:paper' });
+    event.recipes.create.mechanical_crafting('mrqx_extra_pack:appendix_paper', [' PPP ', ' PPP ', '  PP ', '  PP ', '  PPP'], { P: 'minecraft:paper' })
+    event.recipes.create.mechanical_crafting('mrqx_extra_pack:heart_paper', [' PPP ', 'PPPPP', 'PPPPP', 'PPPP ', ' PPP '], { P: 'minecraft:paper' })
+    event.recipes.create.mechanical_crafting('mrqx_extra_pack:intestine_paper', ['P PPP', 'PPPPP', 'PPPPP', 'PPP  ', 'PPPP '], { P: 'minecraft:paper' })
+    event.recipes.create.mechanical_crafting('mrqx_extra_pack:kidney_paper', [' PP  ', 'PPPP ', ' PPP ', 'PPPP ', ' PP  '], { P: 'minecraft:paper' })
+    event.recipes.create.mechanical_crafting('mrqx_extra_pack:liver_paper', [' PPPP', 'PPPPP', 'PPPP ', 'PPP  ', '     '], { P: 'minecraft:paper' })
+    event.recipes.create.mechanical_crafting('mrqx_extra_pack:lung_paper', ['  PP ', ' PPP ', ' PPP ', ' PPP ', ' PPP '], { P: 'minecraft:paper' })
+    event.recipes.create.mechanical_crafting('mrqx_extra_pack:muscle_paper', ['  PPP', ' PPPP', 'PPPPP', 'PPPPP', 'PPPP '], { P: 'minecraft:paper' })
+    event.recipes.create.mechanical_crafting('mrqx_extra_pack:rib_paper', ['     ', 'PPPP ', 'PPPPP', 'P   P', '     '], { P: 'minecraft:paper' })
+    event.recipes.create.mechanical_crafting('mrqx_extra_pack:spine_paper', ['   PP', '  PPP', ' PPPP', 'PPPP ', 'PPP  '], { P: 'minecraft:paper' })
+    event.recipes.create.mechanical_crafting('mrqx_extra_pack:spleen_paper', [' PPP ', 'PPPPP', ' PPPP', 'PPPPP', ' PPP '], { P: 'minecraft:paper' })
+    event.recipes.create.mechanical_crafting('mrqx_extra_pack:stomach_paper', [' PPP ', '  PPP', 'P PPP', 'PPPPP', ' PPP '], { P: 'minecraft:paper' })
 
     // 神之笔
     event.recipes.summoningrituals
@@ -268,7 +257,7 @@ ServerEvents.recipes(event => {
         .input('16x iceandfire:amphithere_feather')
         .input('16x iceandfire:stymphalian_bird_feather')
         .itemOutput('mrqx_extra_pack:divine_pen')
-        .recipeTime(500);
+        .recipeTime(500)
 
     // 迷你末地水晶
     event.recipes.summoningrituals
@@ -278,7 +267,7 @@ ServerEvents.recipes(event => {
         .itemOutput('mrqx_extra_pack:mini_end_crystal')
         .sacrifice('minecraft:end_crystal', 1)
         .sacrificeRegion(3, 3)
-        .recipeTime(500);
+        .recipeTime(500)
 
     // 反应舱室
     event.recipes.create.mechanical_crafting('mrqx_extra_pack:reactor_chamber', [
@@ -291,7 +280,7 @@ ServerEvents.recipes(event => {
         S: 'create:sturdy_sheet',
         E: 'create:electron_tube',
         P: 'create:precision_mechanism'
-    });
+    })
 
     // 裂变反应堆
     event.recipes.create.sequenced_assembly([
@@ -303,7 +292,7 @@ ServerEvents.recipes(event => {
         event.recipes.create.deploying('mrqx_extra_pack:incomplete_fission_reactor', ['mrqx_extra_pack:incomplete_fission_reactor', 'create:sturdy_sheet']),
         event.recipes.create.deploying('mrqx_extra_pack:incomplete_fission_reactor', ['mrqx_extra_pack:incomplete_fission_reactor', 'create:content_observer']),
         event.recipes.create.deploying('mrqx_extra_pack:incomplete_fission_reactor', ['mrqx_extra_pack:incomplete_fission_reactor', 'create:sequenced_gearshift']),
-    ]).transitionalItem('mrqx_extra_pack:incomplete_fission_reactor').loops(3);
+    ]).transitionalItem('mrqx_extra_pack:incomplete_fission_reactor').loops(3)
 
     // 反应散热器
     event.recipes.kubejs.shaped(Item.of('mrqx_extra_pack:heat_vent', 1), [
@@ -317,7 +306,7 @@ ServerEvents.recipes(event => {
             E: 'create:electron_tube',
             M: 'create:precision_mechanism',
             P: 'create:propeller'
-        });
+        })
 
     // 反应热隔层
     event.recipes.kubejs.shaped(Item.of('mrqx_extra_pack:thermal_barrier', 1), [
@@ -329,7 +318,7 @@ ServerEvents.recipes(event => {
             E: 'mrqx_extra_pack:reactor_chamber',
             S: 'create:sturdy_sheet',
             W: '#minecraft:wool'
-        });
+        })
 
     // 反应热喷口
     event.recipes.kubejs.shaped(Item.of('mrqx_extra_pack:thermal_injector', 1), [
@@ -342,7 +331,7 @@ ServerEvents.recipes(event => {
             S: 'create:sturdy_sheet',
             M: 'create:precision_mechanism',
             F: 'create:encased_fan'
-        });
+        })
 
     // 黄金天秤
     event.recipes.kubejs.shaped(Item.of('mrqx_extra_pack:golden_libra', 1), [
@@ -356,7 +345,7 @@ ServerEvents.recipes(event => {
             R: 'createaddition:gold_rod',
             G: 'minecraft:gold_ingot',
             T: 'minecraft:totem_of_undying'
-        });
+        })
 
     // 冒险者证章
     event.recipes.kubejs.shaped(Item.of('mrqx_extra_pack:adventurers_badge', 1), [
@@ -368,7 +357,7 @@ ServerEvents.recipes(event => {
             A: 'wares:completed_delivery_agreement',
             M: 'kubejs:mysterious_trinket',
             C: 'lightmanscurrency:coin_diamond'
-        });
+        })
 
     // 粗铀
     event.recipes.createoreexcavation
@@ -376,14 +365,14 @@ ServerEvents.recipes(event => {
         .alwaysInfinite()
         .stress(1024)
         .biomeWhitelist('minecraft:is_overworld')
-        .id('kubejs:drilling_raw_uranium');
+        .id('kubejs:drilling_raw_uranium')
 
     // 铀
     event.recipes.createMixing('mrqx_extra_pack:uranium', [
         'create:powdered_obsidian',
         'createaddition:diamond_grit',
         'mrqx_extra_pack:raw_uranium'
-    ]).superheated();
+    ]).superheated()
 
     // 反应燃料
     event.recipes.create.sequenced_assembly([
@@ -395,7 +384,7 @@ ServerEvents.recipes(event => {
         event.recipes.create.deploying('mrqx_extra_pack:incomplete_nuclear_fuel', ['mrqx_extra_pack:incomplete_nuclear_fuel', 'mrqx_extra_pack:uranium']),
         event.recipes.create.deploying('mrqx_extra_pack:incomplete_nuclear_fuel', ['mrqx_extra_pack:incomplete_nuclear_fuel', 'create:iron_sheet']),
         event.recipes.create.pressing('mrqx_extra_pack:incomplete_nuclear_fuel', 'mrqx_extra_pack:incomplete_nuclear_fuel'),
-    ]).transitionalItem('mrqx_extra_pack:incomplete_nuclear_fuel').loops(3);
+    ]).transitionalItem('mrqx_extra_pack:incomplete_nuclear_fuel').loops(3)
 
     // 荣耀之魂
     event.recipes.summoningrituals
@@ -406,7 +395,7 @@ ServerEvents.recipes(event => {
         .input('art_of_forging:dragon_soul')
         .input('bosses_of_mass_destruction:ancient_anima')
         .itemOutput('mrqx_extra_pack:proud_soul')
-        .recipeTime(500);
+        .recipeTime(500)
 
     // 死狱之魂
     event.recipes.summoningrituals
@@ -417,7 +406,7 @@ ServerEvents.recipes(event => {
         .input('hexerei:blood_bottle')
         .input('#iceandfire:dragon_bloods')
         .itemOutput('mrqx_extra_pack:prison_soul')
-        .recipeTime(500);
+        .recipeTime(500)
 
     // 山月之魂
     event.recipes.summoningrituals
@@ -429,7 +418,7 @@ ServerEvents.recipes(event => {
         .input('nameless_trinkets:moon_stone')
         .dayTime('night')
         .itemOutput('mrqx_extra_pack:moon_soul')
-        .recipeTime(500);
+        .recipeTime(500)
 
     // 散发着光亮的种子
     event.recipes.summoningrituals
@@ -440,7 +429,7 @@ ServerEvents.recipes(event => {
         .input('4x minecraft:lantern')
         .dayTime('day')
         .itemOutput('mrqx_extra_pack:shining_seed')
-        .recipeTime(500);
+        .recipeTime(500)
 
     // 耀阳种子
     event.recipes.summoningrituals
@@ -452,7 +441,7 @@ ServerEvents.recipes(event => {
         .input('4x minecraft:heart_of_the_sea')
         .dayTime('day')
         .itemOutput('mrqx_extra_pack:sun_seed')
-        .recipeTime(1000);
+        .recipeTime(1000)
 
     // 暗日种子
     registerCustomRecipe(new GoetyRitualRecipe('lich', [
@@ -510,7 +499,7 @@ ServerEvents.recipes(event => {
             I: 'create:iron_sheet',
             G: 'minecraft:tinted_glass',
             R: 'minecraft:redstone'
-        });
+        })
 
     // 风暴重锤
     registerCustomRecipe(new GoetyRitualRecipe('storm', [
@@ -560,7 +549,7 @@ ServerEvents.recipes(event => {
         .input('16x iceandfire:frost_lily')
         .input('4x irons_spellbooks:ice_upgrade_orb')
         .itemOutput('mrqx_extra_pack:active_ice_dragon_bead')
-        .recipeTime(500);
+        .recipeTime(500)
 
     // 激活·火龙宝玉
     event.recipes.summoningrituals
@@ -572,7 +561,7 @@ ServerEvents.recipes(event => {
         .input('16x iceandfire:fire_lily')
         .input('4x irons_spellbooks:fire_upgrade_orb')
         .itemOutput('mrqx_extra_pack:active_fire_dragon_bead')
-        .recipeTime(500);
+        .recipeTime(500)
 
     // 激活·电龙宝玉
     event.recipes.summoningrituals
@@ -584,7 +573,7 @@ ServerEvents.recipes(event => {
         .input('16x iceandfire:lightning_lily')
         .input('4x irons_spellbooks:lightning_upgrade_orb')
         .itemOutput('mrqx_extra_pack:active_lightning_dragon_bead')
-        .recipeTime(500);
+        .recipeTime(500)
 
     // 激活·末影龙宝玉 
     event.recipes.summoningrituals
@@ -596,7 +585,7 @@ ServerEvents.recipes(event => {
         .input('16x minecraft:dragon_breath')
         .input('4x irons_spellbooks:ice_upgrade_orb')
         .itemOutput('mrqx_extra_pack:active_ender_dragon_bead')
-        .recipeTime(500);
+        .recipeTime(500)
 
     // 风暴之星碎片
     event.recipes.create.crushing([
@@ -616,7 +605,7 @@ ServerEvents.recipes(event => {
         .input('kubejs:nether_star_shard')
         .input('mrqx_extra_pack:storm_metal_ingot')
         .itemOutput('witherstormmod:withered_nether_star')
-        .recipeTime(500);
+        .recipeTime(500)
 
     // 风暴金属锭
     event.recipes.create.sequenced_assembly([
@@ -673,7 +662,7 @@ ServerEvents.recipes(event => {
         .input('cataclysm:abyssal_egg')
         .input('kubejs:secret_of_rain')
         .itemOutput(Item.of('gateways:gate_pearl', '{gateway: "mrqx_extra_pack:shadow_of_caerula_arbor"}'))
-        .recipeTime(500);
+        .recipeTime(500)
 
     // 充能刀刃
     registerCustomRecipe(new CreateAdditionCharging({ 'count': 1, 'item': 'art_of_forging:ancient_blade' }, { 'count': 1, 'item': 'mrqx_extra_pack:charged_blade' }).setEnergy(100000))
@@ -688,131 +677,131 @@ ServerEvents.recipes(event => {
         Ingredient.of('#kubejs:candy_focus'),
     ])
         .modifyResult((grid, result_) => {
-            let result = grid.find(Item.of("mrqx_extra_pack:advanced_eyeglass"));
+            let result = grid.find(Item.of("mrqx_extra_pack:advanced_eyeglass"))
             if (!result.getNbt()) {
                 result.setNbt({})
             }
             result.getNbt().putBoolean('mrqxAAEGSweetDream', true)
             return result
         })
-        .id('mrqx_advanced_eyeglass_sweet_dream_manual_only');
+        .id('mrqx_advanced_eyeglass_sweet_dream_manual_only')
     event.recipes.kubejs.shapeless(Item.of('mrqx_extra_pack:advanced_eyeglass', '{mrqxAAEGElement:1b}'), [
         'mrqx_extra_pack:advanced_eyeglass',
         Ingredient.of('#kubejs:mrqx_element_damage'),
     ])
         .modifyResult((grid, result_) => {
-            let result = grid.find(Item.of("mrqx_extra_pack:advanced_eyeglass"));
+            let result = grid.find(Item.of("mrqx_extra_pack:advanced_eyeglass"))
             if (!result.getNbt()) {
                 result.setNbt({})
             }
             result.getNbt().putBoolean('mrqxAAEGElement', true)
             return result
         })
-        .id('mrqx_advanced_eyeglass_01_manual_only');
+        .id('mrqx_advanced_eyeglass_01_manual_only')
     event.recipes.kubejs.shapeless(Item.of('mrqx_extra_pack:advanced_eyeglass', '{mrqxAAEGDragonPower:1b}'), [
         'mrqx_extra_pack:advanced_eyeglass',
         Ingredient.of('#kubejs:dragon'),
     ])
         .modifyResult((grid, result_) => {
-            let result = grid.find(Item.of("mrqx_extra_pack:advanced_eyeglass"));
+            let result = grid.find(Item.of("mrqx_extra_pack:advanced_eyeglass"))
             if (!result.getNbt()) {
                 result.setNbt({})
             }
             result.getNbt().putBoolean('mrqxAAEGDragonPower', true)
             return result
         })
-        .id('mrqx_advanced_eyeglass_02_manual_only');
+        .id('mrqx_advanced_eyeglass_02_manual_only')
     event.recipes.kubejs.shapeless(Item.of('mrqx_extra_pack:advanced_eyeglass', '{mrqxAAEGInfinityBeats:1b}'), [
         'mrqx_extra_pack:advanced_eyeglass',
         'kubejs:infinity_beats',
     ])
         .modifyResult((grid, result_) => {
-            let result = grid.find(Item.of("mrqx_extra_pack:advanced_eyeglass"));
+            let result = grid.find(Item.of("mrqx_extra_pack:advanced_eyeglass"))
             if (!result.getNbt()) {
                 result.setNbt({})
             }
             result.getNbt().putBoolean('mrqxAAEGInfinityBeats', true)
             return result
         })
-        .id('mrqx_advanced_eyeglass_infinity_beats_manual_only');
+        .id('mrqx_advanced_eyeglass_infinity_beats_manual_only')
     event.recipes.kubejs.shapeless(Item.of('mrqx_extra_pack:advanced_eyeglass', '{mrqxAAEGNuclear:1b}'), [
         'mrqx_extra_pack:advanced_eyeglass',
         Ingredient.of('#kubejs:mrqx_nuclear'),
     ])
         .modifyResult((grid, result_) => {
-            let result = grid.find(Item.of("mrqx_extra_pack:advanced_eyeglass"));
+            let result = grid.find(Item.of("mrqx_extra_pack:advanced_eyeglass"))
             if (!result.getNbt()) {
                 result.setNbt({})
             }
             result.getNbt().putBoolean('mrqxAAEGNuclear', true)
             return result
         })
-        .id('mrqx_advanced_eyeglass_11_manual_only');
+        .id('mrqx_advanced_eyeglass_11_manual_only')
     event.recipes.kubejs.shapeless(Item.of('mrqx_extra_pack:advanced_eyeglass', '{mrqxAAEGSteam:1b}'), [
         'mrqx_extra_pack:advanced_eyeglass',
         Ingredient.of('#kubejs:mrqx_steam'),
     ])
         .modifyResult((grid, result_) => {
-            let result = grid.find(Item.of("mrqx_extra_pack:advanced_eyeglass"));
+            let result = grid.find(Item.of("mrqx_extra_pack:advanced_eyeglass"))
             if (!result.getNbt()) {
                 result.setNbt({})
             }
             result.getNbt().putBoolean('mrqxAAEGSteam', true)
             return result
         })
-        .id('mrqx_advanced_eyeglass_12_manual_only');
+        .id('mrqx_advanced_eyeglass_12_manual_only')
     event.recipes.kubejs.shapeless(Item.of('mrqx_extra_pack:advanced_eyeglass', '{mrqxAAEGBurningAndFlaringHeart:1b}'), [
         'mrqx_extra_pack:advanced_eyeglass',
         Ingredient.of('#kubejs:machine'),
     ])
         .modifyResult((grid, result_) => {
-            let result = grid.find(Item.of("mrqx_extra_pack:advanced_eyeglass"));
+            let result = grid.find(Item.of("mrqx_extra_pack:advanced_eyeglass"))
             if (!result.getNbt()) {
                 result.setNbt({})
             }
             result.getNbt().putBoolean('mrqxAAEGBurningAndFlaringHeart', true)
             return result
         })
-        .id('mrqx_advanced_eyeglass_13_manual_only');
+        .id('mrqx_advanced_eyeglass_13_manual_only')
     event.recipes.kubejs.shapeless(Item.of('mrqx_extra_pack:advanced_eyeglass', '{mrqxAAEGPrisonSoul:1b}'), [
         'mrqx_extra_pack:advanced_eyeglass',
         'mrqx_extra_pack:prison_soul',
     ])
         .modifyResult((grid, result_) => {
-            let result = grid.find(Item.of("mrqx_extra_pack:advanced_eyeglass"));
+            let result = grid.find(Item.of("mrqx_extra_pack:advanced_eyeglass"))
             if (!result.getNbt()) {
                 result.setNbt({})
             }
             result.getNbt().putBoolean('mrqxAAEGPrisonSoul', true)
             return result
         })
-        .id('mrqx_advanced_eyeglass_prison_soul_manual_only');
+        .id('mrqx_advanced_eyeglass_prison_soul_manual_only')
     event.recipes.kubejs.shapeless(Item.of('mrqx_extra_pack:advanced_eyeglass', '{mrqxAAEGMoonSoul:1b}'), [
         'mrqx_extra_pack:advanced_eyeglass',
         'mrqx_extra_pack:moon_soul',
     ])
         .modifyResult((grid, result_) => {
-            let result = grid.find(Item.of("mrqx_extra_pack:advanced_eyeglass"));
+            let result = grid.find(Item.of("mrqx_extra_pack:advanced_eyeglass"))
             if (!result.getNbt()) {
                 result.setNbt({})
             }
             result.getNbt().putBoolean('mrqxAAEGMoonSoul', true)
             return result
         })
-        .id('mrqx_advanced_eyeglass_moon_soul_manual_only');
+        .id('mrqx_advanced_eyeglass_moon_soul_manual_only')
     event.recipes.kubejs.shapeless(Item.of('mrqx_extra_pack:advanced_eyeglass', '{mrqxAAEGMarenol:1b}'), [
         'mrqx_extra_pack:advanced_eyeglass',
         'mrqx_extra_pack:marenol',
     ])
         .modifyResult((grid, result_) => {
-            let result = grid.find(Item.of("mrqx_extra_pack:advanced_eyeglass"));
+            let result = grid.find(Item.of("mrqx_extra_pack:advanced_eyeglass"))
             if (!result.getNbt()) {
                 result.setNbt({})
             }
             result.getNbt().putBoolean('mrqxAAEGMarenol', true)
             return result
         })
-        .id('mrqx_advanced_eyeglass_marenol_manual_only');
+        .id('mrqx_advanced_eyeglass_marenol_manual_only')
 
     // 灵魂之翼
     registerCustomRecipe(new GoetyRitualRecipe('sky', [
@@ -840,7 +829,7 @@ ServerEvents.recipes(event => {
         event.recipes.create.deploying('mrqx_extra_pack:incomplete_command_spell_core', ['mrqx_extra_pack:incomplete_command_spell_core', 'tetra:planar_stabilizer']),
         event.recipes.create.deploying('mrqx_extra_pack:incomplete_command_spell_core', ['mrqx_extra_pack:incomplete_command_spell_core', 'tetra:chthonic_extractor']),
         event.recipes.create.pressing('mrqx_extra_pack:incomplete_command_spell_core', 'mrqx_extra_pack:incomplete_command_spell_core'),
-    ]).transitionalItem('mrqx_extra_pack:incomplete_command_spell_core').loops(1);
+    ]).transitionalItem('mrqx_extra_pack:incomplete_command_spell_core').loops(1)
 
     // 金酒之杯
     event.recipes.kubejs.shaped(Item.of('mrqx_extra_pack:golden_chalice', 1), [
@@ -852,7 +841,7 @@ ServerEvents.recipes(event => {
             C: 'lightmanscurrency:coinblock_gold',
             G: 'kubejs:unholy_grail',
             B: 'minecraft:gold_block'
-        });
+        })
 
     event.recipes.kubejs.shapeless(Item.of('mrqx_extra_pack:golden_chalice'), [
         'mrqx_extra_pack:golden_chalice',
@@ -864,7 +853,7 @@ ServerEvents.recipes(event => {
             result = Item.of('mrqx_extra_pack:golden_chalice', { mrqxGoldenChaliceMoney: mrqxGoldenChaliceMoney + 1 })
             return result
         })
-        .id('mrqx_golden_chalice_coin_manual_only');
+        .id('mrqx_golden_chalice_coin_manual_only')
 
     event.recipes.kubejs.shapeless(Item.of('mrqx_extra_pack:golden_chalice'), [
         'mrqx_extra_pack:golden_chalice',
@@ -876,7 +865,7 @@ ServerEvents.recipes(event => {
             result = Item.of('mrqx_extra_pack:golden_chalice', { mrqxGoldenChaliceMoney: mrqxGoldenChaliceMoney + 9 })
             return result
         })
-        .id('mrqx_golden_chalice_coinpile_manual_only');
+        .id('mrqx_golden_chalice_coinpile_manual_only')
 
     event.recipes.kubejs.shapeless(Item.of('mrqx_extra_pack:golden_chalice'), [
         'mrqx_extra_pack:golden_chalice',
@@ -888,7 +877,7 @@ ServerEvents.recipes(event => {
             result = Item.of('mrqx_extra_pack:golden_chalice', { mrqxGoldenChaliceMoney: mrqxGoldenChaliceMoney + 36 })
             return result
         })
-        .id('mrqx_golden_chalice_coinblock_manual_only');
+        .id('mrqx_golden_chalice_coinblock_manual_only')
 
     // 复激活药丸
     registerCustomRecipe(new BioForgingRecipe([
@@ -909,7 +898,7 @@ ServerEvents.recipes(event => {
         .sacrifice('minecraft:wolf', 15)
         .input('15x minecraft:lead')
         .itemOutput('mrqx_extra_pack:taoist_fifteen_dogs')
-        .recipeTime(500);
+        .recipeTime(500)
 
     // “法师控制强”
     event.recipes.summoningrituals
@@ -920,7 +909,7 @@ ServerEvents.recipes(event => {
         .input('goety:hail_focus')
         .input('goety:frost_robe')
         .itemOutput('mrqx_extra_pack:mage_control_strong')
-        .recipeTime(500);
+        .recipeTime(500)
 
     // “战士输出高”
     event.recipes.summoningrituals
@@ -931,7 +920,7 @@ ServerEvents.recipes(event => {
         .input('cataclysm:the_incinerator')
         .input('#iceandfire:dragon_skulls')
         .itemOutput('mrqx_extra_pack:warrior_output_high')
-        .recipeTime(500);
+        .recipeTime(500)
 
     // 幽匿引痕体
     registerCustomRecipe(new GoetyRitualRecipe('necroturgy', [
@@ -1005,7 +994,7 @@ ServerEvents.recipes(event => {
         .input('3x irons_spellbooks:ancient_knowledge_fragment')
         .input('5x cataclysm:ancient_metal_ingot')
         .itemOutput('mrqx_extra_pack:kings_crown')
-        .recipeTime(500);
+        .recipeTime(500)
 
     // 国王的新枪
     event.recipes.summoningrituals
@@ -1016,7 +1005,7 @@ ServerEvents.recipes(event => {
         .input('createaddition:gold_rod')
         .input('6x cataclysm:ancient_metal_ingot')
         .itemOutput('mrqx_extra_pack:kings_new_lance')
-        .recipeTime(500);
+        .recipeTime(500)
 
     // 国王的护戒
     event.recipes.summoningrituals
@@ -1027,7 +1016,7 @@ ServerEvents.recipes(event => {
         .input('irons_spellbooks:affinity_ring')
         .input('4x cataclysm:ancient_metal_ingot')
         .itemOutput('mrqx_extra_pack:kings_fellowship')
-        .recipeTime(500);
+        .recipeTime(500)
 
     // 国王的铠甲
     event.recipes.summoningrituals
@@ -1038,7 +1027,7 @@ ServerEvents.recipes(event => {
         .input('cataclysm:ignitium_chestplate')
         .input('8x cataclysm:ancient_metal_ingot')
         .itemOutput('mrqx_extra_pack:kings_armor')
-        .recipeTime(500);
+        .recipeTime(500)
 
     // 国王的圆饼
     event.recipes.summoningrituals
@@ -1049,7 +1038,7 @@ ServerEvents.recipes(event => {
         .input('meetyourfight:ace_of_iron')
         .input('6x cataclysm:ancient_metal_ingot')
         .itemOutput('mrqx_extra_pack:kings_buckler')
-        .recipeTime(500);
+        .recipeTime(500)
 
     // 国王的枝条
     event.recipes.summoningrituals
@@ -1060,7 +1049,7 @@ ServerEvents.recipes(event => {
         .input('createaddition:electrum_rod')
         .input('3x cataclysm:ancient_metal_ingot')
         .itemOutput('mrqx_extra_pack:kings_staff')
-        .recipeTime(500);
+        .recipeTime(500)
 
     // 国王的延伸
     event.recipes.summoningrituals
@@ -1071,7 +1060,7 @@ ServerEvents.recipes(event => {
         .input('irons_spellbooks:blood_staff')
         .input('3x cataclysm:ancient_metal_ingot')
         .itemOutput('mrqx_extra_pack:kings_extension')
-        .recipeTime(500);
+        .recipeTime(500)
 
     // 国王的水晶
     event.recipes.summoningrituals
@@ -1082,7 +1071,7 @@ ServerEvents.recipes(event => {
         .input('cataclysm:void_stone')
         .input('3x cataclysm:ancient_metal_ingot')
         .itemOutput('mrqx_extra_pack:kings_crystal')
-        .recipeTime(500);
+        .recipeTime(500)
 
     // 脆肚
     registerCustomRecipe(new CookingRecipe(
@@ -1356,7 +1345,7 @@ ServerEvents.recipes(event => {
         .sacrifice('goety:apostle', 1)
         .sacrificeRegion(3, 3)
         .dayTime('night')
-        .recipeTime(777);
+        .recipeTime(777)
 
     // ‌‌原罪·懒惰「贝尔芬格」
     event.recipes.summoningrituals
@@ -1371,7 +1360,7 @@ ServerEvents.recipes(event => {
         .sacrifice('goety:apostle', 1)
         .sacrificeRegion(3, 3)
         .dayTime('night')
-        .recipeTime(777);
+        .recipeTime(777)
 
     // ‌‌原罪·嫉妒「利维坦」
     event.recipes.summoningrituals
@@ -1385,7 +1374,7 @@ ServerEvents.recipes(event => {
         .sacrifice('goety:apostle', 1)
         .sacrificeRegion(3, 3)
         .dayTime('night')
-        .recipeTime(777);
+        .recipeTime(777)
 
     // 原罪·贪食「别西卜」
     event.recipes.summoningrituals
@@ -1399,7 +1388,7 @@ ServerEvents.recipes(event => {
         .sacrifice('goety:apostle', 1)
         .sacrificeRegion(3, 3)
         .dayTime('night')
-        .recipeTime(777);
+        .recipeTime(777)
 
     // ‌原罪·贪婪「玛门」
     event.recipes.summoningrituals
@@ -1413,7 +1402,7 @@ ServerEvents.recipes(event => {
         .sacrifice('goety:apostle', 1)
         .sacrificeRegion(3, 3)
         .dayTime('night')
-        .recipeTime(777);
+        .recipeTime(777)
 
     // ‌原罪·色欲「阿斯莫德」
     event.recipes.summoningrituals
@@ -1427,7 +1416,7 @@ ServerEvents.recipes(event => {
         .sacrifice('goety:apostle', 1)
         .sacrificeRegion(3, 3)
         .dayTime('night')
-        .recipeTime(777);
+        .recipeTime(777)
 
     // ‌原罪·傲慢「路西法」
     event.recipes.summoningrituals
@@ -1441,7 +1430,7 @@ ServerEvents.recipes(event => {
         .sacrifice('goety:apostle', 1)
         .sacrificeRegion(3, 3)
         .dayTime('night')
-        .recipeTime(777);
+        .recipeTime(777)
 
     // ‌原罪·罪源
     event.recipes.summoningrituals
@@ -1458,7 +1447,7 @@ ServerEvents.recipes(event => {
         .sacrifice('goety:apostle', 1)
         .sacrificeRegion(3, 3)
         .dayTime('night')
-        .recipeTime(7777);
+        .recipeTime(7777)
 
     // ‌蒸汽动力机
     event.recipes.create.sequenced_assembly([
@@ -1508,7 +1497,7 @@ ServerEvents.recipes(event => {
         S: 'create:sturdy_sheet',
         C: 'create:contraption_controls',
         P: 'create:precision_mechanism'
-    });
+    })
 
     // 蒸汽刺剑
     event.recipes.create.mechanical_crafting('mrqx_extra_pack:steam_rapier', [
@@ -1521,7 +1510,7 @@ ServerEvents.recipes(event => {
         S: 'create:sturdy_sheet',
         C: 'create:contraption_controls',
         T: 'mrqx_extra_pack:thermal_injector'
-    });
+    })
 
     // ‌蒸汽液压杆
     event.recipes.create.sequenced_assembly([
@@ -1562,7 +1551,7 @@ ServerEvents.recipes(event => {
         .input('#kubejs:mrqx_cpu')
         .input('64x #forge:seeds')
         .itemOutput('mrqx_extra_pack:tianshi_yi')
-        .recipeTime(500);
+        .recipeTime(500)
 
     // 长伸缩活塞臂
     registerCustomRecipe(new CataclysmWeaponFusion(
@@ -1598,7 +1587,7 @@ ServerEvents.recipes(event => {
         .input('#kubejs:isb_spell_book')
         .input('64x irons_spellbooks:ancient_knowledge_fragment')
         .itemOutput('mrqx_extra_pack:recorder')
-        .recipeTime(500);
+        .recipeTime(500)
 
     // ‌复激活药丸·温和化
     registerCustomRecipe(new DigestingRecipe(Item.of('mrqx_extra_pack:re_active_pill'), Item.of('mrqx_extra_pack:re_active_pill_moderation')))
@@ -1630,7 +1619,7 @@ ServerEvents.recipes(event => {
         .input('mrqx_extra_pack:mystery_memories')
         .input('mrqx_extra_pack:mystery_future')
         .itemOutput('mrqx_extra_pack:framework_of_world')
-        .recipeTime(24000);
+        .recipeTime(24000)
 
     // 能量核心
     event.recipes.create.mechanical_crafting('mrqx_extra_pack:energy_core', [
@@ -1657,7 +1646,7 @@ ServerEvents.recipes(event => {
         P: 'create:speedometer',
         S: 'mrqx_extra_pack:sun_seed',
         T: 'create:stressometer',
-    });
+    })
 
     // 远古巫妖之心
     registerCustomRecipe(new GoetyRitualRecipe('lich', [
@@ -1696,7 +1685,7 @@ ServerEvents.recipes(event => {
         .sacrifice('modulargolems:metal_golem', 1)
         .sacrificeRegion(3, 3)
         .dayTime('night')
-        .recipeTime(7777);
+        .recipeTime(7777)
 
     // 神之惩戒挑战
     event.recipes.summoningrituals
@@ -1713,7 +1702,7 @@ ServerEvents.recipes(event => {
         .sacrifice('goety:apostle', 1)
         .sacrificeRegion(3, 3)
         .dayTime('night')
-        .recipeTime(7777);
+        .recipeTime(7777)
 
 
     // ‌无尽之力容器
@@ -1746,7 +1735,7 @@ ServerEvents.recipes(event => {
             stack.nbt.put('mrqxInfinityForceContainerCountList', countList)
             return stack
         })
-        .id('mrqx_infinity_force_container_manual_only');
+        .id('mrqx_infinity_force_container_manual_only')
 
     // ‌（Luna's联动）堕乐园容器
     if (Utils.getRegistries().items().contains('luna_flesh_reforged:fallen_paradise')) {
@@ -1782,7 +1771,7 @@ ServerEvents.recipes(event => {
                 stack.nbt.put('mrqxInfinityForceContainerCountList', countList)
                 return stack
             })
-            .id('mrqx_fallen_paradise_container_manual_only');
+            .id('mrqx_fallen_paradise_container_manual_only')
     }
 
     // 人造矿簇
@@ -1825,7 +1814,7 @@ ServerEvents.recipes(event => {
         .input('64x biomancy:living_flesh')
         .input('64x unusualprehistory:raw_mammoth')
         .itemOutput('mrqx_extra_pack:mystery_flesh_and_blood')
-        .recipeTime(2000);
+        .recipeTime(2000)
 
     // 奥秘·灵魂
     event.recipes.summoningrituals
@@ -1840,7 +1829,7 @@ ServerEvents.recipes(event => {
         .input('mrqx_extra_pack:proud_soul')
         .input('mrqx_extra_pack:eternal_wing_of_soul')
         .itemOutput('mrqx_extra_pack:mystery_soul')
-        .recipeTime(2000);
+        .recipeTime(2000)
 
     // 奥秘·机械
     event.recipes.summoningrituals
@@ -1855,7 +1844,7 @@ ServerEvents.recipes(event => {
         .input('mrqx_extra_pack:steam_engine')
         .input('mrqx_extra_pack:seance_cpu')
         .itemOutput('mrqx_extra_pack:mystery_machine')
-        .recipeTime(2000);
+        .recipeTime(2000)
 
     // 奥秘·魔法
     event.recipes.summoningrituals
@@ -1870,7 +1859,7 @@ ServerEvents.recipes(event => {
         .input('irons_spellbooks:blood_staff')
         .input('kubejs:amethyst_magic_core')
         .itemOutput('mrqx_extra_pack:mystery_magic')
-        .recipeTime(2000);
+        .recipeTime(2000)
 
     // 奥秘·工艺
     event.recipes.summoningrituals
@@ -1885,7 +1874,7 @@ ServerEvents.recipes(event => {
         .input('tetra:modular_toolbelt')
         .input('tetra:holo')
         .itemOutput('mrqx_extra_pack:mystery_craftsmanship')
-        .recipeTime(2000);
+        .recipeTime(2000)
 
     // 奥秘·学者
     event.recipes.summoningrituals
@@ -1900,7 +1889,7 @@ ServerEvents.recipes(event => {
         .input('hexerei:book_of_shadows')
         .input('weaponmaster:tutorialbook')
         .itemOutput('mrqx_extra_pack:mystery_scholar')
-        .recipeTime(2000);
+        .recipeTime(2000)
 
     // 奥秘·自然
     event.recipes.summoningrituals
@@ -1915,7 +1904,7 @@ ServerEvents.recipes(event => {
         .input('16x #alexsmobs:animal_dictionary_ingredient')
         .input('16x #irons_spellbooks:nature_focus')
         .itemOutput('mrqx_extra_pack:mystery_nature')
-        .recipeTime(2000);
+        .recipeTime(2000)
 
     // 奥秘·星辰
     event.recipes.summoningrituals
@@ -1930,7 +1919,7 @@ ServerEvents.recipes(event => {
         .input('#kubejs:mrqx_celestial_body')
         .input('#kubejs:mrqx_celestial_body')
         .itemOutput('mrqx_extra_pack:mystery_stars')
-        .recipeTime(2000);
+        .recipeTime(2000)
 
     // 奥秘·资源
     event.recipes.summoningrituals
@@ -1945,7 +1934,7 @@ ServerEvents.recipes(event => {
         .input('16x #create:crushed_ores')
         .input('#forge:tools')
         .itemOutput('mrqx_extra_pack:mystery_resources')
-        .recipeTime(2000);
+        .recipeTime(2000)
 
     // 奥秘·食物
     event.recipes.summoningrituals
@@ -1953,14 +1942,14 @@ ServerEvents.recipes(event => {
         .id('mrqx_extra_pack:ritual_mystery_food')
         .input('kubejs:chicken_heart')
         .input('16x #forge:candy')
-        .input('16x #kubejs:candy')
+        .input('16x mrqx_extra_pack:crispy_belly')
         .input('kubejs:candy_heart')
         .input('16x extradelight:stuffed_heart')
         .input('16x extradelight:lugaw')
         .input('16x extradelight:croque_madame')
         .input('16x extradelight:fish_chips')
         .itemOutput('mrqx_extra_pack:mystery_food')
-        .recipeTime(2000);
+        .recipeTime(2000)
 
     // 奥秘·罪者
     event.recipes.summoningrituals
@@ -1976,7 +1965,7 @@ ServerEvents.recipes(event => {
         .sacrifice('goety:apostle', 1)
         .sacrificeRegion(3, 3)
         .itemOutput('mrqx_extra_pack:mystery_sinners')
-        .recipeTime(2000);
+        .recipeTime(2000)
 
     // 奥秘·灾难
     event.recipes.summoningrituals
@@ -1991,7 +1980,7 @@ ServerEvents.recipes(event => {
         .input('witherstormmod:formidibomb')
         .input('#forge:tools')
         .itemOutput('mrqx_extra_pack:mystery_disasters')
-        .recipeTime(2000);
+        .recipeTime(2000)
 
     // 奥秘·领主
     event.recipes.summoningrituals
@@ -2006,7 +1995,7 @@ ServerEvents.recipes(event => {
         .input('bosses_of_mass_destruction:mob_ward')
         .input('bosses_of_mass_destruction:void_lily')
         .itemOutput('mrqx_extra_pack:mystery_lords')
-        .recipeTime(2000);
+        .recipeTime(2000)
 
     // 奥秘·从者
     event.recipes.summoningrituals
@@ -2021,7 +2010,7 @@ ServerEvents.recipes(event => {
         .input('cataclysm:modern_remnant_bucket')
         .input('cataclysm:the_baby_leviathan_bucket')
         .itemOutput('mrqx_extra_pack:mystery_followers')
-        .recipeTime(2000);
+        .recipeTime(2000)
 
     // 奥秘·回忆
     event.recipes.summoningrituals
@@ -2036,7 +2025,7 @@ ServerEvents.recipes(event => {
         .input('16x #unusualprehistory:filled_flasks')
         .input('16x #kubejs:magnificent_focus')
         .itemOutput('mrqx_extra_pack:mystery_memories')
-        .recipeTime(2000);
+        .recipeTime(2000)
 
     // 奥秘·未来
     registerCustomRecipe(new CreateAdditionCharging({ 'count': 1, 'item': 'mrqx_extra_pack:mystery_memories' }, { 'count': 1, 'item': 'mrqx_extra_pack:mystery_future' }).setEnergy(2147483647))
@@ -2055,7 +2044,7 @@ ServerEvents.recipes(event => {
         .input('16x goety:ectoplasm')
         .input('16x meetyourfight:phantoplasm')
         .itemOutput('mrqx_extra_pack:residual_breath_of_dead_soul')
-        .recipeTime(2000);
+        .recipeTime(2000)
 
     // 护盾发生器
     event.recipes.create.sequenced_assembly([
@@ -2103,7 +2092,7 @@ ServerEvents.recipes(event => {
         .input('kubejs:command_spell_book')
         .input('8x hexerei:blood_sigil')
         .itemOutput('mrqx_extra_pack:sages_book')
-        .recipeTime(2000);
+        .recipeTime(2000)
 
 })
 
@@ -2116,7 +2105,7 @@ const mrqxRitualsCompleteStrategies = {
 
 }
 
-var assign_rituals_complete_strategies = Object.assign(ritualsCompleteStrategies, mrqxRitualsCompleteStrategies);
+var assign_rituals_complete_strategies = Object.assign(ritualsCompleteStrategies, mrqxRitualsCompleteStrategies)
 
 /**
  * 祭坛开始召唤事件
@@ -2409,4 +2398,4 @@ const mrqxRitualsStartStrategies = {
     },
 }
 
-var assign_rituals_start_strategies = Object.assign(ritualsStartStrategies, mrqxRitualsStartStrategies);
+var assign_rituals_start_strategies = Object.assign(ritualsStartStrategies, mrqxRitualsStartStrategies)

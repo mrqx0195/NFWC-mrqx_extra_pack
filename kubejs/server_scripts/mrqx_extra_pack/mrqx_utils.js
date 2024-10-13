@@ -250,7 +250,7 @@ function mrqxGetLoggedInTime(player) {
  * @returns {Boolean}
  */
 function mrqxIsEmpty(value) {
-    return (value == null || (typeof value === "string" && value.trim().length === 0));
+    return (value == null || (typeof value === "string" && value.trim().length === 0))
 }
 
 /**
@@ -293,11 +293,11 @@ function mrqxGetLivingWithinRadius(level, pos, radius) {
  * @return {Array}
  */
 function mrqxMultiplyArrayLength(arr, multiplier) {
-    let newArray = [];
+    let newArray = []
     for (let i = 0; i < multiplier; i++) {
-        newArray = newArray.concat(arr);
+        newArray = newArray.concat(arr)
     }
-    return newArray;
+    return newArray
 }
 
 /**

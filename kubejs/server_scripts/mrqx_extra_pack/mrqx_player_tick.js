@@ -52,7 +52,7 @@ const mrqxOrganPlayerTickStrategies = {
                         b = false
                     }
                     else {
-                        tumorData[key] = organData[key] * (0.3 + Math.random() * 0.25)
+                        tumorData[key] = organData[key] * (0.5 + Math.random() * 0.25)
                     }
                 })
                 if (b) {
@@ -126,7 +126,7 @@ const mrqxOrganPlayerTickStrategies = {
     },
 }
 
-var assign_organ_player_tick = Object.assign(organPlayerTickStrategies, mrqxOrganPlayerTickStrategies);
+var assign_organ_player_tick = Object.assign(organPlayerTickStrategies, mrqxOrganPlayerTickStrategies)
 
 /**
  * 玩家Tick秒级唯一策略
@@ -163,7 +163,7 @@ const mrqxOrganPlayerTickOnlyStrategies = {
             let duration = effect.getDuration()
             let count = amplifier
             if (player.persistentData.contains(resourceCount)) {
-                count = player.persistentData.getInt(resourceCount) + count;
+                count = player.persistentData.getInt(resourceCount) + count
             }
             updateResourceCount(player, count)
             duration -= 20
@@ -221,7 +221,7 @@ const mrqxOrganPlayerTickOnlyStrategies = {
 
     // 国王的新枪
     'mrqx_extra_pack:kings_new_lance': function (event, organ) {
-        let player = event.player;
+        let player = event.player
         let attriMap = getPlayerAttributeMap(player)
         if (Math.floor(player.getHealth()) <= 1) {
             let value = 1
@@ -307,18 +307,20 @@ const mrqxOrganPlayerTickOnlyStrategies = {
     // 世界框架
     'mrqx_extra_pack:framework_of_world': function (event, organ) {
         let player = event.player
-        if ((Math.abs(player.x) + Math.abs(player.z)) >= 29999000 * 2 && player.y <= -128 && player.persistentData.getInt(organActive) == 1) {
+        let instance = player.getChestCavityInstance()
+        if ((Math.abs(player.x) + Math.abs(player.z)) >= 29999000 * 2 && player.y <= -129 && player.persistentData.getInt(organActive) == 1) {
             let newItem = Item.of(organ.id)
-            if (item.getDamageValue() >= (60 * 60 * 24 - 2)) {
+            let oldItem = instance.inventory.getItem(organ.Slot)
+            if (oldItem.getDamageValue() >= (60 * 60 * 24)) {
                 newItem = Item.of('kubejs:genesis')
+                mrqxEditChestItem(player, newItem, organ.Slot, false, true, false)
             }
             else {
-                newItem.setDamageValue(item.getDamageValue() + 1)
+                newItem.setDamageValue(oldItem.getDamageValue() + 1)
+                mrqxEditChestItem(player, newItem, organ.Slot, false, false, false)
             }
-            mrqxEditChestItem(player, newItem, organ.Slot, false, false, false)
         }
         else {
-            let instance = player.getChestCavityInstance()
             let newItem = Item.of(organ.id)
             newItem.setDamageValue(0)
             mrqxEditChestItem(player, newItem, organ.Slot, false, false, false)
@@ -433,37 +435,37 @@ const mrqxOrganPlayerTickOnlyStrategies = {
                 case 0:
                     player.removeEffect('cataclysm:monstrous')
                     player.potionEffects.add('cataclysm:monstrous', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
-                    break;
+                    break
                 case 1:
                     player.removeEffect('alexsmobs:soulsteal')
                     player.potionEffects.add('alexsmobs:soulsteal', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
-                    break;
+                    break
                 case 2:
                     player.removeEffect('goety:insight')
                     player.potionEffects.add('goety:insight', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
-                    break;
+                    break
                 case 3:
                     player.removeEffect('goety:soul_armor')
                     player.potionEffects.add('goety:soul_armor', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
-                    break;
+                    break
                 case 4:
                     player.removeEffect('minecraft:regeneration')
                     player.potionEffects.add('minecraft:regeneration', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
-                    break;
+                    break
                 case 5:
                     player.removeEffect('minecraft:haste')
                     player.potionEffects.add('minecraft:haste', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
-                    break;
+                    break
                 case 6:
                     player.removeEffect('minecraft:strength')
                     player.potionEffects.add('minecraft:strength', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
-                    break;
+                    break
                 case 7:
                     player.removeEffect('goety:corpse_eater')
                     player.potionEffects.add('goety:corpse_eater', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
-                    break;
+                    break
                 default:
-                    break;
+                    break
             }
         }
     },
@@ -476,61 +478,61 @@ const mrqxOrganPlayerTickOnlyStrategies = {
             case 0:
                 player.removeEffect('minecraft:jump_boost')
                 player.potionEffects.add('minecraft:jump_boost', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
-                break;
+                break
             case 1:
                 player.removeEffect('minecraft:speed')
                 player.potionEffects.add('minecraft:speed', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
-                break;
+                break
             case 2:
                 player.removeEffect('alexsmobs:sunbird_blessing')
                 player.potionEffects.add('alexsmobs:sunbird_blessing', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
-                break;
+                break
             case 3:
                 player.removeEffect('cataclysm:blessing_of_amethyst')
                 player.potionEffects.add('cataclysm:blessing_of_amethyst', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
-                break;
+                break
             case 4:
                 player.removeEffect('alexsmobs:orcas_might')
                 player.potionEffects.add('alexsmobs:orcas_might', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
-                break;
+                break
             case 5:
                 player.removeEffect('minecraft:health_boost')
                 player.potionEffects.add('minecraft:health_boost', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
-                break;
+                break
             case 6:
                 player.removeEffect('minecraft:fire_resistance')
                 player.potionEffects.add('minecraft:fire_resistance', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
-                break;
+                break
             case 7:
                 player.removeEffect('alexmobs:knockback_resistance')
                 player.potionEffects.add('alexmobs:knockback_resistance', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
-                break;
+                break
             case 8:
                 player.removeEffect('goety:photosynthesis')
                 player.potionEffects.add('goety:photosynthesis', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
-                break;
+                break
             case 9:
                 player.removeEffect('goety:fortunate')
                 player.potionEffects.add('goety:fortunate', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
-                break;
+                break
             case 10:
                 player.removeEffect('goety:flame_hands')
                 player.potionEffects.add('goety:flame_hands', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
-                break;
+                break
             case 11:
                 player.removeEffect('goety:rampage')
                 player.potionEffects.add('goety:rampage', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
-                break;
+                break
             case 12:
                 player.removeEffect('goety:fiery_aura')
                 player.potionEffects.add('goety:fiery_aura', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
-                break;
+                break
             case 13:
                 player.removeEffect('minecraft:saturation')
                 player.potionEffects.add('minecraft:saturation', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
-                break;
+                break
             default:
-                break;
+                break
         }
     },
 
@@ -596,4 +598,4 @@ const mrqxOrganPlayerTickOnlyStrategies = {
     },
 }
 
-var assign_organ_player_tick_only = Object.assign(organPlayerTickOnlyStrategies, mrqxOrganPlayerTickOnlyStrategies);
+var assign_organ_player_tick_only = Object.assign(organPlayerTickOnlyStrategies, mrqxOrganPlayerTickOnlyStrategies)
