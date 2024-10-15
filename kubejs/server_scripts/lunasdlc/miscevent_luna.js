@@ -52,7 +52,7 @@ EntityEvents.death(event => {
     //光辉收割者
     if(itemMap.has('luna_flesh_reforged:infested_heart_distortion')){
         if(event.entity.hasEffect('luna_flesh_reforged:harvest_markers')){
-            let lvl = event.entity.potionEffects.getActive('goety:sapped').getAmplifier()
+            let lvl = event.entity.potionEffects.getActive('luna_flesh_reforged:harvest_markers').getAmplifier()
             if(Math.random()<0.4){player.heal(Math.min(lvl,3))}
         }
     }
@@ -125,16 +125,18 @@ global.EldritchVoidShock = (ctx) => {
                             e.attack(damageSource , damage )
                             e.invulnerableTime = 0
                             if(itemMap.has('luna_flesh_reforged:archotech_abyssal_core')){
-                                e.causeFallDamage(4,damage/2, DamageSource.indirectMagic(e,player))
                                 e.invulnerableTime = 0
+                                e.causeFallDamage(4,damage/2, DamageSource.indirectMagic(e,player))
                             }
                         }
                     })
                 }
             }
-            let spawn = player.getEyePosition().add(new Vec3(0, j, 0).zRot(rotation * JavaMath.PI / 180).xRot(-player.xRot * JavaMath.PI / 180).yRot(-player.yRot * JavaMath.PI / 180))
-            eldritchblast.moveTo(spawn)
-            player.level.addFreshEntity(eldritchblast)
+            if (i % 2 != 0){
+                let spawn = player.getEyePosition().add(new Vec3(0, j, 0).zRot(rotation * JavaMath.PI / 180).xRot(-player.xRot * JavaMath.PI / 180).yRot(-player.yRot * JavaMath.PI / 180))
+                eldritchblast.moveTo(spawn)
+                player.level.addFreshEntity(eldritchblast)
+	    }
         }
     }
 }
