@@ -276,7 +276,7 @@ const lunaorganPlayerDamageOnlyStrategies = {
             event.source.player.potionEffects.add('minecraft:haste', 20 * 6, 1)
             if(Math.random()<0.5){
                 if(event.entity.hasEffect('luna_flesh_reforged:harvest_markers')){
-                    let lvl = event.entity.potionEffects.getActive('goety:sapped').getAmplifier()
+                    let lvl = event.entity.potionEffects.getActive('luna_flesh_reforged:harvest_markers').getAmplifier()
                     event.entity.potionEffects.add('luna_flesh_reforged:harvest_markers', 20 * 8, lvl+1)
                 }
                 else{event.entity.potionEffects.add('luna_flesh_reforged:harvest_markers', 20 * 6, 0)}
