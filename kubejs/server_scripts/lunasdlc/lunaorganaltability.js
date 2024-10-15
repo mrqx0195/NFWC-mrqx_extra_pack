@@ -788,11 +788,14 @@ const lunaorganFoodEatenOnlyStrategies = {
         if(item.getId() == 'luna_flesh_reforged:infested_muscle'){
             let warp = player.persistentData.getInt(warpCount) ?? 0
             if(warp<60){return}else{
-                let numa = ((warp - 60)/2) + (playerChestInstance.organScores.get(new ResourceLocation('chestcavity', 'metabolism')) / 8)
+                let numa = ((warp - 60)/2) + (playerChestInstance.organScores.get(new ResourceLocation('chestcavity', 'metabolism'))/4) + Math.max(13,(player.getLuck()*2/3))
                 if(Math.random()*100 < numa){
-                    // 如果该位置存在物品，则不进行生成
+                    // 如果该位置存在物品，则不进行生成；并且扭曲不小于100时再给一次机会
                     let randomIndex = Math.floor(Math.random() * 27)
-                    if (playerChestInstance.inventory.getItem(randomIndex) != 'minecraft:air') return
+                    if (playerChestInstance.inventory.getItem(randomIndex) != 'minecraft:air'){
+			if (warp>=100){randomIndex = Math.floor(Math.random() * 27)
+				if (playerChestInstance.inventory.getItem(randomIndex) != 'minecraft:air') return;
+			}else return;} 
                     let flesh = Item.of('luna_flesh_reforged:flesh_tentacle')
                     if (Math.random()<0.4){flesh = Item.of('luna_flesh_reforged:flesh_whip')}
                     playerChestInstance.inventory.setItem(randomIndex, flesh)
