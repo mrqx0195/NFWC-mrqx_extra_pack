@@ -1,7 +1,7 @@
 // priority: -1
 // 最终还是选择了自己造轮子（趴
 ForgeEvents.onEvent('net.minecraftforge.event.entity.living.LivingChangeTargetEvent', event => {
-    if (event.originalTarget && !event.originalTarget.level.isClientSide() && event.originalTarget.isPlayer()) {
+    if (event.getOriginalTarget() && !event.getOriginalTarget().getLevel().isClientSide() && event.getOriginalTarget().isPlayer()) {
         global.mrqxLivingChangeTargetEvent(event)
     }
 })
@@ -13,13 +13,13 @@ ForgeEvents.onEvent('net.minecraftforge.event.entity.living.MobEffectEvent$Added
 })
 
 ForgeEvents.onEvent('net.minecraftforge.event.entity.living.LivingHurtEvent', event => {
-    if (event.source && event.source.player && !event.source.player.level.isClientSide()) {
+    if (event.getSource() && event.getSource().getPlayer() && !event.getSource().getPlayer().getLevel().isClientSide()) {
         global.mrqxLivingHurtByPlayer(event)
     }
 })
 
 ForgeEvents.onEvent('net.minecraftforge.event.entity.living.LivingDamageEvent', event => {
-    if (event.entity && event.entity.isPlayer() && !event.entity.level.isClientSide()) {
+    if (event.getEntity() && event.getEntity().isPlayer() && !event.getEntity().getLevel().isClientSide()) {
         global.mrqxLivingDamageByOthers(event)
     }
 })
