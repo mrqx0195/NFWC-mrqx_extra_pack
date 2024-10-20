@@ -487,7 +487,7 @@ const mrqxOrganPlayerDamageOnlyStrategies = {
 			return
 		}
 		player.setSaturation(Math.min(player.getSaturation() + event.amount * 0.1, player.getFoodLevel()))
-		if (!organ.id == 'mrqx_extra_pack:sin_and_judgement' && mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
+		if (mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
 			player.setSaturation(Math.min(player.getSaturation() + event.amount * 0.1, player.getFoodLevel()))
 		}
 	},
@@ -500,7 +500,7 @@ const mrqxOrganPlayerDamageOnlyStrategies = {
 		}
 		if (event.entity.getType() in bossTypeList) {
 			event.amount += event.entity.getMaxHealth() * 0.1
-			if (!organ.id == 'mrqx_extra_pack:sin_and_judgement' && mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
+			if (mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
 				event.amount += event.entity.getMaxHealth() * 0.1
 			}
 		}
@@ -513,7 +513,7 @@ const mrqxOrganPlayerDamageOnlyStrategies = {
 			return
 		}
 		event.amount *= 3
-		if (!organ.id == 'mrqx_extra_pack:sin_and_judgement' && mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
+		if (mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
 			event.amount *= 3
 		}
 	},

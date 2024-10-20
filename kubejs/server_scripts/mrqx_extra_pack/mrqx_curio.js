@@ -90,7 +90,7 @@ function mrqxAdvancedArchivistEyeGlassPaint(item, player) {
     let count = 0
     let allCount = 0
     for (let i = 0; i < visibleList.length; i++) {
-        allCount += visibleList.getByte(i) ? 1 : 0
+        allCount += visibleList[i] ? 1 : 0
     }
     allCount = -allCount * 4.5 + 35
     let ray = player.rayTrace(10, false)
@@ -242,7 +242,7 @@ function mrqxAdvancedArchivistEyeGlassPaint(item, player) {
             alignY: 'bottom',
             color: Color.GREEN_DYE.getHexJS(),
             text: `{"translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.8", "with": [${getPlayerChestCavityItemMap(player).has('mrqx_extra_pack:moon_soul') ? `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.03", "with": ["×", ${Math.min(Math.max((player.persistentData.getInt('mrqx_moon_soul_combo') ?? 0) / 10, 1), 10) * 100}]}, "%"` : `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.00"}`}]}`,
-            visible: visibleList[4]
+            visible: visibleList[5]
         },
         marenolText: {
             type: 'text',
@@ -278,7 +278,7 @@ function mrqxAdvancedArchivistEyeGlassPaint(item, player) {
             alignY: 'bottom',
             color: Color.GRAY_DYE.getHexJS(),
             text: `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.d0", "with": [${player.hasEffect('mrqx_extra_pack:steam_power') ? `{"translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.01" , "with": [${player.getEffect('mrqx_extra_pack:steam_power').getAmplifier() + 1}]}, {"translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.02", "with": [${(player.getEffect('mrqx_extra_pack:steam_power').getDuration() / 20).toFixed(2)}]}, { "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.d1", "with": [${mrqxGetSteamCount(player)}]}]}` : `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.00"}`}]}`,
-            visible: visibleList[7]
+            visible: visibleList[9]
         },
         steamSuperChargeText: {
             type: 'text',
@@ -290,7 +290,7 @@ function mrqxAdvancedArchivistEyeGlassPaint(item, player) {
             alignY: 'bottom',
             color: Color.GRAY.getHexJS(),
             text: `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.e", "with": [${player.hasEffect('mrqx_extra_pack:steam_supercharge') ? `{"translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.01", "with": [${player.getEffect('mrqx_extra_pack:steam_supercharge').getAmplifier() + 1}]}, {"translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.02", "with": [${(player.getEffect('mrqx_extra_pack:steam_supercharge').getDuration() / 20).toFixed(2)}]}` : `{ "translate": "mrqx_extra_pack.text.advancedArchivistEyeGlass.00" }`}]}`,
-            visible: visibleList[7]
+            visible: visibleList[9]
         },
         elementSelfText: {
             type: 'text',

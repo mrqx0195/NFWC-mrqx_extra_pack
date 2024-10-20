@@ -108,9 +108,11 @@ const mrqxOrganPlayerBearOnlyStrategies = {
         if (player.persistentData.organActive != 1) {
             return
         }
-        event.amount *= 5
-        if (!organ.id == 'mrqx_extra_pack:sin_and_judgement' && mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
+        if (!(organ.id == 'mrqx_extra_pack:sin_and_judgement')) {
             event.amount *= 5
+            if (mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
+                event.amount *= 5
+            }
         }
     },
 
@@ -122,17 +124,19 @@ const mrqxOrganPlayerBearOnlyStrategies = {
         }
         if (event.source.getActual()) {
             event.amount *= 0.85
-            if (!organ.id == 'mrqx_extra_pack:sin_and_judgement' && mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
+            if (mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
                 event.amount *= 0.85
-                event.source.bypassArmor().bypassEnchantments().bypassInvul().bypassMagic()
+                if (!(organ.id == 'mrqx_extra_pack:sin_and_judgement')) {
+                    event.source.bypassArmor().bypassEnchantments().bypassInvul().bypassMagic()
+                }
             }
-            else {
+            else if (!(organ.id == 'mrqx_extra_pack:sin_and_judgement')) {
                 event.source.setMagic()
             }
         }
         else {
             if (event.source != 'outOfWorld') {
-                if (!organ.id == 'mrqx_extra_pack:sin_and_judgement' && mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
+                if (mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
                     player.heal(event.amount)
                 }
                 event.amount = 0
@@ -154,8 +158,9 @@ const mrqxOrganPlayerBearOnlyStrategies = {
     // 世界框架
     'mrqx_extra_pack:framework_of_world': function (event, organ, data) {
         let player = event.entity
-        if (event.source == 'outOfWorld') {
+        if (event.source.type == 'outOfWorld') {
             player.invulnerableTime = 0
+            event.amount = Math.min(player.getMaxHealth() / 20, event.amount)
         }
     },
 }

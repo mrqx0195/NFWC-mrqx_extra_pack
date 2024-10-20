@@ -663,34 +663,42 @@ const mrqxOrganActiveOnlyStrategies = {
 
     // ‌‌原罪·懒惰「贝尔芬格」
     'mrqx_extra_pack:sin_acedia_belphegor': function (player, organ, attributeMap) {
-        mrqxAttributeMapValueAddition(attributeMap, global.mrqx_MOVEMENT_SPEED_MULTI_BASE, -0.5)
-        if (!organ.id == 'mrqx_extra_pack:sin_and_judgement' && mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
+        if (!(organ.id == 'mrqx_extra_pack:sin_and_judgement')) {
             mrqxAttributeMapValueAddition(attributeMap, global.mrqx_MOVEMENT_SPEED_MULTI_BASE, -0.5)
+            if (mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
+                mrqxAttributeMapValueAddition(attributeMap, global.mrqx_MOVEMENT_SPEED_MULTI_BASE, -0.5)
+            }
         }
     },
 
     // ‌原罪·贪婪「玛门」
     'mrqx_extra_pack:sin_avaritia_mammon': function (player, organ, attributeMap) {
-        mrqxAttributeMapValueAddition(attributeMap, global.LUCK_MULTI_BASE, -1)
-        if (!organ.id == 'mrqx_extra_pack:sin_and_judgement' && mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
+        if (!(organ.id == 'mrqx_extra_pack:sin_and_judgement')) {
             mrqxAttributeMapValueAddition(attributeMap, global.LUCK_MULTI_BASE, -1)
+            if (mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
+                mrqxAttributeMapValueAddition(attributeMap, global.LUCK_MULTI_BASE, -1)
+            }
         }
     },
 
     // 原罪·贪食「别西卜」
     'mrqx_extra_pack:sin_gula_beelzebub': function (player, organ, attributeMap) {
-        let playerChestInstance = player.getChestCavityInstance()
-        playerChestInstance.organScores.put(new ResourceLocation('chestcavity', 'digestion'), new $Float(playerChestInstance.getOrganScores().get(new ResourceLocation('chestcavity', 'digestion')) * 0.1))
-        if (!organ.id == 'mrqx_extra_pack:sin_and_judgement' && mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
+        if (!(organ.id == 'mrqx_extra_pack:sin_and_judgement')) {
+            let playerChestInstance = player.getChestCavityInstance()
             playerChestInstance.organScores.put(new ResourceLocation('chestcavity', 'digestion'), new $Float(playerChestInstance.getOrganScores().get(new ResourceLocation('chestcavity', 'digestion')) * 0.1))
+            if (mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
+                playerChestInstance.organScores.put(new ResourceLocation('chestcavity', 'digestion'), new $Float(playerChestInstance.getOrganScores().get(new ResourceLocation('chestcavity', 'digestion')) * 0.1))
+            }
         }
     },
 
     // ‌‌原罪·嫉妒「利维坦」
     'mrqx_extra_pack:sin_invidia_leviathan': function (player, organ, attributeMap) {
-        mrqxAttributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, -0.5)
-        if (!organ.id == 'mrqx_extra_pack:sin_and_judgement' && mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
+        if (!(organ.id == 'mrqx_extra_pack:sin_and_judgement')) {
             mrqxAttributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, -0.5)
+            if (mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
+                mrqxAttributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, -0.5)
+            }
         }
     },
 

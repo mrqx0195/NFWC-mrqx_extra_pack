@@ -1580,7 +1580,7 @@ ServerEvents.recipes(event => {
 
     // ‌“记录者”
     event.recipes.summoningrituals
-        .altar('#forge:books')
+        .altar('#forge:nether_stars')
         .id('mrqx_extra_pack:ritual_recorder')
         .input('64x #forge:books')
         .input('minecraft:enchanted_book')

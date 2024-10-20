@@ -350,7 +350,7 @@ const mrqxOrganPlayerTickOnlyStrategies = {
             return
         }
         player.heal(player.getMaxHealth() * 0.03)
-        if (!organ.id == 'mrqx_extra_pack:sin_and_judgement' && mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
+        if (mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
             player.heal(player.getMaxHealth() * 0.03)
         }
     },
@@ -363,12 +363,12 @@ const mrqxOrganPlayerTickOnlyStrategies = {
         }
         let entityList = mrqxGetLivingWithinRadius(player.getLevel(), new Vec3(player.x, player.y, player.z), 16)
         entityList.forEach(entity => {
-            if (entity.getType() == 'minecraft:item' && player.age % (20 * 60) == 0) {
+            if (entity.getType() == 'minecraft:item' && player.age % (20 * 60) == 0 && !(organ.id == 'mrqx_extra_pack:sin_and_judgement')) {
                 entity.kill()
                 player.getServer().scheduleInTicks(1, () => {
                     player.attack(DamageSource.playerAttack(player).bypassArmor().bypassEnchantments().bypassInvul().bypassMagic(), player.getMaxHealth() * 0.05)
                 })
-                if (!organ.id == 'mrqx_extra_pack:sin_and_judgement' && mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
+                if (mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
                     player.getServer().scheduleInTicks(1, () => {
                         player.attack(DamageSource.playerAttack(player).bypassArmor().bypassEnchantments().bypassInvul().bypassMagic(), player.getMaxHealth() * 0.05)
                     })
@@ -390,13 +390,15 @@ const mrqxOrganPlayerTickOnlyStrategies = {
                 if (entity.nbt.Age >= 0) {
                     entity.setAge(0)
                     entity.setInLove(player)
-                    entity.setHealth(entity.getHealth() - entity.getMaxHealth() * 0.05)
-                    if (!organ.id == 'mrqx_extra_pack:sin_and_judgement' && mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
+                    if (!(organ.id == 'mrqx_extra_pack:sin_and_judgement')) {
                         entity.setHealth(entity.getHealth() - entity.getMaxHealth() * 0.05)
+                        if (mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
+                            entity.setHealth(entity.getHealth() - entity.getMaxHealth() * 0.05)
+                        }
                     }
                 }
                 else {
-                    if (!organ.id == 'mrqx_extra_pack:sin_and_judgement' && mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
+                    if (mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
                         entity.ageUp(100)
                     }
                 }
