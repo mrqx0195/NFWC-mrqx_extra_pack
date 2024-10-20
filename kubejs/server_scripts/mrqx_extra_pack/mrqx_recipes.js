@@ -2081,7 +2081,7 @@ ServerEvents.recipes(event => {
         .input('8x irons_spellbooks:evocation_upgrade_orb')
         .input('irons_spellbooks:villager_spell_book')
         .input('8x irons_spellbooks:lightning_upgrade_orb')
-        .input('irons_spellbooks:legendary_spell_book')
+        .input('kubejs:disenchantment_book')
         .input('8x irons_spellbooks:protection_upgrade_orb')
         .input('irons_spellbooks:netherite_spell_book')
         .input('8x irons_spellbooks:upgrade_orb')
