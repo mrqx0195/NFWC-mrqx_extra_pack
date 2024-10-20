@@ -32,3 +32,5 @@ v1.1.0更新：https://www.bilibili.com/video/BV16u4m137ZT
 v1.2.0更新：https://www.bilibili.com/video/BV1Am411C7bR/
 
 v1.3.0更新：https://www.bilibili.com/video/BV1hn4y1X7vX/
+
+爱发电：https://ifdian.net/a/shiqiluna
