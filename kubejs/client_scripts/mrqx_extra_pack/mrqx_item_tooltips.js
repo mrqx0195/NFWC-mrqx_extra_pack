@@ -151,15 +151,15 @@ ItemEvents.tooltip((tooltip) => {
                 let countList = item.nbt.getCompound('mrqxInfinityForceContainerCountList')
                 let i = 0
                 let count = 0
-                if ((countList.getByte('max') ?? 0) == 0 && (countList.getByte(0) ?? 0) == 0) return
-                while (i <= (countList.getByte('max') ?? 0)) {
+                if ((countList.getInt('max') ?? 0) == 0 && (countList.getByte(0) ?? 0) == 0) return
+                while (i <= (countList.getInt('max') ?? 0)) {
                     if ((countList.getByte(i) ?? 0) >= 1) {
                         count++
                     }
                     count /= 2
                     i++
                 }
-                text.add([Text.translate("mrqx_extra_pack.tooltips.infinity_force_container.2", (((countList.getByte('max') ?? 0) == 0 ? 1 : (countList.getByte('max') ?? 0)) - 1).toFixed(0), ((count - 0.25) * ((countList.getByte('max') ?? 0) == 0 ? 2 : 4) * 100).toFixed(2)).string])
+                text.add([Text.translate("mrqx_extra_pack.tooltips.infinity_force_container.2", (((countList.getInt('max') ?? 0) == 0 ? 1 : (countList.getInt('max') ?? 0)) - 1).toFixed(0), ((count - 0.25) * ((countList.getInt('max') ?? 0) == 0 ? 2 : 4) * 100).toFixed(2)).string])
             }
         }
     })
@@ -171,15 +171,15 @@ ItemEvents.tooltip((tooltip) => {
                 let countList = item.nbt.getCompound('mrqxInfinityForceContainerCountList')
                 let i = 0
                 let count = 0
-                if ((countList.getByte('max') ?? 0) == 0 && (countList.getByte(0) ?? 0) == 0) return
-                while (i <= (countList.getByte('max') ?? 0)) {
+                if ((countList.getInt('max') ?? 0) == 0 && (countList.getByte(0) ?? 0) == 0) return
+                while (i <= (countList.getInt('max') ?? 0)) {
                     if ((countList.getByte(i) ?? 0) >= 1) {
                         count++
                     }
                     count /= 2
                     i++
                 }
-                text.add([Text.translate("mrqx_extra_pack.tooltips.fallen_paradise_container.2", (((countList.getByte('max') ?? 0) == 0 ? 1 : (countList.getByte('max') ?? 0)) - 1).toFixed(0), ((count - 0.25) * ((countList.getByte('max') ?? 0) == 0 ? 2 : 4) * 100).toFixed(2)).string])
+                text.add([Text.translate("mrqx_extra_pack.tooltips.fallen_paradise_container.2", (((countList.getInt('max') ?? 0) == 0 ? 1 : (countList.getInt('max') ?? 0)) - 1).toFixed(0), ((count - 0.25) * ((countList.getInt('max') ?? 0) == 0 ? 2 : 4) * 100).toFixed(2)).string])
             }
         }
     })

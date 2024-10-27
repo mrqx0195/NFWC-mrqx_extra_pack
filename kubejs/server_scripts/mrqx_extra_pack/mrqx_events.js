@@ -42,6 +42,7 @@ LootJS.modifiers(event => {
 // 核能检测
 PlayerEvents.tick(event => {
     let player = event.player
+    if (player.age % 5 != 0) return
     if (event.level.isClientSide()) return
     if (event.getServer().getTickCount() <= (mrqxGetLoggedInTime(player) + 6)) {
         return
@@ -69,6 +70,7 @@ PlayerEvents.tick(event => {
 // 灵狐之魂获取
 PlayerEvents.tick(event => {
     let player = event.player
+    if (player.age % 5 != 0) return
     if (event.level.isClientSide()) return
     let entityList = getLivingWithinRadius(player.getLevel(), new Vec3(player.x, player.y, player.z), 5)
     if (entityList.length < 1) return
@@ -92,8 +94,8 @@ PlayerEvents.tick(event => {
 // 永恒灵魂之翼检测
 PlayerEvents.tick(event => {
     let player = event.player
-    if (event.level.isClientSide()) return
     if (player.age % 5 != 0) return
+    if (event.level.isClientSide()) return
     if (!player.getPersistentData().getBoolean('mrqxEternalWingOfSoul')) {
         return
     }
@@ -131,6 +133,7 @@ ItemEvents.rightClicked('mrqx_extra_pack:sentient_greatscythe', event => {
 PlayerEvents.tick(event => {
     let player = event.player
     if (!player) return
+    if (player.age % 5 != 0) return
     if (event.level.isClientSide()) return
     if (event.getServer().getTickCount() <= (mrqxGetLoggedInTime(player) + 6)) {
         return
@@ -168,14 +171,14 @@ ItemEvents.rightClicked('mrqx_extra_pack:infinity_force_container', event => {
     if (!player.isPlayer()) return
     if (itemstack.getNbt() && itemstack.nbt.getCompound('mrqxInfinityForceContainerCountList')) {
         let countList = itemstack.nbt.getCompound('mrqxInfinityForceContainerCountList') ?? mrqxGetEmptyCompound()
-        let forgeTimes = ((countList.getByte('max') ?? 0) == 0 ? 1 : (countList.getByte('max') ?? 0)) - 1
-        if (forgeTimes == 0 && (countList.getByte(0) ?? 0) == 0) return
-        countList.putByte(forgeTimes, (countList.getByte(forgeTimes) ?? 1) - 1)
-        let i = countList.getByte('max') ?? 0
-        countList.putByte('max', 0)
+        let forgeTimes = ((countList.getInt('max') ?? 0) == 0 ? 1 : (countList.getInt('max') ?? 0)) - 1
+        if (forgeTimes == 0 && (countList.getByte((0).toFixed(1)) ?? 0) == 0) return
+        countList.putByte(forgeTimes.toFixed(1), (countList.getByte(forgeTimes.toFixed(1)) ?? 1) - 1)
+        let i = countList.getInt('max') ?? 0
+        countList.putInt('max', 0)
         while (i >= 0) {
-            if ((countList.getByte(i) ?? 0) != 0) {
-                countList.putByte('max', i + 1)
+            if ((countList.getByte(i.toFixed(1)) ?? 0) > 0) {
+                countList.putInt('max', i + 1)
                 break
             }
             i--
@@ -199,14 +202,14 @@ if (Utils.getRegistries().items().contains('luna_flesh_reforged:fallen_paradise'
         if (!player.isPlayer()) return
         if (itemstack.getNbt() && itemstack.nbt.getCompound('mrqxInfinityForceContainerCountList')) {
             let countList = itemstack.nbt.getCompound('mrqxInfinityForceContainerCountList') ?? mrqxGetEmptyCompound()
-            let forgeTimes = ((countList.getByte('max') ?? 0) == 0 ? 1 : (countList.getByte('max') ?? 0)) - 1
-            if (forgeTimes == 0 && (countList.getByte(0) ?? 0) == 0) return
-            countList.putByte(forgeTimes, (countList.getByte(forgeTimes) ?? 1) - 1)
-            let i = countList.getByte('max') ?? 0
-            countList.putByte('max', 0)
+            let forgeTimes = ((countList.getInt('max') ?? 0) == 0 ? 1 : (countList.getInt('max') ?? 0)) - 1
+            if (forgeTimes == 0 && (countList.getByte((0).toFixed(1)) ?? 0) == 0) return
+            countList.putByte(forgeTimes, (countList.getByte(forgeTimes.toFixed(1)) ?? 1) - 1)
+            let i = countList.getInt('max') ?? 0
+            countList.putInt('max', 0)
             while (i >= 0) {
-                if ((countList.getByte(i) ?? 0) != 0) {
-                    countList.putByte('max', i + 1)
+                if ((countList.getByte(i.toFixed(1)) ?? 0) > 0) {
+                    countList.putInt('max', i + 1)
                     break
                 }
                 i--

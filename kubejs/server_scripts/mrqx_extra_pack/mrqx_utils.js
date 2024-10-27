@@ -11,6 +11,7 @@ const mrqxPlayerLoginTime = new Map()
  * @returns {number}
  */
 function mrqxCauseElementDamage(entity, damage, type) {
+    if (!damage || damage <= 0) return 0
     let count = (entity.persistentData.getInt("mrqx_" + type + "_damage") ?? 0) + damage
     let elementDamageSource = mrqxElementDamageSource[type]
     let elementDamageEffect = mrqxElementDamageEffect[type]
@@ -185,7 +186,13 @@ function mrqxGetConnectedBlocksCount(x, y, z, max, level, set, fun) {
         let directions = [
             [1, 0, 0], [-1, 0, 0],
             [0, 1, 0], [0, -1, 0],
-            [0, 0, 1], [0, 0, -1]
+            [0, 0, 1], [0, 0, -1],
+            [1, 1, 0], [-1, 1, 0],
+            [1, -1, 0], [-1, -1, 0],
+            [0, 1, 1], [0, -1, 1],
+            [0, 1, -1], [0, -1, -1],
+            [1, 0, 1], [1, 0, -1],
+            [-1, 0, 1], [-1, 0, -1],
         ]
         for (let [dx, dy, dz] of directions) {
             let nx = cx + dx

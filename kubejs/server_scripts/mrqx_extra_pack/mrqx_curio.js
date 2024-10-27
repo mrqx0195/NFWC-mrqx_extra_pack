@@ -524,7 +524,7 @@ global.mrqxInfinityForceContainerTick = (item, ctx) => {
     if (!item.getNbt()) item.setNbt({})
     let countList = item.nbt.getCompound('mrqxInfinityForceContainerCountList') ?? mrqxGetEmptyCompound()
     if (forces.length != 0) {
-        if (item.nbt.getLong('mrqxInfinityForceContainerCount')) {
+        if (item.nbt.getLong('mrqxInfinityForceContainerCount') && item.nbt.getLong('mrqxInfinityForceContainerCount') > 0) {
             let count = item.nbt.getLong('mrqxInfinityForceContainerCount')
             while (count > 0) {
                 let power = 0
@@ -532,31 +532,32 @@ global.mrqxInfinityForceContainerTick = (item, ctx) => {
                     power++
                 }
                 count -= 2 ** power
-                countList.putByte(power, countList.getByte(power) ?? 0 + 1)
-                countList.putByte('max', Math.max(countList.getByte('max') ?? 0, power))
+                countList.putByte(power.toFixed(1), countList.getByte(power.toFixed(1)) ?? 0 + 1)
+                countList.putInt('max', Math.max(countList.getInt('max') ?? 0, power))
             }
+            item.nbt.putLong('mrqxInfinityForceContainerCount', 0)
         }
         forces.forEach(force => {
             if (force.getNbt() && force.nbt?.forgeTimes) {
-                countList.putByte(force.nbt?.forgeTimes, (countList.getByte(force.nbt?.forgeTimes) ?? 0) + 1)
-                countList.putByte('max', Math.max(countList.getByte('max') ?? 0, force.nbt?.forgeTimes))
+                countList.putByte(force.nbt?.forgeTimes.toFixed(1), Math.min((countList.getByte(force.nbt?.forgeTimes.toFixed(1)) ?? 0) + 1))
+                countList.putInt('max', Math.max(countList.getInt('max') ?? 0, force.nbt?.forgeTimes.toFixed(1)))
             }
             else {
-                countList.putByte(0, (countList.getByte(0) ?? 0) + 1)
-                countList.putByte('max', Math.max(countList.getByte('max') ?? 0, 0))
+                countList.putByte((0).toFixed(1), Math.min((countList.getByte((0).toFixed(1)) ?? 0) + 1, 127))
+                countList.putInt('max', Math.max(countList.getInt('max') ?? 0, 0))
             }
             force.shrink(1)
         })
     }
     let i = 0
-    while (i <= (countList.getByte('max') ?? 0) + 1) {
-        if ((countList.getByte(i) ?? 0) >= 2) {
-            countList.putByte(i + 1, (countList.getByte(i + 1) ?? 0) + 1)
-            countList.putByte(i, countList.getByte(i) - 2)
-            countList.putByte('max', Math.max(countList.getByte('max') ?? 0, i + 2))
+    while (i <= (countList.getInt('max') ?? 0) + 1) {
+        if ((countList.getByte(i.toFixed(1)) ?? 0) >= 2) {
+            countList.putByte((i + 1).toFixed(1), (countList.getByte((i + 1).toFixed(1)) ?? 0) + 1)
+            countList.putByte(i.toFixed(1), countList.getByte(i.toFixed(1)) - 2)
+            countList.putInt('max', Math.max(countList.getInt('max') ?? 0, i + 2))
         }
         else {
-            countList.putByte(i, countList.getByte(i) ?? 0)
+            countList.putByte(i.toFixed(1), countList.getByte(i) ?? 0)
             i++
         }
     }

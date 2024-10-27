@@ -118,6 +118,7 @@ const mrqxOrganRightClickedOnlyStrategies = {
 	'mrqx_extra_pack:steam_power_engine': function (event, organ) {
 		let player = event.player
 		let itemMap = getPlayerChestCavityItemMap(player)
+		let typeMap = getPlayerChestCavityTypeMap(player)
 		if (event.item != Item.of('minecraft:potion', '{Potion:"minecraft:water"}')) {
 			return
 		}
@@ -131,7 +132,7 @@ const mrqxOrganRightClickedOnlyStrategies = {
 				event.player.removeEffect('mrqx_extra_pack:steam_power')
 			}
 			if (itemMap.has('mrqx_extra_pack:steam_engine')) {
-				amplifier = Math.min(amplifier, itemMap.get('mrqx_extra_pack:steam_engine').length * 1 + 1)
+				amplifier = Math.min(amplifier, typeMap.get('mrqx_extra_pack:mrqx_steam').length * 1 + 1)
 				duration = Math.min(duration, amplifier * 2 * 20 * 60)
 				player.level.playSound(player, player.blockPosition(), 'minecraft:entity.player.splash', 'players', 1, 1)
 				player.potionEffects.add('mrqx_extra_pack:steam_power', duration, amplifier, false, false)
@@ -149,7 +150,7 @@ const mrqxOrganRightClickedOnlyStrategies = {
 				event.player.removeEffect('mrqx_extra_pack:steam_power')
 			}
 			if (itemMap.has('mrqx_extra_pack:steam_engine')) {
-				amplifier = Math.min(amplifier, itemMap.get('mrqx_extra_pack:steam_engine').length * 1 + 1)
+				amplifier = Math.min(amplifier, typeMap.get('mrqx_extra_pack:mrqx_steam').length * 1 + 1)
 				duration = Math.min(duration, amplifier * 2 * 20 * 60)
 				player.level.playSound(player, player.blockPosition(), 'minecraft:entity.player.splash', 'players', 1, 1)
 				player.potionEffects.add('mrqx_extra_pack:steam_power', duration, amplifier, false, false)
@@ -163,6 +164,7 @@ const mrqxOrganRightClickedOnlyStrategies = {
 	'mrqx_extra_pack:steam_power_turbine': function (event, organ) {
 		let player = event.player
 		let itemMap = getPlayerChestCavityItemMap(player)
+		let typeMap = getPlayerChestCavityTypeMap(player)
 		if (event.item != Item.of('minecraft:water_bucket')) {
 			return
 		}
@@ -175,7 +177,7 @@ const mrqxOrganRightClickedOnlyStrategies = {
 				event.player.removeEffect('mrqx_extra_pack:steam_power')
 			}
 			if (itemMap.has('mrqx_extra_pack:steam_engine')) {
-				amplifier = Math.min(amplifier, itemMap.get('mrqx_extra_pack:steam_engine').length * 2 + 2)
+				amplifier = Math.min(amplifier, typeMap.get('mrqx_extra_pack:mrqx_steam').length * 2 + 2)
 				duration = Math.min(duration, amplifier * 2 * 20 * 60)
 				player.level.playSound(player, player.blockPosition(), 'minecraft:entity.player.splash.high_speed', 'players', 1, 1)
 				player.potionEffects.add('mrqx_extra_pack:steam_power', duration, amplifier, false, false)

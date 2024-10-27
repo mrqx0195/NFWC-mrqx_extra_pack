@@ -2067,7 +2067,7 @@ ServerEvents.recipes(event => {
         .input('8x irons_spellbooks:fire_upgrade_orb')
         .input('irons_spellbooks:blaze_spell_book')
         .input('8x irons_spellbooks:holy_upgrade_orb')
-        .input('irons_spellbooks:wimpy_spell_book')
+        .input('witherstormmod:command_block_book')
         .input('8x irons_spellbooks:mana_upgrade_orb')
         .input('irons_spellbooks:copper_spell_book')
         .input('8x irons_spellbooks:blood_upgrade_orb')
