@@ -1939,7 +1939,7 @@ StartupEvents.registry('item', event => {
                 food.hunger(20).saturation(1)
             })
 
-        // 脆肚
+        // 菠萝虾仁炒饭
         event.create('mrqx_extra_pack:pineapple_shrimp_fried_rice').texture('mrqx_extra_pack:item/pineapple_shrimp_fried_rice')
             .maxStackSize(64)
             .food(food => {

@@ -1797,9 +1797,24 @@ ServerEvents.recipes(event => {
         [
             Item.of('farmersdelight:milk_bottle'),
             Item.of('minecraft:sugar'),
-            Ingredient.of('#forge:mint')],
+            Ingredient.of('#forge:mint')
+        ],
         Item.of('mrqx_extra_pack:mint_milk_tea').withCount(1)).setStirs(8))
     event.recipes.create.mixing('mrqx_extra_pack:mint_milk_tea', ['2x farmersdelight:milk_bottle', '2x minecraft:sugar', '2x #forge:mint'])
+
+    // 菠萝虾仁炒饭
+    registerCustomRecipe(new mrqxCookingRecipe(
+        Item.of('fruitsdelight:pineapple'),
+        [
+            Ingredient.of('#forge:fruits/pineapple'),
+            Ingredient.of('alexsmobs:lobster_tail'),
+            Ingredient.of('farmersdelight:cooked_rice'),
+            Ingredient.of('#forge:cooking_oil'),
+            Ingredient.of('#forge:eggs'),
+            Ingredient.of('kubejs:secret_of_rain'),
+        ],
+        Item.of('mrqx_extra_pack:pineapple_shrimp_fried_rice').withCount(1)
+    ))
 
     // 奥秘·血肉
     event.recipes.summoningrituals
