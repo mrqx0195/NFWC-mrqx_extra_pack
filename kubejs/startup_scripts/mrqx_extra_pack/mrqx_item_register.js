@@ -163,6 +163,7 @@ StartupEvents.registry('item', event => {
             .tag('itemborders:gold')
             .tag('kubejs:damage_only')
             .tag('kubejs:legends')
+            .tag('kubejs:loot_entity_only')
             .tag('kubejs:active_only')
 
         // 灵狐之魂
@@ -1704,11 +1705,12 @@ StartupEvents.registry('item', event => {
         .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.mrqx0195.1" })])
         .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.mrqx0195.2" })])
         .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.mrqx0195.3" })])
-        .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.mrqx0195.4" })])
+        .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.mrqx0195.4" })])
         .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.mrqx0195.5" })])
         .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.mrqx0195.6" })])
         .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.mrqx0195.7" })])
         .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.mrqx0195.8" })])
+        .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.mrqx0195.9" })])
         .addScore('nerves', 0)
         .addScore('luck', 1)
         .addScore('speed', 9)
@@ -1935,6 +1937,13 @@ StartupEvents.registry('item', event => {
             .maxStackSize(64)
             .food(food => {
                 food.hunger(20).saturation(1)
+            })
+
+        // 脆肚
+        event.create('mrqx_extra_pack:pineapple_shrimp_fried_rice').texture('mrqx_extra_pack:item/pineapple_shrimp_fried_rice')
+            .maxStackSize(64)
+            .food(food => {
+                food.hunger(20).saturation(2.4)
             })
 
         // 散发着光亮的种子

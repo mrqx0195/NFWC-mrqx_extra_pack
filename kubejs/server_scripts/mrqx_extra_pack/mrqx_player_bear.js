@@ -135,7 +135,7 @@ const mrqxOrganPlayerBearOnlyStrategies = {
             }
         }
         else {
-            if (event.source != 'outOfWorld') {
+            if (event.source.type != 'outOfWorld') {
                 if (mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
                     player.heal(event.amount)
                 }

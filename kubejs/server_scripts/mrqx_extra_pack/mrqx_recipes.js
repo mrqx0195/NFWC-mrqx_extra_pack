@@ -5,7 +5,7 @@
  * @param {Internal.ItemStack[]} ingredients
  * @param {Internal.ItemStack} output
  */
-function CookingRecipe(container, ingredients, output) {
+function mrqxCookingRecipe(container, ingredients, output) {
     this.type = 'farmersdelight:cooking'
     this.container = container
     this.cookingtime = 200
@@ -15,10 +15,10 @@ function CookingRecipe(container, ingredients, output) {
     this.recipe_book_tab = COOKING_MISC
 }
 
-CookingRecipe.prototype = {
+mrqxCookingRecipe.prototype = {
     /**
      * @param {string} recipeBookTab
-     * @returns {CookingRecipe}
+     * @returns {mrqxCookingRecipe}
      */
     setRecipeBookTab: function (recipeBookTab) {
         this.recipe_book_tab = recipeBookTab
@@ -26,7 +26,7 @@ CookingRecipe.prototype = {
     },
     /**
      * @param {Number} cookingtime
-     * @returns {CookingRecipe}
+     * @returns {mrqxCookingRecipe}
      */
     setCookingtime: function (cookingtime) {
         this.cookingtime = cookingtime
@@ -34,7 +34,7 @@ CookingRecipe.prototype = {
     },
     /**
      * @param {Number} experience
-     * @returns {CookingRecipe}
+     * @returns {mrqxCookingRecipe}
      */
     setExperience: function (experience) {
         this.experience = experience
@@ -47,17 +47,17 @@ CookingRecipe.prototype = {
  * @param {Internal.ItemStack[]} ingredients
  * @param {Internal.ItemStack} output
  */
-function MixingBowlRecipe(usedItem, ingredients, output) {
+function mrqxMixingBowlRecipe(usedItem, ingredients, output) {
     this.type = 'extradelight:mixing_bowl'
     this.usedItem = usedItem
     this.ingredients = ingredients
     this.result = output
 }
 
-MixingBowlRecipe.prototype = {
+mrqxMixingBowlRecipe.prototype = {
     /**
      * @param {Number} stirs
-     * @returns {MixingBowlRecipe}
+     * @returns {mrqxMixingBowlRecipe}
      */
     setStirs: function (stirs) {
         this.stirs = stirs
@@ -71,7 +71,7 @@ MixingBowlRecipe.prototype = {
  * @param {Internal.ItemStack} activation_item
  * @param {Internal.ItemStack} output
  */
-function GoetyRitualRecipe(craftType, ingredients, activation_item, output) {
+function mrqxGoetyRitualRecipe(craftType, ingredients, activation_item, output) {
     this.type = 'goety:ritual'
     this.ritual_type = 'goety:craft'
     this.craftType = craftType
@@ -82,10 +82,10 @@ function GoetyRitualRecipe(craftType, ingredients, activation_item, output) {
     this.soulCost = 100
 }
 
-GoetyRitualRecipe.prototype = {
+mrqxGoetyRitualRecipe.prototype = {
     /**
      * @param {Number} duration
-     * @returns {GoetyRitualRecipe}
+     * @returns {mrqxGoetyRitualRecipe}
      */
     setDuration: function (duration) {
         this.duration = duration
@@ -93,7 +93,7 @@ GoetyRitualRecipe.prototype = {
     },
     /**
      * @param {Number} soulCost
-     * @returns {GoetyRitualRecipe}
+     * @returns {mrqxGoetyRitualRecipe}
      */
     setSoulCost: function (soulCost) {
         this.soulCost = soulCost
@@ -101,7 +101,7 @@ GoetyRitualRecipe.prototype = {
     },
     /**
      * @param {String} ritual_type
-     * @returns {GoetyRitualRecipe}
+     * @returns {mrqxGoetyRitualRecipe}
      */
     setRitualType: function (ritual_type) {
         this.ritual_type = ritual_type
@@ -109,7 +109,7 @@ GoetyRitualRecipe.prototype = {
     },
     /**
      * @param {Object} entity_to_sacrifice
-     * @returns {GoetyRitualRecipe}
+     * @returns {mrqxGoetyRitualRecipe}
      */
     setEntityToSacrifice: function (entity_to_sacrifice) {
         this.entity_to_sacrifice = entity_to_sacrifice
@@ -121,7 +121,7 @@ GoetyRitualRecipe.prototype = {
  * @param {Internal.ItemStack} ingredients
  * @param {Internal.ItemStack} output
  */
-function BioForgingRecipe(ingredients, output) {
+function mrqxBioForgingRecipe(ingredients, output) {
     this.type = 'biomancy:bio_forging'
     this.ingredients = ingredients
     this.result = output
@@ -129,10 +129,10 @@ function BioForgingRecipe(ingredients, output) {
     this.bio_forge_tab = 'biomancy:misc'
 }
 
-BioForgingRecipe.prototype = {
+mrqxBioForgingRecipe.prototype = {
     /**
      * @param {Number} nutrientsCost
-     * @returns {BioForgingRecipe}
+     * @returns {mrqxBioForgingRecipe}
      */
     setNutrientsCost: function (nutrientsCost) {
         this.nutrientsCost = nutrientsCost
@@ -140,7 +140,7 @@ BioForgingRecipe.prototype = {
     },
     /**
      * @param {String} tab
-     * @returns {BioForgingRecipe}
+     * @returns {mrqxBioForgingRecipe}
      */
     setTab: function (tab) {
         this.bio_forge_tab = tab
@@ -152,7 +152,7 @@ BioForgingRecipe.prototype = {
  * @param {Internal.ItemStack} input
  * @param {Internal.ItemStack} output
  */
-function CreateAdditionCharging(input, output) {
+function mrqxCreateAdditionCharging(input, output) {
     this.type = 'createaddition:charging'
     this.input = input
     this.result = output
@@ -160,10 +160,10 @@ function CreateAdditionCharging(input, output) {
     this.maxChargeRate = 200
 }
 
-CreateAdditionCharging.prototype = {
+mrqxCreateAdditionCharging.prototype = {
     /**
      * @param {Number} energy
-     * @returns {CreateAdditionCharging}
+     * @returns {mrqxCreateAdditionCharging}
      */
     setEnergy: function (energy) {
         this.energy = energy
@@ -171,7 +171,7 @@ CreateAdditionCharging.prototype = {
     },
     /**
      * @param {Number} maxChargeRate
-     * @returns {CreateAdditionCharging}
+     * @returns {mrqxCreateAdditionCharging}
      */
     setMaxChargeRate: function (maxChargeRate) {
         this.maxChargeRate = maxChargeRate
@@ -184,7 +184,7 @@ CreateAdditionCharging.prototype = {
  * @param {Internal.ItemStack} addition
  * @param {Internal.ItemStack} result
  */
-function CataclysmWeaponFusion(base, addition, result) {
+function mrqxCataclysmWeaponFusion(base, addition, result) {
     this.type = 'cataclysm:weapon_fusion'
     this.base = base
     this.addition = addition
@@ -195,7 +195,7 @@ function CataclysmWeaponFusion(base, addition, result) {
  * @param {Internal.ItemStack} ingredient
  * @param {Internal.ItemStack} output
  */
-function DigestingRecipe(ingredient, output) {
+function mrqxDigestingRecipe(ingredient, output) {
     this.type = 'biomancy:digesting'
     this.ingredient = ingredient
     this.result = output
@@ -203,10 +203,10 @@ function DigestingRecipe(ingredient, output) {
     this.processingTime = 20 * 8
 }
 
-DigestingRecipe.prototype = {
+mrqxDigestingRecipe.prototype = {
     /**
      * @param {Number} nutrientsCost
-     * @returns {DigestingRecipe}
+     * @returns {mrqxDigestingRecipe}
      */
     setNutrientsCost: function (nutrientsCost) {
         this.nutrientsCost = nutrientsCost
@@ -214,7 +214,7 @@ DigestingRecipe.prototype = {
     },
     /**
      * @param {Number} processingTime
-     * @returns {DigestingRecipe}
+     * @returns {mrqxDigestingRecipe}
      */
     setProcessingTime: function (processingTime) {
         this.processingTime = processingTime
@@ -444,7 +444,7 @@ ServerEvents.recipes(event => {
         .recipeTime(1000)
 
     // 暗日种子
-    registerCustomRecipe(new GoetyRitualRecipe('lich', [
+    registerCustomRecipe(new mrqxGoetyRitualRecipe('lich', [
         Item.of('kubejs:pandora_active'),
         Item.of('biomancy:corrosive_additive'),
         Item.of('goety:undeath_potion'),
@@ -453,7 +453,7 @@ ServerEvents.recipes(event => {
         Item.of('mrqx_extra_pack:dark_sun_seed')).setSoulCost(2000))
 
     // 噩梦醇
-    registerCustomRecipe(new BioForgingRecipe([
+    registerCustomRecipe(new mrqxBioForgingRecipe([
         {
             'count': 16, 'item': 'biomancy:withering_ooze'
         }, {
@@ -469,7 +469,7 @@ ServerEvents.recipes(event => {
         .setNutrientsCost(32))
 
     // 肿瘤诱变剂
-    registerCustomRecipe(new BioForgingRecipe([
+    registerCustomRecipe(new mrqxBioForgingRecipe([
         {
             'count': 4, 'item': 'biomancy:volatile_fluid'
         }, {
@@ -485,7 +485,7 @@ ServerEvents.recipes(event => {
         .setNutrientsCost(32))
 
     // 活化巨瘤
-    registerCustomRecipe(new CreateAdditionCharging({ 'count': 1, 'item': 'mrqx_extra_pack:malignant_tumor' }, { 'count': 1, 'item': 'mrqx_extra_pack:activated_giant_tumor' }))
+    registerCustomRecipe(new mrqxCreateAdditionCharging({ 'count': 1, 'item': 'mrqx_extra_pack:malignant_tumor' }, { 'count': 1, 'item': 'mrqx_extra_pack:activated_giant_tumor' }))
 
     // 便携式体检仪
     event.recipes.kubejs.shaped(Item.of('mrqx_extra_pack:portable_medical_checkup_device', 1), [
@@ -502,7 +502,7 @@ ServerEvents.recipes(event => {
         })
 
     // 风暴重锤
-    registerCustomRecipe(new GoetyRitualRecipe('storm', [
+    registerCustomRecipe(new mrqxGoetyRitualRecipe('storm', [
         Item.of('goety:discharge_focus'),
         Item.of('irons_spellbooks:lightning_bottle'),
         Ingredient.of('#forge:storage_blocks/copper'),
@@ -511,20 +511,20 @@ ServerEvents.recipes(event => {
         Item.of('mrqx_extra_pack:storm_mace')).setSoulCost(100))
 
     // 反物质器官
-    registerCustomRecipe(new CreateAdditionCharging({ 'count': 1, 'item': 'kubejs:lung_template' }, { 'count': 1, 'item': 'mrqx_extra_pack:lung_antimatter' }).setEnergy(10000))
-    registerCustomRecipe(new CreateAdditionCharging({ 'count': 1, 'item': 'kubejs:muscle_template' }, { 'count': 1, 'item': 'mrqx_extra_pack:muscle_antimatter' }).setEnergy(10000))
-    registerCustomRecipe(new CreateAdditionCharging({ 'count': 1, 'item': 'kubejs:intestine_template' }, { 'count': 1, 'item': 'mrqx_extra_pack:intestine_antimatter' }).setEnergy(10000))
-    registerCustomRecipe(new CreateAdditionCharging({ 'count': 1, 'item': 'kubejs:rib_template' }, { 'count': 1, 'item': 'mrqx_extra_pack:rib_antimatter' }).setEnergy(10000))
-    registerCustomRecipe(new CreateAdditionCharging({ 'count': 1, 'item': 'kubejs:spine_template' }, { 'count': 1, 'item': 'mrqx_extra_pack:spine_antimatter' }).setEnergy(10000))
-    registerCustomRecipe(new CreateAdditionCharging({ 'count': 1, 'item': 'kubejs:spleen_template' }, { 'count': 1, 'item': 'mrqx_extra_pack:spleen_antimatter' }).setEnergy(10000))
-    registerCustomRecipe(new CreateAdditionCharging({ 'count': 1, 'item': 'kubejs:stomach_template' }, { 'count': 1, 'item': 'mrqx_extra_pack:stomach_antimatter' }).setEnergy(10000))
-    registerCustomRecipe(new CreateAdditionCharging({ 'count': 1, 'item': 'kubejs:kidney_template' }, { 'count': 1, 'item': 'mrqx_extra_pack:kidney_antimatter' }).setEnergy(10000))
-    registerCustomRecipe(new CreateAdditionCharging({ 'count': 1, 'item': 'kubejs:liver_template' }, { 'count': 1, 'item': 'mrqx_extra_pack:liver_antimatter' }).setEnergy(10000))
-    registerCustomRecipe(new CreateAdditionCharging({ 'count': 1, 'item': 'kubejs:appendix_template' }, { 'count': 1, 'item': 'mrqx_extra_pack:appendix_antimatter' }).setEnergy(10000))
-    registerCustomRecipe(new CreateAdditionCharging({ 'count': 1, 'item': 'kubejs:heart_template' }, { 'count': 1, 'item': 'mrqx_extra_pack:heart_antimatter' }).setEnergy(100000))
+    registerCustomRecipe(new mrqxCreateAdditionCharging({ 'count': 1, 'item': 'kubejs:lung_template' }, { 'count': 1, 'item': 'mrqx_extra_pack:lung_antimatter' }).setEnergy(10000))
+    registerCustomRecipe(new mrqxCreateAdditionCharging({ 'count': 1, 'item': 'kubejs:muscle_template' }, { 'count': 1, 'item': 'mrqx_extra_pack:muscle_antimatter' }).setEnergy(10000))
+    registerCustomRecipe(new mrqxCreateAdditionCharging({ 'count': 1, 'item': 'kubejs:intestine_template' }, { 'count': 1, 'item': 'mrqx_extra_pack:intestine_antimatter' }).setEnergy(10000))
+    registerCustomRecipe(new mrqxCreateAdditionCharging({ 'count': 1, 'item': 'kubejs:rib_template' }, { 'count': 1, 'item': 'mrqx_extra_pack:rib_antimatter' }).setEnergy(10000))
+    registerCustomRecipe(new mrqxCreateAdditionCharging({ 'count': 1, 'item': 'kubejs:spine_template' }, { 'count': 1, 'item': 'mrqx_extra_pack:spine_antimatter' }).setEnergy(10000))
+    registerCustomRecipe(new mrqxCreateAdditionCharging({ 'count': 1, 'item': 'kubejs:spleen_template' }, { 'count': 1, 'item': 'mrqx_extra_pack:spleen_antimatter' }).setEnergy(10000))
+    registerCustomRecipe(new mrqxCreateAdditionCharging({ 'count': 1, 'item': 'kubejs:stomach_template' }, { 'count': 1, 'item': 'mrqx_extra_pack:stomach_antimatter' }).setEnergy(10000))
+    registerCustomRecipe(new mrqxCreateAdditionCharging({ 'count': 1, 'item': 'kubejs:kidney_template' }, { 'count': 1, 'item': 'mrqx_extra_pack:kidney_antimatter' }).setEnergy(10000))
+    registerCustomRecipe(new mrqxCreateAdditionCharging({ 'count': 1, 'item': 'kubejs:liver_template' }, { 'count': 1, 'item': 'mrqx_extra_pack:liver_antimatter' }).setEnergy(10000))
+    registerCustomRecipe(new mrqxCreateAdditionCharging({ 'count': 1, 'item': 'kubejs:appendix_template' }, { 'count': 1, 'item': 'mrqx_extra_pack:appendix_antimatter' }).setEnergy(10000))
+    registerCustomRecipe(new mrqxCreateAdditionCharging({ 'count': 1, 'item': 'kubejs:heart_template' }, { 'count': 1, 'item': 'mrqx_extra_pack:heart_antimatter' }).setEnergy(100000))
 
     // 梦魇之触
-    registerCustomRecipe(new BioForgingRecipe([
+    registerCustomRecipe(new mrqxBioForgingRecipe([
         {
             'count': 2, 'item': 'biomancy:withering_ooze'
         }, {
@@ -665,7 +665,7 @@ ServerEvents.recipes(event => {
         .recipeTime(500)
 
     // 充能刀刃
-    registerCustomRecipe(new CreateAdditionCharging({ 'count': 1, 'item': 'art_of_forging:ancient_blade' }, { 'count': 1, 'item': 'mrqx_extra_pack:charged_blade' }).setEnergy(100000))
+    registerCustomRecipe(new mrqxCreateAdditionCharging({ 'count': 1, 'item': 'art_of_forging:ancient_blade' }, { 'count': 1, 'item': 'mrqx_extra_pack:charged_blade' }).setEnergy(100000))
 
     // 先进单片镜
     event.recipes.kubejs.shapeless(Item.of('mrqx_extra_pack:advanced_eyeglass'), [
@@ -804,7 +804,7 @@ ServerEvents.recipes(event => {
         .id('mrqx_advanced_eyeglass_marenol_manual_only')
 
     // 灵魂之翼
-    registerCustomRecipe(new GoetyRitualRecipe('sky', [
+    registerCustomRecipe(new mrqxGoetyRitualRecipe('sky', [
         Item.of('goety:ectoplasm'),
         Item.of('goety:ectoplasm'),
         Item.of('goety:ectoplasm'),
@@ -813,7 +813,7 @@ ServerEvents.recipes(event => {
         Item.of('mrqx_extra_pack:wing_of_soul')).setSoulCost(200))
 
     // 永恒灵魂之翼
-    registerCustomRecipe(new GoetyRitualRecipe('sky', [
+    registerCustomRecipe(new mrqxGoetyRitualRecipe('sky', [
         Item.of('goety:ectoplasm'),
         Item.of('goety:philosophers_stone'),
         Item.of('minecraft:feather'),
@@ -880,7 +880,7 @@ ServerEvents.recipes(event => {
         .id('mrqx_golden_chalice_coinblock_manual_only')
 
     // 复激活药丸
-    registerCustomRecipe(new BioForgingRecipe([
+    registerCustomRecipe(new mrqxBioForgingRecipe([
         {
             'count': 16, 'item': 'biomancy:hormone_secretion'
         }, {
@@ -923,7 +923,7 @@ ServerEvents.recipes(event => {
         .recipeTime(500)
 
     // 幽匿引痕体
-    registerCustomRecipe(new GoetyRitualRecipe('necroturgy', [
+    registerCustomRecipe(new mrqxGoetyRitualRecipe('necroturgy', [
         Item.of('goety:sculk_converter'),
         Item.of('minecraft:sculk_catalyst'),
         Item.of('minecraft:sculk'),
@@ -932,7 +932,7 @@ ServerEvents.recipes(event => {
         Item.of('mrqx_extra_pack:sculk_brandguider')).setSoulCost(1000))
 
     // 幽匿之心
-    registerCustomRecipe(new GoetyRitualRecipe('necroturgy', [
+    registerCustomRecipe(new mrqxGoetyRitualRecipe('necroturgy', [
         Item.of('goety:sculk_devourer'),
         Item.of('minecraft:sculk_sensor'),
         Item.of('goety:sculk_relay'),
@@ -941,7 +941,7 @@ ServerEvents.recipes(event => {
         Item.of('mrqx_extra_pack:sculk_heart')).setSoulCost(1000))
 
     // 幽匿裂岩体
-    registerCustomRecipe(new GoetyRitualRecipe('necroturgy', [
+    registerCustomRecipe(new mrqxGoetyRitualRecipe('necroturgy', [
         Item.of('goety:sculk_converter'),
         Item.of('minecraft:sculk_catalyst'),
         Item.of('minecraft:sculk'),
@@ -950,7 +950,7 @@ ServerEvents.recipes(event => {
         Item.of('mrqx_extra_pack:sculk_rock_breaker')).setSoulCost(1000))
 
     // 幽匿沉积体
-    registerCustomRecipe(new GoetyRitualRecipe('necroturgy', [
+    registerCustomRecipe(new mrqxGoetyRitualRecipe('necroturgy', [
         Item.of('goety:sculk_converter'),
         Item.of('minecraft:sculk_catalyst'),
         Item.of('minecraft:sculk'),
@@ -959,7 +959,7 @@ ServerEvents.recipes(event => {
         Item.of('mrqx_extra_pack:sculk_depositer')).setSoulCost(1000))
 
     // 幽匿寄染体
-    registerCustomRecipe(new GoetyRitualRecipe('necroturgy', [
+    registerCustomRecipe(new mrqxGoetyRitualRecipe('necroturgy', [
         Item.of('goety:sculk_converter'),
         Item.of('minecraft:sculk_catalyst'),
         Item.of('minecraft:sculk'),
@@ -968,7 +968,7 @@ ServerEvents.recipes(event => {
         Item.of('mrqx_extra_pack:sculk_infester')).setSoulCost(1000))
 
     // 幽匿集养体
-    registerCustomRecipe(new GoetyRitualRecipe('necroturgy', [
+    registerCustomRecipe(new mrqxGoetyRitualRecipe('necroturgy', [
         Item.of('goety:sculk_converter'),
         Item.of('minecraft:sculk_catalyst'),
         Item.of('minecraft:sculk'),
@@ -977,7 +977,7 @@ ServerEvents.recipes(event => {
         Item.of('mrqx_extra_pack:sculk_collectors')).setSoulCost(1000))
 
     // 幽匿咆哮体
-    registerCustomRecipe(new GoetyRitualRecipe('necroturgy', [
+    registerCustomRecipe(new mrqxGoetyRitualRecipe('necroturgy', [
         Item.of('irons_spellbooks:eldritch_manuscript'),
         Item.of('minecraft:sculk_shrieker'),
         Item.of('minecraft:sculk'),
@@ -1074,7 +1074,7 @@ ServerEvents.recipes(event => {
         .recipeTime(500)
 
     // 脆肚
-    registerCustomRecipe(new CookingRecipe(
+    registerCustomRecipe(new mrqxCookingRecipe(
         Item.of('minecraft:bowl'),
         [
             Item.of('kubejs:king_of_stomach'),
@@ -1115,17 +1115,17 @@ ServerEvents.recipes(event => {
     })
 
     // 黑洞
-    registerCustomRecipe(new CreateAdditionCharging(
+    registerCustomRecipe(new mrqxCreateAdditionCharging(
         { 'count': 1, 'item': 'mrqx_extra_pack:dark_sun_seed' },
         { 'count': 1, 'item': 'mrqx_extra_pack:black_hole' }
     ).setEnergy(250000))
-    registerCustomRecipe(new CreateAdditionCharging(
+    registerCustomRecipe(new mrqxCreateAdditionCharging(
         { 'count': 1, 'item': 'mrqx_extra_pack:white_hole' },
         { 'count': 1, 'item': 'mrqx_extra_pack:black_hole' }
     ).setEnergy(50000))
 
     // 白洞
-    registerCustomRecipe(new CreateAdditionCharging(
+    registerCustomRecipe(new mrqxCreateAdditionCharging(
         { 'count': 1, 'item': 'mrqx_extra_pack:black_hole' },
         { 'count': 1, 'item': 'mrqx_extra_pack:white_hole' }
     ).setEnergy(50000))
@@ -1152,7 +1152,7 @@ ServerEvents.recipes(event => {
     ]).transitionalItem('mrqx_extra_pack:incomplete_meteor_shower_director').loops(1)
 
     // 处理器
-    registerCustomRecipe(new CreateAdditionCharging(
+    registerCustomRecipe(new mrqxCreateAdditionCharging(
         { 'count': 1, 'item': 'mrqx_extra_pack:basic_uncoded_cpu' },
         { 'count': 1, 'item': 'mrqx_extra_pack:cpu' }
     ).setEnergy(100))
@@ -1480,7 +1480,7 @@ ServerEvents.recipes(event => {
     ]).transitionalItem('mrqx_extra_pack:incomplete_worn_out_steam_engine').loops(5)
 
     // 蒸汽引擎
-    registerCustomRecipe(new CataclysmWeaponFusion(
+    registerCustomRecipe(new mrqxCataclysmWeaponFusion(
         Item.of('mrqx_extra_pack:worn_out_steam_engine'),
         Item.of('mrqx_extra_pack:worn_out_steam_engine'),
         Item.of('mrqx_extra_pack:steam_engine')))
@@ -1554,13 +1554,13 @@ ServerEvents.recipes(event => {
         .recipeTime(500)
 
     // 长伸缩活塞臂
-    registerCustomRecipe(new CataclysmWeaponFusion(
+    registerCustomRecipe(new mrqxCataclysmWeaponFusion(
         Item.of('kubejs:telescopic_tool_arm'),
         Item.of('create:piston_extension_pole'),
         Item.of('mrqx_extra_pack:long_telescopic_piston_arm')))
 
     // 长伸缩攻击臂
-    registerCustomRecipe(new CataclysmWeaponFusion(
+    registerCustomRecipe(new mrqxCataclysmWeaponFusion(
         Item.of('kubejs:telescopic_attack_arm'),
         Item.of('create:piston_extension_pole'),
         Item.of('mrqx_extra_pack:long_telescopic_attack_arm')))
@@ -1590,10 +1590,10 @@ ServerEvents.recipes(event => {
         .recipeTime(500)
 
     // ‌复激活药丸·温和化
-    registerCustomRecipe(new DigestingRecipe(Item.of('mrqx_extra_pack:re_active_pill'), Item.of('mrqx_extra_pack:re_active_pill_moderation')))
+    registerCustomRecipe(new mrqxDigestingRecipe(Item.of('mrqx_extra_pack:re_active_pill'), Item.of('mrqx_extra_pack:re_active_pill_moderation')))
 
     // 自动蜡护仪
-    registerCustomRecipe(new CataclysmWeaponFusion(
+    registerCustomRecipe(new mrqxCataclysmWeaponFusion(
         Item.of('create:precision_mechanism'),
         Item.of('hexerei:waxing_kit'),
         Item.of('mrqx_extra_pack:automatic_wax_protector')))
@@ -1649,7 +1649,7 @@ ServerEvents.recipes(event => {
     })
 
     // 远古巫妖之心
-    registerCustomRecipe(new GoetyRitualRecipe('lich', [
+    registerCustomRecipe(new mrqxGoetyRitualRecipe('lich', [
         Item.of('goety:undeath_potion'),
         Item.of('goety:unholy_blood'),
         Item.of('goety:forbidden_scroll'),
@@ -1792,7 +1792,7 @@ ServerEvents.recipes(event => {
     ], 'mrqx_extra_pack:magic_artificial_mineral_cluster').processingTime(Math.floor(Math.random() * 1000))
 
     // 薄荷奶茶
-    registerCustomRecipe(new MixingBowlRecipe(
+    registerCustomRecipe(new mrqxMixingBowlRecipe(
         Item.of('minecraft:glass_bottle'),
         [
             Item.of('farmersdelight:milk_bottle'),
@@ -2028,10 +2028,10 @@ ServerEvents.recipes(event => {
         .recipeTime(2000)
 
     // 奥秘·未来
-    registerCustomRecipe(new CreateAdditionCharging({ 'count': 1, 'item': 'mrqx_extra_pack:mystery_memories' }, { 'count': 1, 'item': 'mrqx_extra_pack:mystery_future' }).setEnergy(2147483647))
+    registerCustomRecipe(new mrqxCreateAdditionCharging({ 'count': 1, 'item': 'mrqx_extra_pack:mystery_memories' }, { 'count': 1, 'item': 'mrqx_extra_pack:mystery_future' }).setEnergy(2147483647))
 
     // 觉知巨镰
-    registerCustomRecipe(new BioForgingRecipe([
+    registerCustomRecipe(new mrqxBioForgingRecipe([
         Item.of('goety:death_scythe'),
         Item.of('mrqx_extra_pack:mystery_flesh_and_blood')
     ], Item.of('mrqx_extra_pack:sentient_greatscythe')))
@@ -2116,6 +2116,10 @@ const mrqxRitualsStartStrategies = {
     // 奥秘·血肉
     'mrqx_extra_pack:ritual_mystery_flesh_and_blood': function (event) {
         let player = event.player
+        if (!player) {
+            event.cancel()
+            return
+        }
         let count = 0
         let b = false
         for (let adv in mrqxAdvancementsCheck['mystery_flesh_and_blood']) {
@@ -2135,6 +2139,10 @@ const mrqxRitualsStartStrategies = {
     // 奥秘·灵魂
     'mrqx_extra_pack:ritual_mystery_soul': function (event) {
         let player = event.player
+        if (!player) {
+            event.cancel()
+            return
+        }
         let count = 0
         let b = false
         for (let adv in mrqxAdvancementsCheck['mystery_soul']) {
@@ -2154,6 +2162,10 @@ const mrqxRitualsStartStrategies = {
     // 奥秘·机械
     'mrqx_extra_pack:ritual_mystery_machine': function (event) {
         let player = event.player
+        if (!player) {
+            event.cancel()
+            return
+        }
         let count = 0
         let b = false
         for (let adv in mrqxAdvancementsCheck['mystery_machine']) {
@@ -2173,6 +2185,10 @@ const mrqxRitualsStartStrategies = {
     // 奥秘·魔法
     'mrqx_extra_pack:ritual_mystery_magic': function (event) {
         let player = event.player
+        if (!player) {
+            event.cancel()
+            return
+        }
         let count = 0
         let b = false
         for (let adv in mrqxAdvancementsCheck['mystery_magic']) {
@@ -2192,6 +2208,10 @@ const mrqxRitualsStartStrategies = {
     // 奥秘·工艺
     'mrqx_extra_pack:ritual_mystery_craftsmanship': function (event) {
         let player = event.player
+        if (!player) {
+            event.cancel()
+            return
+        }
         let count = 0
         let b = false
         for (let adv in mrqxAdvancementsCheck['mystery_craftsmanship']) {
@@ -2211,6 +2231,10 @@ const mrqxRitualsStartStrategies = {
     // 奥秘·学者
     'mrqx_extra_pack:ritual_mystery_scholar': function (event) {
         let player = event.player
+        if (!player) {
+            event.cancel()
+            return
+        }
         let count = 0
         let b = false
         for (let adv in mrqxAdvancementsCheck['mystery_scholar']) {
@@ -2230,6 +2254,10 @@ const mrqxRitualsStartStrategies = {
     // 奥秘·自然
     'mrqx_extra_pack:ritual_mystery_nature': function (event) {
         let player = event.player
+        if (!player) {
+            event.cancel()
+            return
+        }
         let count = 0
         let b = false
         for (let adv in mrqxAdvancementsCheck['mystery_nature']) {
@@ -2249,6 +2277,10 @@ const mrqxRitualsStartStrategies = {
     // 奥秘·星辰
     'mrqx_extra_pack:ritual_mystery_stars': function (event) {
         let player = event.player
+        if (!player) {
+            event.cancel()
+            return
+        }
         let count = 0
         let b = false
         for (let adv in mrqxAdvancementsCheck['mystery_stars']) {
@@ -2267,6 +2299,10 @@ const mrqxRitualsStartStrategies = {
     // 奥秘·资源
     'mrqx_extra_pack:ritual_mystery_resources': function (event) {
         let player = event.player
+        if (!player) {
+            event.cancel()
+            return
+        }
         let count = 0
         let b = false
         for (let adv in mrqxAdvancementsCheck['mystery_resources']) {
@@ -2286,6 +2322,10 @@ const mrqxRitualsStartStrategies = {
     // 奥秘·食物
     'mrqx_extra_pack:ritual_mystery_food': function (event) {
         let player = event.player
+        if (!player) {
+            event.cancel()
+            return
+        }
         let count = 0
         let b = false
         for (let adv in mrqxAdvancementsCheck['mystery_food']) {
@@ -2305,6 +2345,10 @@ const mrqxRitualsStartStrategies = {
     // 奥秘·罪者
     'mrqx_extra_pack:ritual_mystery_sinners': function (event) {
         let player = event.player
+        if (!player) {
+            event.cancel()
+            return
+        }
         let count = 0
         let b = false
         for (let adv in mrqxAdvancementsCheck['mystery_sinners']) {
@@ -2324,6 +2368,10 @@ const mrqxRitualsStartStrategies = {
     // 奥秘·灾变
     'mrqx_extra_pack:ritual_mystery_disasters': function (event) {
         let player = event.player
+        if (!player) {
+            event.cancel()
+            return
+        }
         let count = 0
         let b = false
         for (let adv in mrqxAdvancementsCheck['mystery_disasters']) {
@@ -2343,6 +2391,10 @@ const mrqxRitualsStartStrategies = {
     // 奥秘·领主
     'mrqx_extra_pack:ritual_mystery_lords': function (event) {
         let player = event.player
+        if (!player) {
+            event.cancel()
+            return
+        }
         let count = 0
         let b = false
         for (let adv in mrqxAdvancementsCheck['mystery_lords']) {
@@ -2362,6 +2414,10 @@ const mrqxRitualsStartStrategies = {
     // 奥秘·从者
     'mrqx_extra_pack:ritual_mystery_followers': function (event) {
         let player = event.player
+        if (!player) {
+            event.cancel()
+            return
+        }
         let count = 0
         let b = false
         for (let adv in mrqxAdvancementsCheck['mystery_followers']) {
@@ -2381,6 +2437,10 @@ const mrqxRitualsStartStrategies = {
     // 奥秘·回忆
     'mrqx_extra_pack:ritual_mystery_memories': function (event) {
         let player = event.player
+        if (!player) {
+            event.cancel()
+            return
+        }
         let count = 0
         let b = false
         for (let adv in mrqxAdvancementsCheck['mystery_memories']) {

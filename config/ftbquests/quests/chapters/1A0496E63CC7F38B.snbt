@@ -1,0 +1,157 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "1A0496E63CC7F38B"
+	group: "16675FCA19680C36"
+	icon: {
+		Count: 1b
+		id: "mrqx_extra_pack:divine_pen"
+		tag: { }
+	}
+	id: "1A0496E63CC7F38B"
+	images: [{
+		alpha: 128
+		click: ""
+		corner: false
+		dev: false
+		height: 7.5d
+		hover: [ ]
+		image: "mrqx_extra_pack:item/organs/divine_pen"
+		rotation: 0.0d
+		width: 7.5d
+		x: 0.0d
+		y: 0.0d
+	}]
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["72D090FF4C44DAAD"]
+			description: [
+				"欢迎使用墨染琴弦的拓展包（mrqx_extra_pack）。"
+				"如你所见，这是一个No Flesh Within Chest的&c非官方&r拓展包，增加了一些新内容。"
+				""
+				"&e玩得愉快！"
+			]
+			icon: {
+				Count: 1b
+				id: "mrqx_extra_pack:divine_pen"
+				tag: { }
+			}
+			id: "0D93EB9A703A8946"
+			shape: "rsquare"
+			size: 1.25d
+			subtitle: "一个No Flesh within Chest的非官方拓展包"
+			tasks: [{
+				id: "20F36EC368476B8E"
+				title: "墨染琴弦的拓展包"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0D93EB9A703A8946"]
+			description: [
+				"本拓展包增加了相当多的新器官——&a核能&r、&1深海&r、&2幽匿&r、&e国王&r、&8处理器&r、&7蒸汽&r、&4原罪&r、纸、&3天体&r……"
+				""
+				"这意味着你将能够创造出更多新build，或是玩更加花的活……"
+				""
+				"&l&e一切取决于你自己！"
+			]
+			icon: {
+				Count: 1b
+				id: "mrqx_extra_pack:heart_tidal_elegy"
+				tag: { }
+			}
+			id: "0E165E778629BB61"
+			subtitle: "更不像人了"
+			tasks: [{
+				id: "53B3CEFCA67875E7"
+				title: "额外器官"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: -2.5d
+		}
+		{
+			dependencies: ["0D93EB9A703A8946"]
+			description: [
+				"除去器官，本拓展包还添加了一些其他的物品，例如："
+				""
+				"能够显示更多信息的&b先进单片镜&r"
+				""
+				"不会产生血清瓶，能够直接显示胸腔数值，冷却更快的&b自动体检仪&r"
+				""
+				"……以及更多！"
+			]
+			icon: "mrqx_extra_pack:advanced_eyeglass"
+			id: "51F52E312D5B0D30"
+			subtitle: "实用的小玩意"
+			tasks: [{
+				id: "52D8F633723133C6"
+				title: "额外物品"
+				type: "checkmark"
+			}]
+			x: 2.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0D93EB9A703A8946"]
+			description: [
+				"……你真的，了解这个世界吗？"
+				"你真的，知晓这个世界的&b&l&o奥秘&r吗"
+			]
+			icon: "mrqx_extra_pack:mystery_stars"
+			id: "22BD7FB87EE058E5"
+			subtitle: "超越一切"
+			tasks: [{
+				id: "182C2AC4448C4287"
+				title: "世界的奥秘"
+				type: "checkmark"
+			}]
+			x: -2.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0D93EB9A703A8946"]
+			description: [
+				"本拓展包还添加了数种全新的Tetra改造，例如："
+				""
+				"以&e国王&r器官制作而成的&e&l&o诸王之息&r和&b&l&o湖中神盾&r"
+				""
+				"以&7蒸汽&r器官制作而成的&8&l&o誓死&r"
+				""
+				"它们也许不强，但在一些时刻或许会起到意想不到的作用。"
+			]
+			icon: {
+				Count: 1b
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					HideFlags: 1
+					honing_progress: 435
+					id: "012f474f-0625-4fa8-b42e-85a3b288539e"
+					"sword/blade": "sword/mrqx_kings_new_lance"
+					"sword/guard": "sword/mrqx_kings_crown"
+					"sword/hilt": "sword/mrqx_kings_extension"
+					"sword/mrqx_kings_crown_material": "mrqx_kings_crown"
+					"sword/mrqx_kings_crystal_material": "mrqx_kings_crystal"
+					"sword/mrqx_kings_extension_material": "mrqx_kings_extension"
+					"sword/mrqx_kings_new_lance_material": "mrqx_kings_new_lance"
+					"sword/pommel": "sword/mrqx_kings_crystal"
+				}
+			}
+			id: "36A3DF3C5754FA9A"
+			subtitle: "新时代武器"
+			tasks: [{
+				id: "2AC3986A9CAB4E66"
+				title: "更多Tetra"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 2.5d
+		}
+	]
+	title: "简介"
+}

@@ -1,0 +1,2736 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "15E9969471EB1061"
+	group: "16675FCA19680C36"
+	icon: {
+		Count: 1b
+		id: "mrqx_extra_pack:heart_paper_written"
+		tag: { }
+	}
+	id: "15E9969471EB1061"
+	images: [
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 4.46d
+			hover: [ ]
+			image: "kubejs:textures/task/collection_1.png"
+			rotation: 0.0d
+			width: 17.0d
+			x: -9.75d
+			y: -5.0d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 4.46d
+			hover: [ ]
+			image: "kubejs:textures/task/collection_1.png"
+			rotation: 0.0d
+			width: 17.0d
+			x: 6.0d
+			y: -8.0d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 4.46d
+			hover: [ ]
+			image: "kubejs:textures/task/collection_1.png"
+			rotation: 0.0d
+			width: 17.0d
+			x: -9.75d
+			y: -8.0d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 4.46d
+			hover: [ ]
+			image: "kubejs:textures/task/collection_1.png"
+			rotation: 0.0d
+			width: 17.0d
+			x: 6.0d
+			y: -1.0d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 4.46d
+			hover: [ ]
+			image: "kubejs:textures/task/collection_1.png"
+			rotation: 0.0d
+			width: 17.0d
+			x: -9.75d
+			y: -2.0d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 4.46d
+			hover: [ ]
+			image: "kubejs:textures/task/collection_1.png"
+			rotation: 0.0d
+			width: 17.0d
+			x: 6.0d
+			y: 2.0d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 4.46d
+			hover: [ ]
+			image: "kubejs:textures/task/collection_1.png"
+			rotation: 0.0d
+			width: 17.0d
+			x: -9.75d
+			y: 1.0d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 4.46d
+			hover: [ ]
+			image: "kubejs:textures/task/collection_1.png"
+			rotation: 0.0d
+			width: 17.0d
+			x: -9.75d
+			y: 4.0d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 4.467948717948718d
+			hover: [ ]
+			image: "kubejs:textures/task/collection_2.png"
+			rotation: 0.0d
+			width: 17.0d
+			x: 6.0d
+			y: -5.0d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 4.46d
+			hover: [ ]
+			image: "kubejs:textures/task/collection_1.png"
+			rotation: 0.0d
+			width: 17.0d
+			x: -9.75d
+			y: 7.0d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 4.46d
+			hover: [ ]
+			image: "kubejs:textures/task/collection_1.png"
+			rotation: 0.0d
+			width: 17.0d
+			x: 6.0d
+			y: 5.0d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 5.888888888888889d
+			hover: [ ]
+			image: "kubejs:textures/task/collection_6.png"
+			rotation: 0.0d
+			width: 17.0d
+			x: 6.0d
+			y: 8.5d
+		}
+	]
+	order_index: 1
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["0E165E778629BB61"]
+			description: [
+				"&1深海&r器官是一类相当暴力的器官——看那假人上飘起的数字，是不是很暴力？"
+				""
+				"在胸腔中集齐所有深海器官后，其威力将得到最大化——这也意味着它们难以与其他器官进行搭配。"
+				""
+				"不过，获取深海器官需要通过一个特殊且困难的传送门挑战：&1深蓝之树之影&r，这意味着你需要在已拥有较高战斗能力的情况下才能获取&1深海&r器官。"
+			]
+			id: "3022D0E12A9D10CF"
+			shape: "rsquare"
+			subtitle: "纯粹的强大"
+			tasks: [{
+				id: "5CD574F3A0EEB8CF"
+				item: {
+					Count: 1b
+					id: "gateways:gate_pearl"
+					tag: {
+						gateway: "mrqx_extra_pack:shadow_of_caerula_arbor"
+					}
+				}
+				type: "item"
+			}]
+			title: "深海：来自深邃的海洋"
+			x: -15.75d
+			y: -9.25d
+		}
+		{
+			dependencies: ["3022D0E12A9D10CF"]
+			dependency_requirement: "all_started"
+			description: ["&1深海&r器官之一，能够提供多项数值加成。"]
+			hide_dependency_lines: true
+			id: "64958CE7A6D5ABAC"
+			rewards: [{
+				id: "18905E64CF04ABAB"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "“纠缠着我的噩梦啊，唱个歌吧。”"
+			tasks: [{
+				id: "5A338AF1F17DDD2C"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:heart_tidal_elegy"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -14.75d
+			y: -8.25d
+		}
+		{
+			dependencies: ["3022D0E12A9D10CF"]
+			dependency_requirement: "all_started"
+			description: ["&1深海&r器官之一，能够在造成伤害时额外对附近的生物造成伤害。"]
+			hide_dependency_lines: true
+			id: "1F5C330BBD8BB7AB"
+			rewards: [{
+				id: "22AF2B2AFC888B62"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "“那么，就请听听这远海的歌吧……”"
+			tasks: [{
+				id: "3AE0E9F69C5B679C"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:lung_the_tide_surges_the_tide_recedes"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -13.75d
+			y: -8.25d
+		}
+		{
+			dependencies: ["3022D0E12A9D10CF"]
+			dependency_requirement: "all_started"
+			description: ["&1深海&r器官之一，能够在造成伤害时额外对附近的生物造成伤害。"]
+			hide_dependency_lines: true
+			id: "7FC73ADAD4E679DB"
+			rewards: [{
+				id: "1881B8453464DA7D"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "“你什么时候产生了这些附肢只是幻象的错觉？”"
+			tasks: [{
+				id: "7E46A143367789A9"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:kidney_moon_in_the_water"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -12.75d
+			y: -8.25d
+		}
+		{
+			dependencies: ["3022D0E12A9D10CF"]
+			dependency_requirement: "all_started"
+			description: ["&1深海&r器官之一，能够提供一定的法力回复。"]
+			hide_dependency_lines: true
+			id: "49AC80B0BFFEF368"
+			rewards: [{
+				id: "5C44D97C6E4E0174"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "“海流会追索脆弱的生命。”"
+			tasks: [{
+				id: "7A4B34A63900802C"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:liver_tide_observation"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -11.75d
+			y: -8.25d
+		}
+		{
+			dependencies: ["3022D0E12A9D10CF"]
+			dependency_requirement: "all_started"
+			description: ["&1深海&r器官之一，能够提供一定的攻击力加成。"]
+			hide_dependency_lines: true
+			id: "513BCF0D5129D0B1"
+			rewards: [{
+				id: "1CB544581824B4A2"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "“谁是猎物？”"
+			tasks: [{
+				id: "25FA07494DCE8385"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:pancreas_group_hunting"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -10.75d
+			y: -8.25d
+		}
+		{
+			dependencies: ["3022D0E12A9D10CF"]
+			dependency_requirement: "all_started"
+			description: ["&1深海&r器官之一，能够提供一定的攻击力加成及生命值回复，并使你在一定程度上免于死亡。"]
+			hide_dependency_lines: true
+			id: "3BEA5737CB1625A0"
+			rewards: [{
+				id: "0331D11F95D8CA60"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "“……谁都，别想逃走！”"
+			tasks: [{
+				id: "3893D6855A00F2AB"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:muscle_bone_fracture"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -9.75d
+			y: -8.25d
+		}
+		{
+			dependencies: ["3022D0E12A9D10CF"]
+			dependency_requirement: "all_started"
+			description: ["&1深海&r器官之一，能够提供一定的生命值加成，并提供额外伤害。"]
+			hide_dependency_lines: true
+			id: "4617D9686C712FEA"
+			rewards: [{
+				id: "68781793612178C3"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "“来吧，再多些，再多些！”"
+			tasks: [{
+				id: "72717F1238DA9B84"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:rib_the_pressure_to_survive"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -8.75d
+			y: -8.25d
+		}
+		{
+			dependencies: ["3022D0E12A9D10CF"]
+			dependency_requirement: "all_started"
+			description: ["&1深海&r器官之一，能够在受到伤害时回复生命值。"]
+			hide_dependency_lines: true
+			id: "227379B9B4BBD7E9"
+			rewards: [{
+				id: "6346FF34138366D8"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "“谁因堕落而雀跃？”"
+			tasks: [{
+				id: "396B70645DA9B476"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:spleen_adhering_to_nature"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -7.75d
+			y: -8.25d
+		}
+		{
+			dependencies: ["3022D0E12A9D10CF"]
+			dependency_requirement: "all_started"
+			description: ["&1深海&r器官之一，能够在造成伤害时根据饥饿值和饱和度额外造成伤害。"]
+			hide_dependency_lines: true
+			id: "2D12FAD303B1EF77"
+			rewards: [{
+				id: "231251F9C41CCB90"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "“别眨眼，你会错过自己的死状。”"
+			tasks: [{
+				id: "4F458DAEA4C2A4C3"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:stomach_abyssal_predator"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -6.75d
+			y: -8.25d
+		}
+		{
+			dependencies: ["3022D0E12A9D10CF"]
+			dependency_requirement: "all_started"
+			description: ["&1深海&r器官之一，能够提供一定的神经效率加成。"]
+			hide_dependency_lines: true
+			id: "6BDC36255EEF7EE6"
+			rewards: [{
+				id: "5DA364C62DD5E7C0"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "“啊，麻烦来了。”"
+			tasks: [{
+				id: "13935F0A2ACC5302"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:spine_abyssal_intuition"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -5.75d
+			y: -8.25d
+		}
+		{
+			dependencies: ["3022D0E12A9D10CF"]
+			dependency_requirement: "all_started"
+			description: ["&1深海&r器官之一，能够对比你弱小的生物造成额外伤害。"]
+			hide_dependency_lines: true
+			id: "00D7546F8F696D32"
+			rewards: [{
+				id: "0D581F9E5D730207"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "“想从我掌间逃开前征求过我的同意了吗，我的猎物？”"
+			tasks: [{
+				id: "0CD3C2DAF088CB9C"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:intestine_survival_of_the_fittest"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -4.75d
+			y: -8.25d
+		}
+		{
+			dependencies: ["3022D0E12A9D10CF"]
+			dependency_requirement: "all_started"
+			description: ["&1深海&r器官之一，能够将部分非&1深海&r器官视作&1深海&r器官，并在造成伤害时消耗法力值额外造成伤害。"]
+			hide_dependency_lines: true
+			id: "574D8A8BF1CBF779"
+			rewards: [{
+				id: "6DAE7E879D3ECC28"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "“他们会成为我们的血亲。”"
+			tasks: [{
+				id: "72FFA2AB297F9BB6"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:appendix_assimilation_mutation"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -3.75d
+			y: -8.25d
+		}
+		{
+			dependencies: ["0E165E778629BB61"]
+			description: [
+				"&7蒸汽&r器官是一类特殊的机械器官，依靠&7蒸汽计数&r进行运作。"
+				""
+				"其原材料需要从锻造遗迹中获取，这使得其成本较为高昂——当然，威力也是强大的。"
+			]
+			id: "54E36F797B14701F"
+			shape: "rsquare"
+			subtitle: "从历史中来"
+			tasks: [{
+				id: "0F1568606FC2C584"
+				item: "mrqx_extra_pack:worn_out_steam_engine"
+				type: "item"
+			}]
+			title: "蒸汽：尘封的机械"
+			x: -15.75d
+			y: -6.25d
+		}
+		{
+			dependencies: ["4A11AE0ADF7730AE"]
+			hide_dependency_lines: true
+			id: "4057C64734238A68"
+			rewards: [{
+				id: "5F98F1E1CA269902"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "5D3BA9A7BCB04A36"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:divine_pen"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 1.0d
+			y: -8.25d
+		}
+		{
+			dependencies: ["0E165E778629BB61"]
+			id: "4A11AE0ADF7730AE"
+			shape: "rsquare"
+			tasks: [{
+				id: "2028461C6209B365"
+				item: "minecraft:paper"
+				type: "item"
+			}]
+			x: 0.0d
+			y: -9.25d
+		}
+		{
+			dependencies: ["0E165E778629BB61"]
+			id: "1B75F5835B3F3E31"
+			shape: "rsquare"
+			tasks: [{
+				id: "39EC0CCA50882A78"
+				item: "mrqx_extra_pack:basic_uncoded_cpu"
+				type: "item"
+			}]
+			x: 0.0d
+			y: -6.25d
+		}
+		{
+			dependencies: ["0E165E778629BB61"]
+			description: [
+				"&e元素损伤&r是一类特殊的伤害，需要通过&b先进单片镜&r才能查看具体数值。"
+				""
+				"一些器官能够造成&e元素损伤&r，但一些精英怪也能造成&e元素损伤&r。"
+				""
+				"在此处展示的只是部分能造成&e元素损伤&r的器官，更多请自行探索。"
+				""
+				"（翻页以查看具体介绍）"
+				""
+				"{@pagebreak}"
+				"&5末影损伤&r：达到100时，消耗100&5末影损伤&r使其额外受到100点龙息伤害（不致死，不受额外加成影响），并使其获得10s的&5深渊烧灼&r、&5深渊恐惧&r、&5极度恐惧&r"
+				""
+				"&c灼燃损伤&r：达到100时，消耗100&c灼燃损伤&r使其额外受到100点岩浆伤害（不致死，不受额外加成影响），并使其获得10s的&c助燃性&r、&c灼烧魔印&r、&c炽热烙印&r"
+				""
+				"&b冻结损伤&r：达到100时，消耗100&b冻结损伤&r使其额外受到100点冻结伤害（不致死，不受额外加成影响），并使其获得10s的&b缓慢&r、&b雪肤&r、&b冻结&r"
+				""
+				"&9雷霆损伤&r：达到100时，消耗100&9雷霆损伤&r使其额外受到100点雷电伤害（不致死，不受额外加成影响），并使其获得10s的&9眩晕&r、&9痉挛&r、&9箭矢磁吸&r"
+				""
+				"&0凋亡损伤&r：达到100时，消耗100&0凋亡损伤&r使其额外受到100点凋零伤害（不致死，不受额外加成影响），并使其获得10s的&0凋零&r、&0凋零腐败&r、&0衰弱&r"
+			]
+			id: "2B1A1B95F863B332"
+			shape: "rsquare"
+			subtitle: "输出多样化"
+			tasks: [{
+				id: "07BB0C2336AFAFA3"
+				item: "mrqx_extra_pack:mint_milk_tea"
+				type: "item"
+			}]
+			title: "元素损伤：另一种伤害"
+			x: -15.75d
+			y: 5.75d
+		}
+		{
+			dependencies: ["0E165E778629BB61"]
+			icon: {
+				Count: 1b
+				id: "mrqx_extra_pack:kings_crown"
+				tag: { }
+			}
+			id: "2378ED0E7AAA30C8"
+			shape: "rsquare"
+			tasks: [{
+				id: "6FF370CBB66DB4FF"
+				title: "国王：在死亡的边缘试探"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: -2.25d
+		}
+		{
+			dependencies: ["0E165E778629BB61"]
+			icon: {
+				Count: 1b
+				id: "mrqx_extra_pack:sculk_growler"
+				tag: { }
+			}
+			id: "514A75F9FDD674EC"
+			shape: "rsquare"
+			tasks: [{
+				id: "50586C979493D2B0"
+				title: "幽匿：深暗来袭"
+				type: "checkmark"
+			}]
+			x: -15.75d
+			y: -0.25d
+		}
+		{
+			dependencies: ["0E165E778629BB61"]
+			description: ["&b反物质&r是一类较为简单的器官，仅提供数值加成……或者减成？"]
+			icon: {
+				Count: 1b
+				id: "mrqx_extra_pack:heart_antimatter"
+				tag: { }
+			}
+			id: "7AA91AC7DA795C0B"
+			shape: "rsquare"
+			subtitle: "的反是字行这"
+			tasks: [{
+				id: "632F353847E7CF93"
+				title: "反物质：世界的另一面"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.75d
+		}
+		{
+			dependencies: ["267847C6D3DBEB9C"]
+			hide_dependency_lines: true
+			id: "46F7E2C8B0D4B8E2"
+			rewards: [{
+				id: "3216070DD692B654"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6523C1DDB102E30A"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:adventurers_badge"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 1.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["0E165E778629BB61"]
+			icon: {
+				Count: 1b
+				id: "mrqx_extra_pack:adventurers_badge"
+				tag: { }
+			}
+			id: "267847C6D3DBEB9C"
+			shape: "rsquare"
+			tasks: [{
+				id: "762BAEF673523D9F"
+				title: "杂项：小玩具"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 6.75d
+		}
+		{
+			dependencies: ["0E165E778629BB61"]
+			icon: {
+				Count: 1b
+				id: "mrqx_extra_pack:sin_and_judgement"
+				tag: { }
+			}
+			id: "5EA6AF64B2BE4E95"
+			shape: "rsquare"
+			tasks: [{
+				id: "7FCF92EF0DD32DDE"
+				title: "原罪：七大罪"
+				type: "checkmark"
+			}]
+			x: -15.75d
+			y: 2.75d
+		}
+		{
+			dependencies: ["54E36F797B14701F"]
+			description: ["蒸汽引擎是&7蒸汽&r器官的核心，能够根据&7蒸汽动力&r等级提供&7蒸汽计数&r。"]
+			hide_dependency_lines: true
+			id: "16180B7E93387AD3"
+			rewards: [{
+				id: "6C27B31B2DB704EB"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "从历史的尘埃中，它恢复了动力"
+			tasks: [{
+				id: "44DB14EDE521A073"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:steam_engine"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -14.75d
+			y: -5.25d
+		}
+		{
+			dependencies: ["54E36F797B14701F"]
+			description: ["&7蒸汽&r器官之一，能够将&c熔火&r/&c心火&r状态转化为&7蒸汽动力&r。"]
+			hide_dependency_lines: true
+			id: "7CB20258A43808BC"
+			rewards: [{
+				id: "35175627D808B6C9"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "时光飞逝，它仍在转动"
+			tasks: [{
+				id: "11435A3838A2FF43"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:steam_power_engine"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -13.75d
+			y: -5.25d
+		}
+		{
+			dependencies: ["54E36F797B14701F"]
+			description: ["&7蒸汽&r器官之一，能够将&c核能动力&r转化为&7蒸汽动力&r。"]
+			hide_dependency_lines: true
+			id: "2457591EB920F049"
+			rewards: [{
+				id: "6AFC05F60E9E5FB4"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "改造之后，它适应了新时代"
+			tasks: [{
+				id: "452A3C7D8FBB3C8F"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:steam_power_turbine"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -12.75d
+			y: -5.25d
+		}
+		{
+			dependencies: ["54E36F797B14701F"]
+			description: ["&7蒸汽&r器官之一，能够消耗&7蒸汽动力&r的时长提供&6资源值&r。"]
+			hide_dependency_lines: true
+			id: "56139BE06CF0EE38"
+			rewards: [{
+				id: "572D1446A4A78CC8"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "发电的本质就是烧开水"
+			tasks: [{
+				id: "1E024D355BF61B60"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:steam_turbine"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -11.75d
+			y: -5.25d
+		}
+		{
+			dependencies: ["54E36F797B14701F"]
+			description: ["&7蒸汽&r器官之一，能够根据&7蒸汽计数&r提供减伤。"]
+			hide_dependency_lines: true
+			id: "3045CBA8A5A888F4"
+			rewards: [{
+				id: "787C25B20B1AEAEB"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "刀剑之下，金属光泽愈发明亮"
+			tasks: [{
+				id: "627A737C9D51A08D"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:steam_armor"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -10.75d
+			y: -5.25d
+		}
+		{
+			dependencies: ["54E36F797B14701F"]
+			description: ["&7蒸汽&r器官之一，根据&7蒸汽计数&r造成额外伤害和&c灼燃损伤&r。"]
+			hide_dependency_lines: true
+			id: "4C952566381C5171"
+			rewards: [{
+				id: "72C87F5FFE508B43"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "高压蒸汽形成的火焰长剑"
+			tasks: [{
+				id: "25EA62B9BA7D4282"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:steam_rapier"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -9.75d
+			y: -5.25d
+		}
+		{
+			dependencies: ["54E36F797B14701F"]
+			description: ["&7蒸汽&r器官之一，能够持续提供&e重拳计数器&r。"]
+			hide_dependency_lines: true
+			id: "23521250933AEB43"
+			rewards: [{
+				id: "7DAF9AF8E480A9BE"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "加压蓄力"
+			tasks: [{
+				id: "18701D772342E12E"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:steam_hydraulic_rod"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -8.75d
+			y: -5.25d
+		}
+		{
+			dependencies: ["54E36F797B14701F"]
+			description: ["&7蒸汽&r器官之一，能够提供一段时间的增益效果，代价是结束后会有短暂的晕眩。"]
+			hide_dependency_lines: true
+			id: "3A34E0EF29A0BBDF"
+			rewards: [{
+				id: "64A337F5700FB316"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "压力加倍"
+			tasks: [{
+				id: "03F0A27A6BB10AA8"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:steam_supercharge_engine"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -7.75d
+			y: -5.25d
+		}
+		{
+			dependencies: ["54E36F797B14701F"]
+			description: ["&7蒸汽&r器官之一，是该类器官中最重要的输出器官，能够将积攒的&e重拳计数器&r和&6资源值&r转化为高额伤害。"]
+			hide_dependency_lines: true
+			id: "09CE958E180B96E5"
+			rewards: [{
+				id: "7E034B500E36A456"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "击碎一切"
+			tasks: [{
+				id: "30430BB6A7DC20DD"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:furious_defense"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -6.75d
+			y: -5.25d
+		}
+		{
+			dependencies: ["0E165E778629BB61"]
+			description: [
+				"&4核能&r器官是一类特殊的机械器官，通过消耗&b核反应燃料&r获取&c核能动力&r效果，进而取得收益。"
+				""
+				"&c&l&o注意：在核能动力持续期间拆下裂变反应堆将导致爆炸！！！&r"
+			]
+			id: "688323BF2C00E12E"
+			shape: "rsquare"
+			tasks: [{
+				id: "47B81B7D37A19706"
+				item: "mrqx_extra_pack:nuclear_fuel"
+				type: "item"
+			}]
+			title: "核能：胸中太阳"
+			x: -15.75d
+			y: -3.25d
+		}
+		{
+			dependencies: ["2B1A1B95F863B332"]
+			description: ["&e元素损伤&r器官之一，能够造成&b冻结损伤&r。"]
+			hide_dependency_lines: true
+			id: "444582300B9D52D5"
+			rewards: [{
+				id: "57D2B341CCC0AC99"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "冰龙之力常伴与你"
+			tasks: [{
+				id: "2583EFFB0287E360"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:active_ice_dragon_bead"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -14.75d
+			y: 6.75d
+		}
+		{
+			dependencies: ["2B1A1B95F863B332"]
+			description: ["&e元素损伤&r器官之一，能够造成&c灼燃损伤&r。"]
+			hide_dependency_lines: true
+			id: "214320CFF095FDB4"
+			rewards: [{
+				id: "5D9876A7FF2813F5"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "火龙之力常伴与你"
+			tasks: [{
+				id: "4A2FFF41EE5514B5"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:active_fire_dragon_bead"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -13.75d
+			y: 6.75d
+		}
+		{
+			dependencies: ["2B1A1B95F863B332"]
+			description: ["&e元素损伤&r器官之一，能够造成&9雷霆损伤&r。"]
+			hide_dependency_lines: true
+			id: "7E887CC3DB55A5EF"
+			rewards: [{
+				id: "56EE1466DECD5111"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "电龙之力常伴与你"
+			tasks: [{
+				id: "5DFD11518F80545F"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:active_lightning_dragon_bead"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -12.75d
+			y: 6.75d
+		}
+		{
+			dependencies: ["2B1A1B95F863B332"]
+			description: ["&e元素损伤&r器官之一，能够造成&5末影损伤&r。"]
+			hide_dependency_lines: true
+			id: "3DA7A2A994E2BB81"
+			rewards: [{
+				id: "688AD549B435390E"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "此世唯一之龙"
+			tasks: [{
+				id: "496B6E7167D6A19C"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:active_ender_dragon_bead"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -11.75d
+			y: 6.75d
+		}
+		{
+			dependencies: ["2B1A1B95F863B332"]
+			description: ["&e元素损伤&r器官之一，能够造成&0凋亡损伤&r。"]
+			hide_dependency_lines: true
+			id: "7087C72C3490EAE6"
+			rewards: [{
+				id: "18FD9C74A3774016"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "The Start of the Worlds Impending Doom……"
+			tasks: [{
+				id: "1AAF51F6051E3A08"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:withered_nether_star_shard"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -10.75d
+			y: 6.75d
+		}
+		{
+			dependencies: ["7AA91AC7DA795C0B"]
+			description: ["&b反物质&r器官的核心，能够反转所有胸腔数值……无论正负。"]
+			hide_dependency_lines: true
+			id: "138F3135AB6BEB98"
+			rewards: [{
+				id: "059BEFB6715E273A"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "！了反！了反"
+			tasks: [{
+				id: "5866AC40B73E4866"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:heart_antimatter"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 1.0d
+			y: 1.75d
+		}
+		{
+			dependencies: ["7AA91AC7DA795C0B"]
+			hide_dependency_lines: true
+			id: "739E575D44865FE1"
+			rewards: [{
+				id: "5C63F3EC57AB2BC8"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "56E293B25355D454"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:lung_antimatter"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 2.0d
+			y: 1.75d
+		}
+		{
+			dependencies: ["7AA91AC7DA795C0B"]
+			hide_dependency_lines: true
+			id: "5AA4BC616BE240AF"
+			rewards: [{
+				id: "2F53F88C25DCB1DD"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "1A72052388FBBE1E"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:kidney_antimatter"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 3.0d
+			y: 1.75d
+		}
+		{
+			dependencies: ["7AA91AC7DA795C0B"]
+			hide_dependency_lines: true
+			id: "02BFA16D155BDC84"
+			rewards: [{
+				id: "632871405A8C8E34"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "5AFDCD277BC26CB7"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:liver_antimatter"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 4.0d
+			y: 1.75d
+		}
+		{
+			dependencies: ["7AA91AC7DA795C0B"]
+			hide_dependency_lines: true
+			id: "20E4E763FB2EAE50"
+			rewards: [{
+				id: "5B69511BFB2DF283"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "501C0B04F31D5B56"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:muscle_antimatter"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 5.0d
+			y: 1.75d
+		}
+		{
+			dependencies: ["7AA91AC7DA795C0B"]
+			hide_dependency_lines: true
+			id: "03733BBF6C0AF7C2"
+			rewards: [{
+				id: "7DE589CFBB0A05B3"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "79CAE8529AA807B5"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:rib_antimatter"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 6.0d
+			y: 1.75d
+		}
+		{
+			dependencies: ["7AA91AC7DA795C0B"]
+			hide_dependency_lines: true
+			id: "7CAB8B5CB23C6C3C"
+			rewards: [{
+				id: "7F9CAA63C08872A5"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "5A30ED048DE89D10"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:spleen_antimatter"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 7.0d
+			y: 1.75d
+		}
+		{
+			dependencies: ["7AA91AC7DA795C0B"]
+			hide_dependency_lines: true
+			id: "703146058DC2C97B"
+			rewards: [{
+				id: "3EB914A5BAAC70C8"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "1F13FC01CD7B3EFA"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:intestine_antimatter"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 10.0d
+			y: 1.75d
+		}
+		{
+			dependencies: ["7AA91AC7DA795C0B"]
+			hide_dependency_lines: true
+			id: "6129679BFB133723"
+			rewards: [{
+				id: "7314C28A4C40C5D2"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "58A3644CA3B1ADB4"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:spine_antimatter"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 9.0d
+			y: 1.75d
+		}
+		{
+			dependencies: ["7AA91AC7DA795C0B"]
+			hide_dependency_lines: true
+			id: "70A96E767EA7A9D7"
+			rewards: [{
+				id: "770ADC4A84348714"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "38909F9C2467A43F"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:stomach_antimatter"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 8.0d
+			y: 1.75d
+		}
+		{
+			dependencies: ["7AA91AC7DA795C0B"]
+			hide_dependency_lines: true
+			id: "6E3CBA570AA824ED"
+			rewards: [{
+				id: "1F55F0723C48DCB1"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "434EA7EBCCBEC8B9"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:appendix_antimatter"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 11.0d
+			y: 1.75d
+		}
+		{
+			dependencies: ["688323BF2C00E12E"]
+			description: [
+				"&c核能&r器官的核心，能够消耗&b核反应燃料&r获取&c核能动力&r效果。"
+				""
+				"&c&l&o注意：在核能动力持续期间拆下裂变反应堆将导致爆炸！！！&r"
+			]
+			hide_dependency_lines: true
+			id: "288E1ACB4B5B37D9"
+			rewards: [{
+				id: "2715EDDF883745F5"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "革命的尽头"
+			tasks: [{
+				id: "3A138A13BC4D4E1A"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:fission_reactor"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -14.75d
+			y: -2.25d
+		}
+		{
+			dependencies: ["688323BF2C00E12E"]
+			description: ["&c核能&r器官之一，置于&b反应舱室&r旁边时能够增加&c核能动力&r的时长，但会降低等级。"]
+			hide_dependency_lines: true
+			id: "63B93AA5308AC3BD"
+			rewards: [{
+				id: "46D13ACAD90C9DCB"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "据说如果它停了，就会有人满头大汗"
+			tasks: [{
+				id: "4DF6D0BE0CA4540B"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:heat_vent"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -12.75d
+			y: -2.25d
+		}
+		{
+			dependencies: ["688323BF2C00E12E"]
+			description: ["&c核能&r器官之一，置于&b反应舱室&r旁边时能够增加&c核能动力&r的等级，但会降低时长。"]
+			hide_dependency_lines: true
+			id: "66907F03E123570F"
+			rewards: [{
+				id: "5654BB153F1762BC"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "升温！升温！升温！"
+			tasks: [{
+				id: "32FFE5D59A7FBFC9"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:thermal_barrier"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -11.75d
+			y: -2.25d
+		}
+		{
+			dependencies: ["688323BF2C00E12E"]
+			description: ["&c核能&r器官之一，置于&b裂变反应堆&r旁边时能够增加&c核能动力&r的等级与时长，同时消耗的&b核反应燃料&r数量增加。"]
+			hide_dependency_lines: true
+			id: "7CFC6B006B76E633"
+			rewards: [{
+				id: "11BD85FE448BC7CE"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "039F006265695693"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:reactor_chamber"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -13.75d
+			y: -2.25d
+		}
+		{
+			dependencies: ["688323BF2C00E12E"]
+			description: [
+				"&c核能&r器官之一，置于&b反应舱室&r旁边时能够增加攻击伤害并追加&c灼燃损伤&r，但攻击会降低时长。"
+				""
+				"不过用本器官将时长降至0会立刻移除&b裂变反应堆&r的冷却时间，或许会有奇妙的用处。"
+			]
+			hide_dependency_lines: true
+			id: "246365CCB3A57775"
+			rewards: [{
+				id: "16C5B223ECD173CB"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "是谁想到这点子的？！"
+			tasks: [{
+				id: "45EEC8AFDD8C6CF4"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:thermal_injector"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -10.75d
+			y: -2.25d
+		}
+		{
+			dependencies: ["0E165E778629BB61"]
+			icon: "bosses_of_mass_destruction:soul_star"
+			id: "21DF7164072EF0D0"
+			shape: "rsquare"
+			tasks: [{
+				id: "29471591F42CBF6D"
+				title: "天体：看星星"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 3.75d
+		}
+		{
+			id: "5B884220220FDED6"
+			tasks: [{
+				id: "606E34060529EE56"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:sculk_brandguider"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -13.75d
+			y: 0.75d
+		}
+		{
+			id: "6C3EFA696BA744D6"
+			tasks: [{
+				id: "3B6A764764AE2844"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:sculk_heart"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -14.75d
+			y: 0.75d
+		}
+		{
+			id: "0933BF70214F923B"
+			tasks: [{
+				id: "424F83EF4F78B241"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:sculk_rock_breaker"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -12.75d
+			y: 0.75d
+		}
+		{
+			id: "3A99EC5E2CEDC48B"
+			tasks: [{
+				id: "2A27E06801327596"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:sculk_depositer"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -11.75d
+			y: 0.75d
+		}
+		{
+			id: "0C9F8A16E637A836"
+			tasks: [{
+				id: "02C7BC2014A2B4E7"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:sculk_infester"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -10.75d
+			y: 0.75d
+		}
+		{
+			id: "55AFC8B7C3C6F660"
+			tasks: [{
+				id: "34CE080D6D392F3A"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:sculk_collectors"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -9.75d
+			y: 0.75d
+		}
+		{
+			id: "54A6CB2405E6FFB0"
+			tasks: [{
+				id: "1E9E24A09E5D2ACB"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:sculk_growler"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -8.75d
+			y: 0.75d
+		}
+		{
+			id: "7BC1D5CA0AE5DA71"
+			tasks: [{
+				id: "1EEA0873A7AD836E"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:kings_crown"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 1.0d
+			y: -1.25d
+		}
+		{
+			id: "40A8F50537EF8F28"
+			tasks: [{
+				id: "0D56D4F4A65D4F90"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:kings_new_lance"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 2.0d
+			y: -1.25d
+		}
+		{
+			id: "3E23A1BDFBD70BFA"
+			tasks: [{
+				id: "7156E509A978F5F1"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:kings_fellowship"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 3.0d
+			y: -1.25d
+		}
+		{
+			id: "6DE3F3EF8B3DBCD2"
+			tasks: [{
+				id: "0DC3451898B3016E"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:kings_armor"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 4.0d
+			y: -1.25d
+		}
+		{
+			id: "4A3860A90DDF0314"
+			tasks: [{
+				id: "19F2C46A0738E154"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:kings_buckler"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 5.0d
+			y: -1.25d
+		}
+		{
+			id: "65EF7EFB89482CE9"
+			tasks: [{
+				id: "143025B59381404A"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:kings_staff"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 6.0d
+			y: -1.25d
+		}
+		{
+			id: "5053AEE5BF596DBC"
+			tasks: [{
+				id: "703B948972E91E90"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:kings_extension"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 7.0d
+			y: -1.25d
+		}
+		{
+			id: "76BE709A85FCFF6E"
+			tasks: [{
+				id: "09886DC1E298A17B"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:kings_crystal"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 8.0d
+			y: -1.25d
+		}
+		{
+			id: "3EE28246F92DA637"
+			tasks: [{
+				id: "2C2EE0DCEEEDCEEF"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:cpu"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 1.0d
+			y: -5.5d
+		}
+		{
+			id: "54D6B5B4BEB11C09"
+			tasks: [{
+				id: "7FC7E9585F74ABBB"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:meteor_shower_director"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 10.0d
+			y: 4.75d
+		}
+		{
+			id: "3CAA9BBDE29389CC"
+			tasks: [{
+				id: "37833E37D700A138"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:solar_mirror"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 9.0d
+			y: 4.75d
+		}
+		{
+			id: "5C68EF6D72607307"
+			tasks: [{
+				id: "285B3F49F5C1C8D5"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:white_hole"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 8.0d
+			y: 4.75d
+		}
+		{
+			id: "46053486872D8B5E"
+			tasks: [{
+				id: "08BDDF775A62D926"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:black_hole"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 7.0d
+			y: 4.75d
+		}
+		{
+			id: "458DAF8525D2B00E"
+			tasks: [{
+				id: "5CF9736B40179547"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:starry_sky_prism"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 6.0d
+			y: 4.75d
+		}
+		{
+			id: "686ACDB60CBC32E2"
+			tasks: [{
+				id: "0D229E1EA62FA3C0"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:sun_seed"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 1.0d
+			y: 4.75d
+		}
+		{
+			id: "06C9F6B47D0E4141"
+			tasks: [{
+				id: "4649031599E102C4"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:dark_sun_seed"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 2.0d
+			y: 4.75d
+		}
+		{
+			id: "0A7579D80EA06B8F"
+			tasks: [{
+				id: "4DE89CC50D96EE25"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:broken_sun"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 3.0d
+			y: 4.75d
+		}
+		{
+			id: "5770B287000309D5"
+			tasks: [{
+				id: "025C11A818364AB4"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:moon_rock"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 4.0d
+			y: 4.75d
+		}
+		{
+			id: "66E42FA0216CF408"
+			tasks: [{
+				id: "31C98488B1BF6B3B"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:sundial"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 5.0d
+			y: 4.75d
+		}
+		{
+			id: "5FBDC180B999BD83"
+			tasks: [{
+				id: "572A5AFF77ED4F51"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:magic_fast_charging_cpu"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 2.0d
+			y: -5.5d
+		}
+		{
+			id: "3BE5883A21D82B36"
+			tasks: [{
+				id: "2DA73BC1339D865A"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:magic_overload_cpu"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 3.0d
+			y: -5.5d
+		}
+		{
+			id: "603A1939D8BE548C"
+			tasks: [{
+				id: "32C9F20833901506"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:magic_glass_cannon_cpu"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 4.0d
+			y: -5.5d
+		}
+		{
+			id: "6D4028DFDD3E2397"
+			tasks: [{
+				id: "32D065FDDD58ABFF"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:rose_second_bloom_cpu"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 5.0d
+			y: -5.5d
+		}
+		{
+			id: "4C635F618CB4D220"
+			tasks: [{
+				id: "3CABB923FB12573A"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:machine_storage_cpu"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 6.0d
+			y: -5.5d
+		}
+		{
+			id: "4C8AE81013335C01"
+			tasks: [{
+				id: "63D84C5F21F72CAE"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:machine_midnight_race_cpu"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 7.0d
+			y: -5.5d
+		}
+		{
+			id: "7F356E186A0F72AD"
+			tasks: [{
+				id: "50D8B2C3428C8883"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:machine_burn_flare_heart_cpu"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 8.0d
+			y: -5.5d
+		}
+		{
+			id: "5B953D6BAADDDE17"
+			tasks: [{
+				id: "2D5614B921422660"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:machine_nuclear_heart_cpu"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 9.0d
+			y: -5.5d
+		}
+		{
+			id: "65DA089EC297C94C"
+			tasks: [{
+				id: "1668F429B1B611B6"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:machine_dodge_cpu"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 10.0d
+			y: -5.5d
+		}
+		{
+			id: "50E98C86F47C8B27"
+			tasks: [{
+				id: "2EFF03D2B5ED6C5E"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:machine_parry_cpu"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 11.0d
+			y: -5.5d
+		}
+		{
+			id: "2E95E25C5DFA2EB5"
+			tasks: [{
+				id: "5E6A0DAD121B2B51"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:machine_critical_cpu"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 12.0d
+			y: -5.5d
+		}
+		{
+			id: "71F5D91CB0042CEA"
+			tasks: [{
+				id: "30D8816BA0B976F4"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:machine_mine_cpu"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 1.0d
+			y: -4.25d
+		}
+		{
+			id: "7AD963D22A401964"
+			tasks: [{
+				id: "1A4331B1BF553104"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:rose_language_cpu"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 2.0d
+			y: -4.25d
+		}
+		{
+			id: "0FA87867F5F42E10"
+			tasks: [{
+				id: "0A4BA6026CC992C0"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:seaborn_beacon_cpu"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 3.0d
+			y: -4.25d
+		}
+		{
+			id: "444C7FB054BC9A64"
+			tasks: [{
+				id: "0878208F18BEEBB1"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:celestial_body_astrology_cpu"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 4.0d
+			y: -4.25d
+		}
+		{
+			id: "34DB4928C976AF60"
+			tasks: [{
+				id: "1A67E9B87E406610"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:steam_power_cpu"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 5.0d
+			y: -4.25d
+		}
+		{
+			id: "6C246EBBC0E16E75"
+			tasks: [{
+				id: "0F41E86F29071234"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:seance_cpu"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 6.0d
+			y: -4.25d
+		}
+		{
+			icon: {
+				Count: 1b
+				id: "mrqx_extra_pack:heart_paper"
+				tag: { }
+			}
+			id: "5F8EF34C1B0E54B1"
+			tasks: [
+				{
+					id: "0D9B08740016FA55"
+					item: {
+						Count: 1b
+						id: "mrqx_extra_pack:lung_paper"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					id: "35CA824B7A117134"
+					item: {
+						Count: 1b
+						id: "mrqx_extra_pack:muscle_paper"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					id: "5EF1C9159BC99D69"
+					item: {
+						Count: 1b
+						id: "mrqx_extra_pack:heart_paper"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					id: "55E63DA3C9EA12FD"
+					item: {
+						Count: 1b
+						id: "mrqx_extra_pack:intestine_paper"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					id: "291CAE391592BC1B"
+					item: {
+						Count: 1b
+						id: "mrqx_extra_pack:rib_paper"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					id: "1F416D75C171A9B7"
+					item: {
+						Count: 1b
+						id: "mrqx_extra_pack:spine_paper"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					id: "146D17D6D1F0CBC9"
+					item: {
+						Count: 1b
+						id: "mrqx_extra_pack:spleen_paper"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					id: "652246396BCABDC8"
+					item: {
+						Count: 1b
+						id: "mrqx_extra_pack:stomach_paper"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					id: "5BA351861253AEBE"
+					item: {
+						Count: 1b
+						id: "mrqx_extra_pack:kidney_paper"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					id: "120EC818D014EEAD"
+					item: {
+						Count: 1b
+						id: "mrqx_extra_pack:liver_paper"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					id: "57511007F91DB0A2"
+					item: {
+						Count: 1b
+						id: "mrqx_extra_pack:appendix_paper"
+						tag: { }
+					}
+					type: "item"
+				}
+			]
+			title: "未书写的纸器官"
+			x: 2.0d
+			y: -8.25d
+		}
+		{
+			icon: {
+				Count: 1b
+				id: "mrqx_extra_pack:heart_paper_written"
+				tag: { }
+			}
+			id: "0AB18520DCA85CB5"
+			tasks: [
+				{
+					id: "5203C4D9A32E81CD"
+					item: {
+						Count: 1b
+						id: "mrqx_extra_pack:lung_paper_written"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					id: "1B0ED7461271F4DB"
+					item: {
+						Count: 1b
+						id: "mrqx_extra_pack:muscle_paper_written"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					id: "59AB844BCC6F3FCB"
+					item: {
+						Count: 1b
+						id: "mrqx_extra_pack:heart_paper_written"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					id: "2EC170B61C11132E"
+					item: {
+						Count: 1b
+						id: "mrqx_extra_pack:intestine_paper_written"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					id: "319C30E9666A13A2"
+					item: {
+						Count: 1b
+						id: "mrqx_extra_pack:rib_paper_written"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					id: "41FECAAE16ADA93A"
+					item: {
+						Count: 1b
+						id: "mrqx_extra_pack:spine_paper_written"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					id: "55455C190FA617A4"
+					item: {
+						Count: 1b
+						id: "mrqx_extra_pack:spleen_paper_written"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					id: "0D1B97F487ACD97A"
+					item: {
+						Count: 1b
+						id: "mrqx_extra_pack:stomach_paper_written"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					id: "1D847A8D5A773ECE"
+					item: {
+						Count: 1b
+						id: "mrqx_extra_pack:kidney_paper_written"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					id: "243DC44A7F7E440E"
+					item: {
+						Count: 1b
+						id: "mrqx_extra_pack:liver_paper_written"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					id: "1E9BFDA0493DCA03"
+					item: {
+						Count: 1b
+						id: "mrqx_extra_pack:appendix_paper_written"
+						tag: { }
+					}
+					type: "item"
+				}
+			]
+			title: "书写过的纸器官"
+			x: 3.0d
+			y: -8.25d
+		}
+		{
+			id: "1BCCB7E8107ED312"
+			tasks: [{
+				id: "1C3AC559D2E0A97E"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:proud_soul"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 2.0d
+			y: 7.5d
+		}
+		{
+			id: "2E239E9702AAC941"
+			tasks: [{
+				id: "4F06DED7714B83B1"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:prison_soul"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 3.0d
+			y: 7.5d
+		}
+		{
+			id: "6E8277FF0E9AAABC"
+			tasks: [{
+				id: "5ADABF2BD25C18D8"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:fox_soul"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 4.0d
+			y: 7.5d
+		}
+		{
+			id: "36EC58CC04082C9D"
+			tasks: [{
+				id: "3D6330923AFA8AA4"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:taoist_fifteen_dogs"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 5.0d
+			y: 7.5d
+		}
+		{
+			id: "310F8991FAA9D5DF"
+			tasks: [{
+				id: "69499EE04CD10D4C"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:mage_control_strong"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 6.0d
+			y: 7.5d
+		}
+		{
+			id: "7A9FA23272623638"
+			tasks: [{
+				id: "432699E811A930AF"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:warrior_output_high"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 7.0d
+			y: 7.5d
+		}
+		{
+			id: "731F7FD49098F23C"
+			tasks: [{
+				id: "0FE7C7CC76E06019"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:mini_end_crystal"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 8.0d
+			y: 7.5d
+		}
+		{
+			id: "2FFE75C2DD8DDF2C"
+			tasks: [{
+				id: "37FEC4F3C7DEC21E"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:golden_libra"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 9.0d
+			y: 7.5d
+		}
+		{
+			id: "19268666B0B2B627"
+			tasks: [{
+				id: "51835D4184B210C8"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:marenol"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 10.0d
+			y: 7.5d
+		}
+		{
+			id: "5E4E2459631E04A9"
+			tasks: [{
+				id: "34C1181527E2CC32"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:activated_giant_tumor"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 11.0d
+			y: 7.5d
+		}
+		{
+			id: "5771E9052F5DABDE"
+			tasks: [{
+				id: "26B9C613489F42AE"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:storm_mace"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 12.0d
+			y: 7.5d
+		}
+		{
+			id: "0E9EEC89462CA182"
+			tasks: [{
+				id: "27DB8591BC9F3860"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:nightmare_tentacles"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 1.0d
+			y: 8.5d
+		}
+		{
+			id: "6FB684FA29ADBCF6"
+			tasks: [{
+				id: "4849DFF7A0F19594"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:compressed_biscuit"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 2.0d
+			y: 8.5d
+		}
+		{
+			id: "197942278EFA2C90"
+			tasks: [{
+				id: "6A3F286682E69310"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:golden_compressed_biscuit"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 3.0d
+			y: 8.5d
+		}
+		{
+			id: "2B066EDE28F19243"
+			tasks: [{
+				id: "48FAA368A997AB71"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:malignant_tumor"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 4.0d
+			y: 8.5d
+		}
+		{
+			id: "39AA418CC5A3332A"
+			tasks: [{
+				id: "32C567D598384261"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:charged_blade"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 5.0d
+			y: 8.5d
+		}
+		{
+			id: "235D9D9D0D22C88B"
+			tasks: [{
+				id: "485D098837B89A8C"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:wing_of_soul"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 6.0d
+			y: 8.5d
+		}
+		{
+			id: "755DDFD3BBA2F315"
+			tasks: [{
+				id: "3A1091D905D05EA3"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:eternal_wing_of_soul"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 7.0d
+			y: 8.5d
+		}
+		{
+			id: "79DB3E7000DD4ED0"
+			tasks: [{
+				id: "414D70F50494F1FC"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:command_spell_core"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 8.0d
+			y: 8.5d
+		}
+		{
+			id: "5F078F0595F059C5"
+			tasks: [{
+				id: "0B5B818F8C6C4DD0"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:golden_chalice"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 9.0d
+			y: 8.5d
+		}
+		{
+			id: "6FB1F1E2DCBA6694"
+			tasks: [{
+				id: "6B994F98BE6391DB"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:re_active_pill"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 10.0d
+			y: 8.5d
+		}
+		{
+			id: "28EA84890F4D2ADA"
+			tasks: [{
+				id: "47DC0F232C43BD91"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:tianshi_yi"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 11.0d
+			y: 8.5d
+		}
+		{
+			id: "29601976F0FD5659"
+			tasks: [{
+				id: "2EE7D79CE0238AAC"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:long_telescopic_piston_arm"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 12.0d
+			y: 8.5d
+		}
+		{
+			id: "09B448A0750219A0"
+			tasks: [{
+				id: "2D95464A5628F928"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:chocolate_coinage_machine"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 2.0d
+			y: 9.5d
+		}
+		{
+			id: "01A639CCADCDC0CE"
+			tasks: [{
+				id: "0FCE6A332BE9745A"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:long_telescopic_attack_arm"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 1.0d
+			y: 9.5d
+		}
+		{
+			id: "7109B5E73E749291"
+			tasks: [{
+				id: "33D3AC53D43840DB"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:recorder"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 3.0d
+			y: 9.5d
+		}
+		{
+			id: "34D147B83721B9AB"
+			tasks: [{
+				id: "6D9877F6A7EE4965"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:re_active_pill_moderation"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 4.0d
+			y: 9.5d
+		}
+		{
+			id: "321B9726C0E3CB30"
+			tasks: [{
+				id: "272D323FA47E67DD"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:automatic_wax_protector"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 5.0d
+			y: 9.5d
+		}
+		{
+			id: "5A4276B1704E55E3"
+			tasks: [{
+				id: "6A70C4CAEEC6366F"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:sin_ira_samael"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -14.75d
+			y: 3.75d
+		}
+		{
+			id: "39A160B362E20453"
+			tasks: [{
+				id: "4EC02093EE5B3676"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:sin_acedia_belphegor"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -13.75d
+			y: 3.75d
+		}
+		{
+			id: "3E4E7BB2B3F5EB81"
+			tasks: [{
+				id: "051C55604783CC5C"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:sin_invidia_leviathan"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -12.75d
+			y: 3.75d
+		}
+		{
+			id: "29B4780D866CE7DA"
+			tasks: [{
+				id: "0CE75D9C506BB963"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:sin_gula_beelzebub"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -11.75d
+			y: 3.75d
+		}
+		{
+			id: "75B9D49FD4056133"
+			tasks: [{
+				id: "1F778DAA26405653"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:sin_avaritia_mammon"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -10.75d
+			y: 3.75d
+		}
+		{
+			id: "57BA01D892417A62"
+			tasks: [{
+				id: "761EE1E5C67ADC54"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:sin_luxuria_asmodeus"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -9.75d
+			y: 3.75d
+		}
+		{
+			id: "54E40FA99E88017A"
+			tasks: [{
+				id: "25C5B0774A99139E"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:sin_superbia_lucifer"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -8.75d
+			y: 3.75d
+		}
+		{
+			id: "01C03416E8B3F4CA"
+			tasks: [{
+				id: "00ADC33A6E052B91"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:origin_sin"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -7.75d
+			y: 3.75d
+		}
+		{
+			id: "07F4CF14F83AB235"
+			tasks: [{
+				id: "572E12D6A2F65702"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:sin_and_judgement"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -6.75d
+			y: 3.75d
+		}
+	]
+	title: "额外器官：看看你的器官"
+}

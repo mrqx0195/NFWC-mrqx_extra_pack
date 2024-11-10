@@ -261,20 +261,6 @@ function mrqxIsEmpty(value) {
 }
 
 /**
- * 获取蒸汽计数
- * @param {Internal.ServerPlayer} player 
- * @returns {Number}
- */
-function mrqxGetSteamCount(player) {
-    let count = 0
-    let itemMap = getPlayerChestCavityItemMap(player)
-    if (itemMap.has('mrqx_extra_pack:steam_engine') && player.hasEffect('mrqx_extra_pack:steam_power')) {
-        count = itemMap.get('mrqx_extra_pack:steam_engine').length * (player.getEffect('mrqx_extra_pack:steam_power').getAmplifier() + 1)
-    }
-    return count
-}
-
-/**
 * 获取某个半径内的所有实体
 * @param {Internal.Level} level
 * @param {Vec3} pos

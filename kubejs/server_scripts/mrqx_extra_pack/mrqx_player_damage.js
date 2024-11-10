@@ -113,7 +113,7 @@ const mrqxOrganPlayerDamageStrategies = {
 		let typeMap = getPlayerChestCavityTypeMap(player)
 		mrqxCauseElementDamage(event.entity, Math.sqrt(player.getBlock().getSkyLight() * typeMap.get('kubejs:mrqx_celestial_body').length), 'fire')
 		player.getServer().scheduleInTicks(1, () => {
-			player.addItemCooldown(organ.id, 20)
+			player.addItemCooldown(organ.id, 19)
 		})
 	},
 }

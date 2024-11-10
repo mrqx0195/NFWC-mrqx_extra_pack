@@ -190,6 +190,15 @@ ItemEvents.tooltip((tooltip) => {
         addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.mint_milk_tea.3" })]], 3)
     })
 
+    tooltip.addAdvanced('mrqx_extra_pack:pineapple_shrimp_fried_rice', (item, advanced, text) => {
+        if (tooltip.shift) {
+            addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.pineapple_shrimp_fried_rice.1" })]], 1)
+            if (tooltip.ctrl) {
+                addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.pineapple_shrimp_fried_rice.2" })]], 2)
+            }
+        }
+    })
+
     tooltip.addAdvanced('mrqx_extra_pack:sentient_greatscythe', (item, advanced, text) => {
         addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.sentient_greatscythe.1" })]], 1)
         addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.sentient_greatscythe.2" })]], 2)
