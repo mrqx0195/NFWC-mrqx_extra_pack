@@ -22,6 +22,10 @@ ItemEvents.rightClicked('kubejs:unbreakable_core', event => {
         return
     }
     let unbreakone = player.getMainHandItem()
+    if (unbreakone?.nbt && unbreakone.nbt?.Unbreakable) {
+        player.tell('该物品已进行过不毁加持！')
+        return
+    }
     if (!unbreakone.hasEnchantment('minecraft:unbreaking', 1)) {
         player.tell('不满足耐久要求！')
         return
@@ -113,6 +117,7 @@ ItemEvents.rightClicked('kubejs:advanced_chest_opener', event => {
     // 如果命令方块允许开胸，会导致凋零风暴无法死亡
     if (target.type == 'witherstormmod:command_block') return
 
+    player.swing()
     let painlessOper = event.item.enchantments.containsKey('kubejs:painless_operation')
     let creativeOper = event.item.enchantments.containsKey('kubejs:creative_operation')
 
