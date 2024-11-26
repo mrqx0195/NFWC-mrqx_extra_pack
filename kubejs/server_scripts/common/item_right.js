@@ -63,7 +63,7 @@ ItemEvents.rightClicked('kubejs:disenchantment_book', event => {
     let setlength = enchantList.length
     let res = Math.ceil((Math.random() * setlength))
     item.shrink(1)
-    disenchantedone.shrink(1)
+    disenchantedone.enchantments.clear()
     player.give(Item.of('minecraft:enchanted_book').enchant(enchantList[res - 1], levelList[res - 1]))
 })
 
