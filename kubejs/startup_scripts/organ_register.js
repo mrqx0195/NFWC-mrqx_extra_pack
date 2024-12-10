@@ -2162,4 +2162,18 @@ StartupEvents.registry('item', event => {
     .texture('kubejs:item/organs/twilightforest/snow_monster_core')
     .tag("kubejs:heart")
     .tag("kubejs:rclick_only")
+
+    registerOrgan(new Organ('kubejs:etched_paper')
+    .addScore('defense', 0.25)
+    .addScore('buoyant', 0.25)
+    .addTextLines('default', [Text.gray(Text.translatable("kubejs.tooltips.etched_paper.1"))])
+    .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.etched_paper.2"))])
+    .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.etched_paper.3")),Text.yellow("0.02"),Text.gray(Text.translatable("kubejs.tooltips.etched_paper.4"))])
+    .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.etched_paper.5")),Text.red("0.01"),Text.gray(Text.translatable("kubejs.tooltips.etched_paper.6")),Text.yellow("0.05"),Text.gray(Text.translatable("kubejs.tooltips.etched_paper.7"))])
+    .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.etched_paper.8")),Text.yellow("0.02"),Text.gray(Text.translatable("kubejs.tooltips.etched_paper.9"))])
+    .build())
+    .texture('minecraft:item/paper')
+    .tag('kubejs:active_only')
+    .tag('forge:paper')
+
 });

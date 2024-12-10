@@ -59,13 +59,5 @@
   },
   "waystones": {
     "waystone": true
-<<<<<<< Updated upstream
-  },
-  "goety": {
-    "block_owner": true,
-    "soul_energy": true,
-    "summon_lifespan": true
-=======
->>>>>>> Stashed changes
   }
 }

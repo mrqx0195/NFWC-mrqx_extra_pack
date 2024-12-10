@@ -110,6 +110,17 @@
         "value": 2048
       }
     },
+    "witherstormmod:target_stationary_flying_speed": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 2,
+        "value": 2
+      }
+    },
     "irons_spellbooks:nature_magic_resist": {
       "enabled": false,
       "min": {
@@ -132,20 +143,6 @@
         "value": Infinity
       }
     },
-<<<<<<< Updated upstream
-    "witherstormmod:target_stationary_flying_speed": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 2,
-        "value": 2
-      }
-    },
-=======
->>>>>>> Stashed changes
     "obscure_api:regeneration": {
       "enabled": false,
       "min": {
@@ -201,17 +198,6 @@
         "value": 1024
       }
     },
-    "kubejs:candy_spell_resistance": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 10,
-        "value": 10
-      }
-    },
     "witherstormmod:slow_flying_speed": {
       "enabled": false,
       "min": {
@@ -221,6 +207,17 @@
       "max": {
         "default": 2,
         "value": 2
+      }
+    },
+    "kubejs:candy_spell_resistance": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 10,
+        "value": 10
       }
     },
     "irons_spellbooks:fire_spell_power": {

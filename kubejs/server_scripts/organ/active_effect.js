@@ -490,6 +490,40 @@ const organActiveOnlyStrategies = {
         let breathCapacity = instance.organScores.getOrDefault(new ResourceLocation('chestcavity', 'breath_capacity'), 0) * 1.5
         instance.organScores.put(new ResourceLocation('chestcavity', 'breath_capacity'), new $Float(breathCapacity))
     },
+    'kubejs:etched_paper': function (player, organ, attributeMap) {
+        let chestInventory = player.getChestCavityInstance().inventory.tags
+        let enchantList = []
+        let spellPowerUp = 0
+        let cdReduction = 0
+        let manaRegen = 0
+        console.log('organs:')
+        for (let i = 0; i < chestInventory.length; i++) {
+            let organ = chestInventory[i]  
+            if (!organ.get('tag')) continue
+            console.log(organ)
+            if(String(organ.id) == 'minecraft:enchanted_book') {
+                enchantList = organ.get('tag').get('StoredEnchantments')
+            }
+            else {
+                enchantList = organ.get('tag').get('Enchantments')
+            }
+            if (!enchantList) continue
+            for (let j = 0; j < enchantList.length; j++) {
+                let curEnchant = enchantList[j]
+                if(curseEnchantList.includes(String(curEnchant.id))) {
+                    let spDown = spellPowerUp-curEnchant.lvl *0.01
+                    spellPowerUp = spDown>=0?spDown:0
+                    manaRegen += curEnchant.lvl *0.05
+                }                 
+                else spellPowerUp += curEnchant.lvl * 0.02
+            }
+            if(enchantList.length >= 5)
+                cdReduction += 0.02
+        }
+        attributeMapValueAddition(attributeMap, global.SPELL_POWER, spellPowerUp)
+        attributeMapValueAddition(attributeMap, global.COOLDOWN_REDUCTION, cdReduction)
+        attributeMapValueAddition(attributeMap, global.MANA_REGEN, manaRegen)
+    }
 }
 
 

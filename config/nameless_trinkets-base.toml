@@ -16,7 +16,3 @@
 ["Disable FOV disable"]
 	"Disable FOV disable?" = false
 
-["Starting Trinket Slot quantity"]
-	#Range: 0 ~ 99
-	"How many Trinket Slots do you start with?" = 1
-

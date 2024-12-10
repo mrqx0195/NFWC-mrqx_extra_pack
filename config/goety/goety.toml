@@ -44,10 +44,6 @@
 	wheelGuiMovement = true
 	#Players camera can shake. Default: true
 	cameraShake = true
-	#Using an item while holding a wand or staff on main/offhand will cause the wand or staff to be put on cooldown to prevent accidental spellcasting, Default: true
-	wandCoolItemUse = true
-	#Entities part of a Player's Book of Goodwill will not take most damage from said Player rather than just spells, Default: false
-	goodwillNoDamage = false
 
 [Blocks]
 	#Add mobs that Hook Bells don't work on. 
@@ -87,20 +83,6 @@
 	pithosRespawn = true
 	#Allow used Crystal Balls to spawn Crones again when right-clicked with respawn_boss tagged item, Default: true
 	crystalBallRespawn = true
-	#Whether enchanting through Rituals are enabled, Default: true
-	ritualEnchants = true
-	#Whether creating items through Rituals will transfer enchantments from the original item, Default: true
-	ritualCraftEnchant = true
-	#Whether creating items through Rituals will transfer damage from the original item, Default: false
-	ritualCraftDamage = false
-	#The amount of Soul Energy used to power the Shrieking Obelisk, Default: 100
-	#Range: > 0
-	shriekObeliskCost = 100
-	#Whether Shrieking Obelisk can prevent or stop Raids, Default: true
-	ShriekObeliskRaid = true
-	#The amount of Soul Energy used to power the Animator per block distance, Default: 10
-	#Range: > 0
-	animatorCost = 10
 
 ["Soul Taken"]
 	#Multiplies the amount of Souls taken by this amount, Default: 2
@@ -124,9 +106,15 @@
 	#Non-Undead Piglin Killed, Default: 10
 	#Range: > 0
 	piglinSouls = 10
+	#Ender Dragon Killed, Default: 1000
+	#Range: > 0
+	enderDragonSouls = 1000
 	#Enderman Killed, Default: 10
 	#Range: > 0
 	endermanSouls = 10
+	#Warden Killed, Default: 10000
+	#Range: > 0
+	wardenSouls = 10000
 	#Players Killed, Default: 100
 	#Range: > 0
 	playerSouls = 100
@@ -154,7 +142,7 @@
 	lichUndeadFriendly = true
 	#Enable to make Liches 85% more resistant to Magic Attacks, Default: false
 	lichMagicResist = false
-	#If Lich Undead Friendly is set to true, Only undead that have lower than 'lichPowerfulFoesHealth' max health are friendly, Default: true
+	#If Lich Undead Friendly is set to true, Only undead that have lower than 50 Hearts are friendly, Default: true
 	lichPowerfulHostile = true
 	#If Villagers provide negative Reputation to Liches and non-Player Iron Golems are automatically aggressive against them, Default: true
 	lichVillagerHate = true
@@ -164,23 +152,4 @@
 	lichEnable = true
 	#Enable Liches healing be stunted when hurt by Smite Enchantment, Default: true
 	lichSmite = true
-	#Whether players lose their lichdom if their Arca is removed, Default: true
-	lichArcaRemove = true
-	#If 'lichPowerfulHostile' is enabled, the highest max health an Undead mob can be without being hostile, Default: 100.0
-	#Range: 0.0 ~ 1.7976931348623157E308
-	lichPowerfulFoesHealth = 100.0
-	#If Liches bare-handed attacks inflicts negative effects, Default: true
-	lichTouch = true
-	#Whether the player in Lich Mode will emit Lich sounds, Default: true
-	lichModeSounds = true
-
-["Mod Compatibility"]
-	#If enabled, Ender Dragon's Fireballs will leave clouds that damages even undead and will not hit itself. Default: true
-	betterDragonFireball = true
-	#If L_Ender Cataclysm is installed, certain loots are modified and change between this and the latter mod. Default: true
-	cataclysmLootCompat = true
-	#If Iron's Spells and Spellbooks is installed, certain robes provides Spell resistances. Default: true
-	robesIronResist = true
-	#If Iron's Spells and Spellbooks is installed, certain curios provides Spell buffs. Default: true
-	ironBuff = true
 
