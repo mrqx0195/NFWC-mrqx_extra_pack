@@ -794,6 +794,7 @@ StartupEvents.registry('item', event => {
     registerOrgan(new Organ('kubejs:love_between_lava_and_ice')
         .addScore('health', 1.5)
         .addScore('fire_resistant', 0.5)
+        .bcPoint(5,-5)
         .addTextLines('default', [Text.gray(Text.translatable("kubejs.tooltips.love_between_lava_and_ice.1"))])
         .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.love_between_lava_and_ice.2")), Text.blue(Text.translatable("kubejs.tooltips.love_between_lava_and_ice.3")), Text.gray(Text.translatable("kubejs.tooltips.love_between_lava_and_ice.4")), Text.yellow(0.2), Text.aqua(Text.translatable("kubejs.tooltips.love_between_lava_and_ice.5"))])
         .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.love_between_lava_and_ice.6")), Text.darkRed(Text.translatable("kubejs.tooltips.love_between_lava_and_ice.7")), Text.gray(Text.translatable("kubejs.tooltips.love_between_lava_and_ice.8")), Text.yellow(0.2), Text.red(Text.translatable("kubejs.tooltips.love_between_lava_and_ice.9"))])

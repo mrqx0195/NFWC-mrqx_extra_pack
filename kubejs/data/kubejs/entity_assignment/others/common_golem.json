@@ -9,7 +9,8 @@
         "goety:hostile_redstone_golem",
         "modulargolems:dog_golem",
         "modulargolems:humanoid_golem",
-        "modulargolems:metal_golem"
+        "modulargolems:metal_golem",
+        "twilightforest:carminite_golem"
     ]
   }
   

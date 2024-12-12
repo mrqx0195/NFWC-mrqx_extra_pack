@@ -96,9 +96,20 @@
 	empty-search-sidebar-focus: none;
 
 	/**
-	 * The amount of vertical margin to give in the recipe screen.
+	 * Whether the EMI config button should be visible.
 	 */
-	vertical-margin: 20;
+	emi-config-button-visibility: shown;
+
+	/**
+	 * Whether the recipe tree button should be visible.
+	 */
+	recipe-tree-button-visibility: auto;
+
+	/**
+	 * The maximum height the recipe screen will grow to be if space is available in
+	 * pixels.
+	 */
+	maximum-recipe-screen-height: 256;
 
 	/**
 	 * The minimum width of the recipe screen in pixels. Controls how many tabs there
@@ -106,6 +117,11 @@
 	 * of most screens.
 	 */
 	minimum-recipe-screen-width: 176;
+
+	/**
+	 * The amount of vertical margin to give in the recipe screen.
+	 */
+	vertical-margin: 20;
 
 	/**
 	 * Where to show workstations in the recipe screen
@@ -292,7 +308,7 @@
 	toggle-visibility: "ctrl key.keyboard.o";
 
 	/**
-	 * Focuse the search bar.
+	 * Focuses the search bar.
 	 */
 	focus-search: "ctrl key.keyboard.f";
 
