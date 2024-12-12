@@ -1,0 +1,19 @@
+{
+  "chestcavity": "kubejs:types/aquatic_animal/common_fish.json",
+  "entities": [
+    "alexsmobs:blobfish",
+    "alexsmobs:skelewag",
+    "alexsmobs:catfish",
+    "alexsmobs:comb_jelly",
+    "alexsmobs:devils_hole_pupfishsh",
+    "alexsmobs:flying_fish",
+    "alexsmobs:frilled_shark",
+    "alexsmobs:hammerhead_shark",
+    "alexsmobs:mudskipper",
+    "alexsmobs:seal",
+    "cataclysm:lionfish",
+    "cataclysm:the_baby_leviathan",
+    "bettas:betta_fish",
+    "cataclysm:lionfish"
+  ]
+}

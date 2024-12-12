@@ -17,10 +17,14 @@ PlayerEvents.loggedIn((event) => {
             event.player.persistentData.getInt(organActive) == 1) {
             global.updatePlayerActiveStatus(event.player)
         }
+        event.player.persistentData.putInt('bcPoint',0)
     })
 });
 
 PlayerEvents.respawned((event) => {
+    event.player.removeAttribute("cold_sweat:burning_point",'kubejsBpoint')
+    event.player.removeAttribute("cold_sweat:freezing_point",'kubejsCpoint')
+    event.player.persistentData.putInt('bcPoint',0)
     if (event.player.persistentData.contains(organActive) &&
         event.player.persistentData.getInt(organActive) == 1) {
         global.updatePlayerActiveStatus(event.player)
@@ -45,6 +49,8 @@ PlayerEvents.inventoryClosed((event) => {
         return
     }
     global.initChestCavityIntoMap(player, true)
+
+    
     let itemMap = getPlayerChestCavityItemMap(player)
     if (player.persistentData.contains(organActive) && player.persistentData.getInt(organActive) == 1) {
         return

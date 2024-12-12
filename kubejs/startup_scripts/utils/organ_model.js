@@ -44,10 +44,24 @@ Organ.prototype = {
         return this
     },
 
+
+    //注册冰点燃点
+    bcPoint(burningPoint,coldPoint){
+        global.ORGAN_BCP.set(this.itemID,[burningPoint/ 25,coldPoint/ 25])
+        return this
+    },
+
     build: function () {
         this.organScores.forEach(score => {
             this.shiftTextLines.push(convertScoreToTextLine(this, score))
         })
+        if(global.ORGAN_BCP.has(this.itemID)){
+            let stack = this.maxStackSize
+            let burningPoint = global.ORGAN_BCP.get(this.itemID)[0]
+            let coldPoint = global.ORGAN_BCP.get(this.itemID)[1]
+            this.shiftTextLines.push([LEADING_SYMBOL, Text.gray('每 '), Text.yellow(String(stack)) , Text.gray(' 个该器官使你能忍受的最高温度') ,burningPoint>0 ? Text.green(' 提高 '):Text.red(' 降低 '), Text.yellow(String(Math.abs(burningPoint*25))), Text.gray(' 摄氏度')])
+            this.shiftTextLines.push([LEADING_SYMBOL, Text.gray('每 '), Text.yellow(String(stack)), Text.gray(' 个该器官使你能忍受的最低温度') ,coldPoint>0 ? Text.red(' 提高 '):Text.green(' 降低 '), Text.yellow(String(Math.abs(coldPoint*25))), Text.gray(' 摄氏度')])
+        }
         return this
     },
 }

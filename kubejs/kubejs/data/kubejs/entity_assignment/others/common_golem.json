@@ -1,0 +1,15 @@
+{
+    "chestcavity": "kubejs:types/others/common_golem.json",
+    "entities": [
+        "cataclysm:coralssus",
+        "cataclysm:coral_golem",
+        "cataclysm:ender_golem",
+        "cataclysm:the_prowler",
+        "cataclysm:the_watcher",
+        "goety:hostile_redstone_golem",
+        "modulargolems:dog_golem",
+        "modulargolems:humanoid_golem",
+        "modulargolems:metal_golem"
+    ]
+  }
+  

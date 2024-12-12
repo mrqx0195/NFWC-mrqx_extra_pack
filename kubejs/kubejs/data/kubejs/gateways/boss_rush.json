@@ -1,0 +1,332 @@
+{
+  "size": "large",
+  "color": "#FFA600",
+  "leash_range": 48,
+  "allow_discarding": true,
+  "waves": [
+    {
+      "entities": [
+        {
+          "entity": "meetyourfight:bellringer",
+          "count": 1
+        }
+      ],
+      "modifiers": [],
+      "rewards": [],
+      "max_wave_time": 1200,
+      "setup_time": 200
+    },
+    {
+      "entities": [
+        {
+          "entity": "meetyourfight:rosalyne",
+          "count": 1
+        }
+      ],
+      "modifiers": [],
+      "rewards": [],
+      "max_wave_time": 1200,
+      "setup_time": 200
+    },
+    {
+      "entities": [
+        {
+          "entity": "meetyourfight:swampjaw",
+          "count": 1
+        }
+      ],
+      "modifiers": [],
+      "rewards": [],
+      "max_wave_time": 1200,
+      "setup_time": 200
+    },
+    {
+      "entities": [
+        {
+          "entity": "meetyourfight:dame_fortuna",
+          "count": 1
+        }
+      ],
+      "modifiers": [],
+      "rewards": [],
+      "max_wave_time": 1200,
+      "setup_time": 200
+    },
+    {
+      "entities": [
+        {
+          "entity": "somebosses:aesegull",
+          "count": 1
+        }
+      ],
+      "modifiers": [],
+      "rewards": [],
+      "max_wave_time": 1200,
+      "setup_time": 200
+    },
+    {
+      "entities": [
+        {
+          "entity": "somebosses:prismarine_watcher",
+          "count": 1
+        }
+      ],
+      "modifiers": [],
+      "rewards": [],
+      "max_wave_time": 1200,
+      "setup_time": 200
+    },
+    {
+      "entities": [
+        {
+          "entity": "somebosses:froverlord",
+          "count": 1
+        }
+      ],
+      "modifiers": [],
+      "rewards": [],
+      "max_wave_time": 1200,
+      "setup_time": 200
+    },
+    {
+      "entities": [
+        {
+          "entity": "somebosses:volcanium",
+          "count": 1
+        }
+      ],
+      "modifiers": [],
+      "rewards": [],
+      "max_wave_time": 1200,
+      "setup_time": 200
+    },
+    {
+      "entities": [
+        {
+          "entity": "somebosses:merciless_assasin",
+          "count": 1
+        }
+      ],
+      "modifiers": [],
+      "rewards": [],
+      "max_wave_time": 1200,
+      "setup_time": 200
+    },
+    {
+      "entities": [
+        {
+          "entity": "somebosses:dark_mask",
+          "count": 1
+        }
+      ],
+      "modifiers": [],
+      "rewards": [],
+      "max_wave_time": 1200,
+      "setup_time": 200
+    },
+    {
+      "entities": [
+        {
+          "entity": "somebosses:knight_garent",
+          "count": 1
+        }
+      ],
+      "modifiers": [],
+      "rewards": [],
+      "max_wave_time": 1200,
+      "setup_time": 200
+    },
+    {
+      "entities": [
+        {
+          "entity": "somebosses:vulcan",
+          "count": 1
+        }
+      ],
+      "modifiers": [],
+      "rewards": [],
+      "max_wave_time": 1200,
+      "setup_time": 200
+    },
+    {
+      "entities": [
+        {
+          "entity": "somebosses:ancient_wizard",
+          "count": 1
+        }
+      ],
+      "modifiers": [],
+      "rewards": [],
+      "max_wave_time": 1200,
+      "setup_time": 200
+    },
+    {
+      "entities": [
+        {
+          "entity": "somebosses:man_of_water",
+          "count": 1
+        }
+      ],
+      "modifiers": [],
+      "rewards": [],
+      "max_wave_time": 1200,
+      "setup_time": 200
+    },
+    {
+      "entities": [
+        {
+          "entity": "somebosses:flaming_berserker",
+          "count": 1
+        }
+      ],
+      "modifiers": [],
+      "rewards": [],
+      "max_wave_time": 1200,
+      "setup_time": 200
+    },
+    {
+      "entities": [
+        {
+          "entity": "somebosses:electric_head",
+          "count": 1
+        }
+      ],
+      "modifiers": [],
+      "rewards": [],
+      "max_wave_time": 1200,
+      "setup_time": 200
+    },
+    {
+      "entities": [
+        {
+          "entity": "somebosses:frost_magma",
+          "count": 1
+        }
+      ],
+      "modifiers": [],
+      "rewards": [],
+      "max_wave_time": 1200,
+      "setup_time": 200
+    },
+    {
+      "entities": [
+        {
+          "entity": "somebosses:stone_guard",
+          "count": 1
+        }
+      ],
+      "modifiers": [],
+      "rewards": [],
+      "max_wave_time": 1200,
+      "setup_time": 200
+    },
+    {
+      "entities": [
+        {
+          "entity": "somebosses:crimson_vampire",
+          "count": 1
+        }
+      ],
+      "modifiers": [],
+      "rewards": [],
+      "max_wave_time": 1200,
+      "setup_time": 200
+    },
+    {
+      "entities": [
+        {
+          "entity": "somebosses:skeleton_demon",
+          "count": 1
+        }
+      ],
+      "modifiers": [],
+      "rewards": [],
+      "max_wave_time": 1200,
+      "setup_time": 200
+    },
+    {
+      "entities": [
+        {
+          "entity": "somebosses:mono_eyed_skeleton",
+          "count": 1
+        }
+      ],
+      "modifiers": [],
+      "rewards": [],
+      "max_wave_time": 1200,
+      "setup_time": 200
+    },
+    {
+      "entities": [
+        {
+          "entity": "somebosses:hand_head",
+          "count": 1
+        }
+      ],
+      "modifiers": [],
+      "rewards": [],
+      "max_wave_time": 1200,
+      "setup_time": 200
+    },
+    {
+      "entities": [
+        {
+          "entity": "somebosses:ender_ordnance",
+          "count": 1
+        }
+      ],
+      "modifiers": [],
+      "rewards": [],
+      "max_wave_time": 1200,
+      "setup_time": 200
+    },
+    {
+      "entities": [
+        {
+          "entity": "somebosses:nameless_one",
+          "count": 1
+        }
+      ],
+      "modifiers": [],
+      "rewards": [],
+      "max_wave_time": 1200,
+      "setup_time": 200
+    },
+    {
+      "entities": [
+        {
+          "entity": "somebosses:sand_giant",
+          "count": 1
+        }
+      ],
+      "modifiers": [],
+      "rewards": [],
+      "max_wave_time": 1200,
+      "setup_time": 200
+    }
+  ],
+  "rewards": [
+    {
+      "type": "gateways:loot_table",
+      "loot_table": "minecraft:chests/nether_bridge",
+      "rolls": 8,
+      "desc": "rewards.gateways.loot_table.nether_bridge"
+    },
+    {
+      "type": "gateways:loot_table",
+      "loot_table": "dimdungeons:chests/chestloot_4",
+      "rolls": 8,
+      "desc": "rewards.dimdungeons.loot_table.chest_4"
+    }
+  ],
+  "failures": [
+    {
+      "type": "gateways:explosion",
+      "strength": 4,
+      "fire": true,
+      "block_damage": true
+    }
+  ],
+  "completion_xp": 20000,
+  "spawn_range": 5
+}

@@ -1,0 +1,11 @@
+{
+  "chestcavity": "kubejs:types/boss/common_boss.json",
+  "entities": [
+    "somebosses:nameless_one",
+    "somebosses:hand_head",
+    "somebosses:rib_golem",
+    "goety:vizier",
+    "irons_spellbooks:dead_king",
+    "graveyard:lich"
+  ]
+}

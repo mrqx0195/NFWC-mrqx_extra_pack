@@ -47,4 +47,21 @@ ServerEvents.tags('item', event => {
     event.add('kubejs:organ', organ)
   })
 
+  global.ORGAN_BCP.forEach((v,k)=>{
+    event.add('kubejs:bcPoint',k)
+  })
+
+})
+
+ServerEvents.tags('item',event=>{
+  function registryOrganBCPoint(id,bPoint,cPoint){
+    event.add('kubejs:bcPoint',id)
+    global.ORGAN_BCP.set(id, [bPoint / 25, cPoint / 25])
+  }
+
+  registryOrganBCPoint("chestcavity:heart", 5, -5)
+  registryOrganBCPoint("chestcavity:rotten_heart", -10, -20)
+  registryOrganBCPoint("chestcavity:golem_core", 25, -25)
+  registryOrganBCPoint("chestcavity:fireproof_heart", 10, 10)
+
 })

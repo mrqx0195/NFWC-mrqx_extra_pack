@@ -1,0 +1,15 @@
+{
+  "chestcavity": "kubejs:types/birds/common_bird.json",
+  "entities": [
+    "alexsmobs:bald_eagle",
+    "alexsmobs:crow",
+    "alexsmobs:blue_jay",
+    "alexsmobs:emu",
+    "alexsmobs:hummingbird",
+    "alexsmobs:roadrunner",
+    "alexsmobs:shoebill",
+    "alexsmobs:toucan",
+    "hexerei:crow",
+    "kiwiboi:kiwi"
+  ]
+}

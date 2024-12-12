@@ -1,0 +1,32 @@
+{
+    "chestcavity": "kubejs:types/fantasy/common_fantasy.json",
+    "entities": [
+        "iceandfire:stymphalian_bird",
+        "iceandfire:cockatrice",
+        "iceandfire:hippocampus",
+        "iceandfire:deathworm",
+        "iceandfire:siren",
+        "iceandfire:cyclops",
+        "iceandfire:pixie",
+        "iceandfire:gorgon",
+        "iceandfire:hippogryph",
+        "iceandfire:sea_serpent",
+        "iceandfire:myrmex_queen",
+        "iceandfire:amphithere",
+        "iceandfire:myrmex_royal",
+        "iceandfire:myrmex_sentinel",
+        "iceandfire:myrmex_worker",
+        "iceandfire:myrmex_soldier",
+        "iceandfire:troll",
+        "iceandfire:dread_ghoul",
+        "iceandfire:dread_thrall",
+        "iceandfire:dread_beast",
+        "iceandfire:dread_scuttler",
+        "iceandfire:lich",
+        "iceandfire:dread_knight",
+        "iceandfire:dread_horse",
+        "iceandfire:dread_lich",
+        "iceandfire:hydra",
+        "invasioncodered:gashslit_dragon"
+    ]
+  }
