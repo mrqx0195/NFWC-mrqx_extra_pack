@@ -370,4 +370,77 @@ const organPlayerKeyPressedOnlyStrategies = {
         player.give(mapItem)
         player.addItemCooldown('kubejs:treasure_detector_feather', 20 * 600)
     },
+    'kubejs:knightphantom_ghost': function(event , organ){
+        let player = event.player
+        if (!player.isSpectator()) {
+            player.setGameMode('spectator')
+            player.potionEffects.add('minecraft:glowing', 20 * 10)
+            player.addItemCooldown('kubejs:knightphantom_ghost', 20 * 15)
+            event.server.scheduleInTicks(20 * 10, ctx => {
+                player.setGameMode('survival')
+            })
+        }
+    },
+    'kubejs:ice_intestine': function(event, organ) {
+        let player = event.player
+        let oldTemp = -coldsweat.getTemperature(player,'body')
+        let mana = player.getAttributeTotalValue("irons_spellbooks:max_mana") - getPlayerMagicData(player).getMana()
+        if (mana > 0 && oldTemp > 0){
+            let curTemp = Math.max(oldTemp - mana, 0)
+            let curMana = Math.max(mana - oldTemp, 0)
+            coldsweat.setTemperature(player,'core', (- curTemp - coldsweat.getTemperature(player,'base')))
+            getPlayerMagicData(player).setMana(player.getAttributeTotalValue("irons_spellbooks:max_mana") - curMana - player.getAttributeTotalValue("irons_spellbooks:mana_regen"))
+            player.addItemCooldown('kubejs:knightphantom_ghost', 20 * 15)
+        }
+    },
+    'kubejs:twilight_lich_spine': function(event, organ){
+        let player = event.player
+        let level = event.level
+        let magic = getPlayerMagicData(player)
+        let num = 0
+        let attack = 0
+        let health = 0
+        let type = []
+        let entityList = getLivingWithinRadius(level, new Vec3(player.x,player.y,player.z), 10)
+        entityList.forEach(entity=>{
+            if (tagCheck(entity,"irons_spellbooks:summons") || tagCheck(entity,"forge:golems") || entity.type == "twilightforest:loyal_zombie" ){
+                if (num >= 30) return
+                num += 1
+                health += entity.getHealth()
+                if (entity.attributes.hasAttribute("minecraft:generic.attack_damage")){
+                    attack += entity.getAttributeTotalValue("minecraft:generic.attack_damage")
+                }
+                if (type.indexOf(entity.entityType) == -1){
+                    type.push(entity.entityType)
+                }
+                player.level.spawnParticles($ParticleTypes.EXPLOSION, false, entity.x, entity.y, entity.z, 0, 1, 0, 1, 0.5)
+                entity.discard()
+            }
+        })
+        if (num == 0) return
+        let mana = Math.min(magic.getMana() +health , player.getAttributeTotalValue("irons_spellbooks:max_mana"))
+        player.modifyAttribute("minecraft:generic.attack_damage",'tLichSpine',attack,'addition')
+        player.modifyAttribute("irons_spellbooks:spell_power",'tLichSpine',(type.length) / 20,'addition')
+        player.absorptionAmount += num
+        magic.setMana(mana - player.getAttributeTotalValue("irons_spellbooks:mana_regen"))
+        player.server.scheduleInTicks(20*60, ctx=>{
+            player.removeAttribute("minecraft:generic.attack_damage",'tLichSpine')
+            player.removeAttribute("irons_spellbooks:spell_power",'tLichSpine')
+        })
+        player.addItemCooldown('kubejs:twilight_lich_spine', 20 * 60)
+    }
+}
+
+/**
+ * 
+ * @param {Internal.Entity} entity 
+ * @param {string} tag 
+ */
+function tagCheck(entity,tag){
+    if (entity.entityType.tags.anyMatch(ele=>ele.location() === tag)){
+        return true
+    }
+    else{
+        return false
+    }
 }

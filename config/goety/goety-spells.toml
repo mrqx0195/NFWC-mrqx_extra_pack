@@ -7,14 +7,6 @@
 	ownerHitCommand = true
 	#Spells have their soul cost reduced or increased depending on the surroundings around the caster, Default: true
 	environmentalCost = true
-	#Whether Servants are killed/dismissed by hitting them while crouching, put false to make them change by right-clicking on them while crouching, Default: true
-	ownerHitKill = true
-	#Spells cost double soul cost if enchanted, Default: true
-	enchantMultiCost = true
-	#Certain spells that summons servants will give player Summon Down effect, Default: true
-	summonDown = true
-	#Certain spells can damage the Ender Dragon, Default: true
-	spellDamageEnderDragon = true
 
 [Spells]
 
@@ -68,7 +60,7 @@
 		#Rotting Spell Summon Down, Default: 120
 		#Range: 0 ~ 72000
 		zombieSummonDown = 120
-		#Number of Zombie Servants that can a player can have, Default: 32
+		#Number of Zombie Servants that can exist around the player without instantly dying, Default: 32
 		#Range: > 1
 		zombieLimit = 32
 
@@ -82,12 +74,9 @@
 		#Osseous Spell Cooldown, Default: 100
 		#Range: > 0
 		skeletonCoolDown = 100
-		#Osseous Spell Summon Down, Default: 120
+		#Osseous Spell Summon Down, Default: 280
 		#Range: 0 ~ 72000
 		skeletonSummonDown = 280
-		#Number of Skeleton Servants that an individual player can have in total, Default: 32
-		#Range: > 1
-		skeletonLimit = 32
 
 	[Spells."Spooky Spell"]
 		#Spooky Spell Cost, Default: 24
@@ -102,7 +91,7 @@
 		#Spooky Spell Summon Down, Default: 300
 		#Range: 0 ~ 72000
 		wraithSummonDown = 300
-		#Number of Wraith Servants that a player can have, Default: 6
+		#Number of Wraith Servants that can exist around the player without instantly dying, Default: 6
 		#Range: > 1
 		wraithLimit = 6
 
@@ -119,9 +108,6 @@
 		#Vanguard Spell Summon Down, Default: 300
 		#Range: 0 ~ 72000
 		vanguardSummonDown = 300
-		#Number of Vanguard Servants that an individual player can have in total, Default: 16
-		#Range: > 1
-		vanguardLimit = 16
 
 	[Spells."Skull Spell"]
 		#Skull Spell Cost, Default: 16
@@ -141,7 +127,7 @@
 		hauntedSkullDamage = 5.0
 		#Enable Haunted Skull projectile griefing, Default: true
 		hauntedSkullGriefing = true
-		#Number of Haunted Skulls that can a player can have, Default: 8
+		#Number of Haunted Skulls that can exist around the player without instantly dying, Default: 8
 		#Range: > 1
 		skullLimit = 8
 
@@ -172,7 +158,7 @@
 		#Range: > 0
 		ghastCoolDown = 200
 		#Ghastly Spell Summon Down, Default: 300
-		#Range: 0 ~ 72000
+		#Range: 300 ~ 72000
 		ghastSummonDown = 300
 		#Number of Mini Ghasts that can exist around the player, Default: 8
 		#Range: > 1
@@ -210,7 +196,7 @@
 		#Time to cast Fireball Spell, Default: 0
 		#Range: 0 ~ 72000
 		fireballTime = 0
-		#Fireball Spell Cooldown, Default: 40
+		#Fireball Spell Cooldown, Default: 0
 		#Range: > 0
 		fireballCoolDown = 0
 		#How much base damage Fireballs deal when directly hitting a mob, Default: 5.0
@@ -242,7 +228,7 @@
 		#Time to cast Soul Bolt Spell, Default: 0
 		#Range: 0 ~ 72000
 		soulBoltTime = 0
-		#Soul Bolt Spell Cooldown, Default: 20
+		#Soul Bolt Spell Cooldown, Default: 0
 		#Range: > 0
 		soulBoltCoolDown = 0
 		#How much base damage Soul Bolts deals, Default: 4.0
@@ -426,7 +412,7 @@
 		#Time to cast Launching Spell, Default: 0
 		#Range: 0 ~ 72000
 		launchTime = 0
-		#Launch Spell Cooldown, Default: 20
+		#Launch Spell Cooldown, Default: 0
 		#Range: > 0
 		launchCoolDown = 0
 
@@ -525,7 +511,7 @@
 		recallCoolDown = 100
 
 	[Spells."Ender Chest Spell"]
-		#Ender Chest Spell Cost, Default: 8
+		#Ender Chest Spell Cost, Default: 16
 		#Range: > 0
 		enderChestCost = 16
 		#Time to cast Ender Chest Spell, Default: 0
@@ -649,13 +635,13 @@
 		pyroclastGriefing = true
 
 	[Spells."End Walker Spell"]
-		#End Walk Spell Cost, Default: 48
+		#End Walk Spell Cost, Default: 8
 		#Range: > 0
 		endWalkCost = 8
 		#Time to cast End Walk Spell, Default: 60
 		#Range: 0 ~ 72000
 		endWalkDuration = 60
-		#End Walk Spell Cooldown, Default: 1200
+		#End Walk Spell Cooldown, Default: 200
 		#Range: > 0
 		endWalkCoolDown = 200
 		#How long the effect is applied from the spell, Default: 200
@@ -781,8 +767,6 @@
 		#The initial distance of the Tunnel, Default: 8
 		#Range: > 0
 		tunnelDefaultDistance = 8
-		#Whether Tunnel Holes disallows certain mobs from falling or moving through it, Default: true
-		tunnelHaveBlacklist = true
 
 	[Spells."Frost Nova Spell"]
 		#Frost Nova Spell Cost, Default: 40
@@ -880,287 +864,29 @@
 		#Time to cast Cyclone Spell, Default: 0
 		#Range: 0 ~ 72000
 		cycloneTime = 0
-		#Cyclone Spell Cooldown, Default: 300
+		#Cyclone Spell Cooldown, Default: 100
 		#Range: > 0
 		cycloneCoolDown = 100
 
-	[Spells."Shredding Spell && Royal Spikes"]
-		#Shredding Spell Cost, Default: 16
-		#Range: > 0
-		spikeCost = 16
-		#Time to cast Shredding Spell, Default: 160
-		#Range: 0 ~ 72000
-		spikeTime = 160
-		#Shredding Spell Cooldown, Default: 100
-		#Range: > 0
-		spikeCoolDown = 100
-		#How much base damage Royal Spikes deals per second, Default: 1.0
-		#Range: 1.0 ~ 1.7976931348623157E308
-		spikeDamage = 1.0
-		#Amount of Soul Energy Royal Spikes gives when hitting mob(s), Default: 1
-		#Range: > 0
-		spikeGainSouls = 1
-
-	[Spells."Blackguard Spell"]
-		#Blackguard Spell Cost, Default: 48
-		#Range: > 0
-		blackguardCost = 48
-		#Time to cast Blackguard Spell, Default: 180
-		#Range: 0 ~ 72000
-		blackguardTime = 180
-		#Blackguard Spell Cooldown, Default: 1200
-		#Range: > 0
-		blackguardCoolDown = 1200
-		#Blackguard Spell Summon Down, Default: 300
-		#Range: 0 ~ 72000
-		blackguardSummonDown = 300
-		#Number of Blackguard Servants that an individual player can have in total, Default: 16
-		#Range: > 1
-		blackguardLimit = 16
-
-	[Spells."Ghost Fire Spell"]
-		#Ghost Fire Spell Cost, Default: 16
-		#Range: > 0
-		ghostFireCost = 16
-		#Time to cast Ghost Fire Spell, Default: 40
-		#Range: 0 ~ 72000
-		ghostFireTime = 40
-		#Ghost Fire Spell Cooldown, Default: 200
-		#Range: > 0
-		ghostFireCoolDown = 200
-
-	[Spells."Blazing Spell"]
-		#Blazing Spell Cost, Default: 16
-		#Range: > 0
-		blazeCost = 16
-		#Time to cast Blazing Spell, Default: 100
-		#Range: 0 ~ 72000
-		blazeDuration = 100
-		#Blazing Spell Cooldown, Default: 200
-		#Range: > 0
-		blazeCoolDown = 200
-		#Blazing Spell Summon Down, Default: 400
-		#Range: 0 ~ 72000
-		blazeSummonDown = 400
-		#Number of Blaze Servants that can exist around the player, Default: 16
-		#Range: > 1
-		blazeLimit = 16
-
-	[Spells."Magma Bomb Spell"]
-		#Magma Bomb Spell Cost, Default: 16
-		#Range: > 0
-		magmaBombCost = 16
-		#Time to cast Magma Bomb Spell, Default: 100
-		#Range: 0 ~ 72000
-		magmaBombTime = 100
-		#Magma Bomb Spell Cooldown, Default: 400
-		#Range: > 0
-		magmaBombCoolDown = 400
-
-	[Spells."Flame Strike Spell"]
-		#Flame Strike Spell Cost, Default: 32
-		#Range: > 0
-		flameStrikeCost = 32
-		#Time to cast Flame Strike Spell, Default: 120
-		#Range: 0 ~ 72000
-		flameStrikeTime = 120
-		#Flame Strike Spell Cooldown, Default: 200
-		#Range: > 0
-		flameStrikeCoolDown = 200
-		#How much base damage Flame Strike deals, Default: 4.0
-		#Range: 1.0 ~ 1.7976931348623157E308
-		flameStrikeDamage = 4.0
-
-	[Spells."Ignite Spell"]
-		#Ignite Spell Cost, Default: 2
-		#Range: > 0
-		igniteCost = 2
-		#Ignite Spell Cooldown, Default: 10
-		#Range: > 0
-		igniteCoolDown = 10
-		#How many seconds Ignite Spell sets target on fire unenchanted, Default: 5
-		#Range: > 1
-		igniteFireSeconds = 5
-
-	[Spells."Quaking Spell"]
-		#Quaking Spell Cost, Default: 8
-		#Range: > 0
-		quakingCost = 8
-		#Time to cast Quaking Spell, Default: 20
-		#Range: 0 ~ 72000
-		quakingTime = 20
-		#Quaking Spell Cooldown, Default: 100
-		#Range: > 0
-		quakingCoolDown = 100
-		#How much base damage Quaking Spell deals, Default: 4.0
-		#Range: 1.0 ~ 1.7976931348623157E308
-		quakingDamage = 4.0
-
-	[Spells."Burrowing Spell"]
-		#Burrowing Spell Cost per second, Default: 4
-		#Range: > 0
-		burrowingCost = 4
-		#How many ticks the Burrowing Spell much charge before casting, Default: 0
-		#Range: > 0
-		burrowingCoolDown = 0
-		#The initial breaking speed of the Burrowing spell, the lower the value the quicker, Default: 4
-		#Range: > 0
-		burrowingInitialSpeed = 4
-
-	[Spells."Trembling Spell"]
-		#Trembling Spell Cost, Default: 8
-		#Range: > 0
-		tremblingCost = 8
-		#Time to cast Trembling Spell, Default: 0
-		#Range: 0 ~ 72000
-		tremblingTime = 0
-		#Trembling Spell Cooldown, Default: 200
-		#Range: > 0
-		tremblingCoolDown = 200
-
-	[Spells."Poison Dart Spell"]
-		#Poison Dart Spell Cost, Default: 8
-		#Range: > 0
-		poisonDartCost = 8
-		#Time to cast Poison Dart Spell, Default: 0
-		#Range: 0 ~ 72000
-		poisonDartTime = 0
-		#Poison Dart Spell Cooldown, Default: 20
-		#Range: > 0
-		poisonDartCoolDown = 20
-		#How much base damage Poison Quills deals, Default: 2.5
-		#Range: 1.0 ~ 1.7976931348623157E308
-		poisonDartDamage = 2.5
-
-	[Spells."Blossoming Spell"]
-		#Blossoming Spell Cost, Default: 32
-		#Range: > 0
-		blossomCost = 32
-		#Time to cast Blossoming Spell, Default: 40
-		#Range: 0 ~ 72000
-		blossomTime = 40
-		#Blossoming Spell Cooldown, Default: 200
-		#Range: > 0
-		blossomCoolDown = 200
-		#How much base damage Blossoming Balls and Thorns deals, Default: 6.0
-		#Range: 1.0 ~ 1.7976931348623157E308
-		blossomDamage = 6.0
-
-	[Spells."Hunting Spell"]
-		#Hunting Spell Cost, Default: 8
-		#Range: > 0
-		huntingCost = 8
-		#Time to cast Hunting Spell, Default: 20
-		#Range: 0 ~ 72000
-		huntingTime = 20
-		#Hunting Spell Cooldown, Default: 200
-		#Range: > 0
-		huntingCoolDown = 200
-		#Hunting Spell Summon Down, Default: 100
-		#Range: 0 ~ 72000
-		huntingSummonDown = 100
-		#Number of Black Wolves that can exist around the player, Default: 16
-		#Range: > 1
-		huntingLimit = 16
-
-	[Spells."Mauling Spell"]
-		#Mauling Spell Cost, Default: 16
-		#Range: > 0
-		maulingCost = 16
-		#Time to cast Mauling Spell, Default: 20
-		#Range: 0 ~ 72000
-		maulingTime = 20
-		#Mauling Spell Cooldown, Default: 600
-		#Range: > 0
-		maulingCoolDown = 600
-		#Mauling Spell Summon Down, Default: 150
-		#Range: 0 ~ 72000
-		maulingSummonDown = 150
-		#Number of Bear Servants that can exist around the player, Default: 8
-		#Range: > 1
-		maulingLimit = 8
-
-	[Spells."Troop Spell"]
-		#Troop Spell Cost, Default: 32
-		#Range: > 0
-		troopCost = 32
-		#Time to cast Troop Spell, Default: 100
-		#Range: 0 ~ 72000
-		troopTime = 100
-		#Troop Spell Cooldown, Default: 20
-		#Range: > 0
-		troopCoolDown = 20
-
-	[Spells."Banish Spell"]
-		#Banish Spell Cost, Default: 16
-		#Range: > 0
-		banishCost = 16
-		#Banish Spell Cooldown, Default: 400
-		#Range: > 0
-		banishCoolDown = 400
-		#The highest maximum health an entity can possess to be affected by Banish spell, Default: 100
-		#Range: > 1
-		banishMaxHealth = 100
-		#Add mobs that Banish Spell don't work on. 
-		#To do so, enter the namespace ID of the mob, like "minecraft:zombie, minecraft:skeleton".
-		banishBlackList = []
-
-	[Spells."Rupture Spell"]
-		#Rupture Spell Cost, Default: 250
-		#Range: > 0
-		ruptureCost = 250
-		#Time to cast Rupture Spell, Default: 120
-		#Range: 0 ~ 72000
-		ruptureTime = 120
-		#Rupture Spell Cooldown, Default: 6000
-		#Range: > 0
-		ruptureCoolDown = 6000
-		#How much base damage the Void Rift deals, Default: 2.0
-		#Range: 1.0 ~ 1.7976931348623157E308
-		ruptureDamage = 2.0
-
-	[Spells."Crafting Spell"]
-		#Crafting Spell Cost, Default: 2
-		#Range: > 0
-		craftingCost = 2
-		#Time to cast Crafting Spell, Default: 0
-		#Range: 0 ~ 72000
-		craftingDuration = 0
-		#Crafting Spell Cooldown, Default: 20
-		#Range: > 0
-		craftingCoolDown = 20
-
 ["Servant Limits"]
-	#Total number of Redstone Golems an individual player can have, Default: 2
+	#Number of Skeleton/Vanguard/Necromancer Servants that can exist around the player without instantly dying, Default: 32
+	#Range: > 1
+	skeletonLimit = 32
+	#Total number of Redstone Golems a player can summon, Default: 2
 	#Range: > 0
 	redstoneGolemLimit = 2
-	#Total number of Grave Golems an individual player can have, Default: 2
+	#Total number of Grave Golems a player can summon, Default: 2
 	#Range: > 0
 	graveGolemLimit = 2
-	#Number of Bound Illager Servants that an individual player can have in total, Default: 2
+	#Number of Bound Evoker Servants that can exist around the player without instantly dying, Default: 32
 	#Range: > 1
 	boundIllagerLimit = 32
 	#Total number of Redstone Monstrosities that can be summoned in total on a world, Default: 2
 	#Range: > 0
 	redstoneMonstrosityGlobalLimit = 2
-	#Total number of Redstone Monstrosities an individual player can have, Default: 1
+	#Total number of Redstone Monstrosities a player can summon, Default: 1
 	#Range: > 0
 	redstoneMonstrosityPlayerLimit = 1
-	#Number of Leapleaves that an individual player can have in total, Default: 16
-	#Range: > 1
-	leapleafLimit = 16
-	#Number of Spider Servants that an individual player can have in total, Default: 32
-	#Range: > 1
-	spiderLimit = 32
-	#Number of Necromancer Servants that an individual player can have in total, Default: 8
-	#Range: > 1
-	necromancerLimit = 8
-	#Number of Black Beast Servants that an individual player can have in total, Default: 2
-	#Range: > 1
-	blackBeastLimit = 2
-	#Number of Wildfire Servants that an individual player can have in total, Default: 2
-	#Range: > 1
-	wildfireLimit = 2
 
 [Enchantments]
 	#Soul Eater Maximum Enchantment Level, Default: 5
@@ -1169,7 +895,7 @@
 	#Wanting Maximum Enchantment Level, Default: 3
 	#Range: 1 ~ 10
 	maxWantingLevel = 3
-	#Potency Maximum Enchantment Level, Default: 3
+	#Velocity Maximum Enchantment Level, Default: 5
 	#Range: 1 ~ 10
 	maxPotencyLevel = 5
 	#Radius Maximum Enchantment Level, Default: 2
@@ -1184,7 +910,4 @@
 	#Burning Maximum Enchantment Level, Default: 3
 	#Range: 1 ~ 10
 	maxBurningLevel = 3
-	#Velocity Maximum Enchantment Level, Default: 5
-	#Range: 1 ~ 10
-	maxVelocityLevel = 5
 

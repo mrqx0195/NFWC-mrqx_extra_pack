@@ -82,7 +82,7 @@ function clearAllActivedModify(player) {
     })
     player.removeAttribute("cold_sweat:burning_point",'kubejsBpoint')
     player.removeAttribute("cold_sweat:freezing_point",'kubejsCpoint')
-    player.persistentData.putInt('bcPoint',0)
+    player.persistentData.putInt('burn_cold_point',0)
     player.persistentData.putInt(resourceCountMax, defaultResourceMax)
     player.persistentData.putInt(warpCountMax, defaultWarpMax)
 }
@@ -499,11 +499,9 @@ const organActiveOnlyStrategies = {
         let spellPowerUp = 0
         let cdReduction = 0
         let manaRegen = 0
-        console.log('organs:')
         for (let i = 0; i < chestInventory.length; i++) {
             let organ = chestInventory[i]  
             if (!organ.get('tag')) continue
-            console.log(organ)
             if(String(organ.id) == 'minecraft:enchanted_book') {
                 enchantList = organ.get('tag').get('StoredEnchantments')
             }
@@ -526,7 +524,8 @@ const organActiveOnlyStrategies = {
         attributeMapValueAddition(attributeMap, global.SPELL_POWER, spellPowerUp)
         attributeMapValueAddition(attributeMap, global.COOLDOWN_REDUCTION, cdReduction)
         attributeMapValueAddition(attributeMap, global.MANA_REGEN, manaRegen)
-    }
+    },
+
 }
 
 

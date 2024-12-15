@@ -28,6 +28,7 @@ global.LivingHurtByPlayer = event => {
     vulnerableEntityHurt(event, data)
     organCharmEntityHurtByPlayer(event, data)
     championEntityHurtByPlayer(event, data)
+    overloadEntityHurtByPlayer(event, data)
     if (data.returnDamage != 0) {
         player.attack(data.damageSource, data.returnDamage)
     }
@@ -74,6 +75,8 @@ global.LivingHurtByOthers = event => {
     }
     vulnerableEntityHurt(event, data)
     organCharmPlayerHurtByOthers(event, data)
+    overloadEntityHurtByOthers(event, data)
+    iceEntityHurtByOthers(event, data)
     // 龙化必须在实际伤害结算前结算，因为额外生命变化不被视作实际受伤
     dragonPowerPlayerHurtByOthers(event, data)
     championPlayerHurtByOthers(event, data)

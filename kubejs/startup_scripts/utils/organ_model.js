@@ -46,8 +46,8 @@ Organ.prototype = {
 
 
     //注册冰点燃点
-    bcPoint: function (burningPoint,coldPoint){
-        global.ORGAN_BCP.set(this.itemID,[burningPoint/ 25,coldPoint/ 25])
+    burn_cold_point: function(burningPoint,coldPoint){
+        global.ORGAN_BURNING_AND_COLD_POINTS.set(this.itemID,[burningPoint/ 25,coldPoint/ 25])
         return this
     },
 
@@ -55,12 +55,11 @@ Organ.prototype = {
         this.organScores.forEach(score => {
             this.shiftTextLines.push(convertScoreToTextLine(this, score))
         })
-        if(global.ORGAN_BCP.has(this.itemID)){
-            let stack = this.maxStackSize
-            let burningPoint = global.ORGAN_BCP.get(this.itemID)[0]
-            let coldPoint = global.ORGAN_BCP.get(this.itemID)[1]
-            this.shiftTextLines.push([LEADING_SYMBOL, Text.gray('每 '), Text.yellow(String(stack)) , Text.gray(' 个该器官使你能忍受的最高温度') ,burningPoint>0 ? Text.green(' 提高 '):Text.red(' 降低 '), Text.yellow(String(Math.abs(burningPoint*25))), Text.gray(' 摄氏度')])
-            this.shiftTextLines.push([LEADING_SYMBOL, Text.gray('每 '), Text.yellow(String(stack)), Text.gray(' 个该器官使你能忍受的最低温度') ,coldPoint>0 ? Text.red(' 提高 '):Text.green(' 降低 '), Text.yellow(String(Math.abs(coldPoint*25))), Text.gray(' 摄氏度')])
+        if(global.ORGAN_BURNING_AND_COLD_POINTS.has(this.itemID)){
+            let burningPoint = global.ORGAN_BURNING_AND_COLD_POINTS.get(this.itemID)[0]
+            let coldPoint = global.ORGAN_BURNING_AND_COLD_POINTS.get(this.itemID)[1]
+            this.shiftTextLines.push([LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.organ_burn_cold_attri.1")) ,burningPoint>0 ? Text.green(Text.translatable("kubejs.tooltips.heat")):Text.red(Text.translatable("kubejs.tooltips.cold")), Text.yellow(String(Math.abs(burningPoint*25))), Text.gray(Text.translatable("kubejs.tooltips.degree"))])
+            this.shiftTextLines.push([LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.organ_burn_cold_attri.2")) ,coldPoint>0 ? Text.red(Text.translatable("kubejs.tooltips.heat")):Text.green(Text.translatable("kubejs.tooltips.cold")), Text.yellow(String(Math.abs(coldPoint*25))), Text.gray(Text.translatable("kubejs.tooltips.degree"))])
         }
         return this
     },

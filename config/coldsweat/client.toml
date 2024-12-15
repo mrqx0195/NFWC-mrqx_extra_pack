@@ -33,7 +33,7 @@
 
 [Accessibility]
 	#Enables visual distortion effects when the player is too hot or cold
-	"Distortion Effects" = true
+	"Distortion Effects" = false
 	#Enables high contrast mode for UI elements
 	"High Contrast" = false
 

@@ -10,8 +10,6 @@
 	itemsRepairSouls = 5
 	#Fire Spawn Cage are enabled, Default: true
 	fireSpawnCage = true
-	#If soulRepair is enabled, the cost of Soul Energy multiplies per item's enchantments, Default: true
-	soulRepairEnchant = true
 
 [Curios]
 	#Show gloves in first person, Default: true
@@ -23,9 +21,9 @@
 	#Range: > 1
 	pendantOfHungerLimit = 1024
 	#How much Charges the Sea Amulet needs to consume to function, Default: 1
-	#Range: > 0
+	#Range: > 1
 	seaAmuletChargeConsume = 1
-	#The total amount of Charges a Sea Amulet can hold, Default: 1024
+	#The total amount of Charges a Sea Amulet can hold, Default: 256
 	#Range: > 1
 	seaAmuletMax = 256
 
@@ -40,7 +38,7 @@
 		#How much magic resistance Witches Robes provides by percent, Default: 85
 		#Range: 0 ~ 100
 		witchRobeResistance = 85
-		#How much magic resistance Warlock Robes provides by percent, Default: 85
+		#How much explosive resistance Warlock Robes provides by percent, Default: 85
 		#Range: 0 ~ 100
 		warlockRobeResistance = 85
 		#How much frost resistance Frost Robes provides by percent, Default: 85
@@ -53,42 +51,6 @@
 		#How much shock resistance Storm Robes provides by percent, Default: 85
 		#Range: 0 ~ 100
 		stormRobeResistance = 85
-		#How much fire resistance Nether Robes provides by percent, Default: 85
-		#Range: 0 ~ 100
-		netherRobeResistance = 85
-		#Whether wearing both Frost Robe and Crown will cause certain mobs to be neutral, Default: true
-		frostSetMobNeutral = true
-		#If 'frostSetMobNeutral' is enabled, the highest max health affected mobs has to have to be neutral, Default: 50.0
-		#Range: 1.0 ~ 1.7976931348623157E308
-		frostSetMobNeutralHealth = 50.0
-		#Whether wearing both Wild Robe and Crown will cause certain mobs to be neutral, Default: true
-		wildSetMobNeutral = true
-		#If 'wildSetMobNeutral' is enabled, the highest max health affected mobs has to have to be neutral, Default: 50.0
-		#Range: 1.0 ~ 1.7976931348623157E308
-		wildSetMobNeutralHealth = 50.0
-		#Whether wearing both Nether Robe and Crown will cause certain mobs to be neutral, Default: true
-		netherSetMobNeutral = true
-		#If 'netherSetMobNeutral' is enabled, the highest max health affected mobs has to have to be neutral, Default: 50.0
-		#Range: 1.0 ~ 1.7976931348623157E308
-		netherSetMobNeutralHealth = 50.0
-		#If 'necroSetUndeadNeutral' is enabled, the highest max health an Undead mob has to have to be neutral, Default: 50.0
-		#Range: 1.0 ~ 1.7976931348623157E308
-		necroSetUndeadNeutralHealth = 50.0
-		#Whether wearing Necro Crown while not being a Lich gives Weakness when in sunlight, Default: true
-		necroCrownWeakness = true
-		#Whether wearing Necro Cape while not being a Lich gives Hunger when in sunlight, Default: true
-		necroCapeHunger = true
-		#Necro Crown and Cape change textures when wearing a specific robe, Default: true
-		necroCapeChangeTexture = true
-		#If 'namelessSetUndeadNeutral' is enabled, the highest max health an Undead mob has to have to be neutral, Default: 50.0
-		#Range: 1.0 ~ 1.7976931348623157E308
-		namelessSetUndeadNeutralHealth = 50.0
-		#Whether wearing both Witch Robe and Hat will cause Witches and Warlocks to be neutral, Default: true
-		witchSetWitchNeutral = true
-		#Whether wearing a Warlock Robe will cause Witches and Warlocks to be neutral, Default: true
-		warlockRobeWitchNeutral = true
-		#Whether wearing a Nether Robe will cause Witches and Warlocks to be neutral, Default: true
-		netherRobeWitchNeutral = true
 
 ["Tools & Weapons"]
 
@@ -114,9 +76,6 @@
 		#How much base damage Wild Staffs deals, Default: 4.0
 		#Range: 1.0 ~ 1.7976931348623157E308
 		wildStaffDamage = 4.0
-		#How much base damage Nether Staffs deals, Default: 4.0
-		#Range: 1.0 ~ 1.7976931348623157E308
-		netherStaffDamage = 4.0
 
 	["Tools & Weapons".Scythes]
 		#Amount of Soul Energy Dark Scythe gives when hitting mob(s), Default: 1
@@ -195,9 +154,6 @@
 		#How fast it takes to fully swing a Hammers. The lower the number the slower it takes to recharge, Default: 0.5
 		#Range: 0.0 ~ 1.7976931348623157E308
 		hammerAttackSpeed = 0.5
-		#How many uses before Hammers breaks, Default: 2500
-		#Range: > 1
-		hammerDurability = 2500
 
 [Armor]
 
@@ -298,10 +254,6 @@
 		#Define how much knockback resistance each armor piece provides, Default: 0.3
 		#Range: 0.0 ~ 1.7976931348623157E308
 		darkArmorKnockResist = 0.3
-		#Whether Dark Helmets makes the wearer immune to Blindness, Default: true
-		darkHelmetBlindness = true
-		#Whether Dark Helmets makes the wearer immune to Darkness, Default: true
-		darkHelmetDarkness = true
 
 		[Armor."Dark Armor"."Armor Points"]
 			#Define how much armor points wearing the Boots provides, Default: 3

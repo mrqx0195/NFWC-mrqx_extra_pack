@@ -1,7 +1,7 @@
 // priority: 1
 Platform.mods.kubejs.name = 'No Flesh Within Chest'
 global.ORGAN_LIST = []
-global.ORGAN_BCP = new Map()
+global.ORGAN_BURNING_AND_COLD_POINTS = new Map()
 global.ORGAN_TEMP = new Map()
 
 global.OPERATION_ADD = 'addition'
