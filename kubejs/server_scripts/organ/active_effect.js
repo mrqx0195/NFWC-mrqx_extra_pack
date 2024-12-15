@@ -82,7 +82,7 @@ function clearAllActivedModify(player) {
     })
     player.removeAttribute("cold_sweat:burning_point",'kubejsBpoint')
     player.removeAttribute("cold_sweat:freezing_point",'kubejsCpoint')
-    player.persistentData.putInt('bcPoint',0)
+    player.persistentData.putInt('burn_cold_point',0)
     player.persistentData.putInt(resourceCountMax, defaultResourceMax)
     player.persistentData.putInt(warpCountMax, defaultWarpMax)
 }

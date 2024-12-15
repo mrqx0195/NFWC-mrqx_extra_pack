@@ -19,11 +19,11 @@ DefaultOrgan.prototype = {
             let typeName = global.SCORE_MAP[score.id]
             this.shiftTextLines.push([LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.organ_score.1")), Text.yellow(String(value)), Text.gray(Text.translatable("kubejs.tooltips.organ_score.2")), Text.yellow(typeName)])
         })
-        if(global.ORGAN_BCP.has(this.itemID)){
-            let burningPoint = global.ORGAN_BCP.get(this.itemID)[0]
-            let coldPoint = global.ORGAN_BCP.get(this.itemID)[1]
-            this.shiftTextLines.push([LEADING_SYMBOL, Text.gray(' 每组该器官使你能忍受的最高温度') ,burningPoint>0 ? Text.green(' 提高 '):Text.red(' 降低 '), Text.yellow(String(Math.abs(burningPoint*25))), Text.gray(' 摄氏度')])
-            this.shiftTextLines.push([LEADING_SYMBOL, Text.gray(' 每组该器官使你能忍受的最低温度') ,coldPoint>0 ? Text.red(' 提高 '):Text.green(' 降低 '), Text.yellow(String(Math.abs(coldPoint*25))), Text.gray(' 摄氏度')])
+        if(global.ORGAN_BURNING_AND_COLD_POINTS.has(this.itemID)){
+            let burningPoint = global.ORGAN_BURNING_AND_COLD_POINTS.get(this.itemID)[0]
+            let coldPoint = global.ORGAN_BURNING_AND_COLD_POINTS.get(this.itemID)[1]
+            this.shiftTextLines.push([LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.organ_burn_cold_attri.1")) ,burningPoint>0 ? Text.green(Text.translatable("kubejs.tooltips.heat")):Text.red(Text.translatable("kubejs.tooltips.cold")), Text.yellow(String(Math.abs(burningPoint*25))), Text.gray(Text.translatable("kubejs.tooltips.degree"))])
+            this.shiftTextLines.push([LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.organ_burn_cold_attri.2")) ,coldPoint>0 ? Text.red(Text.translatable("kubejs.tooltips.heat")):Text.green(Text.translatable("kubejs.tooltips.cold")), Text.yellow(String(Math.abs(coldPoint*25))), Text.gray(Text.translatable("kubejs.tooltips.degree"))])
         }
         return this
     },

@@ -47,63 +47,63 @@ ServerEvents.tags('item', event => {
     event.add('kubejs:organ', organ)
   })
 
-  global.ORGAN_BCP.forEach((v,k)=>{
-    event.add('kubejs:bcPoint',k)
+  global.ORGAN_BURNING_AND_COLD_POINTS.forEach((v,k)=>{
+    event.add('kubejs:burn_cold_point',k)
   })
 
 })
 
 ServerEvents.tags('item',event=>{
-  function registryOrganBCPoint(id,bPoint,cPoint){
-    event.add('kubejs:bcPoint',id)
-    global.ORGAN_BCP.set(id, [bPoint / 25, cPoint / 25])
+  function registryOrganBurnColdPoint(id,bPoint,cPoint){
+    event.add('kubejs:burn_cold_point',id)
+    global.ORGAN_BURNING_AND_COLD_POINTS.set(id, [bPoint / 25, cPoint / 25])
   }
 
-  registryOrganBCPoint("chestcavity:heart", 5, -5)    //1
-  registryOrganBCPoint("chestcavity:appendix", 1, -1)  //1
-  registryOrganBCPoint("chestcavity:stomach", -6, 6)  //1
+  registryOrganBurnColdPoint("chestcavity:heart", 5, -5)    //1
+  registryOrganBurnColdPoint("chestcavity:appendix", 1, -1)  //1
+  registryOrganBurnColdPoint("chestcavity:stomach", -6, 6)  //1
 
-  registryOrganBCPoint("chestcavity:rotten_heart", -10, -20)
-  registryOrganBCPoint("chestcavity:rotten_appendix", -1, -2)
-  registryOrganBCPoint("chestcavity:rotten_stomach", -20, 5)
+  registryOrganBurnColdPoint("chestcavity:rotten_heart", -10, -20)
+  registryOrganBurnColdPoint("chestcavity:rotten_appendix", -1, -2)
+  registryOrganBurnColdPoint("chestcavity:rotten_stomach", -20, 5)
 
-  registryOrganBCPoint("chestcavity:animal_heart", 5, -5)    //1
-  registryOrganBCPoint("chestcavity:animal_appendix", 1, -1)  //1
-  registryOrganBCPoint("chestcavity:animal_stomach", -5, 10) //1
+  registryOrganBurnColdPoint("chestcavity:animal_heart", 5, -5)    //1
+  registryOrganBurnColdPoint("chestcavity:animal_appendix", 1, -1)  //1
+  registryOrganBurnColdPoint("chestcavity:animal_stomach", -5, 10) //1
 
-  registryOrganBCPoint("chestcavity:small_animal_heart", 5, -5)    //1
-  registryOrganBCPoint("chestcavity:small_animal_appendix", 1, 0)  //1
-  registryOrganBCPoint("chestcavity:small_animal_stomach", -5, 10) //1
+  registryOrganBurnColdPoint("chestcavity:small_animal_heart", 5, -5)    //1
+  registryOrganBurnColdPoint("chestcavity:small_animal_appendix", 1, 0)  //1
+  registryOrganBurnColdPoint("chestcavity:small_animal_stomach", -5, 10) //1
 
-  registryOrganBCPoint("chestcavity:insect_heart", 2, -2)    
-  registryOrganBCPoint("chestcavity:insect_stomach", -2, -2)  
+  registryOrganBurnColdPoint("chestcavity:insect_heart", 2, -2)    
+  registryOrganBurnColdPoint("chestcavity:insect_stomach", -2, -2)  
 
-  registryOrganBCPoint("chestcavity:fireproof_heart", 20, 10)
-  registryOrganBCPoint("chestcavity:fireproof_appendix", 10, 5)  
-  registryOrganBCPoint("chestcavity:fireproof_stomach", 5, 10)
+  registryOrganBurnColdPoint("chestcavity:fireproof_heart", 20, 10)
+  registryOrganBurnColdPoint("chestcavity:fireproof_appendix", 10, 5)  
+  registryOrganBurnColdPoint("chestcavity:fireproof_stomach", 5, 10)
 
-  registryOrganBCPoint("chestcavity:ender_heart", 7, -7)    
-  registryOrganBCPoint("chestcavity:ender_appendix", 5, -5)  
-  registryOrganBCPoint("chestcavity:ender_stomach", 0, -5)
+  registryOrganBurnColdPoint("chestcavity:ender_heart", 7, -7)    
+  registryOrganBurnColdPoint("chestcavity:ender_appendix", 5, -5)  
+  registryOrganBurnColdPoint("chestcavity:ender_stomach", 0, -5)
 
-  registryOrganBCPoint("chestcavity:dragon_heart", 20, -10)
-  registryOrganBCPoint("chestcavity:dragon_muscle", 10, -5)   
-  registryOrganBCPoint("chestcavity:dragon_lung", 30, 0)        
-  registryOrganBCPoint("chestcavity:dragon_liver", 5, -10)    
+  registryOrganBurnColdPoint("chestcavity:dragon_heart", 20, -10)
+  registryOrganBurnColdPoint("chestcavity:dragon_muscle", 10, -5)   
+  registryOrganBurnColdPoint("chestcavity:dragon_lung", 30, 0)        
+  registryOrganBurnColdPoint("chestcavity:dragon_liver", 5, -10)    
 
-  registryOrganBCPoint("chestcavity:withered_spine", 30, -15)
-  registryOrganBCPoint("chestcavity:withered_rib", 10, -5)
-  registryOrganBCPoint("chestcavity:writhing_soulsand", 5, -5)
+  registryOrganBurnColdPoint("chestcavity:withered_spine", 30, -15)
+  registryOrganBurnColdPoint("chestcavity:withered_rib", 10, -5)
+  registryOrganBurnColdPoint("chestcavity:writhing_soulsand", 5, -5)
 
-  registryOrganBCPoint("chestcavity:golem_core", 25, -25)
+  registryOrganBurnColdPoint("chestcavity:golem_core", 25, -25)
 
-  registryOrganBCPoint("chestcavity:small_carnivore_stomach", -5, 10)
-  registryOrganBCPoint("chestcavity:small_herbivore_stomach", -5, 10)
-  registryOrganBCPoint("chestcavity:volatile_stomach", 5, -10)
+  registryOrganBurnColdPoint("chestcavity:small_carnivore_stomach", -5, 10)
+  registryOrganBurnColdPoint("chestcavity:small_herbivore_stomach", -5, 10)
+  registryOrganBurnColdPoint("chestcavity:volatile_stomach", 5, -10)
 
-  registryOrganBCPoint("chestcavity:blaze_shell", 30, 30) 
-  registryOrganBCPoint("chestcavity:blaze_core", 35, 30) 
-  registryOrganBCPoint("chestcavity:shifting_leaves", 5, 5)
+  registryOrganBurnColdPoint("chestcavity:blaze_shell", 30, 30) 
+  registryOrganBurnColdPoint("chestcavity:blaze_core", 35, 30) 
+  registryOrganBurnColdPoint("chestcavity:shifting_leaves", 5, 5)
 
 })
 
