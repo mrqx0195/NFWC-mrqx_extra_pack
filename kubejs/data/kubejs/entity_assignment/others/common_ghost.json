@@ -6,7 +6,10 @@
         "goety:wraith",
         "graveyard:reaper",
         "graveyard:revenant",
-        "graveyard:wraith"
+        "graveyard:wraith",
+        "twilightforest:carminite_ghastguard",
+        "twilightforest:carminite_ghastling",
+        "twilightforest:wraith"
     ]
   }
   

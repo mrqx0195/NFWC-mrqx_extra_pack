@@ -1,9 +1,10 @@
 // priority: 10
 PlayerEvents.tick(event => {
     let player = event.player
+    if (player.age % 20 != 0) return
     let typeMap = getPlayerChestCavityTypeMap(player);
 
-    if (player.age % 20 != 0) return
+
     let onlySet = new Set()
     if (typeMap.has('kubejs:player_tick_only')) {
         typeMap.get('kubejs:player_tick_only').forEach(organ => {

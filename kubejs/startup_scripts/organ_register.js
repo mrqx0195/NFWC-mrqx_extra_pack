@@ -232,6 +232,7 @@ StartupEvents.registry('item', event => {
         .addScore('filtration', -0.75)
         .addScore('speed', -0.5)
         .addScore('breath_recovery', 5)
+        .bcPoint(2,-2)
         .addTextLines('default', [Text.gray(Text.translatable("kubejs.tooltips.compressed_oxygen_implant.1"))])
         .build())
         .texture('kubejs:item/organs/machine/compressed_oxygen_implant')
@@ -755,6 +756,7 @@ StartupEvents.registry('item', event => {
         .addScore('metabolism', 0.125)
         .addScore('breath_capacity', 0.125)
         .addScore('speed', 0.25)
+        .bcPoint(1,-1)
         .addTextLines('default', [Text.gray(Text.translatable("kubejs.tooltips.relic_metal_plate.1"))])
         .addTextLines('default', [Text.gray(Text.translatable("kubejs.tooltips.relic_metal_plate.2"))])
         .build())
@@ -775,6 +777,7 @@ StartupEvents.registry('item', event => {
         .addScore('metabolism', 0.5)
         .addScore('breath_capacity', 0.5)
         .addScore('speed', 0.5)
+        .bcPoint(2,-2)
         .addTextLines('default', [Text.darkPurple(Text.translatable("kubejs.tooltips.storm_metal_plate.1"))])
         .build())
         .texture('kubejs:item/organs/relics/storm_metal_plate')
@@ -794,6 +797,7 @@ StartupEvents.registry('item', event => {
     registerOrgan(new Organ('kubejs:love_between_lava_and_ice')
         .addScore('health', 1.5)
         .addScore('fire_resistant', 0.5)
+        .bcPoint(5,-5)
         .addTextLines('default', [Text.gray(Text.translatable("kubejs.tooltips.love_between_lava_and_ice.1"))])
         .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.love_between_lava_and_ice.2")), Text.blue(Text.translatable("kubejs.tooltips.love_between_lava_and_ice.3")), Text.gray(Text.translatable("kubejs.tooltips.love_between_lava_and_ice.4")), Text.yellow(0.2), Text.aqua(Text.translatable("kubejs.tooltips.love_between_lava_and_ice.5"))])
         .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.love_between_lava_and_ice.6")), Text.darkRed(Text.translatable("kubejs.tooltips.love_between_lava_and_ice.7")), Text.gray(Text.translatable("kubejs.tooltips.love_between_lava_and_ice.8")), Text.yellow(0.2), Text.red(Text.translatable("kubejs.tooltips.love_between_lava_and_ice.9"))])
@@ -862,6 +866,7 @@ StartupEvents.registry('item', event => {
         .addScore('photosynthesis', 3)
         .addScore('metabolism', 0.5)
         .addScore('hydroallergenic', -1)
+        .bcPoint(5,0)
         .addTextLines('default', [Text.gray(Text.translatable("kubejs.tooltips.flower_heart.1"))])
         .build())
         .texture('kubejs:item/organs/relics/flower_heart')
@@ -1067,6 +1072,7 @@ StartupEvents.registry('item', event => {
         .addScore('fire_resistant', 1)
         .addScore('hydroallergenic', 2)
         .addScore('strength', -1.5)
+        .bcPoint(30,5)
         .addTextLines('default', [Text.gray(Text.translatable("kubejs.tooltips.embers_liver.1"))])
         .addTextLines('alt', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.embers_liver.2"))])
         .addTextLines('alt', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.embers_liver.3"))])
@@ -1081,6 +1087,7 @@ StartupEvents.registry('item', event => {
         .addScore('fire_resistant', 1)
         .addScore('digestion', -1)
         .addScore('iron_repair', 1)
+        .bcPoint(10,1)
         .addTextLines('default', [Text.gray(Text.translatable("kubejs.tooltips.netherite_muscle.1"))])
         .addTextLines('alt', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.netherite_muscle.2"))])
         .addTextLines('alt', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.netherite_muscle.3"))])
@@ -1127,6 +1134,7 @@ StartupEvents.registry('item', event => {
     registerOrgan(new Organ('kubejs:freezing_intestine')
         .addScore('digestion', 1.25)
         .addScore('nutrition', 1.75)
+        .bcPoint(-10,-20)
         .addTextLines('default', [Text.gray(Text.translatable("kubejs.tooltips.freezing_intestine.1"))])
         .addTextLines('alt', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.freezing_intestine.2"))])
         .build())
@@ -1248,6 +1256,7 @@ StartupEvents.registry('item', event => {
     registerOrgan(new Organ('kubejs:immortal_volcanic_rock')
         .addScore('hydroallergenic', 3)
         .addScore('swim_speed', -1)
+        .bcPoint(20,-20)
         .addTextLines('default', [Text.gray(Text.translatable("kubejs.tooltips.immortal_volcanic_rock.1"))])
         .addTextLines('alt', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.immortal_volcanic_rock.2"))])
         .build())
@@ -1307,6 +1316,7 @@ StartupEvents.registry('item', event => {
         .addScore('nerves', -0.5)
         .addScore('defense', -2)
         .addScore('launching', 4.0)
+        .bcPoint(10,20)
         .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.wrath_shard.1"))])
         .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.wrath_shard.2"))])
         .build())
@@ -1319,6 +1329,7 @@ StartupEvents.registry('item', event => {
         .addScore('breath_recovery', 2)
         .addScore('endurance', -2.5)
         .addScore('speed', 2)
+        .bcPoint(-6,-6)
         .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.envy_shard.1"))])
         .build())
         .texture('kubejs:item/organs/shard/envy_shard')
@@ -1330,6 +1341,7 @@ StartupEvents.registry('item', event => {
         .addScore('digestion', 3)
         .addScore('nutrition', 2)
         .addScore('speed', -1.5)
+        .bcPoint(20,-20)
         .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.gluttony_shard.1"))])
         .build())
         .texture('kubejs:item/organs/shard/gluttony_shard')
@@ -1341,6 +1353,7 @@ StartupEvents.registry('item', event => {
         .addScore('knockback_resistant', -2.5)
         .addScore('impact_resistant', -2.5)
         .addScore('fire_resistant', -1.5)
+        .bcPoint(-10,10)
         .addTextLines('alt', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.greed_shard.1"))])
         .build())
         .texture('kubejs:item/organs/shard/greed_shard')
@@ -1352,6 +1365,7 @@ StartupEvents.registry('item', event => {
         .addScore('buff_purging', 2)
         .addScore('endurance', -2.5)
         .addScore('health', -1)
+        .bcPoint(13,13)
         .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.lust_shard.1"))])
         .build())
         .texture('kubejs:item/organs/shard/lust_shard')
@@ -1363,6 +1377,7 @@ StartupEvents.registry('item', event => {
         .addScore('dragon_breath', 2)
         .addScore('defense', -3.5)
         .addScore('detoxification', 3.5)
+        .bcPoint(10,-10)
         .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.pride_shard.1"))])
         .build())
         .texture('kubejs:item/organs/shard/pride_shard')
@@ -1540,6 +1555,7 @@ StartupEvents.registry('item', event => {
         .addScore('health', 1.75)
         .addScore('defense', -1)
         .addScore('luck', 1.5)
+        .bcPoint(5,-5)
         .addTextLines('alt', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.cream_cookie_heart.1"))])
         .addTextLines('alt', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.cream_cookie_heart.2"))])
         .addTextLines('alt', [LEADING_SYMBOL, Text.red(Text.translatable("kubejs.tooltips.cream_cookie_heart.3"))])
@@ -1594,6 +1610,7 @@ StartupEvents.registry('item', event => {
 
     registerOrgan(new Organ('kubejs:chicken_heart')
         .addScore('health', 1.75)
+        .bcPoint(-5,-5)
         .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.chicken_heart.1"))])
         .build())
         .food(food => { food.hunger(8).saturation(1) })
@@ -1837,7 +1854,7 @@ StartupEvents.registry('item', event => {
 
     registerOrgan(new Organ('kubejs:muscle_template').addTextLines('default', [Text.gray(Text.translatable("kubejs.tooltips.muscle_template.1"))]).addScore('strength', 0.75).addScore('speed', 0.75).build()).texture('kubejs:item/organs/template/muscle_template').tag('kubejs:muscle').tag('kubejs:evolution');
 
-    registerOrgan(new Organ('kubejs:heart_template').addTextLines('default', [Text.gray(Text.translatable("kubejs.tooltips.heart_template.1"))]).addScore('health', 0.75).build()).texture('kubejs:item/organs/template/heart_template').tag('kubejs:evolution').tag('kubejs:heart');
+    registerOrgan(new Organ('kubejs:heart_template').addTextLines('default', [Text.gray(Text.translatable("kubejs.tooltips.heart_template.1"))]).addScore('health', 0.75).bcPoint(6,-6).build()).texture('kubejs:item/organs/template/heart_template').tag('kubejs:evolution').tag('kubejs:heart');
 
     registerOrgan(new Organ('kubejs:intestine_template').addTextLines('default', [Text.gray(Text.translatable("kubejs.tooltips.intestine_template.1"))]).addScore('nutrition', 0.75).build()).texture('kubejs:item/organs/template/intestine_template').tag('kubejs:evolution').tag('kubejs:intestine');
 
@@ -1847,7 +1864,7 @@ StartupEvents.registry('item', event => {
 
     registerOrgan(new Organ('kubejs:spleen_template').addTextLines('default', [Text.gray(Text.translatable("kubejs.tooltips.spleen_template.1"))]).addScore('metabolism', 0.75).build()).texture('kubejs:item/organs/template/spleen_template').tag('kubejs:evolution').tag('kubejs:spleen');
 
-    registerOrgan(new Organ('kubejs:stomach_template').addTextLines('default', [Text.gray(Text.translatable("kubejs.tooltips.stomach_template.1"))]).addScore('digestion', 0.75).build()).texture('kubejs:item/organs/template/stomach_template').tag('kubejs:evolution').tag('kubejs:stomach');
+    registerOrgan(new Organ('kubejs:stomach_template').addTextLines('default', [Text.gray(Text.translatable("kubejs.tooltips.stomach_template.1"))]).addScore('digestion', 0.75).bcPoint(-6,6).build()).texture('kubejs:item/organs/template/stomach_template').tag('kubejs:evolution').tag('kubejs:stomach');
 
     registerOrgan(new Organ('kubejs:kidney_template').addTextLines('default', [Text.gray(Text.translatable("kubejs.tooltips.kidney_template.1"))]).addScore('filtration', 0.75).build()).texture('kubejs:item/organs/template/kidney_template').tag('kubejs:evolution').tag('kubejs:kidney');
 
@@ -1872,9 +1889,9 @@ StartupEvents.registry('item', event => {
 
     registerOrgan(new Organ('kubejs:lung_iron').addScore('breath_recovery', 1.25).addScore('breath_capacity', 1.25).addScore('endurance', 1.25).build()).texture('kubejs:item/organs/common/lung').tag('itemborders:iron').tag('kubejs:evolution').tag('kubejs:lung');
 
-    registerOrgan(new Organ('kubejs:stomach_iron').addScore('digestion', 1.25).build()).texture('kubejs:item/organs/common/stomach').tag('itemborders:iron').tag('kubejs:evolution').tag('kubejs:stomach');
+    registerOrgan(new Organ('kubejs:stomach_iron').addScore('digestion', 1.25).bcPoint(-5,5).build()).texture('kubejs:item/organs/common/stomach').tag('itemborders:iron').tag('kubejs:evolution').tag('kubejs:stomach');
 
-    registerOrgan(new Organ('kubejs:heart_iron').addScore('health', 1.25).build()).texture('kubejs:item/organs/common/heart').tag('itemborders:iron').tag('kubejs:evolution').tag('kubejs:heart');
+    registerOrgan(new Organ('kubejs:heart_iron').addScore('health', 1.25).bcPoint(8,-8).build()).texture('kubejs:item/organs/common/heart').tag('itemborders:iron').tag('kubejs:evolution').tag('kubejs:heart');
 
     registerOrgan(new Organ('kubejs:spine_iron').addScore('defense', 0.625).addScore('nerves', 1.25).build()).texture('kubejs:item/organs/common/spine').tag('itemborders:iron').tag('kubejs:evolution').tag('kubejs:spine');
 
@@ -1894,9 +1911,9 @@ StartupEvents.registry('item', event => {
 
     registerOrgan(new Organ('kubejs:lung_gold').addScore('breath_recovery', 1.5).addScore('breath_capacity', 1.5).addScore('endurance', 1.5).build()).texture('kubejs:item/organs/common/lung').tag('itemborders:gold').tag('kubejs:evolution').tag('kubejs:lung');
 
-    registerOrgan(new Organ('kubejs:stomach_gold').addScore('digestion', 1.5).build()).texture('kubejs:item/organs/common/stomach').tag('itemborders:gold').tag('kubejs:evolution').tag('kubejs:stomach');
+    registerOrgan(new Organ('kubejs:stomach_gold').addScore('digestion', 1.5).bcPoint(-3,3).build()).texture('kubejs:item/organs/common/stomach').tag('itemborders:gold').tag('kubejs:evolution').tag('kubejs:stomach');
 
-    registerOrgan(new Organ('kubejs:heart_gold').addScore('health', 1.5).build()).texture('kubejs:item/organs/common/heart').tag('itemborders:gold').tag('kubejs:evolution').tag('kubejs:heart');
+    registerOrgan(new Organ('kubejs:heart_gold').addScore('health', 1.5).bcPoint(12,-12).build()).texture('kubejs:item/organs/common/heart').tag('itemborders:gold').tag('kubejs:evolution').tag('kubejs:heart');
 
     registerOrgan(new Organ('kubejs:spine_gold').addScore('defense', 0.75).addScore('nerves', 1.5).build()).texture('kubejs:item/organs/common/spine').tag('itemborders:gold').tag('kubejs:evolution').tag('kubejs:spine');
 
@@ -1916,9 +1933,9 @@ StartupEvents.registry('item', event => {
 
     registerOrgan(new Organ('kubejs:lung_diamond').addScore('breath_recovery', 2).addScore('breath_capacity', 2).addScore('endurance', 2).build()).texture('kubejs:item/organs/common/lung').tag('itemborders:diamond').tag('kubejs:lung');
 
-    registerOrgan(new Organ('kubejs:stomach_diamond').addScore('digestion', 2).build()).texture('kubejs:item/organs/common/stomach').tag('itemborders:diamond').tag('kubejs:stomach').tag('kubejs:evolution');
+    registerOrgan(new Organ('kubejs:stomach_diamond').addScore('digestion', 2).bcPoint(0,1).build()).texture('kubejs:item/organs/common/stomach').tag('itemborders:diamond').tag('kubejs:stomach').tag('kubejs:evolution');
 
-    registerOrgan(new Organ('kubejs:heart_diamond').addScore('health', 2).build()).texture('kubejs:item/organs/common/heart').tag('itemborders:diamond').tag('kubejs:heart');
+    registerOrgan(new Organ('kubejs:heart_diamond').addScore('health', 2).bcPoint(15,-15).build()).texture('kubejs:item/organs/common/heart').tag('itemborders:diamond').tag('kubejs:heart');
 
     registerOrgan(new Organ('kubejs:spine_diamond').addScore('defense', 1).addScore('nerves', 2).build()).texture('kubejs:item/organs/common/spine').tag('itemborders:diamond').tag('kubejs:spine');
 
@@ -1969,165 +1986,46 @@ StartupEvents.registry('item', event => {
     registerOrgan(new Organ('kubejs:prehistory_appendix').addScore('luck', 1.25).build()).texture('kubejs:item/organs/prehistory/prehistory_appendix').tag('kubejs:appendix').tag('kubejs:prehistory');
 
     // 龙血器官
-    registerOrgan(new Organ('kubejs:dragon_blood_lung').addScore('strength', 0.75).addScore('breath_recovery', 1.75).addScore('breath_capacity', 1.75).addScore('endurance', 1.75).addScore('crystalsynthesis', 0.25).build()).texture('kubejs:item/organs/dragon/dragon_blood_lung').tag('kubejs:lung').tag('kubejs:dragon');
+    registerOrgan(new Organ('kubejs:dragon_blood_lung').addScore('strength', 0.75).addScore('breath_recovery', 1.75).addScore('breath_capacity', 1.75).addScore('endurance', 1.75).addScore('crystalsynthesis', 0.25).bcPoint(16,-6).build()).texture('kubejs:item/organs/dragon/dragon_blood_lung').tag('kubejs:lung').tag('kubejs:dragon');
 
-    registerOrgan(new Organ('kubejs:dragon_blood_muscle').addScore('strength', 2.25).addScore('speed', 1.75).addScore('crystalsynthesis', 0.25).build()).texture('kubejs:item/organs/dragon/dragon_blood_muscle').tag('kubejs:muscle').tag('kubejs:dragon');
+    registerOrgan(new Organ('kubejs:dragon_blood_muscle').addScore('strength', 2.25).addScore('speed', 1.75).addScore('crystalsynthesis', 0.25).bcPoint(1,-6).build()).texture('kubejs:item/organs/dragon/dragon_blood_muscle').tag('kubejs:muscle').tag('kubejs:dragon');
 
-    registerOrgan(new Organ('kubejs:dragon_blood_heart').addScore('strength', 0.25).addScore('health', 1.75).addScore('crystalsynthesis', 0.25).addTextLines('alt', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.dragon_blood_heart.1"))]).addTextLines('alt', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.dragon_blood_heart.2"))]).addTextLines('alt', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.dragon_blood_heart.3"))]).addTextLines('alt', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.dragon_blood_heart.4"))]).build()).texture('kubejs:item/organs/dragon/dragon_blood_heart').tag('kubejs:heart').tag('kubejs:dragon').tag('kubejs:key_pressed');
+    registerOrgan(new Organ('kubejs:dragon_blood_heart').addScore('strength', 0.25).addScore('health', 1.75).addScore('crystalsynthesis', 0.25).bcPoint(6,-6).addTextLines('alt', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.dragon_blood_heart.1"))]).addTextLines('alt', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.dragon_blood_heart.2"))]).addTextLines('alt', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.dragon_blood_heart.3"))]).addTextLines('alt', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.dragon_blood_heart.4"))]).build()).texture('kubejs:item/organs/dragon/dragon_blood_heart').tag('kubejs:heart').tag('kubejs:dragon').tag('kubejs:key_pressed');
 
-    registerOrgan(new Organ('kubejs:dragon_blood_intestine').addScore('strength', 0.25).addScore('nutrition', 1.75).addScore('crystalsynthesis', 0.25).build()).texture('kubejs:item/organs/dragon/dragon_blood_intestine').tag('kubejs:intestine').tag('kubejs:dragon');
+    registerOrgan(new Organ('kubejs:dragon_blood_intestine').addScore('strength', 0.25).addScore('nutrition', 1.75).addScore('crystalsynthesis', 0.25).bcPoint(-2,4).build()).texture('kubejs:item/organs/dragon/dragon_blood_intestine').tag('kubejs:intestine').tag('kubejs:dragon');
 
-    registerOrgan(new Organ('kubejs:dragon_blood_rib').addScore('strength', 0.25).addScore('defense', 1.75).addScore('crystalsynthesis', 0.25).build()).texture('kubejs:item/organs/dragon/dragon_blood_rib').tag('kubejs:rib').tag('kubejs:dragon');
+    registerOrgan(new Organ('kubejs:dragon_blood_rib').addScore('strength', 0.25).addScore('defense', 1.75).addScore('crystalsynthesis', 0.25).bcPoint(4,-4).build()).texture('kubejs:item/organs/dragon/dragon_blood_rib').tag('kubejs:rib').tag('kubejs:dragon');
 
-    registerOrgan(new Organ('kubejs:dragon_blood_spine').addScore('strength', 0.5).addScore('defense', 0.75).addScore('nerves', 1.75).addScore('crystalsynthesis', 0.25).build()).texture('kubejs:item/organs/dragon/dragon_blood_spine').tag('kubejs:spine').tag('kubejs:dragon');
+    registerOrgan(new Organ('kubejs:dragon_blood_spine').addScore('strength', 0.5).addScore('defense', 0.75).addScore('nerves', 1.75).addScore('crystalsynthesis', 0.25).bcPoint(-3,3).build()).texture('kubejs:item/organs/dragon/dragon_blood_spine').tag('kubejs:spine').tag('kubejs:dragon');
 
-    registerOrgan(new Organ('kubejs:dragon_blood_spleen').addScore('strength', 0.25).addScore('metabolism', 1.75).addScore('crystalsynthesis', 0.25).build()).texture('kubejs:item/organs/dragon/dragon_blood_spleen').tag('kubejs:spleen').tag('kubejs:dragon');
+    registerOrgan(new Organ('kubejs:dragon_blood_spleen').addScore('strength', 0.25).addScore('metabolism', 1.75).addScore('crystalsynthesis', 0.25).bcPoint(-9,4).build()).texture('kubejs:item/organs/dragon/dragon_blood_spleen').tag('kubejs:spleen').tag('kubejs:dragon');
 
-    registerOrgan(new Organ('kubejs:dragon_blood_stomach').addScore('strength', 0.25).addScore('digestion', 1.75).addScore('crystalsynthesis', 0.25).build()).texture('kubejs:item/organs/dragon/dragon_blood_stomach').tag('kubejs:stomach').tag('kubejs:dragon');
+    registerOrgan(new Organ('kubejs:dragon_blood_stomach').addScore('strength', 0.25).addScore('digestion', 1.75).addScore('crystalsynthesis', 0.25).bcPoint(-9,9).build()).texture('kubejs:item/organs/dragon/dragon_blood_stomach').tag('kubejs:stomach').tag('kubejs:dragon');
 
-    registerOrgan(new Organ('kubejs:dragon_blood_kidney').addScore('strength', 0.25).addScore('filtration', 1.75).addScore('crystalsynthesis', 0.25).build()).texture('kubejs:item/organs/dragon/dragon_blood_kidney').tag('kubejs:kidney').tag('kubejs:dragon');
+    registerOrgan(new Organ('kubejs:dragon_blood_kidney').addScore('strength', 0.25).addScore('filtration', 1.75).addScore('crystalsynthesis', 0.25).bcPoint(-4,9).build()).texture('kubejs:item/organs/dragon/dragon_blood_kidney').tag('kubejs:kidney').tag('kubejs:dragon');
 
-    registerOrgan(new Organ('kubejs:dragon_blood_liver').addScore('strength', 0.25).addScore('detoxification', 1.75).addScore('crystalsynthesis', 0.25).build()).texture('kubejs:item/organs/dragon/dragon_blood_liver').tag('kubejs:liver').tag('kubejs:dragon');
+    registerOrgan(new Organ('kubejs:dragon_blood_liver').addScore('strength', 0.25).addScore('detoxification', 1.75).addScore('crystalsynthesis', 0.25).bcPoint(-1,7).build()).texture('kubejs:item/organs/dragon/dragon_blood_liver').tag('kubejs:liver').tag('kubejs:dragon');
 
-    registerOrgan(new Organ('kubejs:dragon_blood_appendix').addScore('strength', 0.25).addScore('luck', 1.75).addScore('crystalsynthesis', 0.25).build()).texture('kubejs:item/organs/dragon/dragon_blood_appendix').tag('kubejs:appendix').tag('kubejs:dragon');
+    registerOrgan(new Organ('kubejs:dragon_blood_appendix').addScore('strength', 0.25).addScore('luck', 1.75).addScore('crystalsynthesis', 0.25).bcPoint(2,-1).build()).texture('kubejs:item/organs/dragon/dragon_blood_appendix').tag('kubejs:appendix').tag('kubejs:dragon');
 
     //幻想种器官
-    registerOrgan(new Organ('kubejs:fantasy_lung').addScore('breath_recovery', 1.125).addScore('breath_capacity', 1.125).addScore('endurance', 1.125).addScore('crystalsynthesis', 0.25).build()).texture('kubejs:item/organs/fantasy/fantasy_lung').tag('kubejs:lung').tag('kubejs:fantasy');
+    registerOrgan(new Organ('kubejs:fantasy_lung').addScore('breath_recovery', 1.125).addScore('breath_capacity', 1.125).addScore('endurance', 1.125).addScore('crystalsynthesis', 0.25).bcPoint(16,-6).build()).texture('kubejs:item/organs/fantasy/fantasy_lung').tag('kubejs:lung').tag('kubejs:fantasy');
 
-    registerOrgan(new Organ('kubejs:fantasy_muscle').addScore('strength', 1.125).addScore('speed', 1.125).addScore('crystalsynthesis', 0.25).build()).texture('kubejs:item/organs/fantasy/fantasy_muscle').tag('kubejs:muscle').tag('kubejs:fantasy');
+    registerOrgan(new Organ('kubejs:fantasy_muscle').addScore('strength', 1.125).addScore('speed', 1.125).addScore('crystalsynthesis', 0.25).bcPoint(1,-6).build()).texture('kubejs:item/organs/fantasy/fantasy_muscle').tag('kubejs:muscle').tag('kubejs:fantasy');
 
-    registerOrgan(new Organ('kubejs:fantasy_heart').addScore('health', 1.125).addScore('crystalsynthesis', 0.25).build()).texture('kubejs:item/organs/fantasy/fantasy_heart').tag('kubejs:heart').tag('kubejs:fantasy');
+    registerOrgan(new Organ('kubejs:fantasy_heart').addScore('health', 1.125).addScore('crystalsynthesis', 0.25).bcPoint(6,-6).build()).texture('kubejs:item/organs/fantasy/fantasy_heart').tag('kubejs:heart').tag('kubejs:fantasy');
 
-    registerOrgan(new Organ('kubejs:fantasy_intestine').addScore('nutrition', 1.125).addScore('crystalsynthesis', 0.25).build()).texture('kubejs:item/organs/fantasy/fantasy_intestine').tag('kubejs:intestine').tag('kubejs:fantasy');
+    registerOrgan(new Organ('kubejs:fantasy_intestine').addScore('nutrition', 1.125).addScore('crystalsynthesis', 0.25).bcPoint(-2,4).build()).texture('kubejs:item/organs/fantasy/fantasy_intestine').tag('kubejs:intestine').tag('kubejs:fantasy');
 
-    registerOrgan(new Organ('kubejs:fantasy_rib').addScore('defense', 1.125).addScore('crystalsynthesis', 0.25).build()).texture('kubejs:item/organs/fantasy/fantasy_rib').tag('kubejs:rib').tag('kubejs:fantasy');
+    registerOrgan(new Organ('kubejs:fantasy_rib').addScore('defense', 1.125).addScore('crystalsynthesis', 0.25).bcPoint(4,-4).build()).texture('kubejs:item/organs/fantasy/fantasy_rib').tag('kubejs:rib').tag('kubejs:fantasy');
 
-    registerOrgan(new Organ('kubejs:fantasy_spine').addScore('defense', 0.5625).addScore('nerves', 1.125).addScore('crystalsynthesis', 0.25).build()).texture('kubejs:item/organs/fantasy/fantasy_spine').tag('kubejs:spine').tag('kubejs:fantasy');
+    registerOrgan(new Organ('kubejs:fantasy_spine').addScore('defense', 0.5625).addScore('nerves', 1.125).addScore('crystalsynthesis', 0.25).bcPoint(-3,3).build()).texture('kubejs:item/organs/fantasy/fantasy_spine').tag('kubejs:spine').tag('kubejs:fantasy');
 
-    registerOrgan(new Organ('kubejs:fantasy_spleen').addScore('metabolism', 1.125).addScore('crystalsynthesis', 0.25).build()).texture('kubejs:item/organs/fantasy/fantasy_spleen').tag('kubejs:spleen').tag('kubejs:fantasy');
+    registerOrgan(new Organ('kubejs:fantasy_spleen').addScore('metabolism', 1.125).addScore('crystalsynthesis', 0.25).bcPoint(-9,4).build()).texture('kubejs:item/organs/fantasy/fantasy_spleen').tag('kubejs:spleen').tag('kubejs:fantasy');
 
-    registerOrgan(new Organ('kubejs:fantasy_stomach').addScore('digestion', 1.125).addScore('crystalsynthesis', 0.25).build()).texture('kubejs:item/organs/fantasy/fantasy_stomach').tag('kubejs:stomach').tag('kubejs:fantasy');
+    registerOrgan(new Organ('kubejs:fantasy_stomach').addScore('digestion', 1.125).addScore('crystalsynthesis', 0.25).bcPoint(-9,9).build()).texture('kubejs:item/organs/fantasy/fantasy_stomach').tag('kubejs:stomach').tag('kubejs:fantasy');
 
-    registerOrgan(new Organ('kubejs:fantasy_kidney').addScore('filtration', 1.125).addScore('crystalsynthesis', 0.25).build()).texture('kubejs:item/organs/fantasy/fantasy_kidney').tag('kubejs:kidney').tag('kubejs:fantasy');
-
-    registerOrgan(new Organ('kubejs:fantasy_liver').addScore('detoxification', 1.125).addScore('crystalsynthesis', 0.25).build()).texture('kubejs:item/organs/fantasy/fantasy_liver').tag('kubejs:liver').tag('kubejs:fantasy');
-
-    registerOrgan(new Organ('kubejs:fantasy_appendix').addScore('luck', 1.125).addScore('crystalsynthesis', 0.25).build()).texture('kubejs:item/organs/fantasy/fantasy_appendix').tag('kubejs:appendix').tag('kubejs:fantasy');
-
-    registerOrgan(new Organ('kubejs:soul_piece')
-        .addScore('buoyant', 0.5)
-        .addScore('nerves', 1.25)
-        .addScore('health', -0.25)
-        .build())
-        .texture('kubejs:item/organs/others/soul_piece')
-        .tag('itemborders:gold')
-
-    //冰龙器官
-    registerOrgan(new Organ('kubejs:ice_dragon_bead')
-        .addScore('crystalsynthesis', 2.5)
-        .addScore('knockback_resistant', 1.5)
-        .addScore('endurance', 0.5)
-        .addTextLines('default', [Text.gray(Text.translatable("kubejs.tooltips.ice_dragon_bead.1"))])
-        .addTextLines('alt', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.ice_dragon_bead.2"))])
-        .addTextLines('alt', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.ice_dragon_bead.3"))])
-        .addTextLines('alt', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.ice_dragon_bead.4"))])
-        .build())
-        .texture('kubejs:item/organs/dragon/ice_dragon_bead')
-        .tag('itemborders:diamond')
-        .tag('kubejs:legends')
-        .tag('kubejs:key_pressed');
-
-    registerOrgan(new Organ('kubejs:ice_dragon_lung').addScore('breath_recovery', 1.5).addScore('breath_capacity', 1.5).addScore('endurance', 1.5).addScore('defense', 0.25).build()).texture('kubejs:item/organs/dragon/ice_dragon_lung').tag('kubejs:lung').tag('itemborders:diamond');
-
-    registerOrgan(new Organ('kubejs:ice_dragon_muscle').addScore('strength', 1.5).addScore('speed', 1.5).addScore('defense', 0.25).build()).texture('kubejs:item/organs/dragon/ice_dragon_muscle').tag('kubejs:muscle').tag('itemborders:diamond');
-
-    registerOrgan(new Organ('kubejs:ice_dragon_heart').addScore('health', 1.5).addScore('defense', 0.25).build()).texture('kubejs:item/organs/dragon/ice_dragon_heart').tag('kubejs:heart').tag('itemborders:diamond');
-
-    registerOrgan(new Organ('kubejs:ice_dragon_intestine').addScore('nutrition', 1.5).addScore('defense', 0.25).build()).texture('kubejs:item/organs/dragon/ice_dragon_intestine').tag('kubejs:intestine').tag('itemborders:diamond');
-
-    registerOrgan(new Organ('kubejs:ice_dragon_rib').addScore('defense', 1.75).build()).texture('kubejs:item/organs/dragon/ice_dragon_rib').tag('kubejs:rib').tag('itemborders:diamond');
-
-    registerOrgan(new Organ('kubejs:ice_dragon_spine').addScore('defense', 1).addScore('nerves', 1.5).build()).texture('kubejs:item/organs/dragon/ice_dragon_spine').tag('kubejs:spine').tag('itemborders:diamond');
-
-    registerOrgan(new Organ('kubejs:ice_dragon_spleen').addScore('metabolism', 1.5).addScore('defense', 0.25).build()).texture('kubejs:item/organs/dragon/ice_dragon_spleen').tag('kubejs:spleen').tag('itemborders:diamond');
-
-    registerOrgan(new Organ('kubejs:ice_dragon_stomach').addScore('digestion', 1.5).addScore('defense', 0.25).build()).texture('kubejs:item/organs/dragon/ice_dragon_stomach').tag('kubejs:stomach').tag('itemborders:diamond');
-
-    registerOrgan(new Organ('kubejs:ice_dragon_kidney').addScore('filtration', 1.5).addScore('defense', 0.25).build()).texture('kubejs:item/organs/dragon/ice_dragon_kidney').tag('kubejs:kidney').tag('itemborders:diamond');
-
-    registerOrgan(new Organ('kubejs:ice_dragon_liver').addScore('detoxification', 1.5).addScore('defense', 0.25).build()).texture('kubejs:item/organs/dragon/ice_dragon_liver').tag('kubejs:liver').tag('itemborders:diamond');
-
-    registerOrgan(new Organ('kubejs:ice_dragon_appendix').addScore('luck', 1.5).addScore('defense', 0.25).build()).texture('kubejs:item/organs/dragon/ice_dragon_appendix').tag('kubejs:appendix').tag('itemborders:diamond');
-
-    //火龙器官
-    registerOrgan(new Organ('kubejs:fire_dragon_bead')
-        .addScore('crystalsynthesis', 2.5)
-        .addScore('knockback_resistant', 1.5)
-        .addScore('endurance', 0.5)
-        .addTextLines('default', [Text.gray(Text.translatable("kubejs.tooltips.fire_dragon_bead.1"))])
-        .addTextLines('alt', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.fire_dragon_bead.2"))])
-        .addTextLines('alt', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.fire_dragon_bead.3"))])
-        .addTextLines('alt', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.fire_dragon_bead.4"))])
-        .build())
-        .texture('kubejs:item/organs/dragon/fire_dragon_bead')
-        .tag('itemborders:diamond')
-        .tag('kubejs:legends')
-        .tag('kubejs:key_pressed');
-
-    registerOrgan(new Organ('kubejs:fire_dragon_lung').addScore('breath_recovery', 1.5).addScore('breath_capacity', 1.5).addScore('endurance', 1.5).addScore('strength', 0.25).build()).texture('kubejs:item/organs/dragon/fire_dragon_lung').tag('kubejs:lung').tag('itemborders:diamond');
-
-    registerOrgan(new Organ('kubejs:fire_dragon_muscle').addScore('strength', 1.75).addScore('speed', 1.5).build()).texture('kubejs:item/organs/dragon/fire_dragon_muscle').tag('kubejs:muscle').tag('itemborders:diamond');
-
-    registerOrgan(new Organ('kubejs:fire_dragon_heart').addScore('health', 1.5).addScore('strength', 0.25).build()).texture('kubejs:item/organs/dragon/fire_dragon_heart').tag('kubejs:heart').tag('itemborders:diamond');
-
-    registerOrgan(new Organ('kubejs:fire_dragon_intestine').addScore('nutrition', 1.5).addScore('strength', 0.25).build()).texture('kubejs:item/organs/dragon/fire_dragon_intestine').tag('kubejs:intestine').tag('itemborders:diamond');
-
-    registerOrgan(new Organ('kubejs:fire_dragon_rib').addScore('defense', 1.5).addScore('strength', 0.25).build()).texture('kubejs:item/organs/dragon/fire_dragon_rib').tag('kubejs:rib').tag('itemborders:diamond');
-
-    registerOrgan(new Organ('kubejs:fire_dragon_spine').addScore('defense', 0.75).addScore('nerves', 1.5).addScore('strength', 0.25).build()).texture('kubejs:item/organs/dragon/fire_dragon_spine').tag('kubejs:spine').tag('itemborders:diamond');
-
-    registerOrgan(new Organ('kubejs:fire_dragon_spleen').addScore('metabolism', 1.5).addScore('strength', 0.25).build()).texture('kubejs:item/organs/dragon/fire_dragon_spleen').tag('kubejs:spleen').tag('itemborders:diamond');
-
-    registerOrgan(new Organ('kubejs:fire_dragon_stomach').addScore('digestion', 1.5).addScore('strength', 0.25).build()).texture('kubejs:item/organs/dragon/fire_dragon_stomach').tag('kubejs:stomach').tag('itemborders:diamond');
-
-    registerOrgan(new Organ('kubejs:fire_dragon_kidney').addScore('filtration', 1.5).addScore('strength', 0.25).build()).texture('kubejs:item/organs/dragon/fire_dragon_kidney').tag('kubejs:kidney').tag('itemborders:diamond');
-
-    registerOrgan(new Organ('kubejs:fire_dragon_liver').addScore('detoxification', 1.5).addScore('strength', 0.25).build()).texture('kubejs:item/organs/dragon/fire_dragon_liver').tag('kubejs:liver').tag('itemborders:diamond');
-
-    registerOrgan(new Organ('kubejs:fire_dragon_appendix').addScore('luck', 1.75).addScore('strength', 0.125).build()).texture('kubejs:item/organs/dragon/fire_dragon_appendix').tag('kubejs:appendix').tag('itemborders:diamond');
-
-    //电龙器官
-    registerOrgan(new Organ('kubejs:lightning_dragon_bead')
-        .addScore('crystalsynthesis', 2.5)
-        .addScore('knockback_resistant', 1.5)
-        .addScore('endurance', 0.5)
-        .addTextLines('default', [Text.gray(Text.translatable("kubejs.tooltips.lightning_dragon_bead.1"))])
-        .addTextLines('alt', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.lightning_dragon_bead.2"))])
-        .addTextLines('alt', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.lightning_dragon_bead.3"))])
-        .addTextLines('alt', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.lightning_dragon_bead.4"))])
-        .build())
-        .texture('kubejs:item/organs/dragon/lightning_dragon_bead')
-        .tag('itemborders:diamond')
-        .tag('kubejs:legends')
-        .tag('kubejs:key_pressed');
-
-    registerOrgan(new Organ('kubejs:lightning_dragon_lung').addScore('breath_recovery', 1.5).addScore('breath_capacity', 1.5).addScore('endurance', 1.5).addScore('speed', 0.25).build()).texture('kubejs:item/organs/dragon/lightning_dragon_lung').tag('kubejs:lung').tag('itemborders:diamond');
-
-    registerOrgan(new Organ('kubejs:lightning_dragon_muscle').addScore('strength', 1.5).addScore('speed', 1.75).build()).texture('kubejs:item/organs/dragon/lightning_dragon_muscle').tag('kubejs:muscle').tag('itemborders:diamond');
-
-    registerOrgan(new Organ('kubejs:lightning_dragon_heart').addScore('health', 1.5).addScore('speed', 0.25).build()).texture('kubejs:item/organs/dragon/lightning_dragon_heart').tag('kubejs:heart').tag('itemborders:diamond');
-
-    registerOrgan(new Organ('kubejs:lightning_dragon_intestine').addScore('nutrition', 1.5).addScore('speed', 0.25).build()).texture('kubejs:item/organs/dragon/lightning_dragon_intestine').tag('kubejs:intestine').tag('itemborders:diamond');
-
-    registerOrgan(new Organ('kubejs:lightning_dragon_rib').addScore('defense', 1.5).addScore('speed', 0.25).build()).texture('kubejs:item/organs/dragon/lightning_dragon_rib').tag('kubejs:rib').tag('itemborders:diamond');
-
-    registerOrgan(new Organ('kubejs:lightning_dragon_spine').addScore('defense', 0.75).addScore('nerves', 1.5).addScore('speed', 0.25).build()).texture('kubejs:item/organs/dragon/lightning_dragon_spine').tag('kubejs:spine').tag('itemborders:diamond');
-
-    registerOrgan(new Organ('kubejs:lightning_dragon_spleen').addScore('metabolism', 1.5).addScore('speed', 0.25).build()).texture('kubejs:item/organs/dragon/lightning_dragon_spleen').tag('kubejs:spleen').tag('itemborders:diamond');
-
-    registerOrgan(new Organ('kubejs:lightning_dragon_stomach').addScore('digestion', 1.5).addScore('speed', 0.25).build()).texture('kubejs:item/organs/dragon/lightning_dragon_stomach').tag('kubejs:stomach').tag('itemborders:diamond');
-
-    registerOrgan(new Organ('kubejs:lightning_dragon_kidney').addScore('filtration', 1.5).addScore('speed', 0.25).build()).texture('kubejs:item/organs/dragon/lightning_dragon_kidney').tag('kubejs:kidney').tag('itemborders:diamond');
+    registerOrgan(new Organ('kubejs:fantasy_kidney').addScore('filtration', 1.125).addScore('crystalsynthesis', 0.25).bcPoint(-4,9).build()).texture('kubejs:item/organs/fantasy/fantasy_kidney').tag('kubejs:kidney').tag('kubejs:fantasy');
 
     registerOrgan(new Organ('kubejs:lightning_dragon_liver').addScore('detoxification', 1.5).addScore('speed', 0.25).build()).texture('kubejs:item/organs/dragon/lightning_dragon_liver').tag('kubejs:liver').tag('itemborders:diamond');
 
