@@ -476,6 +476,8 @@
     "kubejs.curios_of_god": "神赐魔装",
     "kubejs.wither_skeleton_gate_large": "[大型]凋灵骷髅传送门",
     "kubejs.phantom_gate_large": "[大型]幻翼传送门",
+    "kubejs.tetra.effect.functionalization.tooltip": "官能化有额外 §6%d * 2%%§f 的几率会额外触发一次玩家的§c唯一伤害标签器官§f特效。",
+    "kubejs.tetra.effect.functionalization.name": "官能化",
     "tetra.material.savage_tooth": "野蛮之牙",
     "tetra.material.savage_tooth.prefix": "野蛮之牙",
     "tetra.material.alex_bone_serpent_tooth": "骨蟒尖齿",

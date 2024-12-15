@@ -1,3 +1,4 @@
+// priority: 10
 /**
  * 获取器官数量逻辑
  * @param {Internal.ServerPlayer} player 

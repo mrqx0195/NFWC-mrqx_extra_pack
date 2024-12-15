@@ -37,9 +37,9 @@ ItemEvents.rightClicked('kubejs:unbreakable_core', event => {
     }
     unbreakone.nbt.Enchantments = unbreakone.nbt.Enchantments.filter(function (unbreakone) {
         return unbreakone.id != 'minecraft:unbreaking'
-    });
+    })
     unbreakone.nbt.merge({ Unbreakable: 1 })
-    item.shrink(1);
+    item.shrink(1)
 })
 
 ItemEvents.rightClicked('kubejs:disenchantment_book', event => {

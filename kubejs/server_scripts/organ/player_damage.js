@@ -6,8 +6,8 @@
  * @returns
  */
 function organEntityHurtByPlayer(event, data) {
-    let player = event.source.player;
-    let typeMap = getPlayerChestCavityTypeMap(player);
+    let player = event.source.player
+    let typeMap = getPlayerChestCavityTypeMap(player)
     let onlySet = new Set()
     if (typeMap.has('kubejs:damage_only')) {
         typeMap.get('kubejs:damage_only').forEach(organ => {
@@ -18,12 +18,41 @@ function organEntityHurtByPlayer(event, data) {
         })
     }
     if (typeMap.has('kubejs:damage')) {
-
         typeMap.get('kubejs:damage').forEach(organ => {
             organPlayerDamageStrategies[organ.id](event, organ, data)
         })
     }
+
+    getItemEffectsInBothHands(player).forEach(itemEffectRes => {
+        if (tetraEffectPlayerDamageStrategies[itemEffectRes.itemEffect.getKey()]) {
+            tetraEffectPlayerDamageStrategies[itemEffectRes.itemEffect.getKey()](event, itemEffectRes, data)
+        }
+    })
 }
+
+/**
+ * 造成伤害处理策略
+ * @constant
+ * @type {Object<string,function(Internal.LivingHurtEvent, ItemEffectResult, EntityHurtCustomModel):void>}
+ */
+const tetraEffectPlayerDamageStrategies = {
+    "kubejs:functionalization": function (event, itemEffectRes, data) {
+        if (Math.random() * 100 < itemEffectRes.level * 2) {
+            let player = event.source.player
+            let typeMap = getPlayerChestCavityTypeMap(player)
+            let onlySet = new Set()
+            if (typeMap.has('kubejs:damage_only')) {
+                typeMap.get('kubejs:damage_only').forEach(organ => {
+                    if (!onlySet.has(organ.id)) {
+                        onlySet.add(organ.id)
+                        organPlayerDamageOnlyStrategies[organ.id](event, organ, data)
+                    }
+                })
+            }
+        }
+    },
+};
+
 
 /**
  * 造成伤害处理策略
