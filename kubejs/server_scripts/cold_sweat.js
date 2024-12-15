@@ -1,3 +1,0 @@
-ColdSweatEvents.registries(event=>{
-
-})

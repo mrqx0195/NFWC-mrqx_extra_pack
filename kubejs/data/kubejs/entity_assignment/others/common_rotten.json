@@ -2,8 +2,7 @@
     "chestcavity": "kubejs:types/others/common_rotten.json",
     "entities": [
         "goety:zombie_vindicator",
-        "graveyard:ghoul",
-        "twilightforest:loyal_zombie"
+        "graveyard:ghoul"
     ]
   }
   

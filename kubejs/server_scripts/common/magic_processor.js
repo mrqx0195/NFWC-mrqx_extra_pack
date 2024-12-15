@@ -95,7 +95,6 @@ global.dreamOfNeedles = (ctx) => {
             let rotation = degreesPerNeedle * i - (degreesPerNeedle / 2)
             needle.setDamage(damage)
             needle.setZRot(rotation)
-
             let spawn = player.getEyePosition().add(new Vec3(0, j, 0).zRot(rotation * JavaMath.PI / 180).xRot(-player.xRot * JavaMath.PI / 180).yRot(-player.yRot * JavaMath.PI / 180))
             needle.moveTo(spawn)
             needle.shoot(ray.hit.subtract(spawn).normalize())

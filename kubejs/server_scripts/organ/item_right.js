@@ -117,13 +117,46 @@ const organRightClickedOnlyStrategies = {
         }
         event.item.shrink(1)
         player.swing()
-        let rayY = Math.sin(-player.xRot/180*3.1415926) 
-        let rayZ = Math.cos(-player.xRot/180*3.1415926)*Math.cos(-player.yRot/180*3.1415926)
-        let rayX = Math.cos(-player.xRot/180*3.1415926)*Math.sin(-player.yRot/180*3.1415926)
+        let rayY = Math.sin(-player.xRot/180*JavaMath.PI ) 
+        let rayZ = Math.cos(-player.xRot/180*JavaMath.PI )*Math.cos(-player.yRot/180*JavaMath.PI )
+        let rayX = Math.cos(-player.xRot/180*JavaMath.PI )*Math.sin(-player.yRot/180*JavaMath.PI )
         let iceBomb = level.createEntity("twilightforest:thrown_ice")
         iceBomb.setPosition(player.x, player.y + 1, player.z)
         iceBomb.setOwner(player)
         iceBomb.setMotion(rayX,rayY,rayZ)
         iceBomb.spawn()
+    },
+    'kubejs:chameleon_stomach': function (event, organ) {
+        let player = event.player
+        if (event.item == "minecraft:ice"){
+            if (player.hasEffect('kubejs:cold_down')){
+                let coldDown = player.getEffect('kubejs:cold_down')
+                player.removeEffect('kubejs:cold_down')
+                player.potionEffects.add('kubejs:cold_down', 20*60 , coldDown.getAmplifier() + 1)
+            }
+            else{
+                player.potionEffects.add('kubejs:cold_down', 20*60 , 0)
+            }
+            event.item.shrink(1)
+        }
+        if (event.item == "minecraft:magma_block"){
+            if (player.hasEffect('kubejs:heat_up')){
+                let heatUp = player.getEffect('kubejs:heat_up')
+                player.removeEffect('kubejs:heat_up')
+                player.potionEffects.add('kubejs:heat_up', 20*60 , heatUp.getAmplifier() + 1)
+            }
+            else{
+                player.potionEffects.add('kubejs:heat_up', 20*60 , 0)
+            }
+            event.item.shrink(1)
+        }
+
+    },
+    'kubejs:flame_stomach': function (event, organ) {
+        let player = event.player
+        if(event.item == "minecraft:coal"){
+            $Temperature.add(player,$Trait.CORE,10)
+            event.item.shrink(1)
+        }
     }
 };

@@ -46,7 +46,7 @@ Organ.prototype = {
 
 
     //注册冰点燃点
-    bcPoint: function (burningPoint,coldPoint){
+    bcPoint(burningPoint,coldPoint){
         global.ORGAN_BCP.set(this.itemID,[burningPoint/ 25,coldPoint/ 25])
         return this
     },

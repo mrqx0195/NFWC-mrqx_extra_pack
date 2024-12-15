@@ -46,7 +46,7 @@ function overLimitSpellCast(spell, amplifier, player, consume) {
             amplifier = amplifier + organOverLimitMagicStrategies[organ.id](player, organ)
         })
     }
-    $SpellRegistry["getSpell(net.minecraft.resources.ResourceLocation)"](spell).attemptInitiateCast(Item.of('air'), amplifier, player.level, player, $CastSource.NONE, consume, "main_hand")
+    $SpellRegistry["getSpell(net.minecraft.resources.ResourceLocation)"](spell).attemptInitiateCast(Item.of('air'), amplifier, player.level, player, $CastSource.NONE, false, "main_hand")
 }
 
 /**

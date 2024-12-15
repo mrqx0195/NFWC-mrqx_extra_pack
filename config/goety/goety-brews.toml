@@ -170,24 +170,6 @@
 	#Fortunate Soul Cost, Default: 50
 	#Range: > 1
 	fortunateCost = 100
-	#Ender Flux Soul Cost, Default: 25
-	#Range: > 1
-	enderFluxCost = 25
-	#Snow Skin Soul Cost, Default: 50
-	#Range: > 1
-	snowSkinCost = 50
-	#Storm's Wrath Soul Cost, Default: 50
-	#Range: > 1
-	stormsWrathCost = 50
-	#Evil Eye Soul Cost, Default: 50
-	#Range: > 1
-	evilEyeCost = 50
-	#Bottling Soul Cost, Default: 50
-	#Range: > 1
-	bottlingCost = 50
-	#Flimsy Soul Cost, Default: 50
-	#Range: > 1
-	flimsyCost = 50
 
 [Curable]
 	#Whether Nyctophobia is curable via Milk or Wartful Egg, Default: false
@@ -196,16 +178,12 @@
 	sunAllergyCurable = false
 	#Whether Snow Skin is curable via Milk or Wartful Egg, Default: false
 	snowSkinCurable = false
-	#Whether Pressure is curable via Milk or Wartful Egg, Default: false
-	pressureCurable = false
-	#Whether Evil Eye is curable via Milk or Wartful Egg, Default: false
-	evilEyeCurable = false
 
 ["Brew Bottling"]
 	#How many times the player must bottle a brew to increase Bottling level, Default: 20
 	#Range: > 1
 	bottlingLevelReq = 20
-	#Maximum Bottling Level the player can obtain, set to 0 to disable Bottling Levels, Default: 5
+	#Maximum Bottling Level the player can obtain, set to 0 to disable Bottling Levels, Default: 100
 	#Range: > 0
 	maxBottlingLevel = 100
 

@@ -136,4 +136,22 @@ const organPlayerBearOnlyStrategies = {
         })
         player.addItemCooldown('kubejs:warp_bubble', 100)
     },
+    'kubejs:flame_spine': function (event, organ, data) {
+        let player = event.entity
+        let oldTemp = coldsweat.getTemperature(player,'body')
+        if (oldTemp > 0) {
+            let curTemp = Math.max(oldTemp - event.amount, 0)
+            let curAmount = Math.max(event.amount - oldTemp, 0)
+            coldsweat.setTemperature(player,'core', curTemp - coldsweat.getTemperature(player,'base'))
+            event.amount = curAmount
+            return
+        }
+    },
+    'kubejs:naga_scale' : function(event, organ, data) {
+        let player = event.entity
+        event.amount += 1        
+        player.potionEffects.add("minecraft:speed", 30, Math.min(event.amount/5,5), false, false)
+        player.potionEffects.add("minecraft:strength", 30, Math.min(event.amount/5,5), false, false)
+        player.potionEffects.add("minecraft:haste", 30, Math.min(event.amount/5,5), false, false)
+    }
 };

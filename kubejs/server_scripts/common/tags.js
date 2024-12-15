@@ -59,50 +59,13 @@ ServerEvents.tags('item',event=>{
     global.ORGAN_BCP.set(id, [bPoint / 25, cPoint / 25])
   }
 
-  registryOrganBCPoint("chestcavity:heart", 5, -5)    //1
-  registryOrganBCPoint("chestcavity:appendix", 1, -1)  //1
-  registryOrganBCPoint("chestcavity:stomach", -6, 6)  //1
-
+  registryOrganBCPoint("chestcavity:heart", 5, -5)
   registryOrganBCPoint("chestcavity:rotten_heart", -10, -20)
-  registryOrganBCPoint("chestcavity:rotten_appendix", -1, -2)
-  registryOrganBCPoint("chestcavity:rotten_stomach", -20, 5)
-
-  registryOrganBCPoint("chestcavity:animal_heart", 5, -5)    //1
-  registryOrganBCPoint("chestcavity:animal_appendix", 1, -1)  //1
-  registryOrganBCPoint("chestcavity:animal_stomach", -5, 10) //1
-
-  registryOrganBCPoint("chestcavity:small_animal_heart", 5, -5)    //1
-  registryOrganBCPoint("chestcavity:small_animal_appendix", 1, 0)  //1
-  registryOrganBCPoint("chestcavity:small_animal_stomach", -5, 10) //1
-
-  registryOrganBCPoint("chestcavity:insect_heart", 2, -2)    
-  registryOrganBCPoint("chestcavity:insect_stomach", -2, -2)  
-
-  registryOrganBCPoint("chestcavity:fireproof_heart", 20, 10)
-  registryOrganBCPoint("chestcavity:fireproof_appendix", 10, 5)  
-  registryOrganBCPoint("chestcavity:fireproof_stomach", 5, 10)
-
-  registryOrganBCPoint("chestcavity:ender_heart", 7, -7)    
-  registryOrganBCPoint("chestcavity:ender_appendix", 5, -5)  
-  registryOrganBCPoint("chestcavity:ender_stomach", 0, -5)
-
-  registryOrganBCPoint("chestcavity:dragon_heart", 20, -10)
-  registryOrganBCPoint("chestcavity:dragon_muscle", 10, -5)   
-  registryOrganBCPoint("chestcavity:dragon_lung", 30, 0)        
-  registryOrganBCPoint("chestcavity:dragon_liver", 5, -10)    
-
-  registryOrganBCPoint("chestcavity:withered_spine", 30, -15)
-  registryOrganBCPoint("chestcavity:withered_rib", 10, -5)
-  registryOrganBCPoint("chestcavity:writhing_soulsand", 5, -5)
-
   registryOrganBCPoint("chestcavity:golem_core", 25, -25)
+  registryOrganBCPoint("chestcavity:fireproof_heart", 10, 10)
 
-  registryOrganBCPoint("chestcavity:small_carnivore_stomach", -5, 10)
-  registryOrganBCPoint("chestcavity:small_herbivore_stomach", -5, 10)
-  registryOrganBCPoint("chestcavity:volatile_stomach", 5, -10)
+})
 
-  registryOrganBCPoint("chestcavity:blaze_shell", 30, 30) 
-  registryOrganBCPoint("chestcavity:blaze_core", 35, 30) 
-  registryOrganBCPoint("chestcavity:shifting_leaves", 5, 5)
-
+ServerEvents.tags('entity_type',event=>{
+  event.add('forge:golems',["modulargolems:metal_golem","modulargolems:humanoid_golem","modulargolems:dog_golem"])
 })

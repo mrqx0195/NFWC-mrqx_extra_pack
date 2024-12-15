@@ -1,8 +1,9 @@
 // priority: 10
 PlayerEvents.tick(event => {
     let player = event.player
-    if (player.age % 20 != 0) return
     let typeMap = getPlayerChestCavityTypeMap(player);
+
+    if (player.age % 20 != 0) return
     let onlySet = new Set()
     if (typeMap.has('kubejs:player_tick_only')) {
         typeMap.get('kubejs:player_tick_only').forEach(organ => {
@@ -81,19 +82,7 @@ const organPlayerTickStrategies = {
             }
         })
     },
-    'kubejs:flame_muscle': function(event, organ) {
-        let player = event.player
-        let playerChestInstance = player.getChestCavityInstance()
-        playerChestInstance.containerChanged(playerChestInstance.inventory)
-        global.initChestCavityIntoMap(player, false)
-        if (player.persistentData.contains(organActive) &&
-            player.persistentData.getInt(organActive) == 1) {
-            global.updatePlayerActiveStatus(player)
-        }
-        let strength = playerChestInstance.organScores.getOrDefault(new ResourceLocation('chestcavity', 'strength'), 0)
-        playerChestInstance.organScores.put(new ResourceLocation('chestcavity', 'strength'), new $Float(strength + coldsweat.getTemperature(player,'body')))
 
-    }
 };
 
 /**
@@ -164,7 +153,8 @@ const organPlayerTickOnlyStrategies = {
     },
     'kubejs:worm_neuron': function (event, organ) {
         let player = event.player
-        if (player.age % 600 != 0) return
+        let tempterature = coldsweat.getTemperature(player,'body')
+        if (player.age % (600 - Math.floor(3 * tempterature)) != 0) return
         if (player.nbt?.ForgeCaps['goety:lichdom']?.lichdom == 1) return
         let instance = player.getChestCavityInstance()
         // 如果该位置存在物品，则不进行生成
@@ -175,12 +165,16 @@ const organPlayerTickOnlyStrategies = {
         if (!typeMap.has('kubejs:organ')) return
         let organCount = getOrganCount(player)
         let tumor = Item.of('kubejs:random_tumor', { organData: {} })
-        let amount = Math.floor(Math.random() * 2 + 1)
+        let amount = Math.floor(Math.random() * 2 + 1 + Math.max(Math.floor(tempterature/100) , 0))
         for (let i = 0; i < amount; i++) {
             let attri = randomGet(tumorAttriButeByNeuron)
             let attriName = attri.name
             // 扩散系数，用于控制属性的扩散范围(-0.5, 1.5)
             let diffusivity = Math.random() + Math.random() - 0.5
+            // 温度影响扩散系数
+            let multi = tempterature >=0 ? tempterature / 50 : 0.9
+            let distance = tempterature/200
+            diffusivity = (diffusivity - distance) * multi
             // 新陈代谢效率
             let metabolism = instance.organScores.getOrDefault(new ResourceLocation('chestcavity', 'metabolism'), 0)
             // 空格子数量放大属性

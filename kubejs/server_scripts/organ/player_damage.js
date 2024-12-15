@@ -18,6 +18,7 @@ function organEntityHurtByPlayer(event, data) {
         })
     }
     if (typeMap.has('kubejs:damage')) {
+
         typeMap.get('kubejs:damage').forEach(organ => {
             organPlayerDamageStrategies[organ.id](event, organ, data)
         })
@@ -30,7 +31,16 @@ function organEntityHurtByPlayer(event, data) {
  * @type {Object<string,function(Internal.LivingHurtEvent, organ, EntityHurtCustomModel):void>}
  */
 const organPlayerDamageStrategies = {
-
+    'kubejs:flame_muscle': function(event, organ, data) {
+        let player = event.source.player
+        let tempterature = coldsweat.getTemperature(player,'body')
+        if (tempterature > 0){
+            event.amount += tempterature/2
+            player.server.scheduleInTicks(2,ctx=>{
+                coldsweat.setTemperature(player, 'core', tempterature/2 - coldsweat.getTemperature(player,'base'))
+            })
+        }
+    }
 };
 
 
@@ -304,5 +314,43 @@ const organPlayerDamageOnlyStrategies = {
     'kubejs:flame_heart': function (event, organ, data) {
         let player = event.source.player
         event.amount = event.amount + coldsweat.getTemperature(player,'body')
-    }
+    },
+    'kubejs:minotaur_muscle': function(event, organ, data) {
+        let entity = event.entity
+        if (entity.isPlayer()) return
+        if (event.source.type != 'player') return
+        if (entity.attributes.hasAttribute("minecraft:generic.knockback_resistance")){
+            let originResistance = entity.getAttribute("minecraft:generic.knockback_resistance").getValue()
+            entity.server.scheduleInTicks(1,event=>{
+                entity.setAttributeBaseValue("minecraft:generic.knockback_resistance",originResistance)
+            })
+            entity.setAttributeBaseValue("minecraft:generic.knockback_resistance",10)
+        }
+        entity.addMotion(0,3,0)
+    },
+    'kubejs:questing_ram': function(event, organ, data) {
+        let entity = event.entity
+        let player = event.source.player
+        let tempterature = coldsweat.getTemperature(player,'body')
+        if (entity.isPlayer()) return
+        if (event.source.type == 'player'){
+            if (tempterature > 50){
+                let degree = (event.amount - 5) / 3 + tempterature / 3
+                $SpellRegistry["getSpell(net.minecraft.resources.ResourceLocation)"](new ResourceLocation('irons_spellbooks', 'flaming_strike')).attemptInitiateCast(Item.of('air'), degree , player.level, player, $CastSource.NONE, false, "main_hand")
+                entity.setNoAI(true)
+                entity.server.scheduleInTicks(1,event=>{
+                    entity.setNoAI(false)
+                })    
+            }
+            if (tempterature < -50){
+                let degree = (event.amount - 6) * 2  - tempterature * 2
+                $SpellRegistry["getSpell(net.minecraft.resources.ResourceLocation)"](new ResourceLocation('irons_spellbooks', 'icicle')).attemptInitiateCast(Item.of('air'), degree , player.level, player, $CastSource.NONE, false, "main_hand")
+                entity.setNoAI(true)
+                entity.server.scheduleInTicks(1,event=>{
+                    entity.setNoAI(false)
+                })    
+            }
+        }
+    },
+
 };
