@@ -1593,7 +1593,7 @@
     "kubejs.tooltips.dragon_blood_heart.2": "在龙化状态下，龙类器官会给予你减伤，在减伤溢出时会将伤害转换成额外生命",
     "kubejs.tooltips.dragon_blood_heart.3": "神经效率影响龙化状态的持续时间，龙类器官种类影响龙化效果",
     "kubejs.tooltips.dragon_blood_heart.4": "额外生命值最多为生命值上限*3",
-    "kubejs.tooltips.etched_paper.1":"看起来是一张纸，摸起来也是一张纸，用起来更是一张纸，那它就是一张纸",
+    "kubejs.tooltips.etched_paper.1":"并非厕纸",
     "kubejs.tooltips.etched_paper.2":"激活后根据胸腔内每格物品的附魔提供增益",
     "kubejs.tooltips.etched_paper.3":"每级非诅咒附魔提高",
     "kubejs.tooltips.etched_paper.4":"法术强度",

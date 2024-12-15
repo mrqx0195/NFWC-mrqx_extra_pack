@@ -1,9 +1,0 @@
-{
-    "defaultChestCavity": [
-
-      {"item": "kubejs:soul_piece","position": 4},
-      {"item": "kubejs:soul_piece","position": 12},
-      {"item": "kubejs:soul_piece","position": 14},
-      {"item": "kubejs:soul_piece","position": 22}
-    ]
-  }

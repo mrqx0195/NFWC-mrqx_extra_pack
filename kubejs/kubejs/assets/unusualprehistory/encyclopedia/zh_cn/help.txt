@@ -1,8 +1,0 @@
-<NEWLINE>
-反正就是出错了，就不翻译了(恼)
-Oh no, something went wrong.
-<NEWLINE>
-If you are seeing this and interacted with a dino it means the json file doesn't have the correct name!
-<NEWLINE>
-If you are seeing this and are trying to add an entry it also means the json file doesn't have the correct name,
-or you didnt specify your text file!
