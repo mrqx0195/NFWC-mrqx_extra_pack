@@ -428,6 +428,24 @@ const organPlayerKeyPressedOnlyStrategies = {
             player.removeAttribute("irons_spellbooks:spell_power",'tLichSpine')
         })
         player.addItemCooldown('kubejs:twilight_lich_spine', 20 * 60)
+    },
+    'kubejs:cloud_brocade': function (event, organ) {
+        let player = event.player
+        let instance = player.getChestCavityInstance()
+        let buoyant = organ.tag.getFloat('buoyant_factor')
+        if(!buoyant){
+            player.removeEffect("minecraft:jump_boost")           
+            player.potionEffects.add("minecraft:slow_falling", 20 * 5, 0, false, false)
+            buoyant = instance.organScores.getOrDefault(new ResourceLocation('chestcavity', 'buoyant'), 0)
+            instance.organScores.put(new ResourceLocation('chestcavity', 'buoyant'), new $Float(0))
+            organ.tag.putFloat('buoyant_factor', buoyant)
+        }else{
+            player.potionEffects.add("minecraft:slow_falling", 20 * 1, 0, false, false)
+            player.potionEffects.add("minecraft:jump_boost", 20 * 99999, 0, false, false)
+            instance.organScores.put(new ResourceLocation('chestcavity', 'buoyant'), new $Float(buoyant))
+            organ.tag.putFloat('buoyant_factor', 0)
+        } 
+        player.addItemCooldown('kubejs:cloud_brocade', 20 * 0.5)
     }
 }
 
