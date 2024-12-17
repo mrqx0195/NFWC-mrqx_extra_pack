@@ -135,12 +135,12 @@
     "cold_sweat:base_temperature": {
       "enabled": false,
       "min": {
-        "default": NaN,
-        "value": NaN
+        "default": -100000,
+        "value": -100000
       },
       "max": {
-        "default": Infinity,
-        "value": Infinity
+        "default": 100000,
+        "value": 100000
       }
     },
     "obscure_api:regeneration": {
@@ -300,8 +300,8 @@
     "cold_sweat:cold_dampening": {
       "enabled": false,
       "min": {
-        "default": -Infinity,
-        "value": -Infinity
+        "default": -100000,
+        "value": -100000
       },
       "max": {
         "default": 1,
@@ -366,8 +366,8 @@
     "cold_sweat:heat_dampening": {
       "enabled": false,
       "min": {
-        "default": -Infinity,
-        "value": -Infinity
+        "default": -100000,
+        "value": -100000
       },
       "max": {
         "default": 1,
@@ -432,12 +432,12 @@
     "cold_sweat:freezing_point": {
       "enabled": false,
       "min": {
-        "default": -Infinity,
-        "value": -Infinity
+        "default": -100000,
+        "value": -100000
       },
       "max": {
-        "default": Infinity,
-        "value": Infinity
+        "default": 100000,
+        "value": 100000
       }
     },
     "forge:swim_speed": {
@@ -641,12 +641,12 @@
     "cold_sweat:world_temperature": {
       "enabled": false,
       "min": {
-        "default": NaN,
-        "value": NaN
+        "default": -100000,
+        "value": -100000
       },
       "max": {
-        "default": Infinity,
-        "value": Infinity
+        "default": 100000,
+        "value": 100000
       }
     },
     "minecraft:generic.armor": {
@@ -806,12 +806,12 @@
     "cold_sweat:burning_point": {
       "enabled": false,
       "min": {
-        "default": -Infinity,
-        "value": -Infinity
+        "default": -100000,
+        "value": -100000
       },
       "max": {
-        "default": Infinity,
-        "value": Infinity
+        "default": 100000,
+        "value": 100000
       }
     },
     "irons_spellbooks:ice_magic_resist": {

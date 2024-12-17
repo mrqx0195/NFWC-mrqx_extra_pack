@@ -19,12 +19,6 @@ DefaultOrgan.prototype = {
             let typeName = global.SCORE_MAP[score.id]
             this.shiftTextLines.push([LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.organ_score.1")), Text.yellow(String(value)), Text.gray(Text.translatable("kubejs.tooltips.organ_score.2")), Text.yellow(typeName)])
         })
-        if(global.ORGAN_BURNING_AND_COLD_POINTS.has(this.itemID)){
-            let burningPoint = global.ORGAN_BURNING_AND_COLD_POINTS.get(this.itemID)[0]
-            let coldPoint = global.ORGAN_BURNING_AND_COLD_POINTS.get(this.itemID)[1]
-            this.shiftTextLines.push([LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.organ_burn_cold_attri.1")) ,burningPoint>0 ? Text.green(Text.translatable("kubejs.tooltips.heat")):Text.red(Text.translatable("kubejs.tooltips.cold")), Text.yellow(String(Math.abs(burningPoint*25))), Text.gray(Text.translatable("kubejs.tooltips.degree"))])
-            this.shiftTextLines.push([LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.organ_burn_cold_attri.2")) ,coldPoint>0 ? Text.red(Text.translatable("kubejs.tooltips.heat")):Text.green(Text.translatable("kubejs.tooltips.cold")), Text.yellow(String(Math.abs(coldPoint*25))), Text.gray(Text.translatable("kubejs.tooltips.degree"))])
-        }
         return this
     },
     setPseudo: function (boolean) {
