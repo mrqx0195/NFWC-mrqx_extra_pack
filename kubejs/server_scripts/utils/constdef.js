@@ -1,5 +1,3 @@
-const $ParticleTypes = Java.loadClass('net.minecraft.core.particles.ParticleTypes')
-const $Float = Java.loadClass('java.lang.Float')
 const resourceCount = 'resourceCount'
 const resourceCountMax = 'resourceCountMax'
 const defaultResourceMax = 100

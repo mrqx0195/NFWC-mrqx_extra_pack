@@ -383,12 +383,12 @@ const organPlayerKeyPressedOnlyStrategies = {
     },
     'kubejs:ice_intestine': function(event, organ) {
         let player = event.player
-        let oldTemp = -coldsweat.getTemperature(player,'body')
+        let oldTemp = (-1) * ColdSweat.getTemperature(player,'body')
         let mana = player.getAttributeTotalValue("irons_spellbooks:max_mana") - getPlayerMagicData(player).getMana()
         if (mana > 0 && oldTemp > 0){
             let curTemp = Math.max(oldTemp - mana, 0)
             let curMana = Math.max(mana - oldTemp, 0)
-            coldsweat.setTemperature(player,'core', (- curTemp - coldsweat.getTemperature(player,'base')))
+            ColdSweat.setTemperature(player,'core', ((-1) * curTemp - ColdSweat.getTemperature(player,'base')))
             getPlayerMagicData(player).setMana(player.getAttributeTotalValue("irons_spellbooks:max_mana") - curMana - player.getAttributeTotalValue("irons_spellbooks:mana_regen"))
             player.addItemCooldown('kubejs:knightphantom_ghost', 20 * 15)
         }

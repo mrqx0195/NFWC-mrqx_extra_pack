@@ -138,11 +138,11 @@ const organPlayerBearOnlyStrategies = {
     },
     'kubejs:flame_spine': function (event, organ, data) {
         let player = event.entity
-        let oldTemp = coldsweat.getTemperature(player,'body')
+        let oldTemp = ColdSweat.getTemperature(player,'body')
         if (oldTemp > 0) {
             let curTemp = Math.max(oldTemp - event.amount, 0)
             let curAmount = Math.max(event.amount - oldTemp, 0)
-            coldsweat.setTemperature(player,'core', curTemp - coldsweat.getTemperature(player,'base'))
+            ColdSweat.setTemperature(player,'core', curTemp - ColdSweat.getTemperature(player,'base'))
             event.amount = curAmount
             return
         }

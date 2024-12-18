@@ -62,11 +62,11 @@ const tetraEffectPlayerDamageStrategies = {
 const organPlayerDamageStrategies = {
     'kubejs:flame_muscle': function(event, organ, data) {
         let player = event.source.player
-        let tempterature = coldsweat.getTemperature(player,'body')
+        let tempterature = ColdSweat.getTemperature(player,'body')
         if (tempterature > 0){
             event.amount += tempterature/2
             player.server.scheduleInTicks(2,ctx=>{
-                coldsweat.setTemperature(player, 'core', tempterature/2 - coldsweat.getTemperature(player,'base'))
+                ColdSweat.setTemperature(player, 'core', tempterature/2 - ColdSweat.getTemperature(player,'base'))
             })
         }
     }
@@ -342,7 +342,7 @@ const organPlayerDamageOnlyStrategies = {
     },
     'kubejs:flame_heart': function (event, organ, data) {
         let player = event.source.player
-        event.amount = event.amount + coldsweat.getTemperature(player,'body')
+        event.amount = event.amount + ColdSweat.getTemperature(player,'body')
     },
     'kubejs:minotaur_muscle': function(event, organ, data) {
         let entity = event.entity
@@ -360,7 +360,7 @@ const organPlayerDamageOnlyStrategies = {
     'kubejs:questing_ram': function(event, organ, data) {
         let entity = event.entity
         let player = event.source.player
-        let tempterature = coldsweat.getTemperature(player,'body')
+        let tempterature = ColdSweat.getTemperature(player,'body')
         if (entity.isPlayer()) return
         if (event.source.type == 'player'){
             if (tempterature > 50){

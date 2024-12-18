@@ -1,6 +1,3 @@
-const $AttributeEntry = Java.loadClass('dev.xkmc.l2library.base.tabs.contents.AttributeEntry')
-const $AttributeRegistry = Java.loadClass('io.redspace.ironsspellbooks.api.registry.AttributeRegistry')
-
 StartupEvents.postInit(event => {
     $AttributeEntry.add($AttributeRegistry.MAX_MANA, false, 1500);
     $AttributeEntry.add($AttributeRegistry.MANA_REGEN, true, 1600);
