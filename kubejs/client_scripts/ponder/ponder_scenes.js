@@ -1,3 +1,4 @@
+// priority: 500
 Ponder.registry((event) => {
     event.create('chestcavity:chest_opener').scene('chest_opener_usage', '如何使用开胸器', (scene, util) => {
         scene.showStructure();

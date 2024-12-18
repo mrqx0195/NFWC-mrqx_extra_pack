@@ -1,3 +1,4 @@
+// priority: 500
 ItemEvents.foodEaten(event => {
     let player = event.player
     let item = event.item

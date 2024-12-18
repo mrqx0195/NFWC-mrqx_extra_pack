@@ -1,48 +1,4 @@
-/**
- * @param {Internal.CustomSpell$CastContext} ctx 
- * @returns 
- */
-global.toTheLostWorld = (ctx) => {
-    /** @type {Internal.ServerPlayer} */
-    let player = ctx.entity
-
-    // todo 兼容逻辑，下版本删除
-    if (player.stages.has('flos_magic_stage_4')) {
-        player.stages.remove('flos_magic_stage_4')
-        player.stages.add('flos_magic_stage_3')
-    }
-
-    if (!player.stages.has('flos_magic_stage_3')) return
-
-    if (ctx.level.getDimension() == 'kubejs:lost_memory') {
-        Utils.server.scheduleInTicks(20 * 1, (callback) => {
-            player.teleportTo('minecraft:overworld', 0, 250, 0, 0, 0)
-            player.potionEffects.add('minecraft:slow_falling', 60 * 20, 0)
-        })
-        return
-    }
-
-    Utils.server.scheduleInTicks(20 * 1, (callback) => {
-        player.teleportTo('kubejs:lost_memory', 0, 250, 0, 0, 0)
-        player.potionEffects.add('minecraft:slow_falling', 60 * 20, 0)
-    })
-}
-
-/**
- * @param {Internal.CustomSpell$CastContext} ctx 
- * @returns 
- */
-global.earthWithoutEarth = (ctx) => {
-    /** @type {Internal.ServerPlayer} */
-    let player = ctx.entity
-    let level = ctx.level
-    let data = $OreDataCapability.getData(level.getChunkAt(player.blockPosition()))
-    data.setRecipe(new ResourceLocation(randomGet(coeVeinList)))
-    data.setLoaded(true)
-    data.setRandomMul(new $Float(0.8))
-    data.setExtractedAmount(0)
-}
-
+// priority: 500
 /**
  * @param {Internal.CustomSpell$CastContext} ctx 
  * @returns 

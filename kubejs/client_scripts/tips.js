@@ -1,3 +1,4 @@
+// priority: 500
 ClientEvents.highPriorityAssets(event => {
     function registeTips(key) {
         let translateKey = `kubejs.tip.${key}`

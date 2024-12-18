@@ -1,3 +1,4 @@
+// priority: 500
 ServerEvents.recipes(event => {
     event.shapeless('kubejs:organ_charm', ['kubejs:empty_organ_charm', '#kubejs:organ'])
         .modifyResult((grid, stack) => {

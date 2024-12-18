@@ -1,3 +1,4 @@
+// priority: 800
 function CuttingRecipe(ingredients, output) {
     this.type = 'farmersdelight:cutting'
     this.ingredients = ingredients

@@ -1,4 +1,4 @@
-// priority: 10
+// priority: 500
 PlayerEvents.tick(event => {
     let player = event.player
     if (player.age % 20 != 0) return

@@ -1,3 +1,4 @@
+// priority: 500
 BlockEvents.rightClicked('minecraft:sand', event => {
     let item = event.item
     if (event.player && item.hasTag('kubejs:lung')) {

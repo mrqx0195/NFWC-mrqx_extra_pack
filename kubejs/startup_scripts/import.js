@@ -1,7 +1,8 @@
+// priority: 1000
 const $CreativeTabRegistry = Java.loadClass("dev.architectury.registry.CreativeTabRegistry")
 const $EnchantmentCategory = Java.loadClass('net.minecraft.world.item.enchantment.EnchantmentCategory')
-const $KeyMapping = Java.loadClass("net.minecraft.client.KeyMapping");
-const $GLFWKey = Java.loadClass("org.lwjgl.glfw.GLFW");
+const $KeyMapping = Java.loadClass("net.minecraft.client.KeyMapping")
+const $GLFWKey = Java.loadClass("org.lwjgl.glfw.GLFW")
 const $KeyMappingRegistry = Java.loadClass("dev.architectury.registry.client.keymappings.KeyMappingRegistry")
 const $EyeofEnder = Java.loadClass('net.minecraft.world.entity.projectile.EyeOfEnder')
 const $Registry = Java.loadClass('net.minecraft.core.Registry')

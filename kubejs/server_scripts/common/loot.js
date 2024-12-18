@@ -1,4 +1,4 @@
-// priority: 100
+// priority: 800
 LootJS.modifiers(event => {
     function addBossLoot(entity) {
         return event.addEntityLootModifier(entity)
@@ -47,7 +47,6 @@ LootJS.modifiers(event => {
     event.addEntityLootModifier('goety:apostle')
         .addLoot('kubejs:pandora_inactive');
     event.addEntityLootModifier('bosses_of_mass_destruction:void_blossom')
-        .addLoot('kubejs:secret_of_bloom')
         .addLoot('kubejs:flower_heart');
     event.addEntityLootModifier('bosses_of_mass_destruction:obsidilith')
         .addLoot('kubejs:amethyst_magic_core');

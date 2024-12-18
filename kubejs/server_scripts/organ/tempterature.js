@@ -1,3 +1,4 @@
+// priority: 500
 ColdSweatEvents.temperatureChanged(event => {
     //温度改变时触发效果的器官
     if (event.getTrait() != $Trait.BODY) return

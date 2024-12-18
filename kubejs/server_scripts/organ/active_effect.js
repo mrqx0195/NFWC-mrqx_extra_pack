@@ -1,4 +1,4 @@
-// priority: 10
+// priority: 500
 const playerAttributeMap = new Map()
 /**
  * 历史背景：激活效果在历史中用于解决实际中属性变化与激活效果触发节点不同的问题

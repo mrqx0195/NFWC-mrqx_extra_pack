@@ -1,3 +1,4 @@
+// priority: 800
 function WeaponInfusionRecipe(base, addition, output) {
     this.type = 'cataclysm:weapon_fusion'
     this.base = base

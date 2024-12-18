@@ -1,3 +1,4 @@
+// priority: 500
 ServerEvents.recipes(event => {
     // 七宗罪
     event.recipes.summoningrituals
@@ -91,34 +92,7 @@ ServerEvents.recipes(event => {
         .sacrificeRegion(3, 3)
         .dayTime('night')
         .recipeTime(500);
-
-    // 秘密：雨
-    event.recipes.summoningrituals
-        .altar('kubejs:ritual_catalyst')
-        .id('kubejs:ritual_of_rain')
-        .input('#kubejs:rain_ritual')
-        .itemOutput('kubejs:secret_of_rain')
-        .sacrifice('cow')
-        .sacrificeRegion(3, 3)
-        .dayTime('night')
-        .recipeTime(200);
-
-    // 凋零风暴召唤
-    event.recipes.summoningrituals
-        .altar('kubejs:ritual_catalyst')
-        .id('kubejs:wither_strom_summon')
-        .mobOutput(
-            SummoningOutput.mob('witherstormmod:wither_storm')
-                .count(1)
-                .offset(0, 3, 0)
-                .spread(3, 0, 3)
-        )
-        .input('#forge:nether_stars')
-        .input('4x cataclysm:witherite_ingot')
-        .input('16x minecraft:wither_rose')
-        .input('bosses_of_mass_destruction:void_thorn')
-        .recipeTime(200);
-
+    
     // world of bosses召唤祭坛兼容
     event.recipes.summoningrituals
         .altar('kubejs:ritual_catalyst')

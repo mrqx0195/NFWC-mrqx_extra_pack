@@ -1,3 +1,4 @@
+// priority: 500
 MoreJSEvents.enchantmentTableTooltip((event) => {
     event.lines.removeIf(x => {
         return true

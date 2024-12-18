@@ -1,3 +1,4 @@
+// priority: 500
 const LuckyBoxStructList = [
     'kubejs:lucky_block_1',
     'kubejs:lucky_block_2',

@@ -1,3 +1,4 @@
+// priority: 999
 StartupEvents.postInit(event => {
     $AttributeEntry.add($AttributeRegistry.MAX_MANA, false, 1500);
     $AttributeEntry.add($AttributeRegistry.MANA_REGEN, true, 1600);

@@ -1,3 +1,4 @@
+// priority: 800
 ServerEvents.recipes(event => {
     event.remove({ mod: 'nameless_trinkets' })
     event.remove({ mod: 'somebosses' })
@@ -16,6 +17,7 @@ ServerEvents.recipes(event => {
     event.remove({ output: 'extraarmor:blacksmith_hammer' })
     event.remove({ output: 'alexsmobs:transmutation_table' })
     event.remove({ output: 'weaponmaster:workstation' })
+    event.remove({ output: 'twilightforest:uncrafting_table' })
 
     event.shaped('weaponmaster:workstation', [
         ['minecraft:lectern', 'minecraft:writable_book', '#minecraft:anvil'],
@@ -61,8 +63,8 @@ ServerEvents.recipes(event => {
         })
 
     event.shaped('cataclysm:meat_shredder', [
-        ['', 'minecraft:nether_star', 'goety:philosophers_stone'],
-        ['', 'witherstormmod:withered_nether_star', 'minecraft:nether_star'],
+        ['', 'twilightforest:fiery_ingot', 'goety:philosophers_stone'],
+        ['', 'twilightforest:charm_of_keeping_3', 'minecraft:nether_star'],
         ['cataclysm:witherite_ingot', '', '']
     ])
 
@@ -222,7 +224,7 @@ ServerEvents.recipes(event => {
     event.shaped('kubejs:prismarine_crown', [
         ['', 'iceandfire:siren_tear', ''],
         ['', 'kubejs:broken_prismarine_crown', ''],
-        ['', 'witherstormmod:command_block_book', '']])
+        ['', 'twilightforest:charm_of_life_2', '']])
 
     event.shaped('kubejs:jet_propeller', [
         ['create:iron_sheet', '', 'create:iron_sheet'],

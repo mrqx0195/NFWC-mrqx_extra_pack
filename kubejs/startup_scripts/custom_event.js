@@ -1,8 +1,8 @@
+// priority: 1000
 /**
  * 使用ForgeEvent监听PlayerSleepInBedEvent事件
  */
 ForgeEvents.onEvent('net.minecraftforge.event.entity.player.PlayerSleepInBedEvent', event => {
-    global.heartSecretSleeping(event)
 })
 
 /**

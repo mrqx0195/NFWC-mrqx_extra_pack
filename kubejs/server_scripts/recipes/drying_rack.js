@@ -1,3 +1,4 @@
+// priority: 800
 function DryingRackRecipe(ingredients, output, dryingTimeInTicks) {
     this.type = 'hexerei:drying_rack'
     this.ingredients = ingredients

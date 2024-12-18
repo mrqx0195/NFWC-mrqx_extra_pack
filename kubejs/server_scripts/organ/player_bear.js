@@ -1,4 +1,4 @@
-// priority: 10
+// priority: 500
 /**
  * 承受伤害
  * @param {Internal.LivingDamageEvent} event

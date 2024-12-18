@@ -1,3 +1,4 @@
+// priority: 1000
 /**
  * 初始化单片镜显示
  * @param {Internal.ServerPlayer} player 

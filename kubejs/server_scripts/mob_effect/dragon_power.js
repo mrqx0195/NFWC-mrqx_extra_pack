@@ -1,4 +1,4 @@
-// priority: 3
+// priority: 800
 /**
  * 龙化效果
  * @param {Internal.LivingDamageEvent} event 

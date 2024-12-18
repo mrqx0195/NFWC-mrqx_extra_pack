@@ -1,4 +1,4 @@
-// priority: 10
+// priority: 500
 NetworkEvents.dataReceived('ogran_key_pressed', event => {
     let player = event.player
     if (!player) return;
@@ -289,25 +289,6 @@ const organPlayerKeyPressedOnlyStrategies = {
         let player = event.player
         updateWarpCount(player, 0)
         player.addItemCooldown('kubejs:go_camping', 20 * 10)
-    },
-    'kubejs:nether_star_shard': function (event, organ) {
-        let player = event.player
-        let ray = player.rayTrace(32, false)
-        if (ray.entity && ray.entity.isLiving() && ray.entity.type == 'witherstormmod:wither_storm') {
-            /** @type {Internal.Entity} */
-            let entity = ray.entity
-            let curPhase = entity?.nbt.getInt('Phase')
-            switch (true) {
-                case curPhase < 5: {
-                    entity.mergeNbt({ 'Phase': curPhase + 1, 'ConsumedEntities': 30000000 })
-                    break
-                }
-                case curPhase >= 5:
-                    entity.mergeNbt({ 'Phase': 7, 'ConsumedEntities': 30000000 })
-                    break
-            }
-            player.addItemCooldown('kubejs:nether_star_shard', 20 * 10)
-        }
     },
     'kubejs:potoo_beak': function (event, organ) {
         let player = event.player

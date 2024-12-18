@@ -1,4 +1,4 @@
-// priority: 10
+// priority: 500
 ItemEvents.rightClicked(event => {
     let player = event.player;
     if (!player) return;

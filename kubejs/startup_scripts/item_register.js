@@ -1,3 +1,4 @@
+// priority: 100
 StartupEvents.registry('item', event => {
     event.create('scrap').texture('kubejs:item/scrap')
     event.create('fire_gem').texture('kubejs:item/fire_gem')
@@ -12,12 +13,6 @@ StartupEvents.registry('item', event => {
     event.create('exclamation_mark').texture('kubejs:item/exclamation_mark')
     event.create('full_mark').texture('kubejs:item/full_mark')
     event.create('ritual_catalyst').texture('kubejs:item/ritual_catalyst')
-    event.create('secret_of_origin').texture('kubejs:item/secret_of_origin').maxStackSize(1)
-    event.create('secret_of_rain').texture('kubejs:item/secret_of_rain').tag('kubejs:secret').maxStackSize(1)
-    event.create('secret_of_heart').texture('kubejs:item/secret_of_heart').tag('kubejs:secret').maxStackSize(1)
-    event.create('secret_of_bloom').texture('kubejs:item/secret_of_bloom').tag('kubejs:secret').maxStackSize(1)
-    event.create('secret_of_snow').texture('kubejs:item/secret_of_snow').tag('kubejs:secret').maxStackSize(1)
-    event.create('secret_of_void').texture('kubejs:item/secret_of_void').tag('kubejs:secret').maxStackSize(1)
     event.create('lime_powder').texture('kubejs:item/lime_powder')
 
     event.create('god_bless_empty_necklace').texture('kubejs:item/god_bless_empty_necklace').maxStackSize(1).tag('curios:necklace').tag('itemborders:gold')

@@ -1,4 +1,4 @@
-// priority: 100
+// priority: 500
 /**
  * 玩家受伤
  * @param {Internal.LivingDamageEvent} event 

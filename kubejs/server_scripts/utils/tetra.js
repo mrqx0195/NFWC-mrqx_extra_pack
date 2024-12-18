@@ -1,4 +1,4 @@
-// priority: 1
+// priority: 1000
 /**
  * @param {Internal.ServerPlayer} player 
  * @returns {ItemEffectResult[]}

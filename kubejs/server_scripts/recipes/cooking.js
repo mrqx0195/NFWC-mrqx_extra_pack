@@ -1,3 +1,4 @@
+// priority: 800
 const COOKING_MEALS = 'meals'
 const COOKING_DRINKS = 'drinks'
 const COOKING_MISC = 'misc'

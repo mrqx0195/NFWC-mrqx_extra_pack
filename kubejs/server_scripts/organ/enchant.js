@@ -1,4 +1,4 @@
-// priority: 10
+// priority: 500
 const slotList = [0, 1, 2]
 MoreJSEvents.enchantmentTableChanged(event => {
     let player = event.player

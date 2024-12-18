@@ -1,4 +1,4 @@
-// priority: 4
+// priority: 800
 /**
  * 吸血效果
  * @param {Internal.LivingHurtEvent} event 

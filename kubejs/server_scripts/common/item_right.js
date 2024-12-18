@@ -1,3 +1,4 @@
+// priority: 500
 ItemEvents.rightClicked('biomancy:healing_additive', event => {
     let player = event.player;
     let item = event.item;
@@ -113,9 +114,6 @@ ItemEvents.rightClicked('kubejs:advanced_chest_opener', event => {
         let curStage = ((getAgeTicks / 24000) / 5) / 2
         if (getDeathStage + 1 >= curStage) return
     }
-
-    // 如果命令方块允许开胸，会导致凋零风暴无法死亡
-    if (target.type == 'witherstormmod:command_block') return
 
     player.swing()
     let painlessOper = event.item.enchantments.containsKey('kubejs:painless_operation')

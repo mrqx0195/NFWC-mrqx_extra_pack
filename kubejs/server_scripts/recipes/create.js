@@ -1,3 +1,4 @@
+// priority: 800
 ServerEvents.recipes(event => {
 	function registerCustomRecipe(recipeModel) {
         event.custom(recipeModel)
@@ -178,7 +179,7 @@ ServerEvents.recipes(event => {
 	event.recipes.create.sequenced_assembly([
 		Item.of('kubejs:candy_stomach')
 	], 'kubejs:stomach_template', [
-		event.recipes.createDeploying('kubejs:incomplete_stomach_template', ['kubejs:incomplete_stomach_template', '#bookwyrms:scale']),
+		event.recipes.createDeploying('kubejs:incomplete_stomach_template', ['kubejs:incomplete_stomach_template', 'twilightforest:raven_feather']),
 		event.recipes.createCutting('kubejs:incomplete_stomach_template', 'kubejs:incomplete_stomach_template'),
 		event.recipes.createDeploying('kubejs:incomplete_stomach_template', ['kubejs:incomplete_stomach_template', 'biomancy:living_flesh']),
 		event.recipes.createDeploying('kubejs:incomplete_stomach_template', ['kubejs:incomplete_stomach_template', '#forge:dyes/pink']),

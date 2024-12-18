@@ -54,7 +54,7 @@ skull_candles = false
 	#If true, this will invert the above option from a blacklist to a whitelist.
 	flipIdList = false
 	#Disable the uncrafting function of the uncrafting table. Recommended as a last resort if there's too many things to change about its behavior.
-	disableUncrafting = false
+	disableUncrafting = true
 
 #Settings for all things related to the magic trees.
 ["Magic Trees"]

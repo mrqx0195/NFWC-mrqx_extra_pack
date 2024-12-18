@@ -1,4 +1,4 @@
-// priority: 5
+// priority: 500
 const LEADING_SYMBOL = Text.gold('● ')
 
 function addForTextLines(text, textLines, initNum) {

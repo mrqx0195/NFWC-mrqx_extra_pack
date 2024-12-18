@@ -1,3 +1,4 @@
+// priority: 100
 StartupEvents.registry('minecraft:block', event => {
     event.create('lucky_block', 'basic')
         .hardness(1.5)

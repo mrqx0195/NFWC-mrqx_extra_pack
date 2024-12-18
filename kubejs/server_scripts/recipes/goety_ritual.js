@@ -1,3 +1,4 @@
+// priority: 800
 function GoetyRitualRecipe(craftType, ingredients, activation_item, output) {
     this.type = 'goety:ritual'
     this.ritual_type = 'goety:craft'

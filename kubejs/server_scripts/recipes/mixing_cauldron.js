@@ -1,3 +1,4 @@
+// priority: 800
 function MixingCauldronRecipe(ingredients, output) {
     this.type = 'hexerei:mixingcauldron'
     // 原料长度必须为8

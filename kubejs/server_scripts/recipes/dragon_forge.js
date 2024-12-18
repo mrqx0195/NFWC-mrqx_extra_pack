@@ -1,3 +1,4 @@
+// priority: 800
 function DragonForgeRecipe(input, blood, output, dragonType) {
     this.type = 'iceandfire:dragonforge'
     this.input = input

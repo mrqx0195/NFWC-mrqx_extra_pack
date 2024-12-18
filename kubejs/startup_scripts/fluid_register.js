@@ -1,3 +1,4 @@
+// priority: 100
 StartupEvents.registry('fluid', event => {
     event.create('syrup')
         .temperature(1500)
@@ -6,9 +7,7 @@ StartupEvents.registry('fluid', event => {
         .flowingTexture('kubejs:fluid/syrup')
         .stillTexture('kubejs:fluid/syrup')
         .bucketColor(0x914300)
-});
-
-StartupEvents.registry('fluid', event => {
+        
     event.create('cream')
         .temperature(1000)
         .viscosity(1500)

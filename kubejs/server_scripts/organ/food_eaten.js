@@ -1,4 +1,4 @@
-// priority: 10
+// priority: 500
 ItemEvents.foodEaten(event => {
     let player = event.player;
     if (!player) return;

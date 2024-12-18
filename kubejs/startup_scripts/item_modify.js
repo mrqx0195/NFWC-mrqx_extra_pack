@@ -1,3 +1,4 @@
+// priority: 100
 ItemEvents.modification((event) => {
     event.modify('extraarmor:magma_helmet', item => {
         item.addAttribute(

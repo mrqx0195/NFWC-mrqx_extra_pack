@@ -1,3 +1,4 @@
+// priority: 1000
 const $ChestCavityUtil = Java.loadClass("net.tigereye.chestcavity.util.ChestCavityUtil")
 const $ChestCavityEntity = Java.loadClass("net.tigereye.chestcavity.interfaces.ChestCavityEntity")
 const $CCOrganScores = Java.loadClass("net.tigereye.chestcavity.registration.CCOrganScores")

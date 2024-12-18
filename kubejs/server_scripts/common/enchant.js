@@ -1,3 +1,4 @@
+// priority: 500
 MoreJSEvents.filterAvailableEnchantments(event => {
 
 })

@@ -1,3 +1,4 @@
+// priority: 1000
 /**
  * 获取某个半径内的生物
  * @param {Internal.Level} level

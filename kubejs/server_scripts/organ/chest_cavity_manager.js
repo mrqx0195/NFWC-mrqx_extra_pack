@@ -1,4 +1,4 @@
-// priority: 1
+// priority: 500
 
 const playerChestCavityHashMap = new Map();
 const playerChestCavityPosMap = new Map();

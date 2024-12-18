@@ -1,3 +1,4 @@
+// priority: 500
 StartupEvents.registry('irons_spellbooks:schools', event => {
     event.create('magnificent')
         .setName(Text.of(Text.translatable("school.kubejs.magnificent")).darkPurple())

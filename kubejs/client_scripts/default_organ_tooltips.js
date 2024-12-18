@@ -1,3 +1,4 @@
+// priority: 900
 function DefaultOrgan(itemID) {
     this.itemID = itemID
     this.pseudoOrgan = false

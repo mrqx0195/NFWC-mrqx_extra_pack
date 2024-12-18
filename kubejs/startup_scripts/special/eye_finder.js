@@ -1,5 +1,4 @@
-// priority: 100
-
+// priority: 500
 StartupEvents.registry('item', event => {
   event.create('eye_of_fortress')
     .group("kubejs.item")

@@ -1,3 +1,4 @@
+// priority: 800
 function DecomposingRecipe(ingredient, output) {
     this.type = 'biomancy:decomposing'
     this.ingredient = ingredient

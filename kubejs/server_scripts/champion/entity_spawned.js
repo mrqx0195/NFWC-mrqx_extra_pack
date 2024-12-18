@@ -1,3 +1,4 @@
+// priority: 500
 EntityEvents.spawned(event => {
     /**
     * @type {Internal.LivingEntity}

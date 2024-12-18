@@ -1,3 +1,4 @@
+// priority: 500
 EntityEvents.death('minecraft:villager', event => {
     if (!event.entity.lastHurtByMob || !event.entity.lastHurtByMob.isPlayer()) return
     let killer = event.entity.lastHurtByMob

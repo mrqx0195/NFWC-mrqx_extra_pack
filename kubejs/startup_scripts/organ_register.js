@@ -1,3 +1,4 @@
+// priority: 100
 StartupEvents.registry('item', event => {
     /**
      * 
@@ -1293,11 +1294,9 @@ StartupEvents.registry('item', event => {
         .addScore('strength', 1)
         .addScore('defense', 1)
         .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.nether_star_shard.1"))])
-        .addTextLines('alt', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.nether_star_shard.2"))])
         .build())
         .texture('kubejs:item/organs/shard/nether_star_shard')
         .tag('itemborders:gold')
-        .tag('kubejs:key_pressed')
         .tag('kubejs:active_only');
 
     registerOrgan(new Organ('kubejs:sloth_shard')

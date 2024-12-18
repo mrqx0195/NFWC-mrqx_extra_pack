@@ -1,4 +1,4 @@
-// priority: 1
+// priority: 500
 ChestCavityEvents.updateOrganScore(event => {
     if (event.chestCavity && event.chestCavity.owner && event.chestCavity.owner.isPlayer()) {
         const chestCavity = event.chestCavity

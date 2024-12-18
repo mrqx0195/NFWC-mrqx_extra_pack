@@ -1,3 +1,4 @@
+// priority: 1000
 const resourceCount = 'resourceCount'
 const resourceCountMax = 'resourceCountMax'
 const defaultResourceMax = 100

@@ -1,4 +1,4 @@
-// priority: 6
+// priority: 800
 /**
  * 神之宽恕
  * @param {Internal.LivingHurtEvent} event 

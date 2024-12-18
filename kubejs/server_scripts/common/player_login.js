@@ -1,3 +1,4 @@
+// priority: 500
 PlayerEvents.loggedIn(event => {
     let player = event.player
 

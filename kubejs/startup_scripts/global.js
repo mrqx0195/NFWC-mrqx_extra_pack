@@ -1,4 +1,4 @@
-// priority: 1
+// priority: 1000
 Platform.mods.kubejs.name = 'No Flesh Within Chest'
 global.ORGAN_LIST = []
 

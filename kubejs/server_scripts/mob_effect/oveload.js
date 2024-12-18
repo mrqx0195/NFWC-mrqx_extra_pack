@@ -1,4 +1,4 @@
-// priority: 3
+// priority: 800
 /**
  * 超载增伤效果
  * @param {Internal.LivingHurtEvent} event 

@@ -1,3 +1,4 @@
+// priority: 100
 StartupEvents.registry('minecraft:item', event => {
     event.create('archivist_eyeglass', 'basic')
         .texture('kubejs:item/archivist_eyeglass')
