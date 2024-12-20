@@ -60,13 +60,13 @@ const tetraEffectPlayerDamageStrategies = {
  * @type {Object<string,function(Internal.LivingHurtEvent, organ, EntityHurtCustomModel):void>}
  */
 const organPlayerDamageStrategies = {
-    'kubejs:flame_muscle': function (event, organ, data) {
+    'kubejs:flame_muscle': function(event, organ, data) {
         let player = event.source.player
-        let tempterature = ColdSweat.getTemperature(player, 'body')
-        if (tempterature > 0) {
-            event.amount += tempterature / 2
-            player.server.scheduleInTicks(2, ctx => {
-                ColdSweat.setTemperature(player, 'core', tempterature / 2 - ColdSweat.getTemperature(player, 'base'))
+        let tempterature = ColdSweat.getTemperature(player,'body')
+        if (tempterature > 0){
+            event.amount += tempterature/2
+            player.server.scheduleInTicks(2,ctx=>{
+                ColdSweat.setTemperature(player, 'core', tempterature/2 - ColdSweat.getTemperature(player,'base'))
             })
         }
     }
@@ -156,20 +156,28 @@ const organPlayerDamageOnlyStrategies = {
         event.amount = event.amount * (player.pitch + 90) / 90
     },
     'kubejs:lost_paradise': function (event, organ, data) {
-        let target = event.entity
-        if (Math.random() < (1 - target.health / target.maxHealth) * 0.25) {
-            let targetCC = target.getChestCavityInstance()
-            $ChestCavityUtil.openChestCavity(targetCC)
-            let targetInv = targetCC.inventory
-            for (let i = 0; i < targetInv.getContainerSize(); i++) {
-                let item = targetInv.getStackInSlot(i)
-                if (item && !item.isEmpty()) {
-                    target.block.popItem(Item.of(item.id, item.count, item.nbt))
-                    targetInv.extractItem(i, item.getCount(), false)
-                    return
-                }
-            }
-            target.kill()
+        let player = event.source.player
+        let random = Math.random()
+        if (random < 0.2) {
+            event.entity.causeFallDamage(4, event.amount, DamageSource.FALL)
+            event.amount = 0
+            return
+        }
+        if (random < 0.4) {
+            event.amount = event.amount + event.entity.maxHealth * 0.03
+            return
+        }
+        if (random < 0.6) {
+            event.amount = event.amount * 2
+            return
+        }
+        if (random < 0.8) {
+            event.amount = event.amount + 10
+            return
+        }
+        if (random < 1) {
+            player.potionEffects.add('minecraft:regeneration', 20 * 15, 2)
+            return
         }
     },
     'kubejs:blade_of_heart': function (event, organ, data) {
@@ -334,42 +342,42 @@ const organPlayerDamageOnlyStrategies = {
     },
     'kubejs:flame_heart': function (event, organ, data) {
         let player = event.source.player
-        event.amount = event.amount + ColdSweat.getTemperature(player, 'body')
+        event.amount = event.amount + ColdSweat.getTemperature(player,'body')
     },
-    'kubejs:minotaur_muscle': function (event, organ, data) {
+    'kubejs:minotaur_muscle': function(event, organ, data) {
         let entity = event.entity
         if (entity.isPlayer()) return
         if (event.source.type != 'player') return
-        if (entity.attributes.hasAttribute("minecraft:generic.knockback_resistance")) {
+        if (entity.attributes.hasAttribute("minecraft:generic.knockback_resistance")){
             let originResistance = entity.getAttribute("minecraft:generic.knockback_resistance").getValue()
-            entity.server.scheduleInTicks(1, event => {
-                entity.setAttributeBaseValue("minecraft:generic.knockback_resistance", originResistance)
+            entity.server.scheduleInTicks(1,event=>{
+                entity.setAttributeBaseValue("minecraft:generic.knockback_resistance",originResistance)
             })
-            entity.setAttributeBaseValue("minecraft:generic.knockback_resistance", 10)
+            entity.setAttributeBaseValue("minecraft:generic.knockback_resistance",10)
         }
-        entity.addMotion(0, 3, 0)
+        entity.addMotion(0,3,0)
     },
-    'kubejs:questing_ram': function (event, organ, data) {
+    'kubejs:questing_ram': function(event, organ, data) {
         let entity = event.entity
         let player = event.source.player
-        let tempterature = ColdSweat.getTemperature(player, 'body')
+        let tempterature = ColdSweat.getTemperature(player,'body')
         if (entity.isPlayer()) return
-        if (event.source.type == 'player') {
-            if (tempterature > 50) {
+        if (event.source.type == 'player'){
+            if (tempterature > 50){
                 let degree = (event.amount - 5) / 3 + tempterature / 3
-                $SpellRegistry["getSpell(net.minecraft.resources.ResourceLocation)"](new ResourceLocation('irons_spellbooks', 'flaming_strike')).attemptInitiateCast(Item.of('air'), degree, player.level, player, $CastSource.NONE, false, "main_hand")
+                $SpellRegistry["getSpell(net.minecraft.resources.ResourceLocation)"](new ResourceLocation('irons_spellbooks', 'flaming_strike')).attemptInitiateCast(Item.of('air'), degree , player.level, player, $CastSource.NONE, false, "main_hand")
                 entity.setNoAI(true)
-                entity.server.scheduleInTicks(1, event => {
+                entity.server.scheduleInTicks(1,event=>{
                     entity.setNoAI(false)
-                })
+                })    
             }
-            if (tempterature < -50) {
-                let degree = (event.amount - 6) * 2 - tempterature * 2
-                $SpellRegistry["getSpell(net.minecraft.resources.ResourceLocation)"](new ResourceLocation('irons_spellbooks', 'icicle')).attemptInitiateCast(Item.of('air'), degree, player.level, player, $CastSource.NONE, false, "main_hand")
+            if (tempterature < -50){
+                let degree = (event.amount - 6) * 2  - tempterature * 2
+                $SpellRegistry["getSpell(net.minecraft.resources.ResourceLocation)"](new ResourceLocation('irons_spellbooks', 'icicle')).attemptInitiateCast(Item.of('air'), degree , player.level, player, $CastSource.NONE, false, "main_hand")
                 entity.setNoAI(true)
-                entity.server.scheduleInTicks(1, event => {
+                entity.server.scheduleInTicks(1,event=>{
                     entity.setNoAI(false)
-                })
+                })    
             }
         }
     },

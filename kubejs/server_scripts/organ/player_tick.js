@@ -83,15 +83,6 @@ const organPlayerTickStrategies = {
             }
         })
     },
-    'kubejs:ice_piece': function (event, organ) {
-        let player = event.player
-        if (player.age % 100 != 0) return
-        let bodyTemp = coldsweat.getTemperature(player, 'body')
-        let coreTemp = coldsweat.getTemperature(player, 'core')
-        if (-25 < bodyTemp < 25) {
-            coldsweat.setTemperature(player, 'core', coreTemp - 1)
-        }
-    }
 
 };
 

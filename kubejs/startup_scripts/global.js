@@ -181,6 +181,8 @@ global.SCORE_MAP = {
     'chestcavity:impact_resistant': Text.translatable("kubejs.chestcavity.impact_resistant"),
     'chestcavity:rotgut': Text.translatable("kubejs.chestcavity.rotgut"),
     'chestcavity:ease_of_access': Text.translatable("kubejs.chestcavity.ease_of_access"),
+    'chestcavity:burning_point': Text.translatable("kubejs.chestcavity.burning_point"),
+    'chestcavity:freezing_point': Text.translatable("kubejs.chestcavity.freezing_point"),
 }
 
 global.SCORE_HOVER_MAP = {
@@ -235,6 +237,8 @@ global.SCORE_HOVER_MAP = {
     'chestcavity:impact_resistant': Text.translatable("kubejs.chestcavity.hover.impact_resistant"),
     'chestcavity:rotgut': Text.translatable("kubejs.chestcavity.hover.rotgut"),
     'chestcavity:ease_of_access': Text.translatable("kubejs.chestcavity.hover.ease_of_access"),
+    'chestcavity:burning_point': Text.translatable("kubejs.chestcavity.hover.burning_point"),
+    'chestcavity:freezing_point': Text.translatable("kubejs.chestcavity.hover.freezing_point"),
 }
 
 global.organCharmNbtMap = {

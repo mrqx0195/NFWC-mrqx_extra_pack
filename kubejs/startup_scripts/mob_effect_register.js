@@ -151,7 +151,7 @@ StartupEvents.registry('mob_effect', event => {
         .modifyAttribute("cold_sweat:world_temperature",'kubejsHeatUp',5/25, 'addition')
     event.create('cold_down')
         .beneficial()
-        .color(Color.RED)
+        .color(Color.BLUE)
         .effectTick((entity, lvl)=>{
             if (!entity || entity.level.isClientSide()) return
             if (entity.hasEffect('kubejs:cold_down')){
@@ -174,7 +174,7 @@ StartupEvents.registry('mob_effect', event => {
         .modifyAttribute("minecraft:generic.movement_speed",'kubejsOverload',0.001, 'addition')
     event.create('ice')
         .beneficial()
-        .color(Color.RED)
+        .color(Color.BLUE)
         .modifyAttribute("irons_spellbooks:cooldown_reduction",'kubejsIce',1/8, 'addition')
         .modifyAttribute("irons_spellbooks:mana_regen",'kubejsIce',10, 'addition')
         .modifyAttribute("irons_spellbooks:spell_power",'kubejsIce', -0.05, 'multiply_total')
