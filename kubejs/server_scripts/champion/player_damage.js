@@ -43,11 +43,6 @@ const championPlayerDamageStrategies = {
             })
         }
     },
-    'reflection': function (event, data) {
-        let entity = event.entity
-        data.returnDamage = Math.min(event.amount, entity.getMaxHealth())
-        event.amount = Math.min(entity.getMaxHealth() * 0.5, event.amount)
-    },
     'unbending': function (event, data) {
         let entity = event.entity
         let reduction = Math.max(entity.getHealth() / entity.getMaxHealth(), 0.1)

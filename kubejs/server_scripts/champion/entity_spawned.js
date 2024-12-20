@@ -1,4 +1,4 @@
-// priority: 500
+// priority: 900
 EntityEvents.spawned(event => {
     /**
     * @type {Internal.LivingEntity}
@@ -33,7 +33,6 @@ EntityEvents.spawned(event => {
     entity.setCustomName(new Component.join(typeNameList))
     entity.setCustomNameVisible(true)
 })
-
 
 const championTypeMap = [
     {
@@ -70,11 +69,6 @@ const championTypeMap = [
         type: 'purity',
         name: Text.aqua('纯净'),
         desc: Text.gray('受到攻击后净化自身所有负面效果')
-    },
-    {
-        type: 'reflection',
-        name: Text.gold('反射'),
-        desc: Text.gray('每次最多受到50%最大生命值的伤害，并可以反射伤害')
     },
     {
         type: 'corrupt',

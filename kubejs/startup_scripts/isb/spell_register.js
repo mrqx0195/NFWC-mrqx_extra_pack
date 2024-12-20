@@ -1,7 +1,5 @@
-// 宏伟魔法
+// priority: 500
 StartupEvents.registry('irons_spellbooks:spells', event => {
-
-
     event.create('endless_dream')
         .setCastTime(20)
         .setCooldownSeconds(40)

@@ -491,11 +491,13 @@ const organActiveOnlyStrategies = {
         instance.organScores.put(new ResourceLocation('chestcavity', 'breath_capacity'), new $Float(breathCapacity))
     },
     'kubejs:etched_paper': function (player, organ, attributeMap) {
-        let chestInventory = player.getChestCavityInstance().inventory.tags
+        let instance = player.getChestCavityInstance()
+        let chestInventory = instance.inventory.tags
         let enchantList = []
         let spellPowerUp = 0
         let cdReduction = 0
         let manaRegen = 0
+        let buoyant = instance.organScores.getOrDefault(new ResourceLocation('chestcavity', 'buoyant'), 0)
         for (let i = 0; i < chestInventory.length; i++) {
             let organ = chestInventory[i]  
             if (!organ.get('tag')) continue
@@ -511,16 +513,18 @@ const organActiveOnlyStrategies = {
                 if(curseEnchantList.includes(String(curEnchant.id))) {
                     let spDown = spellPowerUp-curEnchant.lvl *0.01
                     spellPowerUp = spDown>=0?spDown:0
-                    manaRegen += curEnchant.lvl *0.05
+                    manaRegen += curEnchant.lvl *0.03
                 }                 
-                else spellPowerUp += curEnchant.lvl * 0.02
+                else spellPowerUp += curEnchant.lvl * 0.01
             }
             if(enchantList.length >= 5)
                 cdReduction += 0.02
+                buoyant += 0.3
         }
         attributeMapValueAddition(attributeMap, global.SPELL_POWER, spellPowerUp)
         attributeMapValueAddition(attributeMap, global.COOLDOWN_REDUCTION, cdReduction)
         attributeMapValueAddition(attributeMap, global.MANA_REGEN, manaRegen)
+        instance.organScores.put(new ResourceLocation('chestcavity', 'buoyant'), new $Float(buoyant))
     },
 
 }

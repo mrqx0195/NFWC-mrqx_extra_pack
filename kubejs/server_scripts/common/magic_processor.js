@@ -28,12 +28,11 @@ global.dreamOfNeedles = (ctx) => {
     let player = ctx.entity
     if (!player.hasEffect('kubejs:sweet_dream')) return
     let ray = player.rayTrace(32, false)
-    if (!ray.hit) return
+    let resultVec = ray.hit ? ray.hit : player.getPosition(1.0).add(player.getLookAngle().normalize().scale(32))
 
     let dreamEffect = player.getEffect('kubejs:sweet_dream')
     player.removeEffect('kubejs:sweet_dream')
     player.potionEffects.add('kubejs:sweet_dream', dreamEffect.getDuration(), Math.max(dreamEffect.getAmplifier() - 1, 0))
-
     let spellLevel = ctx.getSpellLevel()
     let powerModifier = player.getAttributeValue(global.attributes.CANDY_SPELL_POWER.get())
     let damage = 5 + dreamEffect.getDuration() / 100
@@ -42,7 +41,6 @@ global.dreamOfNeedles = (ctx) => {
     // 限制数量上限，避免性能问题
     let count = Math.min(30, 3 + dreamEffect.getAmplifier())
     let degreesPerNeedle = 360 / count
-
     // 根据法术等级，产生新的释放环，限制上下限
     let castTimes = Math.min(Math.max(Math.ceil(spellLevel / 5), 1), 5)
     for (let j = 1; j < castTimes + 1; j++) {
@@ -53,7 +51,7 @@ global.dreamOfNeedles = (ctx) => {
             needle.setZRot(rotation)
             let spawn = player.getEyePosition().add(new Vec3(0, j, 0).zRot(rotation * JavaMath.PI / 180).xRot(-player.xRot * JavaMath.PI / 180).yRot(-player.yRot * JavaMath.PI / 180))
             needle.moveTo(spawn)
-            needle.shoot(ray.hit.subtract(spawn).normalize())
+            needle.shoot(resultVec.subtract(spawn).normalize())
             player.level.addFreshEntity(needle)
         }
     }

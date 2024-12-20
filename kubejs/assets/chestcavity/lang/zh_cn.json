@@ -280,8 +280,6 @@
     "organscore.chestcavity.photosynthesis": "removeFlag",
     "organscore.chestcavity.cannibal_heart": "removeFlag",
     "organscore.chestcavity.tethered_cannibal_heart": "removeFlag",
-    "organscore.chestcavity.burning_point": "removeFlag",
-    "organscore.chestcavity.freezing_point": "removeFlag",
     "rei.chestcavity.salvage_recipe": "打捞",
     "text.autoconfig.chestcavity.title": "胸腔",
     "text.autoconfig.chestcavity.category.core": "核心",

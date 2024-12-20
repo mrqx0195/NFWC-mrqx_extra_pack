@@ -357,4 +357,5 @@ ServerEvents.recipes(event => {
 	event.recipes.create.splashing(['9x iceandfire:silver_nugget', Item.of('minecraft:glowstone_dust').withChance(0.3)], 'create:crushed_raw_silver')
 
 	registerCustomRecipe(new RollingRecipe(Item.of('minecraft:tinted_glass'), Item.of('biomancy:vial').withCount(3)))
+
 })
