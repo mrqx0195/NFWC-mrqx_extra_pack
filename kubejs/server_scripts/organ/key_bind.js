@@ -374,7 +374,7 @@ const organPlayerKeyPressedOnlyStrategies = {
             player.addItemCooldown('kubejs:knightphantom_ghost', 20 * 15)
         }
     },
-    'kubejs:twilight_lich_spine': function(event, organ){
+    'kubejs:twilight_broken_lich_crown': function(event, organ){
         let player = event.player
         let level = event.level
         let magic = getPlayerMagicData(player)
@@ -408,7 +408,7 @@ const organPlayerKeyPressedOnlyStrategies = {
             player.removeAttribute("minecraft:generic.attack_damage",'tLichSpine')
             player.removeAttribute("irons_spellbooks:spell_power",'tLichSpine')
         })
-        player.addItemCooldown('kubejs:twilight_lich_spine', 20 * 60)
+        player.addItemCooldown('kubejs:twilight_broken_lich_crown', 20 * 60)
     },
     'kubejs:cloud_brocade': function (event, organ) {
         let player = event.player

@@ -46,7 +46,9 @@ Organ.prototype = {
 
 
     //注册冰点燃点
-    burn_cold_point: function(burningPoint,coldPoint){
+    burn_cold_point: function(burningPoint,freezingPoint){
+        this.addScore('burning_point', burningPoint/25)
+        this.addScore('freezing_point', freezingPoint/25)
         return this
     },
 
