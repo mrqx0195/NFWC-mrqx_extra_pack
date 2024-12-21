@@ -15,8 +15,8 @@ StartupEvents.registry('irons_spellbooks:spells', event => {
         })
 
     event.create('dream_of_needles')
-        .setCastTime(20)
-        .setCooldownSeconds(6)
+        .setCastTime(60)
+        .setCooldownSeconds(10)
         .setBaseManaCost(100)
         .setManaCostPerLevel(20)
         .setCastType('long')
