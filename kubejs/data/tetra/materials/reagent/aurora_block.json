@@ -1,0 +1,27 @@
+{
+    "key": "aurora_block",
+    "category": "reagent",
+    "primary": 0,
+    "secondary": 0,
+    "tertiary": 0,
+    "durability": 0,
+    "integrityCost": 1,
+    "integrityGain": 1,
+    "magicCapacity": 20,
+    "toolLevel": 0,
+    "toolEfficiency": 0,
+    "tints": {
+        "glyph": "64f2e0",
+        "texture": "64f2e0"
+    },
+    "textures": [
+        "default"
+    ],
+    "effects": {
+        "irons_spellbooks:freeze": 8
+    },
+    "material": {
+        "items": [ "twilightforest:aurora_block" ]
+    },
+    "experienceCost": 30
+}

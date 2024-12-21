@@ -1,0 +1,32 @@
+{
+    "key": "canopy_planks",
+    "category": "wood",
+    "primary": 3.5,
+    "secondary": 1.1,
+    "tertiary": 7.7,
+    "durability": 60,
+    "integrityCost": 2,
+    "integrityGain": 4,
+    "magicCapacity": 40,
+    "toolLevel": "minecraft:iron",
+    "toolEfficiency": 2,
+    "tints": {
+        "glyph": "4c3726",
+        "texture": "4c3726"
+    },
+    "attributes":{
+        "forge:attack_range": 0.5
+    },
+    "textures": [
+        "crude",
+        "wooden"
+    ],
+    "material": {
+        "items": [
+            "twilightforest:canopy_planks"
+        ]
+    },
+    "requiredTools": {
+        "axe_dig": "minecraft:stone"
+    }
+}

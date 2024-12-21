@@ -1,0 +1,31 @@
+{
+    "key": "arctic_fur",
+    "category": "fabric",
+    "primary": 2,
+    "secondary": 2,
+    "tertiary": 5,
+    "durability": 310,
+    "integrityCost": 2,
+    "integrityGain": 4,
+    "magicCapacity": 156,
+    "toolLevel": 0,
+    "toolEfficiency": 0,
+    "tints": {
+        "glyph": "c8d0d3",
+        "texture": "c8d0d3"
+    },
+    "attributes":{
+        "cold_sweat:freezing_point": -2,
+        "cold_sweat:burning_point": -1
+    },
+    "textures": [
+        "crude",
+        "default"
+    ],
+    "material": {
+        "items": [ "twilightforest:arctic_fur" ]
+    },
+    "requiredTools": {
+        "cut": "minecraft:stone"
+    }
+}

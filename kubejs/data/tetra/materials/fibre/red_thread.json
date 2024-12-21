@@ -18,6 +18,9 @@
       "crude",
       "default"
     ],
+    "effects": {
+      "art_of_forging:third_sight": 10
+    },
     "material": {
       "items": [
         "twilightforest:red_thread"

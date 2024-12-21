@@ -1,0 +1,27 @@
+{
+    "key": "borer_essence",
+    "category": "reagent",
+    "primary": 0,
+    "secondary": 0,
+    "tertiary": 0,
+    "durability": 0,
+    "integrityCost": 1,
+    "integrityGain": 1,
+    "magicCapacity": 0,
+    "toolLevel": 0,
+    "toolEfficiency": 0,
+    "tints": {
+        "glyph": "d6824b",
+        "texture": "d6824b"
+    },
+    "textures": [
+        "default"
+    ],
+    "effects": {
+        "arthropod": 15
+    },
+    "material": {
+        "items": [ "twilightforest:borer_essence" ]
+    },
+    "experienceCost": 30
+}
