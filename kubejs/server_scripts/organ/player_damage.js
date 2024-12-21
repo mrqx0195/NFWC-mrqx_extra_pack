@@ -349,7 +349,7 @@ const organPlayerDamageOnlyStrategies = {
         }
         entity.addMotion(0, 3, 0)
     },
-    'kubejs:questing_ram': function (event, organ, data) {
+    'kubejs:questing_ram_answer': function (event, organ, data) {
         let entity = event.entity
         let player = event.source.player
         let tempterature = ColdSweat.getTemperature(player, 'body')

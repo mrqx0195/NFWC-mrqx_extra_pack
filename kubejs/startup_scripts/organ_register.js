@@ -2247,15 +2247,15 @@ StartupEvents.registry('item', event => {
         .tag('kubejs:intestine')
         .tag("kubejs:ice")
         .tag('kubejs:key_pressed')
-    
+
     registerOrgan(new Organ('kubejs:ice_piece')
         .addScore('nerves', 0.25)
         .addTextLines('default', [Text.gray(Text.translatable("kubejs.tooltips.ice_piece.1"))])
         .addTextLines('alt', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.ice_piece.2"))])
         .build())
         .texture('kubejs:item/organs/ice/ice_piece')
-        .tag("kubejs:player_tick")    
-        .tag("kubejs:ice")  
+        .tag("kubejs:player_tick")
+        .tag("kubejs:ice")
 
 
     //暮色器官
@@ -2286,13 +2286,13 @@ StartupEvents.registry('item', event => {
     registerOrgan(new Organ('kubejs:cloud_brocade')
         .addScore('defense', -1)
         .addScore('buoyant', 1)
-	    .addScore('hydroallergenic', 1)
+        .addScore('hydroallergenic', 1)
         .addTextLines('default', [Text.translatable("kubejs.tooltips.cloud_brocade.1").gray()])
         .addTextLines('alt', [LEADING_SYMBOL, Text.translatable("kubejs.tooltips.cloud_brocade.2").gray()])
         .addTextLines('alt', [LEADING_SYMBOL, Text.translatable("kubejs.tooltips.cloud_brocade.3").gray()])
         .addTextLines('alt', [LEADING_SYMBOL, Text.translatable("kubejs.tooltips.cloud_brocade.4").gray()])
         .build())
-        .texture('minecraft:item/cobweb')
+        .texture('kubejs:item/organs/twilightforest/cloud_brocade')
         .tag('kubejs:magic')
         .tag('itemborders:gold')
         .tag('kubejs:key_pressed')
@@ -2304,14 +2304,16 @@ StartupEvents.registry('item', event => {
         .addTextLines('alt', [LEADING_SYMBOL, Text.translatable("kubejs.tooltips.minotaur_muscle.2").gray()])
         .addTextLines('alt', [LEADING_SYMBOL, Text.translatable("kubejs.tooltips.minotaur_muscle.3").gray()])
         .build())
+        .texture('kubejs:item/organs/twilightforest/minotaur_muscle')
         .tag("kubejs:damage_only")
 
-    registerOrgan(new Organ('kubejs:questing_ram')
+    registerOrgan(new Organ('kubejs:questing_ram_answer')
         .addScore('nerves', 2)
-        .addTextLines('default', [Text.translatable("kubejs.tooltips.questing_ram.1").gray()])
-        .addTextLines('alt', [LEADING_SYMBOL, Text.translatable("kubejs.tooltips.questing_ram.2").gray()])
-        .addTextLines('alt', [LEADING_SYMBOL, Text.translatable("kubejs.tooltips.questing_ram.3").gray()])
+        .addTextLines('default', [Text.translatable("kubejs.tooltips.questing_ram_answer.1").gray()])
+        .addTextLines('alt', [LEADING_SYMBOL, Text.translatable("kubejs.tooltips.questing_ram_answer.2").gray()])
+        .addTextLines('alt', [LEADING_SYMBOL, Text.translatable("kubejs.tooltips.questing_ram_answer.3").gray()])
         .build())
+        .texture('kubejs:item/organs/twilightforest/questing_ram_answer')
         .tag("kubejs:damage_only")
 
     registerOrgan(new Organ('kubejs:knightphantom_ghost')
@@ -2331,6 +2333,7 @@ StartupEvents.registry('item', event => {
         .addTextLines('default', [Text.translatable("kubejs.tooltips.naga_scale.1").gray()])
         .addTextLines('alt', [LEADING_SYMBOL, Text.translatable("kubejs.tooltips.naga_scale.2").gray()])
         .build())
+        .texture('kubejs:item/organs/twilightforest/naga_scale')
         .tag("kubejs:bear_only")
 
     registerOrgan(new Organ('kubejs:twilight_broken_lich_crown')
