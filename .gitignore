@@ -30,7 +30,7 @@
 /patchouli_data.json
 /hmclversion.cfg
 /config/inventoryprofilesnext/*
-!/config/inventoryprofilesnext/inventoryprofiles.json
 /config/emi.css
 /config/jade/
 /config/modernfix-mixins.properties
+!/config/inventoryprofilesnext/inventoryprofiles.json

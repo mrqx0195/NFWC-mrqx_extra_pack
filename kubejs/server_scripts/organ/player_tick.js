@@ -86,10 +86,10 @@ const organPlayerTickStrategies = {
     'kubejs:ice_piece': function (event, organ) {
         let player = event.player
         if (player.age % 100 != 0) return
-        let bodyTemp = coldsweat.getTemperature(player, 'body')
-        let coreTemp = coldsweat.getTemperature(player, 'core')
+        let bodyTemp = ColdSweat.getTemperature(player, 'body')
+        let coreTemp = ColdSweat.getTemperature(player, 'core')
         if (-25 < bodyTemp < 25) {
-            coldsweat.setTemperature(player, 'core', coreTemp - 1)
+            ColdSweat.setTemperature(player, 'core', coreTemp - 1)
         }
     }
 
@@ -163,7 +163,7 @@ const organPlayerTickOnlyStrategies = {
     },
     'kubejs:worm_neuron': function (event, organ) {
         let player = event.player
-        let tempterature = coldsweat.getTemperature(player,'body')
+        let tempterature = ColdSweat.getTemperature(player,'body')
         if (player.age % (600 - Math.floor(3 * tempterature)) != 0) return
         if (player.nbt?.ForgeCaps['goety:lichdom']?.lichdom == 1) return
         let instance = player.getChestCavityInstance()
