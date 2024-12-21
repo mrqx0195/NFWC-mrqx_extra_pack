@@ -312,6 +312,16 @@
   "attribute.irons_spellbooks.nature_spell_power": "自然法术强度",
   "attribute.irons_spellbooks.spell_resist": "法术抗性",
   "attribute.irons_spellbooks.summon_damage": "召唤伤害",
+  "attribute.cold_sweat.world_temperature": "世界温度",
+  "attribute.cold_sweat.base_temperature": "基础体温",
+  "attribute.cold_sweat.burning_point": "燃点",
+  "attribute.cold_sweat.freezing_point": "冰点",
+  "attribute.cold_sweat.heat_resistance": "热抗",
+  "attribute.cold_sweat.cold_resistance": "冰抗",
+  "attribute.cold_sweat.heat_dampening": "抗升温",
+  "attribute.cold_sweat.cold_dampening": "抗降温",
+  
+
 
   "key.irons_spellbooks.group_1": "铁之咒语与魔法书 - 常用",
   "key.irons_spellbooks.group_2": "铁之咒语与魔法书 - 快捷施法",

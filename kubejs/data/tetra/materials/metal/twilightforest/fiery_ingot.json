@@ -1,0 +1,38 @@
+{
+    "key": "fiery_ingot",
+    "category": "metal",
+    "primary": 6.5,
+    "secondary":5.1,
+    "tertiary": 3.3,
+    "durability": 648,
+    "integrityCost": 4,
+    "integrityGain": 2,
+    "magicCapacity": 210,
+    "toolLevel": "minecraft:diamond",
+    "toolEfficiency": 9,
+    "effects": {
+        "stabilizing": 1,
+        "fiery": 5
+    },
+    "attributes":{
+        "irons_spellbooks:fire_spell_power": 0.2,
+        "cold_sweat:world_temperature": 0.1
+    },
+    "tints": {
+        "glyph": "d97700",
+        "texture": "d97700"
+      },
+    "textures": [
+       "metal",
+       "default"
+    ],
+    "material": {
+        "items": [ "twilightforest:fiery_ingot" ]
+    },
+    "improvements": {
+        "workable": 1
+      },
+    "requiredTools": {
+    "hammer_dig": "minecraft:iron"
+    }
+}

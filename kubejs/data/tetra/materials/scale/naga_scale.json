@@ -15,8 +15,8 @@
         "minecraft:generic.movement_speed" : 0.01
     },
     "tints": {
-        "glyph": "8B5A2B",
-        "texture": "8B5A2B"
+        "glyph": "172911",
+        "texture": "172911"
     },
     "textures": [
         "crude",
