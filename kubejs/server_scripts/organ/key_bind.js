@@ -410,7 +410,7 @@ const organPlayerKeyPressedOnlyStrategies = {
         })
         player.addItemCooldown('kubejs:twilight_broken_lich_crown', 20 * 60)
     },
-    'kubejs:cloud_brocade': function (event, organ) {
+    'kubejs:cloud_pyramid': function (event, organ) {
         let player = event.player
         let instance = player.getChestCavityInstance()
         let buoyant = organ.tag.getFloat('buoyant_factor')
@@ -426,7 +426,7 @@ const organPlayerKeyPressedOnlyStrategies = {
             instance.organScores.put(new ResourceLocation('chestcavity', 'buoyant'), new $Float(buoyant))
             organ.tag.putFloat('buoyant_factor', 0)
         } 
-        player.addItemCooldown('kubejs:cloud_brocade', 20 * 0.5)
+        player.addItemCooldown('kubejs:cloud_pyramid', 20 * 0.2)
     },
     'kubejs:creeper_appendix': function (event, organ) {
         let player = event.player

@@ -1,0 +1,43 @@
+{
+    "name": "machine.kubejs.myanmar_market",
+    "appearance": {
+        "block": "minecraft:furnace[lit=true]"
+    },
+    "tooltips": [],
+    "components": [
+      {
+        "type": "custommachinery:item",
+        "id": "organ_slot",
+        "filter": ["#kubejs:organ"],
+        "whitelist": true,
+        "mode": "input",
+        "variant": "custommachinery:default"
+      },
+      {
+        "type": "custommachinery:item",
+        "id": "coin_slot",
+        "mode": "output"
+      }
+    ],
+    "gui": [
+        {
+            "type": "custommachinery:slot",
+            "x": 119,
+            "y": 30,
+            "id": "organ_slot"
+        },
+        {
+            "type": "custommachinery:slot",
+            "x": 119,
+            "y": 70,
+            "id": "coin_slot"
+        },
+        {
+            "type": "custommachinery:player_inventory",
+            "x": 47,
+            "y": 110
+        }
+    ],
+    "jei": [],
+    "catalysts": []
+}
