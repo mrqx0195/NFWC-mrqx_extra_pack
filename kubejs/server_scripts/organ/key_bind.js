@@ -440,7 +440,7 @@ const organPlayerKeyPressedOnlyStrategies = {
             strength += Math.floor(tempterature / 3)
         }
         strength += Math.floor((explosive + creepy) / 2)
-        ColdSweat.setTemperature(player, 'core', -ColdSweat.getTemperature(player, 'base'))
+        ColdSweat.setTemperature(player, 'core', - ColdSweat.getTemperature(player, 'base'))
         player.level.createExplosion(player.x, player.y, player.z).exploder(player).strength(strength).causesFire(causesFire).explode()
     }
 }
