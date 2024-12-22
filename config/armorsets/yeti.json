@@ -1,0 +1,52 @@
+{
+    "armorSetName": "yeti",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "twilightforest:yeti_helmet"
+    },
+    "chest": {
+      "itemKey": "twilightforest:yeti_chestplate"
+    },
+    "legs": {
+      "itemKey": "twilightforest:yeti_leggings"
+    },
+    "boots": {
+        "itemKey": "twilightforest:yeti_boots"
+    },
+    "hideGeneratedTooltip": false,
+    "customTooltips": [
+      "\u4f60\u50cf\u4e00\u5934\u72c2\u66b4\u7684\u51b0\u96ea\u91ce\u517d"
+    ],
+    "fullSetBonuses": [
+        {
+            "type": "attribute",
+            "name": "minecraft:generic.attack_damage",
+            "modifierUUID": "4c619233-50a3-4138-8046-87db5823c48f",
+            "description": "+4 \u653b\u51fb\u4f24\u5bb3",
+            "value": 4
+        },
+        {
+            "type": "attribute",
+            "name": "minecraft:generic.armor",
+            "modifierUUID": "929771aa-6405-4052-a4aa-99dcdafc5da9",
+            "description": "+4 \u62a4\u7532",
+            "value": 4
+        },
+        {
+            "type": "attribute",
+            "name": "irons_spellbooks:ice_spell_power",
+            "modifierUUID": "b3e11303-3856-4863-9422-cc389d30bab8",
+            "description": "+40% \u51b0\u971c\u6cd5\u672f\u5f3a\u5ea6",
+            "value": 0.4
+        },
+        {
+            "type": "effect",
+            "name": "twilightforest:frosted",
+            "value": 4,
+            "interactionType": "attack",
+            "interactionDuration": 100,
+            "hideBonusDescription": false,
+            "onlyImmuneToNewEffects": false
+        }
+    ]
+}

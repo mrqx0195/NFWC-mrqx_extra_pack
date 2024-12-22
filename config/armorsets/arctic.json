@@ -1,0 +1,29 @@
+{
+    "armorSetName": "arctic",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "twilightforest:arctic_helmet"
+    },
+    "chest": {
+      "itemKey": "twilightforest:arctic_chestplate"
+    },
+    "legs": {
+      "itemKey": "twilightforest:arctic_leggings"
+    },
+    "boots": {
+        "itemKey": "twilightforest:arctic_boots"
+    },
+    "hideGeneratedTooltip": false,
+    "customTooltips": [
+      "\u975e\u5e38\u6e29\u6696"
+    ],
+    "fullSetBonuses": [
+        {
+            "type": "attribute",
+            "name": "cold_sweat:base_temperature",
+            "modifierUUID": "8b15dfba-1954-4f33-b037-1fd0d8603c15",
+            "description": "+10 \u57fa\u7840\u4f53\u6e29",
+            "value": 10
+        }
+    ]
+}

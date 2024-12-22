@@ -1,0 +1,30 @@
+{
+    "armorSetName": "naga",
+    "performanceMode": true,
+    "chest": {
+      "itemKey": "twilightforest:naga_chestplate"
+    },
+    "legs": {
+      "itemKey": "twilightforest:naga_leggings"
+    },
+    "hideGeneratedTooltip": false,
+    "customTooltips": [
+      "\u80fd\u591f\u5f3a\u5316\u81ea\u7136\u6cd5\u672f\u7684\u5a01\u529b"
+    ],
+    "fullSetBonuses": [
+      {
+        "type": "attribute",
+        "name": "irons_spellbooks:nature_spell_power",
+        "modifierUUID": "843f4de4-e39f-455f-80da-a27fa210313e",
+        "description": "+50% \u81ea\u7136\u6cd5\u672f\u5f3a\u5ea6",
+        "value": 0.5
+      },
+      {
+        "type": "attribute",
+        "name": "irons_spellbooks:max_mana",
+        "modifierUUID": "c40f12cc-6596-438e-ba3a-c60087dd1395",
+        "description": "+100 \u6700\u5927\u6cd5\u529b\u503c",
+        "value": 100
+      }
+    ]
+  }

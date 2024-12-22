@@ -1,0 +1,58 @@
+{
+    "armorSetName": "knightmetal",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "twilightforest:knightmetal_helmet"
+    },
+    "chest": {
+      "itemKey": "twilightforest:knightmetal_chestplate"
+    },
+    "legs": {
+      "itemKey": "twilightforest:knightmetal_leggings"
+    },
+    "boots": {
+        "itemKey": "twilightforest:knightmetal_boots"
+    },
+    "hideGeneratedTooltip": false,
+    "customTooltips": [
+      "\u4f60\u6210\u4e3a\u4e86\u94c1\u8840\u7684\u7269\u7406\u6218\u58eb"
+    ],
+    "fullSetBonuses": [
+      {
+        "type": "attribute",
+        "name": "minecraft:generic.attack_damage",
+        "modifierUUID": "52a2f09f-6451-4cb8-a720-1d9e5b41285d",
+        "attributeOperation": 2,
+        "description": "+60% \u8fd1\u6218\u4f24\u5bb3\u500d\u7387",
+        "value": 0.6
+      },
+      {
+        "type": "attribute",
+        "name": "minecraft:generic.armor",
+        "modifierUUID": "b5d2bf9b-75a1-4bc8-b08d-b339403992f1",
+        "description": "+4 \u62a4\u7532",
+        "value": 4
+      },
+      {
+        "type": "attribute",
+        "name": "minecraft:generic.armor_toughness",
+        "modifierUUID": "dbb10222-633b-48be-82d0-a57f4fbf6b9d",
+        "description": "+3 \u62a4\u7532\u97e7\u6027",
+        "value": 3
+      },
+      {
+        "type": "attribute",
+        "name": "irons_spellbooks:spell_power",
+        "modifierUUID": "4caea0c6-180b-4dd7-b9e1-b9869792e812",
+        "description": "-90% \u6cd5\u672f\u5f3a\u5ea6",
+        "value": -0.9
+      },
+      {
+        "type": "attribute",
+        "name": "irons_spellbooks:max_mana",
+        "modifierUUID": "8f57edd8-2154-4b56-856d-11099170087c",
+        "description": "-50 \u6700\u5927\u6cd5\u529b\u503c",
+        "value": -50
+      }
+    ]
+}

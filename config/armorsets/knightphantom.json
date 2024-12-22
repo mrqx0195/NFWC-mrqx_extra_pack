@@ -1,0 +1,37 @@
+{
+    "armorSetName": "knightphantom",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "twilightforest:phantom_helmet"
+    },
+    "chest": {
+      "itemKey": "twilightforest:phantom_chestplate"
+    },
+    "hideGeneratedTooltip": false,
+    "customTooltips": [
+      "\u4f1a\u4f7f\u7528\u9b54\u6cd5\u7684\u9a91\u58eb"
+    ],
+    "fullSetBonuses": [
+        {
+            "type": "attribute",
+            "name": "minecraft:generic.attack_damage",
+            "modifierUUID": "b0d54043-8047-400c-b1f8-9221ef8e6dba",
+            "description": "+4 \u653b\u51fb\u4f24\u5bb3",
+            "value": 4
+        },
+        {
+            "type": "attribute",
+            "name": "minecraft:generic.armor",
+            "modifierUUID": "55fb06b9-d437-4142-bde4-8eab061f285d",
+            "description": "+4 \u62a4\u7532",
+            "value": 4
+        },
+        {
+            "type": "attribute",
+            "name": "irons_spellbooks:spell_power",
+            "modifierUUID": "3035c130-14c9-458d-a873-43e1016494bd",
+            "description": "+40% \u6cd5\u672f\u5f3a\u5ea6",
+            "value": 0.4
+        }
+    ]
+}

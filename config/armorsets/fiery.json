@@ -1,0 +1,43 @@
+{
+    "armorSetName": "fiery",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "twilightforest:fiery_helmet"
+    },
+    "chest": {
+      "itemKey": "twilightforest:fiery_chestplate"
+    },
+    "legs": {
+      "itemKey": "twilightforest:fiery_leggings"
+    },
+    "boots": {
+        "itemKey": "twilightforest:fiery_boots"
+    },
+    "hideGeneratedTooltip": false,
+    "customTooltips": [
+      "\u4f60\u73b0\u5728\u662f\u64c5\u957f\u706b\u7130\u9b54\u6cd5\u7684\u6218\u58eb\u4e86"
+    ],
+    "fullSetBonuses": [
+      {
+        "type": "attribute",
+        "name": "minecraft:generic.armor",
+        "modifierUUID": "61158683-7978-49e8-a9c8-0947a9a9c9a4",
+        "description": "+4 \u62a4\u7532",
+        "value": 4
+      },
+      {
+        "type": "attribute",
+        "name": "minecraft:generic.attack_damage",
+        "modifierUUID": "a482e13b-a35d-469f-994e-b39c851c94c8",
+        "description": "+2 \u653b\u51fb\u529b",
+        "value": 2
+      },
+      {
+        "type": "attribute",
+        "name": "irons_spellbooks:fire_spell_power",
+        "modifierUUID": "6e7e4af7-f6c8-48fc-960d-38bfc3bf2785",
+        "description": "+40% \u70c8\u7130\u9b54\u6cd5\u4f24\u5bb3",
+        "value": 0.4
+      }
+    ]
+}

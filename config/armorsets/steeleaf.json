@@ -1,0 +1,29 @@
+{
+    "armorSetName": "steeleaf",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "twilightforest:steeleaf_helmet"
+    },
+    "chest": {
+      "itemKey": "twilightforest:steeleaf_chestplate"
+    },
+    "legs": {
+      "itemKey": "twilightforest:steeleaf_leggings"
+    },
+    "boots": {
+        "itemKey": "twilightforest:steeleaf_boots"
+    },
+    "hideGeneratedTooltip": false,
+    "customTooltips": [
+      "\u4e3a\u4f60\u63d0\u4f9b\u5927\u91cf\u62a4\u7532"
+    ],
+    "fullSetBonuses": [
+      {
+        "type": "attribute",
+        "name": "minecraft:generic.armor",
+        "modifierUUID": "7881c29c-bf8c-4ab3-9cc9-c62d48c82a15",
+        "description": "+6 \u62a4\u7532",
+        "value": 6
+      }
+    ]
+}
