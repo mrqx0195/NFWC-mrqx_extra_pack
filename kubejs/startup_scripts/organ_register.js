@@ -509,8 +509,6 @@ StartupEvents.registry('item', event => {
         .addTextLines('default', [Text.gray(Text.translatable("kubejs.tooltips.ore_lung.1"))])
         .addTextLines('alt', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.ore_lung.2"))])
         .addTextLines('alt', [LEADING_SYMBOL, Text.gray(Text.translatable("kubejs.tooltips.ore_lung.3"))])
-        .addTextLines('alt', [LEADING_SYMBOL, Text.red(Text.translatable("kubejs.tooltips.ore_lung.4"))])
-        .addTextLines('alt', [LEADING_SYMBOL, Text.green(Text.translatable("kubejs.tooltips.ore_lung.5"))])
         .build())
         .texture('kubejs:item/organs/resource/ore_lung')
         .tag('kubejs:lung')

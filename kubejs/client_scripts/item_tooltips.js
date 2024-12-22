@@ -13,6 +13,12 @@ ItemEvents.tooltip((tooltip) => {
         text.add(Text.gray(Text.translatable("kubejs.tooltips.healing_additive.2")));
     })
 
+    tooltip.addAdvanced('kubejs:colorful_candy', (item, advanced, text) => {
+        text.add(Text.translatable("kubejs.tooltips.colorful_candy.1"))
+        text.add(Text.translatable("kubejs.tooltips.colorful_candy.2"))
+        text.add(Text.translatable("kubejs.tooltips.colorful_candy.3"))
+    })
+
     tooltip.addAdvanced('kubejs:eye_of_fortress', (item, advanced, text) => {
         text.add(Text.darkRed(Text.translatable("kubejs.tooltips.eye_of_fortress.1")));
     })

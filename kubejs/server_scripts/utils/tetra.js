@@ -15,3 +15,12 @@ function getItemEffectsInBothHands(player) {
     }
     return effects
 }
+
+
+/**
+ * @param {String} name 
+ * @returns {Internal.ItemEffect}
+ */
+function getItemEffect(name) {
+    return global.TetraEffect[name]
+}

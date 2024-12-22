@@ -4,15 +4,18 @@
     "primary": 2,
     "secondary": 2,
     "tertiary": 5,
-    "durability": 310,
+    "durability": -580,
     "integrityCost": 2,
     "integrityGain": 4,
     "magicCapacity": 156,
     "toolLevel": 0,
-    "toolEfficiency": 0,
+    "toolEfficiency": -2,
     "tints": {
         "glyph": "c8d0d3",
         "texture": "c8d0d3"
+    },
+    "effects": {
+        "kubejs:silicosis": 5
     },
     "attributes":{
         "cold_sweat:freezing_point": -2,
