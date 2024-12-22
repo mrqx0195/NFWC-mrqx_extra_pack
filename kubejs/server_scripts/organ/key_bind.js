@@ -427,6 +427,21 @@ const organPlayerKeyPressedOnlyStrategies = {
             organ.tag.putFloat('buoyant_factor', 0)
         } 
         player.addItemCooldown('kubejs:cloud_brocade', 20 * 0.5)
+    },
+    'kubejs:creeper_appendix': function (event, organ) {
+        let player = event.player
+        let tempterature = ColdSweat.getTemperature(player, 'body')
+        let explosive = player.getChestCavityInstance().organScores.get(new ResourceLocation('chestcavity', 'explosive'))
+        let creepy = player.getChestCavityInstance().organScores.get(new ResourceLocation('chestcavity', 'creepy'))
+        let strength = 1
+        let causesFire = false
+        if (tempterature > 0){
+            causesFire = true
+            strength += Math.floor(tempterature / 3)
+        }
+        strength += Math.floor((explosive + creepy) / 2)
+        ColdSweat.setTemperature(player, 'core', -ColdSweat.getTemperature(player, 'base'))
+        player.level.createExplosion(player.x, player.y, player.z).exploder(player).strength(strength).causesFire(causesFire).explode()
     }
 }
 

@@ -2370,8 +2370,19 @@ StartupEvents.registry('item', event => {
         .texture('kubejs:item/organs/twilightforest/twilight_broken_lich_crown')
         .tag("kubejs:key_pressed")
 
-
-
+    //杂项
+    registerOrgan(new Organ('kubejs:creeper_appendix')
+        .addScore('luck', 0.75)
+        .addScore('creepy', 1)
+        .addScore('explosive', 1)
+        .addTextLines('default', [Text.translatable("kubejs.tooltips.creeper_appendix.1").gray()])
+        .addTextLines('alt', [LEADING_SYMBOL, Text.translatable("kubejs.tooltips.creeper_appendix.2").gray()])
+        .addTextLines('alt', [LEADING_SYMBOL, Text.translatable("kubejs.tooltips.creeper_appendix.3").gray()])
+        .addTextLines('alt', [LEADING_SYMBOL, Text.translatable("kubejs.tooltips.creeper_appendix.4").gray()])
+        .build())
+        .texture('chestcavity:item/creeper_appendix')
+        .tag("kubejs:key_pressed")
+        .tag('kubejs:appendix')
 
 
 
