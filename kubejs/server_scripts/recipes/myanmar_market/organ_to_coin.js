@@ -1,56 +1,55 @@
 const tagWorth = {
-    '#kubejs:organ':1,
-    '#itemborders:gold':10,
-    '#itemborders:diamond':50,
-    '#kubejs:heart':5,
-    '#kubejs:magic':10,
-    '#kubejs:overmagic_only':10
+    '#kubejs:organ': 1,
+    '#itemborders:gold': 10,
+    '#itemborders:diamond': 50,
+    '#kubejs:heart': 5,
+    '#kubejs:magic': 10,
+    '#kubejs:overmagic_only': 10
 }
 
-// 初版，目前只有一个coin槽，预计后续增加到6个槽位以适配不同币种
 ServerEvents.recipes(event => {
-    event.recipes.custommachinery.custom_machine("kubejs:myanmar_market", 10)
+    event.recipes.custommachinery.custom_machine("kubejs:myanmar_market", 100)
         .requireFunctionOnEnd(ctx => {
             let machine = ctx.machine
-            let data = ctx.tile.persistentData
-            let worth = data.getInt("worth")
-            // machine.owner.tell(worth)
-            if (worth > 0) {
-                let remaining = machine.addItemToSlot("coin_slot", Item.of('lightmanscurrency:coin_copper', worth % 64), false)
-                // machine.owner.tell(remaining)
-                // if (remaining.count == 0) {
-                //     machine.addItemToSlot("coin_slot", Item.of('lightmanscurrency:coin_copper', worth), false)
-                // }
-                data.putInt("worth", 0)   
-                let coin = machine.getItemStored("coin_slot")
-                // machine.owner.tell(coin)
-                return ctx.success()
-            }else{
-                data.putInt("worth", 0)
-                return ctx.error("no worth organ")
+            let organ = machine.getItemStored("organ_slot")
+            let worth = calculateOrganWorth(organ)
+            let coinSlotItem = machine.getItemStored('coin_output')
+            if (worth == 0) return ctx.error("no worth organ")
+            if (coinSlotItem && coinSlotItem.hasTag('lightmanscurrency:wallet')) {
+                $WalletItem.PickupCoin(coinSlotItem, Item.of('lightmanscurrency:coin_copper', worth))
+            } else {
+                let playerBankAccount = $BankSaveData.GetBankAccount(false, ctx.machine.ownerId)
+                playerBankAccount.depositMoney(ConvertMainMoneyValue(worth))
+                if (ctx.machine.owner.isAlive()) {
+                    ctx.machine.owner.setStatusMessage(Text.translatable('kubejs.statusmsg.organ_sell.1', Text.gold(worth.toFixed(0))))
+                }
             }
+            machine.removeItemFromSlot("organ_slot", 1, false)
+            return ctx.success()
         })
         .requireFunctionToStart(ctx => {
             let machine = ctx.machine
             let organ = machine.getItemStored("organ_slot")
-            if (organ.count == 0)  return ctx.error("no organ found")
-            let data = ctx.tile.persistentData
-            let tags = organ.tags.toArray()
-            let worth = 0
-            tags.forEach(key => {
-                let tag = String(key).split("/")[1].split("]")[0].replace(" ", "#")
-                if (tagWorth[tag] != undefined) {
-                    worth += tagWorth[tag]
-                }
-            })
-            if (worth) {
-                data.putInt("worth", worth)
-                organ.count -= 1
-                return ctx.success()
-            } else{
-                data.putInt("worth", worth)
-                ctx.machine.owner.tell("no worth organ")
+            let worth = calculateOrganWorth(organ)
+            if (worth <= 0) {
                 return ctx.error("no worth organ")
             }
+            return ctx.success()
         })
+        .resetOnError()
 })
+
+/**
+ * @param {Internal.ItemStack} organ 
+ * @returns {number}
+ */
+function calculateOrganWorth(organ) {
+    let worth = 0
+    organ.tags.toArray().forEach(/**@param {Internal.TagKey} tag*/tag => {
+        let tagString = '#' + String(tag.location())
+        if (tagWorth[tagString]) {
+            worth += tagWorth[tagString]
+        }
+    })
+    return worth
+}

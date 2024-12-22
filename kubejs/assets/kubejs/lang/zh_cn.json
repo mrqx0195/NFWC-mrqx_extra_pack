@@ -1738,6 +1738,7 @@
     "tooltip.translation.spacecatasb.settitle.wandering_magician": "流浪法师",
     "tooltip.translation.spacecatasb.settitle.warped_wood": "诡异木",
     "tooltip.translation.spacecatasb.settitle.wood": "木",
+    "kubejs.statusmsg.organ_sell.1": "通过器官售卖，你的银行账户余额增加了 %d 。",
     "kubejs.recipe.tip.1": "被净化的器官",
     "kubejs.tip.secret_hint": "对着秘密物品按下shift或许会有额外的发现！",
     "kubejs.tip.wares_useage": "使用交货台在村庄里快速提交交货协议",

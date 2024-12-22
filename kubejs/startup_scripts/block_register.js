@@ -14,4 +14,7 @@ StartupEvents.registry('minecraft:block', event => {
         .hardness(2)
         .material('wool')
         .noDrops()
+
+    event.create('kubejs:myanmar_market', 'custommachinery')
+        .machine('kubejs:myanmar_market')
 })
