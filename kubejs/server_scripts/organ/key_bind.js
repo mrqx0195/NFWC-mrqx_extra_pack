@@ -430,18 +430,30 @@ const organPlayerKeyPressedOnlyStrategies = {
     },
     'kubejs:creeper_appendix': function (event, organ) {
         let player = event.player
+        let itemMap = getPlayerChestCavityItemMap(player);
         let tempterature = ColdSweat.getTemperature(player, 'body')
+        let causesFire = false
         let explosive = player.getChestCavityInstance().organScores.get(new ResourceLocation('chestcavity', 'explosive'))
         let creepy = player.getChestCavityInstance().organScores.get(new ResourceLocation('chestcavity', 'creepy'))
-        let strength = 1
-        let causesFire = false
+        let strength = (explosive + creepy) * 2
+        let num = 1
+        if (itemMap.has('minecraft:gunpowder')) {
+            strength = Math.min(12, strength + itemMap.get('minecraft:gunpowder').length * 4)
+        }
         if (tempterature > 0){
             causesFire = true
-            strength += Math.floor(tempterature / 3)
-            ColdSweat.setTemperature(player, 'core', - ColdSweat.getTemperature(player, 'base'))
+            num += Math.min(15, Math.floor(tempterature / 10))
+            ColdSweat.setTemperature(player, 'core', -ColdSweat.getTemperature(player, 'base'))
         }
-        strength += Math.floor((explosive + creepy) / 2)
         player.level.createExplosion(player.x, player.y, player.z).exploder(player).strength(strength).causesFire(causesFire).explode()
+        let l = 3
+        for(var i = 1; i < num; i++){
+            for (var f = 0; f <= JavaMath.PI * 2; f += JavaMath.PI * 2 / (6 + i * 2)){
+                for (var r = 0; r <= JavaMath.PI * 2; r += JavaMath.PI * 2 / i / 6){
+                    player.level.createExplosion(player.x + i * l * Math.cos(r) * Math.cos(f), player.y + i * l * Math.sin(f), player.z + i * l * Math.sin(r) * Math.cos(f)).exploder(player).strength(strength).causesFire(causesFire).explode()
+                }
+            }
+        }
     }
 }
 
