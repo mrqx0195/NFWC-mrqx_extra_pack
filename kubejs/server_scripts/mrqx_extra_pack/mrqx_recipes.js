@@ -361,11 +361,11 @@ ServerEvents.recipes(event => {
 
     // 粗铀
     event.recipes.createoreexcavation
-        .drilling("mrqx_extra_pack:raw_uranium", '{"text": "铀矿"}', 2, 800)
+        .drilling("mrqx_extra_pack:raw_uranium", '{"text": "铀矿"}', 2, 400)
         .alwaysInfinite()
         .stress(1024)
         .biomeWhitelist('minecraft:is_overworld')
-        .id('kubejs:drilling_raw_uranium')
+        .id('mrqx_extra_pack:drilling_raw_uranium')
 
     // 铀
     event.recipes.createMixing('mrqx_extra_pack:uranium', [
@@ -802,6 +802,19 @@ ServerEvents.recipes(event => {
             return result
         })
         .id('mrqx_advanced_eyeglass_marenol_manual_only')
+    event.recipes.kubejs.shapeless(Item.of('mrqx_extra_pack:advanced_eyeglass', '{mrqxAAEGDamageNumber:1b}'), [
+        'mrqx_extra_pack:advanced_eyeglass',
+        'dummmmmmy:target_dummy',
+    ])
+        .modifyResult((grid, result_) => {
+            let result = grid.find(Item.of("mrqx_extra_pack:advanced_eyeglass"))
+            if (!result.getNbt()) {
+                result.setNbt({})
+            }
+            result.getNbt().putBoolean('mrqxAAEGDamageNumber', true)
+            return result
+        })
+        .id('mrqx_advanced_eyeglass_damage_number_manual_only')
 
     // 灵魂之翼
     registerCustomRecipe(new mrqxGoetyRitualRecipe('sky', [
@@ -1790,6 +1803,32 @@ ServerEvents.recipes(event => {
         Item.of('2x minecraft:gold_ingot').withChance(Math.random()),
         Item.of('2x minecraft:coal').withChance(Math.random()),
     ], 'mrqx_extra_pack:magic_artificial_mineral_cluster').processingTime(Math.floor(Math.random() * 1000))
+
+    // 异化人造矿簇
+    /** @type {Special.Item[]} */
+    let anomalyList = [
+        'minecraft:netherite_scrap', 'minecraft:coal', 'minecraft:gold_ingot', 'minecraft:iron_ingot', 'minecraft:quartz', 'mrqx_extra_pack:uranium',
+        'irons_spellbooks:arcane_salvage', 'minecraft:diamond', 'minecraft:emerald', 'minecraft:copper_ingot', 'minecraft:obsidian', 'iceandfire:silver_ingot',
+        'minecraft:amethyst_shard', 'create:zinc_ingot', 'goety:jade', 'biomancy:gem_fragments', 'biomancy:mineral_fragment', 'hexerei:selenite_shard',
+        'art_of_forging:vobrite_crystal', 'tetra:geode', 'tetra:pristine_diamond', 'tetra:pristine_emerald', 'tetra:pristine_lapis', 'lightmanscurrency:coin_chocolate_copper'
+    ]
+    mrqxShuffleArray(anomalyList)
+    let crushingList = []
+    anomalyList.forEach(item => {
+        crushingList.push(Item.of(item).withChance(Math.random() / 5))
+    })
+    event.recipes.create.crushing(crushingList, 'mrqx_extra_pack:anomaly_artificial_mineral_cluster').processingTime(Math.floor(Math.random() * 1000))
+    event.recipes.minecraft.smelting(anomalyList[0], 'mrqx_extra_pack:anomaly_artificial_mineral_cluster')
+    event.recipes.minecraft.blasting(anomalyList[1], 'mrqx_extra_pack:anomaly_artificial_mineral_cluster')
+    event.recipes.minecraft.campfire_cooking(anomalyList[2], 'mrqx_extra_pack:anomaly_artificial_mineral_cluster')
+    event.recipes.minecraft.smoking(anomalyList[3], 'mrqx_extra_pack:anomaly_artificial_mineral_cluster')
+    event.recipes.minecraft.stonecutting(anomalyList[4], 'mrqx_extra_pack:anomaly_artificial_mineral_cluster')
+    event.recipes.minecraft.crafting_shapeless(anomalyList[5], ['mrqx_extra_pack:anomaly_artificial_mineral_cluster'])
+    event.recipes.minecraft.smithing(anomalyList[6], 'mrqx_extra_pack:anomaly_artificial_mineral_cluster', 'mrqx_extra_pack:anomaly_artificial_mineral_cluster')
+    registerCustomRecipe(new mrqxBioForgingRecipe([Item.of('mrqx_extra_pack:anomaly_artificial_mineral_cluster')], Item.of(anomalyList[7])))
+    registerCustomRecipe(new mrqxCreateAdditionCharging(Item.of('mrqx_extra_pack:anomaly_artificial_mineral_cluster'), Item.of(anomalyList[8])))
+    registerCustomRecipe(new mrqxDigestingRecipe(Item.of('mrqx_extra_pack:anomaly_artificial_mineral_cluster'), Item.of(anomalyList[9])))
+    registerCustomRecipe(new mrqxCataclysmWeaponFusion(Item.of('mrqx_extra_pack:anomaly_artificial_mineral_cluster'), Item.of('mrqx_extra_pack:anomaly_artificial_mineral_cluster'), Item.of(anomalyList[10])))
 
     // 薄荷奶茶
     registerCustomRecipe(new mrqxMixingBowlRecipe(

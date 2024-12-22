@@ -15,7 +15,11 @@ function mrqxGetComputingPower(player) {
     if (typeMap.has('kubejs:mrqx_cpu')) {
         count += typeMap.get('kubejs:mrqx_cpu').length
         typeMap.get('kubejs:mrqx_cpu').forEach(organ => {
-            if (!onlySet.has(organ.id) && organ.id in mrqxComputingPowerStrategies) {
+            if (!onlySet.has(organ.id) && organ.id in mrqxComputingPowerOnlyStrategies) {
+                onlySet.add(organ.id)
+                count += mrqxComputingPowerOnlyStrategies[organ.id](player, organ)
+            }
+            else if (organ.id in mrqxComputingPowerStrategies) {
                 onlySet.add(organ.id)
                 count += mrqxComputingPowerStrategies[organ.id](player, organ)
             }
@@ -34,9 +38,17 @@ const mrqxComputingPowerStrategies = {
     'mrqx_extra_pack:cpu': function (player, organ) {
         let typeMap = getPlayerChestCavityTypeMap(player)
         if (typeMap.has('kubejs:mrqx_cpu')) {
-            return getPlayerChestCavityTypeMap(player).get('kubejs:mrqx_cpu').length * 2
+            return getPlayerChestCavityTypeMap(player).get('kubejs:mrqx_cpu').length
         }
     },
+
+}
+/**
+ * 获取唯一算力处理策略
+ * @constant
+ * @type {Object<string,function(Internal.ServerPlayer,organ):number>}
+ */
+const mrqxComputingPowerOnlyStrategies = {
 
     // 天体“占星”处理器
     'mrqx_extra_pack:celestial_body_astrology_cpu': function (player, organ) {
@@ -126,6 +138,22 @@ const mrqxComputingPowerStrategies = {
         let typeMap = getPlayerChestCavityTypeMap(player)
         if (typeMap.has('kubejs:mrqx_steam')) {
             return getPlayerChestCavityTypeMap(player).get('kubejs:mrqx_steam').length
+        }
+    },
+
+    // 幽匿“感染”处理器
+    'mrqx_extra_pack:sculk_infection_cpu': function (player, organ) {
+        let typeMap = getPlayerChestCavityTypeMap(player)
+        if (typeMap.has('kubejs:mrqx_sculk')) {
+            return getPlayerChestCavityTypeMap(player).get('kubejs:mrqx_sculk').length
+        }
+    },
+
+    // 反物质“逆向”处理器
+    'mrqx_extra_pack:antimatter_reverse_cpu': function (player, organ) {
+        let typeMap = getPlayerChestCavityTypeMap(player)
+        if (typeMap.has('kubejs:mrqx_antimatter')) {
+            return getPlayerChestCavityTypeMap(player).get('kubejs:mrqx_antimatter').length
         }
     },
 

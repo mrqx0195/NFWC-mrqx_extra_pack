@@ -339,6 +339,7 @@ StartupEvents.registry('item', event => {
         // 处理器
         registerOrgan(new Organ('mrqx_extra_pack:cpu')
             .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.cpu.1" })])
+            .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.cpu.2" })])
             .addScore('nerves', 3)
             .build())
             .texture('mrqx_extra_pack:item/organs/cpu/cpu')
@@ -573,6 +574,36 @@ StartupEvents.registry('item', event => {
             .tag('kubejs:mrqx_cpu')
             .tag('kubejs:mrqx_steam')
             .tag('kubejs:active_only')
+
+        // // 幽匿“感染”处理器
+        // registerOrgan(new Organ('mrqx_extra_pack:sculk_infection_cpu')
+        //     .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.sculk_infection_cpu.1" })])
+        //     .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.sculk_infection_cpu.2" })])
+        //     .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.sculk_infection_cpu.3" })])
+        //     .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.sculk_infection_cpu.4" })])
+        //     .addScore('nerves', 1.5)
+        //     .build())
+        //     .texture('mrqx_extra_pack:item/organs/cpu/sculk_infection_cpu')
+        //     .tag('itemborders:gold')
+        //     .tag('kubejs:machine')
+        //     .tag('kubejs:mrqx_cpu')
+        //     .tag('kubejs:mrqx_sculk')
+        //     .tag('kubejs:active_only')
+
+        // // 反物质“逆向”处理器
+        // registerOrgan(new Organ('mrqx_extra_pack:antimatter_reverse_cpu')
+        //     .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.antimatter_reverse_cpu.1" })])
+        //     .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.antimatter_reverse_cpu.2" })])
+        //     .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.antimatter_reverse_cpu.3" })])
+        //     .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.antimatter_reverse_cpu.4" })])
+        //     .addScore('nerves', 1.5)
+        //     .build())
+        //     .texture('mrqx_extra_pack:item/organs/cpu/antimatter_reverse_cpu')
+        //     .tag('itemborders:gold')
+        //     .tag('kubejs:machine')
+        //     .tag('kubejs:mrqx_cpu')
+        //     .tag('kubejs:mrqx_antimatter')
+        //     .tag('kubejs:active_only')
 
         // “降神”处理器
         registerOrgan(new Organ('mrqx_extra_pack:seance_cpu')
@@ -1767,13 +1798,38 @@ StartupEvents.registry('item', event => {
         .tag('kubejs:mrqx_change_target_only')
         .tag('kubejs:mrqx_obtain_effect_only')
 
+    // 富集矿簇析出膜
+    // registerOrgan(new Organ('mrqx_extra_pack:enriched_ore_cluster_precipitation_membrane')
+    //     .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.enriched_ore_cluster_precipitation_membrane.1" })])
+    //     .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.enriched_ore_cluster_precipitation_membrane.2" })])
+    //     .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.enriched_ore_cluster_precipitation_membrane.3" })])
+    //     .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.enriched_ore_cluster_precipitation_membrane.4" })])
+    //     .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.enriched_ore_cluster_precipitation_membrane.5" })])
+    //     .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.enriched_ore_cluster_precipitation_membrane.6" })])
+    //     .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.enriched_ore_cluster_precipitation_membrane.7" })])
+    //     .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.enriched_ore_cluster_precipitation_membrane.8" })])
+    //     .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.enriched_ore_cluster_precipitation_membrane.9" })])
+    //     .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.enriched_ore_cluster_precipitation_membrane.10" })])
+    //     .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.enriched_ore_cluster_precipitation_membrane.11" })])
+    //     .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.enriched_ore_cluster_precipitation_membrane.12" })])
+    //     .addScore('health', 1)
+    //     .addScore('nerves', 1.5)
+    //     .addScore('breath_recovery', 1.5)
+    //     .build())
+    //     .texture('mrqx_extra_pack:item/organs/enriched_ore_cluster_precipitation_membrane')
+    //     .tag('kubejs:lung')
+    //     .tag('kubejs:machine')
+    //     .tag('kubejs:resource')
+    //     .tag('kubejs:active_only')
+    //     .tag('kubejs:break_only')
+
     {// 装备
         {// 奥秘
             // 觉知巨镰
             event.create('mrqx_extra_pack:sentient_greatscythe', 'sword')
                 .texture('mrqx_extra_pack:item/sentient_greatscythe')
                 .maxStackSize(1)
-                .maxDamage(999)
+                .maxDamage(1024)
                 .tag('itemborders:diamond')
                 .attackDamageBaseline(20)
                 .attackDamageBonus(29)
@@ -1966,6 +2022,9 @@ StartupEvents.registry('item', event => {
 
         // 魔化人造矿簇
         event.create('mrqx_extra_pack:magic_artificial_mineral_cluster').texture('mrqx_extra_pack:item/magic_artificial_mineral_cluster')
+
+        // 异化人造矿簇
+        event.create('mrqx_extra_pack:anomaly_artificial_mineral_cluster').texture('mrqx_extra_pack:item/anomaly_artificial_mineral_cluster')
 
         // 生铁锭
         // event.create('mrqx_extra_pack:pig_iron_ingot').texture('mrqx_extra_pack:item/pig_iron_ingot')

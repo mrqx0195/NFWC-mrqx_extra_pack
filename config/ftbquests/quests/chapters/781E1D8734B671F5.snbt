@@ -1,0 +1,70 @@
+{
+	default_hide_dependency_lines: true
+	default_quest_shape: ""
+	filename: "781E1D8734B671F5"
+	group: "16675FCA19680C36"
+	icon: {
+		Count: 1b
+		id: "mrqx_extra_pack:adventurers_badge"
+		tag: { }
+	}
+	id: "781E1D8734B671F5"
+	order_index: 1
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["0D93EB9A703A8946"]
+			description: [
+				"作为一个学生，在百忙之中抽出时间来制作这份拓展包是十分不易的。"
+				""
+				"当然，墨染不会去详述这其中的不易——因为没有意义。"
+				""
+				"但如果你有余力……可以支持一下墨染吗？"
+				""
+				"{\"text\":\"点击前往引力圈（国内赞助）\",\"color\":\"yellow\",\"underlined\":\"true\",\"clickEvent\":{\"action\":\"open_url\",\"value\":\"https://app.unifans.io/c/mrqx0195\"}}"
+				"{\"text\":\"点击前往Patreon（海外赞助）\",\"color\":\"yellow\",\"underlined\":\"true\",\"clickEvent\":{\"action\":\"open_url\",\"value\":\"https://www.patreon.com/c/mrqx0195\"}}"
+				""
+				"&e当然，在支持墨染之前，最好还是先支持一下野营组。没有脆骨症，也就没有本拓展包。&r"
+				"{\"text\":\"点击前往野营组的爱发电\",\"color\":\"yellow\",\"underlined\":\"true\",\"clickEvent\":{\"action\":\"open_url\",\"value\":\"https://afdian.com/a/yorunina\"}}"
+			]
+			icon: {
+				Count: 1b
+				id: "mrqx_extra_pack:mrqx0195"
+				tag: { }
+			}
+			id: "6BC9F6B3A988D413"
+			rewards: [{
+				id: "725FA18CBC2094D4"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:mrqx0195"
+					tag: { }
+				}
+				type: "item"
+			}]
+			subtitle: "饿饿，饭饭"
+			tasks: [{
+				id: "58DE6BFCE53261E5"
+				title: "支持墨染"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "10388E5D88508947"
+			tasks: [{
+				id: "69B2BC2CE321E01B"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:ancient_lich_heart"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -1.5d
+			y: 3.0d
+		}
+	]
+	title: "赞助者名单"
+}

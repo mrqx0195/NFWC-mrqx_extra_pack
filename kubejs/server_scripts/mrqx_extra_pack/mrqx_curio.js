@@ -485,32 +485,6 @@ function mrqxShieldGeneratorBear(event, item) {
     }
 }
 
-// /**
-//  * @param {Internal.ItemStack} item
-//  * @param {Internal.SlotContext} ctx 
-//  */
-// global.mrqxInfinityForceContainerTick = (item, ctx) => {
-//     /**@type {Internal.ServerPlayer} */
-//     let player = ctx.entity()
-//     if (!player || player.level.isClientSide()) return
-//     if (!player.isPlayer()) return
-//     let inventory = player.inventory
-//     let forces = inventory.getAllItems().filter(item => (item.id == 'kubejs:infinity_force'))
-//     if (forces.length == 0) return
-//     if (!item.getNbt()) item.setNbt({})
-//     let count = item.nbt.getLong('mrqxInfinityForceContainerCount') ?? 0
-//     forces.forEach(force => {
-//         if (force.getNbt() && force.nbt?.forgeTimes) {
-//             count += 2 ** force.nbt?.forgeTimes
-//         }
-//         else {
-//             count += 1
-//         }
-//         force.shrink(1)
-//     })
-//     item.nbt.putLong('mrqxInfinityForceContainerCount', count)
-// }
-
 /**
  * @param {Internal.ItemStack} item
  * @param {Internal.SlotContext} ctx 
@@ -562,4 +536,28 @@ global.mrqxInfinityForceContainerTick = (item, ctx) => {
         }
     }
     item.nbt.put('mrqxInfinityForceContainerCountList', countList)
+}
+
+/**
+ * @param {Internal.LivingDamageEvent} event
+ */
+function mrqxAdvancedArchivistEyeGlassDamage(event) {
+    let entity = event.entity
+    if (entity.type == 'dummmmmmy:target_dummy') return
+    entity.level.spawnParticles('dummmmmmy:number', true,
+        entity.x, entity.eyeY + 1, entity.z,
+        event.amount, $mrqxDamageType.get(event.source, false).ordinal(), Math.floor(Math.random() * 5), 0, 1)
+}
+
+/**
+ * @param {Internal.LivingDamageEvent} event
+ */
+function mrqxAdvancedArchivistEyeGlassBear(event) {
+    let player = event.entity
+    let rayX = Math.cos(-player.xRot / 180 * JavaMath.PI) * Math.sin(-player.yRot / 180 * JavaMath.PI)
+    let rayY = Math.sin(-player.xRot / 180 * JavaMath.PI)
+    let rayZ = Math.cos(-player.xRot / 180 * JavaMath.PI) * Math.cos(-player.yRot / 180 * JavaMath.PI)
+    player.level.spawnParticles('dummmmmmy:number', true,
+        player.x + rayX, player.y + rayY, player.z + rayZ,
+        event.amount, $mrqxDamageType.get(event.source, false).ordinal(), Math.floor(Math.random() * 5), 0, 1)
 }

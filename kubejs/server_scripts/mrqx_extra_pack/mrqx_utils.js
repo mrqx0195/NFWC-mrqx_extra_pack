@@ -1,6 +1,8 @@
 // priority: 99
 const $mrqxArrayList = Java.loadClass('java.util.ArrayList')
 const $mrqxSculkTaintEffect = Java.loadClass('se.mickelus.tetra.effect.SculkTaintEffect')
+const $mrqxTamableAnimal = Java.loadClass('net.minecraft.world.entity.TamableAnimal')
+const $mrqxDamageType = Java.loadClass('net.mehvahdjukaar.dummmmmmy.common.DamageType')
 
 const mrqxPlayerLoginTime = new Map()
 /**
@@ -93,6 +95,7 @@ function mrqxCheckAdvancedArchivistEyeGlass(item) {
     list.push(item.getNbt().getBoolean('mrqxAAEGNuclear') ?? false)
     list.push(item.getNbt().getBoolean('mrqxAAEGElement') ?? false)
     list.push(item.getNbt().getBoolean('mrqxAAEGSteam') ?? false)
+    list.push(item.getNbt().getBoolean('mrqxAAEGDamageNumber') ?? false)
     return list
 }
 

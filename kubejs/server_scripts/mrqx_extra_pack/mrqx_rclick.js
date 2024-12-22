@@ -132,7 +132,7 @@ const mrqxOrganRightClickedOnlyStrategies = {
 				event.player.removeEffect('mrqx_extra_pack:steam_power')
 			}
 			if (itemMap.has('mrqx_extra_pack:steam_engine')) {
-				amplifier = Math.min(amplifier, typeMap.get('mrqx_extra_pack:mrqx_steam').length * 1 + 1)
+				amplifier = Math.min(amplifier, typeMap.get('kubejs:mrqx_steam').length * 1 + 1)
 				duration = Math.min(duration, amplifier * 2 * 20 * 60)
 				player.level.playSound(player, player.blockPosition(), 'minecraft:entity.player.splash', 'players', 1, 1)
 				player.potionEffects.add('mrqx_extra_pack:steam_power', duration, amplifier, false, false)
@@ -150,7 +150,7 @@ const mrqxOrganRightClickedOnlyStrategies = {
 				event.player.removeEffect('mrqx_extra_pack:steam_power')
 			}
 			if (itemMap.has('mrqx_extra_pack:steam_engine')) {
-				amplifier = Math.min(amplifier, typeMap.get('mrqx_extra_pack:mrqx_steam').length * 1 + 1)
+				amplifier = Math.min(amplifier, typeMap.get('kubejs:mrqx_steam').length * 1 + 1)
 				duration = Math.min(duration, amplifier * 2 * 20 * 60)
 				player.level.playSound(player, player.blockPosition(), 'minecraft:entity.player.splash', 'players', 1, 1)
 				player.potionEffects.add('mrqx_extra_pack:steam_power', duration, amplifier, false, false)
@@ -177,7 +177,7 @@ const mrqxOrganRightClickedOnlyStrategies = {
 				event.player.removeEffect('mrqx_extra_pack:steam_power')
 			}
 			if (itemMap.has('mrqx_extra_pack:steam_engine')) {
-				amplifier = Math.min(amplifier, typeMap.get('mrqx_extra_pack:mrqx_steam').length * 2 + 2)
+				amplifier = Math.min(amplifier, typeMap.get('kubejs:mrqx_steam').length * 2 + 2)
 				duration = Math.min(duration, amplifier * 2 * 20 * 60)
 				player.level.playSound(player, player.blockPosition(), 'minecraft:entity.player.splash.high_speed', 'players', 1, 1)
 				player.potionEffects.add('mrqx_extra_pack:steam_power', duration, amplifier, false, false)

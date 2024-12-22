@@ -383,10 +383,9 @@ const mrqxOrganPlayerTickOnlyStrategies = {
         if (player.persistentData.organActive != 1) {
             return
         }
-        /** @type {Array<Internal.Animal>} */
         let entityList = getLivingWithinRadius(player.getLevel(), new Vec3(player.x, player.y, player.z), 16)
         entityList.forEach(entity => {
-            if (entity.isAnimal() && !mrqxIsEmpty(entity.nbt.Age)) {
+            if (entity instanceof $mrqxTamableAnimal && !mrqxIsEmpty(entity.nbt.Age)) {
                 if (entity.nbt.Age >= 0) {
                     entity.setAge(0)
                     entity.setInLove(player)

@@ -274,7 +274,7 @@ const mrqxOrganActiveOnlyStrategies = {
 
     // 指令施法核心
     'mrqx_extra_pack:command_spell_core': function (player, organ, attributeMap) {
-        mrqxAttributeMapValueAddition(attributeMap, global.mrqx_SPELL_POWER_MULTI_BASE, 0.5)
+        mrqxAttributeMapValueAddition(attributeMap, global.mrqx_SPELL_POWER_MULTI_BASE, 1)
     },
 
     // 金酒之杯
@@ -323,23 +323,23 @@ const mrqxOrganActiveOnlyStrategies = {
     // 国王的护戒
     'mrqx_extra_pack:kings_fellowship': function (player, organ, attributeMap) {
         if ((player.getHealth() / player.getMaxHealth()) > 0.5) {
-            if (player.getAbsorptionAmount() >= player.getMaxHealth()) {
-                return
+            if (player.getAbsorptionAmount() < player.getMaxHealth()) {
+                let amount = Math.min(player.getAbsorptionAmount() + (player.getHealth() - player.getMaxHealth() / 2), player.getMaxHealth())
+                player.setAbsorptionAmount(amount)
             }
-            let amount = Math.min(player.getAbsorptionAmount() + (player.getHealth() - player.getMaxHealth() / 2), player.getMaxHealth())
-            player.setAbsorptionAmount(amount)
             player.setHealth(player.getMaxHealth() / 2)
         }
     },
 
     // 国王的铠甲
     'mrqx_extra_pack:kings_armor': function (player, organ, attributeMap) {
-        if (player.getAbsorptionAmount() >= player.getMaxHealth()) {
-            return
+        if (player.getHealth() > 1) {
+            if (player.getAbsorptionAmount() < player.getMaxHealth()) {
+                let amount = Math.min(player.getAbsorptionAmount() + player.getHealth() - 1, player.getMaxHealth())
+                player.setAbsorptionAmount(amount)
+            }
+            player.setHealth(1)
         }
-        let amount = Math.min(player.getAbsorptionAmount() + player.getHealth() - 1, player.getMaxHealth())
-        player.setAbsorptionAmount(amount)
-        player.setHealth(1)
     },
 
     // 远古巫妖之心
@@ -429,6 +429,34 @@ const mrqxOrganActiveOnlyStrategies = {
         itemList = itemList.concat(mrqxMultiplyArrayLength([organ], Math.floor(mrqxGetComputingPower(player))))
         itemMap.set('kubejs:revolution_gear', itemList)
         playerChestCavityItemMap.set(uuid, itemMap)
+
+        let typeMap = getPlayerChestCavityTypeMap(player)
+        typeMap.delete('kubejs:machine')
+        for (let i = 0; i < chestInventory.length; i++) {
+            let organ = chestInventory[i]
+            let itemId = String(organ.getString('id'))
+            let tagList = Item.of(itemId).getTags().toArray()
+            for (let i = 0; i < tagList.length; i++) {
+                let tag = tagList[i].location()
+                if (tag != 'kubejs:machine') {
+                    continue
+                }
+                tag = String(tag)
+                if (typeMap.has(tag)) {
+                    let itemList = typeMap.get(tag)
+                    itemList.push(organ)
+                    typeMap.set(tag, itemList)
+                } else {
+                    typeMap.set(tag, [organ])
+                }
+            }
+        }
+        itemList = getPlayerChestCavityTypeMap(player).get('kubejs:machine') ?? []
+        typeMap.set('kubejs:machine', itemList)
+        playerChestCavityTypeMap.set(uuid, typeMap)
+        itemList = itemList.concat(mrqxMultiplyArrayLength([organ], Math.floor(mrqxGetComputingPower(player))))
+        typeMap.set('kubejs:machine', itemList)
+        playerChestCavityTypeMap.set(uuid, typeMap)
     },
 
     // ‌机械“会心一击”处理器
@@ -556,7 +584,8 @@ const mrqxOrganActiveOnlyStrategies = {
                 }
             })
         }
-        for (let i = 0; i < Math.floor(mrqxGetComputingPower(player) / 3); i++) {
+        let count = Math.floor(mrqxGetComputingPower(player) / 3)
+        for (let i = 0; i < count; i++) {
             let randomOrgan = randomGet(list)
             organActiveStrategies[randomOrgan](player, map[randomOrgan], attributeMap)
         }
@@ -625,6 +654,72 @@ const mrqxOrganActiveOnlyStrategies = {
         playerChestCavityTypeMap.set(uuid, typeMap)
         itemList = itemList.concat(mrqxMultiplyArrayLength([organ], Math.floor(mrqxGetComputingPower(player))))
         typeMap.set('kubejs:mrqx_steam', itemList)
+        playerChestCavityTypeMap.set(uuid, typeMap)
+    },
+
+    // 幽匿“感染”处理器
+    'mrqx_extra_pack:sculk_infection_cpu': function (player, organ, attributeMap) {
+        let chestInventory = player.getChestCavityInstance().inventory.tags
+        let typeMap = getPlayerChestCavityTypeMap(player)
+        typeMap.delete('kubejs:mrqx_sculk')
+        for (let i = 0; i < chestInventory.length; i++) {
+            let organ = chestInventory[i]
+            let itemId = String(organ.getString('id'))
+            let tagList = Item.of(itemId).getTags().toArray()
+            for (let i = 0; i < tagList.length; i++) {
+                let tag = tagList[i].location()
+                if (tag != 'kubejs:mrqx_sculk') {
+                    continue
+                }
+                tag = String(tag)
+                if (typeMap.has(tag)) {
+                    let itemList = typeMap.get(tag)
+                    itemList.push(organ)
+                    typeMap.set(tag, itemList)
+                } else {
+                    typeMap.set(tag, [organ])
+                }
+            }
+        }
+        let itemList = getPlayerChestCavityTypeMap(player).get('kubejs:mrqx_sculk') ?? []
+        let uuid = String(player.getUuid())
+        typeMap.set('kubejs:mrqx_sculk', itemList)
+        playerChestCavityTypeMap.set(uuid, typeMap)
+        itemList = itemList.concat(mrqxMultiplyArrayLength([organ], Math.floor(mrqxGetComputingPower(player))))
+        typeMap.set('kubejs:mrqx_sculk', itemList)
+        playerChestCavityTypeMap.set(uuid, typeMap)
+    },
+
+    // 反物质“逆向”处理器
+    'mrqx_extra_pack:antimatter_reverse_cpu': function (player, organ, attributeMap) {
+        let chestInventory = player.getChestCavityInstance().inventory.tags
+        let typeMap = getPlayerChestCavityTypeMap(player)
+        typeMap.delete('kubejs:mrqx_antimatter')
+        for (let i = 0; i < chestInventory.length; i++) {
+            let organ = chestInventory[i]
+            let itemId = String(organ.getString('id'))
+            let tagList = Item.of(itemId).getTags().toArray()
+            for (let i = 0; i < tagList.length; i++) {
+                let tag = tagList[i].location()
+                if (tag != 'kubejs:mrqx_antimatter') {
+                    continue
+                }
+                tag = String(tag)
+                if (typeMap.has(tag)) {
+                    let itemList = typeMap.get(tag)
+                    itemList.push(organ)
+                    typeMap.set(tag, itemList)
+                } else {
+                    typeMap.set(tag, [organ])
+                }
+            }
+        }
+        let itemList = getPlayerChestCavityTypeMap(player).get('kubejs:mrqx_antimatter') ?? []
+        let uuid = String(player.getUuid())
+        typeMap.set('kubejs:mrqx_antimatter', itemList)
+        playerChestCavityTypeMap.set(uuid, typeMap)
+        itemList = itemList.concat(mrqxMultiplyArrayLength([organ], Math.floor(mrqxGetComputingPower(player))))
+        typeMap.set('kubejs:mrqx_antimatter', itemList)
         playerChestCavityTypeMap.set(uuid, typeMap)
     },
 
@@ -755,6 +850,24 @@ const mrqxOrganActiveOnlyStrategies = {
     'mrqx_extra_pack:energy_core': function (player, organ, attributeMap) {
         let maxCount = player.persistentData.getInt(resourceCountMax) ?? defaultResourceMax
         player.persistentData.putInt(resourceCountMax, maxCount + 2100000000)
+    },
+
+    // 富集矿簇析出膜
+    'mrqx_extra_pack:enriched_ore_cluster_precipitation_membrane': function (player, organ, attributeMap) {
+        let itemMap = getPlayerChestCavityItemMap(player)
+        if (itemMap.has('kubejs:ore_lung')) {
+            let maxCount = player.persistentData.getInt(resourceCountMax) ?? defaultResourceMax
+            player.persistentData.putInt(resourceCountMax, maxCount + itemMap.get('kubejs:ore_lung').length * 100)
+            let typeMap = getPlayerChestCavityTypeMap(player)
+            let list = []
+            typeMap.get('kubejs:break_only').forEach(organ => {
+                if (organ.id != 'kubejs:ore_lung') {
+                    list.push(organ)
+                }
+            })
+            typeMap.set('kubejs:break_only', list)
+            playerChestCavityTypeMap.set(player.getUuid(), typeMap)
+        }
     },
 }
 

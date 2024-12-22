@@ -42,6 +42,9 @@ ItemEvents.tooltip((tooltip) => {
             if (item.nbt?.mrqxAAEGElement) {
                 text.add([Text.gold({ "translate": "mrqx_extra_pack.tooltips.advanced_eyeglass.a" })])
             }
+            if (item.nbt?.mrqxAAEGDamageNumber) {
+                text.add([Text.gold({ "translate": "mrqx_extra_pack.tooltips.advanced_eyeglass.b" })])
+            }
         }
     })
 
@@ -78,6 +81,10 @@ ItemEvents.tooltip((tooltip) => {
 
     tooltip.addAdvanced('mrqx_extra_pack:magic_artificial_mineral_cluster', (item, advanced, text) => {
         addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.magic_artificial_mineral_cluster.1" })]], 1)
+    })
+
+    tooltip.addAdvanced('mrqx_extra_pack:anomaly_artificial_mineral_cluster', (item, advanced, text) => {
+        addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.anomaly_artificial_mineral_cluster.1" })]], 1)
     })
 
     tooltip.addAdvanced('mrqx_extra_pack:mystery_flesh_and_blood', (item, advanced, text) => {

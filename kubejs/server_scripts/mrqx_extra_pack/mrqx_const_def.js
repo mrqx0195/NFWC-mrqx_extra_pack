@@ -1,4 +1,4 @@
-// priority: 100
+// priority: -1
 
 const mrqxDivinePenAttriBute = {
     'mrqx_extra_pack:lung_paper': [
@@ -198,3 +198,11 @@ const mrqxVanillaDamageSource = [
     "arrow",
     "explosion",
 ]
+
+const mrqxCoeVeinList = [
+    'mrqx_extra_pack:drilling_raw_uranium'
+]
+
+mrqxCoeVeinList.forEach(vein => {
+    coeVeinList.push(vein)
+})

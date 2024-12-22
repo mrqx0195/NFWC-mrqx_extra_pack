@@ -1,5 +1,5 @@
 {
-	default_hide_dependency_lines: false
+	default_hide_dependency_lines: true
 	default_quest_shape: ""
 	filename: "15E9969471EB1061"
 	group: "16675FCA19680C36"
@@ -155,7 +155,7 @@
 			y: 8.5d
 		}
 	]
-	order_index: 1
+	order_index: 2
 	quest_links: [ ]
 	quests: [
 		{
@@ -168,6 +168,11 @@
 				"不过，获取深海器官需要通过一个特殊且困难的传送门挑战：&1深蓝之树之影&r，这意味着你需要在已拥有较高战斗能力的情况下才能获取&1深海&r器官。"
 			]
 			id: "3022D0E12A9D10CF"
+			rewards: [{
+				id: "16ABA796C591EFC5"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
 			shape: "rsquare"
 			subtitle: "纯粹的强大"
 			tasks: [{
@@ -189,7 +194,6 @@
 			dependencies: ["3022D0E12A9D10CF"]
 			dependency_requirement: "all_started"
 			description: ["&1深海&r器官之一，能够提供多项数值加成。"]
-			hide_dependency_lines: true
 			id: "64958CE7A6D5ABAC"
 			rewards: [{
 				id: "18905E64CF04ABAB"
@@ -213,7 +217,6 @@
 			dependencies: ["3022D0E12A9D10CF"]
 			dependency_requirement: "all_started"
 			description: ["&1深海&r器官之一，能够在造成伤害时额外对附近的生物造成伤害。"]
-			hide_dependency_lines: true
 			id: "1F5C330BBD8BB7AB"
 			rewards: [{
 				id: "22AF2B2AFC888B62"
@@ -237,7 +240,6 @@
 			dependencies: ["3022D0E12A9D10CF"]
 			dependency_requirement: "all_started"
 			description: ["&1深海&r器官之一，能够在造成伤害时额外对附近的生物造成伤害。"]
-			hide_dependency_lines: true
 			id: "7FC73ADAD4E679DB"
 			rewards: [{
 				id: "1881B8453464DA7D"
@@ -261,7 +263,6 @@
 			dependencies: ["3022D0E12A9D10CF"]
 			dependency_requirement: "all_started"
 			description: ["&1深海&r器官之一，能够提供一定的法力回复。"]
-			hide_dependency_lines: true
 			id: "49AC80B0BFFEF368"
 			rewards: [{
 				id: "5C44D97C6E4E0174"
@@ -285,7 +286,6 @@
 			dependencies: ["3022D0E12A9D10CF"]
 			dependency_requirement: "all_started"
 			description: ["&1深海&r器官之一，能够提供一定的攻击力加成。"]
-			hide_dependency_lines: true
 			id: "513BCF0D5129D0B1"
 			rewards: [{
 				id: "1CB544581824B4A2"
@@ -309,7 +309,6 @@
 			dependencies: ["3022D0E12A9D10CF"]
 			dependency_requirement: "all_started"
 			description: ["&1深海&r器官之一，能够提供一定的攻击力加成及生命值回复，并使你在一定程度上免于死亡。"]
-			hide_dependency_lines: true
 			id: "3BEA5737CB1625A0"
 			rewards: [{
 				id: "0331D11F95D8CA60"
@@ -333,7 +332,6 @@
 			dependencies: ["3022D0E12A9D10CF"]
 			dependency_requirement: "all_started"
 			description: ["&1深海&r器官之一，能够提供一定的生命值加成，并提供额外伤害。"]
-			hide_dependency_lines: true
 			id: "4617D9686C712FEA"
 			rewards: [{
 				id: "68781793612178C3"
@@ -357,7 +355,6 @@
 			dependencies: ["3022D0E12A9D10CF"]
 			dependency_requirement: "all_started"
 			description: ["&1深海&r器官之一，能够在受到伤害时回复生命值。"]
-			hide_dependency_lines: true
 			id: "227379B9B4BBD7E9"
 			rewards: [{
 				id: "6346FF34138366D8"
@@ -381,7 +378,6 @@
 			dependencies: ["3022D0E12A9D10CF"]
 			dependency_requirement: "all_started"
 			description: ["&1深海&r器官之一，能够在造成伤害时根据饥饿值和饱和度额外造成伤害。"]
-			hide_dependency_lines: true
 			id: "2D12FAD303B1EF77"
 			rewards: [{
 				id: "231251F9C41CCB90"
@@ -405,7 +401,6 @@
 			dependencies: ["3022D0E12A9D10CF"]
 			dependency_requirement: "all_started"
 			description: ["&1深海&r器官之一，能够提供一定的神经效率加成。"]
-			hide_dependency_lines: true
 			id: "6BDC36255EEF7EE6"
 			rewards: [{
 				id: "5DA364C62DD5E7C0"
@@ -429,7 +424,6 @@
 			dependencies: ["3022D0E12A9D10CF"]
 			dependency_requirement: "all_started"
 			description: ["&1深海&r器官之一，能够对比你弱小的生物造成额外伤害。"]
-			hide_dependency_lines: true
 			id: "00D7546F8F696D32"
 			rewards: [{
 				id: "0D581F9E5D730207"
@@ -453,7 +447,6 @@
 			dependencies: ["3022D0E12A9D10CF"]
 			dependency_requirement: "all_started"
 			description: ["&1深海&r器官之一，能够将部分非&1深海&r器官视作&1深海&r器官，并在造成伤害时消耗法力值额外造成伤害。"]
-			hide_dependency_lines: true
 			id: "574D8A8BF1CBF779"
 			rewards: [{
 				id: "6DAE7E879D3ECC28"
@@ -481,6 +474,11 @@
 				"其原材料需要从锻造遗迹中获取，这使得其成本较为高昂——当然，威力也是强大的。"
 			]
 			id: "54E36F797B14701F"
+			rewards: [{
+				id: "27DCA88D5ECD1D28"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
 			shape: "rsquare"
 			subtitle: "从历史中来"
 			tasks: [{
@@ -494,13 +492,18 @@
 		}
 		{
 			dependencies: ["4A11AE0ADF7730AE"]
-			hide_dependency_lines: true
+			description: [
+				"纸器官的核心，能够对手持的纸器官进行书写。"
+				""
+				"&e注意：最终书写出的数值取决于你当前的胸腔属性与副手手持的墨水等级。&r"
+			]
 			id: "4057C64734238A68"
 			rewards: [{
 				id: "5F98F1E1CA269902"
 				item: "lightmanscurrency:coin_gold"
 				type: "item"
 			}]
+			subtitle: "造物主以此书写万物"
 			tasks: [{
 				id: "5D3BA9A7BCB04A36"
 				item: {
@@ -515,25 +518,45 @@
 		}
 		{
 			dependencies: ["0E165E778629BB61"]
+			description: ["纸器官是一类可以自定义数值的器官——只需要一件&b神之笔&r即可实现。"]
 			id: "4A11AE0ADF7730AE"
+			rewards: [{
+				id: "2BE131DBBB7123C9"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
 			shape: "rsquare"
+			subtitle: "神之力"
 			tasks: [{
 				id: "2028461C6209B365"
 				item: "minecraft:paper"
 				type: "item"
 			}]
+			title: "纸：写些什么"
 			x: 0.0d
 			y: -9.25d
 		}
 		{
 			dependencies: ["0E165E778629BB61"]
+			description: [
+				"&2处理器&r是一类辅助器官，以&7算力&r机制为核心，为其他的器官流派提供强度支援。"
+				""
+				"由于&7算力&r的通用性，你可以借此将不同的流派进行混搭，以实现更加强大的效果。"
+			]
 			id: "1B75F5835B3F3E31"
+			rewards: [{
+				id: "56C85A848655EE15"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
 			shape: "rsquare"
+			subtitle: "全人类感谢你.jpg"
 			tasks: [{
 				id: "39EC0CCA50882A78"
 				item: "mrqx_extra_pack:basic_uncoded_cpu"
 				type: "item"
 			}]
+			title: "处理器：外置大脑"
 			x: 0.0d
 			y: -6.25d
 		}
@@ -560,6 +583,11 @@
 				"&0凋亡损伤&r：达到100时，消耗100&0凋亡损伤&r使其额外受到100点凋零伤害（不致死，不受额外加成影响），并使其获得10s的&0凋零&r、&0凋零腐败&r、&0衰弱&r"
 			]
 			id: "2B1A1B95F863B332"
+			rewards: [{
+				id: "44BDB8B1DCBFB0BA"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
 			shape: "rsquare"
 			subtitle: "输出多样化"
 			tasks: [{
@@ -573,6 +601,11 @@
 		}
 		{
 			dependencies: ["0E165E778629BB61"]
+			description: [
+				"&6国王&r器官是一类较为特殊的器官，大多需要&e生命值小于等于1&r才能发挥出强大的效果。"
+				""
+				"很危险？但&6国王&r器官能够为你提供最高等同于最大生命值的临时生命值（黄心），所以不用担心生存问题……吧？"
+			]
 			icon: {
 				Count: 1b
 				id: "mrqx_extra_pack:kings_crown"
@@ -580,6 +613,7 @@
 			}
 			id: "2378ED0E7AAA30C8"
 			shape: "rsquare"
+			subtitle: "泰拉之王"
 			tasks: [{
 				id: "6FF370CBB66DB4FF"
 				title: "国王：在死亡的边缘试探"
@@ -590,6 +624,11 @@
 		}
 		{
 			dependencies: ["0E165E778629BB61"]
+			description: [
+				"&3幽匿&r器官是一类依赖于&b幽匿块&r的器官——需要存在大量的&b幽匿块&r才能发挥出这套器官的功效。"
+				""
+				"这意味着你通常需要提前准备好战斗的场地……或者利用&b幽匿引痕体&r和&b幽匿寄染体&r进行幽匿块的铺设。"
+			]
 			icon: {
 				Count: 1b
 				id: "mrqx_extra_pack:sculk_growler"
@@ -597,11 +636,13 @@
 			}
 			id: "514A75F9FDD674EC"
 			shape: "rsquare"
+			subtitle: "人造深暗之域"
 			tasks: [{
-				id: "50586C979493D2B0"
-				title: "幽匿：深暗来袭"
-				type: "checkmark"
+				id: "1755F431C34844AD"
+				item: "minecraft:sculk"
+				type: "item"
 			}]
+			title: "幽匿：深暗之影"
 			x: -15.75d
 			y: -0.25d
 		}
@@ -626,13 +667,14 @@
 		}
 		{
 			dependencies: ["267847C6D3DBEB9C"]
-			hide_dependency_lines: true
+			description: ["能够根据&e基准难度&r提供增益。"]
 			id: "46F7E2C8B0D4B8E2"
 			rewards: [{
 				id: "3216070DD692B654"
 				item: "lightmanscurrency:coin_gold"
 				type: "item"
 			}]
+			subtitle: "在这个新的世界前进吧"
 			tasks: [{
 				id: "6523C1DDB102E30A"
 				item: {
@@ -647,6 +689,7 @@
 		}
 		{
 			dependencies: ["0E165E778629BB61"]
+			description: ["一些不属于其他器官类型而被划分到一起的器官。"]
 			icon: {
 				Count: 1b
 				id: "mrqx_extra_pack:adventurers_badge"
@@ -654,6 +697,7 @@
 			}
 			id: "267847C6D3DBEB9C"
 			shape: "rsquare"
+			subtitle: "有用吗？"
 			tasks: [{
 				id: "762BAEF673523D9F"
 				title: "杂项：小玩具"
@@ -664,6 +708,11 @@
 		}
 		{
 			dependencies: ["0E165E778629BB61"]
+			description: [
+				"&4七原罪&r器官是原有的七种原罪碎片的强化版，能够带来强大的加成，在集齐七宗罪之后还能进一步强化。"
+				""
+				"但与此同时，你需要付出沉痛的&4代价&r……"
+			]
 			icon: {
 				Count: 1b
 				id: "mrqx_extra_pack:sin_and_judgement"
@@ -671,18 +720,19 @@
 			}
 			id: "5EA6AF64B2BE4E95"
 			shape: "rsquare"
+			subtitle: "极之罪"
 			tasks: [{
 				id: "7FCF92EF0DD32DDE"
 				title: "原罪：七大罪"
 				type: "checkmark"
 			}]
+			title: "七原罪："
 			x: -15.75d
 			y: 2.75d
 		}
 		{
 			dependencies: ["54E36F797B14701F"]
 			description: ["蒸汽引擎是&7蒸汽&r器官的核心，能够根据&7蒸汽动力&r等级提供&7蒸汽计数&r。"]
-			hide_dependency_lines: true
 			id: "16180B7E93387AD3"
 			rewards: [{
 				id: "6C27B31B2DB704EB"
@@ -705,7 +755,6 @@
 		{
 			dependencies: ["54E36F797B14701F"]
 			description: ["&7蒸汽&r器官之一，能够将&c熔火&r/&c心火&r状态转化为&7蒸汽动力&r。"]
-			hide_dependency_lines: true
 			id: "7CB20258A43808BC"
 			rewards: [{
 				id: "35175627D808B6C9"
@@ -728,7 +777,6 @@
 		{
 			dependencies: ["54E36F797B14701F"]
 			description: ["&7蒸汽&r器官之一，能够将&c核能动力&r转化为&7蒸汽动力&r。"]
-			hide_dependency_lines: true
 			id: "2457591EB920F049"
 			rewards: [{
 				id: "6AFC05F60E9E5FB4"
@@ -751,7 +799,6 @@
 		{
 			dependencies: ["54E36F797B14701F"]
 			description: ["&7蒸汽&r器官之一，能够消耗&7蒸汽动力&r的时长提供&6资源值&r。"]
-			hide_dependency_lines: true
 			id: "56139BE06CF0EE38"
 			rewards: [{
 				id: "572D1446A4A78CC8"
@@ -774,7 +821,6 @@
 		{
 			dependencies: ["54E36F797B14701F"]
 			description: ["&7蒸汽&r器官之一，能够根据&7蒸汽计数&r提供减伤。"]
-			hide_dependency_lines: true
 			id: "3045CBA8A5A888F4"
 			rewards: [{
 				id: "787C25B20B1AEAEB"
@@ -797,7 +843,6 @@
 		{
 			dependencies: ["54E36F797B14701F"]
 			description: ["&7蒸汽&r器官之一，根据&7蒸汽计数&r造成额外伤害和&c灼燃损伤&r。"]
-			hide_dependency_lines: true
 			id: "4C952566381C5171"
 			rewards: [{
 				id: "72C87F5FFE508B43"
@@ -820,7 +865,6 @@
 		{
 			dependencies: ["54E36F797B14701F"]
 			description: ["&7蒸汽&r器官之一，能够持续提供&e重拳计数器&r。"]
-			hide_dependency_lines: true
 			id: "23521250933AEB43"
 			rewards: [{
 				id: "7DAF9AF8E480A9BE"
@@ -843,7 +887,6 @@
 		{
 			dependencies: ["54E36F797B14701F"]
 			description: ["&7蒸汽&r器官之一，能够提供一段时间的增益效果，代价是结束后会有短暂的晕眩。"]
-			hide_dependency_lines: true
 			id: "3A34E0EF29A0BBDF"
 			rewards: [{
 				id: "64A337F5700FB316"
@@ -866,7 +909,6 @@
 		{
 			dependencies: ["54E36F797B14701F"]
 			description: ["&7蒸汽&r器官之一，是该类器官中最重要的输出器官，能够将积攒的&e重拳计数器&r和&6资源值&r转化为高额伤害。"]
-			hide_dependency_lines: true
 			id: "09CE958E180B96E5"
 			rewards: [{
 				id: "7E034B500E36A456"
@@ -894,6 +936,11 @@
 				"&c&l&o注意：在核能动力持续期间拆下裂变反应堆将导致爆炸！！！&r"
 			]
 			id: "688323BF2C00E12E"
+			rewards: [{
+				id: "0862E7B06FC539F5"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
 			shape: "rsquare"
 			tasks: [{
 				id: "47B81B7D37A19706"
@@ -907,7 +954,6 @@
 		{
 			dependencies: ["2B1A1B95F863B332"]
 			description: ["&e元素损伤&r器官之一，能够造成&b冻结损伤&r。"]
-			hide_dependency_lines: true
 			id: "444582300B9D52D5"
 			rewards: [{
 				id: "57D2B341CCC0AC99"
@@ -930,7 +976,6 @@
 		{
 			dependencies: ["2B1A1B95F863B332"]
 			description: ["&e元素损伤&r器官之一，能够造成&c灼燃损伤&r。"]
-			hide_dependency_lines: true
 			id: "214320CFF095FDB4"
 			rewards: [{
 				id: "5D9876A7FF2813F5"
@@ -953,7 +998,6 @@
 		{
 			dependencies: ["2B1A1B95F863B332"]
 			description: ["&e元素损伤&r器官之一，能够造成&9雷霆损伤&r。"]
-			hide_dependency_lines: true
 			id: "7E887CC3DB55A5EF"
 			rewards: [{
 				id: "56EE1466DECD5111"
@@ -976,7 +1020,6 @@
 		{
 			dependencies: ["2B1A1B95F863B332"]
 			description: ["&e元素损伤&r器官之一，能够造成&5末影损伤&r。"]
-			hide_dependency_lines: true
 			id: "3DA7A2A994E2BB81"
 			rewards: [{
 				id: "688AD549B435390E"
@@ -999,7 +1042,6 @@
 		{
 			dependencies: ["2B1A1B95F863B332"]
 			description: ["&e元素损伤&r器官之一，能够造成&0凋亡损伤&r。"]
-			hide_dependency_lines: true
 			id: "7087C72C3490EAE6"
 			rewards: [{
 				id: "18FD9C74A3774016"
@@ -1022,7 +1064,6 @@
 		{
 			dependencies: ["7AA91AC7DA795C0B"]
 			description: ["&b反物质&r器官的核心，能够反转所有胸腔数值……无论正负。"]
-			hide_dependency_lines: true
 			id: "138F3135AB6BEB98"
 			rewards: [{
 				id: "059BEFB6715E273A"
@@ -1044,7 +1085,6 @@
 		}
 		{
 			dependencies: ["7AA91AC7DA795C0B"]
-			hide_dependency_lines: true
 			id: "739E575D44865FE1"
 			rewards: [{
 				id: "5C63F3EC57AB2BC8"
@@ -1065,7 +1105,6 @@
 		}
 		{
 			dependencies: ["7AA91AC7DA795C0B"]
-			hide_dependency_lines: true
 			id: "5AA4BC616BE240AF"
 			rewards: [{
 				id: "2F53F88C25DCB1DD"
@@ -1086,7 +1125,6 @@
 		}
 		{
 			dependencies: ["7AA91AC7DA795C0B"]
-			hide_dependency_lines: true
 			id: "02BFA16D155BDC84"
 			rewards: [{
 				id: "632871405A8C8E34"
@@ -1107,7 +1145,6 @@
 		}
 		{
 			dependencies: ["7AA91AC7DA795C0B"]
-			hide_dependency_lines: true
 			id: "20E4E763FB2EAE50"
 			rewards: [{
 				id: "5B69511BFB2DF283"
@@ -1128,7 +1165,6 @@
 		}
 		{
 			dependencies: ["7AA91AC7DA795C0B"]
-			hide_dependency_lines: true
 			id: "03733BBF6C0AF7C2"
 			rewards: [{
 				id: "7DE589CFBB0A05B3"
@@ -1149,7 +1185,6 @@
 		}
 		{
 			dependencies: ["7AA91AC7DA795C0B"]
-			hide_dependency_lines: true
 			id: "7CAB8B5CB23C6C3C"
 			rewards: [{
 				id: "7F9CAA63C08872A5"
@@ -1170,7 +1205,6 @@
 		}
 		{
 			dependencies: ["7AA91AC7DA795C0B"]
-			hide_dependency_lines: true
 			id: "703146058DC2C97B"
 			rewards: [{
 				id: "3EB914A5BAAC70C8"
@@ -1191,7 +1225,6 @@
 		}
 		{
 			dependencies: ["7AA91AC7DA795C0B"]
-			hide_dependency_lines: true
 			id: "6129679BFB133723"
 			rewards: [{
 				id: "7314C28A4C40C5D2"
@@ -1212,7 +1245,6 @@
 		}
 		{
 			dependencies: ["7AA91AC7DA795C0B"]
-			hide_dependency_lines: true
 			id: "70A96E767EA7A9D7"
 			rewards: [{
 				id: "770ADC4A84348714"
@@ -1233,7 +1265,6 @@
 		}
 		{
 			dependencies: ["7AA91AC7DA795C0B"]
-			hide_dependency_lines: true
 			id: "6E3CBA570AA824ED"
 			rewards: [{
 				id: "1F55F0723C48DCB1"
@@ -1259,7 +1290,6 @@
 				""
 				"&c&l&o注意：在核能动力持续期间拆下裂变反应堆将导致爆炸！！！&r"
 			]
-			hide_dependency_lines: true
 			id: "288E1ACB4B5B37D9"
 			rewards: [{
 				id: "2715EDDF883745F5"
@@ -1282,7 +1312,6 @@
 		{
 			dependencies: ["688323BF2C00E12E"]
 			description: ["&c核能&r器官之一，置于&b反应舱室&r旁边时能够增加&c核能动力&r的时长，但会降低等级。"]
-			hide_dependency_lines: true
 			id: "63B93AA5308AC3BD"
 			rewards: [{
 				id: "46D13ACAD90C9DCB"
@@ -1305,7 +1334,6 @@
 		{
 			dependencies: ["688323BF2C00E12E"]
 			description: ["&c核能&r器官之一，置于&b反应舱室&r旁边时能够增加&c核能动力&r的等级，但会降低时长。"]
-			hide_dependency_lines: true
 			id: "66907F03E123570F"
 			rewards: [{
 				id: "5654BB153F1762BC"
@@ -1328,7 +1356,6 @@
 		{
 			dependencies: ["688323BF2C00E12E"]
 			description: ["&c核能&r器官之一，置于&b裂变反应堆&r旁边时能够增加&c核能动力&r的等级与时长，同时消耗的&b核反应燃料&r数量增加。"]
-			hide_dependency_lines: true
 			id: "7CFC6B006B76E633"
 			rewards: [{
 				id: "11BD85FE448BC7CE"
@@ -1354,7 +1381,6 @@
 				""
 				"不过用本器官将时长降至0会立刻移除&b裂变反应堆&r的冷却时间，或许会有奇妙的用处。"
 			]
-			hide_dependency_lines: true
 			id: "246365CCB3A57775"
 			rewards: [{
 				id: "16C5B223ECD173CB"
@@ -1376,9 +1402,15 @@
 		}
 		{
 			dependencies: ["0E165E778629BB61"]
+			description: [
+				"&1天体&r是一类辅助器官，能够提供一些特殊加成……尽管有些时候并不是那么强大。"
+				""
+				"由于&1天体&r器官缺乏输出手段，你或许需要将其与&2处理器&r进行搭配。"
+			]
 			icon: "bosses_of_mass_destruction:soul_star"
 			id: "21DF7164072EF0D0"
 			shape: "rsquare"
+			subtitle: "一闪一闪亮晶晶"
 			tasks: [{
 				id: "29471591F42CBF6D"
 				title: "天体：看星星"
@@ -1388,7 +1420,15 @@
 			y: 3.75d
 		}
 		{
+			dependencies: ["514A75F9FDD674EC"]
+			description: ["&3幽匿&r器官之一，能够将你脚下的方块转化为&3幽匿块&r。"]
 			id: "5B884220220FDED6"
+			rewards: [{
+				id: "4B8A5B31A1304145"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "它引领着幽匿的延伸"
 			tasks: [{
 				id: "606E34060529EE56"
 				item: {
@@ -1402,7 +1442,15 @@
 			y: 0.75d
 		}
 		{
+			dependencies: ["514A75F9FDD674EC"]
+			description: ["&3幽匿&r器官的核心，根据&b幽匿块&r和&3幽匿&r器官的数量提供&3幽匿指数&r"]
 			id: "6C3EFA696BA744D6"
+			rewards: [{
+				id: "7B1B6C45331BCAD2"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "它为幽匿的存在而鼓动"
 			tasks: [{
 				id: "3B6A764764AE2844"
 				item: {
@@ -1416,7 +1464,15 @@
 			y: 0.75d
 		}
 		{
+			dependencies: ["514A75F9FDD674EC"]
+			description: ["&3幽匿&r器官之一，能够根据&3幽匿指数&r提供伤害加成。"]
 			id: "0933BF70214F923B"
+			rewards: [{
+				id: "554FB31D30123B23"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "它击碎着幽匿的障碍"
 			tasks: [{
 				id: "424F83EF4F78B241"
 				item: {
@@ -1430,7 +1486,15 @@
 			y: 0.75d
 		}
 		{
+			dependencies: ["514A75F9FDD674EC"]
+			description: ["&3幽匿&r器官之一，能够根据&3幽匿指数&r提供伤害减免。"]
 			id: "3A99EC5E2CEDC48B"
+			rewards: [{
+				id: "200A843EC65D851C"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "它守护着幽匿的核心"
 			tasks: [{
 				id: "2A27E06801327596"
 				item: {
@@ -1444,7 +1508,15 @@
 			y: 0.75d
 		}
 		{
+			dependencies: ["514A75F9FDD674EC"]
+			description: ["&3幽匿&r器官之一，击杀生物时能够根据&3幽匿指数&r感染附近的方块。"]
 			id: "0C9F8A16E637A836"
+			rewards: [{
+				id: "4E982B97EC7FCC67"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "它消化着幽匿的猎物"
 			tasks: [{
 				id: "02C7BC2014A2B4E7"
 				item: {
@@ -1458,7 +1530,15 @@
 			y: 0.75d
 		}
 		{
+			dependencies: ["514A75F9FDD674EC"]
+			description: ["&3幽匿&r器官之一，能够根据&3幽匿指数&r持续回复各项数值。"]
 			id: "55AFC8B7C3C6F660"
+			rewards: [{
+				id: "22009B4707496CF1"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "它吸收着幽匿的养分"
 			tasks: [{
 				id: "34CE080D6D392F3A"
 				item: {
@@ -1472,7 +1552,15 @@
 			y: 0.75d
 		}
 		{
+			dependencies: ["514A75F9FDD674EC"]
+			description: ["&3幽匿&r器官之一，能够消耗当前所有法力值，释放&3超限:音爆&r，根据&3幽匿指数&r和消耗的法力值提供超限等级。"]
 			id: "54A6CB2405E6FFB0"
+			rewards: [{
+				id: "1D53958D4807FE2C"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "它撕裂着幽匿的敌人"
 			tasks: [{
 				id: "1E9E24A09E5D2ACB"
 				item: {
@@ -1486,7 +1574,15 @@
 			y: 0.75d
 		}
 		{
+			dependencies: ["2378ED0E7AAA30C8"]
+			description: ["&6国王&r器官之一，能根据胸腔中&6国王&r器官的个数提供攻击力加成。"]
 			id: "7BC1D5CA0AE5DA71"
+			rewards: [{
+				id: "67F0E782B8DDFFA5"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "无名的诸王啊，纵使王国毁灭，仍愿您护佑我们"
 			tasks: [{
 				id: "1EEA0873A7AD836E"
 				item: {
@@ -1500,7 +1596,15 @@
 			y: -1.25d
 		}
 		{
+			dependencies: ["2378ED0E7AAA30C8"]
+			description: ["&6国王&r器官之一，能够在生命值小于等于1时增加攻击速度。"]
 			id: "40A8F50537EF8F28"
+			rewards: [{
+				id: "18A9FC9F2875FC29"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "绝境下的美好祈愿能带给人希望，即使那并不是真相"
 			tasks: [{
 				id: "0D56D4F4A65D4F90"
 				item: {
@@ -1514,7 +1618,15 @@
 			y: -1.25d
 		}
 		{
+			dependencies: ["2378ED0E7AAA30C8"]
+			description: ["&6国王&r器官之一，能够在激活时降低生命值并转换为临时生命值。"]
 			id: "3E23A1BDFBD70BFA"
+			rewards: [{
+				id: "253FE9A460748ED3"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "王宫的大门前、广场上，曾摆放着那么多金色的展柜，四方珍品尽供欣赏"
 			tasks: [{
 				id: "7156E509A978F5F1"
 				item: {
@@ -1528,7 +1640,15 @@
 			y: -1.25d
 		}
 		{
+			dependencies: ["2378ED0E7AAA30C8"]
+			description: ["&6国王&r器官之一，能够在激活时将所有生命值转换为临时生命值。"]
 			id: "6DE3F3EF8B3DBCD2"
+			rewards: [{
+				id: "54C9A34F7901AF34"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "而现在，仅仅是回想那个场面就会让人受伤"
 			tasks: [{
 				id: "0DC3451898B3016E"
 				item: {
@@ -1542,7 +1662,15 @@
 			y: -1.25d
 		}
 		{
+			dependencies: ["2378ED0E7AAA30C8"]
+			description: ["&6国王&r器官之一，能够在生命值小于等于1时增加护甲值和盔甲韧性。"]
 			id: "4A3860A90DDF0314"
+			rewards: [{
+				id: "1E947E0076DA4152"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "直视前方，让坚韧的内心抗御万难"
 			tasks: [{
 				id: "19F2C46A0738E154"
 				item: {
@@ -1556,7 +1684,15 @@
 			y: -1.25d
 		}
 		{
+			dependencies: ["2378ED0E7AAA30C8"]
+			description: ["&6国王&r器官之一，能够在生命值小于等于1时恢复法力值。"]
 			id: "65EF7EFB89482CE9"
+			rewards: [{
+				id: "0FF30FD16EBAA656"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "放下无用的威仪，以恩慈待人"
 			tasks: [{
 				id: "143025B59381404A"
 				item: {
@@ -1570,7 +1706,15 @@
 			y: -1.25d
 		}
 		{
+			dependencies: ["2378ED0E7AAA30C8"]
+			description: ["&6国王&r器官之一，能够在生命值小于等于1时回复法力值与临时生命值。"]
 			id: "5053AEE5BF596DBC"
+			rewards: [{
+				id: "2821A0B9262FA6B1"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "成长，认清现实，用坚韧与笃定武装自己，用包容与慈恩武装朋友"
 			tasks: [{
 				id: "703B948972E91E90"
 				item: {
@@ -1584,7 +1728,15 @@
 			y: -1.25d
 		}
 		{
+			dependencies: ["2378ED0E7AAA30C8"]
+			description: ["&6国王&r器官之一，能够在生命值小于等于1时增加额外掉落。"]
 			id: "76BE709A85FCFF6E"
+			rewards: [{
+				id: "1FC142C5A16D2FAE"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "他们也会这样待你，他们会的"
 			tasks: [{
 				id: "09886DC1E298A17B"
 				item: {
@@ -1598,7 +1750,19 @@
 			y: -1.25d
 		}
 		{
+			dependencies: ["1B75F5835B3F3E31"]
+			description: [
+				"&2处理器&r器官之一，能够根据&2处理器&r器官数提供&7算力&r。"
+				""
+				"是制作其他&2处理器&r失败所产生的废品，也可主动合成获得。"
+			]
 			id: "3EE28246F92DA637"
+			rewards: [{
+				id: "58C5F92C028A4139"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "“检测到无效指令，正在使用默认指令：通用计算”"
 			tasks: [{
 				id: "2C2EE0DCEEEDCEEF"
 				item: {
@@ -1612,7 +1776,15 @@
 			y: -5.5d
 		}
 		{
+			dependencies: ["21DF7164072EF0D0"]
+			description: ["&1天体&r器官之一，按键释放&6超限：星海落爆&r，并根据&8算力&r和&1天体&r器官数提供超限等级。"]
 			id: "54D6B5B4BEB11C09"
+			rewards: [{
+				id: "54A326777975E2E8"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "星雨来了"
 			tasks: [{
 				id: "7FC7E9585F74ABBB"
 				item: {
@@ -1626,7 +1798,15 @@
 			y: 4.75d
 		}
 		{
+			dependencies: ["21DF7164072EF0D0"]
+			description: ["&1天体&r器官之一，造成伤害时能够根据阳光或月光在此处的强度额外造成&c灼燃损伤&r。"]
 			id: "3CAA9BBDE29389CC"
+			rewards: [{
+				id: "119717DEFB1FAEED"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "映射耀阳之光"
 			tasks: [{
 				id: "37833E37D700A138"
 				item: {
@@ -1640,7 +1820,15 @@
 			y: 4.75d
 		}
 		{
+			dependencies: ["21DF7164072EF0D0"]
+			description: ["&1天体&r器官之一，按键时能够排斥周围的生物。"]
 			id: "5C68EF6D72607307"
+			rewards: [{
+				id: "290183309FFF56F3"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "喷吐万物"
 			tasks: [{
 				id: "285B3F49F5C1C8D5"
 				item: {
@@ -1654,7 +1842,15 @@
 			y: 4.75d
 		}
 		{
+			dependencies: ["21DF7164072EF0D0"]
+			description: ["&1天体&r器官之一，按键时能够吸引周围的生物。"]
 			id: "46053486872D8B5E"
+			rewards: [{
+				id: "3CDC4AA82F0EFC72"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "吞噬万物"
 			tasks: [{
 				id: "08BDDF775A62D926"
 				item: {
@@ -1668,7 +1864,15 @@
 			y: 4.75d
 		}
 		{
+			dependencies: ["21DF7164072EF0D0"]
+			description: ["&1天体&r器官之一，能够在夜晚时根据当前月相提供不同效果。"]
 			id: "458DAF8525D2B00E"
+			rewards: [{
+				id: "4976C4076B0469C0"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "星之影"
 			tasks: [{
 				id: "5CF9736B40179547"
 				item: {
@@ -1682,7 +1886,19 @@
 			y: 4.75d
 		}
 		{
+			dependencies: ["21DF7164072EF0D0"]
+			description: [
+				"&1天体&r器官之一，能够提供神圣法术强度并持续回复生命值。"
+				""
+				"但如果你是巫妖，则不会生效……并变为使你受到伤害。"
+			]
 			id: "686ACDB60CBC32E2"
+			rewards: [{
+				id: "4F23297CAEA75B8F"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "耀阳啊，请为我颔首吧"
 			tasks: [{
 				id: "0D229E1EA62FA3C0"
 				item: {
@@ -1696,7 +1912,15 @@
 			y: 4.75d
 		}
 		{
+			dependencies: ["21DF7164072EF0D0"]
+			description: ["&1天体&r器官之一，按键时能够对周围释放辐射，对生物造成持续真实伤害。如果激活，效果会进一步增强。"]
 			id: "06C9F6B47D0E4141"
+			rewards: [{
+				id: "20493124F4A0CEB5"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "暗无天日"
 			tasks: [{
 				id: "4649031599E102C4"
 				item: {
@@ -1710,7 +1934,15 @@
 			y: 4.75d
 		}
 		{
+			dependencies: ["21DF7164072EF0D0"]
+			description: ["&1天体&r器官之一，能够持续给予周围玩家强力效果。"]
 			id: "0A7579D80EA06B8F"
+			rewards: [{
+				id: "08DEAE21751C6394"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "Broken sun"
 			tasks: [{
 				id: "4DE89CC50D96EE25"
 				item: {
@@ -1724,7 +1956,15 @@
 			y: 4.75d
 		}
 		{
+			dependencies: ["21DF7164072EF0D0"]
+			description: ["&1天体&r器官之一，能够在潜行时提供缓降，激活后还能降低你的重力。"]
 			id: "5770B287000309D5"
+			rewards: [{
+				id: "74D572FB70966A96"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "取自天空之皓月"
 			tasks: [{
 				id: "025C11A818364AB4"
 				item: {
@@ -1738,7 +1978,15 @@
 			y: 4.75d
 		}
 		{
+			dependencies: ["21DF7164072EF0D0"]
+			description: ["&1天体&r器官之一，能够在白天时根据当前时间提供不同效果。"]
 			id: "66E42FA0216CF408"
+			rewards: [{
+				id: "49DF9F32A189FE46"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "天之时"
 			tasks: [{
 				id: "31C98488B1BF6B3B"
 				item: {
@@ -1752,7 +2000,15 @@
 			y: 4.75d
 		}
 		{
+			dependencies: ["1B75F5835B3F3E31"]
+			description: ["&2处理器&r器官之一，能够根据&7算力&r以最大法力值为代价获得高额法力回复。"]
 			id: "5FBDC180B999BD83"
+			rewards: [{
+				id: "0C6BB4DC43E10F1B"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "指令：快速充能"
 			tasks: [{
 				id: "572A5AFF77ED4F51"
 				item: {
@@ -1766,7 +2022,15 @@
 			y: -5.5d
 		}
 		{
+			dependencies: ["1B75F5835B3F3E31"]
+			description: ["&2处理器&r器官之一，能够根据&7算力&r以法力回复为代价换取冷却缩减与吟唱缩减。"]
 			id: "3BE5883A21D82B36"
+			rewards: [{
+				id: "72F6B9C60DE66B7D"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "指令：过载施法"
 			tasks: [{
 				id: "2DA73BC1339D865A"
 				item: {
@@ -1780,7 +2044,15 @@
 			y: -5.5d
 		}
 		{
+			dependencies: ["1B75F5835B3F3E31"]
+			description: ["&2处理器&r器官之一，能够根据&b魔法&r器官数提供&7算力&r，并根据&7算力&r以最大生命值为代价提供法术强度。"]
 			id: "603A1939D8BE548C"
+			rewards: [{
+				id: "57D29B443F0DA9FD"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "开炮、轰炸，直至粉身碎骨"
 			tasks: [{
 				id: "32C9F20833901506"
 				item: {
@@ -1794,7 +2066,15 @@
 			y: -5.5d
 		}
 		{
+			dependencies: ["1B75F5835B3F3E31"]
+			description: ["&2处理器&r器官之一，能够根据&c玫瑰&r器官数提供&7算力&r，并根据&7算力&r触发&c玫瑰&r器官的非唯一&6激活&r效果。"]
 			id: "6D4028DFDD3E2397"
+			rewards: [{
+				id: "4C04D30919BD10C3"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "盛开于鲜血之上"
 			tasks: [{
 				id: "32D065FDDD58ABFF"
 				item: {
@@ -1808,7 +2088,15 @@
 			y: -5.5d
 		}
 		{
+			dependencies: ["1B75F5835B3F3E31"]
+			description: ["&2处理器&r器官之一，能够根据&7算力&r提供资源值上限。"]
 			id: "4C635F618CB4D220"
+			rewards: [{
+				id: "23B6557EFA208669"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "指令：存储优化"
 			tasks: [{
 				id: "3CABB923FB12573A"
 				item: {
@@ -1822,7 +2110,15 @@
 			y: -5.5d
 		}
 		{
+			dependencies: ["1B75F5835B3F3E31"]
+			description: ["&2处理器&r器官之一，能够根据速度（胸腔数值）提供&7算力&r，并根据&7算力&r提供速度（胸腔数值）。接近午夜时，它还会提供&f速度&r状态效果。"]
 			id: "4C8AE81013335C01"
+			rewards: [{
+				id: "78574D1EA0AEC649"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "如果你没翻过车，那一定是开的还不够快"
 			tasks: [{
 				id: "63D84C5F21F72CAE"
 				item: {
@@ -1836,7 +2132,15 @@
 			y: -5.5d
 		}
 		{
+			dependencies: ["1B75F5835B3F3E31"]
+			description: ["&2处理器&r器官之一，能够根据&7机械&r器官数提供&7算力&r，并根据&7算力&r提供&7机械&r器官与革命齿轮数。"]
 			id: "7F356E186A0F72AD"
+			rewards: [{
+				id: "46EFF4515355D457"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "战斗，直至核心融毁"
 			tasks: [{
 				id: "50D8B2C3428C8883"
 				item: {
@@ -1850,7 +2154,15 @@
 			y: -5.5d
 		}
 		{
+			dependencies: ["1B75F5835B3F3E31"]
+			description: ["&2处理器&r器官之一，能够根据&4核能&r器官数提供&7算力&r，并根据&7算力&r提供&4核能&r器官数、核能效果时长与等级。"]
 			id: "5B953D6BAADDDE17"
+			rewards: [{
+				id: "7B5A6549FFDE8A4E"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "原子核的力量"
 			tasks: [{
 				id: "2D5614B921422660"
 				item: {
@@ -1864,7 +2176,15 @@
 			y: -5.5d
 		}
 		{
+			dependencies: ["1B75F5835B3F3E31"]
+			description: ["&2处理器&r器官之一，能够根据&7算力&r提供闪避。"]
 			id: "65DA089EC297C94C"
+			rewards: [{
+				id: "58E34B69C87CE764"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "指令：自动闪避"
 			tasks: [{
 				id: "1668F429B1B611B6"
 				item: {
@@ -1878,7 +2198,15 @@
 			y: -5.5d
 		}
 		{
+			dependencies: ["1B75F5835B3F3E31"]
+			description: ["&2处理器&r器官之一，能够根据&7算力&r提供格挡。"]
 			id: "50E98C86F47C8B27"
+			rewards: [{
+				id: "48CACC32CD1A71DF"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "指令：自动格挡"
 			tasks: [{
 				id: "2EFF03D2B5ED6C5E"
 				item: {
@@ -1892,7 +2220,15 @@
 			y: -5.5d
 		}
 		{
+			dependencies: ["1B75F5835B3F3E31"]
+			description: ["&2处理器&r器官之一，能够根据&e伤害&r和&e唯一伤害&r器官数提供&7算力&r，并根据&7算力&r提供暴击概率和暴击伤害。"]
 			id: "2E95E25C5DFA2EB5"
+			rewards: [{
+				id: "05FB988D2F7FEEF3"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "我的眼中，倒映出你的死"
 			tasks: [{
 				id: "5E6A0DAD121B2B51"
 				item: {
@@ -1906,7 +2242,15 @@
 			y: -5.5d
 		}
 		{
+			dependencies: ["1B75F5835B3F3E31"]
+			description: ["&2处理器&r器官之一，能够根据&e资源&r器官数提供&7算力&r，并根据&7算力&r在挖掘石头类方块时将其转化为资源值。"]
 			id: "71F5D91CB0042CEA"
+			rewards: [{
+				id: "573BEF71E1A369DD"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "好好挖矿，不要给我一镐子"
 			tasks: [{
 				id: "30D8816BA0B976F4"
 				item: {
@@ -1920,7 +2264,15 @@
 			y: -4.25d
 		}
 		{
+			dependencies: ["1B75F5835B3F3E31"]
+			description: ["&2处理器&r器官之一，能够根据&c玫瑰&r器官数提供&7算力&r，并根据&7算力&r提供&c玫瑰&r器官数。"]
 			id: "7AD963D22A401964"
+			rewards: [{
+				id: "692D6F34646BAB49"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "它们在说话"
 			tasks: [{
 				id: "1A4331B1BF553104"
 				item: {
@@ -1934,7 +2286,15 @@
 			y: -4.25d
 		}
 		{
+			dependencies: ["1B75F5835B3F3E31"]
+			description: ["&2处理器&r器官之一，能够根据&1深海&r器官数提供&7算力&r，并根据&7算力&r提供&1深海&r器官数。"]
 			id: "0FA87867F5F42E10"
+			rewards: [{
+				id: "0452F3955F4E74E3"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "光路织成的网如同星河在海面铺开，逶迤向海洋的最深处，无限远的地方"
 			tasks: [{
 				id: "0A4BA6026CC992C0"
 				item: {
@@ -1948,7 +2308,15 @@
 			y: -4.25d
 		}
 		{
+			dependencies: ["1B75F5835B3F3E31"]
+			description: ["&2处理器&r器官之一，能够根据&6天体&r器官数提供&7算力&r，并根据&7算力&r提供&6天体&r器官数。"]
 			id: "444C7FB054BC9A64"
+			rewards: [{
+				id: "2CEDF104C9B6451F"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "就像星星一样，指引人们前行"
 			tasks: [{
 				id: "0878208F18BEEBB1"
 				item: {
@@ -1962,7 +2330,15 @@
 			y: -4.25d
 		}
 		{
+			dependencies: ["1B75F5835B3F3E31"]
+			description: ["&2处理器&r器官之一，能够根据&7蒸汽&r器官数提供&7算力&r，并根据&7算力&r提供&7蒸汽&r器官数。"]
 			id: "34DB4928C976AF60"
+			rewards: [{
+				id: "58DBB1BB0313EA0B"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "他正拨开迷雾，他正从历史中苏醒"
 			tasks: [{
 				id: "1A67E9B87E406610"
 				item: {
@@ -1976,7 +2352,16 @@
 			y: -4.25d
 		}
 		{
+			dependencies: ["1B75F5835B3F3E31"]
+			description: ["&2处理器&r器官之一，能够根据&f传说&r器官数提供&7算力&r，按下主动技能按键时获得&e神明特许:近战/弓箭/魔法免疫&r，根据&7算力&r提供效果等级与持续时长。"]
+			hide_text_until_complete: true
 			id: "6C246EBBC0E16E75"
+			rewards: [{
+				id: "639B47AAF510D841"
+				item: "lightmanscurrency:coin_diamond"
+				type: "item"
+			}]
+			subtitle: "“带来终结，机械降神”"
 			tasks: [{
 				id: "0F41E86F29071234"
 				item: {
@@ -1986,16 +2371,24 @@
 				}
 				type: "item"
 			}]
-			x: 6.0d
+			x: 8.0d
 			y: -4.25d
 		}
 		{
+			dependencies: ["4A11AE0ADF7730AE"]
+			description: ["每件纸器官都有着对应的可书写属性，别看错了。"]
 			icon: {
 				Count: 1b
 				id: "mrqx_extra_pack:heart_paper"
 				tag: { }
 			}
 			id: "5F8EF34C1B0E54B1"
+			rewards: [{
+				id: "114CDDF8E0FAE3F2"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "可书写：……"
 			tasks: [
 				{
 					id: "0D9B08740016FA55"
@@ -2102,12 +2495,26 @@
 			y: -8.25d
 		}
 		{
+			dependencies: ["4A11AE0ADF7730AE"]
+			description: [
+				"这就是成品了——一件聚合了你胸腔中所有器官数值的器官。"
+				""
+				"需要注意的是，书写后的纸器官在&e遇水/雨/火/岩浆&r时，其数值会&e逐渐减少&r。"
+				""
+				"所以你需要做好充足的保护……或者使用器官&b自动蜡护仪&r。"
+			]
 			icon: {
 				Count: 1b
 				id: "mrqx_extra_pack:heart_paper_written"
 				tag: { }
 			}
 			id: "0AB18520DCA85CB5"
+			rewards: [{
+				id: "5574545E078AE666"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "奇迹般地，存在于纸面上的数据成为了事实"
 			tasks: [
 				{
 					id: "5203C4D9A32E81CD"
@@ -2214,7 +2621,15 @@
 			y: -8.25d
 		}
 		{
+			dependencies: ["267847C6D3DBEB9C"]
+			description: ["能够在使用指定Tetra武器攻击时无视无敌时间。"]
 			id: "1BCCB7E8107ED312"
+			rewards: [{
+				id: "606076AE9395C16B"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "武者的至高荣耀"
 			tasks: [{
 				id: "1C3AC559D2E0A97E"
 				item: {
@@ -2228,7 +2643,15 @@
 			y: 7.5d
 		}
 		{
+			dependencies: ["267847C6D3DBEB9C"]
+			description: ["能够在击杀生物时获得&ckillcount&r，并在集齐四魂后提供加成。"]
 			id: "2E239E9702AAC941"
+			rewards: [{
+				id: "3D9B6A6AC9EF3676"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "血红地狱的诅咒"
 			tasks: [{
 				id: "4F06DED7714B83B1"
 				item: {
@@ -2242,7 +2665,15 @@
 			y: 7.5d
 		}
 		{
+			dependencies: ["267847C6D3DBEB9C"]
+			description: ["能够在攻击时回复饱和度。"]
 			id: "6E8277FF0E9AAABC"
+			rewards: [{
+				id: "6BE6EEF02A0AA394"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "狐仙的真挚祝福"
 			tasks: [{
 				id: "5ADABF2BD25C18D8"
 				item: {
@@ -2256,7 +2687,15 @@
 			y: 7.5d
 		}
 		{
+			dependencies: ["267847C6D3DBEB9C"]
+			description: ["能够每分钟在你身边召唤十五只带有标记的狼，并在造成伤害时提供加伤。"]
 			id: "36EC58CC04082C9D"
+			rewards: [{
+				id: "1C7BA2CB59D21172"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "“全区横着走”"
 			tasks: [{
 				id: "3D6330923AFA8AA4"
 				item: {
@@ -2266,11 +2705,19 @@
 				}
 				type: "item"
 			}]
-			x: 5.0d
+			x: 6.0d
 			y: 7.5d
 		}
 		{
+			dependencies: ["267847C6D3DBEB9C"]
+			description: ["能够在造成伤害时附加&b冻结损伤&r，并在激活时提供冰霜法术强度。"]
 			id: "310F8991FAA9D5DF"
+			rewards: [{
+				id: "193656914AE80EF4"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "“冰霜秒全场”"
 			tasks: [{
 				id: "69499EE04CD10D4C"
 				item: {
@@ -2280,11 +2727,19 @@
 				}
 				type: "item"
 			}]
-			x: 6.0d
+			x: 7.0d
 			y: 7.5d
 		}
 		{
+			dependencies: ["267847C6D3DBEB9C"]
+			description: ["造成的伤害锁定为主手物品攻击伤害加成的十倍，同时附带燃烧和爆炸。"]
 			id: "7A9FA23272623638"
+			rewards: [{
+				id: "27AED826C5A40A45"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "“十倍烈火刀刀爆”"
 			tasks: [{
 				id: "432699E811A930AF"
 				item: {
@@ -2294,11 +2749,19 @@
 				}
 				type: "item"
 			}]
-			x: 7.0d
+			x: 8.0d
 			y: 7.5d
 		}
 		{
+			dependencies: ["267847C6D3DBEB9C"]
+			description: ["根据&e结晶&r持续回复生命值。"]
 			id: "731F7FD49098F23C"
+			rewards: [{
+				id: "61063BD87C3B6151"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "神秘的力量在你的胸中凝聚"
 			tasks: [{
 				id: "0FE7C7CC76E06019"
 				item: {
@@ -2308,11 +2771,19 @@
 				}
 				type: "item"
 			}]
-			x: 8.0d
+			x: 9.0d
 			y: 7.5d
 		}
 		{
+			dependencies: ["267847C6D3DBEB9C"]
+			description: ["使你的所有大于0的胸腔数值变为其中最小的数值，因此而降低的数值等量加至你的攻击力。"]
 			id: "2FFE75C2DD8DDF2C"
+			rewards: [{
+				id: "79D72EF9101F3004"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "绝对的平衡"
 			tasks: [{
 				id: "37FEC4F3C7DEC21E"
 				item: {
@@ -2322,11 +2793,19 @@
 				}
 				type: "item"
 			}]
-			x: 9.0d
+			x: 10.0d
 			y: 7.5d
 		}
 		{
+			dependencies: ["267847C6D3DBEB9C"]
+			description: ["能够将敌人的负面效果转移至自身，并以此增加伤害。"]
 			id: "19268666B0B2B627"
+			rewards: [{
+				id: "6C654691D7DA4B28"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "建议用量：1mg/次"
 			tasks: [{
 				id: "51835D4184B210C8"
 				item: {
@@ -2336,11 +2815,23 @@
 				}
 				type: "item"
 			}]
-			x: 10.0d
+			x: 11.0d
 			y: 7.5d
 		}
 		{
+			dependencies: ["267847C6D3DBEB9C"]
+			description: [
+				"使胸腔中每个&e无形肿瘤&r和&e恶性肿瘤&r提供的数值增加一倍，但会降低你的&e健康&r。"
+				""
+				"如果周围八格不是&2感染&r器官，还会降低最大生命值。"
+			]
 			id: "5E4E2459631E04A9"
+			rewards: [{
+				id: "44783423D2BE4B3F"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "巨大的恶性组织块"
 			tasks: [{
 				id: "34C1181527E2CC32"
 				item: {
@@ -2350,11 +2841,19 @@
 				}
 				type: "item"
 			}]
-			x: 11.0d
+			x: 12.0d
 			y: 7.5d
 		}
 		{
+			dependencies: ["267847C6D3DBEB9C"]
+			description: ["使用Tetra的锤（双头）攻击时，根据下落距离增加伤害并将你弹起。如果是战锤（双头），伤害和弹跳距离更高。"]
 			id: "5771E9052F5DABDE"
+			rewards: [{
+				id: "34AF78C2C3D5A532"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "I am the storm that is approoooooooooaching——"
 			tasks: [{
 				id: "26B9C613489F42AE"
 				item: {
@@ -2364,11 +2863,19 @@
 				}
 				type: "item"
 			}]
-			x: 12.0d
-			y: 7.5d
+			x: 1.0d
+			y: 8.5d
 		}
 		{
+			dependencies: ["267847C6D3DBEB9C"]
+			description: ["受到伤害时，根据你身上的负面效果总等级和扭曲值提供减伤，同时根据负面效果总等级提升你的扭曲值。"]
 			id: "0E9EEC89462CA182"
+			rewards: [{
+				id: "0E69C557C91653B8"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "自噩梦中伸出"
 			tasks: [{
 				id: "27DB8591BC9F3860"
 				item: {
@@ -2378,11 +2885,19 @@
 				}
 				type: "item"
 			}]
-			x: 1.0d
+			x: 2.0d
 			y: 8.5d
 		}
 		{
+			dependencies: ["267847C6D3DBEB9C"]
+			description: ["食用食物时，根据胸腔中&6食物&r器官的数量，少量增幅获得的饥饿值、饱和度"]
 			id: "6FB684FA29ADBCF6"
+			rewards: [{
+				id: "6A44B4B14C02283D"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "这不是毛巾，是压缩饼干，你把它打开，放在肚里，饥饿值变大变高……"
 			tasks: [{
 				id: "4849DFF7A0F19594"
 				item: {
@@ -2392,11 +2907,19 @@
 				}
 				type: "item"
 			}]
-			x: 2.0d
+			x: 3.0d
 			y: 8.5d
 		}
 		{
+			dependencies: ["267847C6D3DBEB9C"]
+			description: ["食用食物时，根据胸腔中&6食物&r和&b魔法&r器官的数量，大量增幅获得的饥饿值、饱和度（该效果不唯一），增加所有正面效果的持续时长（该效果唯一，冷却60s）。"]
 			id: "197942278EFA2C90"
+			rewards: [{
+				id: "6EC837AC7A881AF3"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "密度比金锭还大，怎么做到的？"
 			tasks: [{
 				id: "6A3F286682E69310"
 				item: {
@@ -2406,11 +2929,19 @@
 				}
 				type: "item"
 			}]
-			x: 3.0d
+			x: 4.0d
 			y: 8.5d
 		}
 		{
+			dependencies: ["267847C6D3DBEB9C"]
+			description: ["无形肿瘤的升级版，属性增强，但是会蔓延、覆盖周围的器官。"]
 			id: "2B066EDE28F19243"
+			rewards: [{
+				id: "6FD7EB0EEAAD9095"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "蔓延，增生，直到死亡，永不停息……"
 			tasks: [{
 				id: "48FAA368A997AB71"
 				item: {
@@ -2420,11 +2951,19 @@
 				}
 				type: "item"
 			}]
-			x: 4.0d
+			x: 5.0d
 			y: 8.5d
 		}
 		{
+			dependencies: ["267847C6D3DBEB9C"]
+			description: ["造成伤害后极短的时间内，你将无敌并双倍回弹所有的伤害，同时回复伤害值一半的生命值，冷却时间0.5秒。"]
 			id: "39AA418CC5A3332A"
+			rewards: [{
+				id: "2C9690FECAA95DD8"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "拼刀！弹反！完辣！"
 			tasks: [{
 				id: "32C567D598384261"
 				item: {
@@ -2434,11 +2973,19 @@
 				}
 				type: "item"
 			}]
-			x: 5.0d
+			x: 6.0d
 			y: 8.5d
 		}
 		{
+			dependencies: ["267847C6D3DBEB9C"]
+			description: ["激活后，获得鞘翅飞行能力，飞行速度提升。"]
 			id: "235D9D9D0D22C88B"
+			rewards: [{
+				id: "28960A1C1789491B"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "无形的翼展，只能让你在空中滑翔"
 			tasks: [{
 				id: "485D098837B89A8C"
 				item: {
@@ -2448,11 +2995,19 @@
 				}
 				type: "item"
 			}]
-			x: 6.0d
+			x: 7.0d
 			y: 8.5d
 		}
 		{
+			dependencies: ["267847C6D3DBEB9C"]
+			description: ["激活后，获得创造飞行能力，飞行速度增加。"]
 			id: "755DDFD3BBA2F315"
+			rewards: [{
+				id: "4640175C82601129"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "近乎有形的翼展，使你能够在空中自由移动"
 			tasks: [{
 				id: "3A1091D905D05EA3"
 				item: {
@@ -2462,11 +3017,19 @@
 				}
 				type: "item"
 			}]
-			x: 7.0d
+			x: 8.0d
 			y: 8.5d
 		}
 		{
+			dependencies: ["267847C6D3DBEB9C"]
+			description: ["激活后，法术强度大幅增加。"]
 			id: "79DB3E7000DD4ED0"
+			rewards: [{
+				id: "140464D8CFA4B0DC"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "从指令法术书中取出的核心"
 			tasks: [{
 				id: "414D70F50494F1FC"
 				item: {
@@ -2476,11 +3039,19 @@
 				}
 				type: "item"
 			}]
-			x: 8.0d
+			x: 9.0d
 			y: 8.5d
 		}
 		{
+			dependencies: ["267847C6D3DBEB9C"]
+			description: ["可以与金币合成，增加存储的金币量。激活后根据存储的金币量提供攻击速度。"]
 			id: "5F078F0595F059C5"
+			rewards: [{
+				id: "6503B278D1B66839"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "圣人、骑士、虔信之徒，无人不为之疯狂。老天啊，连杯子本身都是纯金的！"
 			tasks: [{
 				id: "0B5B818F8C6C4DD0"
 				item: {
@@ -2490,11 +3061,19 @@
 				}
 				type: "item"
 			}]
-			x: 9.0d
+			x: 10.0d
 			y: 8.5d
 		}
 		{
+			dependencies: ["267847C6D3DBEB9C"]
+			description: ["激活后，随机选取胸腔中的一个&e唯一激活&r器官，再次触发其唯一激活效果，对部分效果无效。"]
 			id: "6FB1F1E2DCBA6694"
+			rewards: [{
+				id: "246B19EE51B42194"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "过量药物带来了重复的激活，但……代价是什么？"
 			tasks: [{
 				id: "6B994F98BE6391DB"
 				item: {
@@ -2504,11 +3083,19 @@
 				}
 				type: "item"
 			}]
-			x: 10.0d
+			x: 11.0d
 			y: 8.5d
 		}
 		{
+			dependencies: ["267847C6D3DBEB9C"]
+			description: ["根据&7算力&r持续催熟自身所在格及与其相连的农作物。"]
 			id: "28EA84890F4D2ADA"
+			rewards: [{
+				id: "63561B94B0330C5C"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "谷种入田野，又是一个好时节"
 			tasks: [{
 				id: "47DC0F232C43BD91"
 				item: {
@@ -2518,11 +3105,19 @@
 				}
 				type: "item"
 			}]
-			x: 11.0d
+			x: 12.0d
 			y: 8.5d
 		}
 		{
+			dependencies: ["267847C6D3DBEB9C"]
+			description: ["激活后，每点&7算力&r使攻击速度减少，触及距离增加。"]
 			id: "29601976F0FD5659"
+			rewards: [{
+				id: "70EFA539234233F7"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "长——————"
 			tasks: [{
 				id: "2EE7D79CE0238AAC"
 				item: {
@@ -2532,11 +3127,19 @@
 				}
 				type: "item"
 			}]
-			x: 12.0d
-			y: 8.5d
+			x: 1.0d
+			y: 9.5d
 		}
 		{
+			dependencies: ["267847C6D3DBEB9C"]
+			description: ["按下主动技能按键，将手持的钱币转换为对应的巧克力币。"]
 			id: "09B448A0750219A0"
+			rewards: [{
+				id: "762D754E2385DDE4"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "钱？那是什么？能吃吗？"
 			tasks: [{
 				id: "2D95464A5628F928"
 				item: {
@@ -2546,11 +3149,19 @@
 				}
 				type: "item"
 			}]
-			x: 2.0d
+			x: 3.0d
 			y: 9.5d
 		}
 		{
+			dependencies: ["267847C6D3DBEB9C"]
+			description: ["激活后，每点&7算力&r使攻击速度减少，攻击距离增加。"]
 			id: "01A639CCADCDC0CE"
+			rewards: [{
+				id: "0C42636333002240"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "长——————"
 			tasks: [{
 				id: "0FCE6A332BE9745A"
 				item: {
@@ -2560,11 +3171,19 @@
 				}
 				type: "item"
 			}]
-			x: 1.0d
+			x: 2.0d
 			y: 9.5d
 		}
 		{
+			dependencies: ["267847C6D3DBEB9C"]
+			description: ["使你记录击杀过的生物，并增幅对该类生物的伤害。"]
 			id: "7109B5E73E749291"
+			rewards: [{
+				id: "35208A43E99AFD35"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "我来到，我看见，我记录"
 			tasks: [{
 				id: "33D3AC53D43840DB"
 				item: {
@@ -2574,11 +3193,19 @@
 				}
 				type: "item"
 			}]
-			x: 3.0d
+			x: 4.0d
 			y: 9.5d
 		}
 		{
+			dependencies: ["267847C6D3DBEB9C"]
+			description: ["激活后，随机触发胸腔中5个非&e唯一激活&r器官的激活效果。"]
 			id: "34D147B83721B9AB"
+			rewards: [{
+				id: "33E2812C656C607C"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "代价小了点"
 			tasks: [{
 				id: "6D9877F6A7EE4965"
 				item: {
@@ -2588,11 +3215,19 @@
 				}
 				type: "item"
 			}]
-			x: 4.0d
+			x: 5.0d
 			y: 9.5d
 		}
 		{
+			dependencies: ["267847C6D3DBEB9C"]
+			description: ["根据胸腔中的&e蜜脾&r数量提供对书写过的&f纸&r器官的防护。"]
 			id: "321B9726C0E3CB30"
+			rewards: [{
+				id: "75C342798F5AD66D"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "防水性能++"
 			tasks: [{
 				id: "272D323FA47E67DD"
 				item: {
@@ -2602,11 +3237,23 @@
 				}
 				type: "item"
 			}]
-			x: 5.0d
+			x: 6.0d
 			y: 9.5d
 		}
 		{
+			dependencies: ["5EA6AF64B2BE4E95"]
+			description: [
+				"&4七原罪&r器官之一，能够将造成的伤害变为三倍。"
+				""
+				"&4代价：受到的伤害变为五倍。&r"
+			]
 			id: "5A4276B1704E55E3"
+			rewards: [{
+				id: "471436825E14BDB9"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "人类无边的贪婪化作灵魂之中的烈火，驱使着他们摧毁一切……"
 			tasks: [{
 				id: "6A70C4CAEEC6366F"
 				item: {
@@ -2620,7 +3267,19 @@
 			y: 3.75d
 		}
 		{
+			dependencies: ["5EA6AF64B2BE4E95"]
+			description: [
+				"&4七原罪&r器官之一，能够持续回复生命值。"
+				""
+				"&4代价：移动速度大幅降低。&r"
+			]
 			id: "39A160B362E20453"
+			rewards: [{
+				id: "76E599DA7E19D57B"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "陷阱能困住肉体，而怠倦却能困住灵魂……"
 			tasks: [{
 				id: "4EC02093EE5B3676"
 				item: {
@@ -2634,7 +3293,19 @@
 			y: 3.75d
 		}
 		{
+			dependencies: ["5EA6AF64B2BE4E95"]
+			description: [
+				"&4七原罪&r器官之一，能够对BOSS造成额外的百分比伤害。"
+				""
+				"&4代价：攻击力大幅降低。&r"
+			]
 			id: "3E4E7BB2B3F5EB81"
+			rewards: [{
+				id: "073BD76512256361"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "人类无边的欲望使得他们对他们察觉之物产生了渴求感，若求之不得，便永不满足……"
 			tasks: [{
 				id: "051C55604783CC5C"
 				item: {
@@ -2648,7 +3319,19 @@
 			y: 3.75d
 		}
 		{
+			dependencies: ["5EA6AF64B2BE4E95"]
+			description: [
+				"&4七原罪&r器官之一，能够在造成伤害时回复一定的饱和度。"
+				""
+				"&4代价：消化效率极大幅度降低。&r"
+			]
 			id: "29B4780D866CE7DA"
+			rewards: [{
+				id: "4D5222644A6F96EB"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "有些人类是那样地饥渴，无边的饥渴，永远得不到满足，永远感到空虚……"
 			tasks: [{
 				id: "0CE75D9C506BB963"
 				item: {
@@ -2662,7 +3345,19 @@
 			y: 3.75d
 		}
 		{
+			dependencies: ["5EA6AF64B2BE4E95"]
+			description: [
+				"&4七原罪&r器官之一，能够将战利品变为两倍。"
+				""
+				"&4代价：周期性清除附近的掉落物。&r"
+			]
 			id: "75B9D49FD4056133"
+			rewards: [{
+				id: "0D7DB1D45B5E28A3"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "人类拥有思维，拥有无穷尽的欲望和动机，总是永不满足地寻找、占有、创造而又毁灭……"
 			tasks: [{
 				id: "1F778DAA26405653"
 				item: {
@@ -2676,7 +3371,19 @@
 			y: 3.75d
 		}
 		{
+			dependencies: ["5EA6AF64B2BE4E95"]
+			description: [
+				"&4七原罪&r器官之一，能够使附近的动物持续繁殖。"
+				""
+				"&4代价：附近的成年动物持续流失生命值。&r"
+			]
 			id: "57BA01D892417A62"
+			rewards: [{
+				id: "1AD5F27719382952"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "人类渴望着异性的胴体，生命渴望着血肉的鲜美……"
 			tasks: [{
 				id: "761EE1E5C67ADC54"
 				item: {
@@ -2690,7 +3397,19 @@
 			y: 3.75d
 		}
 		{
+			dependencies: ["5EA6AF64B2BE4E95"]
+			description: [
+				"&4七原罪&r器官之一，能够免疫大多数无来源伤害。"
+				""
+				"&4代价：有来源伤害变为魔法伤害。&r"
+			]
 			id: "54E40FA99E88017A"
+			rewards: [{
+				id: "30D23A239A833197"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "人类以无边的欲望凌驾于万物之上，全然的支配使得人类越发的空虚……"
 			tasks: [{
 				id: "25C5B0774A99139E"
 				item: {
@@ -2704,7 +3423,20 @@
 			y: 3.75d
 		}
 		{
+			dependencies: ["5EA6AF64B2BE4E95"]
+			description: [
+				"七宗罪的聚合体，能够同时带来所有&4七原罪&r碎片的效果……尽管不被视作集齐全套。"
+				""
+				"&4当然，包括代价&r"
+			]
+			hide_text_until_complete: true
 			id: "01C03416E8B3F4CA"
+			rewards: [{
+				id: "356DB7585AF769CD"
+				item: "lightmanscurrency:coin_emerald"
+				type: "item"
+			}]
+			subtitle: "你见证了七大罪恶，并因此负罪……"
 			tasks: [{
 				id: "00ADC33A6E052B91"
 				item: {
@@ -2718,7 +3450,22 @@
 			y: 3.75d
 		}
 		{
+			dependencies: ["5EA6AF64B2BE4E95"]
+			description: [
+				"经历&e神之惩戒&r之后，你终于得以承受这强大的力量。"
+				""
+				"&b罪与罚&r能够带来所有&4七宗罪&r碎片的&e正面效果&r（无需付出代价），并在每天开始时为你带来神明的&e一瞥&r。"
+				""
+				"当然，如果你继续向胸腔中放入其他&4七宗罪&r器官，你仍需为这些器官付出代价。"
+			]
+			hide_text_until_complete: true
 			id: "07F4CF14F83AB235"
+			rewards: [{
+				id: "5FB33E0761E2014D"
+				item: "lightmanscurrency:coin_diamond"
+				type: "item"
+			}]
+			subtitle: "此刻，你清楚的意识到，你即是神，你即可代天授命。"
 			tasks: [{
 				id: "572E12D6A2F65702"
 				item: {
@@ -2730,6 +3477,72 @@
 			}]
 			x: -6.75d
 			y: 3.75d
+		}
+		{
+			dependencies: ["1B75F5835B3F3E31"]
+			description: ["&2处理器&r器官之一，能够根据&3幽匿&r器官数提供&7算力&r，并根据&7算力&r提供&3幽匿&r器官数。"]
+			id: "5100142FAACEF8CF"
+			rewards: [{
+				id: "14DEE49AD5BE851E"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "我即是幽匿"
+			tasks: [{
+				id: "4D6481D08EE82E74"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:sculk_infection_cpu"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 6.0d
+			y: -4.25d
+		}
+		{
+			dependencies: ["1B75F5835B3F3E31"]
+			description: ["&2处理器&r器官之一，能够根据&2反物质&r器官数提供&7算力&r，并根据&7算力&r提供&2反物质&r器官数。"]
+			id: "4932DA271CE06BD6"
+			rewards: [{
+				id: "45CA43844DFBE111"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "> 0===1 :true"
+			tasks: [{
+				id: "12F5056BE783FADB"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:antimatter_reverse_cpu"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 7.0d
+			y: -4.25d
+		}
+		{
+			dependencies: ["267847C6D3DBEB9C"]
+			description: ["能够在连续攻击时提供伤害加成。"]
+			id: "2A9CE653F7CB3ADB"
+			rewards: [{
+				id: "665DAB7C9F10D59A"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "空无之月的妄想"
+			tasks: [{
+				id: "214A22A6F0B64000"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:moon_soul"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 5.0d
+			y: 7.5d
 		}
 	]
 	title: "额外器官：看看你的器官"

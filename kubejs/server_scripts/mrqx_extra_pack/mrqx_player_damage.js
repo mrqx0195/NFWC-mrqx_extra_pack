@@ -391,12 +391,14 @@ const mrqxOrganPlayerDamageOnlyStrategies = {
 	// “道士十五狗”
 	'mrqx_extra_pack:taoist_fifteen_dogs': function (event, organ, data) {
 		let player = event.source.player
+		let count = 0
 		player.getServer().getEntities().forEach(entity => {
 			if (entity.getPersistentData().getString('mrqxTaoistFifteenDogs') && entity.getPersistentData().getString('mrqxTaoistFifteenDogs') == player.getStringUuid()) {
-				event.amount += 1
+				count++
 				entity.attack(1)
 			}
 		})
+		event.amount += count ** 2
 	},
 
 	// “法师控制强”
@@ -420,11 +422,10 @@ const mrqxOrganPlayerDamageOnlyStrategies = {
 	// 国王的铠甲
 	'mrqx_extra_pack:kings_armor': function (event, organ, data) {
 		let player = event.source.player
-		if (Math.floor(player.getHealth()) < 2 || player.getAbsorptionAmount() >= player.getMaxHealth()) {
-			return
+		if (Math.floor(player.getHealth()) > 1 || player.getAbsorptionAmount() < player.getMaxHealth()) {
+			let amount = Math.min(player.getAbsorptionAmount() + 2, player.getMaxHealth())
+			player.setAbsorptionAmount(amount)
 		}
-		let amount = Math.min(player.getAbsorptionAmount() + 2, player.getMaxHealth())
-		player.setAbsorptionAmount(amount)
 		player.setHealth(Math.max(player.getHealth() - 2, 1))
 	},
 

@@ -1,6 +1,7 @@
 // priority: 9
 
 /**
+ * 受伤前事件
  * @param {Internal.LivingHurtEvent} event
  */
 global.mrqxLivingHurtByPlayer = event => {
@@ -15,6 +16,18 @@ global.mrqxLivingHurtByPlayer = event => {
 }
 
 /**
+ * 掉血结算事件
+ * @param {Internal.LivingDamageEvent} event
+ */
+global.mrqxLivingDamageByPlayer = event => {
+    let curiosAdvancedArchivistEyeGlassItems = mrqxGetCurioInfo(event.source.player, 'mrqx_extra_pack:advanced_eyeglass')
+    if (curiosAdvancedArchivistEyeGlassItems.hasItem && mrqxCheckAdvancedArchivistEyeGlass(curiosAdvancedArchivistEyeGlassItems.stacks[0])[10]) {
+        mrqxAdvancedArchivistEyeGlassDamage(event)
+    }
+}
+
+/**
+ * 玩家受到伤害
  * @param {Internal.LivingDamageEvent} event
  */
 global.mrqxLivingDamageByOthers = event => {
@@ -28,5 +41,9 @@ global.mrqxLivingDamageByOthers = event => {
                 mrqxShieldGeneratorBear(event, curiosShieldGeneratorItems.stacks[i])
             }
         }
+    }
+    let curiosAdvancedArchivistEyeGlassItems = mrqxGetCurioInfo(event.entity, 'mrqx_extra_pack:advanced_eyeglass')
+    if (curiosAdvancedArchivistEyeGlassItems.hasItem && mrqxCheckAdvancedArchivistEyeGlass(curiosAdvancedArchivistEyeGlassItems.stacks[0])[10]) {
+        mrqxAdvancedArchivistEyeGlassBear(event)
     }
 }

@@ -22,4 +22,7 @@ ForgeEvents.onEvent('net.minecraftforge.event.entity.living.LivingDamageEvent', 
     if (event.getEntity() && event.getEntity().isPlayer() && !event.getEntity().getLevel().isClientSide()) {
         global.mrqxLivingDamageByOthers(event)
     }
+    if (event.getSource() && event.getSource().getPlayer() && !event.getSource().getPlayer().getLevel().isClientSide()) {
+        global.mrqxLivingDamageByPlayer(event)
+    }
 })
