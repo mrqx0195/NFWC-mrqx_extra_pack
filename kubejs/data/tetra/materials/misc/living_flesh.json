@@ -15,7 +15,8 @@
         "texture": "8B1C62"
       },
     "effects" : {
-        "intuit": 2
+        "intuit": 2,
+        "kubejs:functionalization": 1
       },
     "textures": [
         "crude",

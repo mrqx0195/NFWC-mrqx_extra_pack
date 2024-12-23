@@ -18,7 +18,8 @@
         "default"
     ],
     "effects" : {
-        "intuit": 2
+        "intuit": 2,
+        "kubejs:silicosis": 3
     },
     "material": {
         "items": [ "twilightforest:carminite" ]

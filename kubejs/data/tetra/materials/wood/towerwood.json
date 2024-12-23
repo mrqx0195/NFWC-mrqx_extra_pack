@@ -21,6 +21,9 @@
         "crude",
         "wooden"
     ],
+    "effects" : {
+        "kubejs:silicosis": 1
+    },
     "material": {
         "items": [
             "twilightforest:towerwood"
