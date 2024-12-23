@@ -264,22 +264,6 @@
 		}
 		{
 			dependencies: ["3E9DD0B78886A183"]
-			id: "460370DFCAAA8817"
-			rewards: [{
-				id: "5BAC681E9D953FC3"
-				item: "lightmanscurrency:coin_gold"
-				type: "item"
-			}]
-			tasks: [{
-				id: "56F675F7A4F447CD"
-				item: "witherstormmod:command_block_sword"
-				type: "item"
-			}]
-			x: -2.25d
-			y: -3.25d
-		}
-		{
-			dependencies: ["3E9DD0B78886A183"]
 			id: "5A988F8268E91558"
 			rewards: [{
 				id: "475064EF2A5FDB19"
@@ -343,28 +327,6 @@
 			}]
 			x: 1.5d
 			y: -3.25d
-		}
-		{
-			dependencies: ["3E9DD0B78886A183"]
-			id: "75E128CC9C6A32BA"
-			rewards: [{
-				id: "5A41BDAAE0704F85"
-				item: "lightmanscurrency:coin_gold"
-				type: "item"
-			}]
-			tasks: [{
-				id: "512FB8BF784ABBB3"
-				item: {
-					Count: 1b
-					id: "goety:fell_blade"
-					tag: {
-						Damage: 0
-					}
-				}
-				type: "item"
-			}]
-			x: -2.25d
-			y: -2.25d
 		}
 		{
 			dependencies: ["3E9DD0B78886A183"]
@@ -452,7 +414,7 @@
 				type: "item"
 			}]
 			x: -2.25d
-			y: -1.25d
+			y: -3.25d
 		}
 		{
 			dependencies: ["3E9DD0B78886A183"]
@@ -519,22 +481,6 @@
 			}]
 			x: 1.5d
 			y: -1.25d
-		}
-		{
-			dependencies: ["3E9DD0B78886A183"]
-			id: "211A6E746DACE119"
-			rewards: [{
-				id: "3D81EF760FC6835C"
-				item: "lightmanscurrency:coin_gold"
-				type: "item"
-			}]
-			tasks: [{
-				id: "6BDAB2FFFE9C40AA"
-				item: "witherstormmod:command_block_axe"
-				type: "item"
-			}]
-			x: -2.25d
-			y: -0.25d
 		}
 		{
 			dependencies: ["3E9DD0B78886A183"]
@@ -622,7 +568,7 @@
 				type: "item"
 			}]
 			x: -2.25d
-			y: 0.75d
+			y: -2.25d
 		}
 		{
 			dependencies: ["3E9DD0B78886A183"]
@@ -704,7 +650,7 @@
 				type: "item"
 			}]
 			x: -2.25d
-			y: 1.75d
+			y: -1.25d
 		}
 		{
 			dependencies: ["3E9DD0B78886A183"]
@@ -780,7 +726,7 @@
 				type: "item"
 			}]
 			x: -2.25d
-			y: 2.75d
+			y: -0.25d
 		}
 		{
 			dependencies: ["3E9DD0B78886A183"]
@@ -858,7 +804,7 @@
 				type: "item"
 			}]
 			x: -2.25d
-			y: 3.75d
+			y: 0.75d
 		}
 		{
 			dependencies: ["3E9DD0B78886A183"]
@@ -934,7 +880,7 @@
 				type: "item"
 			}]
 			x: -2.25d
-			y: 4.75d
+			y: 1.75d
 		}
 		{
 			dependencies: ["3E9DD0B78886A183"]
@@ -978,7 +924,7 @@
 				type: "item"
 			}]
 			x: -2.25d
-			y: 5.75d
+			y: 2.75d
 		}
 		{
 			dependencies: ["3E9DD0B78886A183"]

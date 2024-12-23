@@ -3,7 +3,7 @@
 	default_quest_shape: ""
 	filename: "tom"
 	group: "0F9EA9FA28C88D03"
-	icon: "toms_storage:ts.inventory_connector"
+	icon: "refinedstorage:creative_controller"
 	id: "05ADC2E0A7649AC7"
 	images: [{
 		click: ""
@@ -18,332 +18,474 @@
 		y: -0.25d
 	}]
 	order_index: 0
-	quest_links: [ ]
+	quest_links: [{
+		id: "1DFAF7FE9E699B0D"
+		linked_quest: "238FC9B9D84A4148"
+		x: 2.25d
+		y: -0.75d
+	}]
 	quests: [
 		{
-			dependencies: ["26FE76DDA11E0026"]
-			description: [
-				"是不是时常在各箱子翻找东西无迹可寻？"
-				"是不是整理箱子发现种类太多焦头烂额？"
-				""
-				"来试试&6tom的简易存储&r吧！"
-				"无需电力，即可轻松解决存储的难题"
-			]
-			icon: "toms_storage:ts.inventory_connector"
-			id: "4806938A4DAB5634"
-			rewards: [{
-				id: "52165A3A71ADB569"
-				item: {
-					Count: 1b
-					id: "lightmanscurrency:coin_iron"
-					tag: { }
-				}
-				type: "item"
-			}]
-			shape: "rsquare"
+			dependencies: ["238FC9B9D84A4148"]
+			description: ["&6终端&r为你的存储网络提供了一个&a交互面板&r，多数情况下你需要&2右击&r该方块进行&e存放和拿取物品&r。"]
+			id: "349E841AA20BE9F0"
 			tasks: [{
-				id: "2C6577D17B5B135D"
-				title: "我已了解"
-				type: "checkmark"
-			}]
-			title: "简易的简易存储"
-			x: 0.0d
-			y: 0.0d
-		}
-		{
-			dependencies: ["4806938A4DAB5634"]
-			description: [
-				"用来与&6存储终端&r组合使用，用以整合大量相邻的容器的完整方块。"
-				""
-				"放在一个容器旁（六个面皆可），它就可以自动识别并链接这个容器，形成&d存储网络&r，此时右击&6存储驱动器&r，将显示它链接到的容器所拥有的总空间和剩余空间格数。"
-				""
-				"如果这个容器和其他容器相邻，&6存储整合器&r会将这些容器一并视为一个整体链接，其极限连接距离为16格（理论上可以连接以储存整合器为中心的32*32*32范围内所有容器）。"
-			]
-			id: "7843988CB0F906B3"
-			rewards: [{
-				count: 8
-				id: "36397C2C40CEEC9A"
-				item: "minecraft:barrel"
-				type: "item"
-			}]
-			subtitle: "链接存储网络"
-			tasks: [{
-				id: "5B673BB7287B4024"
-				item: "toms_storage:ts.inventory_connector"
-				type: "item"
-			}]
-			x: 2.0d
-			y: 0.0d
-		}
-		{
-			dependencies: ["7843988CB0F906B3"]
-			description: ["将它放在&6存储整合器&r上，即可方便的访问整合存储网络"]
-			id: "7EA63EFEECF4628D"
-			rewards: [{
-				count: 8
-				id: "1E8E446A5F45EA6B"
-				item: "functionalstorage:oak_1"
-				type: "item"
-			}]
-			subtitle: "操作存储网络"
-			tasks: [{
-				id: "02DD6FA9DC43CB97"
-				item: "toms_storage:ts.storage_terminal"
+				id: "6EE1EAE373DFAB1E"
+				item: "refinedstorage:grid"
 				type: "item"
 			}]
 			x: 4.0d
-			y: 0.0d
+			y: -0.75d
 		}
 		{
-			dependencies: ["7EA63EFEECF4628D"]
-			description: ["&6存储终端&r的升级版，拥有一个工作台的面板，是正常情况下最优先选择的型号。"]
-			id: "06CFAD62C6DC65CA"
-			rewards: [{
-				id: "0BE186401EC124A1"
-				item: "functionalstorage:storage_controller"
-				type: "item"
-			}]
-			subtitle: "获得升级"
-			tasks: [{
-				id: "0DA3B74A7AD87B88"
-				item: "toms_storage:ts.crafting_terminal"
-				type: "item"
-			}]
-			x: 6.0d
-			y: 0.0d
-		}
-		{
-			dependencies: ["7843988CB0F906B3"]
+			dependencies: ["349E841AA20BE9F0"]
 			description: [
-				"用来搭建&d存储网络&r，可合成为&6框架存储线缆&r。"
+				"磁盘驱动器存放&6磁盘&r的容器，它只是一个空壳，本身并不提供存储空间。"
 				""
-				"用于连接&6存储终端、合成终端&r或其他容器时必须与&6存储线缆&r连接器搭配使用。"
+				"将&6磁盘&r放入&6磁盘驱动器&r，便可以&e增加相应的存储空间&r。"
+				""
+				"&7如1K存储磁盘，提供了可存放1024个物品的存储空间。&r"
 			]
-			id: "17D8CDADACFB7134"
-			rewards: [{
-				count: 2
-				icon: "lightmanscurrency:coin_gold"
-				id: "5A2C147659F191D6"
-				item: "lightmanscurrency:coin_gold"
-				type: "item"
-			}]
-			subtitle: "远程链接"
-			tasks: [{
-				id: "7DBD3D95D6FE5315"
-				item: "toms_storage:ts.inventory_cable"
-				type: "item"
-			}]
-			x: 3.5d
-			y: -1.5d
-		}
-		{
-			dependencies: ["06CFAD62C6DC65CA"]
-			description: [
-				"&6存储代理器&r概念上等同于扩展了某个容器的某一面。实际上完全可以视作一个&2朝向容器某个面的输入管道&r。"
-				"{image:kubejs:textures/task/tom_1.png width:160 height:90 align:1}"
-				"图中描绘的则是一个常见场景：其中中心为&6存储代理器&r，其&2指向了右侧红框箱子&r；同时通过手持钻石右键代理器的左侧，使得左侧蓝框箱子作为&6样板容器&r存在在这个体系中。"
-				""
-				"{@pagebreak}"
-				"{image:kubejs:textures/task/tom_2.png width:160 height:75 align:1}"
-				""
-				"图中为蓝框箱子的摆放内容，通过设置其中物品的摆放，&2存储代理器便可控制右侧的容器&r，使之容器极限为模板箱子设置的内容。"
-				""
-				"&2即对应的位置只能存放对应的物品&r，且物品数量不会超过设置数量。如果模板箱子设置了空格，则意味着任何物品都可以进入其中。"
-				""
-				"{@pagebreak}"
-				"在完成了模板箱子设置之后，向漏斗中放入物品，就会以按照设置的上限塞入物品。&2物品塞入的顺序和输入方式有关&r。"
-				""
-				"且由于代理器可以被视作一个&6输入管道&r，因此可输入的槽位受容器与代理器的贴合面限制。"
-				""
-				"例如，如果左侧和右侧放置的都是熔炉，尽管你在输入槽内设置了物品，但由于&2熔炉仅能从顶部输入&r，因此物品也只能流入到燃料槽。"
-				""
-				"{image:kubejs:textures/task/tom_3.png width:160 height:75 align:1}"
-				""
-				"{@pagebreak}"
-				"除此之外，通过铁砧对箱子等物品按照k-v格式命名，可以定义容器的部分属性。"
-				"目前仅支持："
-				"-'&6ignoreSize&r'忽略物品堆叠数"
-				"-'&6maxCount=<max value>&r'设定空槽位中的最大堆叠数"
-				""
-				"例如，你可以设置&2ignoreSize=true&r来让其忽略物品上限的设置。"
-			]
-			id: "3A4DBF039CE9A9E9"
-			rewards: [{
-				count: 3
-				id: "6FC6A6867709F689"
-				item: "lightmanscurrency:coin_gold"
-				type: "item"
-			}]
-			subtitle: "灵活存储. . .但用途有限"
-			tasks: [{
-				id: "746A3841940970D5"
-				item: "toms_storage:ts.inventory_proxy"
-				type: "item"
-			}]
-			x: 7.25d
-			y: -1.5d
-		}
-		{
-			dependencies: ["06CFAD62C6DC65CA"]
-			description: ["持握时，可从更远处（&516格&r）右击终端并打开其界面。（无线终端使用前需要先绑定对应的终端）"]
-			id: "0E870625DCF57C7A"
-			rewards: [{
-				id: "06457B545226E084"
-				item: "lightmanscurrency:coin_gold"
-				type: "item"
-			}]
-			subtitle: "远程访问术"
-			tasks: [{
-				id: "0E0AAB585801DDF7"
-				item: "toms_storage:ts.wireless_terminal"
-				type: "item"
-			}]
-			x: 7.75d
-			y: 0.0d
-		}
-		{
-			dependencies: ["0E870625DCF57C7A"]
-			description: [
-				"在&6存储整合器&r旁摆放一个一层的信标即可让&6先进无线终端&r在本世界内任何地方打开终端。"
-				""
-				"在驱动器旁摆放一个满级信标，并且使用整合包自带的FTB地图设置该区块强制加载后，即可用先进无线终端跨世界打开终端。"
-				""
-				"此外一座信标可对多个&6存储整合器&r发挥作用。"
-				""
-				"&7打开FTB地图后，在左上角的认领区块中，先左键认领区块，再shift+左键使其强制加载。（区块区域出现斜线即为操作正确）&r"
-			]
-			icon: "toms_storage:ts.adv_wireless_terminal"
-			id: "0004C045EF8274F8"
-			rewards: [
-				{
-					count: 8
-					id: "63A711EC01B48CCE"
-					item: "lightmanscurrency:coin_gold"
-					type: "item"
-				}
-				{
-					id: "1EB3E2BC872FDCCC"
-					item: "minecraft:nether_star"
-					type: "item"
-				}
-			]
-			subtitle: "信标的额外用途"
-			tasks: [{
-				id: "12C75A7B277719CD"
-				item: "toms_storage:ts.adv_wireless_terminal"
-				type: "item"
-			}]
-			title: "无限距离访问"
-			x: 9.5d
-			y: 0.0d
-		}
-		{
-			dependencies: ["17D8CDADACFB7134"]
-			description: [
-				"暴露在外的走线非常蠢笨，但并不是所有人都有着双层的墙壁以供埋入管线。"
-				""
-				"因此，制作一些嵌框线缆，使用&6喷涂工具&r将其上色伪装。管线便能和周围的环境融为一体！"
-			]
-			icon: "toms_storage:ts.inventory_cable_framed"
-			id: "742289A3FE32A740"
-			rewards: [{
-				count: 3
-				id: "4D3B0829CFA70EA1"
-				item: "lightmanscurrency:coin_gold"
-				type: "item"
-			}]
-			subtitle: "融为一体"
+			icon: "refinedstorage:disk_drive"
+			id: "0E097279FE764E16"
 			tasks: [
 				{
-					id: "7A6003F60A3D30F9"
-					item: "toms_storage:ts.inventory_cable_framed"
+					id: "02CAB380C2980F87"
+					item: "refinedstorage:disk_drive"
 					type: "item"
 				}
 				{
-					id: "77BE1C2D7D293283"
+					id: "7BB9A2583BAD64F6"
 					item: {
 						Count: 1b
-						id: "toms_storage:ts.paint_kit"
+						id: "refinedstorage:1k_storage_disk"
 						tag: {
-							Damage: 0
+							Id: [I;
+								1208635032
+								1030635604
+								-1750272375
+								755576547
+							]
 						}
 					}
 					type: "item"
 				}
 			]
-			x: 5.0d
-			y: -3.0d
+			x: 4.0d
+			y: -2.0d
 		}
 		{
-			dependencies: ["17D8CDADACFB7134"]
+			dependencies: ["349E841AA20BE9F0"]
 			description: [
-				"除了使用容器相邻的直接传递之外，你也可以使用&2存储线缆连接器来链接容器&r（比如说抽屉）。"
+				"你可以将本模组方块&2紧贴在一起放置&r，让其&a自动连接以接入网络&r，也可以使用&6线缆&r连接。"
 				""
-				"除此之外，你可以将连接器放在一层信标的上部，在信标光束无直接遮挡时，便可以让该物品网络连入当前维度。在其他地方同样设置信标，通过配置连接器的右上角的输入/输出，即可让&2多个网络间的内容无视距离的共享&r。"
 				""
-				"如果建立二层信标，则可以在跨维度的情况下共享网络内容。"
-				""
-				"或许你可以试着在私人维度中搭建你的私人网络。"
+				"{image:kubejs:textures/task/rs_1.png width:180 height:107 align:1}"
 			]
-			icon: "toms_storage:ts.inventory_cable_connector"
-			id: "15E4E2C92DF895CA"
-			rewards: [{
-				id: "459E9B5B85B26C05"
-				item: "lightmanscurrency:coin_gold"
-				type: "item"
-			}]
-			subtitle: "合并容器，扩大网络"
+			id: "0F3481A805779F82"
 			tasks: [{
-				id: "6DC82FBC2821C637"
-				item: "toms_storage:ts.inventory_cable_connector"
+				id: "2343C0554FC1EA13"
+				item: "refinedstorage:cable"
 				type: "item"
 			}]
-			title: "并入新网络"
+			x: 7.0d
+			y: -0.75d
+		}
+		{
+			dependencies: ["0F3481A805779F82"]
+			description: [
+				"&6输入面板：&r将标记的物品&a从容器输入到网络中&r。"
+				""
+				"&6输出面板：&r将标记的物品&a从网络中输出至容器&r。"
+				""
+				"&6外部存储面板：&r将连接的容器并入网络。"
+				""
+				"&6成型面板：&r在前方放置标记的物品或流体。"
+				""
+				"&6破坏面板：&r能够破坏前方的方块或流体，同时也能吸收前方的掉落物。"
+			]
+			id: "077F124183B7F35A"
+			tasks: [
+				{
+					id: "7771FA9857619BEC"
+					item: "refinedstorage:importer"
+					type: "item"
+				}
+				{
+					id: "457572E0A24EA730"
+					item: "refinedstorage:exporter"
+					type: "item"
+				}
+				{
+					id: "02558AC1DBF8B9BA"
+					item: "refinedstorage:external_storage"
+					type: "item"
+				}
+				{
+					id: "604A9D660DA95A13"
+					item: "refinedstorage:constructor"
+					type: "item"
+				}
+				{
+					id: "748BF2668FD3E6C9"
+					item: "refinedstorage:destructor"
+					type: "item"
+				}
+			]
+			title: "更多交互面板"
+			x: 7.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["077F124183B7F35A"]
+			description: ["整合了&6输入面板&r和&6输出面板&r的功能。"]
+			id: "65E7AB4AFE7A3851"
+			tasks: [{
+				id: "12D12BC42F508EE6"
+				item: "refinedstorage:interface"
+				type: "item"
+			}]
+			x: 7.0d
+			y: -3.25d
+		}
+		{
+			dependencies: ["0F3481A805779F82"]
+			description: ["本模组有非常多的&6升级道具&r，你可以将他们放入对应的机器内，他们有的会提供&2更高的效率&r，有的则是提供&2新的功能&r。"]
+			id: "5624DCA92865BF21"
+			tasks: [{
+				id: "12137863E3683FE9"
+				item: {
+					Count: 1b
+					id: "itemfilters:or"
+					tag: {
+						items: [
+							{
+								Count: 1b
+								id: "refinedstorage:speed_upgrade"
+							}
+							{
+								Count: 1b
+								id: "refinedstorage:range_upgrade"
+							}
+							{
+								Count: 1b
+								id: "refinedstorage:crafting_upgrade"
+							}
+							{
+								Count: 1b
+								id: "refinedstorage:stack_upgrade"
+							}
+							{
+								Count: 1b
+								id: "refinedstorage:silk_touch_upgrade"
+							}
+							{
+								Count: 1b
+								id: "refinedstorage:fortune_1_upgrade"
+							}
+							{
+								Count: 1b
+								id: "refinedstorage:fortune_2_upgrade"
+							}
+							{
+								Count: 1b
+								id: "refinedstorage:fortune_3_upgrade"
+							}
+							{
+								Count: 1b
+								id: "refinedstorage:regulator_upgrade"
+							}
+						]
+					}
+				}
+				title: "查看详情"
+				type: "item"
+			}]
+			title: "升级改造！"
+			x: 7.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["349E841AA20BE9F0"]
+			description: ["现在你的&6终端&r自带&2工作台面板&r了，你可以&a更便捷的合成物品&r。"]
+			id: "486BC5DD6F9B0552"
+			tasks: [{
+				id: "754F48EECC54914D"
+				item: "refinedstorage:crafting_grid"
+				type: "item"
+			}]
 			x: 5.5d
-			y: -1.5d
+			y: -2.0d
 		}
 		{
-			dependencies: ["7EA63EFEECF4628D"]
+			dependencies: ["0E097279FE764E16"]
 			description: [
-				"&2敞口箱&r会将前方一格空气方块内的物品全都视作在容器内。同时如果网络将物品输送到敞口箱，其物品也会掉落在前方一格内。"
+				"存储磁盘可以&a升级以提供更大的存储空间&r。"
 				""
-				"这往往被用于物品销毁或者作为缓存使用。或者部分需要进行水流运输等世界合成相关的场景。"
+				"其中&6流体存储磁盘&r则是用来存储流体&7（水、岩浆）&r。"
 			]
-			id: "01EF48B3999B5BBE"
-			rewards: [{
-				id: "167B101D58E11673"
-				item: "lightmanscurrency:coin_gold"
-				type: "item"
-			}]
+			id: "0CC6911A54BE0B45"
 			tasks: [{
-				id: "2AD8943DADC3951C"
-				item: "toms_storage:ts.open_crate"
+				id: "318AF11773D02353"
+				item: {
+					Count: 1b
+					id: "itemfilters:or"
+					tag: {
+						items: [
+							{
+								Count: 1b
+								id: "refinedstorage:1k_storage_disk"
+								tag: {
+									Id: [I;
+										-1052089967
+										1281770621
+										-2040044613
+										-1856333849
+									]
+								}
+							}
+							{
+								Count: 1b
+								id: "refinedstorage:4k_storage_disk"
+								tag: {
+									Id: [I;
+										555109137
+										1258966753
+										-1820183315
+										-249955434
+									]
+								}
+							}
+							{
+								Count: 1b
+								id: "refinedstorage:16k_storage_disk"
+								tag: {
+									Id: [I;
+										-1800827946
+										1474710776
+										-1898325796
+										1689922010
+									]
+								}
+							}
+							{
+								Count: 1b
+								id: "refinedstorage:64k_storage_disk"
+								tag: {
+									Id: [I;
+										626260586
+										529485662
+										-1265211753
+										-1114092362
+									]
+								}
+							}
+							{
+								Count: 1b
+								id: "refinedstorage:64k_fluid_storage_disk"
+								tag: {
+									Id: [I;
+										-573907372
+										843465921
+										-1336571294
+										-875429025
+									]
+								}
+							}
+							{
+								Count: 1b
+								id: "refinedstorage:256k_fluid_storage_disk"
+								tag: {
+									Id: [I;
+										505485084
+										1457539331
+										-1118837133
+										-497191868
+									]
+								}
+							}
+							{
+								Count: 1b
+								id: "refinedstorage:1024k_fluid_storage_disk"
+								tag: {
+									Id: [I;
+										-2107955511
+										-1476901273
+										-1135475104
+										123709796
+									]
+								}
+							}
+							{
+								Count: 1b
+								id: "refinedstorage:4096k_fluid_storage_disk"
+								tag: {
+									Id: [I;
+										1260386454
+										1564230206
+										-2112188407
+										740688048
+									]
+								}
+							}
+						]
+					}
+				}
+				title: "查看详情"
 				type: "item"
 			}]
-			x: 6.0d
-			y: 2.0d
+			title: "更多存储磁盘"
+			x: 4.0d
+			y: -3.25d
 		}
 		{
-			dependencies: ["7843988CB0F906B3"]
-			description: [
-				"&6基础存储漏斗&r可以用于向网络中输入或者输出物品。手持物品右键存储漏斗可以为其设置过滤白名单。"
-				""
-				"如果该漏斗用于&2两个网络之间的物品传输&r，则必须设置过滤，否则漏斗将不会进行工作！"
-			]
-			id: "450CA5A5B76B188E"
-			rewards: [{
-				id: "3958B11495AA31D7"
-				item: "lightmanscurrency:coin_gold"
-				type: "item"
-			}]
+			dependencies: ["349E841AA20BE9F0"]
+			description: ["一种简单易懂的&e增加存储空间的方式&r，仅需要将&61k存储方块&r放置以接入网络即可。"]
+			id: "4CF6B914A8EEF2D3"
 			tasks: [{
-				id: "68F7E0E9C890904B"
-				item: "toms_storage:ts.inventory_hopper_basic"
+				id: "6FF5139C02830303"
+				item: "refinedstorage:1k_storage_block"
 				type: "item"
 			}]
 			x: 4.0d
-			y: 2.25d
+			y: 0.5d
+		}
+		{
+			dependencies: ["4CF6B914A8EEF2D3"]
+			description: [
+				"存储方块可以&a升级以提供更大的存储空间&r。"
+				""
+				"其中&6流体存储方块&r则是用来存储流体&7（水、岩浆）&r。"
+			]
+			id: "2AB6AC3C54C33705"
+			tasks: [{
+				id: "5D327C303112F0B9"
+				item: {
+					Count: 1b
+					id: "itemfilters:or"
+					tag: {
+						items: [
+							{
+								Count: 1b
+								id: "refinedstorage:1k_storage_block"
+							}
+							{
+								Count: 1b
+								id: "refinedstorage:4k_storage_block"
+							}
+							{
+								Count: 1b
+								id: "refinedstorage:16k_storage_block"
+							}
+							{
+								Count: 1b
+								id: "refinedstorage:64k_storage_block"
+							}
+							{
+								Count: 1b
+								id: "refinedstorage:64k_fluid_storage_block"
+							}
+							{
+								Count: 1b
+								id: "refinedstorage:256k_fluid_storage_block"
+							}
+							{
+								Count: 1b
+								id: "refinedstorage:1024k_fluid_storage_block"
+							}
+							{
+								Count: 1b
+								id: "refinedstorage:4096k_fluid_storage_block"
+							}
+						]
+					}
+				}
+				title: "查看详情"
+				type: "item"
+			}]
+			title: "更多存储方块"
+			x: 4.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["0F3481A805779F82"]
+			description: [
+				"将&6无线发送器&r接入网络。"
+				""
+				"之后手持&6无线终端&r右键&6控制器&r便能将该无线终端与存储网络绑定，可&e远程打开存储网络&r。"
+				""
+				"&7默认范围只有16格方块。能够通过放置范围升级来扩大范围。&r"
+			]
+			icon: "refinedstorage:wireless_grid"
+			id: "38A787A6F8CCD80F"
+			tasks: [
+				{
+					id: "183EFE44ED9E5608"
+					item: "refinedstorage:wireless_transmitter"
+					type: "item"
+				}
+				{
+					id: "57D1992F11AF22C6"
+					item: "refinedstorage:wireless_grid"
+					type: "item"
+				}
+			]
+			title: "远程访问"
+			x: 8.5d
+			y: -0.75d
+		}
+		{
+			dependencies: ["38A787A6F8CCD80F"]
+			description: ["功能更强大的&6无线终端&r。"]
+			id: "3BDD861BC66C2C57"
+			tasks: [{
+				id: "797E05918E402670"
+				item: {
+					Count: 1b
+					id: "universalgrid:wireless_universal_grid"
+					tag: {
+						gridType: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 10.0d
+			y: -0.75d
+		}
+		{
+			dependencies: ["0F3481A805779F82"]
+			description: [
+				"这是一种可以&a远程构建网络&r的方法，将&6网络发送器&r接入原网络。"
+				""
+				"在远处放置&6网络接收器&r，用&6网卡&r右键&6网络接收器&r，再将标记好的网卡放入&6网络发送器&r。"
+				""
+				"此时你便可以将&6网络接收器&r作为媒介放置各种机器或存储空间来使用原网络。"
+				""
+				"&c请注意，发送与接收的区域都必须处于加载状态，才能运行。&r"
+			]
+			icon: "refinedstorage:network_transmitter"
+			id: "53904C0B01C20AF3"
+			tasks: [
+				{
+					id: "2A23ACCC0468B620"
+					item: "refinedstorage:network_card"
+					type: "item"
+				}
+				{
+					id: "4CA5AE10AB8F956C"
+					item: "refinedstorage:network_transmitter"
+					type: "item"
+				}
+				{
+					id: "515C03C63C073F88"
+					item: "refinedstorage:network_receiver"
+					type: "item"
+				}
+			]
+			title: "远程网络接入"
+			x: 8.5d
+			y: 0.5d
 		}
 	]
-	title: "Tom简易存储：整合一切"
+	title: "精致存储：整合一切"
 }
