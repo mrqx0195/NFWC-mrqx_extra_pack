@@ -2368,6 +2368,17 @@ StartupEvents.registry('item', event => {
         .texture('kubejs:item/organs/twilightforest/twilight_broken_lich_crown')
         .tag("kubejs:key_pressed")
 
+    registerOrgan(new Organ('kubejs:armor_with_gaze')
+        .addScore('health', 2)
+        .addScore('defense', 5)
+        .addTextLines('default', [Text.translatable("kubejs.tooltips.armor_with_gaze.1").gray()])
+        .addTextLines('alt', [LEADING_SYMBOL, Text.translatable("kubejs.tooltips.armor_with_gaze.2").gray()])
+        .addTextLines('alt', [LEADING_SYMBOL, Text.translatable("kubejs.tooltips.armor_with_gaze.3").gray()])
+        .build()) 
+        .texture('kubejs:item/organs/twilightforest/armor_with_gaze')
+        .tag("kubejs:bear_only")  
+
+
     //杂项
     registerOrgan(new Organ('kubejs:creeper_appendix')
         .addScore('luck', 0.75)

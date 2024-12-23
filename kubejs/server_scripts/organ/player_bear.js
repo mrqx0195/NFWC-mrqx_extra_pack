@@ -153,5 +153,19 @@ const organPlayerBearOnlyStrategies = {
         player.potionEffects.add("minecraft:speed", 30, Math.min(event.amount/5,5), false, false)
         player.potionEffects.add("minecraft:strength", 30, Math.min(event.amount/5,5), false, false)
         player.potionEffects.add("minecraft:haste", 30, Math.min(event.amount/5,5), false, false)
+    },
+    'kubejs:armor_with_gaze' : function(event, organ, data) {
+        let player = event.entity
+        let source = event.getSource()
+        let damage = event.amount
+        let ray = player.rayTrace(32, false)
+        if(!(source.getType() == 'mob') && !event.source.isProjectile()) return
+        if(ray.entity){
+            if(ray.entity.uuid == source.getImmediate().uuid){
+                event.amount = damage * 0.35
+            }
+        }else{
+            event.amount = damage * 1.5        
+        }
     }
 };
