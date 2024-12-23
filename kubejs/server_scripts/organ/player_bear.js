@@ -179,4 +179,5 @@ const organPlayerBearOnlyStrategies = {
         }else{
             event.amount = damage * 1.5        
         }
+    }
 };
