@@ -15,6 +15,6 @@ StartupEvents.registry('minecraft:block', event => {
         .material('wool')
         .noDrops()
 
-    event.create('kubejs:myanmar_market', 'custommachinery')
-        .machine('kubejs:myanmar_market')
+    event.create('kubejs:organ_recycler', 'custommachinery')
+        .machine('kubejs:organ_recycler')
 })
