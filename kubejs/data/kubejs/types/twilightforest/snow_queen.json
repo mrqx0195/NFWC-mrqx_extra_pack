@@ -1,0 +1,23 @@
+{
+  "defaultChestCavity": [
+    { "item": "minecraft:blue_ice", "position": 1 ,"count":  1},
+    { "item": "minecraft:blue_ice", "position": 3 ,"count":  1},
+    { "item": "kubejs:snow_queen_eternal_sorrow", "position": 4 ,"count":  1},
+    { "item": "minecraft:blue_ice", "position": 5 ,"count":  1},
+    { "item": "minecraft:blue_ice", "position": 7 ,"count":  1},
+
+    { "item": "minecraft:blue_ice", "position": 9 ,"count":  1},
+    { "item": "kubejs:soul_piece", "position": 12 ,"count":  1},
+    { "item": "kubejs:soul_piece", "position": 14 ,"count":  1},
+    { "item": "minecraft:blue_ice", "position": 17 ,"count":  1},
+
+    { "item": "minecraft:blue_ice", "position": 19 ,"count":  1},
+    { "item": "minecraft:blue_ice", "position": 21 ,"count":  1},
+    { "item": "kubejs:soul_piece", "position": 22 ,"count":  1},
+    { "item": "minecraft:blue_ice", "position": 23 ,"count":  1},
+    { "item": "minecraft:blue_ice", "position": 25 ,"count":  1}
+  ],
+  "baseOrganScores": [
+    {"id": "chestcavity:health","value": ".5"}
+  ]
+}

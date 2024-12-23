@@ -43,4 +43,15 @@ const ritualsCompleteStrategies = {
  * @type {Object<string,function(Internal.SummoningEventJS):void>}
  */
 const ritualsStartStrategies = {
-}
+    'kubejs:ritual_of_rain': function (event) {
+        if (!(event.level.isThundering() && event.player.hasEffect('minecraft:glowing'))) {
+            event.cancel()
+        }
+    },
+    'kubejs:wither_strom_summon': function (event) {
+        if (event.getLevel().getDimension() != 'kubejs:lost_memory') {
+            event.cancel()
+        }
+    }
+
+};

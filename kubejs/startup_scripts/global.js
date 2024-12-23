@@ -125,6 +125,10 @@ global.TYPE_MAP = {
     'kubejs:enchant_only': Text.gold(Text.translatable("kubejs.tooltips.enchant_only")),
     'kubejs:enchant': Text.gold(Text.translatable("kubejs.tooltips.enchant")),
     'kubejs:auto_active': Text.gold(Text.translatable("kubejs.tooltips.auto_active")),
+    'kubejs:flame': Text.red(Text.translatable("kubejs.tooltips.flame")),
+    'kubejs:ice': Text.blue(Text.translatable("kubejs.tooltips.ice")),
+    'kubejs:temperature': Text.gold(Text.translatable("kubejs.tooltips.temperature")),
+    'kubejs:temperature_only': Text.gold(Text.translatable("kubejs.tooltips.temperature_only")),
 }
 
 
