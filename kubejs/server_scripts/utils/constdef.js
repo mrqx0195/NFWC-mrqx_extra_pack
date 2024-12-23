@@ -111,8 +111,8 @@ const tumorAttriButeByD8 = [
     { name: 'chestcavity:fire_resistant', multi: 0.5, max: 2.5 },
     { name: 'chestcavity:knockback_resistant', multi: 0.5, max: 2.5 },
     { name: 'chestcavity:water_breath', multi: 0.5, max: 2.5 },
-    { name: 'chestcavity:freezing_point', multi: 0.5, max: 2.5 },
-    { name: 'chestcavity:burning_point', multi: 0.5, max: 2.5 },
+    { name: 'chestcavity:burning_point', multi: 1, max: 10 },
+    { name: 'chestcavity:freezing_point', multi: 1, max: 10 },
 ]
 
 const tumorAttriButeByNeuron = [
@@ -132,8 +132,8 @@ const tumorAttriButeByNeuron = [
     { name: 'chestcavity:knockback_resistant', multi: 0.5, max: 3 },
     { name: 'chestcavity:water_breath', multi: 0.5, max: 3 },
     { name: 'chestcavity:health', multi: 0.5, max: 3 },
-    { name: 'chestcavity:freezing_point', multi: 0.5, max: 3 },
-    { name: 'chestcavity:burning_point', multi: 0.5, max: 3 },
+    { name: 'chestcavity:burning_point', multi: 1, max: 10 },
+    { name: 'chestcavity:freezing_point', multi: 1, max: 10 },
 ]
 
 const potooBeakSoundMap = {

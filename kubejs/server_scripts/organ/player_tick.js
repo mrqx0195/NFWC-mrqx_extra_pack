@@ -163,8 +163,8 @@ const organPlayerTickOnlyStrategies = {
     },
     'kubejs:worm_neuron': function (event, organ) {
         let player = event.player
-        let tempterature = ColdSweat.getTemperature(player,'body')
-        if (player.age % (600 - Math.floor(3 * tempterature)) != 0) return
+        let temperature = ColdSweat.getTemperature(player,'body')
+        if (player.age % (600 - Math.floor(3 * temperature)) != 0) return
         if (player.nbt?.ForgeCaps['goety:lichdom']?.lichdom == 1) return
         let instance = player.getChestCavityInstance()
         // 如果该位置存在物品，则不进行生成
@@ -175,15 +175,15 @@ const organPlayerTickOnlyStrategies = {
         if (!typeMap.has('kubejs:organ')) return
         let organCount = getOrganCount(player)
         let tumor = Item.of('kubejs:random_tumor', { organData: {} })
-        let amount = Math.floor(Math.random() * 2 + 1 + Math.max(Math.floor(tempterature/100) , 0))
+        let amount = Math.floor(Math.random() * 2 + 1 + Math.max(Math.floor(temperature/100) , 0))
         for (let i = 0; i < amount; i++) {
             let attri = randomGet(tumorAttriButeByNeuron)
             let attriName = attri.name
             // 扩散系数，用于控制属性的扩散范围(-0.5, 1.5)
             let diffusivity = Math.random() + Math.random() - 0.5
             // 温度影响扩散系数
-            let multi = tempterature >=0 ? tempterature / 50 : 0.9
-            let distance = tempterature/200
+            let multi = temperature >=0 ? temperature / 50 : 0.9
+            let distance = temperature/200
             diffusivity = (diffusivity - distance) * multi
             // 新陈代谢效率
             let metabolism = instance.organScores.getOrDefault(new ResourceLocation('chestcavity', 'metabolism'), 0)
@@ -217,6 +217,27 @@ const organPlayerTickOnlyStrategies = {
         if (effect.getDuration() > 20 * 5 || effect.getDuration() < 20 * 4) return
         revolSteamEngine(player)
         player.addItemCooldown(Item.of('minecraft:potion'), 20 * 20)
+    },
+    'kubejs:snow_queen_eternal_sorrow': function (event, organ) {
+        let player = event.player
+        if (player.age % 60 != 0) return
+        if (ColdSweat.getTemperature(player, 'body') > -50) return
+        ColdSweat.setTemperature(player, 'core', ColdSweat.getTemperature(player, 'core') + 10)
+        let entityList = getLivingWithinRadius(player.getLevel(), new Vec3(player.x, player.y, player.z), 5)
+        let spellPower = player.getAttributeTotalValue("irons_spellbooks:ice_spell_power")
+        entityList.forEach(e => {
+            if (!e.isPlayer()) {
+                if (e.hasEffect("twilightforest:frosted")){
+                    let amplifier = e.getEffect('twilightforest:frosted').getAmplifier()
+                    e.removeEffect('twilightforest:frosted')
+                    if (amplifier < 4){
+                        e.potionEffects.add("twilightforest:frosted", 20 * 6 , amplifier + 1)
+                    }
+                    else e.setHealth(e.getHealth() / Math.min(spellPower / 4 + 1, 2))
+                }
+                else e.potionEffects.add("twilightforest:frosted", 20 * 6 , 0)
+            }
+        })
     },
     
 };

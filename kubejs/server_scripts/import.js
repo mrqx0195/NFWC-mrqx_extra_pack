@@ -23,7 +23,6 @@ const $MagicData = Java.loadClass("io.redspace.ironsspellbooks.api.magic.MagicDa
 const $SpellRegistry = Java.loadClass("io.redspace.ironsspellbooks.api.registry.SpellRegistry")
 const $CastSource = Java.loadClass("io.redspace.ironsspellbooks.api.spells.CastSource")
 const $BloodNeedle = Java.loadClass("io.redspace.ironsspellbooks.entity.spells.blood_needle.BloodNeedle")
-const $ChunkStatus = Java.loadClass("net.minecraft.world.level.chunk.ChunkStatus")
 
 const $BankSaveData = Java.loadClass('io.github.lightman314.lightmanscurrency.common.bank.BankSaveData')
 const $WalletItem = Java.loadClass('io.github.lightman314.lightmanscurrency.common.items.WalletItem')

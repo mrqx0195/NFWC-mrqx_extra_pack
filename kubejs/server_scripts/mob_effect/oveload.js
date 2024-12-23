@@ -8,9 +8,9 @@
 function overloadEntityHurtByPlayer(event, data) {
     let player = event.source.player;
     if (player.hasEffect('kubejs:overload')) {
-        let tempterature = ColdSweat.getTemperature(player, 'body')
-        if (tempterature > 0){
-            event.amount = event.amount * tempterature/50
+        let temperature = ColdSweat.getTemperature(player, 'body')
+        if (temperature > 0){
+            event.amount = event.amount * temperature/50
         }
         return;
     }
@@ -26,9 +26,9 @@ function overloadEntityHurtByPlayer(event, data) {
 function overloadEntityHurtByOthers(event, data) {
     let player = event.entity
     if (player.hasEffect('kubejs:overload')) {
-        let tempterature = ColdSweat.getTemperature(player, 'body')
-        if (tempterature > 0){
-            event.amount = event.amount * tempterature/50
+        let temperature = ColdSweat.getTemperature(player, 'body')
+        if (temperature > 0){
+            event.amount = event.amount * temperature/50
         }
         return;
     }
@@ -44,9 +44,9 @@ function overloadEntityHurtByOthers(event, data) {
 function iceEntityHurtByOthers(event, data) {
     let player = event.entity
     if (player.hasEffect('kubejs:ice')) {
-        let tempterature = ColdSweat.getTemperature(player, 'body')
-        if (tempterature < 0){
-            event.amount = event.amount * 50 / (-tempterature)
+        let temperature = ColdSweat.getTemperature(player, 'body')
+        if (temperature < 0){
+            event.amount = event.amount * 50 / (-temperature)
         }
         return;
     }

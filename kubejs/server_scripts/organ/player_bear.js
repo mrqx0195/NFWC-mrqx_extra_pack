@@ -147,12 +147,24 @@ const organPlayerBearOnlyStrategies = {
             return
         }
     },
-    'kubejs:naga_scale' : function(event, organ, data) {
+    'kubejs:energetic_naga_scale' : function(event, organ, data) {
         let player = event.entity
-        event.amount += 1        
-        player.potionEffects.add("minecraft:speed", 30, Math.min(event.amount/5,5), false, false)
-        player.potionEffects.add("minecraft:strength", 30, Math.min(event.amount/5,5), false, false)
-        player.potionEffects.add("minecraft:haste", 30, Math.min(event.amount/5,5), false, false)
+        let itemMap = getPlayerChestCavityItemMap(player)
+        if (!itemMap.has("kubejs:energetic_naga_scale")) return
+        if (event.amount < player.getHealth()) {
+            return
+        }
+        let instance = player.getChestCavityInstance()
+        let index = itemMap.get("kubejs:energetic_naga_scale")[0].getInt('Slot')
+        let scale = Item.of("twilightforest:naga_scale")
+        instance.inventory.setItem(index, scale)
+        event.amount = 0
+        global.initChestCavityIntoMap(player, false)
+        if (player.persistentData.contains(organActive) &&
+            player.persistentData.getInt(organActive) == 1) {
+            global.updatePlayerActiveStatus(player)
+        }
+        player.absorptionAmount += 4
     },
     'kubejs:armor_with_gaze' : function(event, organ, data) {
         let player = event.entity
@@ -167,5 +179,4 @@ const organPlayerBearOnlyStrategies = {
         }else{
             event.amount = damage * 1.5        
         }
-    }
 };

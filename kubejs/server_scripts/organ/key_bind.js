@@ -407,6 +407,7 @@ const organPlayerKeyPressedOnlyStrategies = {
         player.server.scheduleInTicks(20*60, ctx=>{
             player.removeAttribute("minecraft:generic.attack_damage",'tLichSpine')
             player.removeAttribute("irons_spellbooks:spell_power",'tLichSpine')
+            player.absorptionAmount = Math.min(0, player.absorptionAmount - num)
         })
         player.addItemCooldown('kubejs:twilight_broken_lich_crown', 20 * 60)
     },
@@ -431,7 +432,7 @@ const organPlayerKeyPressedOnlyStrategies = {
     'kubejs:creeper_appendix': function (event, organ) {
         let player = event.player
         let itemMap = getPlayerChestCavityItemMap(player);
-        let tempterature = ColdSweat.getTemperature(player, 'body')
+        let temperature = ColdSweat.getTemperature(player, 'body')
         let causesFire = false
         let explosive = player.getChestCavityInstance().organScores.get(new ResourceLocation('chestcavity', 'explosive'))
         let creepy = player.getChestCavityInstance().organScores.get(new ResourceLocation('chestcavity', 'creepy'))
@@ -440,9 +441,9 @@ const organPlayerKeyPressedOnlyStrategies = {
         if (itemMap.has('minecraft:gunpowder')) {
             strength = Math.min(12, strength + itemMap.get('minecraft:gunpowder').length * 4)
         }
-        if (tempterature > 0){
+        if (temperature > 0){
             causesFire = true
-            num += Math.min(15, Math.floor(tempterature / 10))
+            num += Math.min(15, Math.floor(temperature / 10))
             ColdSweat.setTemperature(player, 'core', -ColdSweat.getTemperature(player, 'base'))
         }
         player.level.createExplosion(player.x, player.y, player.z).exploder(player).strength(strength).causesFire(causesFire).explode()
@@ -453,6 +454,18 @@ const organPlayerKeyPressedOnlyStrategies = {
                     player.level.createExplosion(player.x + i * l * Math.cos(r) * Math.cos(f), player.y + i * l * Math.sin(f), player.z + i * l * Math.sin(r) * Math.cos(f)).exploder(player).strength(strength).causesFire(causesFire).explode()
                 }
             }
+        }
+        player.addItemCooldown('kubejs:creeper_appendix', 20 * (num + strength))
+    },
+    'kubejs:carminite_reactor_core': function (event, organ) {
+        let player = event.player
+        let level = event.level
+        let ray = player.rayTrace(16, false)
+        let blockPos = new BlockPos(ray.hitX, ray.hitY, ray.hitZ)
+        let blockState = Block.getBlock("twilightforest:carminite_reactor").blockStates[0]
+        if (level.getBlock(blockPos) != "minecraft:bedrock"){
+            level.setBlock(blockPos, blockState, 2)
+            player.addItemCooldown('kubejs:carminite_reactor_core', 20 * 60)
         }
     }
 }

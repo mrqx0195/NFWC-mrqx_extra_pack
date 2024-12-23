@@ -50,6 +50,8 @@ LootJS.modifiers(event => {
         .addLoot('kubejs:amethyst_magic_core');
     event.addEntityLootModifier('bosses_of_mass_destruction:lich')
         .addLoot('kubejs:bad_ink');
+    event.addEntityLootModifier("twilightforest:hydra")
+        .addLoot('kubejs:hydra_fiery_blood_essence');
     event.addEntityLootModifier('bosses_of_mass_destruction:gauntlet')
         .apply(ctx => {
             if (ctx.player) {

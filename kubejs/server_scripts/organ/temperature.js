@@ -1,22 +1,23 @@
 // priority: 500
 ColdSweatEvents.temperatureChanged(event => {
     //温度改变时触发效果的器官
-    if (event.getTrait() != $Trait.BODY) return
-    let player = event.player
+    if (event.getTrait() != $Trait.CORE) return
+    let player = event.entity
+    if (!player.isPlayer()) return
     let typeMap = getPlayerChestCavityTypeMap(player);
 
     let onlySet = new Set()
-    if (typeMap.has('kubejs:tempterature_only')) {
-        typeMap.get('kubejs:tempterature_only').forEach(organ => {
+    if (typeMap.has('kubejs:temperature_only')) {
+        typeMap.get('kubejs:temperature_only').forEach(organ => {
             if (!onlySet.has(organ.id)) {
                 onlySet.add(organ.id)
-                organPlayerTempteratureOnlyStrategies[organ.id](event, organ)
+                organPlayertemperatureOnlyStrategies[organ.id](event, organ)
             }
         })
     }
-    if (typeMap.has('kubejs:tempterature')) {
-        typeMap.get('kubejs:tempterature').forEach(organ => {
-            organPlayerTempteratureStrategies[organ.id](event, organ)
+    if (typeMap.has('kubejs:temperature')) {
+        typeMap.get('kubejs:temperature').forEach(organ => {
+            organPlayertemperatureStrategies[organ.id](event, organ)
         })
     }
 })
@@ -27,12 +28,13 @@ ColdSweatEvents.temperatureChanged(event => {
  * @constant
  * @type {Object<string,function(Internal.SimplePlayerEventJS, organ):void>}
  */
-const organPlayerTempteratureStrategies = {
+const organPlayertemperatureStrategies = {
     'kubejs:ice_rib': function (event, organ) {
-        let player = event.player
-        let tempterature = ColdSweat.getTemperature(player, 'body')
-        if (tempterature >= 0) return
-        player.absorptionAmount = Math.floor((-1) * tempterature / 16)
+        let player = event.entity
+        if (!player.isPlayer()) return
+        let temperature = ColdSweat.getTemperature(player, 'body')
+        if (temperature >= 0) return
+        player.absorptionAmount = Math.floor((-1) * temperature / 16)
     }
 }
 
@@ -42,9 +44,10 @@ const organPlayerTempteratureStrategies = {
  * @constant
  * @type {Object<string,function(Internal.SimplePlayerEventJS, organ):void>}
  */
-const organPlayerTempteratureOnlyStrategies = {
+const organPlayertemperatureOnlyStrategies = {
     'kubejs:flame_heart': function (event, organ) {
-        let player = event.player
+        let player = event.entity
+        if (!player.isPlayer()) return
         if (ColdSweat.getTemperature(player, 'body') > 50) {
             let typeMap = getPlayerChestCavityTypeMap(player)
             let amplifier = 0
@@ -56,7 +59,8 @@ const organPlayerTempteratureOnlyStrategies = {
         }
     },
     'kubejs:ice_heart': function (event, organ) {
-        let player = event.player
+        let player = event.entity
+        if (!player.isPlayer()) return
         if (ColdSweat.getTemperature(player, 'body') < -50) {
             let typeMap = getPlayerChestCavityTypeMap(player)
             let amplifier = 0
@@ -68,11 +72,21 @@ const organPlayerTempteratureOnlyStrategies = {
         }
     },
     'kubejs:ice_lung': function (event, organ) {
-        let player = event.player
-        let tempterature = (-1) * ColdSweat.getTemperature(player, 'body')
+        let player = event.entity
+        if (!player.isPlayer()) return
+        let temperature = (-1) * ColdSweat.getTemperature(player, 'body')
         player.removeAttribute("irons_spellbooks:ice_spell_power", 'kubejsIceLung')
-        if (tempterature > 0) {
-            player.modifyAttribute("irons_spellbooks:ice_spell_power", 'kubejsIceLung', 0.1 * tempterature / 50, 'multiply_base')
+        if (temperature > 0) {
+            player.modifyAttribute("irons_spellbooks:ice_spell_power", 'kubejsIceLung', 0.1 * temperature / 10, 'multiply_base')
+        }
+    },
+    'kubejs:hydra_fiery_blood_essence': function (event, organ) {
+        let player = event.entity
+        if (!player.isPlayer()) return
+        let temperature = ColdSweat.getTemperature(player, 'body')
+        player.removeAttribute("irons_spellbooks:fire_spell_power", 'kubejsHydraFieryBloodEssence')
+        if (temperature > 0) {
+            player.modifyAttribute("irons_spellbooks:fire_spell_power", 'kubejsHydraFieryBloodEssence', 0.1 * temperature / 20, 'multiply_base')
         }
     }
 }
