@@ -53,6 +53,14 @@ const bossTypeList = [
     "graveyard:lich",
     "minecraft:ender_dragon",
     "minecraft:wither",
+    'twilightforest:naga',
+    'twilightforest:lich',
+    'twilightforest:hydra',
+    'twilightforest:ur_ghast',
+    'twilightforest:yeti_alpha',
+    'twilightforest:snow_queen',
+    'twilightforest:knight_phantom',
+    'twilightforest:minoshroom',
 ]
 
 const bossesOfMassDestructionBossTypeList = [

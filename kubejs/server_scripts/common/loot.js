@@ -16,9 +16,7 @@ LootJS.modifiers(event => {
                 LootEntry.of('simplehats:hatbag_halloween').when((c) => c.randomChance(0.2)),
             )
             .addAlternativesLoot(
-                LootEntry.of('lightmanscurrency:coin_gold').when((c) => c.randomChance(0.5)),
-                LootEntry.of('lightmanscurrency:coin_emerald').when((c) => c.randomChance(0.1)),
-                LootEntry.of('lightmanscurrency:coin_diamond').when((c) => c.randomChance(0.05)),
+                LootEntry.of('lightmanscurrency:coin_gold').when((c) => c.randomChance(0.8)),
             )
             .apply(ctx => {
                 let entity = ctx.entity
@@ -126,7 +124,6 @@ LootJS.modifiers(event => {
     event.addLootTypeModifier(LootType.CHEST)
         .anyStructure(['#tetra:forged_ruins'], false)
         .addWeightedLoot(machineChestLootTable)
-        .addWeightedLoot(machineChestLootTable)
 
     event.addLootTypeModifier(LootType.CHEST)
         .removeLoot('@nameless_trinkets')
@@ -168,22 +165,6 @@ LootJS.modifiers(event => {
         .addLoot(LootEntry.of('kubejs:redstone_furnace').when((c) => c.randomChance(0.01)))
         .addLoot(LootEntry.of('kubejs:the_third_eye').when((c) => c.randomChance(0.003)))
         .addLoot(LootEntry.of('kubejs:blaze_pressurizer').when((c) => c.randomChance(0.005)))
-
-    event.addLootTypeModifier(LootType.FISHING)
-        .apply(ctx => {
-            let player = ctx.player;
-            if (!player) return;
-            if (player.stages.has('flos_magic_stage_2') && ctx.level.isRaining() &&
-                ctx.level.isNight() && Math.random() < 0.5) {
-                ctx.server.scheduleInTicks(20 * 1, (callback) => {
-                    ctx.level.runCommandSilent('/weather clear')
-                    player.stages.remove('flos_magic_stage_2')
-                    player.stages.add('flos_magic_stage_3')
-                })
-                return
-            }
-        })
-
 
     event.addLootTypeModifier(LootType.CHEST)
         .anyStructure(['#kubejs:graveyard'], false)
