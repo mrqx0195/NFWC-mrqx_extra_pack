@@ -1,0 +1,13 @@
+name = "No Flesh Within Chest"
+author = "YoruNina"
+version = "1.0.0-DIM"
+pack-format = "packwiz:1.1.0"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+hash = "54f86bcfd5fd7b666c90872b3aecf5271eff603024608f44e1e872d4a9afbd39"
+
+[versions]
+forge = "43.3.5"
+minecraft = "1.19.2"
