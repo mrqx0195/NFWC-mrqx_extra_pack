@@ -1,14 +1,5 @@
-const tagWorth = {
-    '#kubejs:organ': 1,
-    '#itemborders:gold': 10,
-    '#itemborders:diamond': 50,
-    '#kubejs:heart': 5,
-    '#kubejs:magic': 10,
-    '#kubejs:overmagic_only': 10
-}
-
 ServerEvents.recipes(event => {
-    event.recipes.custommachinery.custom_machine("kubejs:myanmar_market", 100)
+    event.recipes.custommachinery.custom_machine("kubejs:organ_recycler", 20 * 60)
         .requireFunctionEachTick(ctx => {
             let organ = ctx.machine.getItemStored("organ_slot")
             if (!organ || organ.isEmpty()) return ctx.error("no organ")
@@ -19,7 +10,7 @@ ServerEvents.recipes(event => {
             let organ = machine.getItemStored("organ_slot")
             let worth = calculateOrganWorth(organ)
             let coinSlotItem = machine.getItemStored('coin_output')
-            if (worth == 0) return ctx.error("no worth organ")
+            if (worth <= 0) return ctx.error("no worth organ")
             if (coinSlotItem && coinSlotItem.hasTag('lightmanscurrency:wallet')) {
                 $WalletItem.PickupCoin(coinSlotItem, Item.of('lightmanscurrency:coin_copper', worth))
             } else {
