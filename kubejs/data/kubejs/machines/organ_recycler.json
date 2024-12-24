@@ -18,7 +18,11 @@
     {
       "type": "custommachinery:item",
       "id": "coin_output",
-      "mode": "both"
+      "mode": "both",
+      "filter": [
+        "#lightmanscurrency:wallet"
+      ],
+      "whitelist": true
     }
   ],
   "gui": [
