@@ -184,5 +184,28 @@ LootJS.modifiers(event => {
         .addLoot(LootEntry.of('goety:spent_totem').when((c) => c.randomChance(0.03)))
         .addLoot(LootEntry.of('minecraft:iron_ingot').when((c) => c.randomChance(0.3)))
         .addLoot(LootEntry.of('minecraft:gold_ingot').when((c) => c.randomChance(0.1)))
+
+    event.addLootTypeModifier(LootType.CHEST)
+        .anyDimension(["twilightforest:twilight_forest"])
+        .addLoot(LootEntry.of("twilightforest:transformation_powder").when((c) => c.randomChance(0.05)))
+    
+    event.addLootTypeModifier(LootType.CHEST)
+        .anyStructure(["twilightforest:dark_tower"], false)
+        .addLoot(LootEntry.of('kubejs:ritual_catalyst').when((c) => c.randomChance(0.05)))
+        .addLoot(LootEntry.of('kubejs:infinity_beats').when((c) => c.randomChance(0.005)))
+        .addLoot(LootEntry.of('kubejs:redstone_furnace').when((c) => c.randomChance(0.01)))
+        .addLoot(LootEntry.of('kubejs:the_third_eye').when((c) => c.randomChance(0.003)))
+        .addLoot(LootEntry.of('kubejs:blaze_pressurizer').when((c) => c.randomChance(0.005)))
+
+    event.addLootTypeModifier(LootType.CHEST)
+        .anyStructure(["twilightforest:lich_tower"], false)
+        .addLoot(LootEntry.of(Item.of("minecraft:enchanted_book", '{StoredEnchantments: [{"kubejs:painless_operation", lvl: 1}]}')).when((c) => c.randomChance(0.005)))
+        .addLoot(LootEntry.of(Item.of("minecraft:enchanted_book", '{StoredEnchantments: [{"kubejs:safe_operation", lvl: 1}]}')).when((c) => c.randomChance(0.005)))
+        .addLoot(LootEntry.of(Item.of("minecraft:enchanted_book", '{StoredEnchantments: [{"kubejs:tele_operation", lvl: 3}]}')).when((c) => c.randomChance(0.05)))
+        .addLoot(LootEntry.of(Item.of("minecraft:enchanted_book", '{StoredEnchantments: [{"kubejs:tele_operation", lvl: 4}]}')).when((c) => c.randomChance(0.025)))
+        .addLoot(LootEntry.of(Item.of("minecraft:enchanted_book", '{StoredEnchantments: [{"kubejs:tele_operation", lvl: 5}]}')).when((c) => c.randomChance(0.005)))
+        .addLoot(LootEntry.of(Item.of("kubejs:bad_ink")).when((c) => c.randomChance(0.01)))
+
+        
 })
 

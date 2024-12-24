@@ -29,7 +29,7 @@ function overloadEntityHurtByOthers(event, data) {
     if (player.hasEffect('kubejs:overload')) {
         let temperature = ColdSweat.getTemperature(player, 'body')
         if (temperature > 0){
-            event.amount = event.amount * temperature/50
+            event.amount = event.amount * temperature / 50
         }
         return;
     }
