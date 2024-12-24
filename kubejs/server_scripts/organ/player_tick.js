@@ -239,5 +239,30 @@ const organPlayerTickOnlyStrategies = {
             }
         })
     },
-    
+    'kubejs:flame_heart': function (event, organ) {
+        let player = event.entity
+        if (!player.isPlayer()) return
+        if (ColdSweat.getTemperature(player, 'body') > 50) {
+            let typeMap = getPlayerChestCavityTypeMap(player)
+            let amplifier = 0
+            if (typeMap.has('kubejs:flame')) {
+                amplifier = amplifier + typeMap.get('kubejs:flame').length
+            }
+            let value = Math.min(Math.max(Math.floor(amplifier * 0.5), 0) , 8)
+            player.potionEffects.add('kubejs:overload', 30, value, false, false)
+        }
+    },
+    'kubejs:ice_heart': function (event, organ) {
+        let player = event.entity
+        if (!player.isPlayer()) return
+        if (ColdSweat.getTemperature(player, 'body') < -50) {
+            let typeMap = getPlayerChestCavityTypeMap(player)
+            let amplifier = 0
+            if (typeMap.has('kubejs:ice')) {
+                amplifier = amplifier + typeMap.get('kubejs:ice').length
+            }
+            let value = Math.min(Math.max(Math.floor(amplifier * 0.5), 0) , 8)
+            player.potionEffects.add('kubejs:ice', 30, value, false, false)
+        }
+    },
 };

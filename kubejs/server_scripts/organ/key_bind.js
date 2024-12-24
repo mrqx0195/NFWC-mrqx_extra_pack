@@ -370,8 +370,8 @@ const organPlayerKeyPressedOnlyStrategies = {
             let curTemp = Math.max(oldTemp - mana, 0)
             let curMana = Math.max(mana - oldTemp, 0)
             ColdSweat.setTemperature(player,'core', ((-1) * curTemp - ColdSweat.getTemperature(player,'base')))
-            getPlayerMagicData(player).setMana(player.getAttributeTotalValue("irons_spellbooks:max_mana") - curMana - player.getAttributeTotalValue("irons_spellbooks:mana_regen"))
-            player.addItemCooldown('kubejs:knightphantom_ghost', 20 * 15)
+            getPlayerMagicData(player).setMana(player.getAttributeTotalValue("irons_spellbooks:max_mana") - curMana - Math.max(player.getAttributeTotalValue("irons_spellbooks:mana_regen"), 1))
+            player.addItemCooldown('kubejs:ice_intestine', 20 * 15)
         }
     },
     'kubejs:twilight_broken_lich_crown': function(event, organ){
@@ -403,7 +403,7 @@ const organPlayerKeyPressedOnlyStrategies = {
         player.modifyAttribute("minecraft:generic.attack_damage",'tLichSpine',attack,'addition')
         player.modifyAttribute("irons_spellbooks:spell_power",'tLichSpine',(type.length) / 20,'addition')
         player.absorptionAmount += num
-        magic.setMana(mana - player.getAttributeTotalValue("irons_spellbooks:mana_regen"))
+        magic.setMana(mana - Math.max(player.getAttributeTotalValue("irons_spellbooks:mana_regen"), 1))
         player.server.scheduleInTicks(20*60, ctx=>{
             player.removeAttribute("minecraft:generic.attack_damage",'tLichSpine')
             player.removeAttribute("irons_spellbooks:spell_power",'tLichSpine')

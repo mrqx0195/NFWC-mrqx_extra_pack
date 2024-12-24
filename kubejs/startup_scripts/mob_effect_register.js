@@ -175,9 +175,9 @@ StartupEvents.registry('mob_effect', event => {
     event.create('ice')
         .beneficial()
         .color(Color.BLUE)
-        .modifyAttribute("irons_spellbooks:cooldown_reduction",'kubejsIce',1/8, 'addition')
+        .modifyAttribute("irons_spellbooks:cooldown_reduction",'kubejsIce',1 / 8, 'addition')
         .modifyAttribute("irons_spellbooks:mana_regen",'kubejsIce',10, 'addition')
         .modifyAttribute("irons_spellbooks:spell_power",'kubejsIce', -0.05, 'multiply_total')
-        .modifyAttribute("irons_spellbooks:cast_time_reduction",'kubejsIce', 1/8, 'addition')
+        .modifyAttribute("irons_spellbooks:cast_time_reduction",'kubejsIce', 1 / 8, 'addition')
 
 })
