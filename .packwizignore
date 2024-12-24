@@ -41,5 +41,5 @@
 /README.md
 /*.bat
 /*.zip
-/mods/IBEEditor*
-/mods/ponderjs*
+/mods/ibe*
+/mods/probejs*
