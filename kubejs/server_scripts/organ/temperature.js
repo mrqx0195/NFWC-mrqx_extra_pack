@@ -33,8 +33,10 @@ const organPlayertemperatureStrategies = {
         let player = event.entity
         if (!player.isPlayer()) return
         let temperature = ColdSweat.getTemperature(player, 'body')
+        let oldTemperature = event.oldTemperature
         if (temperature >= 0) return
-        player.absorptionAmount = Math.floor((-1) * temperature / 16)
+        player.absorptionAmount += (-1) * (temperature - oldTemperature) / 16
+        player.modifyAttribute("minecraft:generic.knockback_resistance", 'kubejsIceRib', - temperature / 150, 'addition')
     }
 }
 
