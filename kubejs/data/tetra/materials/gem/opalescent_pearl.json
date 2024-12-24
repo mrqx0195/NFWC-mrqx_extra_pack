@@ -4,7 +4,7 @@
     "primary": 6.5,
     "secondary": 2.0,
     "tertiary": 0,
-    "durability": 616,
+    "durability": 16,
     "integrityCost": 2,
     "integrityGain": 2,
     "magicCapacity": 210,
@@ -16,8 +16,12 @@
     },
     "textures": [
         "shiny",
-        "crude"
+        "crude" 
     ],
+    "effects" : {
+        "intuit": 1,
+        "kubejs:silicosis": 2
+    },
     "material": {
         "items": [ "unusualprehistory:opalescent_pearl" ]
     },

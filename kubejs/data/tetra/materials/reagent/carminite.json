@@ -17,9 +17,8 @@
     "textures": [
         "default"
     ],
-    "effects" : {
-        "intuit": 2,
-        "kubejs:silicosis": 2
+    "effects": {
+        "art_of_forging:haste_infused": [ 2, 5 ]
     },
     "material": {
         "items": [ "twilightforest:carminite" ]
