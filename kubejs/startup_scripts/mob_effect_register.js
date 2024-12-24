@@ -132,32 +132,36 @@ StartupEvents.registry('mob_effect', event => {
     event.create('dragon_power')
         .beneficial()
         .color(Color.DARK_PURPLE)
+
     event.create('heat_up')
         .beneficial()
         .color(Color.RED)
         .effectTick((entity, lvl)=>{
             if (!entity || entity.level.isClientSide()) return
             if (entity.hasEffect('kubejs:cold_down')){
-                entity.removeEffect('kubejs:cold_down')
+                entity.removeEffect('kubejs:cold_down') 
             }
         })
-        .modifyAttribute("cold_sweat:world_temperature",'kubejsHeatUp',5/25, 'addition')
+        .modifyAttribute("cold_sweat:world_temperature",'kubejsHeatUp', 5 / 25, 'addition')
+
     event.create('cold_down')
         .beneficial()
         .color(Color.BLUE)
         .effectTick((entity, lvl)=>{
             if (!entity || entity.level.isClientSide()) return
-            if (entity.hasEffect('kubejs:heat_up')){
+            if (entity.hasEffect('kubejs:cold_down')){
                 entity.removeEffect('kubejs:heat_up')   
             }
         })
-        .modifyAttribute("cold_sweat:world_temperature",'kubejsColdDown',-5/25, 'addition')
+        .modifyAttribute("cold_sweat:world_temperature",'kubejsColdDown', -5 / 25, 'addition')
+        
     event.create('overload')
         .beneficial()
         .color(Color.RED)
-        .modifyAttribute("minecraft:generic.attack_damage",'kubejsOverload',1, 'addition')
-        .modifyAttribute("minecraft:generic.attack_speed",'kubejsOverload',1, 'addition')
-        .modifyAttribute("minecraft:generic.movement_speed",'kubejsOverload',0.001, 'addition')
+        .modifyAttribute("minecraft:generic.attack_damage",'kubejsOverload', 1 / 8, 'multiply_base')
+        .modifyAttribute("minecraft:generic.attack_speed",'kubejsOverload', 1, 'addition')
+        .modifyAttribute("minecraft:generic.movement_speed",'kubejsOverload', 0.001, 'addition')
+
     event.create('ice')
         .beneficial()
         .color(Color.BLUE)

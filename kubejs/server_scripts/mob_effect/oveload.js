@@ -9,8 +9,9 @@ function overloadEntityHurtByPlayer(event, data) {
     let player = event.source.player;
     if (player.hasEffect('kubejs:overload')) {
         let temperature = ColdSweat.getTemperature(player, 'body')
+        let amplifier = player.getEffect('kubejs:overload').getAmplifier() + 1
         if (temperature > 0){
-            event.amount = event.amount * temperature/50
+            event.amount = event.amount * (temperature / 50 + 1 + amplifier / 8) / 2
         }
         return;
     }
