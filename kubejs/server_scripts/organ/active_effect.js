@@ -529,7 +529,7 @@ const organActiveOnlyStrategies = {
             }
         }
         spellPowerUp = spellPowerUp - overburdened * 0.02
-        manaRegen = cdReduction - overburdened * 0.04
+        manaRegen = manaRegen - overburdened * 0.04
         spellPowerUp = spellPowerUp >= -1 ? spellPowerUp : -1
         manaRegen = manaRegen >= -1 ? manaRegen : -1
         attributeMapValueAddition(attributeMap, global.SPELL_POWER, spellPowerUp)
