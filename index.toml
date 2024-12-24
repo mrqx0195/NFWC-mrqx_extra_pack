@@ -821,8 +821,12 @@ file = "config/dimdungeons-common-r177.toml"
 hash = "ea6fbcd4472b31a1e3aff22eab2a455bb7e9397c1a8fef47e7510e0ad78d26e8"
 
 [[files]]
+file = "config/dimthread-common.toml"
+hash = "50107226e53de2a148c278bf408852b729620f3f5cd4ae8e8ce70393ffe355d9"
+
+[[files]]
 file = "config/drippyloadingscreen/options.txt"
-hash = "7bcb783ef0a2a645675bbd818c717c9f4dc076e1cbb3d83a13e6cb733790e40f"
+hash = "80ed128a0e856c1d2cf85164d65366dc0c3d14813009401f030ed29143be48e5"
 
 [[files]]
 file = "config/dummmmmmy-client.toml"
@@ -974,7 +978,7 @@ hash = "9a25d3dc708e43eabafce5479a13c02dae15bc7f673afb2745b8b2ba48a97dc0"
 
 [[files]]
 file = "config/fancymenu/options.txt"
-hash = "a1d0d8e865e5ac680c21c0a0db77f0f2e42188c0b97a5d7f7b8f8346df54fd70"
+hash = "2180a7770b2737209e5e6f97eb55b7fdc9d70b8e99d99519ec4bd2983dc1b006"
 
 [[files]]
 file = "config/fancymenu/slideshows/frame/images/frame1.png"
@@ -1654,7 +1658,7 @@ hash = "fad9aea710ec3508eab562cd8f2b5f8e2dda6ee1c5fb1fe818f90ce253017f66"
 
 [[files]]
 file = "config/modernfix-mixins.properties"
-hash = "f27cb9c1f092af2cdb36c0df9b6049da0465b57891434a0ce6ece6844952ed8a"
+hash = "ae08642990ff66552703d5960a496b45ca95cafc7a76bafd38573be3dc309b6a"
 
 [[files]]
 file = "config/modulargolems-common.toml"
@@ -1855,6 +1859,14 @@ hash = "7d1d47547cc0cda7a01323e6ff6d6df13102fadf0ab6442a00b379e9f2a143fc"
 [[files]]
 file = "config/nameless_trinkets/wooden_stick.json"
 hash = "f48b031068468c71c9621568b3f470222ad116fc3a3dc5d91d3e539540653c4c"
+
+[[files]]
+file = "config/naturescompass-client.toml"
+hash = "4215398614d28a24d2fe39593bf25981dd67ae46f85bc710ee07ba2d37c74c0b"
+
+[[files]]
+file = "config/naturescompass-common.toml"
+hash = "eebe4b4c01047b3d8cbf1106fcfe8af8e912ca62dfbb5258f46b36623b535fa2"
 
 [[files]]
 file = "config/neruina.json"
@@ -2118,7 +2130,7 @@ hash = "65186c220de8ed4f2828be81a256a3d5a032f8d17f7decf09c53549ed1a36c81"
 
 [[files]]
 file = "kubejs/assets/kubejs/lang/zh_cn.json"
-hash = "900477e301aeeeb2e8f5193f21e687de7215beffbc9ff07154d5ebb2af587164"
+hash = "72fb1fdb2acf074a322150e9238f7726c90609ca5bfb214b881a7b44230988bd"
 
 [[files]]
 file = "kubejs/assets/kubejs/models/block/infinity_lucky_block.json"
@@ -2263,10 +2275,6 @@ hash = "8224e1832cfe49e8b5219a5d4c8f5ad4071b67860bfdd601d14813232f193273"
 [[files]]
 file = "kubejs/assets/kubejs/textures/item/chicken_flavor_powder.png"
 hash = "741475f82ff44d134dfe223b8c1ec071d29db28fbe6bb670dce52abbf8e4144d"
-
-[[files]]
-file = "kubejs/assets/kubejs/textures/item/colorful_candy.png"
-hash = "61b93c2dc0022b99b995855ff1bb7eac1b4a340ddda03a9dde5a3f7621e667a2"
 
 [[files]]
 file = "kubejs/assets/kubejs/textures/item/common_mineral_cluster.png"
@@ -3449,6 +3457,10 @@ file = "kubejs/assets/kubejs/textures/item/organs/shard/wrath_shard.png"
 hash = "aa1487eb407744f06cc96895738e579ae7876d38c3b91cc5a587769f370f638a"
 
 [[files]]
+file = "kubejs/assets/kubejs/textures/item/organs/temperature/chameleon_stomach.png"
+hash = "24b0d324eea836fc748f5296e5f4dfe4032c0ab7d5743d33a05dd89493cb179c"
+
+[[files]]
 file = "kubejs/assets/kubejs/textures/item/organs/template/appendix_template.png"
 hash = "0f8698350cf7d4b0932d58c57bb5858fff344067559d49795210e1f35c21103e"
 
@@ -3493,12 +3505,12 @@ file = "kubejs/assets/kubejs/textures/item/organs/template/stomach_template.png"
 hash = "bcfd364612c8dd49740d371e1eccb3543243c67437a6ce4335242e3628b0264b"
 
 [[files]]
-file = "kubejs/assets/kubejs/textures/item/organs/tempterature/chameleon_stomach.png"
-hash = "24b0d324eea836fc748f5296e5f4dfe4032c0ab7d5743d33a05dd89493cb179c"
-
-[[files]]
 file = "kubejs/assets/kubejs/textures/item/organs/twilightforest/armor_with_gaze.png"
 hash = "7907be3ba3975568c0f88ee884bd5173e0ac15e74e6a7c393a62cf63df92dda8"
+
+[[files]]
+file = "kubejs/assets/kubejs/textures/item/organs/twilightforest/carminite_reactor_core.png"
+hash = "a95c9262a7fa9f50385e8abf29e50c8fa8b8c30cca54826709b5ffe08e19dcdb"
 
 [[files]]
 file = "kubejs/assets/kubejs/textures/item/organs/twilightforest/cloud_pyramid.png"
@@ -3509,8 +3521,16 @@ file = "kubejs/assets/kubejs/textures/item/organs/twilightforest/etched_paper.pn
 hash = "1e71f974f2d027f5bb3edfcc5ec62df856158c913bde252c0d58af2f693876d6"
 
 [[files]]
+file = "kubejs/assets/kubejs/textures/item/organs/twilightforest/hydra_fiery_blood_essence.png"
+hash = "c7e91955b04279c97f25fc6a5fb41a7844af300194c74f5997937057b5104cd4"
+
+[[files]]
 file = "kubejs/assets/kubejs/textures/item/organs/twilightforest/knightphantom_ghost.png"
 hash = "a79e243915b9498f64d8e0aec81f3cf12ed98da302fdddb9b5789ea333bdf8b6"
+
+[[files]]
+file = "kubejs/assets/kubejs/textures/item/organs/twilightforest/minoshroom_totem.png"
+hash = "190c4c725c83310c8cd42474f8126c2b97759157be1cf80f3944789f8c43d489"
 
 [[files]]
 file = "kubejs/assets/kubejs/textures/item/organs/twilightforest/minotaur_muscle.png"
@@ -3518,7 +3538,7 @@ hash = "5ba936a986af0f656b4e5ebfacddc41e1d128bf109a45755029971f8eade31bd"
 
 [[files]]
 file = "kubejs/assets/kubejs/textures/item/organs/twilightforest/naga_scale.png"
-hash = "65aa93c9210cf3d9c04058623abf09441b24b7c0371d72af0a75b5adf84db53b"
+hash = "ad92474fdc96a3ea0dd48729f4432a55eb018be6587d4ee6d703f2b82b5d8bcb"
 
 [[files]]
 file = "kubejs/assets/kubejs/textures/item/organs/twilightforest/questing_ram_answer.png"
@@ -3527,6 +3547,10 @@ hash = "6bae589c18118dd1a0762a4162bbbaf8fb82e2d94ed9949a1ca726210bd96c10"
 [[files]]
 file = "kubejs/assets/kubejs/textures/item/organs/twilightforest/snow_monster_core.png"
 hash = "b080385894bf82909a53722096335b305c04f1348f418e8cabf885877c00b9a3"
+
+[[files]]
+file = "kubejs/assets/kubejs/textures/item/organs/twilightforest/snow_queen_eternal_sorrow.png"
+hash = "ef35fc8b16a7c703e3823d3fc5b484536fef0b30a013d644a6683e80af327b2a"
 
 [[files]]
 file = "kubejs/assets/kubejs/textures/item/organs/twilightforest/twilight_broken_lich_crown.png"
@@ -4374,7 +4398,7 @@ hash = "8f7fe275fc062b0d14790c725db67e2af737c7faffb4e84efc6fffa4081a36d7"
 
 [[files]]
 file = "kubejs/client_scripts/item_tooltips.js"
-hash = "38bc4a07136447da492d1604ef2ed2b5931f62bf64aa6367191ad343138b51aa"
+hash = "64c267ae50cf0ae06e0e836c39f0f0d404d0991160b8df49f8600514b8663c99"
 
 [[files]]
 file = "kubejs/client_scripts/jei.js"
@@ -4881,6 +4905,10 @@ file = "kubejs/data/kubejs/capsid_recipes/mysterious_worm.json"
 hash = "56f4e1f7951ae34e99feac2f545d90baa10310dd289a1947e48053a71c8b9daa"
 
 [[files]]
+file = "kubejs/data/kubejs/dimension/lost_memory.json"
+hash = "0f4daca9f153c80d561e4041935760b5fcc878295da057bb0f9690b3e2124590"
+
+[[files]]
 file = "kubejs/data/kubejs/entity_assignment/amphibians/rain_frog.json"
 hash = "01e4794151a4178355be781623c828db6450320a25c3b4599172419d3e64c658"
 
@@ -5229,12 +5257,20 @@ file = "kubejs/data/kubejs/entity_assignment/twilightforest/lich.json"
 hash = "49079aad8155cee74c00b1b5bf63efe10630ea4581f4ebc986636d5540b68179"
 
 [[files]]
+file = "kubejs/data/kubejs/entity_assignment/twilightforest/minoshroom.json"
+hash = "ae8d35020d76e97c10d449b9e41e4f172a74e54f0755e8f27fefc99289bf3487"
+
+[[files]]
 file = "kubejs/data/kubejs/entity_assignment/twilightforest/minotaur.json"
 hash = "6fb617743dec8d1ad4334dd464f2cfb225a027729f6c436bcf37f7ce0634ea8b"
 
 [[files]]
 file = "kubejs/data/kubejs/entity_assignment/twilightforest/naga.json"
 hash = "4dce6e6775a9f35b02ea88d41e952c51a627c1abf5b6f9a4375e7ecb11ee04c3"
+
+[[files]]
+file = "kubejs/data/kubejs/entity_assignment/twilightforest/snow_queen.json"
+hash = "d8d98f19871e9d329f1b27479ef0889f8fc63c6744a760e74c63d13ba7a522ae"
 
 [[files]]
 file = "kubejs/data/kubejs/entity_assignment/twilightforest/stable_ice_core.json"
@@ -5247,6 +5283,10 @@ hash = "def96dcd5b83ba753df28c9fa5c4c278e937d5f88c782dd85c581de45cda1a93"
 [[files]]
 file = "kubejs/data/kubejs/entity_assignment/twilightforest/upper_goblin_knight.json"
 hash = "393d8058cf530406991c2a3525badd18f2c307983dc4f5e76104ab86adfc881e"
+
+[[files]]
+file = "kubejs/data/kubejs/entity_assignment/twilightforest/ur_ghast.json"
+hash = "2a31559907642232a3073898e7112cc491ab503d2a7bb2931b36870ced65f598"
 
 [[files]]
 file = "kubejs/data/kubejs/gateways/boss_rush.json"
@@ -5678,11 +5718,15 @@ hash = "b3b789f5c2d03a171b90e1b8cd698ac2b074b7d68ffc0eb00a1a3849b1b02d06"
 
 [[files]]
 file = "kubejs/data/kubejs/types/twilightforest/knight_phantom.json"
-hash = "35801d1146ed344989e61394ae6aa0361c77945dff24ec6894566a8d12e37681"
+hash = "17fed7f7e35f3b23462d42e0be58e5bfd8e6f09a27cb51c0351ea4080ba6e984"
 
 [[files]]
 file = "kubejs/data/kubejs/types/twilightforest/lich.json"
 hash = "53defc18a79750c1aa21f737e2d547f9518582376e9c58288b483fc4f9e20722"
+
+[[files]]
+file = "kubejs/data/kubejs/types/twilightforest/minoshroom.json"
+hash = "90664de13cd3532707be7539f048a473ec0082b63e7996464de260134e13f450"
 
 [[files]]
 file = "kubejs/data/kubejs/types/twilightforest/minotaur.json"
@@ -5690,7 +5734,11 @@ hash = "c885dcc48de6536d8b01e4d365662650832daa64ea6faf36b46f200780dd9746"
 
 [[files]]
 file = "kubejs/data/kubejs/types/twilightforest/naga.json"
-hash = "c6cd888354e798943001a5a0aabdb994cc345e2fcf1fbb19ffa40ff7d520e3ed"
+hash = "7686ed3dba4c27678ebab8718fc23fd235c74b55abba0cfce2cbb7686ff83f8d"
+
+[[files]]
+file = "kubejs/data/kubejs/types/twilightforest/snow_queen.json"
+hash = "8473028aeb7db161ce97db9c646aaa5e7a9836de9d3ab4a5ede3d8320f518caf"
 
 [[files]]
 file = "kubejs/data/kubejs/types/twilightforest/stable_ice_core.json"
@@ -5703,6 +5751,10 @@ hash = "3d39b79b05bdd0a0e35ea490963e928577206351baf9f3047627b2b7ae4d8783"
 [[files]]
 file = "kubejs/data/kubejs/types/twilightforest/upper_goblin_knight.json"
 hash = "421a94f499306baa3f8fac4816a5a1c225104653bc8130ecea515ac907aeb7b3"
+
+[[files]]
+file = "kubejs/data/kubejs/types/twilightforest/ur_ghast.json"
+hash = "8c4e2fb7d50260a932ebb62804b38f0bf8700c707d436be6d779dbbb7ed64146"
 
 [[files]]
 file = "kubejs/data/mvs/worldgen/structure_set/beach_bar.json"
@@ -6354,7 +6406,7 @@ hash = "8d57b65e64f9d0d19985e313a515e0a25be54ccc2bbb36c46ab59657c21b7d97"
 
 [[files]]
 file = "kubejs/data/tetra/materials/fabric/arctic_fur.json"
-hash = "27db6a68b049a15eefb35742cebf59c629cf743fef8e477ee380435dd27febe2"
+hash = "32bc7c9c677bba83799a14b10bb972f51285260bebbbb564edf93377ea3b6fc1"
 
 [[files]]
 file = "kubejs/data/tetra/materials/fabric/austro_feather.json"
@@ -7134,7 +7186,7 @@ hash = "d6fdf7c779c57c56bcffee7cf8ab91efc81cbe0e92083900184b7c788d9a1aa3"
 
 [[files]]
 file = "kubejs/server_scripts/common/food_eaten.js"
-hash = "9f02d6e4e313eddd1924991e923725d385ce1e391350e8097715c963ffb3f468"
+hash = "38b973f16104c3aca4595cab204f06c889a2fd968318b4ff7b152d5c71e4f962"
 
 [[files]]
 file = "kubejs/server_scripts/common/item_right.js"
@@ -7142,7 +7194,7 @@ hash = "c95bd9736693a45fef78fb9729929f1c165be9a76bfbf2e21c70e08d0e91feb0"
 
 [[files]]
 file = "kubejs/server_scripts/common/loot.js"
-hash = "fae54b8145d4d37bb96632166607d77d5fe7bf61b6b7600374e26273a490cac7"
+hash = "ca8b754548600218ff84de61d41cdcac8fb031eeb514a8517d5f5f40985185ea"
 
 [[files]]
 file = "kubejs/server_scripts/common/lucky_block.js"
@@ -7154,7 +7206,7 @@ hash = "d83008f8f4cca51f00d6b3ff0fdfa59acf429bd0df301cd6ed3d70fb72dc8bef"
 
 [[files]]
 file = "kubejs/server_scripts/common/player_login.js"
-hash = "bf66fd657e7eb24321f07b9e4a28c0c98eaa4903fce2d622ccbaeecd0c3e9a8a"
+hash = "94dcd291ef7bcf88884635f5cd03acae7a564fbaf1eae32451bd3307fe4f45e8"
 
 [[files]]
 file = "kubejs/server_scripts/common/tags.js"
@@ -7185,12 +7237,16 @@ file = "kubejs/server_scripts/curios/entity_hurt.js"
 hash = "f87093f9da93b1418ed7428bee00edb5e24718b413fd3d4f78f19b6dbd62f89a"
 
 [[files]]
+file = "kubejs/server_scripts/debug.js"
+hash = "43ecc5be468dcfdbf5c78cc287b3eb4f996358fa8d535787c41f8c0d71fc0dae"
+
+[[files]]
 file = "kubejs/server_scripts/event_stream.js"
 hash = "71354e021853f0f8b75816d16530843a2be5d6de38f7781165829ed327548e4e"
 
 [[files]]
 file = "kubejs/server_scripts/import.js"
-hash = "214b219c1d7761b575dc8dc1d48a0ca5beebe449c3979b5f8a79f0d6d5dfefdd"
+hash = "dc08ea584f7c21c8fb64be1e27668c128dd3282a28c75f5fff7036ef06a207fc"
 
 [[files]]
 file = "kubejs/server_scripts/mob_effect/arrow_damage_boost.js"
@@ -7210,7 +7266,7 @@ hash = "e3250a5cb5328bc852e93af328c9e785982d9a802073c393496df96154bc710c"
 
 [[files]]
 file = "kubejs/server_scripts/mob_effect/oveload.js"
-hash = "3d4bc4ef0fc976383c3a87d61d33dcc51f7e927e46c3ebf7ef05487ada256e39"
+hash = "ef88f8d3eebe6fe20544c4c7ee3ffbd9c2387a0faa943105cf22004a6ee93b49"
 
 [[files]]
 file = "kubejs/server_scripts/mob_effect/pardon_of_god.js"
@@ -7230,11 +7286,11 @@ hash = "1c40a31d0cf0c86ad2c2602f349afcf78605d4b384a30b3918fee0d18b699d6b"
 
 [[files]]
 file = "kubejs/server_scripts/organ/active_effect.js"
-hash = "e4ed868859f9830de7852d6e1d2c53acf380b527dfa31847553de38242ca8fb1"
+hash = "05da57f0a4665361109fd6ab68cb099e6d8bbc899af494bdda21dbe631768571"
 
 [[files]]
 file = "kubejs/server_scripts/organ/block_broken.js"
-hash = "c95155d1d6f16d48e08eb78e9ce664fb788ebdf2a94bce4f5740e3d8dae86f96"
+hash = "90ac0fef727511a08f7489d4a52d9de13053cd3235f6738e1b4092b72b2edca9"
 
 [[files]]
 file = "kubejs/server_scripts/organ/chest_cavity_manager.js"
@@ -7254,7 +7310,7 @@ hash = "decf2264a96af76e202cd37346cd5eea1e48116b304609d8f6dc354df4321b2f"
 
 [[files]]
 file = "kubejs/server_scripts/organ/key_bind.js"
-hash = "c34f338a45d4440f4a080ed675c1398f3f008cb92db2caa6e56a7b9f9dc96bdd"
+hash = "0ccee15069e5b07d0db1f4455881115b678da21471469f5dd29530cc9dc9f9fc"
 
 [[files]]
 file = "kubejs/server_scripts/organ/loot.js"
@@ -7270,19 +7326,19 @@ hash = "1966626ea441a1224252b0d99b53cdb29c0858735c36232173690b402a33dee3"
 
 [[files]]
 file = "kubejs/server_scripts/organ/player_bear.js"
-hash = "fa1a6f931f006010bcfe745ea4f132c206c3affdf56a3cbd4330c29d4128228a"
+hash = "a78a65a4bce053d9020e9c24955ffd5d7bb742f0385188356e36f5df41939228"
 
 [[files]]
 file = "kubejs/server_scripts/organ/player_damage.js"
-hash = "c6b0a94294ad32dbca1939cf8c5325d942c17885a3c37fdb897231f8c13ea8a7"
+hash = "59b5550ac7a2686b7d4491a06922d3748c91ae5b1cc553dbcd64bd35be7842e6"
 
 [[files]]
 file = "kubejs/server_scripts/organ/player_tick.js"
-hash = "556f93c59b63670c3fe0bf1d1791f675fb8b6729fffce869360d080536b72532"
+hash = "45ab6869418aa18db7dcc0be88d733084e44b4b15e841857781c721e2cda3eff"
 
 [[files]]
-file = "kubejs/server_scripts/organ/tempterature.js"
-hash = "debd2ba9e4fee295fb73f80a13da0aa4def97cdff8b964d0390e72fc3f635922"
+file = "kubejs/server_scripts/organ/temperature.js"
+hash = "ebdce8a839a4ce37e58c8a8d702d9faaa2ee63c58c104265ba9803b41b1bfc48"
 
 [[files]]
 file = "kubejs/server_scripts/organ/update_organ_score.js"
@@ -7290,7 +7346,7 @@ hash = "afb2b3e3a9d05871bd488c0c56b877ead5e08db3f1f6693d5272272ebec73f97"
 
 [[files]]
 file = "kubejs/server_scripts/recipes/bio_brewing.js"
-hash = "f8e8f795860a386c8063349f099050e270ccb1881763bd4bc0c5dd5351ebc839"
+hash = "2e71ccc2e5eeddc7acd8416e2cf66368afa330752983a1b757b264b64b96cec4"
 
 [[files]]
 file = "kubejs/server_scripts/recipes/bio_forging.js"
@@ -7306,7 +7362,7 @@ hash = "aae5b5654a8287d181ccd164373675f9f8149b73d3d056c9dcaa2f8eff4bf03b"
 
 [[files]]
 file = "kubejs/server_scripts/recipes/create.js"
-hash = "a9cc77f2cae41144c1f63624137b958f4aab99f1767b712df612f782ad6529f1"
+hash = "6197126efbf8c79a8c17a87a43b12ab74141fa0d2884b1bcd2696676eb8a14a7"
 
 [[files]]
 file = "kubejs/server_scripts/recipes/cutting.js"
@@ -7338,7 +7394,7 @@ hash = "a8f7f0558570df2bf5e378b5eb9d5a08cd0983ede5c2d94167894f4ce7d81c46"
 
 [[files]]
 file = "kubejs/server_scripts/recipes/myanmar_market/organ_to_coin.js"
-hash = "48d681bd596678c1e350de1aaf2f61bdbd732b52336bb026d090ecb2fa0a4f1d"
+hash = "3552cf4db4b90c743eb4310791e8ec25e8b32389fd772d4c45cb8cb9b922c5c7"
 
 [[files]]
 file = "kubejs/server_scripts/recipes/ore_excavation.js"
@@ -7350,7 +7406,7 @@ hash = "906fcb635f5ecb0b02595fe458a7a717545097f2eedee83ce98045a4cf42907f"
 
 [[files]]
 file = "kubejs/server_scripts/ritual/ritual_event.js"
-hash = "bf07cd97f368554fd6d0dee8e70d39b75714a6983a48039738ecc271d04c2a57"
+hash = "ef673a19ba54b3f88b18db1945633ea8a6ad649654b26ca6ea7f44b9533d291c"
 
 [[files]]
 file = "kubejs/server_scripts/ritual/summoning_rituals.js"
@@ -7362,7 +7418,7 @@ hash = "89c195b224e7ac7e3b46c753e7341e2bc07a8e751759af02a3e44bddf98dee3c"
 
 [[files]]
 file = "kubejs/server_scripts/utils/constdef.js"
-hash = "df5300f2710fb4bf820e6ab6b36db99a28f57b1138cb597242f983f8560aaba3"
+hash = "0604b2f1c164732cadde14142fde629c3cc23abf56fda5107a38240adc5917ab"
 
 [[files]]
 file = "kubejs/server_scripts/utils/entity_hurt_model.js"
@@ -7386,7 +7442,7 @@ hash = "c2ee9b20cff2fdf1977094a096146da83f8bdb8af178bde6c135daa8fdad3039"
 
 [[files]]
 file = "kubejs/server_scripts/utils/tetra.js"
-hash = "c8ca49f06900ea85dda4dd243e938d74148634797e8e8781cf6ffc93c4b35d6b"
+hash = "52ff2eb468f91df505b70abd91b78ec89f3a6f17b957b1068ccf0240c2e8263a"
 
 [[files]]
 file = "kubejs/server_scripts/utils/wares_model.js"
@@ -7402,7 +7458,7 @@ hash = "69673ddbe8768c0524429f5440ac916767a867319c2f2124bc2a376defbcd979"
 
 [[files]]
 file = "kubejs/startup_scripts/client_init.js"
-hash = "f5282ad67b0c1c63f6c681d659f351c2c2b8a72aebfbd04e80abeebb296a9dae"
+hash = "eac5755c39d1fa5a41fbf51a69f50714e0715124fa26537e68c2f275e1c9fa53"
 
 [[files]]
 file = "kubejs/startup_scripts/creative_tab_register.js"
@@ -7430,7 +7486,7 @@ hash = "4406753dd04992076019303594d03cb4c3bfd560bd250a2676c398917a255f57"
 
 [[files]]
 file = "kubejs/startup_scripts/global.js"
-hash = "d2a8a207f4e44626b34a0f8cd282690334f07516af3d644db2e21f3f736fd702"
+hash = "d9c5a94ec26d902a5e3dacb2eea88cecd350d57f8eea50be83efbcb1ab4195fa"
 
 [[files]]
 file = "kubejs/startup_scripts/import.js"
@@ -7450,7 +7506,7 @@ hash = "7cc0256756372f5ddfce8aef2289a861c822a63ddfae82aa3b97c5e716c120a0"
 
 [[files]]
 file = "kubejs/startup_scripts/item_register.js"
-hash = "33d1c9a56504b52614dea12ec323735304df4b647a9b096c4cbaff47f686a492"
+hash = "100558e5ed20b994723442c81ca56a86cb68ca19d7fbfefc1499eaa8302055ee"
 
 [[files]]
 file = "kubejs/startup_scripts/key_bind_register.js"
@@ -7466,7 +7522,7 @@ hash = "111e687597ad866124c34bff9f8b02f3d46aa110e4776c5c0f2fff8c334c7d1b"
 
 [[files]]
 file = "kubejs/startup_scripts/organ_register.js"
-hash = "2252034c29ab557eef114069b61247462fdf4358c0f642785cc5738a08f79d51"
+hash = "c3ae50457cb6e0d49772b69180a9253acd5328d58a493c1f96065b8838fc4dd0"
 
 [[files]]
 file = "kubejs/startup_scripts/special/eye_finder.js"
@@ -7673,6 +7729,11 @@ metafile = true
 [[files]]
 file = "mods/dimensional-dungeons.pw.toml"
 hash = "57f67f5052eaa0bbc8c769721a77ec16abd5e09ea1f2db2dc2db7bedd02c307f"
+metafile = true
+
+[[files]]
+file = "mods/dimthreads.pw.toml"
+hash = "8a480405c6927d8cb1748502bde85ea45dc909bc90a09542d3c6e4d4bca5b4e5"
 metafile = true
 
 [[files]]
@@ -8338,6 +8399,11 @@ metafile = true
 [[files]]
 file = "mods/world-of-bosses.pw.toml"
 hash = "701987a2a8e54700b553362432e963b92056da32846da60b7887efd0123862fd"
+metafile = true
+
+[[files]]
+file = "mods/yeetusexperimentus.pw.toml"
+hash = "233f79cd76dc6d14c59a4cfbdc6660805c3f858e057061c1ca08df8cad73c56b"
 metafile = true
 
 [[files]]

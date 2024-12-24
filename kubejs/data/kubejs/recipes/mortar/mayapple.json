@@ -1,0 +1,11 @@
+{
+  "type": "extradelight:mortar",
+  "grinds": 8,
+  "ingredient": {
+    "item": "twilightforest:mayapple"
+  },
+  "result": {
+    "count": 3,
+    "item": "biomancy:nutrients"
+  }
+}
