@@ -2196,7 +2196,7 @@ StartupEvents.registry('item', event => {
         .texture('kubejs:item/organs/flame/flame_heart')
         .tag("kubejs:heart")
         .tag("kubejs:flame")
-        .tag("kubejs:temperature_only")
+        .tag("kubejs:player_tick_only")
 
     registerOrgan(new Organ('kubejs:chameleon_stomach')
         .addScore('digestion', 1.5)
@@ -2239,7 +2239,7 @@ StartupEvents.registry('item', event => {
         .texture('kubejs:item/organs/ice/ice_heart')
         .tag("kubejs:heart")
         .tag("kubejs:ice")
-        .tag("kubejs:temperature_only")
+        .tag("kubejs:player_tick_only")
 
     registerOrgan(new Organ('kubejs:ice_rib')
         .addScore('defense', 1.5)
@@ -2449,7 +2449,5 @@ StartupEvents.registry('item', event => {
         .texture('chestcavity:item/creeper_appendix')
         .tag("kubejs:key_pressed")
         .tag('kubejs:appendix')
-
-
 
 });
