@@ -32,6 +32,9 @@ StartupEvents.registry('item', event => {
         food.hunger(4).saturation(1).alwaysEdible()
         food.effect('minecraft:regeneration', 20 * 30, 1, 1)
     })
+
+    event.create('colorful_candy').texture('kubejs:item/colorful_candy').tag('extradelight:candy_bowl_valid').food(food => { food.hunger(1).saturation(1).alwaysEdible().effect('kubejs:sweet_dream', 20 * 5, 0, 1) }).tag('supplementaries:cookies')
+
     event.create('brown_sauce_braised_intestines').texture('kubejs:item/brown_sauce_braised_intestines').food(food => {
         food.hunger(6).saturation(1.5).alwaysEdible()
         food.effect('minecraft:regeneration', 20 * 45, 0, 1)

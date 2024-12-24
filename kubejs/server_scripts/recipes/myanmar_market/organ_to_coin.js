@@ -16,8 +16,8 @@ ServerEvents.recipes(event => {
             } else {
                 let playerBankAccount = $BankSaveData.GetBankAccount(false, ctx.machine.ownerId)
                 playerBankAccount.depositMoney(ConvertMainMoneyValue(worth))
-                if (ctx.machine.owner.isAlive()) {
-                    ctx.machine.owner.setStatusMessage(Text.translatable('kubejs.statusmsg.organ_sell.1', Text.gold(worth.toFixed(0))))
+                if (machine.owner.isAlive()) {
+                    machine.owner.setStatusMessage(Text.translatable('kubejs.statusmsg.organ_sell.1', Text.gold(worth.toFixed(0))))
                 }
             }
             machine.removeItemFromSlot("organ_slot", 1, false)

@@ -9,7 +9,7 @@
     "integrityGain": 4,
     "magicCapacity": 156,
     "toolLevel": 0,
-    "toolEfficiency": 0,
+    "toolEfficiency": -2,
     "tints": {
         "glyph": "c8d0d3",
         "texture": "c8d0d3"
