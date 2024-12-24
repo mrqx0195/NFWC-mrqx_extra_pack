@@ -2303,6 +2303,7 @@ StartupEvents.registry('item', event => {
         .addTextLines('ctrl', [LEADING_SYMBOL, Text.translatable("kubejs.tooltips.etched_paper.3", Text.yellow("0.01")).gray()])
         .addTextLines('ctrl', [LEADING_SYMBOL, Text.translatable("kubejs.tooltips.etched_paper.4", Text.yellow("0.01"), Text.yellow("0.03")).gray()])
         .addTextLines('ctrl', [LEADING_SYMBOL, Text.translatable("kubejs.tooltips.etched_paper.5", Text.yellow("0.02"), Text.yellow("0.3")).gray()])
+        .addTextLines('ctrl', [LEADING_SYMBOL, Text.translatable("kubejs.tooltips.etched_paper.6").gray()])
         .build())
         .texture('kubejs:item/organs/twilightforest/etched_paper')
         .tag('kubejs:active_only')
