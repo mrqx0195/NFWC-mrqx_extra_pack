@@ -62,6 +62,17 @@ ServerEvents.recipes(event => {
             O: 'minecraft:raw_copper'
         })
 
+    event.shaped(Item.of('kubejs:organ_recycler', 1), [
+        'OCO',
+        'SMS'
+    ],
+        {
+            C: '#kubejs:organ',
+            O: 'lightmanscurrency:coin_iron',
+            S: '#forge:cobblestone',
+            M: 'wares:delivery_table'
+        })
+            
     event.shaped('cataclysm:meat_shredder', [
         ['', 'twilightforest:fiery_ingot', 'goety:philosophers_stone'],
         ['', 'twilightforest:charm_of_keeping_3', 'minecraft:nether_star'],
