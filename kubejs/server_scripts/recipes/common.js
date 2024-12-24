@@ -63,13 +63,13 @@ ServerEvents.recipes(event => {
         })
 
     event.shaped(Item.of('kubejs:organ_recycler', 1), [
+        'OOO',
         'OCO',
-        'SMS'
+        'OMO'
     ],
         {
             C: '#kubejs:organ',
             O: 'lightmanscurrency:coin_iron',
-            S: '#forge:cobblestone',
             M: 'wares:delivery_table'
         })
             
