@@ -670,7 +670,7 @@
 			y: -4.0d
 		}
 		{
-			dependencies: ["2EBB4C697D81D42A"]
+			dependencies: ["72D090FF4C44DAAD"]
 			description: [
 				"&d《暮色森林（The_Twilight_Forest）》模组&r增加了一个被永恒之夜的笼罩的森林世界。"
 				""
@@ -2605,6 +2605,31 @@
 			title: "裂刃帝王"
 			x: 2.25d
 			y: 7.75d
+		}
+		{
+			dependencies: ["0F86AB0B5FED699D"]
+			description: [
+				"在&2空心矿山&r以及&2巫妖塔&r内的宝箱中有几率获得。"
+				""
+				"对暮色森林中的生物使用后，会将其&a转化为原版主世界生物&r，&e如果你被迫在暮色生存，可能会用到这个&r。"
+				""
+				"&7当然，你也可以将主世界生物转化为暮色生物。&r"
+			]
+			hide_dependency_lines: true
+			id: "4E02396A70BB508E"
+			rewards: [{
+				count: 3
+				id: "23ECE6B702DBB0A4"
+				item: "twilightforest:transformation_powder"
+				type: "item"
+			}]
+			tasks: [{
+				id: "5B9C9B1A29E5B8CD"
+				item: "twilightforest:transformation_powder"
+				type: "item"
+			}]
+			x: 6.0d
+			y: -5.75d
 		}
 	]
 	title: "章节2：黯光"

@@ -2541,6 +2541,27 @@
 			x: 8.5d
 			y: 1.75d
 		}
+		{
+			dependencies: ["74F1E7C9FB0D08A1"]
+			description: [
+				"一个神奇的装置，可以将&6器官&r回收为&6货币&r。"
+				""
+				"你可以在&2右侧的栏位&r中放入一个&6钱包&r，这样&e产生的货币会自动进入钱包&r。"
+			]
+			id: "35E8A04037C3AD20"
+			rewards: [{
+				id: "19C9BDA650737C41"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
+			tasks: [{
+				id: "2D669E7BC9D504D5"
+				item: "kubejs:organ_recycler"
+				type: "item"
+			}]
+			x: 4.25d
+			y: 21.25d
+		}
 	]
 	title: "章节1：如常"
 }
