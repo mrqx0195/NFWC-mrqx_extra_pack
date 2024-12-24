@@ -18,6 +18,32 @@
 		}
 	}
 	id: "69A9CF68FED068D9"
+	images: [
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 3.0d
+			hover: [ ]
+			image: "art_of_forging:item/enigmatic_construct"
+			rotation: 0.0d
+			width: 3.0d
+			x: -5.75d
+			y: 19.5d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 3.5d
+			hover: [ ]
+			image: "art_of_forging:item/dragon_soul"
+			rotation: 0.0d
+			width: 3.5d
+			x: 8.0d
+			y: 25.75d
+		}
+	]
 	order_index: 0
 	quest_links: [ ]
 	quests: [
@@ -65,7 +91,7 @@
 				type: "checkmark"
 			}]
 			title: "引言：Tetra的存在意义"
-			x: -5.5d
+			x: -5.75d
 			y: 19.5d
 		}
 		{
@@ -189,7 +215,7 @@
 			}]
 			title: "改造工具"
 			x: 1.0d
-			y: 22.0d
+			y: 21.75d
 		}
 		{
 			dependencies: ["6DCBC9E0C68FCAB4"]
@@ -228,7 +254,7 @@
 			}]
 			title: "双头工具"
 			x: 2.25d
-			y: 22.0d
+			y: 21.75d
 		}
 		{
 			dependencies: ["6DCBC9E0C68FCAB4"]
@@ -258,7 +284,7 @@
 			}]
 			title: "单头工具"
 			x: 3.25d
-			y: 22.0d
+			y: 21.75d
 		}
 		{
 			dependencies: ["312A09022249980F"]
@@ -446,7 +472,7 @@
 			}]
 			title: "腰带"
 			x: 4.25d
-			y: 22.0d
+			y: 21.75d
 		}
 		{
 			dependencies: ["312A09022249980F"]

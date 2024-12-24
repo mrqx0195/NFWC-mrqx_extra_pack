@@ -1025,7 +1025,7 @@
 				}
 				type: "item"
 			}]
-			x: 2.25d
+			x: 0.25d
 			y: 5.5d
 		}
 		{
@@ -1047,7 +1047,7 @@
 				}
 				type: "item"
 			}]
-			x: 3.25d
+			x: 1.25d
 			y: 5.5d
 		}
 		{
@@ -1357,6 +1357,824 @@
 			}]
 			x: -4.75d
 			y: 6.5d
+		}
+		{
+			dependencies: ["3E9DD0B78886A183"]
+			id: "2D8B08C4EBE5BB17"
+			rewards: [{
+				id: "3468AD4E514D9DC4"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "44423E55F1D0D178"
+				item: {
+					Count: 1b
+					ForgeCaps: {
+						"cold_sweat:item_insulation": {
+							Insulation: [ ]
+						}
+					}
+					id: "twilightforest:naga_chestplate"
+					tag: {
+						Damage: 0
+						Enchantments: [{
+							id: "minecraft:fire_protection"
+							lvl: 3s
+						}]
+						Insulation: [ ]
+					}
+				}
+				type: "item"
+			}]
+			x: -1.75d
+			y: 2.5d
+		}
+		{
+			dependencies: ["3E9DD0B78886A183"]
+			id: "6DC44C3CD6586514"
+			rewards: [{
+				id: "4FBF123049ECEFF7"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "0A823B1CEB2AE3F0"
+				item: {
+					Count: 1b
+					ForgeCaps: {
+						"cold_sweat:item_insulation": {
+							Insulation: [ ]
+						}
+					}
+					id: "twilightforest:steeleaf_helmet"
+					tag: {
+						Damage: 0
+						Enchantments: [{
+							id: "minecraft:projectile_protection"
+							lvl: 2s
+						}]
+						Insulation: [ ]
+					}
+				}
+				type: "item"
+			}]
+			x: -0.75d
+			y: 1.5d
+		}
+		{
+			dependencies: ["3E9DD0B78886A183"]
+			id: "76F743FB30A92E97"
+			rewards: [{
+				id: "6283F18F90254E09"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "60AC1B3124761DB9"
+				item: {
+					Count: 1b
+					ForgeCaps: {
+						"cold_sweat:item_insulation": {
+							Insulation: [ ]
+						}
+					}
+					id: "twilightforest:naga_leggings"
+					tag: {
+						Damage: 0
+						Enchantments: [{
+							id: "minecraft:protection"
+							lvl: 3s
+						}]
+						Insulation: [ ]
+					}
+				}
+				type: "item"
+			}]
+			x: -1.75d
+			y: 3.5d
+		}
+		{
+			dependencies: ["3E9DD0B78886A183"]
+			id: "103D13D103B1FC61"
+			rewards: [{
+				id: "02503D64A1728D57"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "0AD5AFE6B78CEEBA"
+				item: {
+					Count: 1b
+					ForgeCaps: {
+						"cold_sweat:item_insulation": {
+							Insulation: [ ]
+						}
+					}
+					id: "twilightforest:steeleaf_chestplate"
+					tag: {
+						Damage: 0
+						Enchantments: [{
+							id: "minecraft:blast_protection"
+							lvl: 2s
+						}]
+						Insulation: [ ]
+					}
+				}
+				type: "item"
+			}]
+			x: -0.75d
+			y: 2.5d
+		}
+		{
+			dependencies: ["3E9DD0B78886A183"]
+			id: "580BF785DD28F5EA"
+			rewards: [{
+				id: "69FA7B51DA67DCD2"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "1F91D9C5D7C2F19F"
+				item: {
+					Count: 1b
+					ForgeCaps: {
+						"cold_sweat:item_insulation": {
+							Insulation: [ ]
+						}
+					}
+					id: "twilightforest:ironwood_helmet"
+					tag: {
+						Damage: 0
+						Enchantments: [{
+							id: "minecraft:aqua_affinity"
+							lvl: 1s
+						}]
+					}
+				}
+				type: "item"
+			}]
+			x: 0.25d
+			y: 1.5d
+		}
+		{
+			dependencies: ["3E9DD0B78886A183"]
+			id: "7328E35DD4587566"
+			rewards: [{
+				id: "469BFCAFD56C63CE"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "3F327BAC47E45A09"
+				item: {
+					Count: 1b
+					ForgeCaps: {
+						"cold_sweat:item_insulation": {
+							Insulation: [ ]
+						}
+					}
+					id: "twilightforest:ironwood_chestplate"
+					tag: {
+						Damage: 0
+						Enchantments: [{
+							id: "minecraft:protection"
+							lvl: 1s
+						}]
+					}
+				}
+				type: "item"
+			}]
+			x: 0.25d
+			y: 2.5d
+		}
+		{
+			dependencies: ["3E9DD0B78886A183"]
+			id: "30BB409F1690792C"
+			rewards: [{
+				id: "71ED36D19FF18C48"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "1B12C1934127FF69"
+				item: {
+					Count: 1b
+					ForgeCaps: {
+						"cold_sweat:item_insulation": {
+							Insulation: [ ]
+						}
+					}
+					id: "twilightforest:ironwood_leggings"
+					tag: {
+						Damage: 0
+						Enchantments: [{
+							id: "minecraft:protection"
+							lvl: 1s
+						}]
+						Insulation: [ ]
+					}
+				}
+				type: "item"
+			}]
+			x: 0.25d
+			y: 3.5d
+		}
+		{
+			dependencies: ["3E9DD0B78886A183"]
+			id: "41492E1E822B41BA"
+			rewards: [{
+				id: "15F0C54EB7A54A6B"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "79D9D48459305F58"
+				item: {
+					Count: 1b
+					ForgeCaps: {
+						"cold_sweat:item_insulation": {
+							Insulation: [ ]
+						}
+					}
+					id: "twilightforest:ironwood_boots"
+					tag: {
+						Damage: 0
+						Enchantments: [{
+							id: "minecraft:feather_falling"
+							lvl: 1s
+						}]
+						Insulation: [ ]
+					}
+				}
+				type: "item"
+			}]
+			x: 0.25d
+			y: 4.5d
+		}
+		{
+			dependencies: ["3E9DD0B78886A183"]
+			id: "1121F9DCB73E5E37"
+			rewards: [{
+				id: "162CE8F7771B4D6C"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "2629962663687392"
+				item: {
+					Count: 1b
+					ForgeCaps: {
+						"cold_sweat:item_insulation": {
+							Insulation: [ ]
+						}
+					}
+					id: "twilightforest:steeleaf_leggings"
+					tag: {
+						Damage: 0
+						Enchantments: [{
+							id: "minecraft:fire_protection"
+							lvl: 2s
+						}]
+						Insulation: [ ]
+					}
+				}
+				type: "item"
+			}]
+			x: -0.75d
+			y: 3.5d
+		}
+		{
+			dependencies: ["3E9DD0B78886A183"]
+			id: "117F14A567B9F37D"
+			rewards: [{
+				id: "55F00D63C66AEACA"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "56BAFE697FB69BBB"
+				item: {
+					Count: 1b
+					ForgeCaps: {
+						"cold_sweat:item_insulation": {
+							Insulation: [ ]
+						}
+					}
+					id: "twilightforest:steeleaf_boots"
+					tag: {
+						Damage: 0
+						Enchantments: [{
+							id: "minecraft:feather_falling"
+							lvl: 2s
+						}]
+						Insulation: [ ]
+					}
+				}
+				type: "item"
+			}]
+			x: -0.75d
+			y: 4.5d
+		}
+		{
+			dependencies: ["3E9DD0B78886A183"]
+			id: "314678B385FAD3B3"
+			rewards: [{
+				id: "58D04AF010F4B723"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6184BA81C22D6574"
+				item: {
+					Count: 1b
+					ForgeCaps: {
+						"cold_sweat:item_insulation": {
+							Insulation: [ ]
+						}
+					}
+					id: "twilightforest:phantom_helmet"
+					tag: {
+						Damage: 0
+						Insulation: [ ]
+					}
+				}
+				type: "item"
+			}]
+			x: 1.25d
+			y: 1.5d
+		}
+		{
+			dependencies: ["3E9DD0B78886A183"]
+			id: "2C73FCBC97024F67"
+			rewards: [{
+				id: "557384281F51DAA6"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "3C9E14A026EE08CB"
+				item: {
+					Count: 1b
+					ForgeCaps: {
+						"cold_sweat:item_insulation": {
+							Insulation: [ ]
+						}
+					}
+					id: "twilightforest:phantom_chestplate"
+					tag: {
+						Damage: 0
+						Insulation: [ ]
+					}
+				}
+				type: "item"
+			}]
+			x: 1.25d
+			y: 2.5d
+		}
+		{
+			dependencies: ["3E9DD0B78886A183"]
+			id: "4CA38E30219D93B9"
+			rewards: [{
+				id: "7321147944E547D0"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6EB9A032AA3231CA"
+				item: {
+					Count: 1b
+					ForgeCaps: {
+						"cold_sweat:item_insulation": {
+							Insulation: [ ]
+						}
+					}
+					id: "twilightforest:fiery_helmet"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 2.25d
+			y: 1.5d
+		}
+		{
+			dependencies: ["3E9DD0B78886A183"]
+			id: "6DE5248C5B4A89B8"
+			rewards: [{
+				id: "712C72E1965FDA85"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "5E818DD0289E5C31"
+				item: {
+					Count: 1b
+					ForgeCaps: {
+						"cold_sweat:item_insulation": {
+							Insulation: [ ]
+						}
+					}
+					id: "twilightforest:fiery_chestplate"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 2.25d
+			y: 2.5d
+		}
+		{
+			dependencies: ["3E9DD0B78886A183"]
+			id: "1D291D66BA1DCF7C"
+			rewards: [{
+				id: "3BD8C2F77CBB46B5"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "5C5D97ED67440447"
+				item: {
+					Count: 1b
+					ForgeCaps: {
+						"cold_sweat:item_insulation": {
+							Insulation: [ ]
+						}
+					}
+					id: "twilightforest:fiery_leggings"
+					tag: {
+						Damage: 0
+						Insulation: [ ]
+					}
+				}
+				type: "item"
+			}]
+			x: 2.25d
+			y: 3.5d
+		}
+		{
+			dependencies: ["3E9DD0B78886A183"]
+			id: "39AACD3DD149A702"
+			rewards: [{
+				id: "3AE03605289C108B"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "7B27EB55BA3A2883"
+				item: {
+					Count: 1b
+					ForgeCaps: {
+						"cold_sweat:item_insulation": {
+							Insulation: [ ]
+						}
+					}
+					id: "twilightforest:fiery_boots"
+					tag: {
+						Damage: 0
+						Insulation: [ ]
+					}
+				}
+				type: "item"
+			}]
+			x: 2.25d
+			y: 4.5d
+		}
+		{
+			dependencies: ["3E9DD0B78886A183"]
+			id: "10302F01A5788934"
+			rewards: [{
+				id: "3D1C869CE6C0AFE2"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "41FACDEA5E509700"
+				item: {
+					Count: 1b
+					id: "twilightforest:arctic_helmet"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 3.25d
+			y: 1.5d
+		}
+		{
+			dependencies: ["3E9DD0B78886A183"]
+			id: "594F6C4D9BA33835"
+			rewards: [{
+				id: "561C2C64521DD0FC"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "09F619BA8F352A12"
+				item: {
+					Count: 1b
+					id: "twilightforest:arctic_chestplate"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 3.25d
+			y: 2.5d
+		}
+		{
+			dependencies: ["3E9DD0B78886A183"]
+			id: "44DE00A29E81EF95"
+			rewards: [{
+				id: "65709AE33E5CFCB3"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6DF98E83E4401A8B"
+				item: {
+					Count: 1b
+					id: "twilightforest:arctic_leggings"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 3.25d
+			y: 3.5d
+		}
+		{
+			dependencies: ["3E9DD0B78886A183"]
+			id: "23CD6900F8F20A18"
+			rewards: [{
+				id: "3528C76491C1FEEE"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "012D2A321E414269"
+				item: {
+					Count: 1b
+					id: "twilightforest:arctic_boots"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 3.25d
+			y: 4.5d
+		}
+		{
+			dependencies: ["3E9DD0B78886A183"]
+			id: "112C396F35D9C2A1"
+			rewards: [{
+				id: "3C92978841D47437"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "5F2B6E88DAB82E2C"
+				item: {
+					Count: 1b
+					ForgeCaps: {
+						"cold_sweat:item_insulation": {
+							Insulation: [ ]
+						}
+					}
+					id: "twilightforest:knightmetal_helmet"
+					tag: {
+						Damage: 0
+						Insulation: [ ]
+					}
+				}
+				type: "item"
+			}]
+			x: 2.25d
+			y: 5.5d
+		}
+		{
+			dependencies: ["3E9DD0B78886A183"]
+			id: "593709E81BA944D3"
+			rewards: [{
+				id: "1C99716EB8E2E8F0"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "72EE43E2B8209C2D"
+				item: {
+					Count: 1b
+					ForgeCaps: {
+						"cold_sweat:item_insulation": {
+							Insulation: [ ]
+						}
+					}
+					id: "twilightforest:knightmetal_chestplate"
+					tag: {
+						Damage: 0
+						Insulation: [ ]
+					}
+				}
+				type: "item"
+			}]
+			x: 2.25d
+			y: 6.5d
+		}
+		{
+			dependencies: ["3E9DD0B78886A183"]
+			id: "4BB4451114A298CD"
+			rewards: [{
+				id: "1E82671A78C6A745"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "0F7A13F74BE630D2"
+				item: {
+					Count: 1b
+					ForgeCaps: {
+						"cold_sweat:item_insulation": {
+							Insulation: [ ]
+						}
+					}
+					id: "twilightforest:knightmetal_leggings"
+					tag: {
+						Damage: 0
+						Insulation: [ ]
+					}
+				}
+				type: "item"
+			}]
+			x: 2.25d
+			y: 7.5d
+		}
+		{
+			dependencies: ["3E9DD0B78886A183"]
+			id: "6CA16D9FA1D60498"
+			rewards: [{
+				id: "6CF48F701D9EFD20"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "19F8E977A52D932C"
+				item: {
+					Count: 1b
+					ForgeCaps: {
+						"cold_sweat:item_insulation": {
+							Insulation: [ ]
+						}
+					}
+					id: "twilightforest:knightmetal_boots"
+					tag: {
+						Damage: 0
+						Insulation: [ ]
+					}
+				}
+				type: "item"
+			}]
+			x: 2.25d
+			y: 8.5d
+		}
+		{
+			dependencies: ["3E9DD0B78886A183"]
+			id: "4ADDE409B81688E0"
+			rewards: [{
+				id: "323B603CB4ED36C5"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "669FE5738695CD77"
+				item: {
+					Count: 1b
+					ForgeCaps: {
+						"cold_sweat:item_insulation": {
+							Insulation: [ ]
+						}
+					}
+					id: "twilightforest:yeti_helmet"
+					tag: {
+						Damage: 0
+						Enchantments: [{
+							id: "minecraft:protection"
+							lvl: 2s
+						}]
+						Insulation: [ ]
+					}
+				}
+				type: "item"
+			}]
+			x: 3.25d
+			y: 5.5d
+		}
+		{
+			dependencies: ["3E9DD0B78886A183"]
+			id: "06AB6FED64D4D4CD"
+			rewards: [{
+				id: "1048EB64E297ED81"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "119C0E55C93E0C53"
+				item: {
+					Count: 1b
+					ForgeCaps: {
+						"cold_sweat:item_insulation": {
+							Insulation: [ ]
+						}
+					}
+					id: "twilightforest:yeti_chestplate"
+					tag: {
+						Damage: 0
+						Enchantments: [{
+							id: "minecraft:protection"
+							lvl: 2s
+						}]
+						Insulation: [ ]
+					}
+				}
+				type: "item"
+			}]
+			x: 3.25d
+			y: 6.5d
+		}
+		{
+			dependencies: ["3E9DD0B78886A183"]
+			id: "1C850E1DA16A01B4"
+			rewards: [{
+				id: "6E856793E9A8D27D"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "254A52B1847FCACC"
+				item: {
+					Count: 1b
+					ForgeCaps: {
+						"cold_sweat:item_insulation": {
+							Insulation: [ ]
+						}
+					}
+					id: "twilightforest:yeti_leggings"
+					tag: {
+						Damage: 0
+						Enchantments: [{
+							id: "minecraft:protection"
+							lvl: 2s
+						}]
+						Insulation: [ ]
+					}
+				}
+				type: "item"
+			}]
+			x: 3.25d
+			y: 7.5d
+		}
+		{
+			dependencies: ["3E9DD0B78886A183"]
+			id: "77ADA78B67ADD491"
+			rewards: [{
+				id: "6E0DC1A6DFB28978"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "5386F068C91B01DA"
+				item: {
+					Count: 1b
+					ForgeCaps: {
+						"cold_sweat:item_insulation": {
+							Insulation: [ ]
+						}
+					}
+					id: "twilightforest:yeti_boots"
+					tag: {
+						Damage: 0
+						Enchantments: [
+							{
+								id: "minecraft:protection"
+								lvl: 2s
+							}
+							{
+								id: "minecraft:feather_falling"
+								lvl: 4s
+							}
+						]
+						Insulation: [ ]
+					}
+				}
+				type: "item"
+			}]
+			x: 3.25d
+			y: 8.5d
 		}
 	]
 	title: "盔甲：寒光四射的收藏品"

@@ -12,6 +12,7 @@
 	}
 	id: "5732E8BABFC7D570"
 	images: [{
+		alpha: 200
 		click: ""
 		corner: false
 		dev: false

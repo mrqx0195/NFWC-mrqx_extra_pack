@@ -9,6 +9,73 @@
 		tag: { }
 	}
 	id: "074AE67620B22558"
+	images: [
+		{
+			alpha: 200
+			click: ""
+			corner: false
+			dev: false
+			height: 25.0d
+			hover: [ ]
+			image: "kubejs:textures/task/chapter4.png"
+			rotation: 0.0d
+			width: 22.787610619469024d
+			x: 1.5d
+			y: -4.0d
+		}
+		{
+			alpha: 160
+			click: ""
+			corner: false
+			dev: false
+			height: 6.0d
+			hover: [ ]
+			image: "kubejs:textures/task/tf_0.png"
+			rotation: 0.0d
+			width: 5.8989473684210525d
+			x: 18.75d
+			y: -4.5d
+		}
+		{
+			alpha: 160
+			click: ""
+			corner: false
+			dev: false
+			height: 5.0d
+			hover: [ ]
+			image: "kubejs:item/organs/legends/paradise_regained"
+			rotation: 0.0d
+			width: 5.0d
+			x: 0.75d
+			y: 10.75d
+		}
+		{
+			alpha: 160
+			click: ""
+			corner: false
+			dev: false
+			height: 5.0d
+			hover: [ ]
+			image: "minecraft:item/compass_16"
+			rotation: 0.0d
+			width: 5.0d
+			x: -16.25d
+			y: -4.75d
+		}
+		{
+			alpha: 160
+			click: ""
+			corner: false
+			dev: false
+			height: 6.0d
+			hover: [ ]
+			image: "kubejs:textures/task/chapter2_1.png"
+			rotation: 0.0d
+			width: 4.476923076923077d
+			x: 0.5d
+			y: -20.5d
+		}
+	]
 	order_index: 1
 	quest_links: [ ]
 	quests: [
@@ -48,8 +115,7 @@
 			icon: "meetyourfight:haunted_bell"
 			id: "6C5EDA1DE6024879"
 			rewards: [{
-				count: 2
-				id: "034F30E48D52B171"
+				id: "216E68327FB1FA56"
 				item: "lightmanscurrency:coin_iron"
 				type: "item"
 			}]
@@ -75,8 +141,7 @@
 			icon: "bosses_of_mass_destruction:brimstone_nectar"
 			id: "0779F9E4FD2E0EA0"
 			rewards: [{
-				count: 2
-				id: "2435FA4D27AA4018"
+				id: "3B763BAF374788FC"
 				item: "lightmanscurrency:coin_iron"
 				type: "item"
 			}]
@@ -439,6 +504,11 @@
 			]
 			icon: "twilightforest:lich_trophy"
 			id: "3BB0CAF0E4E9646B"
+			rewards: [{
+				id: "583EDDC14C030EFF"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
 			subtitle: "巫妖塔"
 			tasks: [{
 				id: "7D49BCBF08844457"
@@ -461,6 +531,11 @@
 				"{image:kubejs:textures/task/tf_5.png width:160 height:90 align:1}"
 			]
 			id: "570DF613C783F4AE"
+			rewards: [{
+				id: "12C1859B776B11F0"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
 			subtitle: "牛！头！人！迷宫！"
 			tasks: [{
 				id: "48C72C4C88DBF2F1"
@@ -480,6 +555,11 @@
 				"&c当玩家处于远处对其发动攻击时，九头蛇将免疫这些伤害！&r"
 			]
 			id: "037467168121BC24"
+			rewards: [{
+				id: "26EA70599E2038E3"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
 			subtitle: "火焰沼泽"
 			tasks: [{
 				id: "6BD5C9EC60A385F0"
@@ -502,6 +582,11 @@
 			]
 			icon: "twilightforest:knight_phantom_trophy"
 			id: "641BC1AE9021ACC1"
+			rewards: [{
+				id: "3A2563E8BAF5BA01"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
 			subtitle: "地精骑士要塞"
 			tasks: [{
 				id: "4C4ED1F1895D295C"
@@ -523,6 +608,11 @@
 				"如果&3暮初恶魂&r在陷阱上方，当你&e激活&r&6恶魂陷阱&r时，即可&e将暮初恶魂拉到地面上，并解除它的防御&r。"
 			]
 			id: "48FC520F4BC83201"
+			rewards: [{
+				id: "4659EEEE5BC50593"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
 			subtitle: "黑暗高塔"
 			tasks: [{
 				id: "49C9630D658819B6"
@@ -542,6 +632,11 @@
 				"{image:kubejs:textures/task/tf_7.png width:160 height:92 align:1}"
 			]
 			id: "38F5A9C1540EFABA"
+			rewards: [{
+				id: "0ABC2904FA185423"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
 			tasks: [{
 				id: "393F1ADD4CF362FF"
 				item: "twilightforest:alpha_yeti_trophy"
@@ -560,6 +655,11 @@
 				"&7冰雪女王在宫殿顶部附近完全封闭的一处房间中，该房间的特征是由冰与浮冰组成。&r"
 			]
 			id: "33F094FCCA7F6F8D"
+			rewards: [{
+				id: "2D666F85C3527DE8"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
 			subtitle: "极光宫殿"
 			tasks: [{
 				id: "1E145EF8BBF19456"
@@ -608,6 +708,11 @@
 			]
 			icon: "twilightforest:green_force_field"
 			id: "0F86AB0B5FED699D"
+			rewards: [{
+				id: "42A9B5C0B65EDE6B"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
 			shape: "hexagon"
 			subtitle: "流程化的探索设计"
 			tasks: [{
@@ -627,6 +732,11 @@
 				"&c该任务并不会推动暮色森林的进度。&r"
 			]
 			id: "750E1382B9E07243"
+			rewards: [{
+				id: "263ADA6AF73E4217"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
 			subtitle: "博学的羊"
 			tasks: [{
 				id: "6FFEAFE3199F3D5F"
@@ -647,17 +757,25 @@
 			]
 			hide_dependency_lines: true
 			id: "39A655D7B928289C"
-			rewards: [{
-				id: "0DA3400040FA4422"
-				item: {
-					Count: 1b
-					id: "minecraft:potion"
-					tag: {
-						Potion: "minecraft:night_vision"
+			rewards: [
+				{
+					id: "0DA3400040FA4422"
+					item: {
+						Count: 1b
+						id: "minecraft:potion"
+						tag: {
+							Potion: "minecraft:night_vision"
+						}
 					}
+					type: "item"
 				}
-				type: "item"
-			}]
+				{
+					count: 5
+					id: "1C5B8677A392C720"
+					item: "lightmanscurrency:coin_iron"
+					type: "item"
+				}
+			]
 			shape: "hexagon"
 			subtitle: "至黑之夜"
 			tasks: [{
@@ -680,6 +798,12 @@
 			hide_dependency_lines: true
 			icon: "minecraft:writable_book"
 			id: "56E0C42A7DE07B89"
+			rewards: [{
+				count: 5
+				id: "13A468C13BAEA608"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
 			shape: "hexagon"
 			subtitle: "薄萤之处"
 			tasks: [{
@@ -742,6 +866,12 @@
 			]
 			hide_dependency_lines: true
 			id: "7E420C3161AD2755"
+			rewards: [{
+				count: 5
+				id: "40333C1F03709CC8"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
 			shape: "hexagon"
 			subtitle: "雪花如钻石星辰闪耀"
 			tasks: [{
@@ -766,6 +896,11 @@
 				"&c只有击败九头蛇、暮初恶魂、冰雪女王才能踏上这片土地，否则此地的结界会降下酸雨惩罚外来者。&r"
 			]
 			id: "03BCDDF1F286B630"
+			rewards: [{
+				id: "6737425F7C9E6465"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
 			shape: "hexagon"
 			subtitle: "最终对决"
 			tasks: [{
@@ -788,6 +923,11 @@
 				"紧接着返回&a巨魔洞窟&r，使用&6巨人镐&r破坏&6巨型黑曜石&r，拿取里面的宝藏！"
 			]
 			id: "2E58F3BF28E91D76"
+			rewards: [{
+				id: "7BF84914E384BACC"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
 			subtitle: "史蒂夫与豆茎"
 			tasks: [{
 				id: "654EA2D263B29AFF"
@@ -815,6 +955,11 @@
 			]
 			icon: "minecraft:writable_book"
 			id: "1259D5EECF1BF4C8"
+			rewards: [{
+				id: "73C3C67161B0703A"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
 			shape: "hexagon"
 			subtitle: "那一天仍未到来..."
 			tasks: [{
@@ -837,6 +982,11 @@
 			hide_dependency_lines: true
 			icon: "minecraft:writable_book"
 			id: "32CEC7C884BE8579"
+			rewards: [{
+				id: "55380D627A696F8C"
+				item: "kubejs:water_candy"
+				type: "item"
+			}]
 			shape: "hexagon"
 			subtitle: "敬请期待..."
 			tasks: [{
@@ -1316,6 +1466,11 @@
 			hide_dependency_lines: true
 			icon: "minecraft:compass"
 			id: "301136CE0EB4EB37"
+			rewards: [{
+				id: "5BD041C052A79E8D"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
 			tasks: [{
 				id: "0D245850FB47BBB0"
 				title: "我已了解"
@@ -1335,6 +1490,11 @@
 			hide_dependency_lines: true
 			icon: "minecraft:writable_book"
 			id: "51F271AA9D04AF89"
+			rewards: [{
+				id: "225962EBB608381A"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
 			tasks: [{
 				id: "2A99AF7B7506129B"
 				item: "graveyard:upper_bone_staff"
@@ -1354,6 +1514,11 @@
 			hide_dependency_lines: true
 			icon: "minecraft:writable_book"
 			id: "4C0E9A44B99D9131"
+			rewards: [{
+				id: "719D2289DAA5B4A9"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
 			tasks: [{
 				id: "19B4AE903C0FBF20"
 				item: "graveyard:middle_bone_staff"
@@ -1368,11 +1533,16 @@
 			description: [
 				"&d破败营地&r是由两个帐篷组成的结构，包含&6不祥的骨杖碎片&r之一。"
 				""
-				"{image:kubejs:textures/task/graveyard_3.png width:200 height:110 align:center}"
+				"{image:kubejs:textures/task/graveyard_3.png width:200 height:110 align:1}"
 			]
 			hide_dependency_lines: true
 			icon: "minecraft:writable_book"
 			id: "7C1B11FB0939E7BB"
+			rewards: [{
+				id: "63673DAF79448450"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
 			tasks: [{
 				id: "1357AC5F17C060C2"
 				item: "graveyard:lower_bone_staff"
@@ -1393,6 +1563,11 @@
 			]
 			icon: "graveyard:skeleton_hand"
 			id: "6C526690FC57E578"
+			rewards: [{
+				id: "3367C1D2B4018ABD"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
 			tasks: [{
 				icon: "graveyard:skeleton_hand"
 				id: "48EF6CC52E4CB214"
@@ -1423,6 +1598,12 @@
 				}
 			}
 			id: "0854A4E118289769"
+			rewards: [{
+				count: 5
+				id: "31A72E8E49AC3125"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
 			tasks: [
 				{
 					id: "32E3837E555F4CF1"
@@ -1455,6 +1636,11 @@
 			dependencies: ["6C526690FC57E578"]
 			description: ["想要生成&b尸巫&r，必须在&a夜晚&r依次将上、中、下共三个&6不祥的骨杖碎片&r，依次&2从左至右&r放置于&d祭坛&r前的&e碎裂深石中心&r，然后将一瓶&6血&r倒在&d祭坛&r中央的&e祭坛方块&r上。"]
 			id: "52E9F3FB41D295C7"
+			rewards: [{
+				id: "06974D085A0FD6CF"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
 			tasks: [{
 				entity: "graveyard:lich"
 				icon: "graveyard:leaning_skeleton"
@@ -1471,6 +1657,11 @@
 			description: ["&7我看到你了...夜晚再来找我吧...我会与你交易...&r"]
 			hide_dependency_lines: true
 			id: "4644D52DD2B51A96"
+			rewards: [{
+				id: "5BD58C8FD972948B"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
 			shape: "hexagon"
 			subtitle: "树下的低语"
 			tasks: [{
@@ -1497,6 +1688,11 @@
 			hide_dependency_lines: true
 			icon: "cataclysm:altar_of_fire"
 			id: "7C958A8AFC0EADC6"
+			rewards: [{
+				id: "2156C8A20F05DD7C"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
 			subtitle: "在世界的角落里. . ."
 			tasks: [{
 				id: "5A0563FD4344CC21"
@@ -1514,7 +1710,7 @@
 				""
 				"可用&6机械之眼&r寻找。"
 				""
-				"&dBOSS激活方式：&r将&6下界之星&r放入&d先驱者&r体内"
+				"&dBOSS激活方式：&r将&6下界之星&r放入&d先驱者&r体内。"
 			]
 			icon: "cataclysm:mech_eye"
 			id: "3878A673CAAC5661"

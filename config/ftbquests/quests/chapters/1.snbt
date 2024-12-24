@@ -42,6 +42,19 @@
 			x: 6.25d
 			y: 3.0d
 		}
+		{
+			alpha: 200
+			click: ""
+			corner: false
+			dev: false
+			height: 45.0d
+			hover: [ ]
+			image: "kubejs:textures/task/chapter1_1.png"
+			rotation: 0.0d
+			width: 24.58092485549133d
+			x: 7.0d
+			y: 11.0d
+		}
 	]
 	order_index: 0
 	quest_links: [ ]
@@ -1982,6 +1995,11 @@
 			hide_dependency_lines: true
 			icon: "minecraft:map"
 			id: "3E083B4EFFBB8313"
+			rewards: [{
+				id: "3F1FC7BEC733C831"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
 			shape: "hexagon"
 			tasks: [{
 				id: "6400469F00B8AED7"
@@ -2026,6 +2044,11 @@
 			description: ["{image:kubejs:textures/task/cold_sweat_1.png width:190 height:112 align:1}"]
 			icon: "cold_sweat:thermometer"
 			id: "30674B71779D7E4A"
+			rewards: [{
+				id: "41B3A6895F91694B"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
 			shape: "hexagon"
 			tasks: [{
 				id: "2A475086B4570A6E"
@@ -2052,6 +2075,11 @@
 				"{image:kubejs:textures/task/cold_sweat_3.png width:150 height:105 align:1}"
 			]
 			id: "5BF932281612F670"
+			rewards: [{
+				id: "0D859E46B9AA4C9B"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
 			tasks: [{
 				id: "008D39483F9A5CAB"
 				item: "cold_sweat:hearth"
@@ -2076,6 +2104,12 @@
 				"&r&7降温类物品：雪球、雪块、冰、水等。&r"
 			]
 			id: "15507BAABF59ADF6"
+			rewards: [{
+				count: 2
+				id: "15580CB9EDB22DC8"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
 			shape: "rsquare"
 			subtitle: "加热/制冷 水袋"
 			tasks: [
@@ -2104,6 +2138,11 @@
 				"正常生效后，会赋予玩家&c温暖&r/&b寒冷&r的持续buff状态。"
 			]
 			id: "42D7F6B265E1A199"
+			rewards: [{
+				id: "0B78DF4E211B7EC5"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
 			tasks: [{
 				id: "0705AA7FD6381E8B"
 				item: "cold_sweat:smokestack"
@@ -2131,6 +2170,12 @@
 			]
 			icon: "cold_sweat:chameleon_molt"
 			id: "4F9415BB2F444129"
+			rewards: [{
+				count: 5
+				id: "2518A9C6EF0ADF74"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
 			tasks: [{
 				advancement: "cold_sweat:tame_chameleon"
 				criterion: ""
@@ -2154,6 +2199,11 @@
 				"&7信号最小值：当环境温度处于冰点时，输出0点强度的信号。"
 			]
 			id: "70690F0313801E51"
+			rewards: [{
+				id: "122DB044EEE85CB2"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
 			tasks: [{
 				id: "5C4625AEE59DAC60"
 				item: "cold_sweat:thermolith"
@@ -2170,6 +2220,11 @@
 				"当玩家乘坐在被应用了&6矿车隔热层&r的矿车上时，&c将完全隔绝环境温度对自身体温的影响！&r"
 			]
 			id: "5FF920186B81E074"
+			rewards: [{
+				id: "4CDD545BD383B27A"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
 			subtitle: "概念级武器？"
 			tasks: [{
 				id: "5AD1D063C07D95A2"
@@ -2189,6 +2244,12 @@
 				"&7灵魂豆芽可以种植在灵魂沙上，在根部温度达到燃点后，生长的更快。&r"
 			]
 			id: "4484765B28A08D77"
+			rewards: [{
+				count: 5
+				id: "4D8B264BC6181A3F"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
 			subtitle: "灵魂沙峡谷的恩惠"
 			tasks: [{
 				id: "5102E4C94299D072"
@@ -2274,6 +2335,11 @@
 				"&c请注意！现在的下界拥有较高的环境温度，你应该需要一些降温物品！&r"
 			]
 			id: "50BA43A1D96AA672"
+			rewards: [{
+				id: "7674A4A705BCE049"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
 			subtitle: "必要的准备"
 			tasks: [{
 				id: "7EB5D0BF43EE3184"
@@ -2426,12 +2492,22 @@
 		}
 		{
 			dependencies: ["51FA796A91E94C4D"]
+			description: ["击杀&b凋灵&r，你将获得丰厚的奖励。"]
 			hide_dependency_lines: true
+			icon: "minecraft:wither_rose"
 			id: "1BD4184A05623992"
-			tasks: [{
-				id: "65933405E9891B5D"
-				item: "minecraft:wither_rose"
+			rewards: [{
+				id: "65C4FE208673BA79"
+				item: "lightmanscurrency:coin_gold"
 				type: "item"
+			}]
+			tasks: [{
+				entity: "minecraft:wither"
+				icon: "minecraft:wither_skeleton_skull"
+				id: "57485C6F08D99702"
+				title: "击杀凋灵"
+				type: "kill"
+				value: 1L
 			}]
 			x: 4.75d
 			y: -2.5d
@@ -2450,6 +2526,11 @@
 				"&7在本整合包中，你不需要为控制器提供能量，无论什么时候它都是满能量状态。"
 			]
 			id: "238FC9B9D84A4148"
+			rewards: [{
+				id: "068E6BEEC6355C12"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
 			shape: "rsquare"
 			tasks: [{
 				id: "4D3FD2856FA9BCF7"

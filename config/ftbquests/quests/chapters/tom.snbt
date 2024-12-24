@@ -9,33 +9,38 @@
 		click: ""
 		corner: false
 		dev: false
-		height: 15.0d
+		height: 5.0d
 		hover: [ ]
-		image: "kubejs:textures/task/tom_background.png"
+		image: "kubejs:textures/task/rs_00.png"
 		rotation: 0.0d
-		width: 19.583333333333332d
-		x: 6.25d
-		y: -0.25d
+		width: 13.411371237458194d
+		x: 5.75d
+		y: -6.0d
 	}]
 	order_index: 0
 	quest_links: [{
 		id: "1DFAF7FE9E699B0D"
 		linked_quest: "238FC9B9D84A4148"
-		x: 2.25d
-		y: -0.75d
+		x: 0.25d
+		y: -2.25d
 	}]
 	quests: [
 		{
 			dependencies: ["238FC9B9D84A4148"]
 			description: ["&6终端&r为你的存储网络提供了一个&a交互面板&r，多数情况下你需要&2右击&r该方块进行&e存放和拿取物品&r。"]
 			id: "349E841AA20BE9F0"
+			rewards: [{
+				id: "2F20B537508EE088"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
 			tasks: [{
 				id: "6EE1EAE373DFAB1E"
 				item: "refinedstorage:grid"
 				type: "item"
 			}]
-			x: 4.0d
-			y: -0.75d
+			x: 1.75d
+			y: -2.25d
 		}
 		{
 			dependencies: ["349E841AA20BE9F0"]
@@ -48,6 +53,11 @@
 			]
 			icon: "refinedstorage:disk_drive"
 			id: "0E097279FE764E16"
+			rewards: [{
+				id: "42C4119935AE8B4B"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
 			tasks: [
 				{
 					id: "02CAB380C2980F87"
@@ -71,8 +81,8 @@
 					type: "item"
 				}
 			]
-			x: 4.0d
-			y: -2.0d
+			x: 1.75d
+			y: -1.0d
 		}
 		{
 			dependencies: ["349E841AA20BE9F0"]
@@ -83,13 +93,18 @@
 				"{image:kubejs:textures/task/rs_1.png width:180 height:107 align:1}"
 			]
 			id: "0F3481A805779F82"
+			rewards: [{
+				id: "3CD762AE2E885FAB"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
 			tasks: [{
 				id: "2343C0554FC1EA13"
 				item: "refinedstorage:cable"
 				type: "item"
 			}]
-			x: 7.0d
-			y: -0.75d
+			x: 5.0d
+			y: -2.25d
 		}
 		{
 			dependencies: ["0F3481A805779F82"]
@@ -104,7 +119,13 @@
 				""
 				"&6破坏面板：&r能够破坏前方的方块或流体，同时也能吸收前方的掉落物。"
 			]
+			hide_dependency_lines: true
 			id: "077F124183B7F35A"
+			rewards: [{
+				id: "556F8F8F1FF59788"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
 			tasks: [
 				{
 					id: "7771FA9857619BEC"
@@ -133,25 +154,36 @@
 				}
 			]
 			title: "更多交互面板"
-			x: 7.0d
-			y: -2.0d
+			x: 5.0d
+			y: 0.25d
 		}
 		{
 			dependencies: ["077F124183B7F35A"]
 			description: ["整合了&6输入面板&r和&6输出面板&r的功能。"]
 			id: "65E7AB4AFE7A3851"
+			rewards: [{
+				id: "7EF640D9A6DE9623"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
 			tasks: [{
 				id: "12D12BC42F508EE6"
 				item: "refinedstorage:interface"
 				type: "item"
 			}]
-			x: 7.0d
-			y: -3.25d
+			x: 6.75d
+			y: 0.25d
 		}
 		{
 			dependencies: ["0F3481A805779F82"]
 			description: ["本模组有非常多的&6升级道具&r，你可以将他们放入对应的机器内，他们有的会提供&2更高的效率&r，有的则是提供&2新的功能&r。"]
+			hide_dependency_lines: true
 			id: "5624DCA92865BF21"
+			rewards: [{
+				id: "5EC69A15CD064F6C"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
 			tasks: [{
 				id: "12137863E3683FE9"
 				item: {
@@ -202,20 +234,25 @@
 				type: "item"
 			}]
 			title: "升级改造！"
-			x: 7.0d
-			y: 0.5d
+			x: 6.75d
+			y: -1.0d
 		}
 		{
 			dependencies: ["349E841AA20BE9F0"]
 			description: ["现在你的&6终端&r自带&2工作台面板&r了，你可以&a更便捷的合成物品&r。"]
 			id: "486BC5DD6F9B0552"
+			rewards: [{
+				id: "735F5893AD5C275A"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
 			tasks: [{
 				id: "754F48EECC54914D"
 				item: "refinedstorage:crafting_grid"
 				type: "item"
 			}]
-			x: 5.5d
-			y: -2.0d
+			x: 3.25d
+			y: -1.0d
 		}
 		{
 			dependencies: ["0E097279FE764E16"]
@@ -225,6 +262,11 @@
 				"其中&6流体存储磁盘&r则是用来存储流体&7（水、岩浆）&r。"
 			]
 			id: "0CC6911A54BE0B45"
+			rewards: [{
+				id: "4DAC6222E008B400"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
 			tasks: [{
 				id: "318AF11773D02353"
 				item: {
@@ -335,20 +377,25 @@
 				type: "item"
 			}]
 			title: "更多存储磁盘"
-			x: 4.0d
-			y: -3.25d
+			x: 1.75d
+			y: 0.25d
 		}
 		{
 			dependencies: ["349E841AA20BE9F0"]
 			description: ["一种简单易懂的&e增加存储空间的方式&r，仅需要将&61k存储方块&r放置以接入网络即可。"]
 			id: "4CF6B914A8EEF2D3"
+			rewards: [{
+				id: "0531B1A204236F79"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
 			tasks: [{
 				id: "6FF5139C02830303"
 				item: "refinedstorage:1k_storage_block"
 				type: "item"
 			}]
-			x: 4.0d
-			y: 0.5d
+			x: 1.75d
+			y: -3.5d
 		}
 		{
 			dependencies: ["4CF6B914A8EEF2D3"]
@@ -358,6 +405,11 @@
 				"其中&6流体存储方块&r则是用来存储流体&7（水、岩浆）&r。"
 			]
 			id: "2AB6AC3C54C33705"
+			rewards: [{
+				id: "7B711B1DB2ACFC04"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
 			tasks: [{
 				id: "5D327C303112F0B9"
 				item: {
@@ -404,8 +456,8 @@
 				type: "item"
 			}]
 			title: "更多存储方块"
-			x: 4.0d
-			y: 2.0d
+			x: 3.25d
+			y: -3.5d
 		}
 		{
 			dependencies: ["0F3481A805779F82"]
@@ -418,6 +470,11 @@
 			]
 			icon: "refinedstorage:wireless_grid"
 			id: "38A787A6F8CCD80F"
+			rewards: [{
+				id: "1FAFECE69F159E99"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
 			tasks: [
 				{
 					id: "183EFE44ED9E5608"
@@ -432,12 +489,17 @@
 			]
 			title: "远程访问"
 			x: 8.5d
-			y: -0.75d
+			y: -2.25d
 		}
 		{
 			dependencies: ["38A787A6F8CCD80F"]
 			description: ["功能更强大的&6无线终端&r。"]
 			id: "3BDD861BC66C2C57"
+			rewards: [{
+				id: "35C6EF85CDF5767F"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
 			tasks: [{
 				id: "797E05918E402670"
 				item: {
@@ -449,8 +511,8 @@
 				}
 				type: "item"
 			}]
-			x: 10.0d
-			y: -0.75d
+			x: 11.25d
+			y: -2.25d
 		}
 		{
 			dependencies: ["0F3481A805779F82"]
@@ -463,8 +525,14 @@
 				""
 				"&c请注意，发送与接收的区域都必须处于加载状态，才能运行。&r"
 			]
+			hide_dependency_lines: true
 			icon: "refinedstorage:network_transmitter"
 			id: "53904C0B01C20AF3"
+			rewards: [{
+				id: "2739AA61584F4ECE"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
 			tasks: [
 				{
 					id: "2A23ACCC0468B620"
@@ -483,8 +551,8 @@
 				}
 			]
 			title: "远程网络接入"
-			x: 8.5d
-			y: 0.5d
+			x: 5.0d
+			y: -1.0d
 		}
 	]
 	title: "精致存储：整合一切"

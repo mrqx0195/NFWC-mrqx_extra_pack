@@ -6,16 +6,17 @@
 	icon: "create:wrench"
 	id: "68FC9ADE605CB4D9"
 	images: [{
+		alpha: 200
 		click: ""
 		corner: false
 		dev: false
-		height: 15.0d
+		height: 10.0d
 		hover: [ ]
-		image: "kubejs:textures/task/create_background.png"
+		image: "kubejs:textures/task/create_00.png"
 		rotation: 0.0d
-		width: 10.0d
+		width: 29.358974358974358d
 		x: -2.0d
-		y: 1.25d
+		y: -14.25d
 	}]
 	order_index: 1
 	progression_mode: "flexible"
@@ -49,8 +50,8 @@
 				type: "checkmark"
 			}]
 			title: "引言：机械动力引导思路"
-			x: -10.75d
-			y: -7.25d
+			x: -11.75d
+			y: -7.5d
 		}
 		{
 			dependencies: ["16AC61A6416FD6E0"]
@@ -91,8 +92,8 @@
 				}
 			]
 			title: "基础物资收集"
-			x: -4.75d
-			y: -7.25d
+			x: -4.5d
+			y: -7.5d
 		}
 		{
 			dependencies: ["1112F6121BC5A1E5"]
@@ -116,8 +117,8 @@
 				type: "item"
 			}]
 			title: "自动化"
-			x: -1.75d
-			y: -8.75d
+			x: -2.25d
+			y: -7.5d
 		}
 		{
 			dependencies: ["43140AED474C64BC"]
@@ -147,8 +148,8 @@
 				}
 			]
 			title: "第一台机器!"
-			x: -1.75d
-			y: -7.25d
+			x: -2.25d
+			y: -5.75d
 		}
 		{
 			dependencies: [
@@ -178,8 +179,8 @@
 				type: "item"
 			}]
 			title: "更复杂的合成"
-			x: 6.0d
-			y: -7.25d
+			x: 4.5d
+			y: -5.75d
 		}
 		{
 			dependencies: ["0C5511D51B5FF508"]
@@ -199,8 +200,8 @@
 				type: "item"
 			}]
 			title: "分拣"
-			x: 0.0d
-			y: -8.75d
+			x: -0.5d
+			y: -7.5d
 		}
 		{
 			dependencies: ["1112F6121BC5A1E5"]
@@ -242,8 +243,8 @@
 				}
 			]
 			title: "应力检测员"
-			x: -0.25d
-			y: -7.25d
+			x: -0.5d
+			y: -4.0d
 		}
 		{
 			dependencies: ["79DE01B778B14C0E"]
@@ -271,7 +272,7 @@
 			}]
 			title: "更好的搅拌"
 			x: 2.75d
-			y: -5.75d
+			y: -7.5d
 		}
 		{
 			dependencies: [
@@ -322,7 +323,7 @@
 			}]
 			title: "思索"
 			x: -6.25d
-			y: -7.25d
+			y: -7.5d
 		}
 		{
 			dependencies: ["62CFA299ADC2A8B0"]
@@ -359,8 +360,8 @@
 				}
 			]
 			title: "加速！使用动力搅拌器！"
-			x: 2.75d
-			y: -7.25d
+			x: 1.0d
+			y: -5.75d
 		}
 		{
 			dependencies: ["55FAA1463318A7BA"]
@@ -380,8 +381,8 @@
 				type: "item"
 			}]
 			title: "获得升级"
-			x: 1.5d
-			y: -8.75d
+			x: 1.0d
+			y: -7.5d
 		}
 		{
 			dependencies: ["0C5511D51B5FF508"]
@@ -399,8 +400,8 @@
 				type: "item"
 			}]
 			title: "垂直传递"
-			x: -1.75d
-			y: -10.25d
+			x: -0.5d
+			y: -9.25d
 		}
 		{
 			dependencies: ["38B27FBD44641B53"]
@@ -418,8 +419,8 @@
 				item: "create:smart_chute"
 				type: "item"
 			}]
-			x: 0.0d
-			y: -10.25d
+			x: 1.25d
+			y: -9.25d
 		}
 		{
 			dependencies: ["073C0A15ECBF7139"]
@@ -449,8 +450,8 @@
 				type: "item"
 			}]
 			title: "胶水"
-			x: -7.75d
-			y: -10.25d
+			x: -6.25d
+			y: -9.5d
 		}
 		{
 			dependencies: ["4EB8FE041AB6DA8E"]
@@ -510,7 +511,7 @@
 				type: "checkmark"
 			}]
 			title: "机械降神"
-			x: -9.25d
+			x: -9.75d
 			y: -5.75d
 		}
 		{
@@ -522,7 +523,14 @@
 				""
 				"使用&6斧头&r右键&6原木&r，使其转化为&6去皮原木&r。再手持&6安山合金&r，&a右键去皮原木&r以获得&6安山机壳&r。"
 			]
+			icon: "create:andesite_alloy"
 			id: "43140AED474C64BC"
+			rewards: [{
+				count: 5
+				id: "2A9AEC0CDF22A6AC"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
 			tasks: [
 				{
 					count: 4L
@@ -538,8 +546,8 @@
 				}
 			]
 			title: "基础的机壳"
-			x: -3.25d
-			y: -7.25d
+			x: -4.5d
+			y: -5.75d
 		}
 		{
 			dependencies: ["47B5B3FBC91E73D7"]
@@ -554,6 +562,11 @@
 			]
 			icon: "minecraft:writable_book"
 			id: "62CFA299ADC2A8B0"
+			rewards: [{
+				id: "6B833EF7D9BA4A1C"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
 			shape: "hexagon"
 			subtitle: "知识掌握"
 			tasks: [
@@ -569,8 +582,8 @@
 				}
 			]
 			title: "应力与转速"
-			x: 1.25d
-			y: -7.25d
+			x: 1.0d
+			y: -4.0d
 		}
 		{
 			dependencies: ["4EB8FE041AB6DA8E"]
@@ -585,6 +598,12 @@
 			]
 			icon: "minecraft:writable_book"
 			id: "1E631B88C8BC7AEA"
+			rewards: [{
+				count: 2
+				id: "5A0DEC0CC22253AE"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
 			shape: "hexagon"
 			subtitle: "驱动机械的能源"
 			tasks: [{
@@ -593,8 +612,8 @@
 				type: "checkmark"
 			}]
 			title: "应力"
-			x: -9.25d
-			y: -7.25d
+			x: -9.75d
+			y: -7.5d
 		}
 		{
 			dependencies: ["1E631B88C8BC7AEA"]
@@ -607,6 +626,11 @@
 			]
 			icon: "create:water_wheel"
 			id: "765744E614A9A768"
+			rewards: [{
+				id: "3A946C1C77EDC594"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
 			tasks: [{
 				id: "0D3A46CE9C84CC34"
 				item: {
@@ -629,8 +653,8 @@
 				type: "item"
 			}]
 			title: "水车"
-			x: -7.75d
-			y: -7.25d
+			x: -8.0d
+			y: -7.5d
 		}
 		{
 			dependencies: ["1E631B88C8BC7AEA"]
@@ -643,7 +667,14 @@
 				""
 				"{image:kubejs:textures/task/create_4.png width:160 height:122 align:1}"
 			]
+			icon: "create:windmill_bearing"
 			id: "073C0A15ECBF7139"
+			rewards: [{
+				count: 2
+				id: "1332560B59D0EF36"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
 			tasks: [
 				{
 					id: "2BE60F45A82C9090"
@@ -656,8 +687,8 @@
 					type: "item"
 				}
 			]
-			x: -7.75d
-			y: -8.75d
+			x: -8.0d
+			y: -9.5d
 		}
 		{
 			dependencies: ["1E631B88C8BC7AEA"]
@@ -667,12 +698,17 @@
 				"玩家&a右键&r&6手摇曲柄&r即可&e产生应力&r。"
 			]
 			id: "03950447AF558398"
+			rewards: [{
+				id: "2CCA8EDAE1A35489"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
 			tasks: [{
 				id: "34C11E2A009A9876"
 				item: "create:hand_crank"
 				type: "item"
 			}]
-			x: -7.75d
+			x: -8.0d
 			y: -5.75d
 		}
 		{
@@ -682,7 +718,28 @@
 				""
 				"&7过滤器内可以放入另一个过滤器，可以制作更多物品的过滤。"
 			]
+			icon: {
+				Count: 1b
+				id: "create:filter"
+				tag: {
+					Blacklist: 0b
+					Items: {
+						Items: [{
+							Count: 1b
+							Slot: 0
+							id: "minecraft:iron_ingot"
+						}]
+						Size: 18
+					}
+					RespectNBT: 0b
+				}
+			}
 			id: "2E902703BDD78C38"
+			rewards: [{
+				id: "5FEFAE1669897A44"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
 			tasks: [
 				{
 					id: "1684CEAA32CA1058"
@@ -710,8 +767,8 @@
 					type: "item"
 				}
 			]
-			x: 1.5d
-			y: -10.25d
+			x: 2.75d
+			y: -9.25d
 		}
 		{
 			dependencies: ["79DE01B778B14C0E"]
@@ -721,6 +778,11 @@
 				"需要注意的是，如果你想&2给予机械手某样工具&r，请&2手持工具右键&r机械手的腕部&7（而非手掌）&r。"
 			]
 			id: "2726CA56D0F8CF32"
+			rewards: [{
+				id: "1342F1D3E7DD574D"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
 			subtitle: "机械手"
 			tasks: [{
 				id: "425E74ADFEF0B141"
@@ -728,8 +790,8 @@
 				type: "item"
 			}]
 			title: "人工智能？"
-			x: 4.25d
-			y: -7.25d
+			x: 2.75d
+			y: -5.75d
 		}
 		{
 			dependencies: ["6C7A1C7252229459"]
@@ -742,6 +804,11 @@
 			]
 			icon: "minecraft:writable_book"
 			id: "42F925A930733650"
+			rewards: [{
+				id: "6AAEB937FB7A2932"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
 			subtitle: "自由探索"
 			tasks: [{
 				id: "04110D6EA0809E59"
@@ -749,14 +816,19 @@
 				type: "checkmark"
 			}]
 			title: "机械的浪漫源于创造！"
-			x: 7.75d
-			y: -7.25d
+			x: 7.0d
+			y: -5.75d
 		}
 		{
 			dependencies: ["75EA9654A6522F50"]
 			description: ["制作黄铜锭，再以同样的方法右键原木获取黄铜机壳。"]
 			icon: "create:brass_casing"
 			id: "3E0913E20483FD71"
+			rewards: [{
+				id: "4FEEF9C96349EEE3"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
 			subtitle: "黄铜时代"
 			tasks: [
 				{
@@ -771,8 +843,8 @@
 				}
 			]
 			title: "新的机壳"
-			x: 4.25d
-			y: -5.75d
+			x: 4.5d
+			y: -7.5d
 		}
 	]
 	title: "机械动力：让万物旋转"

@@ -16,6 +16,7 @@
 	}
 	id: "71788747161A7134"
 	images: [{
+		alpha: 200
 		click: ""
 		corner: false
 		dev: false
