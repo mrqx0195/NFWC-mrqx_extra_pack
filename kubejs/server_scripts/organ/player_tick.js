@@ -91,6 +91,14 @@ const organPlayerTickStrategies = {
         if (-25 < bodyTemp < 25) {
             ColdSweat.setTemperature(player, 'core', coreTemp - 1)
         }
+    },
+    'kubejs:ice_rib': function (event, organ) {
+        let player = event.entity
+        if (!player.isPlayer()) return
+        let temperature = ColdSweat.getTemperature(player, 'body')
+        if (temperature > -50) return
+        player.absorptionAmount = Math.min(player.absorptionAmount + 0.25, 20)
+        player.modifyAttribute("minecraft:generic.knockback_resistance", 'kubejsIceRib', - temperature / 150, 'addition')
     }
 
 };
