@@ -1667,7 +1667,7 @@
     "kubejs.tooltips.ice_lung.1": "吐出的每一个字都结着霜",
     "kubejs.tooltips.ice_lung.2": "提升冰系法术法强，体温越低，提升越多。",
     "kubejs.tooltips.ice_rib.1": "坚冰，封锁着我的胸腔",
-    "kubejs.tooltips.ice_rib.2": "体温低于0时，根据体温提供额外血量，体温变化时刷新",
+    "kubejs.tooltips.ice_rib.2": "体温低于0℃并体温继续下降时，获得伤害吸收和击退抗性，体温回升时会扣除你的伤害吸收",
     "kubejs.tooltips.ice_intestine.1": "比冷心肠还冷",
     "kubejs.tooltips.ice_intestine.2": "按下主动按键，若体温为负，升高体温以填充法力槽",
     "kubejs.tooltips.ice_piece.1": "一片破碎的冰",

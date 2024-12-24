@@ -26,7 +26,7 @@ ColdSweatEvents.temperatureChanged(event => {
 /**
  * 玩家温度变化策略
  * @constant
- * @type {Object<string,function(Internal.SimplePlayerEventJS, organ):void>}
+ * @type {Object<string,function(Internal.TempChangedEventJS, organ):void>}
  */
 const organPlayertemperatureStrategies = {
     'kubejs:ice_rib': function (event, organ) {

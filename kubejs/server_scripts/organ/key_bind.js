@@ -449,7 +449,7 @@ const organPlayerKeyPressedOnlyStrategies = {
         player.level.createExplosion(player.x, player.y, player.z).exploder(player).strength(strength).causesFire(causesFire).explode()
         let l = 3
         for(var i = 1; i < num; i++){
-            for (var f = 0; f <= JavaMath.PI * 2; f += JavaMath.PI * 2 / (6 + i * 2)){
+            for (var f = - JavaMath.PI / 2; f <= JavaMath.PI / 2; f += JavaMath.PI * 2 / (6 + i * 2)){
                 for (var r = 0; r <= JavaMath.PI * 2; r += JavaMath.PI * 2 / i / 6){
                     player.level.createExplosion(player.x + i * l * Math.cos(r) * Math.cos(f), player.y + i * l * Math.sin(f), player.z + i * l * Math.sin(r) * Math.cos(f)).exploder(player).strength(strength).causesFire(causesFire).explode()
                 }
@@ -461,11 +461,13 @@ const organPlayerKeyPressedOnlyStrategies = {
         let player = event.player
         let level = event.level
         let ray = player.rayTrace(16, false)
+        if (!ray.hit) return 
         let blockPos = new BlockPos(ray.hitX, ray.hitY, ray.hitZ)
         let blockState = Block.getBlock("twilightforest:carminite_reactor").blockStates[0]
         if (level.getBlock(blockPos) != "minecraft:bedrock"){
-            level.setBlock(blockPos, blockState, 2)
-            player.addItemCooldown('kubejs:carminite_reactor_core', 20 * 60)
+            if (level.setBlock(blockPos, blockState, 2)){
+                player.addItemCooldown('kubejs:carminite_reactor_core', 20 * 60)
+            }
         }
     }
 }
