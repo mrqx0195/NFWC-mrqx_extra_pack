@@ -147,6 +147,7 @@ const organRightClickedOnlyStrategies = {
         }
         amplifier += change
         if (amplifier != 0){
+            event.item.shrink(1)
             effect = amplifier > 0 ? 'kubejs:heat_up' : 'kubejs:cold_down'
             amplifier = Math.abs(amplifier) - 1
             player.potionEffects.add(effect, 20*60 , amplifier)
