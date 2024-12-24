@@ -24,20 +24,35 @@
   "gui": [
     {
       "type": "custommachinery:slot",
-      "x": 119,
-      "y": 30,
+      "x": 88,
+      "y": 45,
       "id": "organ_slot"
     },
     {
       "type": "custommachinery:slot",
-      "x": 119,
-      "y": 70,
+      "x": 145,
+      "y": 45,
       "id": "coin_output"
     },
     {
       "type": "custommachinery:player_inventory",
       "x": 47,
-      "y": 110
+      "y": 83,
+      "priority": -1,
+      "texture": "kubejs:textures/gui/organ_recycler/organ_recycler_player_inventory.png"
+    },
+    {
+      "type": "custommachinery:texture",
+      "x": 40,
+      "y": 21,
+      "texture": "kubejs:textures/gui/organ_recycler/organ_recycler_background.png"
+    },
+    {
+      "type": "custommachinery:progress",
+      "x": 112,
+      "y": 45,
+      "texture_empty": "kubejs:textures/gui/organ_recycler/organ_recycler_progress_bar_empty.png",
+      "texture_filled": "kubejs:textures/gui/organ_recycler/organ_recycler_progress_bar_filled.png"
     }
   ],
   "jei": [],
