@@ -138,14 +138,7 @@ StartupEvents.registry('mob_effect', event => {
         .effectTick((entity, lvl)=>{
             if (!entity || entity.level.isClientSide()) return
             if (entity.hasEffect('kubejs:cold_down')){
-                let coldDown = entity.getEffect('kubejs:cold_down').getAmplifier()
-                let heatUp = entity.getEffect('kubejs:heat_up').getAmplifier()
                 entity.removeEffect('kubejs:cold_down')
-                entity.removeEffect('kubejs:heat_up')   
-                let amplifier = heatUp - coldDown
-                if (amplifier != 0){
-                    entity.potionEffects.add(amplifier>0 ? 'kubejs:heat_up':'kubejs:cold_down', 20*60 , amplifier - 1)
-                }
             }
         })
         .modifyAttribute("cold_sweat:world_temperature",'kubejsHeatUp',5/25, 'addition')
@@ -154,15 +147,8 @@ StartupEvents.registry('mob_effect', event => {
         .color(Color.BLUE)
         .effectTick((entity, lvl)=>{
             if (!entity || entity.level.isClientSide()) return
-            if (entity.hasEffect('kubejs:cold_down')){
-                let coldDown = entity.getEffect('kubejs:cold_down').getAmplifier()
-                let heatUp = entity.getEffect('kubejs:heat_up').getAmplifier()
-                entity.removeEffect('kubejs:cold_down')
+            if (entity.hasEffect('kubejs:heat_up')){
                 entity.removeEffect('kubejs:heat_up')   
-                let amplifier = heatUp - coldDown
-                if (amplifier != 0){
-                    entity.potionEffects.add(amplifier>0 ? 'kubejs:heat_up':'kubejs:cold_down', 20*60 , Math.abs(amplifier) - 1)
-                }
             }
         })
         .modifyAttribute("cold_sweat:world_temperature",'kubejsColdDown',-5/25, 'addition')

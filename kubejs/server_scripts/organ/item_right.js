@@ -128,29 +128,29 @@ const organRightClickedOnlyStrategies = {
     },
     'kubejs:chameleon_stomach': function (event, organ) {
         let player = event.player
+        let change = 0
+        let amplifier = 0
+        let effect = 'kubejs:heat_up'
         if (event.item == "minecraft:ice"){
-            if (player.hasEffect('kubejs:cold_down')){
-                let coldDown = player.getEffect('kubejs:cold_down')
-                player.removeEffect('kubejs:cold_down')
-                player.potionEffects.add('kubejs:cold_down', 20*60 , coldDown.getAmplifier() + 1)
-            }
-            else{
-                player.potionEffects.add('kubejs:cold_down', 20*60 , 0)
-            }
-            event.item.shrink(1)
+            change = - 1
         }
         if (event.item == "minecraft:magma_block"){
-            if (player.hasEffect('kubejs:heat_up')){
-                let heatUp = player.getEffect('kubejs:heat_up')
-                player.removeEffect('kubejs:heat_up')
-                player.potionEffects.add('kubejs:heat_up', 20*60 , heatUp.getAmplifier() + 1)
-            }
-            else{
-                player.potionEffects.add('kubejs:heat_up', 20*60 , 0)
-            }
-            event.item.shrink(1)
+            change = 1
         }
-
+        if (player.hasEffect('kubejs:cold_down')){
+            amplifier -= player.getEffect('kubejs:cold_down').getAmplifier() + 1
+            player.removeEffect('kubejs:cold_down')
+        }
+        if (player.hasEffect('kubejs:heat_up')){
+            amplifier += player.getEffect('kubejs:heat_up').getAmplifier() + 1
+            player.removeEffect('kubejs:heat_up')
+        }
+        amplifier += change
+        if (amplifier != 0){
+            effect = amplifier > 0 ? 'kubejs:heat_up' : 'kubejs:cold_down'
+            amplifier = Math.abs(amplifier) - 1
+            player.potionEffects.add(effect, 20*60 , amplifier)
+        }
     },
     'kubejs:flame_stomach': function (event, organ) {
         let player = event.player
