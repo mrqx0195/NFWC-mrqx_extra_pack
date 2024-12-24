@@ -554,6 +554,31 @@
 			x: 5.0d
 			y: -1.0d
 		}
+		{
+			dependencies: ["5624DCA92865BF21"]
+			description: ["在所有的升级之上，存在着&6无限范围升级&r以及&6维度升级&r。通过这些升级，可以让你在世界的任何一个角落都可以访问你的RS网络。这再适合不过在各种维度遨游的你！"]
+			id: "003DB236415E8451"
+			rewards: [{
+				id: "39FACFEA0B792EA8"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [
+				{
+					id: "159823318D51024B"
+					item: "rsinfinitybooster:infinity_card"
+					type: "item"
+				}
+				{
+					id: "47005ED56D68C6FF"
+					item: "rsinfinitybooster:dimension_card"
+					type: "item"
+				}
+			]
+			title: "拥抱无限"
+			x: 8.5d
+			y: -1.0d
+		}
 	]
 	title: "精致存储：整合一切"
 }
