@@ -29,15 +29,7 @@ ColdSweatEvents.temperatureChanged(event => {
  * @type {Object<string,function(Internal.TempChangedEventJS, organ):void>}
  */
 const organPlayertemperatureStrategies = {
-    'kubejs:ice_rib': function (event, organ) {
-        let player = event.entity
-        if (!player.isPlayer()) return
-        let temperature = ColdSweat.getTemperature(player, 'body')
-        let oldTemperature = event.oldTemperature
-        if (temperature >= 0) return
-        player.absorptionAmount += (-1) * (temperature - oldTemperature) / 16
-        player.modifyAttribute("minecraft:generic.knockback_resistance", 'kubejsIceRib', - temperature / 150, 'addition')
-    }
+
 }
 
 
