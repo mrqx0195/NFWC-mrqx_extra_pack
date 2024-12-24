@@ -353,7 +353,7 @@ const organPlayerDamageOnlyStrategies = {
         if (event.source.type == 'player') {
             if (temperature > 50) {
                 let degree = (event.amount - 5) / 3 + temperature / 3
-                $SpellRegistry["getSpell(net.minecraft.resources.ResourceLocation)"](new ResourceLocation('irons_spellbooks', 'flaming_strike')).attemptInitiateCast(Item.of('air'), degree, player.level, player, $CastSource.NONE, false, "main_hand")
+                overLimitSpellCast(new ResourceLocation('irons_spellbooks', 'flaming_strike'), degree, player, false)
                 entity.setNoAI(true)
                 entity.server.scheduleInTicks(1, event => {
                     entity.setNoAI(false)
@@ -361,7 +361,7 @@ const organPlayerDamageOnlyStrategies = {
             }
             if (temperature < -50) {
                 let degree = (event.amount - 6) * 2 - temperature * 2
-                $SpellRegistry["getSpell(net.minecraft.resources.ResourceLocation)"](new ResourceLocation('irons_spellbooks', 'icicle')).attemptInitiateCast(Item.of('air'), degree, player.level, player, $CastSource.NONE, false, "main_hand")
+                overLimitSpellCast(new ResourceLocation('irons_spellbooks', 'icicle'), degree, player, false)
                 entity.setNoAI(true)
                 entity.server.scheduleInTicks(1, event => {
                     entity.setNoAI(false)
