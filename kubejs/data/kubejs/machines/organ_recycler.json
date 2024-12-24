@@ -1,5 +1,5 @@
 {
-  "name": "machine.kubejs.organ_recycler",
+  "name": "machine.kubejs.organ_recycler.name",
   "appearance": {
     "block": "minecraft:furnace[lit=true]"
   },
