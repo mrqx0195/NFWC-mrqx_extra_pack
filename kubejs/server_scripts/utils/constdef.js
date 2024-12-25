@@ -57,7 +57,7 @@ const bossTypeList = [
     'twilightforest:lich',
     'twilightforest:hydra',
     'twilightforest:ur_ghast',
-    'twilightforest:yeti_alpha',
+    // 'twilightforest:yeti_alpha',
     'twilightforest:snow_queen',
     'twilightforest:knight_phantom',
     'twilightforest:minoshroom',

@@ -1,8 +1,9 @@
 // priority: 800
 LootJS.modifiers(event => {
-    function addBossLoot(entity) {
-        return event.addEntityLootModifier(entity)
-            .addAlternativesLoot(
+    bossTypeList.forEach(bossType => {
+        event.addEntityLootModifier(bossType)
+            .addLoot(
+                LootEntry.of('lightmanscurrency:coin_gold').when((c) => c.randomChance(0.8)),
                 LootEntry.of('kubejs:mysterious_trinket').when((c) => c.randomChance(0.8)),
             )
             .addAlternativesLoot(
@@ -14,9 +15,6 @@ LootJS.modifiers(event => {
                 LootEntry.of('simplehats:hatbag_easter').when((c) => c.randomChance(0.2)),
                 LootEntry.of('simplehats:hatbag_festive').when((c) => c.randomChance(0.2)),
                 LootEntry.of('simplehats:hatbag_halloween').when((c) => c.randomChance(0.2)),
-            )
-            .addAlternativesLoot(
-                LootEntry.of('lightmanscurrency:coin_gold').when((c) => c.randomChance(0.8)),
             )
             .apply(ctx => {
                 let entity = ctx.entity
@@ -30,11 +28,8 @@ LootJS.modifiers(event => {
                     ctx.addLoot(LootEntry.of('kubejs:disenchantment_book').when((c) => c.randomChance(Math.min(0.2, 1))))
                 }
             })
-    }
-
-    bossTypeList.forEach(entityId => {
-        addBossLoot(entityId)
     })
+
 
     event.addEntityLootModifier('somebosses:ancient_wizard')
         .addLoot(LootEntry.of('kubejs:candy_pancreas').when((c) => c.randomChance(0.2)));
@@ -188,7 +183,7 @@ LootJS.modifiers(event => {
     event.addLootTypeModifier(LootType.CHEST)
         .anyDimension(["twilightforest:twilight_forest"])
         .addLoot(LootEntry.of("twilightforest:transformation_powder").when((c) => c.randomChance(0.05)))
-    
+
     event.addLootTypeModifier(LootType.CHEST)
         .anyStructure(["twilightforest:dark_tower"], false)
         .addLoot(LootEntry.of('kubejs:ritual_catalyst').when((c) => c.randomChance(0.05)))
@@ -206,6 +201,6 @@ LootJS.modifiers(event => {
         .addLoot(LootEntry.of(Item.of("minecraft:enchanted_book", '{StoredEnchantments: [{"kubejs:tele_operation", lvl: 5}]}')).when((c) => c.randomChance(0.005)))
         .addLoot(LootEntry.of(Item.of("kubejs:bad_ink")).when((c) => c.randomChance(0.01)))
 
-        
+
 })
 

@@ -63,7 +63,6 @@ const organBlockBrokenOnlyStrategies = {
         if (player.persistentData.contains(resourceCount)) {
             count = player.persistentData.getInt(resourceCount)
         }
-        player.tell(silicosisLevel)
         if (count >= 64 && Math.random() <= 0.03 + silicosisLevel * 0.03) {
             let luck = Math.max(player.getLuck(), 1)
             if (luck > 10) {
