@@ -132,9 +132,11 @@ const organRightClickedOnlyStrategies = {
         let amplifier = 0
         let effect = 'kubejs:heat_up'
         if (event.item == "minecraft:ice"){
+            event.item.shrink(1)
             change = - 1
         }
         if (event.item == "minecraft:magma_block"){
+            event.item.shrink(1)
             change = 1
         }
         if (player.hasEffect('kubejs:cold_down')){
@@ -147,7 +149,6 @@ const organRightClickedOnlyStrategies = {
         }
         amplifier += change
         if (amplifier != 0){
-            event.item.shrink(1)
             effect = amplifier > 0 ? 'kubejs:heat_up' : 'kubejs:cold_down'
             amplifier = Math.abs(amplifier) - 1
             player.potionEffects.add(effect, 20*60 , amplifier)
