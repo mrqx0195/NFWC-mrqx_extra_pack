@@ -19,7 +19,6 @@
 /lightspeed-cache
 /XaeroWaypoints*
 /config/oculus.properties
-/config/inventoryprofilesnext
 /config/xaerominimap_entities.json
 /config/momlove
 /config/ibeeditor*
@@ -34,8 +33,6 @@
 /servers*
 /patchouli_data.json
 /hmclversion.cfg
-/config/inventoryprofilesnext/*
-!/config/inventoryprofilesnext/inventoryprofiles.json
 /kubejs/probe
 /LICENSE
 /README.md

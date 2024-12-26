@@ -29,7 +29,6 @@
 /servers*
 /patchouli_data.json
 /hmclversion.cfg
-/config/inventoryprofilesnext/*
 /config/emi.css
 /config/jade/
 /config/modernfix-mixins.properties

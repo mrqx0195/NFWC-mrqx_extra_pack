@@ -19,6 +19,7 @@ ServerEvents.recipes(event => {
     event.remove({ output: 'weaponmaster:workstation' })
     event.remove({ output: 'twilightforest:uncrafting_table' })
     event.remove({ output: 'cold_sweat:boiler' })
+    event.remove({ output: 'twilightforest:uncrafting_table' })
 
     event.shaped('weaponmaster:workstation', [
         ['minecraft:lectern', 'minecraft:writable_book', '#minecraft:anvil'],

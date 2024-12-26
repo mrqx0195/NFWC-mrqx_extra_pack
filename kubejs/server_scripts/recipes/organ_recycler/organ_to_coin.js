@@ -1,6 +1,6 @@
 // priority: 500
 ServerEvents.recipes(event => {
-    event.recipes.custommachinery.custom_machine("kubejs:organ_recycler", 20)
+    event.recipes.custommachinery.custom_machine("kubejs:organ_recycler", 20 * 30)
         .requireFunctionOnEnd(ctx => {
             let machine = ctx.machine
             let organ = machine.getItemStored("organ_slot")

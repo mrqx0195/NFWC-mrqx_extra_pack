@@ -24,3 +24,8 @@ BlockEvents.rightClicked(event => {
         event.cancel()
     }
 })
+
+
+BlockEvents.rightClicked('twilightforest:uncrafting_table', event => {
+    event.level.destroyBlock(event.block.pos, false)
+})
