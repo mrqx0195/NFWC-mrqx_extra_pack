@@ -176,7 +176,7 @@ const organPlayerKeyPressedOnlyStrategies = {
             beneficialEffects.forEach(ctx => {
                 player.removeEffect(ctx.effect)
                 if (ctx.getAmplifier() > 0) {
-                    player.potionEffects.add(ctx.effect, Math.max(ctx.getDuration() * 2, 20 * 60 * 3), ctx.getAmplifier() - 1)
+                    player.potionEffects.add(ctx.effect, Math.min(ctx.getDuration() * 2, 20 * 60 * 3), ctx.getAmplifier() - 1)
                 }
             })
         }

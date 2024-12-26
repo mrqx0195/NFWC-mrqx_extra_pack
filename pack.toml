@@ -1,12 +1,12 @@
 name = "No Flesh Within Chest"
 author = "YoruNina"
-version = "1.0.0-DIM"
+version = "1.0.1-DIM"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "7fbf3493374a0fdc4b3499fb12b40cc809b1b599aa653a135e9f09578e53caa2"
+hash = "c385f27d72f99172f97da987dff94734dcc4309d7232f3f8d4d1ec289f3e8a84"
 
 [versions]
 forge = "43.3.5"
