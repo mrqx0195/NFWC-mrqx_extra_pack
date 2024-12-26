@@ -9,7 +9,7 @@ global.endlessDream = (ctx) => {
     if (!player.hasEffect('kubejs:sweet_dream')) return
     let spellLevel = ctx.getSpellLevel()
     let dreamEffect = player.getEffect('kubejs:sweet_dream')
-    player.potionEffects.add('kubejs:sweet_dream', 5 + spellLevel * 20 * 5 + dreamEffect.getDuration(), Math.ceil(spellLevel / 5) + dreamEffect.getAmplifier())
+    player.potionEffects.add('kubejs:sweet_dream', spellLevel * 20 * 4 + dreamEffect.getDuration(), Math.ceil(spellLevel / 5) + dreamEffect.getAmplifier())
     for (let i = 0; i < 16; i++) {
         let theta = 2 * JavaMath.PI / 16 * i
         let dx = Math.cos(theta) * 1.25;

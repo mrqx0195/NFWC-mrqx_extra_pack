@@ -1,10 +1,6 @@
+// priority: 500
 ServerEvents.recipes(event => {
     event.recipes.custommachinery.custom_machine("kubejs:organ_recycler", 20 * 60)
-        .requireFunctionEachTick(ctx => {
-            let organ = ctx.machine.getItemStored("organ_slot")
-            if (!organ || organ.isEmpty()) return ctx.error("no organ")
-            return ctx.success()
-        })
         .requireFunctionOnEnd(ctx => {
             let machine = ctx.machine
             let organ = machine.getItemStored("organ_slot")
@@ -12,7 +8,11 @@ ServerEvents.recipes(event => {
             let coinSlotItem = machine.getItemStored('coin_output')
             if (worth <= 0) return ctx.error("no worth organ")
             if (coinSlotItem && coinSlotItem.hasTag('lightmanscurrency:wallet')) {
-                $WalletItem.PickupCoin(coinSlotItem, Item.of('lightmanscurrency:coin_copper', worth))
+                let coinItemList = ConvertMoneyIntoCoinItemList(CoinList, worth)
+                coinItemList.forEach(coinItem => {
+                    let unpickableItem = $WalletItem.PickupCoin(walletItem, coinItem)
+                    ctx.block.popItemFromFace(unpickableItem, Direction.UP)
+                })
             } else {
                 let playerBankAccount = $BankSaveData.GetBankAccount(false, ctx.machine.ownerId)
                 playerBankAccount.depositMoney(ConvertMainMoneyValue(worth))
@@ -21,6 +21,11 @@ ServerEvents.recipes(event => {
                 }
             }
             machine.removeItemFromSlot("organ_slot", 1, false)
+            return ctx.success()
+        })
+        .requireFunctionEachTick(ctx => {
+            let organ = ctx.machine.getItemStored("organ_slot")
+            if (!organ || organ.isEmpty()) return ctx.error("no organ")
             return ctx.success()
         })
         .requireFunctionToStart(ctx => {

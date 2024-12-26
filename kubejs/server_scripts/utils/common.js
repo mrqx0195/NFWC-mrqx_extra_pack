@@ -70,3 +70,16 @@ function getRelativeRotation(direction) {
     }
     return 'none'
 }
+
+/**
+ * 
+ * @param {Internal.ItemStack} item 
+ * @param {Number} count 
+ */
+function ItemShrink(item, count) {
+    if (item.getCount() > count) {
+        item.shrink(count)
+    } else {
+        item = Item.empty()
+    }
+}

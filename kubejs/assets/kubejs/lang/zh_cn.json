@@ -1488,7 +1488,7 @@
     "kubejs.tooltips.wither_and_fall.3": "若最大生命值小于20，根据该值与20的差值赋予伤害吸收值",
     "kubejs.tooltips.wither_and_fall.4": "反之，根据该值与20的差值增加经验值",
     "kubejs.tooltips.blood_crystal.1": "一颗没有一丝污垢的完美宝石",
-    "kubejs.tooltips.blood_crystal.2": "按下主动技能按键，将自身所有负面效果持续时间减半，正面效果持续时间翻倍",
+    "kubejs.tooltips.blood_crystal.2": "按下主动技能按键，将自身所有负面效果持续时间减半，正面效果持续时间翻倍（最长持续3分钟）",
     "kubejs.tooltips.blood_crystal.3": "同时将所有负面效果等级提升一级，正面效果等级降低一级",
     "kubejs.tooltips.melty_blood.1": "渴求鲜血的断刃，伺机斩出致命的一刀",
     "kubejs.tooltips.melty_blood.2": "每次攻击有概率打出高额伤害，并在之后的一段时间禁锢自身，此效果唯一",

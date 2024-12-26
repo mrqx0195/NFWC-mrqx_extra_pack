@@ -50,15 +50,15 @@ ItemEvents.rightClicked('kubejs:disenchantment_book', event => {
         player.tell('如果要使用祛魔功能，请将祛魔书放在副手，物品置于主手')
         return
     }
-    let disenchantedone = player.getMainHandItem()
-    if (!disenchantedone || !disenchantedone.enchanted) {
+    let weapon = player.getMainHandItem()
+    if (!weapon || !weapon.isEnchanted()) {
         player.tell('没有可取下的附魔！')
         return
     }
 
     let enchantList = []
     let levelList = []
-    disenchantedone.enchantments.forEach((name, level) => {
+    weapon.allEnchantments.forEach((name, level) => {
         enchantList.push(name)
         levelList.push(level)
     })
@@ -66,10 +66,11 @@ ItemEvents.rightClicked('kubejs:disenchantment_book', event => {
         return
     }
     let setlength = enchantList.length
-    let res = Math.ceil((Math.random() * setlength))
-    item.shrink(1)
-    disenchantedone.enchantments.clear()
-    player.give(Item.of('minecraft:enchanted_book').enchant(enchantList[res - 1], levelList[res - 1]))
+    let random = Math.ceil((Math.random() * setlength))
+    ItemShrink(item, 1)
+    ItemShrink(weapon, 1)
+    
+    player.give(Item.of('minecraft:enchanted_book').enchant(enchantList[random - 1], levelList[random - 1]))
 })
 
 ItemEvents.rightClicked('hexerei:selenite_shard', event => {
