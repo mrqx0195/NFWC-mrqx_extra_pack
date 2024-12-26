@@ -118,18 +118,21 @@ ServerEvents.recipes(event => {
         ['kubejs:dark_stardust_fragment', 'irons_spellbooks:scroll', 'kubejs:dark_stardust_fragment'],
         ['', 'kubejs:dark_stardust_fragment', '']])
         .modifyResult((grid, stack) => {
+            /**@type {Internal.ItemStack} */
             let scroll = grid.find('irons_spellbooks:scroll', 0)
-            if (!scroll.nbt?.ISB_Spells?.data || !scroll.nbt.ISB_Spells.data[0]) {
-                return;
-            }
-            let curScroll = scroll.nbt.ISB_Spells.data[0].getInt('level') + 1
-            if (curScroll >= 15) {
+            if (!scroll.hasNBT()) return
+            if (!scroll.nbt.ISB_Spells?.data || !scroll.nbt.ISB_Spells.data[0]) {
                 return
             }
-            scroll.nbt.ISB_Spells.data[0].putInt('level', curScroll)
-            stack = scroll
-            return stack;
-        });
+            let curScrollLevel = scroll.nbt.ISB_Spells.data[0].getInt('level') + 1
+            if (curScrollLevel >= 15) {
+                return
+            }
+            let outputNbt = scroll.nbt.copy()
+            outputNbt.ISB_Spells.data[0].putInt('level', curScrollLevel)
+            stack = Item.of(scroll.id, 1, outputNbt)
+            return stack
+        })
 
     event.shapeless('kubejs:paradise_regained', ['kubejs:god_consciousness', 'kubejs:god_consciousness', 'kubejs:god_consciousness'])
         .modifyResult((grid, stack) => {

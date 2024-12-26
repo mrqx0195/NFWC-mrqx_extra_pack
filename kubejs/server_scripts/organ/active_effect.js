@@ -472,8 +472,6 @@ const organActiveOnlyStrategies = {
         playerChestCavityTypeMap.set(uuid, chestInventoryTypeMap)
     },
     'kubejs:fish_in_chest': function (player, organ, attributeMap) {
-        let itemMap = getPlayerChestCavityItemMap(player)
-        let typeMap = getPlayerChestCavityTypeMap(player)
         let playerChestInstance = player.getChestCavityInstance()
         let organCount = getOrganCount(player)
         let amplifier = 27 / organCount - 1
