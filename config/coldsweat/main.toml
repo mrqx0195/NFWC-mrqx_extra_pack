@@ -2,7 +2,7 @@
 #DO NOT EDIT THE SETTINGS IN THIS SECTION
 [Builtin]
 	#Range: 0 ~ 4
-	Difficulty = 2
+	Difficulty = 4
 	Version = "2.3.9"
 
 [Difficulty]
@@ -19,7 +19,7 @@
 	#Range: 0.0 ~ Infinity
 	"Temperature Damage" = 2.0
 	#Sets whether damage scales with difficulty
-	"Damage Scaling" = true
+	"Damage Scaling" = false
 
 [Items]
 	#Allow fire resistance to block overheating damage

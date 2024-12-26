@@ -1314,7 +1314,7 @@
 			}]
 			title: "激活药丸"
 			x: 15.5d
-			y: 9.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["658FEA8E308D741C"]
@@ -1344,7 +1344,7 @@
 				type: "item"
 			}]
 			x: 15.5d
-			y: 10.75d
+			y: 4.75d
 		}
 		{
 			dependencies: ["50D70D990312BC70"]
@@ -1373,7 +1373,7 @@
 				type: "item"
 			}]
 			x: 15.5d
-			y: 12.5d
+			y: 3.5d
 		}
 		{
 			dependencies: ["7198C447D928AEEC"]
@@ -2015,7 +2015,7 @@
 			description: [
 				"&d「冷汗（Cold-Sweat）」模组&r，为这个世界带来了温度机制。"
 				""
-				"你的体温受到&a时间&r、&a生物群系&r、&a方块&r、&a海拔高度&r、&a天气&r等影响，&b过冷&r和&c过热&r都会带来负面效果，并使你逐渐走向死亡。"
+				"你的体温受到&a时间&r、&a生物群系&r、&a方块&r、&a海拔高度&r、&a天气&r等影响，&b过冷&r和&c过热&r都会带来负面效果，并使你逐渐走向死亡。&7（抗火/抗寒药水会抵挡负面效果）&r"
 				""
 				"&c当然，危险与机遇是并存的，能够掌握温度的强大力量已经悄然降临了这个世界。&r"
 			]
@@ -2025,11 +2025,35 @@
 				tag: { }
 			}
 			id: "2A510BC7C7C6FEF4"
-			rewards: [{
-				id: "493CD5DB03060392"
-				item: "cold_sweat:waterskin"
-				type: "item"
-			}]
+			rewards: [
+				{
+					id: "493CD5DB03060392"
+					item: "cold_sweat:waterskin"
+					type: "item"
+				}
+				{
+					id: "08E36549AA7B88C6"
+					item: {
+						Count: 1b
+						id: "minecraft:potion"
+						tag: {
+							Potion: "minecraft:fire_resistance"
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "0C768A903657D8A0"
+					item: {
+						Count: 1b
+						id: "minecraft:potion"
+						tag: {
+							Potion: "cold_sweat:long_ice_resistance"
+						}
+					}
+					type: "item"
+				}
+			]
 			tasks: [{
 				id: "37611A5CBAC18F8C"
 				title: "我已了解"
@@ -2045,7 +2069,7 @@
 			icon: "cold_sweat:thermometer"
 			id: "30674B71779D7E4A"
 			rewards: [{
-				id: "41B3A6895F91694B"
+				id: "3B5D0F7A05740695"
 				item: "lightmanscurrency:coin_iron"
 				type: "item"
 			}]
@@ -2231,8 +2255,8 @@
 				item: "cold_sweat:minecart_insulation"
 				type: "item"
 			}]
-			x: 9.25d
-			y: 12.75d
+			x: 8.0d
+			y: 15.25d
 		}
 		{
 			dependencies: ["51FA796A91E94C4D"]
@@ -2561,6 +2585,653 @@
 			}]
 			x: 4.25d
 			y: 21.25d
+		}
+		{
+			dependencies: ["30674B71779D7E4A"]
+			description: [
+				"&6缝纫台&r可以为你的&6防具&r添加&a内衬&r。"
+				""
+				"在需要&2长期处于高温/低温环境&r时，&a将防具添加对应的内衬&r是一种&e十分方便的保护方式&r。"
+				""
+				"{image:kubejs:textures/task/cold_sweat_4.png width:200 height:160 align:1}"
+			]
+			id: "1B8837ABE38138B6"
+			rewards: [{
+				id: "6A1B58A0D6CE1997"
+				item: {
+					Count: 1b
+					id: "minecraft:leather_helmet"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "41E65483D8AC9DD9"
+				item: "cold_sweat:sewing_table"
+				type: "item"
+			}]
+			x: 9.25d
+			y: 12.75d
+		}
+		{
+			dependencies: ["1B8837ABE38138B6"]
+			description: [
+				"大部分的内衬为材料，但是也有一些特例——&2如皮革套装本身是防具，但也可以作为内衬&r。"
+				""
+				"这些&a可作为内衬的特殊套装&r，都会在其&a鼠标悬浮信息框&r中写明&e“可用作内衬”&r。"
+				""
+				"{image:kubejs:textures/task/cold_sweat_5.png width:170 height:167 align:1}"
+			]
+			icon: "minecraft:writable_book"
+			id: "45A9B324DF42CCBC"
+			rewards: [{
+				id: "6A74ED8D7D56D66D"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
+			subtitle: "为你的防具添加内衬吧！"
+			tasks: [{
+				id: "7BAFCC167DD672E5"
+				title: "我已了解"
+				type: "checkmark"
+			}]
+			title: "缝纫台操作说明"
+			x: 10.5d
+			y: 12.75d
+		}
+		{
+			dependencies: ["45A9B324DF42CCBC"]
+			description: [
+				"部分装备可以被当作内衬使用，如皮革装备，但&c只能装在对应位置&r的装备上，如皮革胸甲只能作为胸甲的内衬。"
+				""
+				"部分材料也可以作为内衬使用，如变色龙皮等。"
+				""
+				"你可以在一件装备上打不同的内衬，但根据位置存在上限，所有内衬共享此上限。"
+				""
+				"头盔和护腿最多可以达到8，胸甲最多可以达到12，裤子最多可以达到7."
+			]
+			icon: "minecraft:writable_book"
+			id: "71A118D50AFBA029"
+			rewards: [{
+				id: "19D41D238D8C5A1A"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
+			tasks: [{
+				id: "42C773F0037FE07D"
+				title: "我已了解"
+				type: "checkmark"
+			}]
+			title: "内衬的添加机制"
+			x: 11.75d
+			y: 12.75d
+		}
+		{
+			dependencies: ["71A118D50AFBA029"]
+			description: ["{image:kubejs:textures/task/cold_sweat_8.png width:200 height:26 align:1}"]
+			hide_dependency_lines: true
+			icon: "minecraft:purple_concrete"
+			id: "05A17395D7E17FF4"
+			rewards: [{
+				id: "0F4F3CF271ABC577"
+				item: "lightmanscurrency:coin_emerald"
+				type: "item"
+			}]
+			shape: "hexagon"
+			subtitle: "包括内衬与防具"
+			tasks: [
+				{
+					icon: {
+						Count: 1b
+						id: "minecraft:leather_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
+					id: "500E31918C0CB277"
+					item: {
+						Count: 1b
+						id: "itemfilters:or"
+						tag: {
+							items: [
+								{
+									Count: 1b
+									id: "minecraft:leather_helmet"
+									tag: {
+										Damage: 0
+									}
+								}
+								{
+									Count: 1b
+									id: "minecraft:leather_chestplate"
+									tag: {
+										Damage: 0
+									}
+								}
+								{
+									Count: 1b
+									id: "minecraft:leather_leggings"
+									tag: {
+										Damage: 0
+									}
+								}
+								{
+									Count: 1b
+									id: "minecraft:leather_boots"
+									tag: {
+										Damage: 0
+									}
+								}
+							]
+						}
+					}
+					title: "皮革套装"
+					type: "item"
+				}
+				{
+					id: "3B31FBC596880E2B"
+					item: "minecraft:leather"
+					type: "item"
+				}
+			]
+			title: "紫色属性物品图鉴"
+			x: 14.5d
+			y: 12.75d
+		}
+		{
+			dependencies: ["71A118D50AFBA029"]
+			description: ["{image:kubejs:textures/task/cold_sweat_6.png width:200 height:23 align:1}"]
+			icon: "minecraft:orange_concrete"
+			id: "70D0AF454CC41815"
+			rewards: [{
+				id: "3F3EDA648E68417F"
+				item: "lightmanscurrency:coin_emerald"
+				type: "item"
+			}]
+			shape: "hexagon"
+			subtitle: "包括内衬与防具"
+			tasks: [
+				{
+					icon: {
+						Count: 1b
+						id: "extraarmor:ice_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
+					id: "2687305F4EF1FB76"
+					item: {
+						Count: 1b
+						id: "itemfilters:or"
+						tag: {
+							items: [
+								{
+									Count: 1b
+									id: "extraarmor:ice_helmet"
+									tag: {
+										Damage: 0
+									}
+								}
+								{
+									Count: 1b
+									id: "extraarmor:ice_chestplate"
+									tag: {
+										Damage: 0
+									}
+								}
+								{
+									Count: 1b
+									id: "extraarmor:ice_leggings"
+									tag: {
+										Damage: 0
+									}
+								}
+								{
+									Count: 1b
+									id: "extraarmor:ice_boots"
+									tag: {
+										Damage: 0
+									}
+								}
+							]
+						}
+					}
+					title: "冰套装"
+					type: "item"
+				}
+				{
+					icon: {
+						Count: 1b
+						id: "cold_sweat:hoglin_headpiece"
+						tag: {
+							Damage: 0
+						}
+					}
+					id: "6E8544E0DBD1389E"
+					item: {
+						Count: 1b
+						id: "itemfilters:or"
+						tag: {
+							items: [
+								{
+									Count: 1b
+									id: "cold_sweat:hoglin_headpiece"
+									tag: {
+										Damage: 0
+									}
+								}
+								{
+									Count: 1b
+									id: "cold_sweat:hoglin_tunic"
+									tag: {
+										Damage: 0
+									}
+								}
+								{
+									Count: 1b
+									id: "cold_sweat:hoglin_trousers"
+									tag: {
+										Damage: 0
+									}
+								}
+								{
+									Count: 1b
+									id: "cold_sweat:hoglin_hooves"
+									tag: {
+										Damage: 0
+									}
+								}
+							]
+						}
+					}
+					title: "疣猪兽套装"
+					type: "item"
+				}
+				{
+					id: "4E5ABB46125DD22B"
+					item: {
+						Count: 1b
+						id: "itemfilters:or"
+						tag: {
+							items: [
+								{
+									Count: 1b
+									id: "minecraft:rabbit_hide"
+								}
+								{
+									Count: 1b
+									id: "cold_sweat:hoglin_hide"
+								}
+								{
+									Count: 1b
+									id: "alexsmobs:emu_feather"
+								}
+								{
+									Count: 1b
+									id: "alexsmobs:shed_snake_skin"
+								}
+								{
+									Count: 1b
+									id: "unusualprehistory:palaeo_skin"
+								}
+							]
+						}
+					}
+					title: "内衬"
+					type: "item"
+				}
+			]
+			title: "橙色属性物品图鉴"
+			x: 13.0d
+			y: 12.75d
+		}
+		{
+			dependencies: ["71A118D50AFBA029"]
+			description: ["{image:kubejs:textures/task/cold_sweat_7.png width:200 height:25 align:1}"]
+			hide_dependency_lines: true
+			icon: "minecraft:light_blue_concrete"
+			id: "5CAB00C55365E0F1"
+			rewards: [{
+				id: "14F3D339625953CE"
+				item: "lightmanscurrency:coin_emerald"
+				type: "item"
+			}]
+			shape: "hexagon"
+			subtitle: "包括内衬与防具"
+			tasks: [
+				{
+					icon: {
+						Count: 1b
+						ForgeCaps: {
+							"cold_sweat:item_insulation": {
+								Insulation: [ ]
+							}
+						}
+						id: "twilightforest:yeti_helmet"
+						tag: {
+							Damage: 0
+							Enchantments: [{
+								id: "minecraft:protection"
+								lvl: 2s
+							}]
+							Insulation: [ ]
+						}
+					}
+					id: "3A134A7DD9FD4B57"
+					item: {
+						Count: 1b
+						id: "itemfilters:or"
+						tag: {
+							items: [
+								{
+									Count: 1b
+									ForgeCaps: {
+										"cold_sweat:item_insulation": {
+											Insulation: [ ]
+										}
+									}
+									id: "twilightforest:yeti_helmet"
+									tag: {
+										Damage: 0
+										Enchantments: [{
+											id: "minecraft:protection"
+											lvl: 2s
+										}]
+										Insulation: [ ]
+									}
+								}
+								{
+									Count: 1b
+									ForgeCaps: {
+										"cold_sweat:item_insulation": {
+											Insulation: [ ]
+										}
+									}
+									id: "twilightforest:yeti_chestplate"
+									tag: {
+										Damage: 0
+										Enchantments: [{
+											id: "minecraft:protection"
+											lvl: 2s
+										}]
+										Insulation: [ ]
+									}
+								}
+								{
+									Count: 1b
+									ForgeCaps: {
+										"cold_sweat:item_insulation": {
+											Insulation: [ ]
+										}
+									}
+									id: "twilightforest:yeti_leggings"
+									tag: {
+										Damage: 0
+										Enchantments: [{
+											id: "minecraft:protection"
+											lvl: 2s
+										}]
+										Insulation: [ ]
+									}
+								}
+								{
+									Count: 1b
+									ForgeCaps: {
+										"cold_sweat:item_insulation": {
+											Insulation: [ ]
+										}
+									}
+									id: "twilightforest:yeti_boots"
+									tag: {
+										Damage: 0
+										Enchantments: [
+											{
+												id: "minecraft:protection"
+												lvl: 2s
+											}
+											{
+												id: "minecraft:feather_falling"
+												lvl: 4s
+											}
+										]
+										Insulation: [ ]
+									}
+								}
+							]
+						}
+					}
+					title: "雪怪套装"
+					type: "item"
+				}
+				{
+					icon: {
+						Count: 1b
+						id: "extraarmor:magma_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
+					id: "3E2497FA57262CC5"
+					item: {
+						Count: 1b
+						id: "itemfilters:or"
+						tag: {
+							items: [
+								{
+									Count: 1b
+									id: "extraarmor:magma_helmet"
+									tag: {
+										Damage: 0
+									}
+								}
+								{
+									Count: 1b
+									id: "extraarmor:magma_chestplate"
+									tag: {
+										Damage: 0
+									}
+								}
+								{
+									Count: 1b
+									id: "extraarmor:magma_leggings"
+									tag: {
+										Damage: 0
+									}
+								}
+								{
+									Count: 1b
+									id: "extraarmor:magma_boots"
+									tag: {
+										Damage: 0
+									}
+								}
+							]
+						}
+					}
+					title: "岩浆块套装"
+					type: "item"
+				}
+				{
+					icon: {
+						Count: 1b
+						id: "twilightforest:arctic_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
+					id: "6FD13FFFAA38E2F5"
+					item: {
+						Count: 1b
+						id: "itemfilters:or"
+						tag: {
+							items: [
+								{
+									Count: 1b
+									id: "twilightforest:arctic_helmet"
+									tag: {
+										Damage: 0
+									}
+								}
+								{
+									Count: 1b
+									id: "twilightforest:arctic_chestplate"
+									tag: {
+										Damage: 0
+									}
+								}
+								{
+									Count: 1b
+									id: "twilightforest:arctic_leggings"
+									tag: {
+										Damage: 0
+									}
+								}
+								{
+									Count: 1b
+									id: "twilightforest:arctic_boots"
+									tag: {
+										Damage: 0
+									}
+								}
+							]
+						}
+					}
+					title: "极地套装"
+					type: "item"
+				}
+				{
+					icon: {
+						Count: 1b
+						id: "cold_sweat:goat_fur_cap"
+						tag: {
+							Damage: 0
+						}
+					}
+					id: "51F8DC5092FA3CE0"
+					item: {
+						Count: 1b
+						id: "itemfilters:or"
+						tag: {
+							items: [
+								{
+									Count: 1b
+									id: "cold_sweat:goat_fur_cap"
+									tag: {
+										Damage: 0
+									}
+								}
+								{
+									Count: 1b
+									id: "cold_sweat:goat_fur_parka"
+									tag: {
+										Damage: 0
+									}
+								}
+								{
+									Count: 1b
+									id: "cold_sweat:goat_fur_pants"
+									tag: {
+										Damage: 0
+									}
+								}
+								{
+									Count: 1b
+									id: "cold_sweat:goat_fur_boots"
+									tag: {
+										Damage: 0
+									}
+								}
+							]
+						}
+					}
+					title: "毛衣套装"
+					type: "item"
+				}
+				{
+					id: "054E4A0D4DD22847"
+					item: {
+						Count: 1b
+						id: "itemfilters:or"
+						tag: {
+							items: [
+								{
+									Count: 1b
+									id: "minecraft:white_wool"
+								}
+								{
+									Count: 1b
+									id: "cold_sweat:goat_fur"
+								}
+								{
+									Count: 1b
+									id: "alexsmobs:bison_fur"
+								}
+								{
+									Count: 1b
+									id: "twilightforest:arctic_fur"
+								}
+								{
+									Count: 1b
+									id: "twilightforest:alpha_yeti_fur"
+								}
+								{
+									Count: 1b
+									id: "alexsmobs:bear_fur"
+								}
+								{
+									Count: 1b
+									id: "unusualprehistory:smilo_fur"
+								}
+							]
+						}
+					}
+					title: "内衬"
+					type: "item"
+				}
+			]
+			title: "蓝色属性物品图鉴"
+			x: 13.75d
+			y: 12.75d
+		}
+		{
+			dependencies: ["71A118D50AFBA029"]
+			description: ["{image:kubejs:textures/task/cold_sweat_9.png width:200 height:27 align:1}"]
+			hide_dependency_lines: true
+			icon: "minecraft:lime_concrete"
+			id: "0411A9D48BFFCFE5"
+			rewards: [{
+				id: "17C84000DBEF0C77"
+				item: "lightmanscurrency:coin_emerald"
+				type: "item"
+			}]
+			shape: "hexagon"
+			subtitle: "包括内衬与防具"
+			tasks: [{
+				id: "0C2BA5BD7B906FD5"
+				item: {
+					Count: 1b
+					id: "itemfilters:or"
+					tag: {
+						items: [
+							{
+								Count: 1b
+								id: "cold_sweat:chameleon_molt"
+							}
+							{
+								Count: 1b
+								id: "unusualprehistory:insulator"
+							}
+						]
+					}
+				}
+				title: "内衬"
+				type: "item"
+			}]
+			title: "绿色属性物品图鉴"
+			x: 15.25d
+			y: 12.75d
 		}
 	]
 	title: "章节1：如常"
