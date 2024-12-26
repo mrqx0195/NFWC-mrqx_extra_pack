@@ -18,6 +18,7 @@ ServerEvents.recipes(event => {
     event.remove({ output: 'alexsmobs:transmutation_table' })
     event.remove({ output: 'weaponmaster:workstation' })
     event.remove({ output: 'twilightforest:uncrafting_table' })
+    event.remove({ output: 'cold_sweat:boiler' })
 
     event.shaped('weaponmaster:workstation', [
         ['minecraft:lectern', 'minecraft:writable_book', '#minecraft:anvil'],
@@ -257,4 +258,10 @@ ServerEvents.recipes(event => {
 
     event.shapeless('kubejs:advanced_chest_opener', ['#forge:dyes/cyan', 'chestcavity:chest_opener', '#forge:dyes/cyan'])
 
+
+
+    event.shaped('cold_sweat:boiler', [
+        ['#forge:cobblestone', '#forge:cobblestone', '#forge:cobblestone'],
+        ['#forge:cobblestone', '', '#forge:cobblestone'],
+        ['#cold_sweat:boiler_craftable_deepslate', 'supplementaries:flint_block', '#cold_sweat:boiler_craftable_deepslate']])
 })

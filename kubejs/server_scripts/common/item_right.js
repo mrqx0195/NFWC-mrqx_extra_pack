@@ -67,9 +67,18 @@ ItemEvents.rightClicked('kubejs:disenchantment_book', event => {
     }
     let setlength = enchantList.length
     let random = Math.ceil((Math.random() * setlength))
-    ItemShrink(item, 1)
-    ItemShrink(weapon, 1)
-    
+
+    if (item.getCount() > 1) {
+        item.shrink(1)
+    } else {
+        player.setOffHandItem(Item.of('minecraft:air'))
+    }
+    if (weapon.getCount() > 1) {
+        weapon.shrink(1)
+    } else {
+        player.setMainHandItem(Item.of('minecraft:air'))
+    }
+
     player.give(Item.of('minecraft:enchanted_book').enchant(enchantList[random - 1], levelList[random - 1]))
 })
 

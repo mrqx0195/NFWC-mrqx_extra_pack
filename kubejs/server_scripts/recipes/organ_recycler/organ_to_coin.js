@@ -1,6 +1,6 @@
 // priority: 500
 ServerEvents.recipes(event => {
-    event.recipes.custommachinery.custom_machine("kubejs:organ_recycler", 20 * 60)
+    event.recipes.custommachinery.custom_machine("kubejs:organ_recycler", 20)
         .requireFunctionOnEnd(ctx => {
             let machine = ctx.machine
             let organ = machine.getItemStored("organ_slot")
@@ -10,7 +10,7 @@ ServerEvents.recipes(event => {
             if (coinSlotItem && coinSlotItem.hasTag('lightmanscurrency:wallet')) {
                 let coinItemList = ConvertMoneyIntoCoinItemList(CoinList, worth)
                 coinItemList.forEach(coinItem => {
-                    let unpickableItem = $WalletItem.PickupCoin(walletItem, coinItem)
+                    let unpickableItem = $WalletItem.PickupCoin(coinSlotItem, coinItem)
                     ctx.block.popItemFromFace(unpickableItem, Direction.UP)
                 })
             } else {
