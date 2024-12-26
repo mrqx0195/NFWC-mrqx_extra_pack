@@ -98,7 +98,6 @@ const organPlayerTickStrategies = {
         let temperature = ColdSweat.getTemperature(player, 'body')
         if (temperature > -50) return
         player.absorptionAmount = Math.min(player.absorptionAmount + 0.25, 20)
-        player.modifyAttribute("minecraft:generic.knockback_resistance", 'kubejsIceRib', - temperature / 150, 'addition')
     }
 
 };
