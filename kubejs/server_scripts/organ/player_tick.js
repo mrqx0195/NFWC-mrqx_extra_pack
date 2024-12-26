@@ -171,7 +171,7 @@ const organPlayerTickOnlyStrategies = {
     },
     'kubejs:worm_neuron': function (event, organ) {
         let player = event.player
-        let temperature = ColdSweat.getTemperature(player,'body')
+        let temperature = ColdSweat.getTemperature(player, 'body')
         if (player.age % (600 - Math.floor(3 * temperature)) != 0) return
         if (player.nbt?.ForgeCaps['goety:lichdom']?.lichdom == 1) return
         let instance = player.getChestCavityInstance()
@@ -183,15 +183,15 @@ const organPlayerTickOnlyStrategies = {
         if (!typeMap.has('kubejs:organ')) return
         let organCount = getOrganCount(player)
         let tumor = Item.of('kubejs:random_tumor', { organData: {} })
-        let amount = Math.floor(Math.random() * 2 + 1 + Math.max(Math.floor(temperature/100) , 0))
+        let amount = Math.floor(Math.random() * 2 + 1 + Math.max(Math.floor(temperature / 100), 0))
         for (let i = 0; i < amount; i++) {
             let attri = randomGet(tumorAttriButeByNeuron)
             let attriName = attri.name
             // 扩散系数，用于控制属性的扩散范围(-0.5, 1.5)
             let diffusivity = Math.random() + Math.random() - 0.5
             // 温度影响扩散系数
-            let multi = temperature >=0 ? temperature / 50 : 0.9
-            let distance = temperature/200
+            let multi = temperature >= 0 ? temperature / 50 : 0.9
+            let distance = temperature / 200
             diffusivity = (diffusivity - distance) * multi
             // 新陈代谢效率
             let metabolism = instance.organScores.getOrDefault(new ResourceLocation('chestcavity', 'metabolism'), 0)
@@ -232,19 +232,19 @@ const organPlayerTickOnlyStrategies = {
         if (ColdSweat.getTemperature(player, 'body') > -50) return
         ColdSweat.setTemperature(player, 'core', ColdSweat.getTemperature(player, 'core') + 10)
         let entityList = getLivingWithinRadius(player.getLevel(), new Vec3(player.x, player.y, player.z), 5)
-        let spellPower = player.getAttributeTotalValue("irons_spellbooks:ice_spell_power")
+        let spellPower = player.getAttributeTotalValue('irons_spellbooks:ice_spell_power')
         entityList.forEach(e => {
-            if (!e.isPlayer()) {
-                if (e.hasEffect("twilightforest:frosted")){
-                    let amplifier = e.getEffect('twilightforest:frosted').getAmplifier()
-                    e.removeEffect('twilightforest:frosted')
-                    if (amplifier < 4){
-                        e.potionEffects.add("twilightforest:frosted", 20 * 6 , amplifier + 1)
-                    }
-                    else e.setHealth(e.getHealth() / Math.min(spellPower / 4 + 1, 2))
+            if (e.isPlayer()) return
+            if (e.hasEffect('twilightforest:frosted')) {
+                let amplifier = e.getEffect('twilightforest:frosted').getAmplifier()
+                e.removeEffect('twilightforest:frosted')
+                if (amplifier < 4) {
+                    e.potionEffects.add("twilightforest:frosted", 20 * 6, amplifier + 1)
                 }
-                else e.potionEffects.add("twilightforest:frosted", 20 * 6 , 0)
+                else e.setHealth(e.getHealth() / Math.min(spellPower / 4 + 1, 2))
             }
+            else e.potionEffects.add("twilightforest:frosted", 20 * 6, 0)
+
         })
     },
     'kubejs:flame_heart': function (event, organ) {
@@ -256,7 +256,7 @@ const organPlayerTickOnlyStrategies = {
             if (typeMap.has('kubejs:flame')) {
                 amplifier = amplifier + typeMap.get('kubejs:flame').length
             }
-            let value = Math.min(Math.max(Math.floor(amplifier * 0.5), 0) , 8)
+            let value = Math.min(Math.max(Math.floor(amplifier * 0.5), 0), 8)
             player.potionEffects.add('kubejs:overload', 30, value, false, false)
         }
     },
@@ -269,7 +269,7 @@ const organPlayerTickOnlyStrategies = {
             if (typeMap.has('kubejs:ice')) {
                 amplifier = amplifier + typeMap.get('kubejs:ice').length
             }
-            let value = Math.min(Math.max(Math.floor(amplifier * 0.5), 0) , 8)
+            let value = Math.min(Math.max(Math.floor(amplifier * 0.5), 0), 8)
             player.potionEffects.add('kubejs:ice', 30, value, false, false)
         }
     },

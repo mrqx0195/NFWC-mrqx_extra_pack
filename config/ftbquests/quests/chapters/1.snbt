@@ -186,22 +186,35 @@
 				""
 				"所谓高级器官，即是有着&e特殊效果&r的系列器官。"
 				""
-				"&6矿石肺&r的能力是可以在你开掘&6石头&r时，积累矿石灰尘，在积累到一定程度后，根据当前拥有的幸运值，给予你矿物碎块。"
+				"&6矿石肺&r的能力是可以在你开掘&6石头&r时，消耗资源点数，根据你拥有的幸运值，给予你矿物碎块。"
+				""
+				"为了积累资源点数，你需要一些能够提供资源点数的器官，比如&3钻石风暴瓶&r。"
 				""
 				"请注意，该资源点积累的条件必须为&2破坏石头&r。"
 			]
 			icon: "kubejs:ore_lung"
 			id: "2DD73A2CCC0054D8"
-			rewards: [{
-				count: 5
-				id: "0905D2943CB40EB0"
-				item: {
-					Count: 1b
-					id: "lightmanscurrency:coin_iron"
-					tag: { }
+			rewards: [
+				{
+					count: 5
+					id: "0905D2943CB40EB0"
+					item: {
+						Count: 1b
+						id: "lightmanscurrency:coin_iron"
+						tag: { }
+					}
+					type: "item"
 				}
-				type: "item"
-			}]
+				{
+					id: "31768FFAA8A27F55"
+					item: {
+						Count: 1b
+						id: "kubejs:diamond_bottle"
+						tag: { }
+					}
+					type: "item"
+				}
+			]
 			subtitle: "吸入矿尘，积累矿物"
 			tasks: [{
 				id: "41C666877A44FFB2"

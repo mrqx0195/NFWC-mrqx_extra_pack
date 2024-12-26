@@ -34,9 +34,24 @@ const LuckyBoxSpicalEventList = [
 ]
 
 
+/**
+ * 
+ * @param {Internal.ServerPlayer} player 
+ */
+function isHoldingCrumbleHorn(player) {
+    let hadHorn = false
+    player.getHandSlots().forEach(slot => {
+        if (slot.getItem().getId() === 'twilightforest:crumble_horn') {
+            hadHorn = true
+        }
+    })
+    return hadHorn
+}
+
 BlockEvents.broken('kubejs:lucky_block', event => {
     let player = event.entity
     if (!player.isPlayer()) return
+    if (isHoldingCrumbleHorn(player)) return
     if (player.isShiftKeyDown()) {
         event.block.popItemFromFace('kubejs:lucky_block', player.facing.opposite)
         return
@@ -60,6 +75,7 @@ BlockEvents.broken('kubejs:lucky_block', event => {
 BlockEvents.broken('kubejs:infinity_lucky_block', event => {
     let player = event.entity
     if (!player.isPlayer()) return
+    if (isHoldingCrumbleHorn(player)) return
     if (player.isShiftKeyDown()) {
         event.block.popItemFromFace('kubejs:infinity_lucky_block', player.facing.opposite)
         return
@@ -87,6 +103,7 @@ BlockEvents.broken('kubejs:infinity_lucky_block', event => {
 BlockEvents.broken('kubejs:organ_lucky_block', event => {
     let player = event.entity
     if (!player.isPlayer()) return
+    if (isHoldingCrumbleHorn(player)) return
     if (player.isShiftKeyDown()) {
         event.block.popItemFromFace('kubejs:organ_lucky_block', player.facing.opposite)
         return
