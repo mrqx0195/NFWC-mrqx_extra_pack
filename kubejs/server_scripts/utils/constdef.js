@@ -309,7 +309,7 @@ const tagWorth = {
     '#kubejs:bear_only': 150,
     '#kubejs:loot_chest_only': 500,
     '#kubejs:enchant_only': 400,
-    '#kubejs:warp': 500,
+    '#kubejs:warp': 250,
     '#kubejs:organ_count_only': 70,
     '#kubejs:relics': 5,
     '#kubejs:rib': 30,

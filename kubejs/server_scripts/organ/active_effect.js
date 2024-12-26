@@ -493,11 +493,11 @@ const organActiveOnlyStrategies = {
     'kubejs:etched_paper': function (player, organ, attributeMap) {
         let instance = player.getChestCavityInstance()
         let chestInventory = instance.inventory.tags
+        let enchantOnlyMap = new Map()
         let enchantList = []
         let spellPowerUp = 0
-        let cdReduction = 0
         let manaRegen = 0
-        let overburdened = 0
+        let cdReduction = 0
         let buoyant = instance.organScores.getOrDefault(new ResourceLocation('chestcavity', 'buoyant'), 0)
         for (let i = 0; i < chestInventory.length; i++) {
             let organ = chestInventory[i]  
@@ -509,32 +509,35 @@ const organActiveOnlyStrategies = {
                 enchantList = organ.get('tag').get('Enchantments')
             }
             if (!enchantList) continue
+            // 处理该格物品的每个附魔
             for (let j = 0; j < enchantList.length; j++) {
-                let curEnchant = enchantList[j]
-                if(curseEnchantList.includes(String(curEnchant.id))) {
-                    let spDown = spellPowerUp-curEnchant.lvl *0.01
-                    spellPowerUp = spDown >= 0 ? spDown : 0
-                    manaRegen += curEnchant.lvl *0.03
-                }                 
-                else {
-                    spellPowerUp += curEnchant.lvl * 0.01
-                }
-                if(j > 10){
-                    overburdened += curEnchant.lvl
-                }
+                let currentEnchant = enchantList[j]
+                let enchantName = currentEnchant.id
+                let lvl = currentEnchant.lvl
+                if(!enchantOnlyMap.has(enchantName)){
+                    enchantOnlyMap.set(enchantName, lvl)
+                }else enchantOnlyMap.set(enchantName, Math.max(enchantOnlyMap.get(enchantName), lvl))
             }
-            if(enchantList.length >= 5){
-                cdReduction += 0.02
-                buoyant += 0.3
+            if (enchantList.length >= 2){
+                cdReduction -= 0.05 * (enchantList.length - 1)
             }
+            buoyant += 0.1
         }
-        spellPowerUp = spellPowerUp - overburdened * 0.02
-        manaRegen = manaRegen - overburdened * 0.04
-        spellPowerUp = spellPowerUp >= -1 ? spellPowerUp : -1
-        manaRegen = manaRegen >= -1 ? manaRegen : -1
+        enchantOnlyMap.forEach((value, key) => {
+            if (curseEnchantList.includes(key)){
+                spellPowerUp -= value * 0.01
+                manaRegen += value * 0.04
+            }else{
+                spellPowerUp += value * 0.03
+                manaRegen -= value * 0.02
+            }
+        })
+        cdReduction = Math.max(-1, cdReduction)
+        manaRegen = Math.max(-1, manaRegen)
+        spellPowerUp = Math.max(-1, spellPowerUp)
         attributeMapValueAddition(attributeMap, global.SPELL_POWER, spellPowerUp)
-        attributeMapValueAddition(attributeMap, global.COOLDOWN_REDUCTION, cdReduction)
         attributeMapValueAddition(attributeMap, global.MANA_REGEN, manaRegen)
+        attributeMapValueAddition(attributeMap, global.COOLDOWN_REDUCTION, cdReduction)
         instance.organScores.put(new ResourceLocation('chestcavity', 'buoyant'), new $Float(buoyant))
     },
     'kubejs:hydra_fiery_blood_essence': function (player, organ, attributeMap) {
