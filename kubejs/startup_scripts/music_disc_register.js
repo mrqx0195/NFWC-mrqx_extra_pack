@@ -1,3 +1,4 @@
+// priority: 100
 StartupEvents.registry('sound_event', event => {
     event.create("kubejs:faded_song")
     event.create("kubejs:beak_metal")

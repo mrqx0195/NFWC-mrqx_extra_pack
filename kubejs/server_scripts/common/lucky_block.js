@@ -1,3 +1,4 @@
+// priority: 500
 const LuckyBoxStructList = [
     'kubejs:lucky_block_1',
     'kubejs:lucky_block_2',
@@ -33,9 +34,24 @@ const LuckyBoxSpicalEventList = [
 ]
 
 
+/**
+ * 
+ * @param {Internal.ServerPlayer} player 
+ */
+function isHoldingCrumbleHorn(player) {
+    let hadHorn = false
+    player.getHandSlots().forEach(slot => {
+        if (slot.getItem().getId() === 'twilightforest:crumble_horn') {
+            hadHorn = true
+        }
+    })
+    return hadHorn
+}
+
 BlockEvents.broken('kubejs:lucky_block', event => {
     let player = event.entity
     if (!player.isPlayer()) return
+    if (isHoldingCrumbleHorn(player)) return
     if (player.isShiftKeyDown()) {
         event.block.popItemFromFace('kubejs:lucky_block', player.facing.opposite)
         return
@@ -59,6 +75,7 @@ BlockEvents.broken('kubejs:lucky_block', event => {
 BlockEvents.broken('kubejs:infinity_lucky_block', event => {
     let player = event.entity
     if (!player.isPlayer()) return
+    if (isHoldingCrumbleHorn(player)) return
     if (player.isShiftKeyDown()) {
         event.block.popItemFromFace('kubejs:infinity_lucky_block', player.facing.opposite)
         return
@@ -72,18 +89,21 @@ BlockEvents.broken('kubejs:infinity_lucky_block', event => {
             randomGet(LuckyBoxSpicalEventList)(event)
             break
         case random < 1:
-            event.server.scheduleInTicks(2, ctx => {
+            event.server.scheduleInTicks(1, ctx => {
                 placeStructInWorld(event, randomGet(LuckyBoxStructList))
             })
             break
     }
-    event.cancel()
+    event.server.scheduleInTicks(1, () => {
+        event.block.set('kubejs:infinity_lucky_block')
+    })
 })
 
 
 BlockEvents.broken('kubejs:organ_lucky_block', event => {
     let player = event.entity
     if (!player.isPlayer()) return
+    if (isHoldingCrumbleHorn(player)) return
     if (player.isShiftKeyDown()) {
         event.block.popItemFromFace('kubejs:organ_lucky_block', player.facing.opposite)
         return
@@ -115,7 +135,7 @@ function placeStructInWorld(event, structName) {
 function getLuckyBlockRandomLoot() {
     let lootList = []
     lootList.push.apply(lootList, Ingredient.of('#kubejs:organ').getItemIds().filter(ctx => {
-        return ctx != 'kubejs:genesis'
+        return !Item.of(ctx).hasTag('kubejs:exclued_lucky_block')
     }))
     return randomGet(lootList)
 }

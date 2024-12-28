@@ -1,4 +1,4 @@
-// priority: 4
+// priority: 800
 /**
  * 弓箭伤害增幅
  * @param {Internal.LivingHurtEvent} event 

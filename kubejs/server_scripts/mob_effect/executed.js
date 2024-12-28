@@ -1,4 +1,4 @@
-// priority: 6
+// priority: 800
 /**
  * 被行刑
  * @param {Internal.LivingHurtEvent} event 

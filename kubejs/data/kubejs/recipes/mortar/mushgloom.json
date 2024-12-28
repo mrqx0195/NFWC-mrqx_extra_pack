@@ -1,0 +1,11 @@
+{
+  "type": "extradelight:mortar",
+  "grinds": 8,
+  "ingredient": {
+    "item": "twilightforest:mushgloom"
+  },
+  "result": {
+    "count": 1,
+    "item": "minecraft:glowstone_dust"
+  }
+}

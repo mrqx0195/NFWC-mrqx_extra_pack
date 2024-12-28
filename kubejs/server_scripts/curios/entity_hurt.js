@@ -1,5 +1,4 @@
-// priority: 100
-const $CuriosApi = Java.loadClass("top.theillusivec4.curios.api.CuriosApi");
+// priority: 500
 /**
  * 玩家受伤
  * @param {Internal.LivingDamageEvent} event 

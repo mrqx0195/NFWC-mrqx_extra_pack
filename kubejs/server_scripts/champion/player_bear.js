@@ -1,3 +1,4 @@
+// priority: 500
 /**
  * 精英怪造成伤害
  * @param {Internal.LivingDamageEvent} event 

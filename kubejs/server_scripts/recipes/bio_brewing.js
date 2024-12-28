@@ -1,3 +1,4 @@
+// priority: 800
 function BioBrewingRecipe(ingredients, reactant, output) {
     this.type = 'biomancy:bio_brewing'
     this.ingredients = ingredients
@@ -23,9 +24,11 @@ ServerEvents.recipes(event => {
         event.custom(recipeModel)
     }
 
-    registerCustomRecipe(new BioBrewingRecipe([Ingredient.of('waystones:warp_dust'), Ingredient.of('minecraft:echo_shard'), Ingredient.of('minecraft:glowstone_dust'), Ingredient.of('#bookwyrms:scale')], Item.of('biomancy:unstable_compound'), Item.of('kubejs:ritual_catalyst').withCount(4)).setNutrientsCost(2).setProcessingTime(600))
+    registerCustomRecipe(new BioBrewingRecipe([Ingredient.of('waystones:warp_dust'), Ingredient.of('minecraft:echo_shard'), Ingredient.of('minecraft:glowstone_dust'), Ingredient.of('twilightforest:raven_feather')], Item.of('biomancy:unstable_compound'), Item.of('kubejs:ritual_catalyst').withCount(4)).setNutrientsCost(2).setProcessingTime(600))
 
-    registerCustomRecipe(new BioBrewingRecipe([Ingredient.of('waystones:warp_dust'), Ingredient.of('createaddition:diamond_grit'), Ingredient.of('minecraft:glowstone_dust'), Ingredient.of('#bookwyrms:scale')], Item.of('biomancy:exotic_compound'), Item.of('kubejs:ritual_catalyst').withCount(2)).setNutrientsCost(10).setProcessingTime(2400))
+    registerCustomRecipe(new BioBrewingRecipe([Ingredient.of('waystones:warp_dust'), Ingredient.of('createaddition:diamond_grit'), Ingredient.of('minecraft:glowstone_dust'), Ingredient.of('twilightforest:firefly')], Item.of('biomancy:exotic_compound'), Item.of('kubejs:ritual_catalyst').withCount(2)).setNutrientsCost(10).setProcessingTime(2400))
 
+    registerCustomRecipe(new BioBrewingRecipe([Ingredient.of('minecraft:feather'), Ingredient.of('minecraft:blaze_powder'), Ingredient.of('iceandfire:silver_ingot'), Ingredient.of('minecraft:golden_apple')], Item.of('biomancy:exotic_compound'), Item.of('kubejs:ritual_catalyst').withCount(1)).setNutrientsCost(10).setProcessingTime(3600))
+    
     registerCustomRecipe(new BioBrewingRecipe([Ingredient.of('#forge:flour'), Ingredient.of('#fruitsdelight:jelly'), Ingredient.of('extradelight:glazed_carrot')], Item.of('biomancy:genetic_compound'), Item.of('kubejs:active_pill').withCount(4)).setNutrientsCost(5).setProcessingTime(300))
 })

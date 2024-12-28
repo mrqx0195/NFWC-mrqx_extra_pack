@@ -1,3 +1,4 @@
+// priority: 500
 StartupEvents.registry('item', event => {
     event.create('kubejs:incomplete_lung_template', 'create:sequenced_assembly').texture('kubejs:item/organs/template/lung_template')
     event.create('kubejs:incomplete_muscle_template', 'create:sequenced_assembly').texture('kubejs:item/organs/template/muscle_template')

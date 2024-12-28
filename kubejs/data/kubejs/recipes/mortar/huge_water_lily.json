@@ -1,0 +1,11 @@
+{
+  "type": "extradelight:mortar",
+  "grinds": 8,
+  "ingredient": {
+    "item": "twilightforest:huge_water_lily"
+  },
+  "result": {
+    "count": 4,
+    "item": "minecraft:magenta_dye"
+  }
+}

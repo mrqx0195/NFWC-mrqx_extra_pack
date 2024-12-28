@@ -1,8 +1,9 @@
-// priority: 100
+// priority: 800
 LootJS.modifiers(event => {
-    function addBossLoot(entity) {
-        return event.addEntityLootModifier(entity)
-            .addAlternativesLoot(
+    bossTypeList.forEach(bossType => {
+        event.addEntityLootModifier(bossType)
+            .addLoot(
+                LootEntry.of('lightmanscurrency:coin_gold').when((c) => c.randomChance(0.8)),
                 LootEntry.of('kubejs:mysterious_trinket').when((c) => c.randomChance(0.8)),
             )
             .addAlternativesLoot(
@@ -14,11 +15,6 @@ LootJS.modifiers(event => {
                 LootEntry.of('simplehats:hatbag_easter').when((c) => c.randomChance(0.2)),
                 LootEntry.of('simplehats:hatbag_festive').when((c) => c.randomChance(0.2)),
                 LootEntry.of('simplehats:hatbag_halloween').when((c) => c.randomChance(0.2)),
-            )
-            .addAlternativesLoot(
-                LootEntry.of('lightmanscurrency:coin_gold').when((c) => c.randomChance(0.5)),
-                LootEntry.of('lightmanscurrency:coin_emerald').when((c) => c.randomChance(0.1)),
-                LootEntry.of('lightmanscurrency:coin_diamond').when((c) => c.randomChance(0.05)),
             )
             .apply(ctx => {
                 let entity = ctx.entity
@@ -32,11 +28,8 @@ LootJS.modifiers(event => {
                     ctx.addLoot(LootEntry.of('kubejs:disenchantment_book').when((c) => c.randomChance(Math.min(0.2, 1))))
                 }
             })
-    }
-
-    bossTypeList.forEach(entityId => {
-        addBossLoot(entityId)
     })
+
 
     event.addEntityLootModifier('somebosses:ancient_wizard')
         .addLoot(LootEntry.of('kubejs:candy_pancreas').when((c) => c.randomChance(0.2)));
@@ -47,12 +40,13 @@ LootJS.modifiers(event => {
     event.addEntityLootModifier('goety:apostle')
         .addLoot('kubejs:pandora_inactive');
     event.addEntityLootModifier('bosses_of_mass_destruction:void_blossom')
-        .addLoot('kubejs:secret_of_bloom')
         .addLoot('kubejs:flower_heart');
     event.addEntityLootModifier('bosses_of_mass_destruction:obsidilith')
         .addLoot('kubejs:amethyst_magic_core');
     event.addEntityLootModifier('bosses_of_mass_destruction:lich')
         .addLoot('kubejs:bad_ink');
+    event.addEntityLootModifier("twilightforest:hydra")
+        .addLoot('kubejs:hydra_fiery_blood_essence');
     event.addEntityLootModifier('bosses_of_mass_destruction:gauntlet')
         .apply(ctx => {
             if (ctx.player) {
@@ -127,7 +121,6 @@ LootJS.modifiers(event => {
     event.addLootTypeModifier(LootType.CHEST)
         .anyStructure(['#tetra:forged_ruins'], false)
         .addWeightedLoot(machineChestLootTable)
-        .addWeightedLoot(machineChestLootTable)
 
     event.addLootTypeModifier(LootType.CHEST)
         .removeLoot('@nameless_trinkets')
@@ -170,22 +163,6 @@ LootJS.modifiers(event => {
         .addLoot(LootEntry.of('kubejs:the_third_eye').when((c) => c.randomChance(0.003)))
         .addLoot(LootEntry.of('kubejs:blaze_pressurizer').when((c) => c.randomChance(0.005)))
 
-    event.addLootTypeModifier(LootType.FISHING)
-        .apply(ctx => {
-            let player = ctx.player;
-            if (!player) return;
-            if (player.stages.has('flos_magic_stage_2') && ctx.level.isRaining() &&
-                ctx.level.isNight() && Math.random() < 0.5) {
-                ctx.server.scheduleInTicks(20 * 1, (callback) => {
-                    ctx.level.runCommandSilent('/weather clear')
-                    player.stages.remove('flos_magic_stage_2')
-                    player.stages.add('flos_magic_stage_3')
-                })
-                return
-            }
-        })
-
-
     event.addLootTypeModifier(LootType.CHEST)
         .anyStructure(['#kubejs:graveyard'], false)
         .addLoot(LootEntry.of('kubejs:unholy_grail').when((c) => c.randomChance(0.01)))
@@ -202,5 +179,28 @@ LootJS.modifiers(event => {
         .addLoot(LootEntry.of('goety:spent_totem').when((c) => c.randomChance(0.03)))
         .addLoot(LootEntry.of('minecraft:iron_ingot').when((c) => c.randomChance(0.3)))
         .addLoot(LootEntry.of('minecraft:gold_ingot').when((c) => c.randomChance(0.1)))
+
+    event.addLootTypeModifier(LootType.CHEST)
+        .anyDimension(["twilightforest:twilight_forest"])
+        .addLoot(LootEntry.of("twilightforest:transformation_powder").when((c) => c.randomChance(0.05)))
+
+    event.addLootTypeModifier(LootType.CHEST)
+        .anyStructure(["twilightforest:dark_tower"], false)
+        .addLoot(LootEntry.of('kubejs:ritual_catalyst').when((c) => c.randomChance(0.05)))
+        .addLoot(LootEntry.of('kubejs:infinity_beats').when((c) => c.randomChance(0.005)))
+        .addLoot(LootEntry.of('kubejs:redstone_furnace').when((c) => c.randomChance(0.01)))
+        .addLoot(LootEntry.of('kubejs:the_third_eye').when((c) => c.randomChance(0.003)))
+        .addLoot(LootEntry.of('kubejs:blaze_pressurizer').when((c) => c.randomChance(0.005)))
+
+    event.addLootTypeModifier(LootType.CHEST)
+        .anyStructure(["twilightforest:lich_tower"], false)
+        .addLoot(LootEntry.of(Item.of("minecraft:enchanted_book", '{StoredEnchantments: [{"kubejs:painless_operation", lvl: 1}]}')).when((c) => c.randomChance(0.005)))
+        .addLoot(LootEntry.of(Item.of("minecraft:enchanted_book", '{StoredEnchantments: [{"kubejs:safe_operation", lvl: 1}]}')).when((c) => c.randomChance(0.005)))
+        .addLoot(LootEntry.of(Item.of("minecraft:enchanted_book", '{StoredEnchantments: [{"kubejs:tele_operation", lvl: 3}]}')).when((c) => c.randomChance(0.05)))
+        .addLoot(LootEntry.of(Item.of("minecraft:enchanted_book", '{StoredEnchantments: [{"kubejs:tele_operation", lvl: 4}]}')).when((c) => c.randomChance(0.025)))
+        .addLoot(LootEntry.of(Item.of("minecraft:enchanted_book", '{StoredEnchantments: [{"kubejs:tele_operation", lvl: 5}]}')).when((c) => c.randomChance(0.005)))
+        .addLoot(LootEntry.of(Item.of("kubejs:bad_ink")).when((c) => c.randomChance(0.01)))
+
+
 })
 

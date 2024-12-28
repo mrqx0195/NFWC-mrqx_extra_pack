@@ -1,0 +1,34 @@
+{
+  "defaultChestCavity": [
+    { "item": "minecraft:ice", "position": 1 ,"count":  1},
+    { "item": "minecraft:ice", "position": 3 ,"count":  1},
+    { "item": "kubejs:ice_piece", "position": 4 ,"count":  1},
+    { "item": "minecraft:ice", "position": 5 ,"count":  1},
+    { "item": "minecraft:ice", "position": 7 ,"count":  1},
+
+    { "item": "minecraft:ice", "position": 9 ,"count":  1},
+    { "item": "kubejs:ice_piece", "position": 12 ,"count":  1},
+    { "item": "minecraft:blue_ice", "position": 13 ,"count":  1},
+    { "item": "kubejs:ice_piece", "position": 14 ,"count":  1},
+    { "item": "minecraft:ice", "position": 17 ,"count":  1},
+
+    { "item": "minecraft:ice", "position": 19 ,"count":  1},
+    { "item": "minecraft:ice", "position": 21 ,"count":  1},
+    { "item": "kubejs:ice_piece", "position": 22 ,"count":  1},
+    { "item": "minecraft:ice", "position": 23 ,"count":  1},
+    { "item": "minecraft:ice", "position": 25 ,"count":  1}
+  ],
+  "baseOrganScores": [
+    {"id": "chestcavity:health","value": ".5"}
+  ],
+  "exceptionalOrgans": [
+    {"ingredient": {"item": "kubejs:ice_piece"},
+      "value": [
+        {"id":"chestcavity:health","value": "1"},
+        {"id":"chestcavity:strength","value": "5"},
+        {"id":"chestcavity:speed","value": "5"},
+        {"id":"chestcavity:defense","value": "5"}
+      ]
+    }
+  ]
+}

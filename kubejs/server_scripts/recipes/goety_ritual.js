@@ -1,3 +1,4 @@
+// priority: 800
 function GoetyRitualRecipe(craftType, ingredients, activation_item, output) {
     this.type = 'goety:ritual'
     this.ritual_type = 'goety:craft'
@@ -37,4 +38,6 @@ ServerEvents.recipes(event => {
 
     registerCustomRecipe(new GoetyRitualRecipe('lich', [Ingredient.of('kubejs:demon_eyeball'),Ingredient.of('minecraft:nether_star'), Ingredient.of('kubejs:leviathan_rib'), Ingredient.of('kubejs:parasitic_elf')], Item.of('kubejs:pandora_inactive'), Item.of('kubejs:pandora_active')).setSoulCost(1000))
     
+    registerCustomRecipe(new GoetyRitualRecipe('sky', [Ingredient.of('twilightforest:fluffy_cloud'), Ingredient.of('twilightforest:wispy_cloud'), Ingredient.of('twilightforest:fluffy_cloud'), Ingredient.of('twilightforest:wispy_cloud'), Ingredient.of('minecraft:phantom_membrane'),Ingredient.of('kubejs:soul_piece'), Ingredient.of('nameless_trinkets:fragile_cloud'), Ingredient.of('kubejs:soul_piece')], Item.of('iceandfire:pixie_jar_2'), Item.of('kubejs:cloud_pyramid')))
+
 })

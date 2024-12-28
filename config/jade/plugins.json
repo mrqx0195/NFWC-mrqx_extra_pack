@@ -46,10 +46,8 @@
     "mob_spawner": true,
     "redstone": true
   },
-  "fluiddrawerslegacy": {
-    "controller": true,
-    "controller_slave": true,
-    "fluiddrawer": true
+  "twilightforest": {
+    "quest_ram_wool": true
   },
   "jade": {
     "coordinates.rel": false,
@@ -62,9 +60,7 @@
   "waystones": {
     "waystone": true
   },
-  "storagedrawers": {
-    "display.stacklimit": true,
-    "display.content": true,
-    "display.status": true
+  "custommachinery": {
+    "machine_component_provider": true
   }
 }

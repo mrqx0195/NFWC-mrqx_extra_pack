@@ -1,0 +1,29 @@
+{
+    "armorSetName": "ironwood",
+    "performanceMode": true,
+    "head": {
+        "itemKey": "twilightforest:ironwood_helmet"
+    },
+    "chest": {
+      "itemKey": "twilightforest:ironwood_chestplate"
+    },
+    "legs": {
+      "itemKey": "twilightforest:ironwood_leggings"
+    },
+    "boots": {
+        "itemKey": "twilightforest:ironwood_boots"
+    },
+    "hideGeneratedTooltip": false,
+    "customTooltips": [
+      "\u4e3a\u4f60\u63d0\u4f9b\u5927\u91cf\u62a4\u7532\u97e7\u6027"
+    ],
+    "fullSetBonuses": [
+      {
+        "type": "attribute",
+        "name": "minecraft:generic.armor_toughness",
+        "modifierUUID": "45d81690-d7ea-4e72-8297-2f30076fb6f8",
+        "description": "+6 \u62a4\u7532\u97e7\u6027",
+        "value": 6
+      }
+    ]
+}

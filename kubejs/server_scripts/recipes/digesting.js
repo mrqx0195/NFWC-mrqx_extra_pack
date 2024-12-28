@@ -1,3 +1,4 @@
+// priority: 800
 function DigestingRecipe(ingredient, output) {
     this.type = 'biomancy:digesting'
     this.ingredient = ingredient

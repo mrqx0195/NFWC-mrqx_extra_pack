@@ -28,7 +28,12 @@
     "alexsmobs:sugar_glider",
     "alexsmobs:tasmanian_devil",
     "alexsmobs:tiger",
-    "bookwyrms:book_wyrm",
-    "goblintraders:goblin_trader"
+    "goblintraders:goblin_trader",
+    "twilightforest:hostile_wolf",
+    "twilightforest:winter_wolf",
+    "twilightforest:mist_wolf",
+    "twilightforest:bighorn_sheep",
+    "twilightforest:deer",
+    "twilightforest:boar"
   ]
 }

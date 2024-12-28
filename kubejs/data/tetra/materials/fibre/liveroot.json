@@ -1,0 +1,30 @@
+{
+    "key": "liveroot",
+    "category": "fibre",
+    "primary": 3,
+    "secondary": 1,
+    "tertiary": 4.4,
+    "durability": 235,
+    "integrityCost": 2,
+    "integrityGain": 6,
+    "magicCapacity": 432,
+    "toolLevel": 0,
+    "toolEfficiency": 0,
+    "effects" : {
+        "manaRepair": 4
+    },
+    "tints": {
+        "glyph": "5e503d",
+        "texture": "5e503d"
+    },
+    "textures": [
+        "crude",
+        "default"
+    ],
+    "material": {
+        "items": [ "twilightforest:liveroot" ]
+    },
+    "requiredTools": {
+        "cut": "minecraft:stone"
+    }
+}

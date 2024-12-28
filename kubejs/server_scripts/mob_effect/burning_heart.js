@@ -1,6 +1,6 @@
-// priority: 3
+// priority: 800
 /**
- * 熔火效果
+ * 熔火增伤效果
  * @param {Internal.LivingHurtEvent} event 
  * @param {EntityHurtCustomModel} data 
  * @returns 

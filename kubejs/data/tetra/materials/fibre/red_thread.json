@@ -1,0 +1,32 @@
+{
+    "key": "red_thread",
+    "category": "fibre",
+    "primary": 1,
+    "secondary": 0.5,
+    "tertiary": 2.1,
+    "durability": 50,
+    "integrityCost": 1,
+    "integrityGain": 6,
+    "magicCapacity": 484,
+    "toolLevel": 0,
+    "toolEfficiency": 0,
+    "tints": {
+      "glyph": "970000",
+      "texture": "970000"
+    },
+    "textures": [
+      "crude",
+      "default"
+    ],
+    "effects": {
+      "art_of_forging:third_sight": 10
+    },
+    "material": {
+      "items": [
+        "twilightforest:red_thread"
+      ]
+    },
+    "requiredTools": {
+      "cut": "minecraft:stone"
+    }
+  }

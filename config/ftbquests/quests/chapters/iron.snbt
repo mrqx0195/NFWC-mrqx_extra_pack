@@ -16,6 +16,7 @@
 	}
 	id: "71788747161A7134"
 	images: [{
+		alpha: 200
 		click: ""
 		corner: false
 		dev: false
@@ -787,7 +788,11 @@
 		}
 		{
 			dependencies: ["4BD339C63D7E830A"]
-			description: ["&7当你的法术轮盘中有可释放的法术的时候，可以手持该武器（主副手均可）按右键直接施法，这样释放的法术会享受武器提供的加成。&r"]
+			description: [
+				"击败死者之王，获取他的法杖！"
+				""
+				"&7当你的法术轮盘中有可释放的法术的时候，可以手持该武器（主副手均可）按右键直接施法，这样释放的法术会享受武器提供的加成。&r"
+			]
 			hide_dependency_lines: false
 			id: "770BAE3DE6CD61A3"
 			rewards: [{
@@ -1877,7 +1882,7 @@
 				item: "lightmanscurrency:coin_gold"
 				type: "item"
 			}]
-			shape: "square"
+			shape: "rsquare"
 			tasks: [{
 				id: "59CF2BFFFA748B93"
 				item: "irons_spellbooks:arcane_anvil"
@@ -1912,7 +1917,7 @@
 				item: "lightmanscurrency:coin_gold"
 				type: "item"
 			}]
-			shape: "square"
+			shape: "rsquare"
 			tasks: [{
 				id: "213D4C815E209DBB"
 				item: "irons_spellbooks:inscription_table"
@@ -1944,7 +1949,7 @@
 				item: "lightmanscurrency:coin_gold"
 				type: "item"
 			}]
-			shape: "square"
+			shape: "rsquare"
 			tasks: [{
 				id: "413B003BD547523A"
 				item: "irons_spellbooks:scroll_forge"
@@ -2444,7 +2449,7 @@
 		{
 			dependencies: ["49001B4F8FF6A5D9"]
 			description: [
-				"准备好探索&c地下墓穴&r，挑战死者之王了吗？他十分强大，你需要有足够强的实力才能打败他！"
+				"准备好探索&c地下墓穴&r，挑战&c死者之王&r了吗？他十分强大，你需要有足够强的实力才能打败他！"
 				""
 				"右键使用&6归途指南针&r，会指向一个特定的地下墓穴。当很大范围内无地下墓穴时，右键会使指针失控地旋转并指向随机方向。"
 			]
@@ -2906,6 +2911,7 @@
 				item: "lightmanscurrency:coin_iron"
 				type: "item"
 			}]
+			shape: "hexagon"
 			tasks: [{
 				id: "1C575C46F5492495"
 				title: "我已了解"
@@ -2914,45 +2920,6 @@
 			title: "如何释放法术"
 			x: -1.0d
 			y: -7.25d
-		}
-		{
-			dependencies: ["5BCFF4453AC3F1D2"]
-			description: [
-				"使用祛魔书祛除指令附魔书的附魔后，剩下的部分便著成指令魔法书。"
-				""
-				"指令魔法书能够提供相当可观的魔法伤害加成，并且默认携带&6宏伟魔法:悬松定根图&r。"
-			]
-			id: "1394156BB4395D93"
-			rewards: [{
-				count: 2
-				id: "6BFAA513B339B001"
-				item: "lightmanscurrency:coin_gold"
-				type: "item"
-			}]
-			subtitle: "凋零风暴的遗志之一"
-			tasks: [{
-				id: "428D141E2A3C2B0B"
-				item: {
-					Count: 1b
-					id: "kubejs:command_spell_book"
-					tag: {
-						ISB_Spells: {
-							data: [{
-								id: "kubejs:earth_without_earth"
-								index: 0
-								level: 1
-								locked: 1b
-							}]
-							maxSpells: 15
-							mustEquip: 1b
-							spellWheel: 1b
-						}
-					}
-				}
-				type: "item"
-			}]
-			x: -1.0d
-			y: -13.5d
 		}
 	]
 	title: "Iron的魔法书：魔法与第一原则"

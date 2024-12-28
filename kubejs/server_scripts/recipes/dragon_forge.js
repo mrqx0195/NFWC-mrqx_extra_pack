@@ -1,3 +1,4 @@
+// priority: 800
 function DragonForgeRecipe(input, blood, output, dragonType) {
     this.type = 'iceandfire:dragonforge'
     this.input = input
@@ -56,4 +57,13 @@ ServerEvents.recipes(event => {
     registerCustomRecipe(new DragonForgeRecipe(Item.of('kubejs:liver_template'), Item.of('iceandfire:ice_dragon_blood'), Item.of('kubejs:dragon_blood_liver'), 'ice'))
     registerCustomRecipe(new DragonForgeRecipe(Item.of('kubejs:appendix_template'), Item.of('iceandfire:ice_dragon_blood'), Item.of('kubejs:dragon_blood_appendix'), 'ice'))
 
+    registerCustomRecipe(new DragonForgeRecipe(Item.of('kubejs:dragon_blood_muscle'), Item.of('iceandfire:fire_dragon_blood'), Item.of('kubejs:flame_muscle'), 'fire'))
+    registerCustomRecipe(new DragonForgeRecipe(Item.of('kubejs:dragon_blood_heart'), Item.of('iceandfire:fire_dragon_blood'), Item.of('kubejs:flame_heart'), 'fire'))
+    registerCustomRecipe(new DragonForgeRecipe(Item.of('kubejs:dragon_blood_stomach'), Item.of('iceandfire:fire_dragon_blood'), Item.of('kubejs:flame_stomach'), 'fire'))
+    registerCustomRecipe(new DragonForgeRecipe(Item.of('kubejs:dragon_blood_spine'), Item.of('iceandfire:fire_dragon_blood'), Item.of('kubejs:flame_spine'), 'fire'))
+
+    registerCustomRecipe(new DragonForgeRecipe(Item.of('kubejs:dragon_blood_lung'), Item.of('iceandfire:ice_dragon_blood'), Item.of("kubejs:ice_lung"), 'ice'))
+    registerCustomRecipe(new DragonForgeRecipe(Item.of('kubejs:dragon_blood_heart'), Item.of('iceandfire:ice_dragon_blood'), Item.of('kubejs:ice_heart'), 'ice'))
+    registerCustomRecipe(new DragonForgeRecipe(Item.of('kubejs:dragon_blood_rib'), Item.of('iceandfire:ice_dragon_blood'), Item.of('kubejs:ice_rib'), 'ice'))
+    registerCustomRecipe(new DragonForgeRecipe(Item.of('kubejs:dragon_blood_intestine'), Item.of('iceandfire:ice_dragon_blood'), Item.of('kubejs:ice_intestine'), 'ice'))
 })

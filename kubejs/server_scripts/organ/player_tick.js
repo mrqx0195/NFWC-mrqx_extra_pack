@@ -1,8 +1,10 @@
-// priority: 10
+// priority: 500
 PlayerEvents.tick(event => {
     let player = event.player
     if (player.age % 20 != 0) return
     let typeMap = getPlayerChestCavityTypeMap(player);
+
+
     let onlySet = new Set()
     if (typeMap.has('kubejs:player_tick_only')) {
         typeMap.get('kubejs:player_tick_only').forEach(organ => {
@@ -81,6 +83,23 @@ const organPlayerTickStrategies = {
             }
         })
     },
+    'kubejs:ice_piece': function (event, organ) {
+        let player = event.player
+        if (player.age % 100 != 0) return
+        let bodyTemp = ColdSweat.getTemperature(player, 'body')
+        let coreTemp = ColdSweat.getTemperature(player, 'core')
+        if (-25 < bodyTemp < 25) {
+            ColdSweat.setTemperature(player, 'core', coreTemp - 1)
+        }
+    },
+    'kubejs:ice_rib': function (event, organ) {
+        let player = event.entity
+        if (!player.isPlayer()) return
+        let temperature = ColdSweat.getTemperature(player, 'body')
+        if (temperature > -50) return
+        player.absorptionAmount = Math.min(player.absorptionAmount + 0.25, 20)
+    }
+
 };
 
 /**
@@ -110,7 +129,7 @@ const organPlayerTickOnlyStrategies = {
             return
         }
         event.player.potionEffects.add('kubejs:hungry_tamagotchi', 60 * 20, 0)
-        event.player.tell(Text.gray({ "translate": "kubejs.msg.tamagotchi.1" }))
+        event.player.tell(Text.gray(Text.translatable("kubejs.msg.tamagotchi.1")))
     },
     'kubejs:embers_liver': function (event, organ) {
         let player = event.player
@@ -151,26 +170,28 @@ const organPlayerTickOnlyStrategies = {
     },
     'kubejs:worm_neuron': function (event, organ) {
         let player = event.player
-        if (player.age % 600 != 0) return
+        let temperature = ColdSweat.getTemperature(player, 'body')
+        if (player.age % (600 - Math.floor(3 * temperature)) != 0) return
         if (player.nbt?.ForgeCaps['goety:lichdom']?.lichdom == 1) return
         let instance = player.getChestCavityInstance()
         // 如果该位置存在物品，则不进行生成
-        let randomIndex = Math.floor(Math.random() * 27 + 1)
+        let randomIndex = Math.floor(Math.random() * 27)
         if (instance.inventory.getItem(randomIndex) != 'minecraft:air') return
         let typeMap = getPlayerChestCavityTypeMap(player)
         let itemMap = getPlayerChestCavityItemMap(player)
         if (!typeMap.has('kubejs:organ')) return
-        let organCount = typeMap.get('kubejs:organ').length * 1
-        // 扭曲鱼缸不计算器官数量
-        let subCount = getFishInWarpSubCount(itemMap, typeMap)
-        organCount = Math.max(organCount - subCount, 1)
+        let organCount = getOrganCount(player)
         let tumor = Item.of('kubejs:random_tumor', { organData: {} })
-        let amount = Math.floor(Math.random() * 2 + 1)
+        let amount = Math.floor(Math.random() * 2 + 1 + Math.max(Math.floor(temperature / 100), 0))
         for (let i = 0; i < amount; i++) {
             let attri = randomGet(tumorAttriButeByNeuron)
             let attriName = attri.name
             // 扩散系数，用于控制属性的扩散范围(-0.5, 1.5)
             let diffusivity = Math.random() + Math.random() - 0.5
+            // 温度影响扩散系数
+            let multi = temperature >= 0 ? temperature / 50 : 0.9
+            let distance = temperature / 200
+            diffusivity = (diffusivity - distance) * multi
             // 新陈代谢效率
             let metabolism = instance.organScores.getOrDefault(new ResourceLocation('chestcavity', 'metabolism'), 0)
             // 空格子数量放大属性
@@ -203,5 +224,52 @@ const organPlayerTickOnlyStrategies = {
         if (effect.getDuration() > 20 * 5 || effect.getDuration() < 20 * 4) return
         revolSteamEngine(player)
         player.addItemCooldown(Item.of('minecraft:potion'), 20 * 20)
+    },
+    'kubejs:snow_queen_eternal_sorrow': function (event, organ) {
+        let player = event.player
+        if (player.age % 60 != 0) return
+        if (ColdSweat.getTemperature(player, 'body') > -50) return
+        ColdSweat.setTemperature(player, 'core', ColdSweat.getTemperature(player, 'core') + 10)
+        let entityList = getLivingWithinRadius(player.getLevel(), new Vec3(player.x, player.y, player.z), 5)
+        let spellPower = player.getAttributeTotalValue('irons_spellbooks:ice_spell_power')
+        entityList.forEach(e => {
+            if (e.isPlayer()) return
+            if (e.hasEffect('twilightforest:frosted')) {
+                let amplifier = e.getEffect('twilightforest:frosted').getAmplifier()
+                e.removeEffect('twilightforest:frosted')
+                if (amplifier < 4) {
+                    e.potionEffects.add("twilightforest:frosted", 20 * 6, amplifier + 1)
+                }
+                else e.setHealth(e.getHealth() / Math.min(spellPower / 4 + 1, 2))
+            }
+            else e.potionEffects.add("twilightforest:frosted", 20 * 6, 0)
+
+        })
+    },
+    'kubejs:flame_heart': function (event, organ) {
+        let player = event.entity
+        if (!player.isPlayer()) return
+        if (ColdSweat.getTemperature(player, 'body') > 50) {
+            let typeMap = getPlayerChestCavityTypeMap(player)
+            let amplifier = 0
+            if (typeMap.has('kubejs:flame')) {
+                amplifier = amplifier + typeMap.get('kubejs:flame').length
+            }
+            let value = Math.min(Math.max(Math.floor(amplifier * 0.5), 0), 8)
+            player.potionEffects.add('kubejs:overload', 30, value, false, false)
+        }
+    },
+    'kubejs:ice_heart': function (event, organ) {
+        let player = event.entity
+        if (!player.isPlayer()) return
+        if (ColdSweat.getTemperature(player, 'body') < -50) {
+            let typeMap = getPlayerChestCavityTypeMap(player)
+            let amplifier = 0
+            if (typeMap.has('kubejs:ice')) {
+                amplifier = amplifier + typeMap.get('kubejs:ice').length
+            }
+            let value = Math.min(Math.max(Math.floor(amplifier * 0.5), 0), 8)
+            player.potionEffects.add('kubejs:ice', 30, value, false, false)
+        }
     },
 };

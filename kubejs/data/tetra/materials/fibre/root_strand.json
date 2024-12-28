@@ -1,0 +1,27 @@
+{
+    "key": "root_strand",
+    "category": "fibre",
+    "primary": 4,
+    "secondary": 1,
+    "tertiary": 4.4,
+    "durability": 335,
+    "integrityCost": 2,
+    "integrityGain": 6,
+    "magicCapacity": 132,
+    "toolLevel": 0,
+    "toolEfficiency": 0,
+    "tints": {
+        "glyph": "846e3a",
+        "texture": "846e3a"
+    },
+    "textures": [
+        "crude",
+        "default"
+    ],
+    "material": {
+        "items": [ "twilightforest:root_strand" ]
+    },
+    "requiredTools": {
+        "cut": "minecraft:stone"
+    }
+}

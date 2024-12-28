@@ -1,0 +1,31 @@
+{
+    "key": "fluffy_cloud_fabric",
+    "category": "fabric",
+    "primary": 1,
+    "secondary": 0.5,
+    "tertiary": 1,
+    "durability": 10,
+    "integrityCost": 3,
+    "integrityGain": 1,
+    "magicCapacity": 600,
+    "toolLevel": 0,
+    "toolEfficiency": 0,
+    "tints": {
+        "glyph": "dfe1e3",
+        "texture": "dfe1e3"
+    },
+    "textures": [
+        "crude",
+        "default"
+    ],
+    "material": {
+        "items": ["twilightforest:fluffy_cloud"]
+    },
+    "improvements" : {
+      "destabilized/haunted": 8,
+      "stave_hone/speed": 4
+    },
+    "requiredTools": {
+        "cut": "minecraft:stone"
+    }
+}

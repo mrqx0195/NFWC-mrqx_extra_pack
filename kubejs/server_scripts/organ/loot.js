@@ -1,4 +1,4 @@
-// priority: 10
+// priority: 500
 /**
  * 实体掉落策略
  */
@@ -114,7 +114,7 @@ const entityLootOnlyStrategies = {
 
 
 /**
- * 器官实体掉落策略
+ * 器官箱子掉落策略
  * @constant
  * @type {Object<string,function(Internal.LootContextJS, organ):void>}
  */
@@ -124,7 +124,7 @@ const chestLootStrategies = {
 
 
 /**
- * 器官实体掉落唯一策略
+ * 器官箱子掉落唯一策略
  * @constant
  * @type {Object<string,function(Internal.LootContextJS, organ):void>}
  */

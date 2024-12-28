@@ -1,4 +1,4 @@
-// priority: 0
+// priority: 1000
 function Organ(itemID) {
     this.itemID = itemID
     this.pseudoOrgan = false
@@ -34,8 +34,8 @@ Organ.prototype = {
         return this
     },
 
-    pseudo: function () {
-        this.pseudoOrgan = true;
+    setPseudo: function (boolean) {
+        this.pseudoOrgan = boolean
         return this
     },
 

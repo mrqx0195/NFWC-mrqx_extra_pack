@@ -1,0 +1,30 @@
+{
+    "key": "trollvidr",
+    "category": "fibre",
+    "primary": 4,
+    "secondary": 1,
+    "tertiary": 4.4,
+    "durability": 235,
+    "integrityCost": 2,
+    "integrityGain": 6,
+    "magicCapacity": 532,
+    "toolLevel": 0,
+    "toolEfficiency": 0,
+    "effects" : {
+        "manaRepair": 4
+    },
+    "tints": {
+        "glyph": "4e4e42",
+        "texture": "4e4e42"
+    },
+    "textures": [
+        "crude",
+        "default"
+    ],
+    "material": {
+        "items": [ "twilightforest:trollvidr" ]
+    },
+    "requiredTools": {
+        "cut": "minecraft:stone"
+    }
+}

@@ -1,4 +1,4 @@
-// 
+// priority: 800
 // 击杀任务
 EntityEvents.death(event => {
     let entity = event.entity;

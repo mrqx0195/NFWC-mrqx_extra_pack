@@ -1,0 +1,34 @@
+{
+    "defaultChestCavity": [
+      { "item": "minecraft:leather", "position": 0 ,"count":  1},
+      { "item": "minecraft:paper", "position": 1 ,"count":  1},
+      { "item": "minecraft:paper", "position": 2 ,"count":  1},
+      { "item": "minecraft:paper", "position": 3 ,"count":  1},
+      { "item": "minecraft:paper", "position": 4 ,"count":  1},
+      { "item": "minecraft:paper", "position": 5 ,"count":  1},
+      { "item": "minecraft:paper", "position": 6 ,"count":  1},
+      { "item": "minecraft:paper", "position": 7 ,"count":  1},
+      { "item": "minecraft:leather", "position": 8 ,"count":  1},
+
+      { "item": "minecraft:leather", "position": 9 ,"count":  1},
+      { "item": "minecraft:paper", "position": 10 ,"count":  1},
+      { "item": "minecraft:paper", "position": 11 ,"count":  1},
+      { "item": "minecraft:paper", "position": 12 ,"count":  1},
+      { "item": "minecraft:paper", "position": 13 ,"count":  1},
+      { "item": "minecraft:paper", "position": 14 ,"count":  1},
+      { "item": "minecraft:paper", "position": 15 ,"count":  1},
+      { "item": "minecraft:paper", "position": 16 ,"count":  1},
+      { "item": "minecraft:leather", "position": 17 ,"count":  1},
+
+      { "item": "minecraft:leather", "position": 18 ,"count":  1},
+      { "item": "minecraft:paper", "position": 19 ,"count":  1},
+      { "item": "minecraft:paper", "position": 20 ,"count":  1},
+      { "item": "minecraft:paper", "position": 21 ,"count":  1},
+      { "item": "kubejs:etched_paper", "position": 22 },
+      { "item": "minecraft:paper", "position": 23 ,"count":  1},
+      { "item": "minecraft:paper", "position": 24 ,"count":  1},
+      { "item": "minecraft:paper", "position": 25 ,"count":  1},
+      { "item": "minecraft:leather", "position": 26 ,"count":  1}
+    ]
+  }
+  

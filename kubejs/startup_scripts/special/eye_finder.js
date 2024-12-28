@@ -1,9 +1,4 @@
-// priority: 100
-
-const $EyeofEnder = Java.loadClass('net.minecraft.world.entity.projectile.EyeOfEnder')
-const $Registry = Java.loadClass('net.minecraft.core.Registry')
-const $TagKey = Java.loadClass('net.minecraft.tags.TagKey')
-
+// priority: 500
 StartupEvents.registry('item', event => {
   event.create('eye_of_fortress')
     .group("kubejs.item")

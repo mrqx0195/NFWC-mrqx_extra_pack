@@ -1,4 +1,4 @@
-// priority: -1
+// priority: 1000
 global.attributes = {}
 
 StartupEvents.registry('attribute', event => {

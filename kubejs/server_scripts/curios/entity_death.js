@@ -1,4 +1,4 @@
-// priority: 101
+// priority: 800
 EntityEvents.death(event => {
     let player = event.source.player
     if (!event.source.player) { return }

@@ -3,250 +3,392 @@
 	default_quest_shape: ""
 	filename: "2"
 	group: "4E02CBDD9D86D249"
-	icon: "cataclysm:burning_ashes"
+	icon: {
+		Count: 1b
+		id: "kubejs:twilight_broken_lich_crown"
+		tag: { }
+	}
 	id: "074AE67620B22558"
-	images: [{
-		click: ""
-		corner: false
-		dev: false
-		height: 26.91358024691358d
-		hover: [ ]
-		image: "kubejs:textures/task/chapter2.png"
-		rotation: 0.0d
-		width: 15.0d
-		x: 6.75d
-		y: 3.25d
-	}]
+	images: [
+		{
+			alpha: 200
+			click: ""
+			corner: false
+			dev: false
+			height: 25.0d
+			hover: [ ]
+			image: "kubejs:textures/task/chapter4.png"
+			rotation: 0.0d
+			width: 22.787610619469024d
+			x: 1.5d
+			y: -4.0d
+		}
+		{
+			alpha: 160
+			click: ""
+			corner: false
+			dev: false
+			height: 6.0d
+			hover: [ ]
+			image: "kubejs:textures/task/tf_0.png"
+			rotation: 0.0d
+			width: 5.8989473684210525d
+			x: 18.75d
+			y: -4.5d
+		}
+		{
+			alpha: 160
+			click: ""
+			corner: false
+			dev: false
+			height: 5.0d
+			hover: [ ]
+			image: "kubejs:item/organs/legends/paradise_regained"
+			rotation: 0.0d
+			width: 5.0d
+			x: 0.75d
+			y: 10.75d
+		}
+		{
+			alpha: 160
+			click: ""
+			corner: false
+			dev: false
+			height: 5.0d
+			hover: [ ]
+			image: "minecraft:item/compass_16"
+			rotation: 0.0d
+			width: 5.0d
+			x: -16.25d
+			y: -4.75d
+		}
+		{
+			alpha: 160
+			click: ""
+			corner: false
+			dev: false
+			height: 6.0d
+			hover: [ ]
+			image: "kubejs:textures/task/chapter2_1.png"
+			rotation: 0.0d
+			width: 4.476923076923077d
+			x: 0.5d
+			y: -20.5d
+		}
+	]
 	order_index: 1
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: ["03B3A54BEDB85320"]
+			dependencies: ["2EBB4C697D81D42A"]
 			description: [
-				"到这里为止，本整合包内绝大部分的Mod内容都已经&2完成了引入&r，本条任务线的在整合包内的“任务”也算&d大功告成&r了。"
+				"本整合包提供了很多&c可以直接寻找/召唤的BOSS&r，它们&a不需要模组配合&r，你&e只需要外出寻找或者制作召唤物，即可挑战！&r"
 				""
-				"尝试击败&2各种各样的boss&r，收集&2更多种类的器官&r吧，只有这样，你才能够"
-				""
-				"&8揭开潜藏在回忆中的秘密。&r"
+				"&7本整合包并不强制你什么时候要去打某个BOSS，不过是时候提醒一下——或许你有足够的能力去挑战一下他们了！&r"
 			]
-			icon: "minecraft:oak_sapling"
-			id: "2EBB4C697D81D42A"
+			icon: "minecraft:creeper_head"
+			id: "6FB9DA46381FBCB6"
 			rewards: [{
-				count: 2
-				id: "61D2E13ED3514B25"
+				id: "73CC5B1D06BBEC73"
 				item: "lightmanscurrency:coin_gold"
 				type: "item"
 			}]
 			shape: "rsquare"
-			subtitle: "一切应当是自由的"
+			subtitle: "更多的战斗等待着你"
 			tasks: [{
-				id: "5C7476AF066BA1E3"
-				title: "开始你的旅途吧！"
+				id: "616FC1A5907518C1"
+				title: "我已了解"
 				type: "checkmark"
 			}]
-			x: 7.0d
-			y: 3.0d
+			title: "更多的挑战"
+			x: -1.75d
+			y: -4.0d
+		}
+		{
+			dependencies: ["6FB9DA46381FBCB6"]
+			description: [
+				"&d《迎战（Meet_Your_Fight）》模组&r提供了&d4个Boss&r，每个BOSS都有独立的战利品，它们可以合成装备，例如有用的饰品或很酷的武器和工具。"
+				""
+				"这些BOSS接到&e召唤&r才会前来，你需要&d按配方合成制作&r合适的&e召唤物品&r并&e手持长按右键以召唤&r。"
+			]
+			hide_dependency_lines: true
+			icon: "meetyourfight:haunted_bell"
+			id: "6C5EDA1DE6024879"
+			rewards: [{
+				id: "216E68327FB1FA56"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
+			tasks: [{
+				id: "45EFD3D48C383CCE"
+				title: "我已了解"
+				type: "checkmark"
+			}]
+			title: "迎战"
+			x: -3.25d
+			y: -6.25d
+		}
+		{
+			dependencies: ["6FB9DA46381FBCB6"]
+			description: [
+				"&d《Bosses_of_Mass_Destruction》模组&r提供了&d4个BOSS&r，他们生成在不同的结构中，需要玩家去寻找。"
+				""
+				"有的BOSS为玩家提供了寻找的方法，请到&e具体BOSS页面&r查看。"
+				""
+				"当击杀了BOSS之后，玩家可以通过使用&d硫磺花蜜&r重置该结构以&e重新挑战BOSS&r。（&e硫磺花蜜可合成获得&r）"
+			]
+			hide_dependency_lines: true
+			icon: "bosses_of_mass_destruction:brimstone_nectar"
+			id: "0779F9E4FD2E0EA0"
+			rewards: [{
+				id: "3B763BAF374788FC"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6884E3C73795E24D"
+				title: "我已了解"
+				type: "checkmark"
+			}]
+			title: "BODM"
+			x: -3.25d
+			y: -1.75d
 		}
 		{
 			dependencies: ["2EBB4C697D81D42A"]
 			description: [
-				"在通常地牢的探索过程中，偶尔你会遇到名为神恩项链的特殊饰品。携带着它击败&2具有强大破坏力和再生能力的boss&r，将会使其完全充能。"
+				"你需要通过游玩&d《魔法巫师（Hexerei）》模组&r来制作整合包较为&e核心&r的物品——&6召唤祭坛&r。&7（召唤祭坛的制作还需要一部分机械动力的内容）"
 				""
-				"与此同时，在维度地牢的特殊沙漠主题副本，你可以寻找到建立在命令方块之上的召唤祭坛。通过使用该祭坛，以满溢神恩项链作为召唤催化剂，即可随机召唤出一名&c神恩Boss&r。"
+				"&r&2——你可以通过召唤祭坛来制作一些物品、器官，也可以用来召唤来自《世界BOSS》模组的21个BOSS。&r"
 				""
-				"&c神恩Boss&r的强度并不高，因为其具有的能力与原本Boss并无二样。但是对于玩家的DPS有着相对较高的要求。在所有的阶段，神恩Boss拥有着常驻&61%最大生命值/s&r的生命恢复效率，并且，&2在每个33%血量的阶段，其会随机获得一种伤害免疫类型&r。并且在生命值的最后33%时，其会&2进行180s的DPS Check&r，如果没有在Buff消退前击败Boss，其会&4回复所有生命力&r，并且额外获得一种免疫种类。"
+				"总之，因为一些后续一些配方依赖于魔法巫师的&6混合锅&r，我们推荐你优先发展该模组。"
 				""
-				"{@pagebreak}"
-				"为了成功击败神恩Boss，你需要拥有&2魔法、远程、近战&r三种类型的有效攻击手段。"
+				"魔法巫师的&e线路并不长&r，更多的是用于增添沉浸感而产生的一些&e可选的发展内容&r，因此大可不必担心。而且魔法巫师也可以为你的探索旅途提供不小的便利。&7（谁会不喜欢可以飞行的扫帚呢？）&r"
 				""
-				"击败神恩Boss后，即可获得对应灵魂类型的神意碎片，可以用于传说器官&b复乐园&r的制作。"
+				"将&6暗影之书&r放置在书坛上，慢慢阅读吧！"
 			]
-			icon: "dimdungeons:item_blank_theme_key"
-			id: "5EB8592EEE08BF45"
-			rewards: [{
-				id: "170703F1786429BB"
-				item: {
-					Count: 1b
-					id: "dimdungeons:item_blank_theme_key"
-					tag: {
-						theme: 2
-					}
+			icon: {
+				Count: 1b
+				id: "hexerei:book_of_shadows"
+				tag: {
+					bookmarks: { }
+					chapter: 0
+					opened: 0b
+					page: 0
 				}
-				type: "item"
-			}]
-			subtitle: "一种危险的生物召唤仪式"
-			tasks: [{
-				id: "27FEE67CC6FF3B6C"
-				item: "kubejs:god_bless_empty_necklace"
-				type: "item"
-			}]
-			title: "神恩仪式"
-			x: 7.0d
-			y: 0.5d
-		}
-		{
-			dependencies: ["5EB8592EEE08BF45"]
-			description: ["击败三个不同的&6神恩Boss&r，使用三个不同灵魂类型的&4神意碎片&r，即可获得&6复乐园&r。"]
-			id: "0DCDFAD4C3288FCD"
+			}
+			id: "00E3E147FC750C90"
 			rewards: [
 				{
-					count: 3
-					id: "4F5386D4974572C8"
+					id: "69A47379C6E0551E"
 					item: {
 						Count: 1b
-						id: "lightmanscurrency:coin_gold"
-						tag: { }
+						id: "hexerei:book_of_shadows"
+						tag: {
+							bookmarks: { }
+							chapter: 0
+							opened: 0b
+							page: 0
+						}
 					}
 					type: "item"
 				}
 				{
-					count: 3
-					id: "157A6DFC58E24CDF"
-					item: "kubejs:lucky_block"
+					id: "0AB96012391DCB55"
+					item: "hexerei:book_of_shadows_altar"
 					type: "item"
 				}
 			]
-			subtitle: "乐园将重新降临"
+			shape: "rsquare"
+			subtitle: "咒术？魔法？还是科学？"
 			tasks: [{
-				id: "646B8C1B39DCF1C0"
-				item: {
-					Count: 1b
-					id: "kubejs:paradise_regained"
-					tag: { }
-				}
-				type: "item"
+				id: "3342C5E8A28DC165"
+				title: "探寻魔法的秘密"
+				type: "checkmark"
 			}]
-			x: 7.0d
-			y: -2.0d
+			title: "探寻魔法的秘密"
+			x: 0.75d
+			y: -6.5d
 		}
 		{
-			dependencies: ["0DCDFAD4C3288FCD"]
-			description: ["击败神意BossRush后，使用最终掉落的&b恩准&r，即可将复乐园升级为&4失乐园&r。"]
-			id: "31943A7BAB8816B5"
+			dependencies: ["00E3E147FC750C90"]
+			description: [
+				"虽然本整合包做了关于《魔法巫师》模组的引导，但还请多多阅读它&c极&r&b其&r&d炫&r&e酷&r的教学书——暗影之书。"
+				""
+				"好了，现在我们需要制作一个&6混合锅&r，这相当于魔法巫师模组的工作台。"
+				""
+				"再次提醒，对于这种不熟悉的“工作台”，推荐&e鼠标悬浮&r在物品上，按&eU键（展示用途）&r，再在该界面上方切换到展示合成配方，你可以&2清晰的看到它能制作的各种物品以及配方&r。&7（如下图所示）"
+				"&r{image:kubejs:textures/task/hexerei_1.png width:120 height:100 align:1}"
+				""
+				"{@pagebreak}"
+				"一些小提示："
+				""
+				"1. 混合锅虽然有交互界面，但是给混合锅&2加水&r是需要拿水桶&2直接倒入&r内部的。"
+				""
+				"2. 部分合成配方需要在混合锅&e下方&r放置&6热源方块&r，热源方块推荐&6营火&r或者&e岩浆&r，更多热源方块请在上一页的&2“展示合成配方”&r处查看。"
+				""
+				"3. 你可以在混合锅的交互界面中放入物品，也可以直接站在锅边&2将物品丢入&r锅中。"
+			]
+			id: "5B62D052AA6FF2D3"
 			rewards: [{
-				id: "18BFE49141AA5EAD"
-				item: "lightmanscurrency:coin_diamond"
+				id: "077E1F89F281FD85"
+				item: "lightmanscurrency:coin_gold"
 				type: "item"
 			}]
-			subtitle: "于是，人们被逐出了这里"
+			subtitle: "巫师的宝物"
 			tasks: [{
-				id: "4559F00C65B3FB78"
-				item: {
-					Count: 1b
-					id: "kubejs:lost_paradise"
-					tag: { }
-				}
+				id: "5343118C1A6F92EB"
+				item: "hexerei:mixing_cauldron"
 				type: "item"
 			}]
-			x: 9.5d
-			y: -2.0d
+			x: -0.5d
+			y: -7.75d
 		}
 		{
-			dependencies: ["0DCDFAD4C3288FCD"]
-			description: ["击败包含小怪的三波神意Boss挑战，即可获得用于升级复乐园的特殊碎片——&b神之认可&r。"]
-			id: "491936134333160E"
+			dependencies: ["5B62D052AA6FF2D3"]
+			description: [
+				"魔法巫师的另一重要内容则是魔法扫帚，有&6柳木扫帚&r、&6桃花心木扫帚&r等，你可以轻松地去往各种地方探险。"
+				""
+				"扫帚&2允许使用类如挎包、挂件等物品进行装饰和升级&r。具有&6DIY价值&r。"
+				""
+				"当然，就使用价值来说，如果你认为魔法巫师的扫帚使用过于冗杂，则可以尝试制作&6“魔女的扫帚”&r。&7（通过JEI搜索其合成配方）&r"
+				""
+				"&7桃花心木生成在丛林，柳树生成在沼泽，另外，本模组的一些基础资源推荐去看暗影之书里的“各种建筑”章节，在结构中寻找。&r"
+			]
+			icon: {
+				Count: 1b
+				id: "hexerei:mahogany_broom"
+				tag: { }
+			}
+			id: "7AAEA01D27277498"
 			rewards: [{
-				id: "432D9AF05E8F32B4"
-				item: "lightmanscurrency:coin_diamond"
-				type: "item"
-			}]
-			subtitle: "来自神明的三波挑战"
-			tasks: [{
-				id: "71B0F459CFE155DD"
+				id: "3CE66056F389FA4D"
 				item: {
 					Count: 1b
-					id: "gateways:gate_pearl"
+					id: "hexerei:broom_keychain"
 					tag: {
-						gateway: "kubejs:god_challenge"
+						Items: [{
+							Count: 1b
+							Slot: 0b
+							id: "kubejs:full_mark"
+						}]
 					}
 				}
-				match_nbt: true
-				type: "item"
-				weak_nbt_match: true
-			}]
-			title: "神意挑战"
-			x: 4.5d
-			y: -2.0d
-		}
-		{
-			dependencies: ["0DCDFAD4C3288FCD"]
-			description: [
-				"除了神意挑战之外，仍存在有名为&6元素狂欢&r、&6boss rush&r等挑战之门内容。"
-				""
-				"其中，难度最高的当属&9最终袭击&r，其包含了17波与袭击相关的敌人，且最终有着压轴Boss&c猎刃帝王&r。"
-			]
-			id: "6C3D3B9EBA65B44D"
-			rewards: [{
-				id: "3E4BF7CDF46FBBC9"
-				item: "lightmanscurrency:coin_diamond"
 				type: "item"
 			}]
-			subtitle: "人外有人. . ."
+			subtitle: "我也要飞起来了！"
 			tasks: [{
-				id: "3C21E3193EB6D145"
-				item: {
-					Count: 1b
-					id: "gateways:gate_pearl"
-					tag: {
-						gateway: "kubejs:final_raid"
-					}
-				}
-				match_nbt: true
-				type: "item"
-				weak_nbt_match: true
+				id: "390FA83F430207D7"
+				title: "我已了解"
+				type: "checkmark"
 			}]
-			title: "最终袭击"
-			x: 7.0d
-			y: -4.5d
+			title: "魔法与飞行扫帚"
+			x: 0.75d
+			y: -7.75d
 		}
 		{
-			dependencies: ["03B3A54BEDB85320"]
+			dependencies: ["5B62D052AA6FF2D3"]
 			description: [
-				"通过制作个人维度钥匙，&2你可以前往属于你的口袋维度&r。在这个维度，你可以通过对传送门使用各种道具，编辑允许进入的玩家列表。"
-				""
-				"手持下文道具在口袋维度内对着传送门方块右键，就可以触发对应的效果。"
-				""
-				"&6书&r：查看现有的访客列表"
-				"&6白色染料&r：切换为白名单模式"
-				"&6黑色染料&r：切换为黑名单模式"
-				"&6纸&r：通过铁砧命名纸张，将其名称编辑为你想要添加到访客列表中的玩家名称，你就可以向传送门添加新的访客。"
-				"&6砂轮&r：可以清空当前的访客列表。"
-				""
-				"私人维度往往用于放置一些私人物品——或者仅仅作为一个超平坦的地形使用。"
-			]
-			id: "5255A65B18FE588A"
-			rewards: [{
-				id: "474C5603581AF6D5"
-				item: {
-					Count: 1b
-					id: "lightmanscurrency:coin_gold"
-					tag: { }
-				}
-				type: "item"
-			}]
-			subtitle: "拥有你的口袋空间！"
-			tasks: [{
-				id: "53C3F084DD6F041A"
-				item: "dimdungeons:item_blank_build_key"
-				type: "item"
-			}]
-			title: "前往个人维度"
-			x: 3.5d
-			y: 3.0d
-		}
-		{
-			dependencies: ["03B3A54BEDB85320"]
-			description: [
-				"为了更好的探索地牢，你可以使用这两样道具——秘密之钟和归途明珠。"
-				""
-				"&6秘密之钟&r可以用于探测房间内是否包含隐藏的箱子，如果有，则会发出8个音符的响声。&7（秘密之钟可以从次元地牢内的特殊宝箱开出，特殊宝箱常在有陷阱与谜题的房间内）"
+				"&6蘸注器&r是一个用处有限的装置，但是我们需要用它来制作魔法巫师模组的&6蜡烛&r。&2（鼠标悬停于蘸注器上按Shift查看详细介绍）"
 				"&r"
-				"&6归途明珠&r则是用于快速的返回地牢的入口处。"
+				"那么请按照配方做出蘸注器吧！"
+				""
+				"制作结束以后，如果你想把混合锅中的岩浆倒出，需要将鼠标移至流体容器处，会弹出一个伸缩窗口，点击即可。&7（如下图所示）&r"
+				""
+				"{image:kubejs:textures/task/hexerei_2.png width:100 height:60 align:1}"
 			]
-			icon: "dimdungeons:item_secret_bell"
-			id: "738F8D1CEDC020F1"
+			id: "5DD1124BDBF1D5EC"
 			rewards: [{
-				id: "65B0A76807157940"
+				count: 2
+				id: "5C85989EF8D5705C"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
+			subtitle: "混合锅DLC"
+			tasks: [{
+				id: "7B63C80FB38C48CE"
+				item: "hexerei:candle_dipper"
+				type: "item"
+			}]
+			title: "更精密的装置"
+			x: -0.5d
+			y: -9.0d
+		}
+		{
+			dependencies: ["5DD1124BDBF1D5EC"]
+			description: [
+				"首先你需要通过击杀牛、猪、羊来获取动物油脂。"
+				""
+				"集齐8个动物油脂以后，将其放在装满水的混合锅中，获得油脂液。"
+				""
+				"手持蘸注器蹲下右击混合锅，将其摆放在混合锅上，确认锅中有油脂液，手持线右击蘸注器，即可开始蘸注蜡烛。"
+				""
+				"一个蘸注器可同时蘸注最多三根蜡烛。"
+				""
+				"&7若混合锅中的液体为药水，蘸注在其中的蜡烛可获得相应的药水效果。蜡烛点燃后即可在一定范围内享受此药水效果。&r"
+			]
+			id: "17612117FFCB6D00"
+			rewards: [{
+				count: 2
+				id: "606BAC53708BAC2B"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "5F5EA69CBB141D86"
+				item: "hexerei:candle"
+				type: "item"
+			}]
+			title: "为召唤祭坛而准备"
+			x: -0.5d
+			y: -10.25d
+		}
+		{
+			dependencies: ["17612117FFCB6D00"]
+			description: [
+				"关于&d《魔法巫师（Hexerei）》模组&r的相关引导，我们以制作出主线必需的“蜡烛”就结束了，后续该模组的内容不会强制玩家游玩。"
+				""
+				"当然该模组提供的内容不仅仅只有这些，你可以通过在JEI搜索框输入&d“&n@Hexerei&r”&r来查看该模组的全部物品，以更好的游玩该模组。"
+				""
+				"另外，该模组的教学书——暗影之书详细的介绍了该模组的一些内容，也推荐阅读以辅助游玩本模组。"
+			]
+			icon: {
+				Count: 1b
+				id: "hexerei:witch_helmet"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "766CACCF2C6C4E14"
+			rewards: [{
+				count: 5
+				id: "17B473535604BF92"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
+			shape: "hexagon"
+			subtitle: "教学结束"
+			tasks: [{
+				id: "34D4B3EE92412B8C"
+				title: "我已知晓"
+				type: "checkmark"
+			}]
+			title: "暗影之书：自由探索"
+			x: 0.75d
+			y: -9.0d
+		}
+		{
+			dependencies: ["17612117FFCB6D00"]
+			description: [
+				"&7召唤祭坛除了需要魔法巫师模组的配合，还需要一点点&r&b机械动力&r&7的内容。因为机械动力内容较多，还请移步FTB的机械动力专栏中查看。&r"
+				""
+				"召唤祭坛主要用于召唤生物的场景——当然这并不意味着它仅可以召唤生物，实际上也可以用于一些&6特殊配方&r的加工，获得一些&2物品&r的乃至&2效果类&r的奖励。"
+				""
+				"召唤仪式在后续的旅程中会被反复使用，如果你在&2寻找并击杀某些boss&r的话，在寻找之前，不妨查看一下祭坛的配方，或许会有更简单的方法。"
+			]
+			id: "49BD99DDA8F8454A"
+			rewards: [{
+				id: "0DD6F90701F5DBCC"
 				item: {
 					Count: 1b
 					id: "lightmanscurrency:coin_gold"
@@ -254,38 +396,655 @@
 				}
 				type: "item"
 			}]
-			subtitle: "成为掌控地牢之人"
+			subtitle: "召唤祭坛将会指引你新的道路"
+			tasks: [{
+				id: "3B5DBF68920C4ED0"
+				item: "summoningrituals:altar"
+				type: "item"
+			}]
+			title: "召唤你想要的"
+			x: 0.75d
+			y: -10.25d
+		}
+		{
+			dependencies: ["49BD99DDA8F8454A"]
+			description: [
+				"&d《世界BOSS》模组&r提供了&d21个BOSS&r，可以通过两种方式召唤："
+				""
+				""
+				"1. 通过&6交货协议&r获取BOSS召唤物直接召唤"
+				""
+				"2. 向&6召唤祭坛&r中放入特定的物品召唤"
+				"(可以通过&e在JEI中右键召唤召唤祭坛&r，或&e将鼠标悬停于背包中的召唤祭坛按U键&r查看用途来查看&e召唤配方&r。)"
+				""
+				"更多内容请移步&cFTB左侧的BOSS图鉴&r。"
+			]
+			icon: "summoningrituals:altar"
+			id: "3F1ED49F7451CD1E"
+			rewards: [{
+				count: 2
+				id: "4F28AE51354BF59D"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
+			shape: "rsquare"
+			tasks: [{
+				id: "5E1643CC3F198152"
+				title: "我已了解"
+				type: "checkmark"
+			}]
+			title: "世界BOSS"
+			x: 0.75d
+			y: -12.75d
+		}
+		{
+			dependencies: ["49BD99DDA8F8454A"]
+			description: [
+				"在本整合包中，所有的召唤仪式，都要以&6仪式催化剂&r作为结尾，放置在召唤祭坛上，以开启一场召唤仪式。"
+				""
+				"因此，在制作召唤催化剂的时候可以考虑&2一次制作较多的量&r，以满足长期的召唤仪式的需求。"
+			]
+			id: "2E04900BA7E16DF0"
+			rewards: [{
+				id: "6AC6FB9DC22CD220"
+				item: {
+					Count: 1b
+					id: "lightmanscurrency:coin_gold"
+					tag: { }
+				}
+				type: "item"
+			}]
+			subtitle: "一切召唤仪式的基础"
+			tasks: [{
+				id: "0A9E7D934E060F6E"
+				item: "kubejs:ritual_catalyst"
+				type: "item"
+			}]
+			x: 2.0d
+			y: -10.25d
+		}
+		{
+			dependencies: ["0F86AB0B5FED699D"]
+			description: [
+				"&e娜迦庭院（Naga_Courtyard）&r是&c娜迦&r的居所，是一个具有迷宫特色的花园。"
+				""
+				"击败&3娜迦&r后，会在&a庭院中间&r生成一个&6箱子&r，里面装有战利品。"
+				""
+				"击败&3娜迦&r，你便可以前往&e巫妖塔&r。"
+				""
+				"{image:kubejs:textures/task/tf_2.png width:100 height:55 align:1}"
+			]
+			icon: "twilightforest:naga_trophy"
+			id: "101B5AD211C8C431"
+			rewards: [{
+				id: "131BDEE38843FFD3"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "娜迦庭院"
+			tasks: [{
+				id: "38E354B33EC8E1F3"
+				item: "twilightforest:naga_trophy"
+				type: "item"
+			}]
+			title: "娜迦"
+			x: 6.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["101B5AD211C8C431"]
+			description: [
+				"在击杀娜迦后，&e巫妖塔&r的&d「禁止破坏结界」&r已经解除。"
+				""
+				"在巫妖塔的主塔顶部，你将面对&c巫妖&r。"
+				""
+				"&7巫妖刚出现时，身上自带的法术护盾会免疫物理伤害，你可以通过攻击反弹巫妖发射的蓝色法球，或者使用喷溅型瞬间治疗药水来破除他的护盾。&r"
+				""
+				"{image:kubejs:textures/task/tf_3.png width:100 height:61 align:1}"
+			]
+			icon: "twilightforest:lich_trophy"
+			id: "3BB0CAF0E4E9646B"
+			rewards: [{
+				id: "583EDDC14C030EFF"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "巫妖塔"
+			tasks: [{
+				id: "7D49BCBF08844457"
+				item: "twilightforest:lich_trophy"
+				type: "item"
+			}]
+			title: "巫妖"
+			x: 7.25d
+			y: -4.0d
+		}
+		{
+			dependencies: ["56E0C42A7DE07B89"]
+			description: [
+				"&7牛头人迷宫的入口是一个小型圆顶山的模样，地面上的部分因沼泽的气候大部分已经腐烂。"
+				""
+				"在&2迷宫的第二层&r，当冒险者靠近&2一个充满菌丝、四面都是栅栏围着的房间&r时，就会看见内部看守着宝箱的&c米诺菇&r。"
+				""
+				"击败米诺菇后，吃下战利品中的&6牛头人沙拉酱肉&r，这是你&e继续深入沼泽深处的凭证&r！"
+				""
+				"{image:kubejs:textures/task/tf_5.png width:160 height:90 align:1}"
+			]
+			id: "570DF613C783F4AE"
+			rewards: [{
+				id: "12C1859B776B11F0"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "牛！头！人！迷宫！"
+			tasks: [{
+				id: "48C72C4C88DBF2F1"
+				item: "twilightforest:minoshroom_trophy"
+				type: "item"
+			}]
+			x: 10.0d
+			y: -5.75d
+		}
+		{
+			dependencies: ["570DF613C783F4AE"]
+			description: [
+				"&7火焰沼泽位于暮色沼泽的深处，对于没有吃过牛头人沙拉酱肉的冒险者，此地的结界会令其燃烧！&r"
+				""
+				"强大的&c九头蛇&r栖身于&a火焰沼泽&r的深处，当玩家接近它所栖身的洞穴时，九头蛇就会出现！"
+				""
+				"&c当玩家处于远处对其发动攻击时，九头蛇将免疫这些伤害！&r"
+			]
+			id: "037467168121BC24"
+			rewards: [{
+				id: "26EA70599E2038E3"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "火焰沼泽"
+			tasks: [{
+				id: "6BD5C9EC60A385F0"
+				item: "twilightforest:hydra_trophy"
+				type: "item"
+			}]
+			x: 11.25d
+			y: -5.75d
+		}
+		{
+			dependencies: ["39A655D7B928289C"]
+			description: [
+				"&c幻影骑士&r位于&a黑暗森林群系&r的&2地精骑士要塞&r中，要塞内通道错综复杂，怪物众多，请做好准备！"
+				""
+				"想要开启要塞的大门，需要将任意一种&6暮色BOSS奖杯&r放置于门口的&6战利品宝座&r上。"
+				""
+				"幻影骑士的房间一般被黑曜石环绕，入口被铁栏杆堵住，发现黑曜石即是找到他们的标志，&e只有击杀全部的幻影骑士，才能得到奖励&r！"
+				""
+				"{image:kubejs:textures/task/tf_4.png width:160 height:92 align:1}"
+			]
+			icon: "twilightforest:knight_phantom_trophy"
+			id: "641BC1AE9021ACC1"
+			rewards: [{
+				id: "3A2563E8BAF5BA01"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "地精骑士要塞"
+			tasks: [{
+				id: "4C4ED1F1895D295C"
+				item: "twilightforest:knight_phantom_trophy"
+				type: "item"
+			}]
+			x: 10.0d
+			y: -2.25d
+		}
+		{
+			dependencies: ["641BC1AE9021ACC1"]
+			description: [
+				"&c暮初恶魂&r盘踞在&a黑暗森林腹地&r中的&2黑暗高塔&r顶部，爬上高塔，并击败它！"
+				""
+				"注意，&c暮初恶魂本身常驻高额的减伤，想要击败它需要借助恶魂陷阱方块&r。"
+				""
+				"高塔顶层四角存在四个&6恶魂陷阱&r方块，你需要在方块旁边击杀&b砷铅铁恶灵&r为其充能。"
+				""
+				"如果&3暮初恶魂&r在陷阱上方，当你&e激活&r&6恶魂陷阱&r时，即可&e将暮初恶魂拉到地面上，并解除它的防御&r。"
+			]
+			id: "48FC520F4BC83201"
+			rewards: [{
+				id: "4659EEEE5BC50593"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "黑暗高塔"
+			tasks: [{
+				id: "49C9630D658819B6"
+				item: "twilightforest:ur_ghast_trophy"
+				type: "item"
+			}]
+			x: 11.25d
+			y: -2.25d
+		}
+		{
+			dependencies: ["7E420C3161AD2755"]
+			description: [
+				"&a雪怪巢穴&r是生成于&2积雪森林&r中的大型洞窟，是大量&b雪怪&r和&c雪怪首领&r的居所。"
+				""
+				"击败&3雪怪首领&r，获得&6雪人首领毛皮&r，这是&e深入探索雪原的凭证&r！"
+				""
+				"{image:kubejs:textures/task/tf_7.png width:160 height:92 align:1}"
+			]
+			id: "38F5A9C1540EFABA"
+			rewards: [{
+				id: "0ABC2904FA185423"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "393F1ADD4CF362FF"
+				item: "twilightforest:alpha_yeti_trophy"
+				type: "item"
+			}]
+			x: 10.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["38F5A9C1540EFABA"]
+			description: [
+				"&a极光宫殿&r位于荒冷的&2极光冰川&r之上，这里是&c冰雪女王&r的领地。"
+				""
+				"极光宫殿大厅里到处充斥着&b冰雪守卫&r和&b冰精灵&r，请小心应对！"
+				""
+				"&7冰雪女王在宫殿顶部附近完全封闭的一处房间中，该房间的特征是由冰与浮冰组成。&r"
+			]
+			id: "33F094FCCA7F6F8D"
+			rewards: [{
+				id: "2D666F85C3527DE8"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "极光宫殿"
+			tasks: [{
+				id: "1E145EF8BBF19456"
+				item: "twilightforest:snow_queen_trophy"
+				type: "item"
+			}]
+			x: 11.25d
+			y: -4.0d
+		}
+		{
+			dependencies: ["72D090FF4C44DAAD"]
+			description: [
+				"&d《暮色森林（The_Twilight_Forest）》模组&r增加了一个被永恒之夜的笼罩的森林世界。"
+				""
+				"做一个&a2×2的小水池&r，水池旁边&a放满植物&r，再向水池投掷一颗&6钻石&r。只见一道闪电劈过，暮色世界的传送门便会打开！"
+				""
+				"你可以&a再次通过传送门回到主世界&r，也可以在暮色森林中以同样的方式&a搭建一个新的传送门以返回主世界&r。"
+				""
+				"{image:kubejs:textures/task/tf_1.png width:120 height:90 align:1}"
+			]
+			icon: "twilightforest:twilight_portal_miniature_structure"
+			id: "48BB99878B94D662"
+			rewards: [{
+				id: "6F829652DD773941"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			shape: "rsquare"
+			subtitle: "被永恒之夜笼罩的世界"
+			tasks: [{
+				dimension: "twilightforest:twilight_forest"
+				id: "291E48743E0AE14D"
+				title: "前往暮色森林"
+				type: "dimension"
+			}]
+			title: "欢迎来到暮色森林！"
+			x: 3.25d
+			y: -4.0d
+		}
+		{
+			dependencies: ["48BB99878B94D662"]
+			description: [
+				"&c暮色森林的BOSS分别处于不同的区域，同时玩家需要按照流程击杀前置BOSS，才能解锁后续的区域可供探索。&r"
+				""
+				"如果你不熟悉暮色森林模组也不必担心，你可以参考此处&aFTB任务流程&r来游玩。"
+			]
+			icon: "twilightforest:green_force_field"
+			id: "0F86AB0B5FED699D"
+			rewards: [{
+				id: "42A9B5C0B65EDE6B"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
+			shape: "hexagon"
+			subtitle: "流程化的探索设计"
+			tasks: [{
+				id: "504BD089AAF250FF"
+				title: "我已了解"
+				type: "checkmark"
+			}]
+			title: "限制禁止"
+			x: 4.75d
+			y: -4.0d
+		}
+		{
+			dependencies: ["0F86AB0B5FED699D"]
+			description: [
+				"&7魔法森林深处似乎有一只神奇的羊？&r"
+				""
+				"&c该任务并不会推动暮色森林的进度。&r"
+			]
+			id: "750E1382B9E07243"
+			rewards: [{
+				id: "263ADA6AF73E4217"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "博学的羊"
+			tasks: [{
+				id: "6FFEAFE3199F3D5F"
+				item: "twilightforest:quest_ram_trophy"
+				type: "item"
+			}]
+			x: 4.75d
+			y: -2.25d
+		}
+		{
+			dependencies: ["3BB0CAF0E4E9646B"]
+			description: [
+				"&7黑暗森林群系——繁茂密集的黑树树叶遮住了天空，使得原本昏暗的环境变得更黑，如果你没有击杀巫妖，此地的结界会蒙蔽你的双眼！"
+				""
+				"&7在这无尽的黑暗中存在着成群的骷髅德鲁伊、体型庞大的蜘蛛，以及隐藏在地表之下迷宫般复杂的地精骑士要塞——幻影骑士们在其中长眠。"
+				""
+				"&7位于森林中央的塔楼顶端，似乎有什么在游荡着..."
+			]
+			hide_dependency_lines: true
+			id: "39A655D7B928289C"
+			rewards: [
+				{
+					id: "0DA3400040FA4422"
+					item: {
+						Count: 1b
+						id: "minecraft:potion"
+						tag: {
+							Potion: "minecraft:night_vision"
+						}
+					}
+					type: "item"
+				}
+				{
+					count: 5
+					id: "1C5B8677A392C720"
+					item: "lightmanscurrency:coin_iron"
+					type: "item"
+				}
+			]
+			shape: "hexagon"
+			subtitle: "至黑之夜"
+			tasks: [{
+				biome: "twilightforest:dark_forest"
+				icon: "minecraft:writable_book"
+				id: "2F45C918C397A0C3"
+				title: "踏入黑暗森林"
+				type: "biome"
+			}]
+			x: 8.75d
+			y: -2.25d
+		}
+		{
+			dependencies: ["3BB0CAF0E4E9646B"]
+			description: [
+				"&7暮色沼泽是暮色森林中类似主世界沼泽的生物群系，据说沼泽的深处隐藏着一片危险的地域。"
+				""
+				"&7如果你没有击杀巫妖，此地的结界会使你饥饿难耐！"
+			]
+			hide_dependency_lines: true
+			icon: "minecraft:writable_book"
+			id: "56E0C42A7DE07B89"
+			rewards: [{
+				count: 5
+				id: "13A468C13BAEA608"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
+			shape: "hexagon"
+			subtitle: "薄萤之处"
+			tasks: [{
+				biome: "twilightforest:swamp"
+				icon: "minecraft:writable_book"
+				id: "1E9B77B01746668A"
+				title: "踏入暮色沼泽"
+				type: "biome"
+			}]
+			x: 8.75d
+			y: -5.75d
+		}
+		{
+			dependencies: ["0F86AB0B5FED699D"]
+			description: [
+				"&6魔法地图&r会用&a不同的颜色显示暮色森林各个群系&r，用&2图标显示特殊建筑&r的所在位置。"
+				""
+				"如果你打算探索暮色森林，拥有一张或者多张魔法地图会让你事半功倍！"
+				""
+				"&7有关其材料，据说渡鸦经常栖息在黑曜石柱旁边，火炬浆果常见于地下矿洞。"
+				""
+				"{image:kubejs:textures/task/tf_6.png width:100 height:100 align:1}"
+			]
+			icon: "twilightforest:magic_map_focus"
+			id: "6CF10A38E7E63A5D"
+			rewards: [{
+				id: "6497FFFC238F6385"
+				item: {
+					Count: 1b
+					id: "minecraft:potion"
+					tag: {
+						Potion: "minecraft:night_vision"
+					}
+				}
+				type: "item"
+			}]
+			subtitle: "随魔法指引"
 			tasks: [
 				{
-					id: "33343BF20AC4B52E"
-					item: "dimdungeons:item_secret_bell"
+					id: "212F1262A6269713"
+					item: "twilightforest:magic_map_focus"
 					type: "item"
 				}
 				{
-					id: "1B3FB946CEE7C187"
-					item: "dimdungeons:item_homeward_pearl"
+					id: "1898951DEC07D588"
+					item: "twilightforest:magic_map"
 					type: "item"
 				}
 			]
-			title: "地牢探险家"
+			title: "魔法地图"
 			x: 4.75d
-			y: 3.0d
+			y: -5.75d
 		}
 		{
-			dependencies: ["03B3A54BEDB85320"]
+			dependencies: ["3BB0CAF0E4E9646B"]
 			description: [
-				"在基础地牢的冒险箱子中，偶然间你会遇到名为&2高级传送门&r钥匙的物品。"
+				"&7积雪森林是雪怪和寒冬狼的栖息地。"
 				""
-				"高级传送门钥匙能够用于开启&6高级传送门&r，前往高级副本。在高级副本中，箱子的掉落物将会变得更加丰富，并且，能够遇到超越常规附魔等级上限的附魔书！"
-				""
-				"激活高级钥匙需要&d高级传送门&r，搭建方法是在&6传送门基石&r两侧放上&6维度皇冠座&r，且&2在两侧石柱尖顶挂上白色或紫色的旗帜&r。&7（如下图所示；维度皇冠座在地牢宝箱中获得）"
-				"&r"
-				"{image:kubejs:textures/task/dimensiona_3.png width:160 height:80 align:1}"
+				"&7如果你没有击杀巫妖，此地的结界会掀起暴风雪！"
 			]
-			icon: "dimdungeons:block_portal_crown"
-			id: "45AB5B1831B0AACF"
+			hide_dependency_lines: true
+			id: "7E420C3161AD2755"
 			rewards: [{
-				id: "005036E6044961EE"
+				count: 5
+				id: "40333C1F03709CC8"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
+			shape: "hexagon"
+			subtitle: "雪花如钻石星辰闪耀"
+			tasks: [{
+				biome: "twilightforest:snowy_forest"
+				icon: "minecraft:writable_book"
+				id: "1CC27C2B42F600EF"
+				title: "踏入积雪森林"
+				type: "biome"
+			}]
+			x: 8.75d
+			y: -4.0d
+		}
+		{
+			dependencies: [
+				"037467168121BC24"
+				"48FC520F4BC83201"
+				"33F094FCCA7F6F8D"
+			]
+			description: [
+				"&a荆棘高地&r虽然表面上看起来不是很危险，但地下深处却有着长满藤蔓的&2巨魔洞穴&r，以及苍穹之上巨人居住的&2云上小屋&r也在此处生成。"
+				""
+				"&c只有击败九头蛇、暮初恶魂、冰雪女王才能踏上这片土地，否则此地的结界会降下酸雨惩罚外来者。&r"
+			]
+			id: "03BCDDF1F286B630"
+			rewards: [{
+				id: "6737425F7C9E6465"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			shape: "hexagon"
+			subtitle: "最终对决"
+			tasks: [{
+				biome: "twilightforest:highlands"
+				icon: "minecraft:writable_book"
+				id: "2B338533B8C7877D"
+				title: "踏入荆棘高地"
+				type: "biome"
+			}]
+			x: 12.75d
+			y: -4.0d
+		}
+		{
+			dependencies: ["03BCDDF1F286B630"]
+			description: [
+				"深入&2荆棘高地&r的地下的&a巨魔洞窟&r，获得&6魔豆&r。"
+				""
+				"将&6魔豆&r种植在&6肥沃泥土&r上，便可以生成巨大的“通天豆茎”，前往&a云上小屋&r击败巨人，获得&6巨人镐&r。"
+				""
+				"紧接着返回&a巨魔洞窟&r，使用&6巨人镐&r破坏&6巨型黑曜石&r，拿取里面的宝藏！"
+			]
+			id: "2E58F3BF28E91D76"
+			rewards: [{
+				id: "7BF84914E384BACC"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "史蒂夫与豆茎"
+			tasks: [{
+				id: "654EA2D263B29AFF"
+				item: {
+					Count: 1b
+					id: "twilightforest:lamp_of_cinders"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			title: "天上欢庆，地下轰鸣"
+			x: 14.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["2E58F3BF28E91D76"]
+			description: [
+				"&c终焉城堡&r是生成在&2荆棘之地&r中的白色城堡，它看起来曾经很辉煌，而现在已经被荆棘环绕。"
+				""
+				"当你拥有余烬之灯后，荆棘之地的酸雨结界便会解除，使用余烬之灯扫清荆棘，便可以进入城堡。"
+				""
+				"{image:kubejs:textures/task/tf_8.png width:200 height:107 align:1}"
+			]
+			icon: "minecraft:writable_book"
+			id: "1259D5EECF1BF4C8"
+			rewards: [{
+				id: "73C3C67161B0703A"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			shape: "hexagon"
+			subtitle: "那一天仍未到来..."
+			tasks: [{
+				id: "15DA2448F66E40FC"
+				title: "我已了解"
+				type: "checkmark"
+			}]
+			title: "终焉城堡"
+			x: 15.25d
+			y: -4.0d
+		}
+		{
+			dependencies: ["2EBB4C697D81D42A"]
+			description: [
+				"&b一封信从天空飘落——前往天境的传送门在未来会开启...&r"
+				""
+				"{image:kubejs:textures/task/aether_0.png width:200 height:107 align:1}"
+			]
+			hide: true
+			hide_dependency_lines: true
+			icon: "minecraft:writable_book"
+			id: "32CEC7C884BE8579"
+			rewards: [{
+				id: "55380D627A696F8C"
+				item: "kubejs:water_candy"
+				type: "item"
+			}]
+			shape: "hexagon"
+			subtitle: "敬请期待..."
+			tasks: [{
+				id: "67E5FE8BD2F5AADC"
+				title: "我已了解"
+				type: "checkmark"
+			}]
+			title: "来自天空的信"
+			x: 4.75d
+			y: -8.25d
+		}
+		{
+			dependencies: ["2EBB4C697D81D42A"]
+			description: [
+				"很快，在主世界的探索就不能满足你的所有欲望——周边的遗迹已然被探索干净，而过远的地区前去又非常麻烦。"
+				""
+				"此时，你便可以通过在家制作&6维度地牢之门&r前往地牢进行探险！维度地牢的探险难度不高，但其中各个场景各有乐趣所在。并且，其中的奖励箱往往具有着比主世界奖励箱更有用的物品！"
+			]
+			id: "4452DA9A1D3D80A0"
+			rewards: [
+				{
+					id: "4C1AB80049C082EB"
+					item: {
+						Count: 1b
+						id: "patchouli:guide_book"
+						tag: {
+							"patchouli:book": "dimdungeons:guide_book"
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "5DF8378BB6EF11A6"
+					item: "lightmanscurrency:coin_gold"
+					type: "item"
+				}
+			]
+			shape: "rsquare"
+			subtitle: "探索新世界"
+			tasks: [{
+				id: "0C77FA41D567BA94"
+				item: "dimdungeons:item_portal_key"
+				type: "item"
+			}]
+			title: "维度地牢"
+			x: 0.75d
+			y: -1.5d
+		}
+		{
+			dependencies: ["4452DA9A1D3D80A0"]
+			description: [
+				"你可以按照配方制作自己的钥匙刻字台，它也有着类似于末地传送门一样的激活钥匙的功能，这样就可以在家激活传送门钥匙了。"
+				""
+				"&7（月光石生成在丛林和沼泽地底下的月光石晶洞中）&r"
+			]
+			id: "4264FBF118BE08EA"
+			rewards: [{
+				id: "6C1107835A5473E2"
 				item: {
 					Count: 1b
 					id: "lightmanscurrency:coin_gold"
@@ -293,16 +1052,37 @@
 				}
 				type: "item"
 			}]
-			subtitle: "前往高级地牢！"
+			subtitle: "在家也能激活钥匙！"
 			tasks: [{
-				count: 2L
-				id: "7598190369BC5AB7"
-				item: "dimdungeons:block_portal_crown"
+				id: "0378C5A5729CEBDB"
+				item: "dimdungeons:block_key_charger"
 				type: "item"
 			}]
-			title: "高级维度地牢"
-			x: 3.5d
-			y: 4.25d
+			title: "制作钥匙刻字台！"
+			x: -0.75d
+			y: -1.5d
+		}
+		{
+			dependencies: ["03B3A54BEDB85320"]
+			description: [
+				"如果你有多余的钱币，或许可以直接在交易终端与村民交易所/其他玩家进行交易。"
+				""
+				"村民交易所是一个&6昂贵品&r的交易处，但花钱买方便不正是我们一开始所计划的吗？"
+			]
+			id: "04B034D2CF2DA900"
+			rewards: [{
+				id: "6EE1EB8484D97BBC"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "更多消费的地方！"
+			tasks: [{
+				id: "49392C421B406830"
+				item: "lightmanscurrency:terminal"
+				type: "item"
+			}]
+			x: 2.25d
+			y: 0.75d
 		}
 		{
 			dependencies: ["4452DA9A1D3D80A0"]
@@ -355,19 +1135,24 @@
 				}
 			]
 			title: "维度地牢"
-			x: 4.75d
-			y: 4.25d
+			x: 0.75d
+			y: 0.75d
 		}
 		{
-			dependencies: ["4452DA9A1D3D80A0"]
+			dependencies: ["03B3A54BEDB85320"]
 			description: [
-				"你可以按照配方制作自己的钥匙刻字台，它也有着类似于末地传送门一样的激活钥匙的功能，这样就可以在家激活传送门钥匙了。"
+				"在基础地牢的冒险箱子中，偶然间你会遇到名为&2高级传送门&r钥匙的物品。"
 				""
-				"&7（月光石生成在丛林和沼泽地底下的月光石晶洞中）&r"
+				"高级传送门钥匙能够用于开启&6高级传送门&r，前往高级副本。在高级副本中，箱子的掉落物将会变得更加丰富，并且，能够遇到超越常规附魔等级上限的附魔书！"
+				""
+				"激活高级钥匙需要&d高级传送门&r，搭建方法是在&6传送门基石&r两侧放上&6维度皇冠座&r，且&2在两侧石柱尖顶挂上白色或紫色的旗帜&r。&7（如下图所示；维度皇冠座在地牢宝箱中获得）"
+				"&r"
+				"{image:kubejs:textures/task/dimensiona_3.png width:160 height:80 align:1}"
 			]
-			id: "4264FBF118BE08EA"
+			icon: "dimdungeons:block_portal_crown"
+			id: "45AB5B1831B0AACF"
 			rewards: [{
-				id: "6C1107835A5473E2"
+				id: "005036E6044961EE"
 				item: {
 					Count: 1b
 					id: "lightmanscurrency:coin_gold"
@@ -375,15 +1160,16 @@
 				}
 				type: "item"
 			}]
-			subtitle: "在家也能激活钥匙！"
+			subtitle: "前往高级地牢！"
 			tasks: [{
-				id: "0378C5A5729CEBDB"
-				item: "dimdungeons:block_key_charger"
+				count: 2L
+				id: "7598190369BC5AB7"
+				item: "dimdungeons:block_portal_crown"
 				type: "item"
 			}]
-			title: "制作钥匙刻字台！"
-			x: 3.5d
-			y: 7.0d
+			title: "高级维度地牢"
+			x: -0.75d
+			y: 2.25d
 		}
 		{
 			dependencies: ["45AB5B1831B0AACF"]
@@ -411,607 +1197,1440 @@
 				type: "item"
 			}]
 			title: "传送大厅？！"
-			x: 2.0d
-			y: 4.25d
+			x: -0.75d
+			y: 3.5d
 		}
 		{
-			dependencies: ["2EBB4C697D81D42A"]
+			dependencies: ["03B3A54BEDB85320"]
 			description: [
-				"在这个世界上，仍旧存在着旧世界的灾变之力。在某些特定的建筑结构内，你会遭遇拥有&4灾变之力&r的特殊怪物。"
+				"通过制作个人维度钥匙，&2你可以前往属于你的口袋维度&r。在这个维度，你可以通过对传送门使用各种道具，编辑允许进入的玩家列表。"
+				""
+				"手持下文道具在口袋维度内对着传送门方块右键，就可以触发对应的效果。"
+				""
+				"&6书&r：查看现有的访客列表"
+				"&6白色染料&r：切换为白名单模式"
+				"&6黑色染料&r：切换为黑名单模式"
+				"&6纸&r：通过铁砧命名纸张，将其名称编辑为你想要添加到访客列表中的玩家名称，你就可以向传送门添加新的访客。"
+				"&6砂轮&r：可以清空当前的访客列表。"
+				""
+				"私人维度往往用于放置一些私人物品——或者仅仅作为一个超平坦的地形使用。"
+			]
+			hide_dependency_lines: true
+			id: "5255A65B18FE588A"
+			rewards: [{
+				id: "474C5603581AF6D5"
+				item: {
+					Count: 1b
+					id: "lightmanscurrency:coin_gold"
+					tag: { }
+				}
+				type: "item"
+			}]
+			subtitle: "拥有你的口袋空间！"
+			tasks: [{
+				id: "53C3F084DD6F041A"
+				item: "dimdungeons:item_blank_build_key"
+				type: "item"
+			}]
+			title: "前往个人维度"
+			x: 2.25d
+			y: 2.25d
+		}
+		{
+			dependencies: ["03B3A54BEDB85320"]
+			description: [
+				"为了更好的探索地牢，你可以使用这两样道具——秘密之钟和归途明珠。"
+				""
+				"&6秘密之钟&r可以用于探测房间内是否包含隐藏的箱子，如果有，则会发出8个音符的响声。&7（秘密之钟可以从次元地牢内的特殊宝箱开出，特殊宝箱常在有陷阱与谜题的房间内）"
+				"&r"
+				"&6归途明珠&r则是用于快速的返回地牢的入口处。"
+			]
+			icon: "dimdungeons:item_secret_bell"
+			id: "738F8D1CEDC020F1"
+			rewards: [{
+				id: "65B0A76807157940"
+				item: {
+					Count: 1b
+					id: "lightmanscurrency:coin_gold"
+					tag: { }
+				}
+				type: "item"
+			}]
+			subtitle: "成为掌控地牢之人"
+			tasks: [
+				{
+					id: "33343BF20AC4B52E"
+					item: "dimdungeons:item_secret_bell"
+					type: "item"
+				}
+				{
+					id: "1B3FB946CEE7C187"
+					item: "dimdungeons:item_homeward_pearl"
+					type: "item"
+				}
+			]
+			title: "地牢探险家"
+			x: -0.75d
+			y: 0.75d
+		}
+		{
+			dependencies: ["15A36D9385499A77"]
+			description: [
+				"到这里为止，本整合包内绝大部分的Mod内容都已经&2完成了引入&r，本条任务线的在整合包内的“任务”也算&d大功告成&r了。"
+				""
+				"之后可以尝试击败&2各种各样的boss&r，收集&2更多种类的器官&r吧！"
+				""
+				"当你足够强大，可以&e挑战更高的难度&r！在&e4级难度开始还会有新的掉落&r！"
+				""
+				"&7也请期待之后的版本更新！&r"
+			]
+			icon: "minecraft:oak_sapling"
+			id: "2EBB4C697D81D42A"
+			rewards: [{
+				count: 2
+				id: "61D2E13ED3514B25"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			shape: "rsquare"
+			subtitle: "一切应当是自由的"
+			tasks: [{
+				id: "5C7476AF066BA1E3"
+				title: "开始你的旅途吧！"
+				type: "checkmark"
+			}]
+			x: 0.75d
+			y: -4.0d
+		}
+		{
+			dependencies: ["03B3A54BEDB85320"]
+			description: [
+				"在通常地牢的探索过程中，偶尔你会遇到名为神恩项链的特殊饰品。携带着它击败&2具有强大破坏力和再生能力的boss&r，将会使其完全充能。"
+				""
+				"与此同时，在维度地牢的特殊沙漠主题副本，你可以寻找到建立在命令方块之上的召唤祭坛。通过使用该祭坛，以满溢神恩项链作为召唤催化剂，即可随机召唤出一名&c神恩Boss&r。"
+				""
+				"&c神恩Boss&r的强度并不高，因为其具有的能力与原本Boss并无二样。但是对于玩家的DPS有着相对较高的要求。在所有的阶段，神恩Boss拥有着常驻&61%最大生命值/s&r的生命恢复效率，并且，&2在每个33%血量的阶段，其会随机获得一种伤害免疫类型&r。并且在生命值的最后33%时，其会&2进行180s的DPS Check&r，如果没有在Buff消退前击败Boss，其会&4回复所有生命力&r，并且额外获得一种免疫种类。"
+				""
+				"{@pagebreak}"
+				"为了成功击败神恩Boss，你需要拥有&2魔法、远程、近战&r三种类型的有效攻击手段。"
+				""
+				"击败神恩Boss后，即可获得对应灵魂类型的神意碎片，可以用于传说器官&b复乐园&r的制作。"
+			]
+			icon: "dimdungeons:item_blank_theme_key"
+			id: "5EB8592EEE08BF45"
+			rewards: [{
+				id: "170703F1786429BB"
+				item: {
+					Count: 1b
+					id: "dimdungeons:item_blank_theme_key"
+					tag: {
+						theme: 2
+					}
+				}
+				type: "item"
+			}]
+			subtitle: "一种危险的生物召唤仪式"
+			tasks: [{
+				id: "27FEE67CC6FF3B6C"
+				item: "kubejs:god_bless_empty_necklace"
+				type: "item"
+			}]
+			title: "神恩仪式"
+			x: 0.75d
+			y: 4.75d
+		}
+		{
+			dependencies: ["5EB8592EEE08BF45"]
+			description: ["击败三个不同的&6神恩Boss&r，使用三个不同灵魂类型的&4神意碎片&r，即可获得&6复乐园&r。"]
+			id: "0DCDFAD4C3288FCD"
+			rewards: [
+				{
+					count: 3
+					id: "4F5386D4974572C8"
+					item: {
+						Count: 1b
+						id: "lightmanscurrency:coin_gold"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					count: 3
+					id: "157A6DFC58E24CDF"
+					item: "kubejs:lucky_block"
+					type: "item"
+				}
+			]
+			subtitle: "乐园将重新降临"
+			tasks: [{
+				id: "646B8C1B39DCF1C0"
+				item: {
+					Count: 1b
+					id: "kubejs:paradise_regained"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 0.75d
+			y: 6.25d
+		}
+		{
+			dependencies: ["0DCDFAD4C3288FCD"]
+			description: ["击败包含小怪的三波神意Boss挑战，即可获得用于升级复乐园的特殊碎片——&b神之认可&r。"]
+			id: "491936134333160E"
+			rewards: [{
+				id: "432D9AF05E8F32B4"
+				item: "lightmanscurrency:coin_diamond"
+				type: "item"
+			}]
+			subtitle: "来自神明的三波挑战"
+			tasks: [{
+				id: "71B0F459CFE155DD"
+				item: {
+					Count: 1b
+					id: "gateways:gate_pearl"
+					tag: {
+						gateway: "kubejs:god_challenge"
+					}
+				}
+				match_nbt: true
+				type: "item"
+				weak_nbt_match: true
+			}]
+			title: "神意挑战"
+			x: -0.75d
+			y: 6.25d
+		}
+		{
+			dependencies: ["0DCDFAD4C3288FCD"]
+			description: [
+				"除了神意挑战之外，仍存在有名为&6元素狂欢&r、&6boss rush&r等挑战之门内容。"
+				""
+				"其中，难度最高的当属&4最终袭击&r，其包含了17波与袭击相关的敌人，且最终有着压轴Boss&c猎刃帝王&r。"
+				""
+				"&7通过交货协议可以获得最终袭击珍珠。&r"
+			]
+			id: "6C3D3B9EBA65B44D"
+			rewards: [{
+				id: "3E4BF7CDF46FBBC9"
+				item: "lightmanscurrency:coin_diamond"
+				type: "item"
+			}]
+			subtitle: "人外有人. . ."
+			tasks: [{
+				id: "3C21E3193EB6D145"
+				item: {
+					Count: 1b
+					id: "gateways:gate_pearl"
+					tag: {
+						gateway: "kubejs:final_raid"
+					}
+				}
+				match_nbt: true
+				type: "item"
+				weak_nbt_match: true
+			}]
+			title: "最终袭击"
+			x: 0.75d
+			y: 7.75d
+		}
+		{
+			dependencies: ["0DCDFAD4C3288FCD"]
+			description: ["击败神意BossRush后，使用最终掉落的&b恩准&r，即可将复乐园升级为&4失乐园&r。"]
+			id: "31943A7BAB8816B5"
+			rewards: [{
+				id: "18BFE49141AA5EAD"
+				item: "lightmanscurrency:coin_diamond"
+				type: "item"
+			}]
+			subtitle: "于是，人们被逐出了这里"
+			tasks: [{
+				id: "4559F00C65B3FB78"
+				item: {
+					Count: 1b
+					id: "kubejs:lost_paradise"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 2.25d
+			y: 6.25d
+		}
+		{
+			dependencies: ["6FB9DA46381FBCB6"]
+			description: [
+				"如果你喜欢冒险，可以留意野外的建筑，搜寻&c尸巫&r的踪迹。"
+				""
+				"不过要小心一点，传说中的尸巫十分强大！"
+			]
+			hide_dependency_lines: true
+			icon: "minecraft:compass"
+			id: "301136CE0EB4EB37"
+			rewards: [{
+				id: "5BD041C052A79E8D"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
+			tasks: [{
+				id: "0D245850FB47BBB0"
+				title: "我已了解"
+				type: "checkmark"
+			}]
+			title: "墓园隐藏的秘密"
+			x: -4.75d
+			y: -4.75d
+		}
+		{
+			dependencies: ["301136CE0EB4EB37"]
+			description: [
+				"&d旧哨塔&r是一座高耸的、由石砖组成的塔状结构，塔底是包含矿道状的陷阱结构，塔顶包含&6不祥的骨杖碎片&r之一。"
+				""
+				"{image:kubejs:textures/task/graveyard_2.png width:200 height:110 align:center}"
+			]
+			hide_dependency_lines: true
+			icon: "minecraft:writable_book"
+			id: "51F271AA9D04AF89"
+			rewards: [{
+				id: "225962EBB608381A"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "2A99AF7B7506129B"
+				item: "graveyard:upper_bone_staff"
+				type: "item"
+			}]
+			title: "其一：旧哨塔"
+			x: -7.25d
+			y: -4.75d
+		}
+		{
+			dependencies: ["301136CE0EB4EB37"]
+			description: [
+				"&d血祀坑&r是凹陷的丘陵结构，包含&6不祥的骨杖碎片&r之一。"
+				""
+				"{image:kubejs:textures/task/graveyard_1.png width:200 height:110 align:center}"
+			]
+			hide_dependency_lines: true
+			icon: "minecraft:writable_book"
+			id: "4C0E9A44B99D9131"
+			rewards: [{
+				id: "719D2289DAA5B4A9"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "19B4AE903C0FBF20"
+				item: "graveyard:middle_bone_staff"
+				type: "item"
+			}]
+			title: "其二：血祀坑"
+			x: -8.25d
+			y: -4.75d
+		}
+		{
+			dependencies: ["301136CE0EB4EB37"]
+			description: [
+				"&d破败营地&r是由两个帐篷组成的结构，包含&6不祥的骨杖碎片&r之一。"
+				""
+				"{image:kubejs:textures/task/graveyard_3.png width:200 height:110 align:1}"
+			]
+			hide_dependency_lines: true
+			icon: "minecraft:writable_book"
+			id: "7C1B11FB0939E7BB"
+			rewards: [{
+				id: "63673DAF79448450"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "1357AC5F17C060C2"
+				item: "graveyard:lower_bone_staff"
+				type: "item"
+			}]
+			title: "其三：破败营地"
+			x: -9.25d
+			y: -4.75d
+		}
+		{
+			dependencies: ["0854A4E118289769"]
+			description: [
+				"&d尸巫监狱&r自然生成在&2海洋生物群系&r里的&2天空&r中，是一座&a巨型浮岛结构&r。"
+				""
+				"岛上包含&e召唤尸巫的祭坛结构&r和一个巨大的骨头结构。"
+				""
+				"{image:kubejs:textures/task/graveyard_4.png width:200 height:110 align:center}"
+			]
+			icon: "graveyard:skeleton_hand"
+			id: "6C526690FC57E578"
+			rewards: [{
+				id: "3367C1D2B4018ABD"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				icon: "graveyard:skeleton_hand"
+				id: "48EF6CC52E4CB214"
+				structure: "graveyard:lich_prison"
+				title: "踏入尸巫监狱"
+				type: "structure"
+			}]
+			x: -11.5d
+			y: -4.75d
+		}
+		{
+			dependencies: [
+				"51F271AA9D04AF89"
+				"4C0E9A44B99D9131"
+				"7C1B11FB0939E7BB"
+			]
+			description: [
+				"&2主手&r持&6骨头匕首&r，&2副手&r持空的&6玻璃瓶&r，击杀&b村民&r会将血液装入&6玻璃瓶&r，需要&a多次击杀&r直至&e血瓶装满&r。"
+				""
+				"&c如果你想唤醒那位尸巫，在探索时记得带上这个血瓶。&r"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "graveyard:vial_of_blood"
+				tag: {
+					Blood: 0.8000001f
+				}
+			}
+			id: "0854A4E118289769"
+			rewards: [{
+				count: 5
+				id: "31A72E8E49AC3125"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
+			tasks: [
+				{
+					id: "32E3837E555F4CF1"
+					item: {
+						Count: 1b
+						id: "graveyard:bone_dagger"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "36378D41600E6B83"
+					item: {
+						Count: 1b
+						id: "graveyard:vial_of_blood"
+						tag: {
+							Blood: 0.8000001f
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "血液收集"
+			x: -10.25d
+			y: -4.75d
+		}
+		{
+			dependencies: ["6C526690FC57E578"]
+			description: ["想要生成&b尸巫&r，必须在&a夜晚&r依次将上、中、下共三个&6不祥的骨杖碎片&r，依次&2从左至右&r放置于&d祭坛&r前的&e碎裂深石中心&r，然后将一瓶&6血&r倒在&d祭坛&r中央的&e祭坛方块&r上。"]
+			id: "52E9F3FB41D295C7"
+			rewards: [{
+				id: "06974D085A0FD6CF"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				entity: "graveyard:lich"
+				icon: "graveyard:leaning_skeleton"
+				id: "59490044AFF9E9CA"
+				title: "击败尸巫"
+				type: "kill"
+				value: 1L
+			}]
+			x: -12.75d
+			y: -4.75d
+		}
+		{
+			dependencies: ["301136CE0EB4EB37"]
+			description: ["&7我看到你了...夜晚再来找我吧...我会与你交易...&r"]
+			hide_dependency_lines: true
+			id: "4644D52DD2B51A96"
+			rewards: [{
+				id: "5BD58C8FD972948B"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			shape: "hexagon"
+			subtitle: "树下的低语"
+			tasks: [{
+				icon: "graveyard:hanged_skeleton"
+				id: "3D347107836AD717"
+				structure: "graveyard:dead_tree"
+				title: "遇见吊死鬼？"
+				type: "structure"
+			}]
+			x: -6.25d
+			y: -4.75d
+		}
+		{
+			dependencies: ["6FB9DA46381FBCB6"]
+			description: [
+				"&7——在这个世界上，仍旧存在着旧世界的灾变之力。在某些特定的建筑结构内，你会遭遇拥有灾变之力的特殊怪物。&r"
+				""
+				"&d《灾变（L_Ender's_Cataclysm）》模组&r是一个增加了困难的地牢、具有挑战性的Boss和强大装备的模组。"
+				""
+				"目前，本模组添加了&d6个精细的Boss&r和&e5个小Boss&r，&d每个Boss都位于自己独有的结构&r，拥有独特技能，并且产出具有特殊能力的战利品。"
 				""
 				"拥有&4灾变之力&r的怪物在攻击命中你时，会在一段时间内&2禁止方块放置、物品使用、以及任何的攻击行为&r。"
 			]
+			hide_dependency_lines: true
 			icon: "cataclysm:altar_of_fire"
-			id: "22F081213B71190E"
+			id: "7C958A8AFC0EADC6"
 			rewards: [{
-				count: 2
-				id: "7E5896F32AE42749"
+				id: "2156C8A20F05DD7C"
 				item: "lightmanscurrency:coin_iron"
 				type: "item"
 			}]
 			subtitle: "在世界的角落里. . ."
 			tasks: [{
-				id: "16F82F5206B69D49"
+				id: "5A0563FD4344CC21"
 				title: "我已了解"
 				type: "checkmark"
 			}]
 			title: "灾变"
-			x: 9.25d
-			y: 4.25d
+			x: -4.75d
+			y: -3.25d
 		}
 		{
-			dependencies: ["22F081213B71190E"]
-			description: ["可以通过灾变本身提供的&6各种眼睛&r来寻找其生成的建筑。"]
-			id: "54D9CCA0E085E647"
+			dependencies: ["7C958A8AFC0EADC6"]
+			description: [
+				"&d远古工厂&r深埋于&e地下深处&r，这里已多年无人造访。在远古工厂的核心区域，古文明的造物先驱者正在那儿沉睡着。"
+				""
+				"可用&6机械之眼&r寻找。"
+				""
+				"&dBOSS激活方式：&r将&6下界之星&r放入&d先驱者&r体内。"
+			]
+			icon: "cataclysm:mech_eye"
+			id: "3878A673CAAC5661"
 			rewards: [{
-				id: "5C23AD1FF738A81F"
+				id: "054C2CAFBEBF7A21"
 				item: "lightmanscurrency:coin_gold"
 				type: "item"
 			}]
-			subtitle: "寻找灾变建筑"
-			tasks: [{
-				id: "4B64AB81FF9995BC"
-				item: "cataclysm:mech_eye"
-				type: "item"
-			}]
-			title: "寻找灾变之源"
-			x: 12.0d
-			y: 4.25d
-		}
-		{
-			dependencies: ["15A36D9385499A77"]
-			description: [
-				"很快，在主世界的探索就不能满足你的所有欲望——周边的遗迹已然被探索干净，而过远的地区前去又非常麻烦。"
-				""
-				"此时，你便可以通过在家制作&6维度地牢之门&r前往地牢进行探险！维度地牢的探险难度不高，但其中各个场景各有乐趣所在。并且，其中的奖励箱往往具有着比主世界奖励箱更有用的物品！"
-			]
-			id: "4452DA9A1D3D80A0"
-			rewards: [
+			subtitle: "先驱者"
+			tasks: [
 				{
-					id: "4C1AB80049C082EB"
-					item: {
-						Count: 1b
-						id: "patchouli:guide_book"
-						tag: {
-							"patchouli:book": "dimdungeons:guide_book"
-						}
-					}
+					id: "6CE0E9211CBD546D"
+					item: "cataclysm:mech_eye"
 					type: "item"
 				}
 				{
-					id: "5DF8378BB6EF11A6"
-					item: "lightmanscurrency:coin_gold"
-					type: "item"
+					entity: "cataclysm:the_harbinger"
+					icon: "cataclysm:mech_eye"
+					id: "4BD820A2FAE8C624"
+					type: "kill"
+					value: 1L
 				}
 			]
-			subtitle: "探索新世界"
-			tasks: [{
-				id: "0C77FA41D567BA94"
-				item: "dimdungeons:item_portal_key"
-				type: "item"
-			}]
-			title: "维度地牢"
-			x: 4.75d
-			y: 7.0d
+			title: "寻找远古工厂"
+			x: -6.25d
+			y: -3.25d
 		}
 		{
-			dependencies: ["3FF06F6F309FAEC3"]
+			dependencies: ["7C958A8AFC0EADC6"]
 			description: [
-				"本整合包提供了不少BOSS战斗，他们来自不同模组，难度也有高低，你可以在FTB任务左侧的&cBOSS图鉴&r中找到他们。"
+				"位于&d下界&r的&d烈焰竞技场&r是&d焰魔&r的栖居之所，虽然已经废弃多年，但其间的烈焰从未熄灭。"
 				""
-				"本整合包并不强制你什么时候要去打某个BOSS，不过是时候提醒一下——或许你有足够的能力去挑战一下他们了！"
-			]
-			icon: "minecraft:creeper_head"
-			id: "6FB9DA46381FBCB6"
-			rewards: [{
-				id: "73CC5B1D06BBEC73"
-				item: "lightmanscurrency:coin_gold"
-				type: "item"
-			}]
-			shape: "rsquare"
-			subtitle: "更多的战斗等待着你"
-			tasks: [{
-				id: "616FC1A5907518C1"
-				title: "我已了解"
-				type: "checkmark"
-			}]
-			title: "更多的挑战"
-			x: 7.0d
-			y: 10.75d
-		}
-		{
-			dependencies: ["6FB9DA46381FBCB6"]
-			description: [
-				"&d《迎战（Meet Your Fight）》模组&r提供了&d4个Boss&r，每个BOSS都有独立的战利品，它们可以合成装备，例如有用的饰品或很酷的武器和工具。"
+				"可用&6火焰之眼&r寻找。"
 				""
-				"这些BOSS接到&e召唤&r才会前来，你需要&d按配方合成制作&r合适的&e召唤物品&r并&e手持长按右键以召唤&r。"
-			]
-			icon: "meetyourfight:haunted_bell"
-			id: "6C5EDA1DE6024879"
-			rewards: [{
-				count: 2
-				id: "034F30E48D52B171"
-				item: "lightmanscurrency:coin_iron"
-				type: "item"
-			}]
-			tasks: [{
-				id: "45EFD3D48C383CCE"
-				title: "我已了解"
-				type: "checkmark"
-			}]
-			title: "迎战"
-			x: 8.25d
-			y: 10.5d
-		}
-		{
-			dependencies: ["6FB9DA46381FBCB6"]
-			description: [
-				"&d《Bosses of Mass Destruction》模组&r提供了&d4个BOSS&r，他们生成在不同的结构中，需要玩家去寻找。"
-				""
-				"有的BOSS为玩家提供了寻找的方法，请到&e具体BOSS页面&r查看。"
-				""
-				"当击杀了BOSS之后，玩家可以通过使用&d硫磺花蜜&r重置该结构以&e重新挑战BOSS&r。（&e硫磺花蜜可合成获得&r）"
+				"&dBOSS激活方式：&r击杀&d烈焰竞技场&r中的&6燃魂&r，100%掉落&6炽燃余烬&r，手持此物品&e右击&r&6烈焰祭坛&r放入即可召唤。"
 			]
 			hide_dependency_lines: true
-			icon: "bosses_of_mass_destruction:brimstone_nectar"
-			id: "0779F9E4FD2E0EA0"
+			icon: "cataclysm:flame_eye"
+			id: "03005FB0984AFCEF"
 			rewards: [{
-				count: 2
-				id: "2435FA4D27AA4018"
-				item: "lightmanscurrency:coin_iron"
+				id: "482AA01B3A302F5D"
+				item: "lightmanscurrency:coin_gold"
 				type: "item"
 			}]
-			tasks: [{
-				id: "6884E3C73795E24D"
-				title: "我已了解"
-				type: "checkmark"
-			}]
-			title: "BODM"
-			x: 9.25d
-			y: 10.0d
-		}
-		{
-			dependencies: ["6FB9DA46381FBCB6"]
-			description: ["为了前往末地，你需要获取一定数量的末影珍珠，用于开启前往末地的大门。"]
-			id: "2311CA3EEABF0250"
-			rewards: [
+			subtitle: "焰魔"
+			tasks: [
 				{
-					count: 6
-					id: "55F6B1260F29938F"
-					item: "minecraft:ender_eye"
+					id: "159DD68E2A7DC5F3"
+					item: "cataclysm:flame_eye"
 					type: "item"
 				}
 				{
-					count: 5
-					id: "73D1892CF94ACAF6"
-					item: "lightmanscurrency:coin_iron"
-					type: "item"
+					entity: "cataclysm:ignis"
+					icon: "cataclysm:flame_eye"
+					id: "4C7148353566043D"
+					type: "kill"
+					value: 1L
 				}
 			]
-			subtitle: "前往末地的必需品"
-			tasks: [{
-				id: "355748BEB59386AF"
-				item: "minecraft:ender_pearl"
-				type: "item"
-			}]
-			title: "与末影人相遇"
-			x: 7.0d
-			y: 8.5d
+			title: "寻找烈焰竞技场"
+			x: -7.25d
+			y: -3.25d
 		}
 		{
-			dependencies: ["2311CA3EEABF0250"]
-			description: ["进入末地时，Minecraft原版的游戏体验便到达了尾声——但是对于本整合来说，到达末地只是一个小小的里程碑。在这个世界上仍旧存在着大量的&5不可思议&r等待着你去探索。"]
-			icon: "minecraft:end_portal_frame"
-			id: "1D8929E0CE7CE0AB"
-			rewards: [{
-				id: "2AF64ED78935D661"
-				item: {
-					Count: 1b
-					id: "lightmanscurrency:coin_gold"
-					tag: { }
-				}
-				type: "item"
-			}]
-			subtitle: "很快，你的Minecraft原版体验就接近尾声"
-			tasks: [{
-				dimension: "minecraft:the_end"
-				id: "2AF9850C10D5391F"
-				type: "dimension"
-			}]
-			title: "前往末地"
-			x: 9.25d
-			y: 7.0d
-		}
-		{
-			dependencies: ["1D8929E0CE7CE0AB"]
+			dependencies: ["7C958A8AFC0EADC6"]
 			description: [
-				"如果周围的末地船已经被完全搜刮完毕了，你可以使用幻翼膜和香蕉蛞蝓的黏液&2自行制作鞘翅&r。"
+				"&d废弃堡垒&r是一个生成于&d末地外岛&r的建筑，一共分为4层，这里是&d末影守卫&r的迷宫堡垒。"
 				""
-				"香蕉蛞蝓只会出现在寒冷的原始松木针叶林群系。"
+				"进入建筑后，迎面而来的是一个有着些许虚空石堆和虚空灌注末地石砖的庭院，可以从中间的大门进入建筑内部的迷宫。"
+				""
+				"可用&6虚空之眼&r寻找。"
+				""
+				"&dBOSS激活方式：&r在第三、四层的&eBOSS房&r中，向前&e靠近&r中央的生成方块，Boss便会出现并与你战斗。"
 			]
-			id: "7936F1A8DE4AF2E8"
+			hide_dependency_lines: true
+			icon: "cataclysm:void_eye"
+			id: "0F897A2DA9514E5D"
 			rewards: [{
-				id: "443AEBF90B9CD82C"
-				item: {
-					Count: 1b
-					id: "lightmanscurrency:coin_gold"
-					tag: { }
-				}
+				id: "74FADBA41EA864F4"
+				item: "lightmanscurrency:coin_gold"
 				type: "item"
 			}]
-			subtitle: "前往末地城，你可以寻得鞘翅"
-			tasks: [{
-				id: "4EC33C7DB69FF161"
-				item: {
-					Count: 1b
-					id: "minecraft:elytra"
-					tag: {
-						Damage: 0
-					}
+			subtitle: "末影守卫"
+			tasks: [
+				{
+					id: "129ACF4E25F69FC6"
+					item: "cataclysm:void_eye"
+					type: "item"
 				}
-				type: "item"
-			}]
-			title: "追寻鞘翅"
-			x: 10.5d
-			y: 7.0d
+				{
+					entity: "cataclysm:ender_guardian"
+					icon: "cataclysm:void_eye"
+					id: "48DBCF922C1E690C"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "寻找废弃堡垒"
+			x: -8.25d
+			y: -3.25d
 		}
 		{
-			dependencies: ["1D8929E0CE7CE0AB"]
-			description: ["作为原版的最终boss，击败它仍旧具有着非常特殊的意义。"]
-			icon: "minecraft:dragon_head"
-			id: "15A36D9385499A77"
+			dependencies: ["7C958A8AFC0EADC6"]
+			description: [
+				"&d灵魂锻造厂&r是一座矗立于&e下界熔岩海&r上的黑石锻造厂，这里浓烟滚滚，其间沉睡着一只可怕的巨兽。"
+				""
+				"可用&6恶兽之眼&r寻找。"
+				""
+				"&dBOSS激活方式：&r在&d灵魂锻造厂&r的&e灵魂火堆&r中自然生成一个。"
+				""
+				"&8（Tips：该结构中存在一处需要按钮激活的隐藏房间，里面宝物众多，去寻找吧！）&r"
+			]
+			hide_dependency_lines: true
+			icon: "cataclysm:monstrous_eye"
+			id: "7804C70BA041A413"
 			rewards: [{
-				count: 5
-				id: "68E182F2D59A4C2B"
-				item: {
-					Count: 1b
-					id: "lightmanscurrency:coin_gold"
-					tag: { }
-				}
+				id: "43D130E13C50CFA3"
+				item: "lightmanscurrency:coin_gold"
 				type: "item"
 			}]
-			shape: "rsquare"
-			subtitle: "收官之作！"
+			subtitle: "巨兽"
+			tasks: [
+				{
+					id: "4B3B97B5D040840C"
+					item: "cataclysm:monstrous_eye"
+					type: "item"
+				}
+				{
+					entity: "cataclysm:netherite_monstrosity"
+					icon: "cataclysm:monstrous_eye"
+					id: "3E9371D50F7B7484"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "寻找灵魂锻造厂"
+			x: -9.25d
+			y: -3.25d
+		}
+		{
+			dependencies: ["7C958A8AFC0EADC6"]
+			description: [
+				"&e深海类群系的海面上&r会出现的昔日辉煌的建筑技巧极其高超的古代遗址，但在未知因素的影响下，如今它已是一座沉没的满是深渊灵的恐怖之城，在其间用古老的仪式便能够召唤渊薮之种——&d利维坦&r。"
+				""
+				"可用&6深渊之眼&r寻找。"
+				""
+				"&dBOSS激活方式：&r合成&6深渊祭品&r，放入&d沉没之城&r中的&6深渊祭坛&r。"
+			]
+			hide_dependency_lines: true
+			icon: "cataclysm:abyss_eye"
+			id: "2CD71AD199802E1A"
+			rewards: [{
+				id: "075A311E229088E4"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "利维坦"
+			tasks: [
+				{
+					id: "0FC6DE280E71E942"
+					item: "cataclysm:abyss_eye"
+					type: "item"
+				}
+				{
+					entity: "cataclysm:the_leviathan"
+					icon: "cataclysm:abyss_eye"
+					id: "783228E7780EAEFC"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "寻找沉没之城"
+			x: -10.25d
+			y: -3.25d
+		}
+		{
+			dependencies: ["7C958A8AFC0EADC6"]
+			description: [
+				"&d诅咒金字塔&r是位于&d沙漠&r中的巨型金字塔。"
+				""
+				"可以用&6沙漠之眼&r寻找。"
+				""
+				"&dBOSS激活方式：&r在金字塔顶端的四个房间中寻找到与原版沙子一模一样的&6“Suspicious Sand”（可疑的沙子）&r。"
+				""
+				"手持合成制作的&6“Brush”（刷子）&r右键清理&6可疑的沙子&r，得到&6沙漠项链&r。"
+				""
+				"手持&6沙漠项链&r&e右键&r金字塔底部的&d远古遗魂&r激活BOSS。"
+			]
+			hide_dependency_lines: true
+			icon: "cataclysm:desert_eye"
+			id: "4C2CAC391B06FAA8"
+			rewards: [{
+				id: "681F61F0440E688C"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "远古遗魂"
+			tasks: [
+				{
+					id: "583B940032B99BEF"
+					item: "cataclysm:desert_eye"
+					type: "item"
+				}
+				{
+					entity: "cataclysm:ancient_remnant"
+					icon: "cataclysm:desert_eye"
+					id: "226F3D20FEB28494"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "寻找诅咒金字塔"
+			x: -11.25d
+			y: -3.25d
+		}
+		{
+			dependencies: ["6C5EDA1DE6024879"]
+			hide_dependency_lines: true
+			icon: "meetyourfight:dusk_key"
+			id: "0B6E24F5105C5DE2"
+			rewards: [{
+				id: "18A9BB3035DEAF81"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [
+				{
+					id: "12F2FCF51E24602F"
+					item: "meetyourfight:dusk_key"
+					type: "item"
+				}
+				{
+					entity: "meetyourfight:rosalyne"
+					icon: "meetyourfight:dusk_key"
+					id: "7FC23750DD88E511"
+					type: "kill"
+					value: 1L
+				}
+			]
+			x: -7.75d
+			y: -6.25d
+		}
+		{
+			dependencies: ["6C5EDA1DE6024879"]
+			hide_dependency_lines: true
+			icon: "meetyourfight:haunted_bell"
+			id: "4643F8D77E474B9B"
+			rewards: [{
+				id: "22893403C2B4A2E9"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [
+				{
+					id: "265FF021C45EBF9C"
+					item: "meetyourfight:haunted_bell"
+					type: "item"
+				}
+				{
+					entity: "meetyourfight:bellringer"
+					icon: "meetyourfight:haunted_bell"
+					id: "0F103E09BF1D81E5"
+					type: "kill"
+					value: 1L
+				}
+			]
+			x: -6.75d
+			y: -6.25d
+		}
+		{
+			dependencies: ["6C5EDA1DE6024879"]
+			hide_dependency_lines: true
+			icon: "meetyourfight:fossil_bait"
+			id: "5E53B369B6F8610E"
+			rewards: [{
+				id: "5025C54B55A92A03"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [
+				{
+					id: "113A047DE5D55947"
+					item: "meetyourfight:fossil_bait"
+					type: "item"
+				}
+				{
+					entity: "meetyourfight:swampjaw"
+					icon: "meetyourfight:fossil_bait"
+					id: "3A3A695465028604"
+					type: "kill"
+					value: 1L
+				}
+			]
+			x: -5.75d
+			y: -6.25d
+		}
+		{
+			dependencies: ["6C5EDA1DE6024879"]
+			icon: "meetyourfight:devils_ante"
+			id: "59C699B6973BBF18"
+			rewards: [{
+				id: "312EF6953D36E427"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [
+				{
+					id: "22DD3D3D40626EE1"
+					item: "meetyourfight:devils_ante"
+					type: "item"
+				}
+				{
+					entity: "meetyourfight:dame_fortuna"
+					icon: "meetyourfight:devils_ante"
+					id: "25F08A9BC632F1D8"
+					type: "kill"
+					value: 1L
+				}
+			]
+			x: -4.75d
+			y: -6.25d
+		}
+		{
+			dependencies: ["0779F9E4FD2E0EA0"]
+			description: [
+				"通过&6铃兰&r和&6紫水晶碎片&r合成&6虚空百合&r，将其种在地上，虚空百合会散发出&e花粉&r指引你寻找&d虚空之花的洞穴&r。"
+				""
+				"虚空之花的洞穴生成在&e主世界底部接近基岩层的地方&r。"
+			]
+			hide_dependency_lines: true
+			icon: "bosses_of_mass_destruction:void_thorn"
+			id: "147CD351C2BC325E"
+			rewards: [{
+				id: "139BC074ABFBB065"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "随着花粉前往地下"
 			tasks: [{
-				entity: "minecraft:ender_dragon"
-				icon: "minecraft:dragon_egg"
-				id: "7F3DBDA404445DC7"
+				entity: "bosses_of_mass_destruction:void_blossom"
+				icon: "bosses_of_mass_destruction:void_thorn"
+				id: "1260A4EA8998C574"
 				type: "kill"
 				value: 1L
 			}]
-			title: "击败末影龙！"
-			x: 7.0d
-			y: 5.5d
+			title: "寻找虚空之花的踪迹"
+			x: -7.75d
+			y: -1.75d
 		}
 		{
-			dependencies: ["6FB9DA46381FBCB6"]
+			dependencies: ["0779F9E4FD2E0EA0"]
 			description: [
-				"你需要通过游玩&d《魔法巫师（Hexerei）》模组&r来制作整合包较为&e核心&r的物品——&6召唤祭坛&r。&7（召唤祭坛的制作还需要一部分机械动力的内容）"
+				"&e击杀亡灵生物&r随机掉落&6灵魂之星&r，手持灵魂之星&e右键&r，可以指引你找到位于&d寒冷群系中的高塔&r。"
 				""
-				"&r&2——你可以通过召唤祭坛来制作一些物品、器官，也可以用来召唤来自《世界BOSS》模组的21个BOSS。&r"
-				""
-				"总之，因为一些后续一些配方依赖于魔法巫师的&6混合锅&r，我们推荐你优先发展该模组。"
-				""
-				"魔法巫师的&e线路并不长&r，更多的是用于增添沉浸感而产生的一些&e可选的发展内容&r，因此大可不必担心。而且魔法巫师也可以为你的探索旅途提供不小的便利。&7（谁会不喜欢可以飞行的扫帚呢？）&r"
-				""
-				"将&d暗影之书&r放置在书坛上，慢慢阅读吧！"
+				"在高塔内的其中一层，可以在四方找到4个&6雕文石头祭坛&r，在各个祭坛中放入&6灵魂之星&r，即可召唤&dBOSS暗夜巫妖&r。"
 			]
-			icon: {
-				Count: 1b
-				id: "hexerei:book_of_shadows"
-				tag: {
-					bookmarks: { }
-					chapter: 0
-					opened: 0b
-					page: 0
-				}
-			}
-			id: "00E3E147FC750C90"
-			rewards: [
-				{
-					id: "69A47379C6E0551E"
-					item: {
-						Count: 1b
-						id: "hexerei:book_of_shadows"
-						tag: {
-							bookmarks: { }
-							chapter: 0
-							opened: 0b
-							page: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "0AB96012391DCB55"
-					item: "hexerei:book_of_shadows_altar"
-					type: "item"
-				}
-			]
-			shape: "circle"
-			subtitle: "咒术？魔法？还是科学？"
-			tasks: [{
-				id: "3342C5E8A28DC165"
-				title: "探寻魔法的秘密"
-				type: "checkmark"
-			}]
-			title: "探寻魔法的秘密"
-			x: 5.75d
-			y: 10.5d
-		}
-		{
-			dependencies: ["00E3E147FC750C90"]
-			description: [
-				"虽然本整合包做了关于《魔法巫师》模组的引导，但还请多多阅读它&c极&r&b其&r&d炫&r&e酷&r的教学书——暗影之书。"
-				""
-				"好了，现在我们需要制作一个&6混合锅&r，这相当于魔法巫师模组的工作台。"
-				""
-				"再次提醒，对于这种不熟悉的“工作台”，推荐&e鼠标悬浮&r在物品上，按&eU键（展示用途）&r，再在该界面上方切换到展示合成配方，你可以&2清晰的看到它能制作的各种物品以及配方&r。&7（如下图所示）"
-				"&r{image:kubejs:textures/task/hexerei_1.png width:120 height:100 align:1}"
-				""
-				"{@pagebreak}"
-				"一些小提示："
-				""
-				"1. 混合锅虽然有交互界面，但是给混合锅&2加水&r是需要拿水桶&2直接倒入&r内部的。"
-				""
-				"2. 部分合成配方需要在混合锅&e下方&r放置&6热源方块&r，热源方块推荐&e营火&r或者&e岩浆&r，更多热源方块请在上一页的&2“展示合成配方”&r处查看。"
-				""
-				"3. 你可以在混合锅的交互界面中放入物品，也可以直接站在锅边&2将物品丢入&r锅中。"
-			]
-			id: "5B62D052AA6FF2D3"
+			hide_dependency_lines: true
+			icon: "bosses_of_mass_destruction:ancient_anima"
+			id: "2040133CCC7EBE4F"
 			rewards: [{
-				id: "077E1F89F281FD85"
+				id: "0104AB526955454E"
 				item: "lightmanscurrency:coin_gold"
 				type: "item"
 			}]
-			subtitle: "巫师的宝物"
+			subtitle: "灵魂之星指引着你"
 			tasks: [{
-				id: "5343118C1A6F92EB"
-				item: "hexerei:mixing_cauldron"
-				type: "item"
+				entity: "bosses_of_mass_destruction:lich"
+				icon: "bosses_of_mass_destruction:ancient_anima"
+				id: "7FC89E3816CD0244"
+				type: "kill"
+				value: 1L
 			}]
-			x: 4.25d
-			y: 10.0d
+			title: "寻找暗夜巫妖的踪迹"
+			x: -6.75d
+			y: -1.75d
 		}
 		{
-			dependencies: ["5B62D052AA6FF2D3"]
+			dependencies: ["0779F9E4FD2E0EA0"]
 			description: [
-				"魔法巫师的另一重要内容则是魔法扫帚，有&6柳木扫帚&r、&6桃花心木扫帚&r等，你可以轻松地去往各种地方探险。"
+				"在&d下界熔岩湖&r上找到的稀有结构，通过&e挖掘破坏中心结构—&r&6远古雕刻黑石&r才能召唤。"
 				""
-				"扫帚&2允许使用类如挎包、挂件等物品进行装饰和升级&r。具有&6DIY价值&r。"
-				""
-				"当然，就使用价值来说，如果你认为魔法巫师的扫帚使用过于冗杂，则可以尝试制作&6“魔女的扫帚”&r。&7（通过JEI搜索其合成配方）&r"
-				""
-				"&7桃花心木生成在丛林，柳树生成在沼泽，另外，本模组的一些基础资源推荐去看暗影之书里的“各种建筑”章节，在结构中寻找。&r"
+				"只有攻击其眼球才能造成伤害。"
 			]
-			icon: {
-				Count: 1b
-				id: "hexerei:mahogany_broom"
-				tag: { }
-			}
-			id: "7AAEA01D27277498"
+			hide_dependency_lines: true
+			icon: "bosses_of_mass_destruction:blazing_eye"
+			id: "61C0C761B09A0584"
 			rewards: [{
-				id: "3CE66056F389FA4D"
-				item: {
-					Count: 1b
-					id: "hexerei:broom_keychain"
-					tag: {
-						Items: [{
-							Count: 1b
-							Slot: 0b
-							id: "kubejs:full_mark"
-						}]
-					}
-				}
+				id: "4C2E32484BC29818"
+				item: "lightmanscurrency:coin_gold"
 				type: "item"
 			}]
-			subtitle: "我也要飞起来了！"
+			subtitle: "下界中的恶魔"
 			tasks: [{
-				id: "390FA83F430207D7"
-				title: "我已了解"
-				type: "checkmark"
+				entity: "bosses_of_mass_destruction:gauntlet"
+				icon: "bosses_of_mass_destruction:blazing_eye"
+				id: "42B1503E8F714D09"
+				type: "kill"
+				value: 1L
 			}]
-			title: "魔法与飞行扫帚"
-			x: 3.75d
-			y: 11.25d
+			title: "发现下界铁掌的踪迹"
+			x: -5.75d
+			y: -1.75d
 		}
 		{
-			dependencies: ["5B62D052AA6FF2D3"]
+			dependencies: ["0779F9E4FD2E0EA0"]
 			description: [
-				"&6蘸注器&r是一个用处有限的装置，但是我们需要用它来制作魔法巫师模组的&6蜡烛&r。&2（鼠标悬停于蘸注器上按Shift查看详细介绍）"
-				"&r"
-				"那么请按照配方做出蘸注器吧！"
+				"&dB0SS黑曜巨石柱&r在&d末地&r的&e稀有结构&r出现。"
 				""
-				"制作结束以后，如果你想把混合锅中的岩浆倒出，需要将鼠标移至流体容器处，会弹出一个伸缩窗口，点击即可。&7（如下图所示）&r"
+				"召唤方法是在结构顶端的&6黑曜石祭坛&r上放一颗&6末影之眼&r，然后稍等片刻。"
 				""
-				"{image:kubejs:textures/task/hexerei_2.png width:100 height:60 align:1}"
+				"击败后会在原本的祭坛处生成一根黑曜石柱子，并在顶面的中间生成一个包含奖励的潜影盒。"
 			]
-			id: "5DD1124BDBF1D5EC"
+			icon: "bosses_of_mass_destruction:obsidian_heart"
+			id: "0334639B0C126A8D"
 			rewards: [{
-				count: 2
-				id: "5C85989EF8D5705C"
-				item: "lightmanscurrency:coin_iron"
+				id: "361E3C2D5DA03BDB"
+				item: "lightmanscurrency:coin_gold"
 				type: "item"
 			}]
-			subtitle: "混合锅DLC"
+			subtitle: "末地浮空城中的秘密"
 			tasks: [{
-				id: "7B63C80FB38C48CE"
-				item: "hexerei:candle_dipper"
+				entity: "bosses_of_mass_destruction:obsidilith"
+				icon: "bosses_of_mass_destruction:obsidian_heart"
+				id: "748C2EDCD6C350AB"
+				type: "kill"
+				value: 1L
+			}]
+			title: "寻找黑曜石之柱的踪迹"
+			x: -4.75d
+			y: -1.75d
+		}
+		{
+			dependencies: ["3F1ED49F7451CD1E"]
+			hide_dependency_lines: true
+			hide_dependent_lines: true
+			icon: "somebosses:furnace_torch"
+			id: "1102363C412CD193"
+			rewards: [{
+				id: "4ADAE1FE667FB3EE"
+				item: "lightmanscurrency:coin_gold"
 				type: "item"
 			}]
-			title: "更精密的装置"
+			tasks: [{
+				entity: "somebosses:flaming_berserker"
+				icon: "somebosses:furnace_torch"
+				id: "50715CBDF1EB9744"
+				type: "kill"
+				value: 1L
+			}]
+			title: "烈焰狂战士"
+			x: -0.5d
+			y: -13.75d
+		}
+		{
+			dependencies: ["3F1ED49F7451CD1E"]
+			hide_dependency_lines: true
+			icon: "somebosses:necromancy_staff"
+			id: "7BBF4518E64E4ACC"
+			rewards: [{
+				id: "2C8F875AFF3524EF"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				entity: "somebosses:nameless_one"
+				icon: "somebosses:necromancy_staff"
+				id: "42C80A1D9ACB5F9C"
+				type: "kill"
+				value: 1L
+			}]
+			title: "无名者"
+			x: -0.25d
+			y: -14.75d
+		}
+		{
+			dependencies: ["3F1ED49F7451CD1E"]
+			hide_dependency_lines: true
+			icon: "somebosses:rusty_sword_relic"
+			id: "7AA225CFD6F6BBA8"
+			rewards: [{
+				id: "64F5B2DFB0EC7547"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				entity: "somebosses:ancient_wizard"
+				icon: "somebosses:rusty_sword_relic"
+				id: "5E0A9FF724BA1550"
+				type: "kill"
+				value: 1L
+			}]
+			title: "远古巫师"
+			x: -0.5d
+			y: -12.75d
+		}
+		{
+			dependencies: ["3F1ED49F7451CD1E"]
+			hide_dependency_lines: true
+			icon: "somebosses:dark_magic_gauntlet"
+			id: "2696A6262EDDF11F"
+			rewards: [{
+				id: "49B9DAB9331B4DF8"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				entity: "somebosses:hand_head"
+				icon: "somebosses:dark_magic_gauntlet"
+				id: "6893108FD479E03A"
+				type: "kill"
+				value: 1L
+			}]
+			title: "掌手巨怪"
+			x: 0.75d
+			y: -14.75d
+		}
+		{
+			dependencies: ["3F1ED49F7451CD1E"]
+			hide_dependency_lines: true
+			icon: "somebosses:token_of_the_ninja"
+			id: "3F743349368C7471"
+			rewards: [{
+				id: "13C26E66608F75A3"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				entity: "somebosses:merciless_assasin"
+				icon: "somebosses:token_of_the_ninja"
+				id: "52DCCF460ED4A7AC"
+				type: "kill"
+				value: 1L
+			}]
+			title: "冷血杀手"
+			x: -0.5d
+			y: -11.75d
+		}
+		{
+			dependencies: ["3F1ED49F7451CD1E"]
+			hide_dependency_lines: true
+			icon: "somebosses:ice_lantern"
+			id: "778FDD035CA42B56"
+			rewards: [{
+				id: "20035B030A364ED5"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				entity: "somebosses:frost_magma"
+				icon: "somebosses:ice_lantern"
+				id: "7B93A9698C4ABB05"
+				type: "kill"
+				value: 1L
+			}]
+			title: "霜冻岩浆怪"
+			x: 1.75d
+			y: -14.75d
+		}
+		{
+			dependencies: ["3F1ED49F7451CD1E"]
+			hide_dependency_lines: true
+			icon: "somebosses:frozen_shield_plate"
+			id: "63D8444AA3929FF8"
+			rewards: [{
+				id: "4C3BA9A8DFAE10BD"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				entity: "somebosses:froverlord"
+				icon: "somebosses:frozen_shield_plate"
+				id: "69B7E0CB804B21C1"
+				type: "kill"
+				value: 1L
+			}]
+			title: "永冻领主"
+			x: -1.5d
+			y: -12.75d
+		}
+		{
+			dependencies: ["3F1ED49F7451CD1E"]
+			hide_dependency_lines: true
+			icon: "somebosses:bone_of_curse"
+			id: "497F39A113B0BF24"
+			rewards: [{
+				id: "6212D7BD15A3025A"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				entity: "somebosses:skeleton_demon"
+				icon: "somebosses:bone_of_curse"
+				id: "34FDD847724C203F"
+				type: "kill"
+				value: 1L
+			}]
+			title: "骷髅恶魔"
+			x: -1.5d
+			y: -13.75d
+		}
+		{
+			dependencies: ["3F1ED49F7451CD1E"]
+			hide_dependency_lines: true
+			icon: "somebosses:gilded_dynamite"
+			id: "3AB7F8C482DD8089"
+			rewards: [{
+				id: "544BCBC2A66F8CC4"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				entity: "somebosses:vulcan"
+				icon: "somebosses:gilded_dynamite"
+				id: "1B560DD1BDD2C474"
+				type: "kill"
+				value: 1L
+			}]
+			title: "火神"
+			x: -1.5d
+			y: -11.75d
+		}
+		{
+			dependencies: ["3F1ED49F7451CD1E"]
+			hide_dependency_lines: true
+			icon: "somebosses:slab_of_command"
+			id: "3030197A175A4697"
+			rewards: [{
+				id: "540A74176A2CF510"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				entity: "somebosses:stone_guard"
+				icon: "somebosses:slab_of_command"
+				id: "79EFBE304F1254CB"
+				type: "kill"
+				value: 1L
+			}]
+			title: "岩之守卫"
 			x: 3.0d
-			y: 9.25d
+			y: -13.75d
 		}
 		{
-			dependencies: ["5DD1124BDBF1D5EC"]
-			description: [
-				"首先你需要通过击杀牛、猪、羊来获取动物油脂。"
-				""
-				"集齐8个动物油脂以后，将其放在装满水的混合锅中，获得油脂液。"
-				""
-				"手持蘸注器蹲下右击混合锅，将其摆放在混合锅上，确认锅中有油脂液，手持线右击蘸注器，即可开始蘸注蜡烛。"
-				""
-				"一个蘸注器可同时蘸注最多三根蜡烛。"
-				""
-				"&7若混合锅中的液体为药水，蘸注在其中的蜡烛可获得相应的药水效果。蜡烛点燃后即可在一定范围内享受此药水效果。&r"
-			]
-			id: "17612117FFCB6D00"
+			dependencies: ["3F1ED49F7451CD1E"]
+			hide_dependency_lines: true
+			icon: "somebosses:disgusting_pendant"
+			id: "38AC8A74FA810D8B"
 			rewards: [{
-				count: 2
-				id: "606BAC53708BAC2B"
+				id: "596BF39114567089"
 				item: "lightmanscurrency:coin_gold"
 				type: "item"
 			}]
 			tasks: [{
-				id: "5F5EA69CBB141D86"
-				item: "hexerei:candle"
+				entity: "somebosses:ender_ordnance"
+				icon: "somebosses:disgusting_pendant"
+				id: "3815A80B52886D00"
+				type: "kill"
+				value: 1L
+			}]
+			title: "末影军械"
+			x: -1.5d
+			y: -10.75d
+		}
+		{
+			dependencies: ["3F1ED49F7451CD1E"]
+			hide_dependency_lines: true
+			icon: "somebosses:power_generator_core"
+			id: "08D6D0CBC20DCA86"
+			rewards: [{
+				id: "382CB431FFF1F1A3"
+				item: "lightmanscurrency:coin_gold"
 				type: "item"
 			}]
-			title: "为召唤祭坛而准备"
+			tasks: [{
+				entity: "somebosses:electric_head"
+				icon: "somebosses:power_generator_core"
+				id: "56DD978A79AD6073"
+				type: "kill"
+				value: 1L
+			}]
+			title: "电磁脉冲头"
+			x: -0.25d
+			y: -15.75d
+		}
+		{
+			dependencies: ["3F1ED49F7451CD1E"]
+			hide_dependency_lines: true
+			icon: "somebosses:cactus_relic"
+			id: "61968EC65ACE7240"
+			rewards: [{
+				id: "05C8D640DD78ED62"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				entity: "somebosses:sand_giant"
+				icon: "somebosses:cactus_relic"
+				id: "32D786742A29FE95"
+				type: "kill"
+				value: 1L
+			}]
+			title: "聚沙巨魔"
 			x: 2.0d
-			y: 8.25d
+			y: -13.75d
 		}
 		{
-			dependencies: ["17612117FFCB6D00"]
-			description: [
-				"关于&d《魔法巫师（Hexerei）》模组&r的相关引导，我们以制作出主线必需的“蜡烛”就结束了，后续该模组的内容不会强制玩家游玩。"
-				""
-				"当然该模组提供的内容不仅仅只有这些，你可以通过在JEI搜索框输入&d“&n@Hexerei&r”&r来查看该模组的全部物品，以更好的游玩该模组。"
-				""
-				"另外，该模组的教学书——暗影之书详细的介绍了该模组的一些内容，也推荐阅读以辅助游玩本模组。"
-			]
-			icon: {
-				Count: 1b
-				id: "hexerei:witch_helmet"
-				tag: {
-					Damage: 0
-				}
-			}
-			id: "766CACCF2C6C4E14"
+			dependencies: ["3F1ED49F7451CD1E"]
+			hide_dependency_lines: true
+			icon: "somebosses:cursed_spring_water"
+			id: "1D7F0AE5B73BDFFE"
 			rewards: [{
-				count: 5
-				id: "17B473535604BF92"
-				item: "lightmanscurrency:coin_iron"
-				type: "item"
-			}]
-			subtitle: "教学结束"
-			tasks: [{
-				id: "34D4B3EE92412B8C"
-				title: "我已知晓"
-				type: "checkmark"
-			}]
-			title: "暗影之书：自由探索"
-			x: 1.0d
-			y: 7.0d
-		}
-		{
-			dependencies: ["17612117FFCB6D00"]
-			description: [
-				"&7召唤祭坛除了需要魔法巫师模组的配合，还需要一点点&r&b机械动力&r&7的内容。因为机械动力内容较多，还请移步FTB的机械动力专栏中查看。&r"
-				""
-				"召唤祭坛主要用于召唤生物的场景——当然这并不意味着它仅可以召唤生物，实际上也可以用于一些&6特殊配方&r的加工，获得一些&2物品&r的乃至&2效果类&r的奖励。"
-				""
-				"召唤仪式在后续的旅程中会被反复使用，如果你在&2寻找并击杀某些boss&r的话，在寻找之前，不妨查看一下祭坛的配方，或许会有更简单的方法。"
-			]
-			id: "49BD99DDA8F8454A"
-			rewards: [{
-				id: "0DD6F90701F5DBCC"
-				item: {
-					Count: 1b
-					id: "lightmanscurrency:coin_gold"
-					tag: { }
-				}
-				type: "item"
-			}]
-			subtitle: "召唤祭坛将会指引你新的道路"
-			tasks: [{
-				id: "3B5DBF68920C4ED0"
-				item: "summoningrituals:altar"
-				type: "item"
-			}]
-			title: "召唤你想要的"
-			x: 1.0d
-			y: 9.25d
-		}
-		{
-			dependencies: ["49BD99DDA8F8454A"]
-			description: [
-				"&d《世界BOSS》模组&r提供了&d21个BOSS&r，可以通过两种方式召唤："
-				""
-				""
-				"1. 通过&6交货协议&r获取BOSS召唤物直接召唤"
-				""
-				"2. 向&6召唤祭坛&r中放入特定的物品召唤"
-				"(可以通过&e在JEI中右键召唤召唤祭坛&r，或&e将鼠标悬停于背包中的召唤祭坛按U键&r查看用途来查看&e召唤配方&r。)"
-				""
-				"更多内容请移步&cFTB左侧的BOSS图鉴&r。"
-			]
-			icon: "summoningrituals:altar"
-			id: "3F1ED49F7451CD1E"
-			rewards: [{
-				count: 2
-				id: "4F28AE51354BF59D"
-				item: "lightmanscurrency:coin_iron"
-				type: "item"
-			}]
-			tasks: [{
-				id: "5E1643CC3F198152"
-				title: "我已了解"
-				type: "checkmark"
-			}]
-			title: "世界BOSS"
-			x: 0.0d
-			y: 8.0d
-		}
-		{
-			dependencies: ["49BD99DDA8F8454A"]
-			description: [
-				"在本整合包中，所有的召唤仪式，都要以&6仪式催化剂&r作为结尾，放置在召唤祭坛上，以开启一场召唤仪式。"
-				""
-				"因此，在制作召唤催化剂的时候可以考虑&2一次制作较多的量&r，以满足长期的召唤仪式的需求。"
-			]
-			id: "2E04900BA7E16DF0"
-			rewards: [{
-				id: "6AC6FB9DC22CD220"
-				item: {
-					Count: 1b
-					id: "lightmanscurrency:coin_gold"
-					tag: { }
-				}
-				type: "item"
-			}]
-			subtitle: "一切召唤仪式的基础"
-			tasks: [{
-				id: "0A9E7D934E060F6E"
-				item: "kubejs:ritual_catalyst"
-				type: "item"
-			}]
-			x: 2.25d
-			y: 10.5d
-		}
-		{
-			dependencies: ["03B3A54BEDB85320"]
-			description: [
-				"如果你有多余的钱币，或许可以直接在交易终端与村民交易所/其他玩家进行交易。"
-				""
-				"村民交易所是一个&6昂贵品&r的交易处，但花钱买方便不正是我们一开始所计划的吗？"
-			]
-			id: "04B034D2CF2DA900"
-			rewards: [{
-				id: "6EE1EB8484D97BBC"
+				id: "36B9FFD1443AED0D"
 				item: "lightmanscurrency:coin_gold"
 				type: "item"
 			}]
-			subtitle: "更多消费的地方！"
 			tasks: [{
-				id: "49392C421B406830"
-				item: "lightmanscurrency:terminal"
+				entity: "somebosses:man_of_water"
+				icon: "somebosses:cursed_spring_water"
+				id: "68566DE8DFC3E82E"
+				type: "kill"
+				value: 1L
+			}]
+			title: "水人"
+			x: 0.75d
+			y: -15.75d
+		}
+		{
+			dependencies: ["3F1ED49F7451CD1E"]
+			hide_dependency_lines: true
+			icon: "somebosses:illegal_beacon"
+			id: "3075B2CEE684B68F"
+			rewards: [{
+				id: "633BAE92D8BE4C31"
+				item: "lightmanscurrency:coin_gold"
 				type: "item"
 			}]
-			x: 3.5d
-			y: 5.5d
+			tasks: [{
+				entity: "somebosses:aesegull"
+				icon: "somebosses:illegal_beacon"
+				id: "60473F608F6D0ED7"
+				type: "kill"
+				value: 1L
+			}]
+			title: "立场欺诈者"
+			x: 2.0d
+			y: -12.75d
+		}
+		{
+			dependencies: ["3F1ED49F7451CD1E"]
+			hide_dependency_lines: true
+			icon: "somebosses:monochrome_mask"
+			id: "46BE04772520FAA8"
+			rewards: [{
+				id: "0113135759EB7408"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				entity: "somebosses:dark_mask"
+				icon: "somebosses:monochrome_mask"
+				id: "1B2377F66F966BC8"
+				type: "kill"
+				value: 1L
+			}]
+			title: "暗黑面具"
+			x: 0.75d
+			y: -16.75d
+		}
+		{
+			dependencies: ["3F1ED49F7451CD1E"]
+			hide_dependency_lines: true
+			icon: "somebosses:one_eyed_wrait_in_a_bottle"
+			id: "2FA35E059E71C850"
+			rewards: [{
+				id: "204BA8482812BBAF"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				entity: "somebosses:mono_eyed_skeleton"
+				icon: "somebosses:one_eyed_wrait_in_a_bottle"
+				id: "642CC2B34BF5EA6D"
+				type: "kill"
+				value: 1L
+			}]
+			title: "独眼骷髅"
+			x: 2.0d
+			y: -11.75d
+		}
+		{
+			dependencies: ["3F1ED49F7451CD1E"]
+			hide_dependency_lines: true
+			icon: "somebosses:chaos_insignia"
+			id: "1340BDC2F17339E1"
+			rewards: [{
+				id: "4E442C55F8855AA8"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				entity: "somebosses:knight_garent"
+				icon: "somebosses:chaos_insignia"
+				id: "2C4C603A3B098D7B"
+				type: "kill"
+				value: 1L
+			}]
+			title: "最初的骑士"
+			x: 1.75d
+			y: -15.75d
+		}
+		{
+			dependencies: ["3F1ED49F7451CD1E"]
+			hide_dependency_lines: true
+			icon: "somebosses:vampire_bait"
+			id: "230A2973CBD947A7"
+			rewards: [{
+				id: "0557DD550D4BBF8C"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				entity: "somebosses:crimson_vampire"
+				icon: "somebosses:vampire_bait"
+				id: "31A61EA9AF129F99"
+				type: "kill"
+				value: 1L
+			}]
+			title: "吸血鬼恶魔"
+			x: 3.0d
+			y: -12.75d
+		}
+		{
+			dependencies: ["3F1ED49F7451CD1E"]
+			hide_dependency_lines: true
+			icon: "somebosses:prismarine_eye"
+			id: "35A35A62C6E9C71C"
+			rewards: [{
+				id: "5BEF044FCFD4CCFC"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				entity: "somebosses:prismarine_watcher"
+				icon: "somebosses:prismarine_eye"
+				id: "197E6493BDE45735"
+				type: "kill"
+				value: 1L
+			}]
+			title: "海晶监视者"
+			x: 3.0d
+			y: -11.75d
+		}
+		{
+			dependencies: ["3F1ED49F7451CD1E"]
+			hide_dependency_lines: true
+			icon: "somebosses:burning_volcanic_rock"
+			id: "6BD52270D760EA85"
+			rewards: [{
+				id: "1406E729F12B5DFE"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				entity: "somebosses:volcanium"
+				icon: "somebosses:burning_volcanic_rock"
+				id: "4BD74DE255841BC2"
+				type: "kill"
+				value: 1L
+			}]
+			title: "火山"
+			x: 3.0d
+			y: -10.75d
+		}
+		{
+			dependencies: ["6C3D3B9EBA65B44D"]
+			description: ["&7他曾是掠夺者的帝王，他率领的掠夺袭击从不失败，直到某位至高无上的存在将他囚禁在另一个世界......&r"]
+			hide_dependency_lines: true
+			icon: "art_of_forging:ancient_blade"
+			id: "48AEAB844E3AC9F6"
+			rewards: [{
+				id: "02E4F5958B10E2E7"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				entity: "invasioncodered:gashslit"
+				icon: "art_of_forging:ancient_blade"
+				id: "2E1F30B90A7EE461"
+				type: "kill"
+				value: 1L
+			}]
+			title: "裂刃帝王"
+			x: 2.25d
+			y: 7.75d
+		}
+		{
+			dependencies: ["0F86AB0B5FED699D"]
+			description: [
+				"在&2空心矿山&r以及&2巫妖塔&r内的宝箱中有几率获得。"
+				""
+				"对暮色森林中的生物使用后，会将其&a转化为原版主世界生物&r，&e如果你被迫在暮色生存，可能会用到这个&r。"
+				""
+				"&7当然，你也可以将主世界生物转化为暮色生物。&r"
+			]
+			hide_dependency_lines: true
+			id: "4E02396A70BB508E"
+			rewards: [{
+				count: 3
+				id: "23ECE6B702DBB0A4"
+				item: "twilightforest:transformation_powder"
+				type: "item"
+			}]
+			tasks: [{
+				id: "5B9C9B1A29E5B8CD"
+				item: "twilightforest:transformation_powder"
+				type: "item"
+			}]
+			x: 6.0d
+			y: -5.75d
 		}
 	]
-	title: "章节2：觉醒"
+	title: "章节2：黯光"
 }

@@ -1,3 +1,4 @@
+// priority: 100
 StartupEvents.registry('minecraft:block', event => {
     event.create('lucky_block', 'basic')
         .hardness(1.5)
@@ -13,4 +14,7 @@ StartupEvents.registry('minecraft:block', event => {
         .hardness(2)
         .material('wool')
         .noDrops()
+
+    event.create('kubejs:organ_recycler', 'custommachinery')
+        .machine('kubejs:organ_recycler')
 })

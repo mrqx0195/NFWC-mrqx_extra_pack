@@ -1,0 +1,11 @@
+{
+  "type": "extradelight:mortar",
+  "grinds": 8,
+  "ingredient": {
+    "item": "twilightforest:firefly"
+  },
+  "result": {
+    "count": 2,
+    "item": "biomancy:regenerative_fluid"
+  }
+}

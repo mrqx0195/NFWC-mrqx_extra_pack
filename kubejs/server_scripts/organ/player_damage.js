@@ -1,4 +1,4 @@
-// priority: 10
+// priority: 500
 /**
  * 造成伤害
  * @param {Internal.LivingHurtEvent} event
@@ -6,8 +6,8 @@
  * @returns
  */
 function organEntityHurtByPlayer(event, data) {
-    let player = event.source.player;
-    let typeMap = getPlayerChestCavityTypeMap(player);
+    let player = event.source.player
+    let typeMap = getPlayerChestCavityTypeMap(player)
     let onlySet = new Set()
     if (typeMap.has('kubejs:damage_only')) {
         typeMap.get('kubejs:damage_only').forEach(organ => {
@@ -22,7 +22,37 @@ function organEntityHurtByPlayer(event, data) {
             organPlayerDamageStrategies[organ.id](event, organ, data)
         })
     }
+
+    getItemEffectsInBothHands(player).forEach(itemEffectRes => {
+        if (tetraEffectPlayerDamageStrategies[itemEffectRes.itemEffect.getKey()]) {
+            tetraEffectPlayerDamageStrategies[itemEffectRes.itemEffect.getKey()](event, itemEffectRes, data)
+        }
+    })
 }
+
+/**
+ * 造成伤害处理策略
+ * @constant
+ * @type {Object<string,function(Internal.LivingHurtEvent, ItemEffectResult, EntityHurtCustomModel):void>}
+ */
+const tetraEffectPlayerDamageStrategies = {
+    "kubejs:functionalization": function (event, itemEffectRes, data) {
+        if (Math.random() * 100 < itemEffectRes.level * 2) {
+            let player = event.source.player
+            let typeMap = getPlayerChestCavityTypeMap(player)
+            let onlySet = new Set()
+            if (typeMap.has('kubejs:damage_only')) {
+                typeMap.get('kubejs:damage_only').forEach(organ => {
+                    if (!onlySet.has(organ.id)) {
+                        onlySet.add(organ.id)
+                        organPlayerDamageOnlyStrategies[organ.id](event, organ, data)
+                    }
+                })
+            }
+        }
+    },
+};
+
 
 /**
  * 造成伤害处理策略
@@ -30,7 +60,16 @@ function organEntityHurtByPlayer(event, data) {
  * @type {Object<string,function(Internal.LivingHurtEvent, organ, EntityHurtCustomModel):void>}
  */
 const organPlayerDamageStrategies = {
-
+    'kubejs:flame_muscle': function (event, organ, data) {
+        let player = event.source.player
+        let temperature = ColdSweat.getTemperature(player, 'body')
+        if (temperature > 0) {
+            event.amount += temperature / 2
+            player.server.scheduleInTicks(2, ctx => {
+                ColdSweat.setTemperature(player, 'core', temperature / 2 - ColdSweat.getTemperature(player, 'base'))
+            })
+        }
+    }
 };
 
 
@@ -117,28 +156,20 @@ const organPlayerDamageOnlyStrategies = {
         event.amount = event.amount * (player.pitch + 90) / 90
     },
     'kubejs:lost_paradise': function (event, organ, data) {
-        let player = event.source.player
-        let random = Math.random()
-        if (random < 0.2) {
-            event.entity.causeFallDamage(4, event.amount, DamageSource.FALL)
-            event.amount = 0
-            return
-        }
-        if (random < 0.4) {
-            event.amount = event.amount + event.entity.maxHealth * 0.03
-            return
-        }
-        if (random < 0.6) {
-            event.amount = event.amount * 2
-            return
-        }
-        if (random < 0.8) {
-            event.amount = event.amount + 10
-            return
-        }
-        if (random < 1) {
-            player.potionEffects.add('minecraft:regeneration', 20 * 15, 2)
-            return
+        let target = event.entity
+        if (Math.random() < (1 - target.health / target.maxHealth) * 0.25) {
+            let targetCC = target.getChestCavityInstance()
+            $ChestCavityUtil.openChestCavity(targetCC)
+            let targetInv = targetCC.inventory
+            for (let i = 0; i < targetInv.getContainerSize(); i++) {
+                let item = targetInv.getStackInSlot(i)
+                if (item && !item.isEmpty()) {
+                    target.block.popItem(Item.of(item.id, item.count, item.nbt))
+                    targetInv.extractItem(i, item.getCount(), false)
+                    return
+                }
+            }
+            target.kill()
         }
     },
     'kubejs:blade_of_heart': function (event, organ, data) {
@@ -301,4 +332,68 @@ const organPlayerDamageOnlyStrategies = {
         let amplifier = Math.floor(player.getLuck() * 0.2) - 1
         target.potionEffects.add('minecraft:luck', 20 * 120, Math.max(amplifier, 0))
     },
+    'kubejs:minotaur_muscle': function (event, organ, data) {
+        let entity = event.entity
+        if (entity.isPlayer()) return
+        if (event.source.type != 'player') return
+        if (entity.attributes.hasAttribute("minecraft:generic.knockback_resistance")) {
+            let originResistance = entity.getAttribute("minecraft:generic.knockback_resistance").getValue()
+            entity.server.scheduleInTicks(1, event => {
+                entity.setAttributeBaseValue("minecraft:generic.knockback_resistance", originResistance)
+            })
+            entity.setAttributeBaseValue("minecraft:generic.knockback_resistance", 10)
+        }
+        entity.addMotion(0, 3, 0)
+    },
+    'kubejs:questing_ram_answer': function (event, organ, data) {
+        let entity = event.entity
+        let player = event.source.player
+        let temperature = ColdSweat.getTemperature(player, 'body')
+        if (entity.isPlayer()) return
+        if (event.source.type == 'player') {
+            if (temperature > 50) {
+                let degree = (event.amount - 5) / 3 + temperature / 3
+                overLimitSpellCast(new ResourceLocation('irons_spellbooks', 'flaming_strike'), degree, player, false)
+                entity.setNoAI(true)
+                entity.server.scheduleInTicks(1, event => {
+                    entity.setNoAI(false)
+                })
+            }
+            if (temperature < -50) {
+                let degree = (event.amount - 6) * 2 - temperature * 2
+                overLimitSpellCast(new ResourceLocation('irons_spellbooks', 'icicle'), degree, player, false)
+                entity.setNoAI(true)
+                entity.server.scheduleInTicks(1, event => {
+                    entity.setNoAI(false)
+                })
+            }
+        }
+    },
+    'kubejs:minoshroom_totem': function (event, organ, data) {
+        let entity = event.entity
+        if (event.source.type != 'player') return
+        let player = event.source.player
+        if (player.getCooldowns().isOnCooldown('kubejs:minoshroom_totem')) return
+        let entityList = entity.level.getEntitiesWithin(new AABB.of(entity.x - 6, entity.y - 6, entity.z - 6, entity.x + 6, entity.y + 6, entity.z + 6))
+        event.amount = event.amount / 2
+        entityList.forEach(e => {
+            if (e.type == "minecraft:cow") {
+                let mooshroom = entity.level.createEntity("minecraft:mooshroom")
+                mooshroom.moveTo(e.position())
+                mooshroom.spawn()
+                e.discard()
+            }
+            else if (!e.isPlayer() && e.isAttackable()) {
+                entityList.forEach(e => {e.invulnerableTime = 0})
+                e.attack(DamageSource.OUT_OF_WORLD, Math.min(player.getAttributeTotalValue("minecraft:generic.attack_damage") / 2 , 5))
+            }
+        })
+        player.addItemCooldown('kubejs:minoshroom_totem', 10)
+    },
+    'kubejs:hydra_fiery_blood_essence': function (event, organ, data) {
+        if (event.source.type != 'player') return
+        let player = event.source.player
+        let fireSpellPower = player.getAttributeTotalValue("irons_spellbooks:fire_spell_power")
+        event.amount = event.amount * Math.min((1 + (fireSpellPower / 4)) , 2)
+    }
 };

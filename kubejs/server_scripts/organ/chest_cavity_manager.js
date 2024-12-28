@@ -1,4 +1,4 @@
-// priority: 1
+// priority: 500
 
 const playerChestCavityHashMap = new Map();
 const playerChestCavityPosMap = new Map();
@@ -45,11 +45,21 @@ PlayerEvents.inventoryClosed((event) => {
         return
     }
     global.initChestCavityIntoMap(player, true)
+
+    
     let itemMap = getPlayerChestCavityItemMap(player)
     if (player.persistentData.contains(organActive) && player.persistentData.getInt(organActive) == 1) {
         return
     }
-    if (itemMap.has('kubejs:long_lasting_pill') || itemMap.has('kubejs:long_lasting_pill_gold')) {
+    let activeFlag = false
+    itemMap.forEach(organ => {
+        if (player.getChestCavityInstance().inventory.hasAnyMatching(item => {
+            return item.hasTag('kubejs:auto_active')
+        })) {
+            activeFlag = true
+        }
+    })
+    if (activeFlag) {
         global.updatePlayerActiveStatus(event.player)
         player.persistentData.putInt(organActive, 1)
     }
@@ -112,8 +122,6 @@ global.initChestCavityIntoMap = (player, removeFlag) => {
     playerChestCavityHashMap.set(uuid, newHash)
     if (removeFlag) {
         player.persistentData.putInt(organActive, 0)
-        player.potionEffects.add('kubejs:magic_forbiden', 20 * 20)
-        player.potionEffects.add('minecraft:slowness', 20 * 30)
         clearAllActivedModify(player)
     }
     return;
@@ -193,17 +201,17 @@ function lookPos(direction, pos) {
         case 'down':
             return (pos + 9 < 27) ? (pos + 9) : -1
         case 'left':
-            return (pos - 1 >= 0) ? (pos - 1) : -1
+            return (pos % 9 - 1 >= 0) ? (pos - 1) : -1
         case 'right':
-            return (pos + 1 < 27) ? (pos + 1) : -1
+            return (pos % 9 + 1 < 9) ? (pos + 1) : -1
         case 'rightUp':
-            return (pos - 8 >= 0) ? (pos - 8) : -1
+            return (pos % 9 + 1 < 9 && pos - 9 >= 0) ? (pos - 8) : -1
         case 'rightDown':
-            return (pos + 10 < 27) ? (pos + 10) : -1
+            return (pos % 9 + 1 < 9 && pos + 9 < 27) ? (pos + 10) : -1
         case 'leftUp':
-            return (pos - 10 >= 0) ? (pos - 10) : -1
+            return (pos % 9 - 1 >= 0 && pos - 9 >= 0) ? (pos - 10) : -1
         case 'leftDown':
-            return (pos + 8 < 27) ? (pos + 8) : -1
+            return (pos % 9 - 1 >= 0 && pos + 9 < 27) ? (pos + 8) : -1
         default:
             return -1
     }
@@ -274,8 +282,6 @@ function initChestCavityIntoMap(player, removeFlag) {
     playerChestCavityHashMap.set(uuid, newHash)
     if (removeFlag) {
         player.persistentData.putInt(organActive, 0)
-        player.potionEffects.add('kubejs:magic_forbiden', 20 * 20)
-        player.potionEffects.add('minecraft:slowness', 20 * 30)
         clearAllActivedModify(player)
     }
     return;

@@ -6,6 +6,7 @@
 	icon: "weaponmaster:workstation"
 	id: "52B82AC988B2DA95"
 	images: [{
+		alpha: 200
 		click: ""
 		corner: false
 		dev: false

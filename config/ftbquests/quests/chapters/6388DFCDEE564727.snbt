@@ -171,7 +171,7 @@
 				type: "item"
 			}]
 			title: "靛蓝炸弹"
-			x: -5.25d
+			x: -4.25d
 			y: -4.25d
 		}
 		{
@@ -264,22 +264,6 @@
 		}
 		{
 			dependencies: ["3E9DD0B78886A183"]
-			id: "460370DFCAAA8817"
-			rewards: [{
-				id: "5BAC681E9D953FC3"
-				item: "lightmanscurrency:coin_gold"
-				type: "item"
-			}]
-			tasks: [{
-				id: "56F675F7A4F447CD"
-				item: "witherstormmod:command_block_sword"
-				type: "item"
-			}]
-			x: -2.25d
-			y: -3.25d
-		}
-		{
-			dependencies: ["3E9DD0B78886A183"]
 			id: "5A988F8268E91558"
 			rewards: [{
 				id: "475064EF2A5FDB19"
@@ -343,28 +327,6 @@
 			}]
 			x: 1.5d
 			y: -3.25d
-		}
-		{
-			dependencies: ["3E9DD0B78886A183"]
-			id: "75E128CC9C6A32BA"
-			rewards: [{
-				id: "5A41BDAAE0704F85"
-				item: "lightmanscurrency:coin_gold"
-				type: "item"
-			}]
-			tasks: [{
-				id: "512FB8BF784ABBB3"
-				item: {
-					Count: 1b
-					id: "goety:fell_blade"
-					tag: {
-						Damage: 0
-					}
-				}
-				type: "item"
-			}]
-			x: -2.25d
-			y: -2.25d
 		}
 		{
 			dependencies: ["3E9DD0B78886A183"]
@@ -452,7 +414,7 @@
 				type: "item"
 			}]
 			x: -2.25d
-			y: -1.25d
+			y: -3.25d
 		}
 		{
 			dependencies: ["3E9DD0B78886A183"]
@@ -519,22 +481,6 @@
 			}]
 			x: 1.5d
 			y: -1.25d
-		}
-		{
-			dependencies: ["3E9DD0B78886A183"]
-			id: "211A6E746DACE119"
-			rewards: [{
-				id: "3D81EF760FC6835C"
-				item: "lightmanscurrency:coin_gold"
-				type: "item"
-			}]
-			tasks: [{
-				id: "6BDAB2FFFE9C40AA"
-				item: "witherstormmod:command_block_axe"
-				type: "item"
-			}]
-			x: -2.25d
-			y: -0.25d
 		}
 		{
 			dependencies: ["3E9DD0B78886A183"]
@@ -622,7 +568,7 @@
 				type: "item"
 			}]
 			x: -2.25d
-			y: 0.75d
+			y: -2.25d
 		}
 		{
 			dependencies: ["3E9DD0B78886A183"]
@@ -704,7 +650,7 @@
 				type: "item"
 			}]
 			x: -2.25d
-			y: 1.75d
+			y: -1.25d
 		}
 		{
 			dependencies: ["3E9DD0B78886A183"]
@@ -780,7 +726,7 @@
 				type: "item"
 			}]
 			x: -2.25d
-			y: 2.75d
+			y: -0.25d
 		}
 		{
 			dependencies: ["3E9DD0B78886A183"]
@@ -819,7 +765,7 @@
 				item: "cataclysm:meat_shredder"
 				type: "item"
 			}]
-			x: -5.25d
+			x: -4.25d
 			y: -2.25d
 		}
 		{
@@ -858,7 +804,7 @@
 				type: "item"
 			}]
 			x: -2.25d
-			y: 3.75d
+			y: 0.75d
 		}
 		{
 			dependencies: ["3E9DD0B78886A183"]
@@ -934,7 +880,7 @@
 				type: "item"
 			}]
 			x: -2.25d
-			y: 4.75d
+			y: 1.75d
 		}
 		{
 			dependencies: ["3E9DD0B78886A183"]
@@ -978,7 +924,7 @@
 				type: "item"
 			}]
 			x: -2.25d
-			y: 5.75d
+			y: 2.75d
 		}
 		{
 			dependencies: ["3E9DD0B78886A183"]
@@ -1133,6 +1079,300 @@
 			}]
 			x: -7.5d
 			y: -4.25d
+		}
+		{
+			dependencies: ["3E9DD0B78886A183"]
+			id: "06D12909DE700280"
+			rewards: [{
+				id: "230FD1291B27A715"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "55577C4FB2FEE072"
+				item: {
+					Count: 1b
+					id: "twilightforest:ironwood_sword"
+					tag: {
+						Damage: 0
+						Enchantments: [{
+							id: "minecraft:knockback"
+							lvl: 1s
+						}]
+					}
+				}
+				type: "item"
+			}]
+			x: -6.5d
+			y: -4.25d
+		}
+		{
+			dependencies: ["3E9DD0B78886A183"]
+			id: "3E9949B5F166734E"
+			rewards: [{
+				id: "575F43B176AC1617"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "678F362BAC03406B"
+				item: {
+					Count: 1b
+					id: "twilightforest:fiery_sword"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -6.5d
+			y: -3.25d
+		}
+		{
+			dependencies: ["3E9DD0B78886A183"]
+			id: "37352FF431892298"
+			rewards: [{
+				id: "2945B6203C5ED5A7"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "00F10E2F1AF71619"
+				item: {
+					Count: 1b
+					id: "twilightforest:steeleaf_sword"
+					tag: {
+						Damage: 0
+						Enchantments: [{
+							id: "minecraft:looting"
+							lvl: 2s
+						}]
+					}
+				}
+				type: "item"
+			}]
+			x: -6.5d
+			y: -2.25d
+		}
+		{
+			dependencies: ["3E9DD0B78886A183"]
+			id: "200538E28E1B9793"
+			rewards: [{
+				id: "7F9E947F7BD3D96B"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "4D15DD572540F0AD"
+				item: {
+					Count: 1b
+					id: "twilightforest:gold_minotaur_axe"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -6.5d
+			y: -1.25d
+		}
+		{
+			dependencies: ["3E9DD0B78886A183"]
+			id: "4988F9E347721C54"
+			rewards: [{
+				id: "25BB62137E62D86D"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "5A0844F2968140F4"
+				item: {
+					Count: 1b
+					id: "twilightforest:diamond_minotaur_axe"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -6.5d
+			y: -0.25d
+		}
+		{
+			dependencies: ["3E9DD0B78886A183"]
+			id: "2202DF7F63ABA588"
+			rewards: [{
+				id: "6F36EFE53009DE46"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "13E118FA44F829A8"
+				item: {
+					Count: 1b
+					id: "twilightforest:knightmetal_sword"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -6.5d
+			y: 0.75d
+		}
+		{
+			dependencies: ["3E9DD0B78886A183"]
+			id: "107F690DA409719F"
+			rewards: [{
+				id: "6FFC692093BE4D11"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "40C58D256812392B"
+				item: {
+					Count: 1b
+					id: "twilightforest:ice_sword"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -6.5d
+			y: 1.75d
+		}
+		{
+			dependencies: ["3E9DD0B78886A183"]
+			id: "78D470B604CE6695"
+			rewards: [{
+				id: "1D8893398320C686"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "5143B290906D42B6"
+				item: {
+					Count: 1b
+					id: "twilightforest:triple_bow"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -6.5d
+			y: 2.75d
+		}
+		{
+			dependencies: ["3E9DD0B78886A183"]
+			id: "54816775C7BD5CB6"
+			rewards: [{
+				id: "5775DEA6AABBE0B5"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6B3A9D8CA6A42E2F"
+				item: {
+					Count: 1b
+					id: "twilightforest:seeker_bow"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -6.5d
+			y: 3.75d
+		}
+		{
+			dependencies: ["3E9DD0B78886A183"]
+			id: "76609D97787829AC"
+			rewards: [{
+				id: "65F94061E42717E0"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "31140ED2C3DE9DC8"
+				item: {
+					Count: 1b
+					id: "twilightforest:ice_bow"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -6.5d
+			y: 4.75d
+		}
+		{
+			dependencies: ["3E9DD0B78886A183"]
+			id: "6DE7DD4E8859770B"
+			rewards: [{
+				id: "3BE5B9FD294A3616"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "4FE5CEAE748E1249"
+				item: {
+					Count: 1b
+					id: "twilightforest:ender_bow"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -6.5d
+			y: 5.75d
+		}
+		{
+			dependencies: ["3E9DD0B78886A183"]
+			id: "1BE2B934F42E2318"
+			rewards: [{
+				id: "5B14BF1D40CA928B"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "3F80AA07681EC10B"
+				item: {
+					Count: 1b
+					id: "twilightforest:glass_sword"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -5.5d
+			y: -4.25d
+		}
+		{
+			dependencies: ["3E9DD0B78886A183"]
+			id: "3E3B54B6806E381E"
+			rewards: [{
+				id: "425BED32EA0673C7"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "3E01BA3E6EF28872"
+				item: {
+					Count: 1b
+					id: "twilightforest:giant_sword"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -5.5d
+			y: -3.25d
 		}
 	]
 	title: "武器：男人的浪漫"

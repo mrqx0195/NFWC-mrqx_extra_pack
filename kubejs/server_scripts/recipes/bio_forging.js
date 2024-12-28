@@ -1,3 +1,4 @@
+// priority: 800
 function BioForgingRecipe(ingredients, output) {
     this.type = 'biomancy:bio_forging'
     this.ingredients = ingredients

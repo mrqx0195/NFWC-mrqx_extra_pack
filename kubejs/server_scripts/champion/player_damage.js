@@ -1,3 +1,4 @@
+// priority: 500
 /**
  * 精英怪遭受伤害
  * @param {Internal.LivingHurtEvent} event 
@@ -41,11 +42,6 @@ const championPlayerDamageStrategies = {
                 entity.removeEffect(effect)
             })
         }
-    },
-    'reflection': function (event, data) {
-        let entity = event.entity
-        data.returnDamage = Math.min(event.amount, entity.getMaxHealth())
-        event.amount = Math.min(entity.getMaxHealth() * 0.5, event.amount)
     },
     'unbending': function (event, data) {
         let entity = event.entity

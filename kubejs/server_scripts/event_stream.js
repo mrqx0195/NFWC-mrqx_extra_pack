@@ -1,4 +1,4 @@
-// priority: 0
+// priority: 999
 /**
  * 事件流，用于某些事件的连续处理
  * 目前仅用作伤害事件的连续处理
@@ -28,8 +28,9 @@ global.LivingHurtByPlayer = event => {
     vulnerableEntityHurt(event, data)
     organCharmEntityHurtByPlayer(event, data)
     championEntityHurtByPlayer(event, data)
+    overloadEntityHurtByPlayer(event, data)
     if (data.returnDamage != 0) {
-        player.attack(data.returnDamage)
+        player.attack(data.damageSource, data.returnDamage)
     }
 }
 
@@ -52,7 +53,7 @@ global.LivingDamageByOthers = event => {
     sweetDreamPlayerHurtByOthers(event, data)
     curiosPlayerHurtByOthers(event, data)
     if (data.returnDamage != 0 && event.source.actual) {
-        event.source.actual.attack(data.returnDamage)
+        event.source.actual.attack(data.damageSource, data.returnDamage)
     }
 }
 
@@ -74,7 +75,11 @@ global.LivingHurtByOthers = event => {
     }
     vulnerableEntityHurt(event, data)
     organCharmPlayerHurtByOthers(event, data)
+    overloadEntityHurtByOthers(event, data)
+    iceEntityHurtByOthers(event, data)
     // 龙化必须在实际伤害结算前结算，因为额外生命变化不被视作实际受伤
     dragonPowerPlayerHurtByOthers(event, data)
     championPlayerHurtByOthers(event, data)
 }
+
+

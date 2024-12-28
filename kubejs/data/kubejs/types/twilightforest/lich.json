@@ -1,0 +1,14 @@
+{
+    "defaultChestCavity": [
+      
+      {"item": "chestcavity:rotten_rib","position": 1},
+      {"item": "chestcavity:rotten_rib","position": 7},
+      {"item": "kubejs:twilight_broken_lich_crown","position": 4},
+      {"item": "chestcavity:rotten_rib","position": 10},
+      {"item": "kubejs:soul_piece","position": 11},
+      {"item": "chestcavity:rotten_spine","position": 13},
+      {"item": "kubejs:soul_piece","position": 15},
+      {"item": "chestcavity:rotten_rib","position": 16},
+      {"item": "kubejs:soul_piece","position": 22}
+    ]
+}

@@ -13,7 +13,7 @@
 	#The point to anchor the UI to.
 	"UI Anchor" = "top-left"
 	#Whether or not to hide yourself in the party list
-	"Hide Self" = false
+	"Hide Self" = true
 	#Whether or not to hide your own GUI.
 	"Hide GUI" = false
 	#Whether or not to render all HUD elements as percentages instead.

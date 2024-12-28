@@ -1,0 +1,22 @@
+{
+    "defaultChestCavity": [
+      {"item": "kubejs:soul_piece","position": 4},
+      {"item": "kubejs:knightphantom_ghost","position": 13},
+      {"item": "kubejs:soul_piece","position": 12},
+      {"item": "kubejs:soul_piece","position": 14},
+      {"item": "kubejs:soul_piece","position": 22}
+    ],
+    "baseOrganScores": [
+      {"id": "chestcavity:health","value": "1.5"}
+    ],
+    "exceptionalOrgans": [
+      {"ingredient": {"item": "kubejs:soul_piece"},
+        "value": [
+          {"id":"chestcavity:health","value": "1"},
+          {"id":"chestcavity:strength","value": "1"},
+          {"id":"chestcavity:speed","value": "1"},
+          {"id":"chestcavity:defense","value": "1"}
+        ]
+      }
+    ]
+}

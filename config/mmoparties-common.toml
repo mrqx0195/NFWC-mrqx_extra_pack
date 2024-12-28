@@ -9,7 +9,7 @@
 		#Whether or not to auto-assign all players to a party
 		"Auto-assign Parties" = false
 		#Whether or not to allow invite all
-		"Allow Invite All" = false
+		"Allow Invite All" = true
 		#Whether or not debug mode is enabled
 		"Enable Debug Mode" = false
 

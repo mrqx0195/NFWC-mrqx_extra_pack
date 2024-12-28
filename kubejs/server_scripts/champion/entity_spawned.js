@@ -1,21 +1,38 @@
+// priority: 900
 EntityEvents.spawned(event => {
     /**
     * @type {Internal.LivingEntity}
     */
     let entity = event.entity
     if (!entity || !entity.isLiving() || !entity.isMonster()) return
-    
+
+    /** @type {String[]} */
+    let typeList = entity.persistentData.get('champion') ?? []
     let player = entity.getLevel().getNearestPlayer(entity, 64)
     if (!player) return
     let warp = player.persistentData.getInt(warpCount)
-    if (warp < 20) return
-    if (Math.random() > 0.001 * warp) return
-    let randomChampionType = randomGet(championTypeMap)
-    entity.persistentData.put('champion', [randomChampionType.type])
-    entity.setCustomName([randomChampionType.name, Text.gray('精英')])
+    while (true) {
+        if (warp < 20 || Math.random() > 0.001 * warp || typeList.length >= championTypeMap.length) break
+        let randomChampionType = randomGet(championTypeMap)
+        if (typeList.find((value, index, obj) => (value == randomChampionType.type))) continue
+        typeList.push(randomChampionType.type)
+    }
+
+    if (!typeList || typeList.length < 1) return
+    let typeNameList = []
+    typeList.forEach(type => {
+        championTypeMap.forEach(cha => {
+            if (cha.type == type) {
+                typeNameList.push(cha.name)
+                typeNameList.push(Text.gray('·'))
+            }
+        })
+    });
+    typeNameList.push(Text.gray('精英'))
+    entity.persistentData.put('champion', typeList)
+    entity.setCustomName(new Component.join(typeNameList))
     entity.setCustomNameVisible(true)
 })
-
 
 const championTypeMap = [
     {
@@ -52,11 +69,6 @@ const championTypeMap = [
         type: 'purity',
         name: Text.aqua('纯净'),
         desc: Text.gray('受到攻击后净化自身所有负面效果')
-    },
-    {
-        type: 'reflection',
-        name: Text.gold('反射'),
-        desc: Text.gray('每次最多受到50%最大生命值的伤害，并可以反射伤害')
     },
     {
         type: 'corrupt',

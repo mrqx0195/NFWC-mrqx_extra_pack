@@ -1,0 +1,31 @@
+{
+    "key": "naga_scale",
+    "category": "scale",
+    "primary": 6.5,
+    "secondary":2.1,
+    "tertiary": 4.3,
+    "durability": 388,
+    "integrityCost": 3,
+    "integrityGain": 2,
+    "magicCapacity": 345,
+    "toolLevel": 0,
+    "toolEfficiency": 0,
+    "attributes":{
+        "minecraft:generic.attack_speed" : 0.5,
+        "minecraft:generic.movement_speed" : 0.01
+    },
+    "tints": {
+        "glyph": "172911",
+        "texture": "172911"
+    },
+    "textures": [
+        "crude",
+        "default"
+    ],
+    "material": {
+        "items": [ "twilightforest:naga_scale" ]
+    },
+    "requiredTools": {
+        "cut": "minecraft:iron"
+    }
+}

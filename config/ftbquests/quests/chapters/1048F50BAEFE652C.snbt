@@ -198,6 +198,30 @@
 			x: 12.5d
 			y: 20.75d
 		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 4.467948717948718d
+			hover: [ ]
+			image: "kubejs:textures/task/collection_1.png"
+			rotation: 0.0d
+			width: 17.0d
+			x: -2.75d
+			y: 32.5d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 4.467948717948718d
+			hover: [ ]
+			image: "kubejs:textures/task/collection_2.png"
+			rotation: 0.0d
+			width: 17.0d
+			x: 12.5d
+			y: 29.75d
+		}
 	]
 	order_index: 0
 	quest_links: [ ]
@@ -544,7 +568,7 @@
 			description: [
 				"革命系列的&6核心器官&r，通过消耗煤炭来获得临时的效果增益。"
 				""
-				"&c熔火效果&r每有一级，将会提供额外&64&r点的固定攻击伤害加成。"
+				"&c熔火效果&r每有一级，将会提供额外&64&r点的固定攻击伤害加成，并提高&e10℃&r环境温度。"
 			]
 			id: "55C12BA0AF6395BA"
 			rewards: [{
@@ -566,7 +590,7 @@
 			description: [
 				"革命系列的&6核心器官&r，通过消耗煤炭来获得临时的效果增益。"
 				""
-				"&c心火效果&r会在buff仅有5s时触发心火暴击效果，在效果期间伤害会变为&2原伤害 * (1.0 * 效果等级 + 1.5)&r的伤害值。"
+				"&c心火效果&r会在buff仅有5s时触发心火暴击效果，在效果期间伤害会变为&2原伤害 * (1.0 * 效果等级 + 1.5)&r的伤害值。并提高&e10℃&r环境温度。"
 			]
 			id: "5A21F4A601331B62"
 			rewards: [{
@@ -3659,6 +3683,8 @@
 				""
 				"蠕虫神经元每30s会尝试在胸腔中的任意位置产下一枚肿瘤。肿瘤的属性取决于你当前胸腔的&6空白格子数量&r和你当前的&6新陈代谢效率&r。"
 				""
+				"&6体温&r会影响肿瘤生产的速度和质量。"
+				""
 				"经由蠕虫神经元产生的肿瘤，拥有着更高的词条属性，并且&2没有负健康的负面效果&r。"
 				""
 				"巫妖的身体由于过于空虚，因此无法催生出肿瘤。"
@@ -4031,6 +4057,654 @@
 			}]
 			x: 17.5d
 			y: 26.5d
+		}
+		{
+			dependencies: ["4EDC05BC7B3BB700"]
+			description: [
+				"它会爆炸。"
+				""
+				"如果释放时的体温太高……"
+				""
+				"&c它会造成极巨大范围的爆炸！&r"
+				""
+				"&c请不要在你的基地附近释放！&r"
+			]
+			id: "63942BBCD8A23B95"
+			rewards: [{
+				id: "7548E07EFFD3D3F4"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "小心你的电脑..."
+			tasks: [{
+				id: "0119E8A2691FD87C"
+				item: {
+					Count: 1b
+					id: "kubejs:creeper_appendix"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -1.75d
+			y: 29.25d
+		}
+		{
+			dependencies: ["6794388AA5357126"]
+			icon: "cold_sweat:thermometer"
+			id: "0F41B02B9003CEA6"
+			shape: "rsquare"
+			subtitle: "你从温度中获得了力量"
+			tasks: [{
+				id: "6DE94293CC2D6F0D"
+				title: "我已了解"
+				type: "checkmark"
+			}]
+			title: "温度器官"
+			x: -8.75d
+			y: 31.25d
+		}
+		{
+			dependencies: ["0F41B02B9003CEA6"]
+			description: [
+				"由&6龙炎锻炉&r制作的器官。"
+				"能把体温转化为攻击伤害。"
+			]
+			id: "09E82E7CDF76761E"
+			rewards: [{
+				id: "7FA8F041CECEA581"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "强而有力"
+			tasks: [{
+				id: "53604234BD646238"
+				item: {
+					Count: 1b
+					id: "kubejs:flame_muscle"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -6.75d
+			y: 32.25d
+		}
+		{
+			dependencies: ["0F41B02B9003CEA6"]
+			description: [
+				"由&6龙炎锻炉&r制作的器官。"
+				"体温高于&c50℃&r以启动&c过载&r状态，带有&c烈焰&r标签的器官可以提升过载等级。"
+				"&c过载状态&r提供高额基础数值，并根据体温提升受伤和造成伤害的&6倍率&r。"
+			]
+			id: "400DBCD002E978B2"
+			rewards: [{
+				id: "2E3D72F996BBB8BE"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "过载！"
+			tasks: [{
+				id: "1A2B7442957ED8AE"
+				item: {
+					Count: 1b
+					id: "kubejs:flame_heart"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -5.75d
+			y: 32.25d
+		}
+		{
+			dependencies: ["0F41B02B9003CEA6"]
+			description: [
+				"由&6龙炎锻炉&r制作的器官。"
+				"消耗煤炭以提升&c10℃&r体温。"
+			]
+			id: "509DDF14F4D7A4C1"
+			rewards: [{
+				id: "09B3B76DCA468594"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "它看上去十分耐热"
+			tasks: [{
+				id: "23B604839295171C"
+				item: {
+					Count: 1b
+					id: "kubejs:flame_stomach"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -4.75d
+			y: 32.25d
+		}
+		{
+			dependencies: ["0F41B02B9003CEA6"]
+			description: [
+				"由&6龙炎锻炉&r制作的器官。"
+				"当你体温为正时，以&6体温&r抵挡伤害。"
+			]
+			id: "6DFBC14FF6388C59"
+			rewards: [{
+				id: "2ABA4E2E9301B631"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "经火焰锤炼而出"
+			tasks: [{
+				id: "7DAD7F86F313D409"
+				item: {
+					Count: 1b
+					id: "kubejs:flame_spine"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -3.75d
+			y: 32.25d
+		}
+		{
+			dependencies: ["0F41B02B9003CEA6"]
+			description: [
+				"来自&b变色龙&r体内的器官。"
+				"通过使用冰块或岩浆块以调节温度。"
+			]
+			id: "05DD2F4D62126831"
+			rewards: [{
+				id: "5CC96C0C9592BEF2"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "掌控温度"
+			tasks: [{
+				id: "04C2E0BB00562B01"
+				item: {
+					Count: 1b
+					id: "kubejs:chameleon_stomach"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -7.75d
+			y: 32.25d
+		}
+		{
+			dependencies: ["0F41B02B9003CEA6"]
+			description: [
+				"由&6龙霜锻炉&r制作的器官。"
+				"体温低于&b-50℃&r以进入&b冷静&r状态，带有&b寒冰&r标签的器官可以提升冷静等级。"
+				"&b冷静状态&r会削弱你的法强，但提供大量冷却缩减，蓝量回复和吟唱速度，并根据体温降低受伤的&6倍率&r。"
+			]
+			id: "761BE15E61C46D28"
+			rewards: [{
+				id: "76CCE48105CB1CCB"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "冷静"
+			tasks: [{
+				id: "6E0DC264282D09CC"
+				item: {
+					Count: 1b
+					id: "kubejs:ice_heart"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -2.75d
+			y: 32.25d
+		}
+		{
+			dependencies: ["0F41B02B9003CEA6"]
+			description: [
+				"由&6龙霜锻炉&r制作的器官。"
+				"若你的体温&e小于0℃&r，伤害吸收&e低于20点&r，则为你提供&6临时血量&r。"
+			]
+			id: "2ACDAFCE8ABCA5A5"
+			rewards: [{
+				id: "0388C66BD40C1955"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "寒冰护体"
+			tasks: [{
+				id: "3E9AAA15D09F92D1"
+				item: {
+					Count: 1b
+					id: "kubejs:ice_rib"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -1.75d
+			y: 32.25d
+		}
+		{
+			dependencies: ["0F41B02B9003CEA6"]
+			description: [
+				"由&6龙霜锻炉&r制作的器官。"
+				"体温&e小于0℃&r，且&e继续降低&r时，根据&6体温&r获得&b冰霜法术强度加成&r。"
+			]
+			id: "3D3EF7A4D15E5B27"
+			rewards: [{
+				id: "1C43513ABFD4BFCC"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "又一份馈赠"
+			tasks: [{
+				id: "19625C23CB4EE9A0"
+				item: {
+					Count: 1b
+					id: "kubejs:ice_lung"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 0.25d
+			y: 32.25d
+		}
+		{
+			dependencies: ["0F41B02B9003CEA6"]
+			description: [
+				"由&6龙霜锻炉&r制作的器官。"
+				"按下主动按键，以&b体温负值&r填充你的法力槽。"
+			]
+			id: "3652784130289963"
+			rewards: [{
+				id: "54D24D4CC421811D"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "来自寒冬的馈赠"
+			tasks: [{
+				id: "55DD49C4EC47ACE9"
+				item: {
+					Count: 1b
+					id: "kubejs:ice_intestine"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -0.75d
+			y: 32.25d
+		}
+		{
+			dependencies: ["367FB0723E293CBD"]
+			description: [
+				"从&b冰精灵，破碎冰精灵，冰晶&r等生物胸腔中发现的器官。"
+				"每&e5s&r，如果你的体温在&e-25℃至25℃&r之间，降低&e1℃&r体温。"
+			]
+			id: "268D2C2522646317"
+			rewards: [{
+				id: "26B1EACCFAB2031C"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "它曾经是活着的"
+			tasks: [{
+				id: "7C5D8D02C795F333"
+				item: {
+					Count: 1b
+					id: "kubejs:ice_piece"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 7.5d
+			y: 29.5d
+		}
+		{
+			dependencies: ["367FB0723E293CBD"]
+			description: [
+				"从&b雪怪首领&r胸腔中找到的器官。"
+				"将你投掷的&6雪球&r替换为&6冰霜炸弹&r。"
+			]
+			id: "596A868E7C96AE68"
+			rewards: [{
+				id: "20944770B4CA6553"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "为什么雪怪胸腔里会有这个？"
+			tasks: [{
+				id: "1A55BFC11489F3DF"
+				item: {
+					Count: 1b
+					id: "kubejs:snow_monster_core"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 8.5d
+			y: 29.5d
+		}
+		{
+			dependencies: ["367FB0723E293CBD"]
+			description: [
+				"在&b死灵书&r胸腔中发现的器官。"
+				"激活后根据胸腔内每格物品的附魔提供增益。"
+				"正面附魔提供法力强度，诅咒附魔削弱法强提供回蓝，单个物品附魔超过5个，会提供冷却缩减并让你变得轻飘飘。"
+			]
+			id: "7EEFFB7970BEDC77"
+			rewards: [{
+				id: "724939B8A1E9C425"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "魔法版大胃王！"
+			tasks: [{
+				id: "4FA4D544B50C0D26"
+				item: {
+					Count: 1b
+					id: "kubejs:etched_paper"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 9.5d
+			y: 29.5d
+		}
+		{
+			dependencies: ["367FB0723E293CBD"]
+			description: [
+				"举行诡厄巫法的&6天空仪式&r获得。"
+				"可以通过主动能力按键控制自己的漂浮属性。"
+			]
+			id: "688319A3EAFD680A"
+			rewards: [{
+				id: "0FA099AC3B7680E0"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "踏云飞升，御风而归"
+			tasks: [{
+				id: "1D1FB4FFFF0CB1B0"
+				item: {
+					Count: 1b
+					id: "kubejs:cloud_pyramid"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 10.5d
+			y: 29.5d
+		}
+		{
+			dependencies: ["367FB0723E293CBD"]
+			description: [
+				"你可以在&b牛头人&r的胸腔中找到它。"
+				"近战攻击可以把你的敌人扔上天。"
+				"&c对玩家无效&r。"
+			]
+			id: "09011163D4C5929E"
+			rewards: [{
+				id: "09D099B62E71E384"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "冲垮他们！"
+			tasks: [{
+				id: "70C8632AFEDB5C26"
+				item: {
+					Count: 1b
+					id: "kubejs:minotaur_muscle"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 11.5d
+			y: 29.5d
+		}
+		{
+			dependencies: ["367FB0723E293CBD"]
+			description: [
+				"完成&6谜题羊的任务&r获取。"
+				"体温高于&e50℃&r，你的近战攻击被强化为无消耗的&4超限：烈焰打击&r。"
+				"体温低于&e50℃&r，你的近战攻击被强化为无消耗的&b超限：冰锥&r。"
+				"超限等级取决于本次攻击的伤害和你的体温。"
+			]
+			id: "7EE72760830DFDE2"
+			rewards: [{
+				id: "27D1874D1DD51A58"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "为你的伤害染色"
+			tasks: [{
+				id: "6FA332DCD74647D6"
+				item: {
+					Count: 1b
+					id: "kubejs:questing_ram_answer"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 12.5d
+			y: 29.5d
+		}
+		{
+			dependencies: ["367FB0723E293CBD"]
+			description: [
+				"从&b幻影骑士&r的胸腔中获得。"
+				"按下主动能力按键后进入&e10s&r的旁观者模式。"
+			]
+			id: "09A4763F5E000ACC"
+			rewards: [{
+				id: "33CA36F1F46CD3F8"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "成为一个幽灵"
+			tasks: [{
+				id: "676B6474E8CC6F95"
+				item: {
+					Count: 1b
+					id: "kubejs:knightphantom_ghost"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 13.5d
+			y: 29.5d
+		}
+		{
+			dependencies: ["367FB0723E293CBD"]
+			description: [
+				"从&b娜迦&r胸腔中获得。"
+				"抵挡一次&c致命伤害&r，然后该器官变为普通的娜迦鳞片。"
+			]
+			id: "68FB96ADDD22F10C"
+			rewards: [{
+				id: "12028B6F05DF4E2A"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "护身符"
+			tasks: [{
+				id: "6B2FDC7F7FDC9B2C"
+				item: {
+					Count: 1b
+					id: "kubejs:energetic_naga_scale"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 14.5d
+			y: 29.5d
+		}
+		{
+			dependencies: ["367FB0723E293CBD"]
+			description: [
+				"从暮色森林boss:&b巫妖&r的体内获取。"
+				"按下主动能力按键，&c吞噬&r范围内的&6铁魔法召唤物&r，&6傀儡&r和&6忠诚的僵尸&r。"
+				"根据召唤物的属性提供增益，持续&e60s&r。"
+				"被吞噬的生物将被&4永久移除&r。"
+			]
+			id: "20DF1D0DCA486A86"
+			rewards: [{
+				id: "26CBDA8E9A97C9B1"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "这也算是一种大胃王？"
+			tasks: [{
+				id: "46273D8EF1878CB7"
+				item: {
+					Count: 1b
+					id: "kubejs:twilight_broken_lich_crown"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 15.5d
+			y: 29.5d
+		}
+		{
+			dependencies: ["367FB0723E293CBD"]
+			description: [
+				"从&b哥布林骑士&r的&b上身&r胸腔中获得。"
+				"你注视的敌人对你的伤害降低。"
+				"其他敌人对你的伤害提升。"
+			]
+			id: "2027DA2F3CAB8203"
+			rewards: [{
+				id: "05CA9EF022DE9886"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "当深渊凝视你的时候"
+			tasks: [{
+				id: "3BA47D8D6E2DDACD"
+				item: {
+					Count: 1b
+					id: "kubejs:armor_with_gaze"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 16.5d
+			y: 29.5d
+		}
+		{
+			dependencies: ["367FB0723E293CBD"]
+			description: [
+				"从&b米诺菇&r的胸腔中获取。"
+				"攻击伤害减半，但造成额外范围虚空伤害。"
+				"&c多体节怪物&r在范围内的&c每一段体节&r均计算一次伤害。"
+				"以及一个小&5彩蛋&r。"
+			]
+			id: "302897ACB6D617BB"
+			rewards: [{
+				id: "0A2DF39518AF44AA"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "真 节肢杀手"
+			tasks: [{
+				id: "336EF9279B174387"
+				item: {
+					Count: 1b
+					id: "kubejs:minoshroom_totem"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 17.5d
+			y: 29.5d
+		}
+		{
+			dependencies: ["367FB0723E293CBD"]
+			description: [
+				"击杀&b九头蛇&r后的&6战利品箱&r中获得。"
+				"体温为正时，根据体温提供火焰法术强度。"
+				"近战攻击伤害受火焰法术强度加成。"
+			]
+			id: "033C2F5CFF29410B"
+			rewards: [{
+				id: "4F713EB5B0BE78BE"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "炙热之血"
+			tasks: [{
+				id: "17A1EF150FC6D04A"
+				item: {
+					Count: 1b
+					id: "kubejs:hydra_fiery_blood_essence"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 18.5d
+			y: 29.5d
+		}
+		{
+			dependencies: ["367FB0723E293CBD"]
+			description: [
+				"从&b暮初恶魂&r的胸腔中获得。"
+				"按下主动按键，在你注视的位置引发砷铅铁反应。"
+			]
+			id: "41B84E99173D0CAA"
+			rewards: [{
+				id: "3E21F767938F649A"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "黑暗高塔毁灭的源头"
+			tasks: [{
+				id: "414FBF5A36AE733C"
+				item: {
+					Count: 1b
+					id: "kubejs:carminite_reactor_core"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 7.5d
+			y: 30.5d
+		}
+		{
+			dependencies: ["367FB0723E293CBD"]
+			description: [
+				"从&b冰雪女王&r的胸腔中获取。"
+				"体温小于&e-50℃&r时，每&e3s&r升高&e10℃&r体温，为附近敌人叠加一层霜冻效果。"
+				"达到&e霜冻VI&r的敌人将清除霜冻并失去百分比当前生命，比例受冰霜法术强度加成。"
+			]
+			id: "63B1FD956DFC1B3C"
+			rewards: [{
+				id: "0D0F0051574B0F54"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "寒风的悲鸣"
+			tasks: [{
+				id: "300627DCEC109749"
+				item: {
+					Count: 1b
+					id: "kubejs:snow_queen_eternal_sorrow"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 8.5d
+			y: 30.5d
+		}
+		{
+			dependencies: ["6794388AA5357126"]
+			icon: "twilightforest:twilight_portal_miniature_structure"
+			id: "367FB0723E293CBD"
+			shape: "rsquare"
+			subtitle: "黯光之地"
+			tasks: [{
+				id: "79DBAA95CA4F5024"
+				title: "我已了解"
+				type: "checkmark"
+			}]
+			title: "暮色森林器官"
+			x: 6.5d
+			y: 28.5d
 		}
 	]
 	title: "胸腔：器官收集指南"

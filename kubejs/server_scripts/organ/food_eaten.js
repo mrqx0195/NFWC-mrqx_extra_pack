@@ -1,4 +1,4 @@
-// priority: 10
+// priority: 500
 ItemEvents.foodEaten(event => {
     let player = event.player;
     if (!player) return;
@@ -66,7 +66,7 @@ const organFoodEatenOnlyStrategies = {
             player.potionEffects.add('farmersdelight:nourishment', 90 * 20, 0)
             player.potionEffects.add('minecraft:health_boost', 15 * 20, 2)
             player.potionEffects.add('minecraft:resistance', 90 * 20, 1)
-            player.tell(Text.gray({ "translate": "kubejs.msg.tamagotchi.2" }))
+            player.tell(Text.gray(Text.translatable("kubejs.msg.tamagotchi.2")))
             updateWarpCount(player, player.persistentData.getInt(warpCount) - 1)
         }
     },
@@ -94,7 +94,7 @@ const organFoodEatenOnlyStrategies = {
         let organTumor = randomGet(tumorList)
         let index = organTumor.getInt('Slot')
         let tumor = instance.inventory.getItem(index)
-        if (index > 0 && item.hasNBT() && tumor.hasNBT()) {
+        if (index >= 0 && item.hasNBT() && tumor.hasNBT()) {
             let itemData = item.nbt.organData
             let organData = tumor.nbt.organData
             itemData.allKeys.forEach(key => {

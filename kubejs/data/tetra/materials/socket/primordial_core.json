@@ -14,7 +14,8 @@
         "irons_spellbooks:blood_spell_power":0.3
     },
     "effects": {
-        "skewering": [10,6]
+        "skewering": [10,6],
+        "kubejs:functionalization": 3
     },
     "tints": {
         "glyph": "EE0000",

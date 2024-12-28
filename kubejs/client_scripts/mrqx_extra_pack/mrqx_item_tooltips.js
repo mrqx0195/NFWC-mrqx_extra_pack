@@ -234,10 +234,10 @@ ItemEvents.tooltip((tooltip) => {
         if (item.nbt.isEmpty() || !item.nbt.getString('gateway')) {
             addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.gate_pearl_craft.1" })]], 1)
         }
-        else if (item.nbt.getString('gateway') == "mrqx_extra_pack:shadow_of_caerula_arbor") {
+        else if (item.nbt.getString('gateway') == "mrqx_extra_pack:mrqx_shadow_of_caerula_arbor") {
             addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.shadow_of_caerula_arbor.1" })]], 1)
         }
-        else if (item.nbt.getString('gateway') == "mrqx_extra_pack:mechanical_frenzy") {
+        else if (item.nbt.getString('gateway') == "mrqx_extra_pack:mrqx_mechanical_frenzy") {
             addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.mechanical_frenzy.1" })]], 1)
         }
     })

@@ -1,24 +1,11 @@
-const $ChestCavityUtil = Java.loadClass("net.tigereye.chestcavity.util.ChestCavityUtil")
-const $ChestCavityEntity = Java.loadClass("net.tigereye.chestcavity.interfaces.ChestCavityEntity")
-const $CCOrganScores = Java.loadClass("net.tigereye.chestcavity.registration.CCOrganScores")
-const $SimpleMenuProvider = Java.loadClass('net.minecraft.world.SimpleMenuProvider')
-const $ChestCavityScreenHandler = Java.loadClass("net.tigereye.chestcavity.ui.ChestCavityScreenHandler")
-const $CCItems = Java.loadClass("net.tigereye.chestcavity.registration.CCItems")
-const $StructurePlaceSettings = Java.loadClass("net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings")
-const $OreDataCapability = Java.loadClass('com.tom.createores.OreDataCapability')
-const $MapItemSavedData = Java.loadClass('net.minecraft.world.level.saveddata.maps.MapItemSavedData')
-const $MapItem = Java.loadClass('net.minecraft.world.item.MapItem')
-const $MapDecorationType = Java.loadClass('net.minecraft.world.level.saveddata.maps.MapDecoration$Type')
-const $ModBlocks = Java.loadClass('noobanidus.mods.lootr.init.ModBlocks')
-const $RandomizableContainerBlockEntity = Java.loadClass('net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity')
-
+// priority: 1000
 /**
-* 获取某个半径内的实体
-* @param {Internal.Level} level
-* @param {Vec3} pos
-* @param {Number} radius
-* @returns {Array<Internal.Entity>}
-*/
+ * 获取某个半径内的生物
+ * @param {Internal.Level} level
+ * @param {Vec3} pos
+ * @param {Number} radius
+ * @returns {Array<Internal.LivingEntity>}
+ */
 function getLivingWithinRadius(level, pos, radius) {
     let area = new AABB.of(pos.x() - radius, pos.y() - radius, pos.z() - radius, pos.x() + radius, pos.y() + radius, pos.z() + radius)
     let entityAABBList = level.getEntitiesWithin(area)
@@ -32,19 +19,21 @@ function getLivingWithinRadius(level, pos, radius) {
 }
 
 /**
-* @param {Internal.ServerPlayer} player
-* @returns {Boolean}
-*/
+ * 检测玩家是否在火中
+ * @param {Internal.ServerPlayer} player
+ * @returns {Boolean}
+ */
 function isPlayerOnFire(player) {
-    let itemMap = getPlayerChestCavityItemMap(player)
-    return itemMap.has('kubejs:immortal_volcanic_rock') || player.isOnFire()
+    let typeMap = getPlayerChestCavityTypeMap(player)
+    return typeMap.has('kubejs:on_fire_check') || player.isOnFire()
 }
 
 
 
 /**
-* @param {Internal.ServerPlayer} player
-*/
+ * 革命蒸汽机效果
+ * @param {Internal.ServerPlayer} player
+ */
 function revolSteamEngine(player) {
     let count = player.persistentData.getInt(resourceCount)
     if (player.hasEffect('kubejs:burning_heart')) {
@@ -65,7 +54,8 @@ function revolSteamEngine(player) {
 
 /**
  * 获取与基准方向相对的旋转
- * @param {Internal.Direction} direction 
+ * @param {Internal.Direction} direction
+ * @returns {String}
  */
 function getRelativeRotation(direction) {
     switch (direction) {

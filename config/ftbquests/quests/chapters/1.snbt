@@ -43,16 +43,17 @@
 			y: 3.0d
 		}
 		{
+			alpha: 200
 			click: ""
 			corner: false
 			dev: false
-			height: 45.767195767195766d
+			height: 45.0d
 			hover: [ ]
 			image: "kubejs:textures/task/chapter1_1.png"
 			rotation: 0.0d
-			width: 25.0d
-			x: 6.75d
-			y: 9.75d
+			width: 24.58092485549133d
+			x: 7.0d
+			y: 11.0d
 		}
 	]
 	order_index: 0
@@ -63,7 +64,7 @@
 			description: [
 				"这是一个&5脆弱&r的世界，从到来到这里开始，你就意识到这个世界比曾经的脆弱的多。"
 				""
-				"为了开始你的旅途，你仍旧需要从&6第一棵树&r开始，逐步发展。"
+				"为了开始你的旅途，你仍旧需要从&e第一棵树&r开始，逐步发展。"
 				""
 				"至于曾经的世界是什么？谁知道呢。"
 			]
@@ -104,15 +105,15 @@
 				type: "item"
 			}]
 			title: "第一棵树"
-			x: 6.0d
-			y: 17.25d
+			x: 6.25d
+			y: 22.75d
 		}
 		{
 			dependencies: ["040207B33E2FEBFF"]
 			description: [
 				"当你获得石镐的时候，往往意味着要开始千篇一律的挖矿过程。"
 				""
-				"但是暂且可以别心急！不妨看看后面的任务？也许在本整合里，有各种&6意想不到&r的方法来获取原本你心心念念的各种资源！"
+				"但是暂且可以别心急！不妨看看后面的任务？也许在本整合里，有各种&a意想不到的方法&r来获取原本你心心念念的各种资源！"
 			]
 			id: "0721AF9D7D5E4A7C"
 			rewards: [
@@ -141,15 +142,15 @@
 				type: "item"
 			}]
 			title: "完美的开始"
-			x: 6.0d
-			y: 11.25d
+			x: 6.25d
+			y: 16.75d
 		}
 		{
 			dependencies: ["3E9DD0B78886A183"]
 			description: [
 				"在这个脆弱的世界里，似乎一切生物都变得与众不同了，你找到了一种在这个世界存活下去的新的方式——&2破开胸膛，取出心脏&r！"
 				""
-				"本整合包的第一个&5重要道具&r登场，从现在起，你可能需要时时刻刻的携带&2开胸器&r。"
+				"本整合包的第一个&d重要道具&r登场，从现在起，你可能需要时时刻刻的携带&6开胸器&r。"
 				""
 				"对着空气右键使用开胸器，可以打开自己的胸腔，对内部的器官进行更改。"
 				""
@@ -175,32 +176,45 @@
 				type: "item"
 			}]
 			title: "了解自我"
-			x: 6.0d
-			y: 3.25d
+			x: 6.25d
+			y: 7.25d
 		}
 		{
 			dependencies: ["6069FC5CA00481CE"]
 			description: [
-				"&2矿石肺&r可能是你前期能接触的唯一一个&6高级器官&r。&2通过手持肺脏右键沙子即可获得&r。你可以通过EMI的R键查看绝大多数特殊器官的获得方法。"
+				"&6矿石肺&r可能是你前期能接触的唯一一个&5高级器官&r。&2通过手持肺脏右键沙子即可获得&r。你可以通过EMI的R键查看绝大多数特殊器官的获得方法。"
 				""
-				"所谓高级器官，即是有着&6特殊效果&r的系列器官。"
+				"所谓高级器官，即是有着&e特殊效果&r的系列器官。"
 				""
-				"&2矿石肺&r的能力是可以在你开掘&2石头&r时，积累矿石灰尘，在积累到一定程度后，根据当前拥有的幸运值，给予你矿物碎块。"
+				"&6矿石肺&r的能力是可以在你开掘&6石头&r时，消耗资源点数，根据你拥有的幸运值，给予你矿物碎块。"
+				""
+				"为了积累资源点数，你需要一些能够提供资源点数的器官，比如&3钻石风暴瓶&r。"
 				""
 				"请注意，该资源点积累的条件必须为&2破坏石头&r。"
 			]
 			icon: "kubejs:ore_lung"
 			id: "2DD73A2CCC0054D8"
-			rewards: [{
-				count: 5
-				id: "0905D2943CB40EB0"
-				item: {
-					Count: 1b
-					id: "lightmanscurrency:coin_iron"
-					tag: { }
+			rewards: [
+				{
+					count: 5
+					id: "0905D2943CB40EB0"
+					item: {
+						Count: 1b
+						id: "lightmanscurrency:coin_iron"
+						tag: { }
+					}
+					type: "item"
 				}
-				type: "item"
-			}]
+				{
+					id: "31768FFAA8A27F55"
+					item: {
+						Count: 1b
+						id: "kubejs:diamond_bottle"
+						tag: { }
+					}
+					type: "item"
+				}
+			]
 			subtitle: "吸入矿尘，积累矿物"
 			tasks: [{
 				id: "41C666877A44FFB2"
@@ -209,7 +223,7 @@
 			}]
 			title: "矿石肺"
 			x: 2.5d
-			y: 5.0d
+			y: 9.0d
 		}
 		{
 			dependencies: ["50CE3ADF8E4D6426"]
@@ -274,8 +288,8 @@
 				type: "checkmark"
 			}]
 			title: "重定义自己的内在"
-			x: 4.0d
-			y: 3.25d
+			x: 4.25d
+			y: 7.25d
 		}
 		{
 			dependencies: ["6069FC5CA00481CE"]
@@ -325,14 +339,14 @@
 			}]
 			title: "基础属性词条解释"
 			x: 2.5d
-			y: 3.25d
+			y: 7.25d
 		}
 		{
-			dependencies: ["0721AF9D7D5E4A7C"]
+			dependencies: ["2A510BC7C7C6FEF4"]
 			description: [
 				"虽然本整合包并不要求玩家收集大量的资源用于无意义的堆料工作，但基本的资源仍旧是需要玩家积累出来的。"
 				""
-				"获取一定量的铁，为后续的各种工作积累基本的条件。"
+				"获取一定量的&6铁锭&r，为后续的各种工作积累基本的条件。"
 			]
 			id: "3E9DD0B78886A183"
 			rewards: [{
@@ -347,19 +361,19 @@
 			}]
 			subtitle: "为了发展，你需要一些常见的基础物资"
 			tasks: [{
-				count: 8L
+				count: 6L
 				id: "0AFD986A1E17780D"
 				item: "minecraft:iron_ingot"
 				type: "item"
 			}]
 			title: "足够多的铁"
-			x: 6.0d
-			y: 7.5d
+			x: 6.25d
+			y: 11.5d
 		}
 		{
 			dependencies: ["50CE3ADF8E4D6426"]
 			description: [
-				"本整合包提供两种&d成长型武器&r，&b在FTB任务左侧选择对应的模组介绍去深入体验吧！&r"
+				"本整合包提供两种&d成长型武器&r，&e在FTB任务左侧选择对应的模组介绍去深入体验吧！&r"
 				""
 				"&d-《Tetra》以及其附属：&r该模组允许你使用&e不同类型的材料&r更换&e武器和工具的配件&r，从而做出适合自己的武器。&7&m新时代匠魂&r&r"
 				""
@@ -413,19 +427,17 @@
 				weak_nbt_match: true
 			}]
 			title: "Tetra与工具"
-			x: 5.0d
-			y: 0.75d
+			x: 5.25d
+			y: 5.75d
 		}
 		{
 			dependencies: [
-				"538FC6DDC204DBFA"
-				"4C370F7BB4E56798"
+				"6773A853D99CCCA8"
+				"0DDF984214501E4A"
 			]
 			dependency_requirement: "one_completed"
 			description: [
-				"下界是在所有游玩历程中都需要探索的一个维度，其包含了大量的新生物以及前往末地必须要探索的&2下界要塞&r。"
-				""
-				"可以说，去往下界的主要目的就是为了寻找&2下界要塞&r，以获得奖励箱中的&5丰富物品&r，及击杀烈焰人获取&5烈焰棒&r。"
+				"&c欢迎来到全新的下界！&r"
 				""
 				"如果你在寻找要塞的过程中遇到了麻烦，可以使用本整合专供的&2要塞之眼&r。"
 			]
@@ -458,25 +470,23 @@
 					type: "item"
 				}
 			]
-			subtitle: "如平常一般，前往下界"
+			subtitle: "全新的体验"
 			tasks: [{
 				dimension: "minecraft:the_nether"
 				id: "398A3506EAC58765"
 				title: "下界"
 				type: "dimension"
 			}]
-			title: "前往下界"
-			x: 6.0d
-			y: -1.5d
+			title: "进入下界"
+			x: 6.25d
+			y: 1.75d
 		}
 		{
 			dependencies: ["51FA796A91E94C4D"]
 			description: [
-				"前往下界堡垒的主要目的就是为了获取烈焰棒，以期制作烈焰粉来到达末地。"
+				"前往&2下界堡垒&r的主要目的就是为了获取&6烈焰棒&r，以期制作&6末影之眼&r找到末地。"
 				""
-				"当然，除了这种方法之外你也可以使用猪灵交易的方案来获取烈焰粉，不过这并不被推荐。"
-				""
-				"到达下界堡垒后，你也可以顺带收集一些地狱疣，以供后期炼药使用。"
+				"&7同时如果你已经发展机械动力，还可以去获取烈焰人燃烧室，这在第二章节会用到。&r"
 			]
 			icon: "minecraft:nether_bricks"
 			id: "3FF06F6F309FAEC3"
@@ -497,13 +507,13 @@
 				type: "item"
 			}]
 			title: "下界堡垒与烈焰人"
-			x: 6.0d
-			y: -4.0d
+			x: 6.25d
+			y: -0.75d
 		}
 		{
 			dependencies: ["50CE3ADF8E4D6426"]
 			description: [
-				"本整合包提供两种&d成长型武器&r，&b在FTB任务左侧选择对应的模组介绍去深入体验吧！&r"
+				"本整合包提供两种&d成长型武器&r，&e在FTB任务左侧选择对应的模组介绍去深入体验吧！&r"
 				""
 				"&d-《Tetra》以及其附属：&r该模组允许你使用&e不同类型的材料&r更换&e武器和工具的配件&r，从而做出适合自己的武器。&7&m新时代匠魂&r&r"
 				""
@@ -538,23 +548,25 @@
 				type: "item"
 			}]
 			title: "成为武器大师"
-			x: 7.0d
-			y: 0.75d
+			x: 7.25d
+			y: 5.75d
 		}
 		{
 			dependencies: ["3E9DD0B78886A183"]
 			description: [
-				"&d《机械动力（Create）》&r会为你带来什么："
+				"&c——后续的任务请在FTB任务左侧的「机械动力」页面查看。&r"
 				""
-				"1.一些比较方便的机器，可以大量&e自动获取&r一些自然资源。"
+				"&d「机械动力」模组&r在本整合包中的定位："
 				""
-				"2.一些比较炫酷的机器，可以非常酷炫的完成某些没啥意义的功能。"
+				"1.制作某些与&2机械风格相关的器官&r。"
 				""
-				"3.某些流程&e必须&r机械动力的机器完成。"
+				"2.&2部分主线流程&r的装置需要依赖机械动力制作，特别简单。"
 				""
-				"&2考虑到部分玩家完全不会/不想搞明白机械动力的具体内容，本整合包的设计上也并没有过于倾向于自动化。&r排除掉几个挑战性质的器官外，机械动力也是&e选择性的一环&r。"
+				"3.搭建机械工程，完成对&2原版材料的自动化收集&r。"
 				""
-				"因此，&c你完全没必要为了机械动力而精进某些东西，仅需要在FTB左侧的&r&b机械动力专栏&r&c中，跟着教程，一步一步完成即可。&r"
+				"&c本整合包中并不要求玩家十分了解机械动力！&r"
+				""
+				"&e如果你不喜欢钻研机械，那只需要根据&r&bFTB任务左侧「机械动力」任务专栏引导，&r&e简单制作几个机械装置即可。&r"
 			]
 			icon: "create:wrench"
 			id: "0861DDE9767A3E9D"
@@ -569,24 +581,24 @@
 				type: "item"
 			}]
 			shape: "rsquare"
-			subtitle: "机械动力是一款非常冗长且费劲的科技模组"
+			subtitle: "轻松入门「机械动力」"
 			tasks: [{
 				id: "45C2644514843204"
 				item: "minecraft:andesite"
 				type: "item"
 			}]
-			title: "机械动力？人工动力！"
-			x: 7.75d
-			y: 7.5d
+			title: "齿轮的魅力"
+			x: 8.0d
+			y: 11.5d
 		}
 		{
 			dependencies: ["3E9DD0B78886A183"]
 			description: [
-				"在背包界面的&2饰品栏&r内（点击人物右上的按钮打开），可以将&2灯笼挂载在腰上&r。以提供随时的动态光源效果。"
+				"在背包界面的&e饰品栏&r内（点击人物右上的按钮打开），可以&2将灯笼挂载在腰上&r。以提供随时的动态光源效果。"
 				""
-				"除此之外，饰品栏内可以装备大量能够高效提高你的能力的饰品，为了寻找更多有用的饰品，你可以制作&5神秘饰品&r以随机获得饰品。"
+				"除此之外，饰品栏内可以装备大量能够高效提高你的能力的饰品，为了寻找更多有用的饰品，你可以寻找&5神秘饰品&r以随机获得饰品。"
 				""
-				"&3如果你打开神秘饰品以后，在背包中没有看到饰品，可能是自动装备到了饰品栏中。&r"
+				"&2如果你打开神秘饰品以后，在背包中没有看到饰品，可能是自动装备到了饰品栏中。&r"
 			]
 			icon: "minecraft:lantern"
 			id: "636CE66FFE0F6A51"
@@ -614,8 +626,8 @@
 				type: "item"
 			}]
 			title: "将光源挂在腰上"
-			x: 4.0d
-			y: 7.5d
+			x: 4.25d
+			y: 11.5d
 		}
 		{
 			dependencies: ["3E9DD0B78886A183"]
@@ -624,7 +636,7 @@
 				""
 				"储物抽屉在游戏的各个时期都是非常好用的，在后面你可以通过添加&2抽屉管理器&r的方式来扩展抽屉的存储便利程度。"
 				""
-				"后续也可以采用Tom's的简易存储来接入抽屉，免去物品搬运的问题。"
+				"后续也可以采用&d「精致存储」模组&r来接入抽屉，免去物品搬运的问题。"
 			]
 			hide_dependency_lines: true
 			icon: "functionalstorage:birch_1"
@@ -653,40 +665,8 @@
 				type: "item"
 			}]
 			title: "储物抽屉"
-			x: 7.75d
-			y: 8.5d
-		}
-		{
-			dependencies: ["3E9DD0B78886A183"]
-			description: [
-				"随着你的基地规模逐渐扩大，箱子的数量也会急剧变多，此时，你急需一个类如AE、RS的Mod来&2统一管理你的存储容器&r。"
-				""
-				"这个时候，你便可以使用&d《Tom的简易存储》&r来解决问题。Tom的简易存储可以方便的整合周围的容器，并且提供一个统一的接口用于玩家互动。"
-				""
-				"它不仅简单易用，最重要的是，它完全不耗电！"
-			]
-			hide_dependency_lines: true
-			id: "26FE76DDA11E0026"
-			rewards: [{
-				count: 5
-				id: "4225FDCA2824DF55"
-				item: {
-					Count: 1b
-					id: "lightmanscurrency:coin_iron"
-					tag: { }
-				}
-				type: "item"
-			}]
-			shape: "rsquare"
-			subtitle: "《Tom的简易存储》入门"
-			tasks: [{
-				id: "0318199998D5096F"
-				item: "toms_storage:ts.inventory_connector"
-				type: "item"
-			}]
-			title: "简易、存储、整合"
-			x: 8.75d
-			y: 7.5d
+			x: 9.25d
+			y: 11.5d
 		}
 		{
 			dependencies: ["3FED9C9227FC9CD5"]
@@ -717,8 +697,8 @@
 				type: "item"
 			}]
 			title: "和朋友一起远征"
-			x: 4.0d
-			y: 17.25d
+			x: 8.0d
+			y: 21.25d
 		}
 		{
 			dependencies: ["2DD73A2CCC0054D8"]
@@ -746,12 +726,12 @@
 				type: "item"
 			}]
 			title: "查看资源槽"
-			x: 1.0d
-			y: 5.0d
+			x: 0.75d
+			y: 9.0d
 		}
 		{
 			dependencies: ["040207B33E2FEBFF"]
-			description: ["有些时候我们需要将货币进行转换，此时，ATM成为了必要的物品。"]
+			description: ["有些时候我们需要将货币进行转换，此时，&6ATM&r成为了必要的物品。"]
 			hide_dependency_lines: true
 			id: "639C1EDF7CAB7739"
 			rewards: [
@@ -772,8 +752,8 @@
 				item: "lightmanscurrency:atm"
 				type: "item"
 			}]
-			x: 7.75d
-			y: 13.25d
+			x: 8.0d
+			y: 18.75d
 		}
 		{
 			dependencies: ["5BC3743958DA4B16"]
@@ -794,8 +774,8 @@
 				item: "kubejs:blood_extractor"
 				type: "item"
 			}]
-			x: 1.0d
-			y: 3.25d
+			x: 0.75d
+			y: 7.25d
 		}
 		{
 			dependencies: ["50CE3ADF8E4D6426"]
@@ -807,34 +787,35 @@
 				item: "lightmanscurrency:coin_gold"
 				type: "item"
 			}]
+			shape: "hexagon"
 			subtitle: "强化训练"
 			tasks: [{
 				id: "029BCE2F509F439C"
 				item: "dummmmmmy:target_dummy"
 				type: "item"
 			}]
-			x: 6.0d
-			y: 0.25d
+			x: 5.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["040207B33E2FEBFF"]
 			description: [
-				"在拥有了任务获得的金币后，第一个疑问便是如何消费这些金币。答案也很简单——通过Wares的&6凭证买卖系统&r。"
+				"在拥有了任务获得的金币后，第一个疑问便是如何消费这些金币。答案也很简单——通过&d《Wares》模组&r的&d凭证买卖系统&r。"
 				""
-				"你可以在某些地牢箱子里找到Wares的&6交易协议&r（&e往往出现在村庄箱子中&r），其中包含了各种类型的交易。"
+				"你可以在某些地牢箱子里找到&6交易协议&r&7（往往出现在村庄箱子中）&r，其中包含了各种类型的交易。"
 				""
-				"1. 通过&6交货台&r，便可以完成交货协议。（交货台中，上方放&2交货协议&r，左侧放&e提交的物品&r，下方放&6纸板盒&r）"
+				"1. 通过&6交货台&r，便可以完成交货协议。（交货台中，上方放&6交货协议&r，左侧放&e提交的物品&r，下方放&6纸板盒&r）"
 				""
-				"2. &6交货台&r同样可以作为&2村民的工作站&r，提供新的村民职业：&ePackager&r。"
+				"2. &6交货台&r同样可以作为&2村民的工作站&r，提供新的村民职业：&e打包工人&r。"
 				""
 				"{@pagebreak}"
 				"一些详细的解释："
 				""
-				"1. Packager会自动包装并交付包裹，不过他在一天之内不会一直进行工作；"
+				"1. &b打包工人&r会&a自动包装并交付包裹&r，不过他在一天之内不会一直进行工作；"
 				""
-				"2. Packager通过交付包裹来获得经验并提升职业等级，更高的职业等级可以让他一次交付的包裹数量越多；"
+				"2. &3打包工人&r通过&a交付包裹来获得经验并提升职业等级&r，更高的职业等级可以让他&2一次交付的包裹数量越多&r；"
 				""
-				"3. 玩家也可以自己手动交易包裹，但交付周期更长且一次只能交付一个。"
+				"3. 玩家也可以自己手动交易包裹，但&2交付周期更长且一次只能交付一个&r。"
 			]
 			hide_dependency_lines: false
 			icon: "wares:delivery_table"
@@ -875,8 +856,8 @@
 					type: "item"
 				}
 			]
-			x: 4.0d
-			y: 14.25d
+			x: 4.25d
+			y: 19.75d
 		}
 		{
 			dependencies: ["3FED9C9227FC9CD5"]
@@ -919,8 +900,8 @@
 				type: "item"
 			}]
 			title: "你需要一些补给"
-			x: 6.0d
-			y: 14.25d
+			x: 6.25d
+			y: 19.75d
 		}
 		{
 			dependencies: ["040207B33E2FEBFF"]
@@ -942,13 +923,13 @@
 				type: "item"
 			}]
 			title: "背包的升级"
-			x: 7.75d
-			y: 14.25d
+			x: 8.0d
+			y: 19.75d
 		}
 		{
 			dependencies: ["5067AA0335B2B396"]
 			description: [
-				"按下&6组队键(默认[键)&r打开组队界面，邀请你的朋友进入你的队伍！"
+				"按下&a组队键(默认[键)&r打开组队界面，邀请你的朋友进入你的队伍！"
 				""
 				"在同一队伍中将不会受到友军伤害，这对多人的旅行用处巨大！"
 			]
@@ -965,53 +946,21 @@
 				type: "checkmark"
 			}]
 			title: "邀请你的朋友！"
-			x: 1.5d
-			y: 17.25d
-		}
-		{
-			dependencies: ["3E9DD0B78886A183"]
-			description: [
-				"无论是在使用Tom的存储时，还是日常建造，都可能遇到单位存储空间中存储容量不够的问题。使用&2更高级的金属桶&r，可以让你获得更多的存储选择，同时也非常适合用于堆叠构造你的Tom储存仓库。"
-				""
-				"相比于使用大量的箱子或者精妙背包，使用桶能够极大的节约客户端对该区域的渲染消耗，增加你的游戏帧数！"
-			]
-			hide_dependency_lines: true
-			id: "51AE35F0C335ACA6"
-			rewards: [
-				{
-					id: "7F29952537133103"
-					item: "lightmanscurrency:coin_gold"
-					type: "item"
-				}
-				{
-					count: 4
-					id: "342B02AFCB492694"
-					item: "metalbarrels:diamond_barrel"
-					type: "item"
-				}
-			]
-			subtitle: "超级仓库的基石"
-			tasks: [{
-				id: "0EB4C8F35A46DB09"
-				item: "metalbarrels:iron_barrel"
-				type: "item"
-			}]
-			title: "更多桶！"
-			x: 8.75d
-			y: 8.5d
+			x: 9.0d
+			y: 21.25d
 		}
 		{
 			dependencies: ["50CE3ADF8E4D6426"]
 			description: [
-				"为了进一步发展&6器官艺术&r，你需要一个高效且稳定的器官来源。血肉重铸的&d肉块&r便能满足你的这一系列要求。"
+				"为了进一步发展&e器官艺术&r，你需要一个高效且稳定的器官来源。血肉重铸的&b肉块&r便能满足你的这一系列要求。"
 				""
-				"肉块是一个非常高效的器官来源，他能够为你提供一系列的&d模板器官&r。模板器官的用途非常广泛，包括将其放置在器官容器中可以最高升级为T3级别器官，或者使用模板器官制作大量的高级器官。"
+				"&3肉块&r是一个非常高效的器官来源，他能够为你提供一系列的&5模板器官&r。模板器官的用途非常广泛，包括将其放置在器官容器中可以最高升级为T3级别器官，或者使用模板器官制作大量的高级器官。"
 				""
 				"为了发展血肉重铸，你需要获得一些&6尖锐利爪&r或者&6尖锐利齿&r，来制作&6血肉温床&r。"
 				""
 				"{@pagebreak}"
 				""
-				"关于尖锐利爪、利齿之类的物品如何获得，可以通过在&e背包界面右下角的搜索框&r搜索到对应物品，按下&6Ctrl&r键即可看到对应掉落的生物列表。"
+				"关于尖锐利爪、利齿之类的物品如何获得，可以通过在&e背包界面右下角的搜索框&r搜索到对应物品，按下&aCtrl键&r即可看到对应掉落的生物列表。"
 				""
 				"&7例如，上文提到的尖锐利齿便可以从狼、猫等生物身上获取。&r"
 			]
@@ -1039,17 +988,17 @@
 				type: "item"
 			}]
 			title: "收割血肉"
-			x: 8.0d
-			y: 3.25d
+			x: 8.25d
+			y: 7.25d
 		}
 		{
 			dependencies: ["1884740B0724DE70"]
 			description: [
-				"&d肉块&r是《血肉重铸》模组的开始，为了培育肉块，你需要向&6血肉温床&r内投入&e一些生肉&r以及使用&6治疗药水&r。&d温床侧面的眼睛完全发亮时&r，就意味着可以生产肉块了。"
+				"&b肉块&r是&d《血肉重铸》模组&r的开始，为了培育肉块，你需要向&6血肉温床&r内投入&e一些生肉&r以及使用&6治疗药水&r。&a温床侧面的眼睛完全发亮时&r，就意味着可以生产肉块了。"
 				""
 				"无论是哪种肉块，都可以使用&6开胸器&r打开它的胸腔并且取出它的&d模板器官&r，这在后面会非常有用！"
 				""
-				"同时，杀死肉块也可以获得&d鲜活肉块&r，这是后面会广泛用到的一种&e原材料&r。"
+				"同时，杀死肉块也可以获得&6鲜活肉块&r，这是后面会广泛用到的一种&e原材料&r。"
 				""
 				"&4请注意，手持物品时不小心右键到血肉温床，物品会被吞掉并且不可取回。所以推荐让血肉温床远离你的生活区！！！！！！&r"
 				""
@@ -1069,15 +1018,15 @@
 				type: "item"
 			}]
 			title: "建设血肉温床"
-			x: 10.0d
-			y: 3.25d
+			x: 10.25d
+			y: 7.25d
 		}
 		{
 			dependencies: ["145730691E558B78"]
 			description: [
 				"制作&6分解器&r，可以将某些物品分解成特殊的&e原材料&r，为该模组与整合包添加的部分物品提供&e合成材料&r。"
 				""
-				"为了启动&6分解器&r，你需要在&e左侧格子&r放入&e食物&r以提供&e初始能源&r。"
+				"为了启动&6分解器&r，你需要在&a左侧格子&r放入&e食物&r以提供&e初始能源&r。"
 			]
 			id: "16D415FC4B0BFB12"
 			rewards: [{
@@ -1093,13 +1042,13 @@
 				type: "item"
 			}]
 			title: "血肉材料获取"
-			x: 10.0d
-			y: 5.0d
+			x: 10.25d
+			y: 9.0d
 		}
 		{
 			dependencies: ["5F271CD6AAEC88FC"]
 			description: [
-				"模板器官广泛的用于各种器官配方之中。"
+				"&5模板器官&r广泛的用于各种器官配方之中。"
 				""
 				"同时，模板器官可以放入器官容器中，向上进化成为更强大的高级器官，提供更多的基础属性。最高可以升级到T3。"
 			]
@@ -1124,8 +1073,8 @@
 				type: "item"
 			}]
 			title: "模板器官"
-			x: 11.75d
-			y: 5.0d
+			x: 12.0d
+			y: 9.0d
 		}
 		{
 			dependencies: ["145730691E558B78"]
@@ -1155,8 +1104,8 @@
 				type: "item"
 			}]
 			title: "重锻身心"
-			x: 11.75d
-			y: 3.25d
+			x: 12.0d
+			y: 7.25d
 		}
 		{
 			dependencies: ["36D9ACF35A9BD9FA"]
@@ -1191,8 +1140,8 @@
 				type: "item"
 			}]
 			title: "器官容器"
-			x: 11.75d
-			y: 6.75d
+			x: 12.0d
+			y: 10.75d
 		}
 		{
 			dependencies: ["5F271CD6AAEC88FC"]
@@ -1219,8 +1168,8 @@
 				type: "item"
 			}]
 			title: "酿造传奇之物"
-			x: 13.5d
-			y: 3.25d
+			x: 13.75d
+			y: 7.25d
 		}
 		{
 			dependencies: ["27AE075BC0F4376A"]
@@ -1256,13 +1205,13 @@
 				type: "item"
 			}]
 			title: "活体注射"
-			x: 13.5d
-			y: 5.0d
+			x: 13.75d
+			y: 9.0d
 		}
 		{
 			dependencies: ["360F386989316928"]
 			description: [
-				"贪婪之爪拥有着极高的攻击速度，并且在攻击时概率会造成额外的&4流血&r效果。"
+				"&6饥馑之爪&r拥有着极高的攻击速度，并且在攻击时概率会造成额外的&4流血&r效果。"
 				""
 				"但是，为了使用它，你需要&2喂食它一定的食物以回复耐久&r(肉类食物放置在物品上右键)。同时为了启用它的激活状态，获得更强的能力，你需要&2击败怪物&r为其积攒&4血液&r。"
 				""
@@ -1288,9 +1237,9 @@
 				}
 				type: "item"
 			}]
-			title: "贪婪之爪"
-			x: 13.5d
-			y: 6.75d
+			title: "饥馑之爪"
+			x: 13.75d
+			y: 10.75d
 		}
 		{
 			dependencies: ["27AE075BC0F4376A"]
@@ -1345,8 +1294,8 @@
 				type: "checkmark"
 			}]
 			title: "器官抗排异"
-			x: 15.25d
-			y: 3.25d
+			x: 15.5d
+			y: 7.25d
 		}
 		{
 			dependencies: ["7F0C1FA54DD6E9BC"]
@@ -1377,8 +1326,8 @@
 				type: "checkmark"
 			}]
 			title: "激活药丸"
-			x: 15.25d
-			y: 5.0d
+			x: 15.5d
+			y: 6.0d
 		}
 		{
 			dependencies: ["658FEA8E308D741C"]
@@ -1407,8 +1356,8 @@
 				item: "kubejs:long_lasting_pill"
 				type: "item"
 			}]
-			x: 15.25d
-			y: 6.75d
+			x: 15.5d
+			y: 4.75d
 		}
 		{
 			dependencies: ["50D70D990312BC70"]
@@ -1436,8 +1385,8 @@
 				item: "kubejs:long_lasting_pill_gold"
 				type: "item"
 			}]
-			x: 15.25d
-			y: 8.5d
+			x: 15.5d
+			y: 3.5d
 		}
 		{
 			dependencies: ["7198C447D928AEEC"]
@@ -1462,13 +1411,13 @@
 				type: "item"
 			}]
 			title: "更详细的属性面板"
-			x: -0.5d
-			y: 3.25d
+			x: -0.75d
+			y: 7.25d
 		}
 		{
 			dependencies: ["5F271CD6AAEC88FC"]
 			description: [
-				"现在你可以借助&6生物锻炉&r制作&d消化器&r，获取更优质的燃料——&e营养物质&r。"
+				"现在你可以借助&6生物锻炉&r制作&6消化器&r，获取更优质的燃料——&e营养物质&r。"
 				""
 				"当然，消化器也需要先放入一部分食物以提供&e运行能源&r。"
 			]
@@ -1486,8 +1435,8 @@
 				type: "item"
 			}]
 			title: "更优质的能源"
-			x: 11.75d
-			y: 1.75d
+			x: 12.0d
+			y: 5.75d
 		}
 		{
 			dependencies: ["7F0C1FA54DD6E9BC"]
@@ -1504,6 +1453,7 @@
 				item: "lightmanscurrency:coin_iron"
 				type: "item"
 			}]
+			shape: "hexagon"
 			subtitle: "教学结束"
 			tasks: [{
 				id: "7BF5C93B82AE9C82"
@@ -1511,45 +1461,8 @@
 				type: "checkmark"
 			}]
 			title: "血肉重铸：自由探索"
-			x: 17.0d
-			y: 3.25d
-		}
-		{
-			dependencies: [
-				"72D090FF4C44DAAD"
-				"3FED9C9227FC9CD5"
-			]
-			description: [
-				"1.我们可以在下图&c红框&r中所指示的位置看到一个物品来自哪一个模组。"
-				"&7－－如图中物品来自模组《Nameless Trinkets》&r"
-				"{image:kubejs:textures/task/jei_1.png width:124 height:47 align:1}"
-				""
-				""
-				"2.如果你想知道一个模组都有什么物品，可以按&eE键&r打开背包，在&e右下角的JEI搜索框&r中输入&e“@+模组名”&r，如&e“@Nameless”&r来搜索上一个图中的模组。&7（一般名字有多个单词的模组只需要打第一个单词）&r"
-				"{image:kubejs:textures/task/jei_2.png width:160 height:15 align:1}"
-				""
-				"{@pagebreak}"
-				"3.通常我们会在JEI搜索框中直接搜索物品的名字，然后&e左键点击&r来查询物品如何制作（或者将鼠标悬停在物品处按&eR－展示配方&r）。"
-				"而将鼠标悬停于物品上按&eU键（展示用途）&r，则可以查看它能做什么，当该物品具有合成功能时，会显示它支持的全部配方。（&7如下图，鼠标悬停在图1的红色处按U键，因为召唤祭坛提供了其他物品的合成方式，所以显示了它提供的配方&r）"
-				"{image:kubejs:textures/task/jei_3.png width:130 height:68 align:1}"
-				"{image:kubejs:textures/task/jei_4.png width:105 height:99 align:1}"
-			]
-			icon: "minecraft:writable_book"
-			id: "55A4D2A38D0297E8"
-			rewards: [{
-				id: "2F0F6E4BA49B55C1"
-				item: "lightmanscurrency:coin_iron"
-				type: "item"
-			}]
-			subtitle: "一些快速上手MOD的方法"
-			tasks: [{
-				id: "1B37BAC762FD8D2F"
-				title: "我已了解"
-				type: "checkmark"
-			}]
-			title: "如果你是整合包新手"
-			x: 7.75d
-			y: 17.25d
+			x: 17.25d
+			y: 7.25d
 		}
 		{
 			dependencies: ["6069FC5CA00481CE"]
@@ -1587,16 +1500,16 @@
 			}]
 			title: "寻找Alex生物"
 			x: 2.5d
-			y: 1.5d
+			y: 5.5d
 		}
 		{
 			dependencies: ["523490881F8317C7"]
 			description: [
-				"在沼泽中，你会遇上一些奇特而美丽的小生物，它们被称作为&5搏鱼&r。"
+				"在沼泽中，你会遇上一些奇特而美丽的小生物，它们被称作为&b搏鱼&r。"
 				""
 				"搏鱼生性好斗，如果和同类所处在同一片区域，会互相争斗直到一方死亡。"
 				""
-				"因此，在泛泛大陆之上，存在着一种名为&6搏鱼决斗&r的娱乐形式，双方使用自己的搏鱼进行互斗。"
+				"因此，在泛泛大陆之上，存在着一种名为&d搏鱼决斗&r的娱乐形式，双方使用自己的搏鱼进行互斗。"
 				""
 				"而在如此脆弱不堪的世界里，你可以&2为搏鱼进行器官改造&r，进而在决斗中获取到巨大的优势。"
 			]
@@ -1620,12 +1533,12 @@
 				type: "item"
 			}]
 			title: "斗鱼能手"
-			x: 1.0d
-			y: 1.5d
+			x: 0.75d
+			y: 5.5d
 		}
 		{
 			dependencies: ["040207B33E2FEBFF"]
-			description: ["你可以升级你的钱包，以获得更多的功能。"]
+			description: ["你可以升级你的钱包，以获得&a更大容量&r和&a更多功能&r。"]
 			hide_dependency_lines: true
 			icon: {
 				Count: 1b
@@ -1696,8 +1609,8 @@
 				}
 			]
 			title: "钱包的升级"
-			x: 8.75d
-			y: 14.25d
+			x: 9.0d
+			y: 19.75d
 		}
 		{
 			dependencies: ["74F1E7C9FB0D08A1"]
@@ -1722,6 +1635,7 @@
 					type: "item"
 				}
 			]
+			shape: "hexagon"
 			subtitle: "人性的抉择"
 			tasks: [{
 				id: "092177F9C4F95804"
@@ -1729,8 +1643,8 @@
 				type: "checkmark"
 			}]
 			title: "大富翁"
-			x: 1.5d
-			y: 14.25d
+			x: 2.0d
+			y: 19.75d
 		}
 		{
 			dependencies: ["0721AF9D7D5E4A7C"]
@@ -1739,7 +1653,7 @@
 				""
 				"玩家可通过瞬移卷轴、传送石等回到传送石碑。"
 				""
-				"该模组的更多零碎小物件可通过在JEI中搜索“&d@Waystones&r”查看。"
+				"该模组的更多物品可通过在JEI中搜索“&d@Waystones&r”查看。"
 			]
 			id: "6A394E28378C67C8"
 			rewards: [
@@ -1763,17 +1677,17 @@
 				type: "item"
 			}]
 			title: "指路石"
-			x: 7.75d
-			y: 11.25d
+			x: 8.0d
+			y: 16.75d
 		}
 		{
 			dependencies: ["0721AF9D7D5E4A7C"]
 			description: [
-				"当玩家放置传送石盘后，在其中会合成调谐燧石，该燧石将于当前的传送石盘进行绑定。"
+				"当玩家放置&6传送石盘&r后，在其中会合成&6调谐燧石&r，该燧石将&a与当前的传送石盘进行绑定&r。"
 				""
-				"将其中的调谐燧石和另一个传送石盘中的调谐燧石进行互换，两个传送石盘将互相绑定。"
+				"将其中的调谐燧石和另一个传送石盘中的调谐燧石进行互换，&a两个传送石盘将互相绑定&r。"
 				""
-				"当实体站在上面20tick后，将进行石盘间的传送，传送后在进行位移操作前不会再次触发传送。"
+				"当&b实体&r站在上面后，将进行石盘间的传送，传送后在进行位移操作前不会再次触发传送。"
 				""
 				"&8可以传送物品&r"
 			]
@@ -1790,12 +1704,12 @@
 				item: "waystones:warp_plate"
 				type: "item"
 			}]
-			x: 8.75d
-			y: 11.25d
+			x: 9.0d
+			y: 16.75d
 		}
 		{
 			dependencies: ["50CE3ADF8E4D6426"]
-			description: ["整合包添加了一些&5魔法模组&r，如果你对成为一位魔法师感兴趣，可以在&eFTB界面左侧的&r&b魔法分类&r中找到它们的引导说明。"]
+			description: ["整合包添加了一些&d魔法模组&r，如果你对成为一位魔法师感兴趣，可以在&eFTB界面左侧的&r&c魔法分类&r中找到它们的引导说明。"]
 			hide_dependency_lines: true
 			icon: {
 				Count: 1b
@@ -1815,6 +1729,7 @@
 				item: "lightmanscurrency:coin_iron"
 				type: "item"
 			}]
+			shape: "hexagon"
 			subtitle: "探索世界的真实"
 			tasks: [{
 				id: "1B9CE6710438EEB7"
@@ -1822,8 +1737,8 @@
 				type: "checkmark"
 			}]
 			title: "流传于世的魔法"
-			x: 6.0d
-			y: 1.25d
+			x: 7.5d
+			y: 4.5d
 		}
 		{
 			dependencies: ["28A03FA0404404DA"]
@@ -1849,8 +1764,8 @@
 				type: "item"
 			}]
 			title: "遗失的传闻"
-			x: 1.25d
-			y: 12.75d
+			x: 1.5d
+			y: 18.25d
 		}
 		{
 			dependencies: ["390E59D77E2AC74A"]
@@ -1879,8 +1794,8 @@
 				type: "item"
 			}]
 			title: "探索的指引：记载怪兽的手册"
-			x: 0.5d
-			y: 11.25d
+			x: 0.75d
+			y: 16.75d
 		}
 		{
 			dependencies: ["7966D774681B9FC1"]
@@ -1905,8 +1820,8 @@
 				type: "item"
 			}]
 			title: "誊写书桌"
-			x: 1.25d
-			y: 9.75d
+			x: 1.5d
+			y: 15.25d
 		}
 		{
 			dependencies: ["06AF74C1CDA2E18A"]
@@ -1938,8 +1853,8 @@
 				type: "checkmark"
 			}]
 			title: "引言：凡人居住之所，必有传说流淌"
-			x: 3.0d
-			y: 12.75d
+			x: 3.25d
+			y: 18.25d
 		}
 		{
 			dependencies: ["0721AF9D7D5E4A7C"]
@@ -1962,8 +1877,8 @@
 				type: "checkmark"
 			}]
 			title: "不一样的世界"
-			x: 4.0d
-			y: 11.25d
+			x: 4.25d
+			y: 16.75d
 		}
 		{
 			dependencies: ["60FA450E74D398EA"]
@@ -1982,14 +1897,15 @@
 				item: "lightmanscurrency:coin_iron"
 				type: "item"
 			}]
+			shape: "hexagon"
 			subtitle: "凡人因智慧 以比肩神明"
 			tasks: [{
 				id: "1953C281E2E1A192"
 				title: "传说由自己谱写"
 				type: "checkmark"
 			}]
-			x: 3.0d
-			y: 9.75d
+			x: 3.25d
+			y: 15.25d
 		}
 		{
 			dependencies: ["70F7BE40B3C7BBAB"]
@@ -2016,8 +1932,8 @@
 				}
 				type: "item"
 			}]
-			x: -2.25d
-			y: 3.25d
+			x: -2.5d
+			y: 7.25d
 		}
 		{
 			dependencies: ["50CE3ADF8E4D6426"]
@@ -2052,8 +1968,8 @@
 				item: "kubejs:advanced_chest_opener"
 				type: "item"
 			}]
-			x: 4.5d
-			y: 5.0d
+			x: 5.25d
+			y: 8.5d
 		}
 		{
 			dependencies: ["50CE3ADF8E4D6426"]
@@ -2073,8 +1989,1262 @@
 				type: "item"
 			}]
 			title: "初次品尝"
-			x: 10.0d
+			x: 10.25d
+			y: 5.75d
+		}
+		{
+			dependencies: ["51FA796A91E94C4D"]
+			description: [
+				"基于&d「FTB－Chunks」模组&r，你可以实现&e认领、强制加载区块&r功能。"
+				""
+				"打开地图&7（默认M键）&r，点击左上角的&2“声明区块”&r。"
+				""
+				"在该界面，&2鼠标左键&r可以&a认领区块&r，在&2已被自己认领的区块&r上&2shift+左键&r，即可&a强制加载该区块&r。"
+				""
+				"&7被强制加载的区块中会处理所有的游戏内容，当你远离强加载区块时，保证其仍正常运作。&r"
+				""
+				"{image:kubejs:textures/task/ftb_chunks.png width:150 height:100 align:center}"
+			]
+			hide_dependency_lines: true
+			icon: "minecraft:map"
+			id: "3E083B4EFFBB8313"
+			rewards: [{
+				id: "3F1FC7BEC733C831"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
+			shape: "hexagon"
+			tasks: [{
+				id: "6400469F00B8AED7"
+				title: "我已了解"
+				type: "checkmark"
+			}]
+			title: "FTB强制加载"
+			x: 9.5d
 			y: 1.75d
+		}
+		{
+			dependencies: ["0721AF9D7D5E4A7C"]
+			description: [
+				"&d「冷汗（Cold-Sweat）」模组&r，为这个世界带来了温度机制。"
+				""
+				"你的体温受到&a时间&r、&a生物群系&r、&a方块&r、&a海拔高度&r、&a天气&r等影响，&b过冷&r和&c过热&r都会带来负面效果，并使你逐渐走向死亡。&7（抗火/抗寒药水会抵挡负面效果）&r"
+				""
+				"&c当然，危险与机遇是并存的，能够掌握温度的强大力量已经悄然降临了这个世界。&r"
+			]
+			icon: {
+				Count: 1b
+				id: "cold_sweat:filled_waterskin"
+				tag: { }
+			}
+			id: "2A510BC7C7C6FEF4"
+			rewards: [
+				{
+					id: "493CD5DB03060392"
+					item: "cold_sweat:waterskin"
+					type: "item"
+				}
+				{
+					id: "08E36549AA7B88C6"
+					item: {
+						Count: 1b
+						id: "minecraft:potion"
+						tag: {
+							Potion: "minecraft:fire_resistance"
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "0C768A903657D8A0"
+					item: {
+						Count: 1b
+						id: "minecraft:potion"
+						tag: {
+							Potion: "cold_sweat:long_ice_resistance"
+						}
+					}
+					type: "item"
+				}
+			]
+			tasks: [{
+				id: "37611A5CBAC18F8C"
+				title: "我已了解"
+				type: "checkmark"
+			}]
+			title: "冷汗"
+			x: 6.25d
+			y: 14.0d
+		}
+		{
+			dependencies: ["2A510BC7C7C6FEF4"]
+			description: ["{image:kubejs:textures/task/cold_sweat_1.png width:190 height:112 align:1}"]
+			icon: "cold_sweat:thermometer"
+			id: "30674B71779D7E4A"
+			rewards: [{
+				id: "3B5D0F7A05740695"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
+			shape: "hexagon"
+			tasks: [{
+				id: "2A475086B4570A6E"
+				title: "我已了解"
+				type: "checkmark"
+			}]
+			title: "图标UI说明书"
+			x: 8.0d
+			y: 14.0d
+		}
+		{
+			dependencies: ["42D7F6B265E1A199"]
+			description: [
+				"&6壁炉&r是&6烟囱&r的升级版本，它可以&e同时存储加热/降温能源&r。"
+				""
+				"{image:kubejs:textures/task/cold_sweat_2.png width:150 height:120 align:1}"
+				"{@pagebreak}"
+				"使用红石激活&e侧面&r，即可开启&b降温模式&r，相应的指示灯会亮起。"
+				""
+				"同样的，激活&e背面&r则是&c加热模式&r。"
+				""
+				"如果此时壁炉处于一个&e密闭空间&r，则会开始运作，会根据开启模式来赋予玩家&c温暖&r/&b寒冷&r状态，并&a逐渐增强&r。"
+				""
+				"{image:kubejs:textures/task/cold_sweat_3.png width:150 height:105 align:1}"
+			]
+			id: "5BF932281612F670"
+			rewards: [{
+				id: "0D859E46B9AA4C9B"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
+			tasks: [{
+				id: "008D39483F9A5CAB"
+				item: "cold_sweat:hearth"
+				type: "item"
+			}]
+			x: 11.75d
+			y: 14.0d
+		}
+		{
+			dependencies: ["30674B71779D7E4A"]
+			description: [
+				"&6锅炉&r和&6冰箱&r拥有&a同样的使用方法&r。"
+				""
+				"&6锅炉：&r&2下方栏位&r中添加&c加热类物品&r，在&2上方&r放入&6装满水的水袋&r，为水袋&c加热&r。"
+				""
+				"&6冰箱：&r&2下方栏位&r中添加&b降温类物品&r，在&2上方&r放入&6装满水的水袋&r，为水袋&b制冷&r。"
+				""
+				"&2随身携带水袋&r可以调节你的体温，也可以直接&2饮用水袋&r更快的调节体温。"
+				""
+				"&7加热类物品：煤、原木、岩浆等。"
+				""
+				"&r&7降温类物品：雪球、雪块、冰、水等。&r"
+			]
+			id: "15507BAABF59ADF6"
+			rewards: [{
+				count: 2
+				id: "15580CB9EDB22DC8"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
+			shape: "rsquare"
+			subtitle: "加热/制冷 水袋"
+			tasks: [
+				{
+					id: "4832068722E80640"
+					item: "cold_sweat:boiler"
+					type: "item"
+				}
+				{
+					id: "198B7D7E5ADED5FE"
+					item: "cold_sweat:icebox"
+					type: "item"
+				}
+			]
+			title: "应急控温"
+			x: 9.25d
+			y: 14.0d
+		}
+		{
+			dependencies: ["15507BAABF59ADF6"]
+			description: [
+				"将&6烟囱&r放置在&6锅炉&r或&6冰箱&r的&2上方&r，便会扩展锅炉和冰箱的功能——使其能&e影响周围密闭空间内的温度&r。"
+				""
+				"你需要一个&e红石信号&r&7（如拉杆）&r启动它。"
+				""
+				"正常生效后，会赋予玩家&c温暖&r/&b寒冷&r的持续buff状态。"
+			]
+			id: "42D7F6B265E1A199"
+			rewards: [{
+				id: "0B78DF4E211B7EC5"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
+			tasks: [{
+				id: "0705AA7FD6381E8B"
+				item: "cold_sweat:smokestack"
+				type: "item"
+			}]
+			x: 10.5d
+			y: 14.0d
+		}
+		{
+			dependencies: ["30674B71779D7E4A"]
+			description: [
+				"&b变色龙&r出没于&2热带或者干旱的生物群系&r，是一种&a可被驯服&r的生物。"
+				""
+				"你可以使用&6某些生鱼&r驯服它，并对其&2右键&r把它放到你的头顶。&7（连按两次shift再右键地面即可放下）&r"
+				""
+				"&3变色龙&r大约每天会&a蜕皮&r一次，蜕下来的&6变色龙皮&r可以作为&2内衬&r通过&6缝纫台&r缝入盔甲。"
+				"{@pagebreak}"
+				"你可以对变色龙&a喂食&r某些食物，之后它会在一段时间内把&2尾巴&r指向&a最近的相应生物群系&r。"
+				""
+				"&e炎热的生物群系：&r枯萎的灌木、仙人掌、下界疣。"
+				""
+				"&e寒冷的生物群系：&r雪球、甜菜根、甜浆果。"
+				""
+				"&e潮湿的生物群系：&r黏液球、墨囊、可可豆。"
+			]
+			icon: "cold_sweat:chameleon_molt"
+			id: "4F9415BB2F444129"
+			rewards: [{
+				count: 5
+				id: "2518A9C6EF0ADF74"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
+			tasks: [{
+				advancement: "cold_sweat:tame_chameleon"
+				criterion: ""
+				icon: "cold_sweat:chameleon_molt"
+				id: "12ED7F55A2A3A3D3"
+				title: "驯服一只变色龙"
+				type: "advancement"
+			}]
+			x: 9.25d
+			y: 15.25d
+		}
+		{
+			dependencies: ["4F9415BB2F444129"]
+			description: [
+				"&6温石&r是一种&a红石组件&r，可根据&e当前环境温度&r输出红石信号。"
+				""
+				"你似乎可以用它来&e控制你的室温调节装置&r&7（如壁炉）&r。"
+				""
+				"&7信号最大值：当环境温度处于燃点时，输出15点强度的信号。"
+				""
+				"&7信号最小值：当环境温度处于冰点时，输出0点强度的信号。"
+			]
+			id: "70690F0313801E51"
+			rewards: [{
+				id: "122DB044EEE85CB2"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
+			tasks: [{
+				id: "5C4625AEE59DAC60"
+				item: "cold_sweat:thermolith"
+				type: "item"
+			}]
+			x: 10.5d
+			y: 15.25d
+		}
+		{
+			dependencies: ["30674B71779D7E4A"]
+			description: [
+				"手持此物品对原版的&6矿车&r按下&2shift+右键&r可将其应用于&6矿车&r上。"
+				""
+				"当玩家乘坐在被应用了&6矿车隔热层&r的矿车上时，&c将完全隔绝环境温度对自身体温的影响！&r"
+			]
+			id: "5FF920186B81E074"
+			rewards: [{
+				id: "4CDD545BD383B27A"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
+			subtitle: "概念级武器？"
+			tasks: [{
+				id: "5AD1D063C07D95A2"
+				item: "cold_sweat:minecart_insulation"
+				type: "item"
+			}]
+			x: 8.0d
+			y: 15.25d
+		}
+		{
+			dependencies: ["51FA796A91E94C4D"]
+			description: [
+				"你可以在下界的&2灵魂沙峡谷&r发现一种奇特的果实－&6灵魂豆芽&r。"
+				""
+				"吃下&6灵魂豆芽&r可以在一定时间内使你的&a体温基数降低20点&r。"
+				""
+				"&7灵魂豆芽可以种植在灵魂沙上，在根部温度达到燃点后，生长的更快。&r"
+			]
+			id: "4484765B28A08D77"
+			rewards: [{
+				count: 5
+				id: "4D8B264BC6181A3F"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
+			subtitle: "灵魂沙峡谷的恩惠"
+			tasks: [{
+				id: "5102E4C94299D072"
+				item: "cold_sweat:soul_sprout"
+				type: "item"
+			}]
+			x: 4.0d
+			y: 1.75d
+		}
+		{
+			dependencies: ["50BA43A1D96AA672"]
+			dependency_requirement: "one_completed"
+			description: [
+				"&6魂火灯&r是一种让&a下界&r的&e气温降低&r到适合居住水平的重要工具。"
+				""
+				"只有将其&e拿在手上才能生效&r。"
+				""
+				"虽然&6魂火灯&r需要用到下界产出的&6灵魂豆芽&r进行充能，但是&e制作出来时为满能量状态&r。"
+			]
+			id: "6773A853D99CCCA8"
+			rewards: [{
+				count: 16
+				id: "5AE75345AF0C58FB"
+				item: "minecraft:ice"
+				type: "item"
+			}]
+			subtitle: "外物增幅"
+			tasks: [{
+				id: "0E55CA81FDCC7F24"
+				item: {
+					Count: 1b
+					id: "cold_sweat:soulspring_lamp"
+					tag: {
+						Fuel: 64.0d
+						Lit: 0b
+						stateChangeTimer: 0
+					}
+				}
+				type: "item"
+			}]
+			title: "魂火灯"
+			x: 5.25d
+			y: 3.0d
+		}
+		{
+			dependencies: ["50BA43A1D96AA672"]
+			description: [
+				"或许你需要对你的胸腔进行改造，通过&a器官&r增加你的&c燃点阈值&r？"
+				""
+				"&7比如模板器官，或者寻找神秘的变色龙...&r"
+			]
+			icon: {
+				Count: 1b
+				id: "kubejs:heart_iron"
+				tag: { }
+			}
+			id: "0DDF984214501E4A"
+			rewards: [{
+				count: 8
+				id: "43F50B0C55C261B1"
+				item: "minecraft:ice"
+				type: "item"
+			}]
+			subtitle: "肉身成圣"
+			tasks: [{
+				id: "01A1A84297460F0E"
+				title: "我已了解"
+				type: "checkmark"
+			}]
+			title: "燃点器官"
+			x: 7.25d
+			y: 3.0d
+		}
+		{
+			dependencies: [
+				"538FC6DDC204DBFA"
+				"4C370F7BB4E56798"
+			]
+			dependency_requirement: "one_completed"
+			description: [
+				"下界是在所有游玩历程中都需要探索的一个维度，其包含了大量的新生物以及前往末地必须要探索的&2下界要塞&r。"
+				""
+				"&c请注意！现在的下界拥有较高的环境温度，你应该需要一些降温物品！&r"
+			]
+			id: "50BA43A1D96AA672"
+			rewards: [{
+				id: "7674A4A705BCE049"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "必要的准备"
+			tasks: [{
+				id: "7EB5D0BF43EE3184"
+				item: "cold_sweat:thermometer"
+				type: "item"
+			}]
+			title: "前往下界之前"
+			x: 6.25d
+			y: 4.5d
+		}
+		{
+			dependencies: ["3FF06F6F309FAEC3"]
+			description: ["为了前往末地，你需要获取一定数量的末影珍珠，用于开启前往末地的大门。"]
+			id: "2311CA3EEABF0250"
+			rewards: [
+				{
+					count: 6
+					id: "55F6B1260F29938F"
+					item: "minecraft:ender_eye"
+					type: "item"
+				}
+				{
+					count: 5
+					id: "73D1892CF94ACAF6"
+					item: "lightmanscurrency:coin_iron"
+					type: "item"
+				}
+			]
+			subtitle: "前往末地的必需品"
+			tasks: [{
+				id: "355748BEB59386AF"
+				item: "minecraft:ender_pearl"
+				type: "item"
+			}]
+			title: "与末影人相遇"
+			x: 6.25d
+			y: -2.5d
+		}
+		{
+			dependencies: ["2311CA3EEABF0250"]
+			description: ["进入末地时，Minecraft原版的游戏体验便到达了尾声——但是对于本整合来说，到达末地只是一个小小的里程碑。在这个世界上仍旧存在着大量的&5不可思议&r等待着你去探索。"]
+			icon: "minecraft:end_portal_frame"
+			id: "1D8929E0CE7CE0AB"
+			rewards: [{
+				id: "2AF64ED78935D661"
+				item: {
+					Count: 1b
+					id: "lightmanscurrency:coin_gold"
+					tag: { }
+				}
+				type: "item"
+			}]
+			subtitle: "很快，你的Minecraft原版体验就接近尾声"
+			tasks: [{
+				dimension: "minecraft:the_end"
+				id: "2AF9850C10D5391F"
+				type: "dimension"
+			}]
+			title: "前往末地"
+			x: 6.25d
+			y: -4.0d
+		}
+		{
+			dependencies: ["1D8929E0CE7CE0AB"]
+			description: ["作为原版的最终boss，击败它仍旧具有着非常特殊的意义。"]
+			icon: "minecraft:dragon_head"
+			id: "15A36D9385499A77"
+			rewards: [{
+				count: 5
+				id: "68E182F2D59A4C2B"
+				item: {
+					Count: 1b
+					id: "lightmanscurrency:coin_gold"
+					tag: { }
+				}
+				type: "item"
+			}]
+			shape: "rsquare"
+			subtitle: "收官之作！"
+			tasks: [{
+				entity: "minecraft:ender_dragon"
+				icon: "minecraft:dragon_egg"
+				id: "7F3DBDA404445DC7"
+				type: "kill"
+				value: 1L
+			}]
+			title: "击败末影龙！"
+			x: 6.25d
+			y: -5.5d
+		}
+		{
+			dependencies: ["1D8929E0CE7CE0AB"]
+			description: [
+				"如果周围的末地船已经被完全搜刮完毕了，你可以使用幻翼膜和香蕉蛞蝓的黏液&2自行制作鞘翅&r。"
+				""
+				"香蕉蛞蝓只会出现在寒冷的原始松木针叶林群系。"
+			]
+			id: "7936F1A8DE4AF2E8"
+			rewards: [{
+				id: "443AEBF90B9CD82C"
+				item: {
+					Count: 1b
+					id: "lightmanscurrency:coin_gold"
+					tag: { }
+				}
+				type: "item"
+			}]
+			subtitle: "前往末地城，你可以寻得鞘翅"
+			tasks: [{
+				id: "4EC33C7DB69FF161"
+				item: {
+					Count: 1b
+					id: "minecraft:elytra"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			title: "追寻鞘翅"
+			x: 7.75d
+			y: -4.0d
+		}
+		{
+			dependencies: ["51FA796A91E94C4D"]
+			description: ["作为原版最为强大的生物，&b监守者&r据守在地下的&a古代城市&r之中，对任何发出噪音的敌人产生巨量的伤害。"]
+			hide_dependency_lines: true
+			icon: "minecraft:sculk_shrieker"
+			id: "2D66B5749F9D7846"
+			rewards: [{
+				id: "1113F7B21BB07CFA"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "曾经最为强大的灵魂"
+			tasks: [{
+				entity: "minecraft:warden"
+				icon: {
+					Count: 1b
+					id: "kubejs:warden_core"
+					tag: { }
+				}
+				id: "54B2C0992C8C149D"
+				type: "kill"
+				value: 1L
+			}]
+			title: "监守者"
+			x: 7.75d
+			y: -2.5d
+		}
+		{
+			dependencies: ["51FA796A91E94C4D"]
+			description: ["击杀&b凋灵&r，你将获得丰厚的奖励。"]
+			hide_dependency_lines: true
+			icon: "minecraft:wither_rose"
+			id: "1BD4184A05623992"
+			rewards: [{
+				id: "65C4FE208673BA79"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				entity: "minecraft:wither"
+				icon: "minecraft:wither_skeleton_skull"
+				id: "57485C6F08D99702"
+				title: "击杀凋灵"
+				type: "kill"
+				value: 1L
+			}]
+			x: 4.75d
+			y: -2.5d
+		}
+		{
+			dependencies: ["51FA796A91E94C4D"]
+			description: [
+				"&c——后续的任务请在FTB任务左侧的「精致存储」页面查看。&r"
+				""
+				"&d「精致存储」模组&r提供了一套&2网络化存储&r和&2自动化&r系统。"
+				""
+				"本整合包仅以介绍&d「精致存储」&r的&e存储功能&r为主。"
+				""
+				"首先，你需要一个&6控制器&r，这是游玩精致存储的开始。"
+				""
+				"&7在本整合包中，你不需要为控制器提供能量，无论什么时候它都是满能量状态。"
+			]
+			id: "238FC9B9D84A4148"
+			rewards: [{
+				id: "068E6BEEC6355C12"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			shape: "rsquare"
+			tasks: [{
+				id: "4D3FD2856FA9BCF7"
+				item: "refinedstorage:controller"
+				type: "item"
+			}]
+			title: "简易、存储、整合"
+			x: 8.5d
+			y: 1.75d
+		}
+		{
+			dependencies: ["74F1E7C9FB0D08A1"]
+			description: [
+				"一个神奇的装置，可以将&6器官&r回收为&6货币&r。"
+				""
+				"你可以在&2右侧的栏位&r中放入一个&6钱包&r，这样&e产生的货币会自动进入钱包&r。"
+			]
+			id: "35E8A04037C3AD20"
+			rewards: [{
+				id: "19C9BDA650737C41"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
+			tasks: [{
+				id: "2D669E7BC9D504D5"
+				item: "kubejs:organ_recycler"
+				type: "item"
+			}]
+			x: 4.25d
+			y: 21.25d
+		}
+		{
+			dependencies: ["30674B71779D7E4A"]
+			description: [
+				"&6缝纫台&r可以为你的&6防具&r添加&a内衬&r。"
+				""
+				"在需要&2长期处于高温/低温环境&r时，&a将防具添加对应的内衬&r是一种&e十分方便的保护方式&r。"
+				""
+				"{image:kubejs:textures/task/cold_sweat_4.png width:200 height:160 align:1}"
+			]
+			id: "1B8837ABE38138B6"
+			rewards: [{
+				id: "6A1B58A0D6CE1997"
+				item: {
+					Count: 1b
+					id: "minecraft:leather_helmet"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "41E65483D8AC9DD9"
+				item: "cold_sweat:sewing_table"
+				type: "item"
+			}]
+			x: 9.25d
+			y: 12.75d
+		}
+		{
+			dependencies: ["1B8837ABE38138B6"]
+			description: [
+				"大部分的内衬为材料，但是也有一些特例——&2如皮革套装本身是防具，但也可以作为内衬&r。"
+				""
+				"这些&a可作为内衬的特殊套装&r，都会在其&a鼠标悬浮信息框&r中写明&e“可用作内衬”&r。"
+				""
+				"{image:kubejs:textures/task/cold_sweat_5.png width:170 height:167 align:1}"
+			]
+			icon: "minecraft:writable_book"
+			id: "45A9B324DF42CCBC"
+			rewards: [{
+				id: "6A74ED8D7D56D66D"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
+			subtitle: "为你的防具添加内衬吧！"
+			tasks: [{
+				id: "7BAFCC167DD672E5"
+				title: "我已了解"
+				type: "checkmark"
+			}]
+			title: "缝纫台操作说明"
+			x: 10.5d
+			y: 12.75d
+		}
+		{
+			dependencies: ["45A9B324DF42CCBC"]
+			description: [
+				"部分装备可以被当作内衬使用，如皮革装备，但&c只能装在对应位置&r的装备上，如皮革胸甲只能作为胸甲的内衬。"
+				""
+				"部分材料也可以作为内衬使用，如变色龙皮等。"
+				""
+				"你可以在一件装备上打不同的内衬，但根据位置存在上限，所有内衬共享此上限。"
+				""
+				"头盔和护腿最多可以达到8，胸甲最多可以达到12，裤子最多可以达到7."
+			]
+			icon: "minecraft:writable_book"
+			id: "71A118D50AFBA029"
+			rewards: [{
+				id: "19D41D238D8C5A1A"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
+			tasks: [{
+				id: "42C773F0037FE07D"
+				title: "我已了解"
+				type: "checkmark"
+			}]
+			title: "内衬的添加机制"
+			x: 11.75d
+			y: 12.75d
+		}
+		{
+			dependencies: ["71A118D50AFBA029"]
+			description: ["{image:kubejs:textures/task/cold_sweat_8.png width:200 height:26 align:1}"]
+			hide_dependency_lines: true
+			icon: "minecraft:purple_concrete"
+			id: "05A17395D7E17FF4"
+			rewards: [{
+				id: "0F4F3CF271ABC577"
+				item: "lightmanscurrency:coin_emerald"
+				type: "item"
+			}]
+			shape: "hexagon"
+			subtitle: "包括内衬与防具"
+			tasks: [
+				{
+					icon: {
+						Count: 1b
+						id: "minecraft:leather_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
+					id: "500E31918C0CB277"
+					item: {
+						Count: 1b
+						id: "itemfilters:or"
+						tag: {
+							items: [
+								{
+									Count: 1b
+									id: "minecraft:leather_helmet"
+									tag: {
+										Damage: 0
+									}
+								}
+								{
+									Count: 1b
+									id: "minecraft:leather_chestplate"
+									tag: {
+										Damage: 0
+									}
+								}
+								{
+									Count: 1b
+									id: "minecraft:leather_leggings"
+									tag: {
+										Damage: 0
+									}
+								}
+								{
+									Count: 1b
+									id: "minecraft:leather_boots"
+									tag: {
+										Damage: 0
+									}
+								}
+							]
+						}
+					}
+					title: "皮革套装"
+					type: "item"
+				}
+				{
+					id: "3B31FBC596880E2B"
+					item: "minecraft:leather"
+					type: "item"
+				}
+			]
+			title: "紫色属性物品图鉴"
+			x: 14.5d
+			y: 12.75d
+		}
+		{
+			dependencies: ["71A118D50AFBA029"]
+			description: ["{image:kubejs:textures/task/cold_sweat_6.png width:200 height:23 align:1}"]
+			icon: "minecraft:orange_concrete"
+			id: "70D0AF454CC41815"
+			rewards: [{
+				id: "3F3EDA648E68417F"
+				item: "lightmanscurrency:coin_emerald"
+				type: "item"
+			}]
+			shape: "hexagon"
+			subtitle: "包括内衬与防具"
+			tasks: [
+				{
+					icon: {
+						Count: 1b
+						id: "extraarmor:ice_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
+					id: "2687305F4EF1FB76"
+					item: {
+						Count: 1b
+						id: "itemfilters:or"
+						tag: {
+							items: [
+								{
+									Count: 1b
+									id: "extraarmor:ice_helmet"
+									tag: {
+										Damage: 0
+									}
+								}
+								{
+									Count: 1b
+									id: "extraarmor:ice_chestplate"
+									tag: {
+										Damage: 0
+									}
+								}
+								{
+									Count: 1b
+									id: "extraarmor:ice_leggings"
+									tag: {
+										Damage: 0
+									}
+								}
+								{
+									Count: 1b
+									id: "extraarmor:ice_boots"
+									tag: {
+										Damage: 0
+									}
+								}
+							]
+						}
+					}
+					title: "冰套装"
+					type: "item"
+				}
+				{
+					icon: {
+						Count: 1b
+						id: "cold_sweat:hoglin_headpiece"
+						tag: {
+							Damage: 0
+						}
+					}
+					id: "6E8544E0DBD1389E"
+					item: {
+						Count: 1b
+						id: "itemfilters:or"
+						tag: {
+							items: [
+								{
+									Count: 1b
+									id: "cold_sweat:hoglin_headpiece"
+									tag: {
+										Damage: 0
+									}
+								}
+								{
+									Count: 1b
+									id: "cold_sweat:hoglin_tunic"
+									tag: {
+										Damage: 0
+									}
+								}
+								{
+									Count: 1b
+									id: "cold_sweat:hoglin_trousers"
+									tag: {
+										Damage: 0
+									}
+								}
+								{
+									Count: 1b
+									id: "cold_sweat:hoglin_hooves"
+									tag: {
+										Damage: 0
+									}
+								}
+							]
+						}
+					}
+					title: "疣猪兽套装"
+					type: "item"
+				}
+				{
+					id: "4E5ABB46125DD22B"
+					item: {
+						Count: 1b
+						id: "itemfilters:or"
+						tag: {
+							items: [
+								{
+									Count: 1b
+									id: "minecraft:rabbit_hide"
+								}
+								{
+									Count: 1b
+									id: "cold_sweat:hoglin_hide"
+								}
+								{
+									Count: 1b
+									id: "alexsmobs:emu_feather"
+								}
+								{
+									Count: 1b
+									id: "alexsmobs:shed_snake_skin"
+								}
+								{
+									Count: 1b
+									id: "unusualprehistory:palaeo_skin"
+								}
+							]
+						}
+					}
+					title: "内衬"
+					type: "item"
+				}
+			]
+			title: "橙色属性物品图鉴"
+			x: 13.0d
+			y: 12.75d
+		}
+		{
+			dependencies: ["71A118D50AFBA029"]
+			description: ["{image:kubejs:textures/task/cold_sweat_7.png width:200 height:25 align:1}"]
+			hide_dependency_lines: true
+			icon: "minecraft:light_blue_concrete"
+			id: "5CAB00C55365E0F1"
+			rewards: [{
+				id: "14F3D339625953CE"
+				item: "lightmanscurrency:coin_emerald"
+				type: "item"
+			}]
+			shape: "hexagon"
+			subtitle: "包括内衬与防具"
+			tasks: [
+				{
+					icon: {
+						Count: 1b
+						ForgeCaps: {
+							"cold_sweat:item_insulation": {
+								Insulation: [ ]
+							}
+						}
+						id: "twilightforest:yeti_helmet"
+						tag: {
+							Damage: 0
+							Enchantments: [{
+								id: "minecraft:protection"
+								lvl: 2s
+							}]
+							Insulation: [ ]
+						}
+					}
+					id: "3A134A7DD9FD4B57"
+					item: {
+						Count: 1b
+						id: "itemfilters:or"
+						tag: {
+							items: [
+								{
+									Count: 1b
+									ForgeCaps: {
+										"cold_sweat:item_insulation": {
+											Insulation: [ ]
+										}
+									}
+									id: "twilightforest:yeti_helmet"
+									tag: {
+										Damage: 0
+										Enchantments: [{
+											id: "minecraft:protection"
+											lvl: 2s
+										}]
+										Insulation: [ ]
+									}
+								}
+								{
+									Count: 1b
+									ForgeCaps: {
+										"cold_sweat:item_insulation": {
+											Insulation: [ ]
+										}
+									}
+									id: "twilightforest:yeti_chestplate"
+									tag: {
+										Damage: 0
+										Enchantments: [{
+											id: "minecraft:protection"
+											lvl: 2s
+										}]
+										Insulation: [ ]
+									}
+								}
+								{
+									Count: 1b
+									ForgeCaps: {
+										"cold_sweat:item_insulation": {
+											Insulation: [ ]
+										}
+									}
+									id: "twilightforest:yeti_leggings"
+									tag: {
+										Damage: 0
+										Enchantments: [{
+											id: "minecraft:protection"
+											lvl: 2s
+										}]
+										Insulation: [ ]
+									}
+								}
+								{
+									Count: 1b
+									ForgeCaps: {
+										"cold_sweat:item_insulation": {
+											Insulation: [ ]
+										}
+									}
+									id: "twilightforest:yeti_boots"
+									tag: {
+										Damage: 0
+										Enchantments: [
+											{
+												id: "minecraft:protection"
+												lvl: 2s
+											}
+											{
+												id: "minecraft:feather_falling"
+												lvl: 4s
+											}
+										]
+										Insulation: [ ]
+									}
+								}
+							]
+						}
+					}
+					title: "雪怪套装"
+					type: "item"
+				}
+				{
+					icon: {
+						Count: 1b
+						id: "extraarmor:magma_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
+					id: "3E2497FA57262CC5"
+					item: {
+						Count: 1b
+						id: "itemfilters:or"
+						tag: {
+							items: [
+								{
+									Count: 1b
+									id: "extraarmor:magma_helmet"
+									tag: {
+										Damage: 0
+									}
+								}
+								{
+									Count: 1b
+									id: "extraarmor:magma_chestplate"
+									tag: {
+										Damage: 0
+									}
+								}
+								{
+									Count: 1b
+									id: "extraarmor:magma_leggings"
+									tag: {
+										Damage: 0
+									}
+								}
+								{
+									Count: 1b
+									id: "extraarmor:magma_boots"
+									tag: {
+										Damage: 0
+									}
+								}
+							]
+						}
+					}
+					title: "岩浆块套装"
+					type: "item"
+				}
+				{
+					icon: {
+						Count: 1b
+						id: "twilightforest:arctic_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
+					id: "6FD13FFFAA38E2F5"
+					item: {
+						Count: 1b
+						id: "itemfilters:or"
+						tag: {
+							items: [
+								{
+									Count: 1b
+									id: "twilightforest:arctic_helmet"
+									tag: {
+										Damage: 0
+									}
+								}
+								{
+									Count: 1b
+									id: "twilightforest:arctic_chestplate"
+									tag: {
+										Damage: 0
+									}
+								}
+								{
+									Count: 1b
+									id: "twilightforest:arctic_leggings"
+									tag: {
+										Damage: 0
+									}
+								}
+								{
+									Count: 1b
+									id: "twilightforest:arctic_boots"
+									tag: {
+										Damage: 0
+									}
+								}
+							]
+						}
+					}
+					title: "极地套装"
+					type: "item"
+				}
+				{
+					icon: {
+						Count: 1b
+						id: "cold_sweat:goat_fur_cap"
+						tag: {
+							Damage: 0
+						}
+					}
+					id: "51F8DC5092FA3CE0"
+					item: {
+						Count: 1b
+						id: "itemfilters:or"
+						tag: {
+							items: [
+								{
+									Count: 1b
+									id: "cold_sweat:goat_fur_cap"
+									tag: {
+										Damage: 0
+									}
+								}
+								{
+									Count: 1b
+									id: "cold_sweat:goat_fur_parka"
+									tag: {
+										Damage: 0
+									}
+								}
+								{
+									Count: 1b
+									id: "cold_sweat:goat_fur_pants"
+									tag: {
+										Damage: 0
+									}
+								}
+								{
+									Count: 1b
+									id: "cold_sweat:goat_fur_boots"
+									tag: {
+										Damage: 0
+									}
+								}
+							]
+						}
+					}
+					title: "毛衣套装"
+					type: "item"
+				}
+				{
+					id: "054E4A0D4DD22847"
+					item: {
+						Count: 1b
+						id: "itemfilters:or"
+						tag: {
+							items: [
+								{
+									Count: 1b
+									id: "minecraft:white_wool"
+								}
+								{
+									Count: 1b
+									id: "cold_sweat:goat_fur"
+								}
+								{
+									Count: 1b
+									id: "alexsmobs:bison_fur"
+								}
+								{
+									Count: 1b
+									id: "twilightforest:arctic_fur"
+								}
+								{
+									Count: 1b
+									id: "twilightforest:alpha_yeti_fur"
+								}
+								{
+									Count: 1b
+									id: "alexsmobs:bear_fur"
+								}
+								{
+									Count: 1b
+									id: "unusualprehistory:smilo_fur"
+								}
+							]
+						}
+					}
+					title: "内衬"
+					type: "item"
+				}
+			]
+			title: "蓝色属性物品图鉴"
+			x: 13.75d
+			y: 12.75d
+		}
+		{
+			dependencies: ["71A118D50AFBA029"]
+			description: ["{image:kubejs:textures/task/cold_sweat_9.png width:200 height:27 align:1}"]
+			hide_dependency_lines: true
+			icon: "minecraft:lime_concrete"
+			id: "0411A9D48BFFCFE5"
+			rewards: [{
+				id: "17C84000DBEF0C77"
+				item: "lightmanscurrency:coin_emerald"
+				type: "item"
+			}]
+			shape: "hexagon"
+			subtitle: "包括内衬与防具"
+			tasks: [{
+				id: "0C2BA5BD7B906FD5"
+				item: {
+					Count: 1b
+					id: "itemfilters:or"
+					tag: {
+						items: [
+							{
+								Count: 1b
+								id: "cold_sweat:chameleon_molt"
+							}
+							{
+								Count: 1b
+								id: "unusualprehistory:insulator"
+							}
+						]
+					}
+				}
+				title: "内衬"
+				type: "item"
+			}]
+			title: "绿色属性物品图鉴"
+			x: 15.25d
+			y: 12.75d
 		}
 	]
 	title: "章节1：如常"

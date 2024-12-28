@@ -1,0 +1,64 @@
+{
+  "name": "machine.kubejs.organ_recycler.name",
+  "appearance": {
+    "block": "kubejs:machine/organ_recycler"
+  },
+  "tooltips": [],
+  "components": [
+    {
+      "type": "custommachinery:item",
+      "id": "organ_slot",
+      "filter": [
+        "#kubejs:organ"
+      ],
+      "whitelist": true,
+      "mode": "input",
+      "variant": "custommachinery:default"
+    },
+    {
+      "type": "custommachinery:item",
+      "id": "coin_output",
+      "mode": "both",
+      "filter": [
+        "#lightmanscurrency:wallet"
+      ],
+      "whitelist": true
+    }
+  ],
+  "gui": [
+    {
+      "type": "custommachinery:slot",
+      "x": 88,
+      "y": 45,
+      "id": "organ_slot"
+    },
+    {
+      "type": "custommachinery:slot",
+      "x": 145,
+      "y": 45,
+      "id": "coin_output"
+    },
+    {
+      "type": "custommachinery:player_inventory",
+      "x": 47,
+      "y": 83,
+      "priority": -1,
+      "texture": "kubejs:textures/gui/organ_recycler/organ_recycler_player_inventory.png"
+    },
+    {
+      "type": "custommachinery:texture",
+      "x": 40,
+      "y": 21,
+      "texture": "kubejs:textures/gui/organ_recycler/organ_recycler_background.png"
+    },
+    {
+      "type": "custommachinery:progress",
+      "x": 112,
+      "y": 45,
+      "texture_empty": "kubejs:textures/gui/organ_recycler/organ_recycler_progress_bar_empty.png",
+      "texture_filled": "kubejs:textures/gui/organ_recycler/organ_recycler_progress_bar_filled.png"
+    }
+  ],
+  "jei": [],
+  "catalysts": []
+}

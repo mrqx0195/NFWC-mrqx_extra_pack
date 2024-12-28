@@ -1,4 +1,4 @@
-// priority: 10
+// priority: 500
 BlockEvents.broken(event => {
     let player = event.player;
     if (!player) return;
@@ -56,20 +56,24 @@ const organBlockBrokenOnlyStrategies = {
             return
         }
         let player = event.player
+        let tool = player.getMainHandItem()
+        let silicosisLevel = TetraEffect.getEffectLevel(tool, getItemEffect('kubejs:silicosis'))
         let itemMap = getPlayerChestCavityItemMap(player)
-        let count = 1;
+        let count = 0;
         if (player.persistentData.contains(resourceCount)) {
-            count = player.persistentData.getInt(resourceCount) + count;
+            count = player.persistentData.getInt(resourceCount)
         }
-        if (count >= 100 && Math.random() <= 0.03) {
+        if (count >= 64 && Math.random() <= 0.03 + silicosisLevel * 0.03) {
             let luck = Math.max(player.getLuck(), 1)
             if (luck > 10) {
                 player.give(Item.of('kubejs:rare_mineral_cluster').withCount(Math.max(Math.floor(4 - 40 / luck), 1) * itemMap.get('kubejs:ore_lung').length))
             }
             player.give(Item.of('kubejs:common_mineral_cluster').withCount(Math.max(Math.floor(4 - 4 / luck), 1) * itemMap.get('kubejs:ore_lung').length))
-            count = count - 64
+            if (silicosisLevel < 5) {
+                count = count - 64
+                updateResourceCount(player, count)
+            }
         }
-        updateResourceCount(player, count)
     },
     'kubejs:desire_of_midas': function (event, organ) {
         let player = event.player

@@ -1,0 +1,27 @@
+{
+    "key": "carminite",
+    "category": "reagent",
+    "primary": 0,
+    "secondary": 0,
+    "tertiary": 0,
+    "durability": 0,
+    "integrityCost": 1,
+    "integrityGain": 1,
+    "magicCapacity": 0,
+    "toolLevel": 0,
+    "toolEfficiency": 0,
+    "tints": {
+        "glyph": "980000",
+        "texture": "980000"
+    },
+    "textures": [
+        "default"
+    ],
+    "effects": {
+        "art_of_forging:haste_infused": [ 2, 5 ]
+    },
+    "material": {
+        "items": [ "twilightforest:carminite" ]
+    },
+    "experienceCost": 30
+}

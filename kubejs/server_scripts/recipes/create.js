@@ -1,3 +1,4 @@
+// priority: 800
 ServerEvents.recipes(event => {
 	function registerCustomRecipe(recipeModel) {
         event.custom(recipeModel)
@@ -30,8 +31,6 @@ ServerEvents.recipes(event => {
 	event.recipes.create.compacting('kubejs:huge_stomach', ['kubejs:stomach_template', 'biomancy:ageing_serum', 'biomancy:enlargement_serum']).superheated()
 	event.recipes.create.compacting('kubejs:huge_kidney', ['kubejs:kidney_template', 'biomancy:ageing_serum', 'biomancy:enlargement_serum']).superheated()
 	event.recipes.create.compacting('kubejs:huge_liver', ['kubejs:liver_template', 'biomancy:ageing_serum', 'biomancy:enlargement_serum']).superheated()
-
-	event.recipes.create.mixing('create:chromatic_compound', [Fluid.of('hexerei:quicksilver_fluid').withAmount(1000), 'iceandfire:ghost_ingot', '8x iceandfire:pixie_dust', '16x minecraft:brown_dye', '16x minecraft:magenta_dye', '16x minecraft:light_blue_dye', '16x minecraft:orange_dye', '16x minecraft:cyan_dye', '16x minecraft:light_gray_dye', '16x minecraft:lime_dye']).superheated()
 
 	event.recipes.create.mechanical_crafting('kubejs:revolution_gear', [
 		' SSS ',
@@ -180,7 +179,7 @@ ServerEvents.recipes(event => {
 	event.recipes.create.sequenced_assembly([
 		Item.of('kubejs:candy_stomach')
 	], 'kubejs:stomach_template', [
-		event.recipes.createDeploying('kubejs:incomplete_stomach_template', ['kubejs:incomplete_stomach_template', '#bookwyrms:scale']),
+		event.recipes.createDeploying('kubejs:incomplete_stomach_template', ['kubejs:incomplete_stomach_template', 'twilightforest:raven_feather']),
 		event.recipes.createCutting('kubejs:incomplete_stomach_template', 'kubejs:incomplete_stomach_template'),
 		event.recipes.createDeploying('kubejs:incomplete_stomach_template', ['kubejs:incomplete_stomach_template', 'biomancy:living_flesh']),
 		event.recipes.createDeploying('kubejs:incomplete_stomach_template', ['kubejs:incomplete_stomach_template', '#forge:dyes/pink']),
@@ -238,12 +237,12 @@ ServerEvents.recipes(event => {
 		event.recipes.createDeploying('kubejs:incomplete_glass_wand', ['kubejs:incomplete_glass_wand', 'biomancy:corrosive_additive'])
 	]).transitionalItem('kubejs:incomplete_glass_wand').loops(6)
 
-	event.recipes.create.crushing([Item.of('2x minecraft:raw_iron'), Item.of('minecraft:raw_gold').withChance(0.2), Item.of('minecraft:raw_copper').withChance(0.2), Item.of('create:raw_zinc').withChance(0.2), Item.of('2x minecraft:lapis_lazuli').withChance(0.1)], 'kubejs:common_mineral_cluster').processingTime(100)
+	event.recipes.create.crushing([Item.of('2x minecraft:raw_iron'), Item.of('minecraft:raw_gold').withChance(0.1), Item.of('minecraft:raw_copper').withChance(0.1), Item.of('create:raw_zinc').withChance(0.1), Item.of('2x minecraft:lapis_lazuli').withChance(0.05)], 'kubejs:common_mineral_cluster').processingTime(100)
 
 	event.recipes.create.crushing([Item.of('3x kubejs:lime_powder'), Item.of('2x kubejs:lime_powder').withChance(0.3)], 'create:limestone').processingTime(100)
 
-	event.recipes.create.crushing([Item.of('2x iceandfire:silver_ingot'), Item.of('2x createoreexcavation:raw_redstone').withChance(0.3), Item.of('2x createoreexcavation:raw_emerald').withChance(0.2), Item.of('createoreexcavation:raw_diamond').withChance(0.1), Item.of('minecraft:netherite_scrap').withChance(0.08)], 'kubejs:rare_mineral_cluster').processingTime(100)
-
+	event.recipes.create.crushing([Item.of('iceandfire:silver_ingot'), Item.of('2x createoreexcavation:raw_redstone').withChance(0.2), Item.of('2x createoreexcavation:raw_emerald').withChance(0.1), Item.of('createoreexcavation:raw_diamond').withChance(0.05), Item.of('minecraft:netherite_scrap').withChance(0.04)], 'kubejs:rare_mineral_cluster').processingTime(200)
+	
 	event.recipes.create.crushing([Item.of('2x minecraft:netherite_scrap'), Item.of('5x minecraft:blaze_powder').withChance(0.5), Item.of('5x create:powdered_obsidian').withChance(0.4), Item.of('5x minecraft:glowstone_dust').withChance(0.45), Item.of('8x minecraft:quartz').withChance(0.6), Item.of('kubejs:nether_star_shard')], 'minecraft:nether_star').processingTime(300)
 
 	event.recipes.create.sequenced_assembly([
@@ -358,4 +357,5 @@ ServerEvents.recipes(event => {
 	event.recipes.create.splashing(['9x iceandfire:silver_nugget', Item.of('minecraft:glowstone_dust').withChance(0.3)], 'create:crushed_raw_silver')
 
 	registerCustomRecipe(new RollingRecipe(Item.of('minecraft:tinted_glass'), Item.of('biomancy:vial').withCount(3)))
+
 })

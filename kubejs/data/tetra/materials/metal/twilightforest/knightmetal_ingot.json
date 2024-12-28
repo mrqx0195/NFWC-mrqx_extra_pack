@@ -1,0 +1,34 @@
+{
+    "key": "knightmetal_ingot",
+    "category": "metal",
+    "primary": 7.5,
+    "secondary":4.1,
+    "tertiary": 4.3,
+    "durability": 548,
+    "integrityCost": 4,
+    "integrityGain": 2,
+    "magicCapacity": 210,
+    "toolLevel": "minecraft:diamond",
+    "toolEfficiency": 9,
+    "effects": {
+        "blocking_reflect": 3
+    },
+    "attributes":{
+        "minecraft:generic.armor": 4,
+        "minecraft:generic.armor_toughness": 1
+    },
+    "tints": {
+        "glyph": "c2d3ac",
+        "texture": "c2d3ac"
+      },
+    "textures": [
+       "metal",
+       "default"
+    ],
+    "material": {
+        "items": [ "twilightforest:knightmetal_ingot" ]
+    },
+    "requiredTools": {
+    "hammer_dig": "minecraft:diamond"
+    }
+}

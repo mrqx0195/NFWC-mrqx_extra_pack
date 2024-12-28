@@ -1,3 +1,4 @@
+// priority: 800
 ServerEvents.recipes(event => {
   event.recipes.createoreexcavation
     .drilling('iceandfire:silver_ore', '{"text": "银矿"}', 2, 600)

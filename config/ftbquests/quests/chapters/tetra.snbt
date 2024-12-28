@@ -18,6 +18,32 @@
 		}
 	}
 	id: "69A9CF68FED068D9"
+	images: [
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 3.0d
+			hover: [ ]
+			image: "art_of_forging:item/enigmatic_construct"
+			rotation: 0.0d
+			width: 3.0d
+			x: -5.75d
+			y: 19.5d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 3.5d
+			hover: [ ]
+			image: "art_of_forging:item/dragon_soul"
+			rotation: 0.0d
+			width: 3.5d
+			x: 8.0d
+			y: 25.75d
+		}
+	]
 	order_index: 0
 	quest_links: [ ]
 	quests: [
@@ -28,7 +54,7 @@
 				""
 				"你可能已经注意到——本整合包中并没有使用连锁挖矿等便于玩家使用的各种Mod。其主要原因类似于TPA跟传送石碑的关系——可以使用Mod增强沉浸感的地方，就不要通过更直白的方式来实现。"
 				""
-				"Tetra允许你对工具进行&e随心所欲&r（一定程度上）的更改，使得你可以获得类如&d匠魂&r一样的工具组装体验。同时其包含的各种&6古代图纸&r，也赋予你制作古代部件，来获得类如3X3挖掘之类的强力效果。"
+				"Tetra允许你对工具进行&e随心所欲&r&7（一定程度上）&r的更改，使得你可以获得类如&d匠魂&r一样的工具组装体验。同时其包含的各种&6古代图纸&r，也赋予你制作古代部件，来获得类如3X3挖掘之类的强力效果。"
 				""
 				"可以说，能够良好的使用Tetra，可以极大地增强你的工作效率和战斗效率，并且Tetra本身的流程并不复杂，因此强烈推荐在开局就进行Tetra内容的探索。"
 			]
@@ -65,7 +91,7 @@
 				type: "checkmark"
 			}]
 			title: "引言：Tetra的存在意义"
-			x: -5.5d
+			x: -5.75d
 			y: 19.5d
 		}
 		{
@@ -168,7 +194,13 @@
 				"将对一些工具可以改装的方向进行简要描述，来为玩家的改装提供思路。"
 			]
 			hide_dependency_lines: false
-			icon: "witherstormmod:command_block_pickaxe"
+			icon: {
+				Count: 1b
+				id: "minecraft:wooden_pickaxe"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "6DCBC9E0C68FCAB4"
 			rewards: [{
 				id: "6BDFC618DC2F0E48"
@@ -183,7 +215,7 @@
 			}]
 			title: "改造工具"
 			x: 1.0d
-			y: 22.0d
+			y: 21.75d
 		}
 		{
 			dependencies: ["6DCBC9E0C68FCAB4"]
@@ -222,7 +254,7 @@
 			}]
 			title: "双头工具"
 			x: 2.25d
-			y: 22.0d
+			y: 21.75d
 		}
 		{
 			dependencies: ["6DCBC9E0C68FCAB4"]
@@ -252,7 +284,7 @@
 			}]
 			title: "单头工具"
 			x: 3.25d
-			y: 22.0d
+			y: 21.75d
 		}
 		{
 			dependencies: ["312A09022249980F"]
@@ -264,7 +296,13 @@
 				"本部分将对一些武器&e可以改装的方向&r进行简要描述，来为玩家的改装提供思路。"
 			]
 			hide_dependency_lines: false
-			icon: "witherstormmod:command_block_sword"
+			icon: {
+				Count: 1b
+				id: "minecraft:wooden_sword"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "7E7580FC10C7CB80"
 			rewards: [{
 				id: "0C159F9217B99977"
@@ -434,7 +472,7 @@
 			}]
 			title: "腰带"
 			x: 4.25d
-			y: 22.0d
+			y: 21.75d
 		}
 		{
 			dependencies: ["312A09022249980F"]
@@ -449,6 +487,7 @@
 				item: "lightmanscurrency:coin_iron"
 				type: "item"
 			}]
+			shape: "hexagon"
 			subtitle: "再使用"
 			tasks: [{
 				id: "6870823584208C2D"
@@ -476,6 +515,7 @@
 				item: "lightmanscurrency:coin_iron"
 				type: "item"
 			}]
+			shape: "hexagon"
 			subtitle: "定制部件"
 			tasks: [{
 				id: "72B2A6B7FD5FFB12"
@@ -503,6 +543,7 @@
 				item: "lightmanscurrency:coin_iron"
 				type: "item"
 			}]
+			shape: "hexagon"
 			subtitle: "让其变得更强"
 			tasks: [{
 				id: "1370A7D6D3F44CCC"
@@ -531,6 +572,7 @@
 				item: "lightmanscurrency:coin_iron"
 				type: "item"
 			}]
+			shape: "hexagon"
 			subtitle: "多效但未必专精"
 			tasks: [{
 				id: "0B6873F9FA299058"
@@ -620,6 +662,7 @@
 				item: "lightmanscurrency:coin_iron"
 				type: "item"
 			}]
+			shape: "hexagon"
 			subtitle: "解除对名词的疑惑"
 			tasks: [{
 				id: "5B07B4A7545C89A9"
@@ -655,6 +698,7 @@
 				item: "lightmanscurrency:coin_iron"
 				type: "item"
 			}]
+			shape: "hexagon"
 			subtitle: "工具的魔法"
 			tasks: [{
 				id: "16A60EFC0B93E493"
@@ -795,44 +839,46 @@
 			}]
 			shape: "rsquare"
 			subtitle: "辅助改造的工具"
-			tasks: [
-				{
-					id: "01464A7037DB229A"
-					item: {
-						Count: 1b
-						id: "tetra:modular_double"
-						tag: {
-							Damage: 0
-							"double/basic_hammer_left_material": "basic_hammer/oak"
-							"double/basic_hammer_right_material": "basic_hammer/oak"
-							"double/basic_handle_material": "basic_handle/stick"
-							"double/handle": "double/basic_handle"
-							"double/head_left": "double/basic_hammer_left"
-							"double/head_right": "double/basic_hammer_right"
-							id: "98727dcb-b07f-430c-a178-c10ed89bed6a"
-						}
+			tasks: [{
+				id: "39297DA87A23544D"
+				item: {
+					Count: 1b
+					id: "itemfilters:or"
+					tag: {
+						items: [
+							{
+								Count: 1b
+								id: "tetra:modular_double"
+								tag: {
+									Damage: 0
+									"double/basic_hammer_left_material": "basic_hammer/oak"
+									"double/basic_hammer_right_material": "basic_hammer/oak"
+									"double/basic_handle_material": "basic_handle/stick"
+									"double/handle": "double/basic_handle"
+									"double/head_left": "double/basic_hammer_left"
+									"double/head_right": "double/basic_hammer_right"
+									id: "01ee6a7d-2b97-402d-b31f-e7245b7397cd"
+								}
+							}
+							{
+								Count: 1b
+								id: "tetra:modular_double"
+								tag: {
+									Damage: 0
+									"double/basic_hammer_left_material": "basic_hammer/stone"
+									"double/basic_hammer_right_material": "basic_hammer/stone"
+									"double/basic_handle_material": "basic_handle/stick"
+									"double/handle": "double/basic_handle"
+									"double/head_left": "double/basic_hammer_left"
+									"double/head_right": "double/basic_hammer_right"
+									id: "e49e157c-4343-4976-911f-f2b6398fd7c8"
+								}
+							}
+						]
 					}
-					type: "item"
 				}
-				{
-					id: "5707B4238BE55E0D"
-					item: {
-						Count: 1b
-						id: "tetra:modular_double"
-						tag: {
-							Damage: 0
-							"double/basic_hammer_left_material": "basic_hammer/stone"
-							"double/basic_hammer_right_material": "basic_hammer/stone"
-							"double/basic_handle_material": "basic_handle/stick"
-							"double/handle": "double/basic_handle"
-							"double/head_left": "double/basic_hammer_left"
-							"double/head_right": "double/basic_hammer_right"
-							id: "b0e824bf-fc0f-48eb-b7d6-6c6a4d664a1c"
-						}
-					}
-					type: "item"
-				}
-			]
+				type: "item"
+			}]
 			title: "改造的起点：锤"
 			x: -3.25d
 			y: 19.5d
@@ -953,6 +999,7 @@
 				item: "lightmanscurrency:coin_gold"
 				type: "item"
 			}]
+			shape: "hexagon"
 			subtitle: "获得五级锤子：黑曜石锤"
 			tasks: [{
 				id: "006D8ACFE88298D8"
@@ -991,7 +1038,7 @@
 				item: "lightmanscurrency:coin_gold"
 				type: "item"
 			}]
-			shape: "rsquare"
+			shape: "hexagon"
 			subtitle: "获得六级锤子：下界合金锤"
 			tasks: [{
 				id: "1B0EED37B836B0B6"
@@ -1381,11 +1428,11 @@
 		{
 			dependencies: ["615C6A1DA6AEA1A4"]
 			description: [
-				"Tetra的附属——&6《锻造之艺》&r中增加了&9《Alex生物》&r的联动。"
+				"Tetra的附属——&d《锻造之艺》&r中增加了&d《Alex生物》&r的联动。"
 				""
-				"因为涉及到的Alex&9虚空蠕虫&r没有翻译，这里简单提一下："
+				"因为涉及到的Alex&b虚空蠕虫&r没有翻译，这里简单提一下："
 				""
-				"虚空蠕虫生活在&e末地&r下方的虚空中，向虚空中投入&3神秘蠕虫&r可以将其引出。"
+				"虚空蠕虫生活在&e末地&r下方的虚空中，向虚空中投入&6神秘蠕虫&r可以将其引出。"
 				""
 				"&8对虚空蠕虫最有效的攻击方式，便是直接攻击它的头部。&r"
 			]
@@ -1397,11 +1444,18 @@
 				item: "lightmanscurrency:coin_gold"
 				type: "item"
 			}]
-			tasks: [{
-				id: "52E29EA2B1D14BE4"
-				item: "alexsmobs:mysterious_worm"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "2F19ECE30235A887"
+					item: "alexsmobs:void_worm_eye"
+					type: "item"
+				}
+				{
+					id: "6B79A40C391126B5"
+					item: "alexsmobs:mysterious_worm"
+					type: "item"
+				}
+			]
 			x: -2.25d
 			y: 18.0d
 		}

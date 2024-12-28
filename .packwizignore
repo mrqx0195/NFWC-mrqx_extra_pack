@@ -1,0 +1,42 @@
+/.*
+/crash-reports/
+/local/
+/logs/
+/options.txt
+/usercache.json
+/usernamecache.json
+/saves
+/screenshots
+/shaderpacks
+/PCL/
+/No Flesh Within Chest.jar
+/No Flesh Within Chest.json
+/modernfix
+/resourcepacks
+/rhino.local.properties
+/emi.json
+/TrashSlotSaveState.json
+/lightspeed-cache
+/XaeroWaypoints*
+/config/oculus.properties
+/config/xaerominimap_entities.json
+/config/momlove
+/config/ibeeditor*
+/config/jei/world
+/config/konkrete
+/config/spark
+/No Flesh Within Chest-natives
+/quests_structures
+/schematics
+/fancymenu_data
+/fancymenu_setups
+/servers*
+/patchouli_data.json
+/hmclversion.cfg
+/kubejs/probe
+/LICENSE
+/README.md
+/*.bat
+/*.zip
+/mods/ibe*
+/mods/probejs*

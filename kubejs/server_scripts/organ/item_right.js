@@ -1,4 +1,4 @@
-// priority: 10
+// priority: 500
 ItemEvents.rightClicked(event => {
     let player = event.player;
     if (!player) return;
@@ -109,4 +109,56 @@ const organRightClickedOnlyStrategies = {
         event.item.shrink(1)
         event.player.give(Item.of('minecraft:glass_bottle'))
     },
+    'kubejs:snow_monster_core': function (event, organ) {
+        let player = event.player
+        let level = player.level
+        if (event.item != "minecraft:snowball"){
+            return
+        }
+        event.item.shrink(1)
+        player.swing()
+        let rayY = Math.sin(-player.xRot/180*JavaMath.PI ) 
+        let rayZ = Math.cos(-player.xRot/180*JavaMath.PI )*Math.cos(-player.yRot/180*JavaMath.PI )
+        let rayX = Math.cos(-player.xRot/180*JavaMath.PI )*Math.sin(-player.yRot/180*JavaMath.PI )
+        let iceBomb = level.createEntity("twilightforest:thrown_ice")
+        iceBomb.setPosition(player.x, player.y + 1, player.z)
+        iceBomb.setOwner(player)
+        iceBomb.setMotion(rayX,rayY,rayZ)
+        iceBomb.spawn()
+    },
+    'kubejs:chameleon_stomach': function (event, organ) {
+        let player = event.player
+        let change = 0
+        let amplifier = 0
+        let effect = 'kubejs:heat_up'
+        if (event.item == "minecraft:ice"){
+            event.item.shrink(1)
+            change = - 1
+        }
+        if (event.item == "minecraft:magma_block"){
+            event.item.shrink(1)
+            change = 1
+        }
+        if (player.hasEffect('kubejs:cold_down')){
+            amplifier -= player.getEffect('kubejs:cold_down').getAmplifier() + 1
+            player.removeEffect('kubejs:cold_down')
+        }
+        if (player.hasEffect('kubejs:heat_up')){
+            amplifier += player.getEffect('kubejs:heat_up').getAmplifier() + 1
+            player.removeEffect('kubejs:heat_up')
+        }
+        amplifier += change
+        if (amplifier != 0){
+            effect = amplifier > 0 ? 'kubejs:heat_up' : 'kubejs:cold_down'
+            amplifier = Math.abs(amplifier) - 1
+            player.potionEffects.add(effect, 20*60 , amplifier)
+        }
+    },
+    'kubejs:flame_stomach': function (event, organ) {
+        let player = event.player
+        if(event.item == "minecraft:coal"){
+            $Temperature.add(player,$Trait.CORE,10)
+            event.item.shrink(1)
+        }
+    }
 };

@@ -12,6 +12,7 @@
 	}
 	id: "5732E8BABFC7D570"
 	images: [{
+		alpha: 200
 		click: ""
 		corner: false
 		dev: false
@@ -56,7 +57,7 @@
 				}
 				type: "item"
 			}]
-			shape: "octagon"
+			shape: "rsquare"
 			subtitle: "我们对它们的力量知之甚少"
 			tasks: [{
 				id: "2576554D1A4F255C"
@@ -263,7 +264,7 @@
 				item: "lightmanscurrency:coin_gold"
 				type: "item"
 			}]
-			shape: "hexagon"
+			shape: "rsquare"
 			subtitle: "看起来，你或许需要一瓶精酿？"
 			tasks: [{
 				id: "4330A21FE1D41216"
@@ -401,6 +402,7 @@
 			description: ["当你前往下界之后，即可解锁关于进阶下界仪式和专家下界仪式的相关内容。"]
 			icon: "goety:nether_brick_brazier"
 			id: "48CA5C5BE42B6D3C"
+			shape: "hexagon"
 			subtitle: "富有灵魂能量的地方"
 			tasks: [{
 				id: "2CD93C45F7235979"
@@ -600,7 +602,7 @@
 				"在&2林地府邸&r中使用它，灾厄宰相便会出现，击败它之后将会获得灵魂红宝石。"
 			]
 			hide_dependency_lines: true
-			icon: "goety:soul_ruby"
+			icon: "goety:dark_scroll"
 			id: "7DC6ADF38293C21B"
 			rewards: [{
 				count: 3
@@ -856,6 +858,7 @@
 				item: "lightmanscurrency:coin_iron"
 				type: "item"
 			}]
+			shape: "hexagon"
 			subtitle: "灾厄与掠夺"
 			tasks: [{
 				id: "149E692754BBDFDC"
@@ -1033,6 +1036,7 @@
 				item: "lightmanscurrency:coin_iron"
 				type: "item"
 			}]
+			shape: "hexagon"
 			subtitle: "灾变领地"
 			tasks: [{
 				id: "158BF51016DE358A"
@@ -1141,6 +1145,7 @@
 				item: "lightmanscurrency:coin_gold"
 				type: "item"
 			}]
+			shape: "hexagon"
 			subtitle: "一次简单的尝试"
 			tasks: [{
 				id: "5231888AFEEE6077"
@@ -1170,6 +1175,7 @@
 				}
 			}
 			id: "6670071A9FBD1EF1"
+			shape: "hexagon"
 			subtitle: "不可打破的顺序"
 			tasks: [{
 				id: "7C6FE1220A15BBFF"
@@ -1196,6 +1202,7 @@
 				item: "lightmanscurrency:coin_gold"
 				type: "item"
 			}]
+			shape: "hexagon"
 			subtitle: "更清晰的数据"
 			tasks: [{
 				id: "08C894DB7E3B373A"
@@ -1224,6 +1231,7 @@
 				item: "lightmanscurrency:coin_gold"
 				type: "item"
 			}]
+			shape: "hexagon"
 			subtitle: "善用引导书"
 			tasks: [{
 				id: "1F9C6B22EE998501"
@@ -1299,6 +1307,7 @@
 				item: "minecraft:golden_apple"
 				type: "item"
 			}]
+			shape: "hexagon"
 			subtitle: "你的动物朋友们"
 			tasks: [{
 				id: "2D7A88B5F2A04AB1"
@@ -1323,6 +1332,7 @@
 				item: "simplehats:zigzagwitchhat"
 				type: "item"
 			}]
+			shape: "hexagon"
 			subtitle: "独属于你的药剂"
 			tasks: [{
 				id: "5DFD081D89952A1B"
@@ -1450,6 +1460,25 @@
 			title: "仪式说明"
 			x: 1.5d
 			y: 7.25d
+		}
+		{
+			dependencies: ["7DC6ADF38293C21B"]
+			description: ["击败灾厄宰相！"]
+			hide_dependency_lines: true
+			id: "21A1453792744E6A"
+			rewards: [{
+				id: "64C35F6EBB30661B"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "59894E78E254799E"
+				item: "goety:soul_ruby"
+				type: "item"
+			}]
+			title: "灾厄宰相/维齐尔"
+			x: -7.0d
+			y: 4.75d
 		}
 	]
 	title: "诡厄巫法：潜藏在黑魔法的力量"

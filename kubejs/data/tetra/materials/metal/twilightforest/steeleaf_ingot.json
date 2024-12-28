@@ -1,0 +1,27 @@
+{
+    "key": "steeleaf_ingot",
+    "category": "metal",
+    "primary": 8.5,
+    "secondary":7.1,
+    "tertiary": 2.3,
+    "durability": 688,
+    "integrityCost": 1,
+    "integrityGain": 3,
+    "magicCapacity": 10,
+    "toolLevel": "minecraft:diamond",
+    "toolEfficiency": 9,
+    "tints": {
+        "glyph": "345e23",
+        "texture": "345e23"
+      },
+    "textures": [
+       "metal",
+       "default"
+    ],
+    "material": {
+        "items": [ "twilightforest:steeleaf_ingot" ]
+    },
+    "requiredTools": {
+    "hammer_dig": "minecraft:diamond"
+    }
+}

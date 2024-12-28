@@ -1,5 +1,4 @@
-const $EnchantmentCategory = Java.loadClass('net.minecraft.world.item.enchantment.EnchantmentCategory')
-
+// priority: 100
 StartupEvents.registry('minecraft:enchantment', event => {
     event.create('kubejs:painless_operation').minLevel(1).maxLevel(1)
         .canEnchant((/** @type {Internal.ItemStack} */ i) => {
