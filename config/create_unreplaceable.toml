@@ -1,0 +1,11 @@
+#填入对应MOD的ID可以保护该MOD下的所有方块不会被打印蓝图时替换掉
+MOD_ID = [
+	"refinedstorage",
+	"sophisticatedbackpacks"
+]
+#填入指定方块的ID可以保护方块不会被打印蓝图时替换掉
+BLOCK_ID = [
+	"create:blaze_burner", 
+	"create:item_vault"
+]
+

@@ -1,0 +1,9 @@
+#填入对应实体的ID可以防止被巨颚漏斗吸取物品
+excluded_entity_ids = [
+    "minecraft:villager",
+    "unusualprehistory:gigantopithicus",
+    "goety:doppelganger"
+]
+
+
+
