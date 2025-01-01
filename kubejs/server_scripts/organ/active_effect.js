@@ -498,9 +498,9 @@ const organActiveOnlyStrategies = {
         let cdReduction = 0
         let buoyant = instance.organScores.getOrDefault(new ResourceLocation('chestcavity', 'buoyant'), 0)
         for (let i = 0; i < chestInventory.length; i++) {
-            let organ = chestInventory[i]  
+            let organ = chestInventory[i]
             if (!organ.get('tag')) continue
-            if(String(organ.id) == 'minecraft:enchanted_book') {
+            if (String(organ.id) == 'minecraft:enchanted_book') {
                 enchantList = organ.get('tag').get('StoredEnchantments')
             }
             else {
@@ -512,11 +512,11 @@ const organActiveOnlyStrategies = {
                 let currentEnchant = enchantList[j]
                 let enchantName = currentEnchant.id
                 let lvl = currentEnchant.lvl
-                if(!enchantOnlyMap.has(enchantName)){
+                if (!enchantOnlyMap.has(enchantName)) {
                     enchantOnlyMap.set(enchantName, lvl)
-                }else enchantOnlyMap.set(enchantName, Math.max(enchantOnlyMap.get(enchantName), lvl))
+                } else enchantOnlyMap.set(enchantName, Math.max(enchantOnlyMap.get(enchantName), lvl))
                 // 贪得无厌
-                if (j >= 1){
+                if (j >= 1) {
                     cdReduction -= 0.05 * (j - 1)
                     buoyant += 0.1 * lvl
                 }
@@ -524,10 +524,10 @@ const organActiveOnlyStrategies = {
             buoyant += 0.1
         }
         enchantOnlyMap.forEach((value, key) => {
-            if (curseEnchantList.includes(key)){
+            if (curseEnchantList.includes(key)) {
                 spellPowerUp -= value * 0.01
                 manaRegen += value * 0.04
-            }else{
+            } else {
                 spellPowerUp += value * 0.03
                 manaRegen -= value * 0.02
             }
@@ -541,7 +541,7 @@ const organActiveOnlyStrategies = {
         instance.organScores.put(new ResourceLocation('chestcavity', 'buoyant'), new $Float(buoyant))
     },
     'kubejs:hydra_fiery_blood_essence': function (player, organ, attributeMap) {
-        let temperature = ColdSweat.getTemperature(player, "body") 
+        let temperature = ColdSweat.getTemperature(player, "body")
         let instance = player.getChestCavityInstance()
         let breathCapacity = instance.organScores.getOrDefault(new ResourceLocation('chestcavity', 'breath_capacity'), 0) * 1.5
         instance.organScores.put(new ResourceLocation('chestcavity', 'breath_capacity'), new $Float(breathCapacity))

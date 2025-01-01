@@ -50,6 +50,6 @@ ServerEvents.tags('item', event => {
 
 })
 
-ServerEvents.tags('entity_type',event=>{
-  event.add('forge:golems',["modulargolems:metal_golem","modulargolems:humanoid_golem","modulargolems:dog_golem"])
+ServerEvents.tags('entity_type', event => {
+  event.add('forge:golems', ["modulargolems:metal_golem", "modulargolems:humanoid_golem", "modulargolems:dog_golem"])
 })

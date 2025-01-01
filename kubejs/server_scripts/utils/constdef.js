@@ -278,7 +278,7 @@ const tagWorth = {
     '#kubejs:infinity': 300,
     '#kubejs:damage_only': 100,
     '#kubejs:active_only': 100,
-    '#kubejs:loot_entity_only': 500, 
+    '#kubejs:loot_entity_only': 500,
     '#kubejs:muscle': 10,
     '#kubejs:rose': 50,
     '#kubejs:active': 50,

@@ -74,7 +74,7 @@ ServerEvents.recipes(event => {
             O: 'lightmanscurrency:coin_iron',
             M: 'wares:delivery_table'
         })
-            
+
     event.shaped('cataclysm:meat_shredder', [
         ['', 'twilightforest:fiery_ingot', 'goety:philosophers_stone'],
         ['', 'twilightforest:charm_of_keeping_3', 'minecraft:nether_star'],

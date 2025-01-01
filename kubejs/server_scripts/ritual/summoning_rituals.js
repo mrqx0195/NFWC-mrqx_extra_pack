@@ -92,7 +92,7 @@ ServerEvents.recipes(event => {
         .sacrificeRegion(3, 3)
         .dayTime('night')
         .recipeTime(500);
-    
+
     // world of bosses召唤祭坛兼容
     event.recipes.summoningrituals
         .altar('kubejs:ritual_catalyst')

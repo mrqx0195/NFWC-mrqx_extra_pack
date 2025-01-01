@@ -1,8 +1,8 @@
 // priority: 800
 ServerEvents.recipes(event => {
 	function registerCustomRecipe(recipeModel) {
-        event.custom(recipeModel)
-    }
+		event.custom(recipeModel)
+	}
 	function RollingRecipe(input, output) {
 		this.type = 'createaddition:rolling'
 		this.input = input
@@ -242,7 +242,7 @@ ServerEvents.recipes(event => {
 	event.recipes.create.crushing([Item.of('3x kubejs:lime_powder'), Item.of('2x kubejs:lime_powder').withChance(0.3)], 'create:limestone').processingTime(100)
 
 	event.recipes.create.crushing([Item.of('iceandfire:silver_ingot'), Item.of('2x createoreexcavation:raw_redstone').withChance(0.2), Item.of('2x createoreexcavation:raw_emerald').withChance(0.1), Item.of('createoreexcavation:raw_diamond').withChance(0.05), Item.of('minecraft:netherite_scrap').withChance(0.04)], 'kubejs:rare_mineral_cluster').processingTime(200)
-	
+
 	event.recipes.create.crushing([Item.of('2x minecraft:netherite_scrap'), Item.of('5x minecraft:blaze_powder').withChance(0.5), Item.of('5x create:powdered_obsidian').withChance(0.4), Item.of('5x minecraft:glowstone_dust').withChance(0.45), Item.of('8x minecraft:quartz').withChance(0.6), Item.of('kubejs:nether_star_shard')], 'minecraft:nether_star').processingTime(300)
 
 	event.recipes.create.sequenced_assembly([

@@ -138,16 +138,16 @@ const organPlayerBearOnlyStrategies = {
     },
     'kubejs:flame_spine': function (event, organ, data) {
         let player = event.entity
-        let oldTemp = ColdSweat.getTemperature(player,'body')
+        let oldTemp = ColdSweat.getTemperature(player, 'body')
         if (oldTemp > 0) {
             let curTemp = Math.max(oldTemp - event.amount, 0)
             let curAmount = Math.max(event.amount - oldTemp, 0)
-            ColdSweat.setTemperature(player,'core', curTemp - ColdSweat.getTemperature(player,'base'))
+            ColdSweat.setTemperature(player, 'core', curTemp - ColdSweat.getTemperature(player, 'base'))
             event.amount = curAmount
             return
         }
     },
-    'kubejs:energetic_naga_scale' : function(event, organ, data) {
+    'kubejs:energetic_naga_scale': function (event, organ, data) {
         let player = event.entity
         let itemMap = getPlayerChestCavityItemMap(player)
         if (!itemMap.has("kubejs:energetic_naga_scale")) return
@@ -166,18 +166,18 @@ const organPlayerBearOnlyStrategies = {
         }
         player.absorptionAmount += 4
     },
-    'kubejs:armor_with_gaze' : function(event, organ, data) {
+    'kubejs:armor_with_gaze': function (event, organ, data) {
         let player = event.entity
         let source = event.getSource()
         let damage = event.amount
         let ray = player.rayTrace(32, false)
-        if(!(source.getType() == 'mob') && !event.source.isProjectile()) return
-        if(ray.entity){
-            if(ray.entity.uuid == source.getImmediate().uuid){
+        if (!(source.getType() == 'mob') && !event.source.isProjectile()) return
+        if (ray.entity) {
+            if (ray.entity.uuid == source.getImmediate().uuid) {
                 event.amount = damage * 0.35
             }
-        }else{
-            event.amount = damage * 1.5        
+        } else {
+            event.amount = damage * 1.5
         }
     }
 };

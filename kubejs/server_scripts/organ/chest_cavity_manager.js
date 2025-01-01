@@ -46,7 +46,7 @@ PlayerEvents.inventoryClosed((event) => {
     }
     global.initChestCavityIntoMap(player, true)
 
-    
+
     let itemMap = getPlayerChestCavityItemMap(player)
     if (player.persistentData.contains(organActive) && player.persistentData.getInt(organActive) == 1) {
         return

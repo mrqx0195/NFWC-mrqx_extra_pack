@@ -48,11 +48,11 @@ ServerEvents.recipes(event => {
     registerCustomRecipe(new MixingCauldronRecipe(
         [Ingredient.of('biomancy:healing_additive'), Ingredient.of('biomancy:healing_additive'), Ingredient.of('hexerei:mindful_trance_blend'), Ingredient.of('minecraft:golden_apple'), Ingredient.of('minecraft:golden_apple'), Ingredient.of('kubejs:active_pill'), Ingredient.of('kubejs:active_pill'), Ingredient.of('kubejs:active_pill')],
         Item.of('kubejs:long_lasting_pill').withCount(1)).setFluid('createaddition:bioethanol', 500).setFluidOutput('minecraft:water').addHeatRequirement())
-        
+
     registerCustomRecipe(new MixingCauldronRecipe(
         [Ingredient.of('biomancy:cleansing_serum'), Ingredient.of('biomancy:cleansing_serum'), Ingredient.of('goety:soul_heal_focus'), Ingredient.of('goety:soul_heal_focus'), Ingredient.of('minecraft:enchanted_golden_apple'), Ingredient.of('iceandfire:sapphire_gem'), Ingredient.of('hexerei:mindful_trance_blend'), Ingredient.of('kubejs:long_lasting_pill')],
         Item.of('kubejs:long_lasting_pill_gold').withCount(1)).setFluid('hexerei:quicksilver_fluid', 500).addHeatRequirement())
-        
+
     registerCustomRecipe(new MixingCauldronRecipe(
         [Ingredient.of('kubejs:cream'), Ingredient.of('kubejs:cream'), Ingredient.of('kubejs:cream'), Ingredient.of('kubejs:cream'), Ingredient.of('kubejs:cream'), Ingredient.of('kubejs:cream'), Ingredient.of('minecraft:sugar'), Ingredient.of('minecraft:sugar')],
         Item.of('extradelight:cheese').withCount(2)).setFluid('minecraft:water', 1000).setFluidOutput('kubejs:cream').addHeatRequirement())

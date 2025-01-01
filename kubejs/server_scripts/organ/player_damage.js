@@ -354,18 +354,10 @@ const organPlayerDamageOnlyStrategies = {
             if (temperature > 50) {
                 let degree = (event.amount - 5) / 3 + temperature / 3
                 overLimitSpellCast(new ResourceLocation('irons_spellbooks', 'flaming_strike'), degree, player, false)
-                entity.setNoAI(true)
-                entity.server.scheduleInTicks(1, event => {
-                    entity.setNoAI(false)
-                })
             }
             if (temperature < -50) {
                 let degree = (event.amount - 6) * 2 - temperature * 2
                 overLimitSpellCast(new ResourceLocation('irons_spellbooks', 'icicle'), degree, player, false)
-                entity.setNoAI(true)
-                entity.server.scheduleInTicks(1, event => {
-                    entity.setNoAI(false)
-                })
             }
         }
     },
@@ -384,8 +376,8 @@ const organPlayerDamageOnlyStrategies = {
                 e.discard()
             }
             else if (!e.isPlayer() && e.isAttackable()) {
-                entityList.forEach(e => {e.invulnerableTime = 0})
-                e.attack(DamageSource.OUT_OF_WORLD, Math.min(player.getAttributeTotalValue("minecraft:generic.attack_damage") / 2 , 5))
+                entityList.forEach(e => { e.invulnerableTime = 0 })
+                e.attack(DamageSource.OUT_OF_WORLD, Math.min(player.getAttributeTotalValue("minecraft:generic.attack_damage") / 2, 5))
             }
         })
         player.addItemCooldown('kubejs:minoshroom_totem', 10)
@@ -394,6 +386,6 @@ const organPlayerDamageOnlyStrategies = {
         if (event.source.type != 'player') return
         let player = event.source.player
         let fireSpellPower = player.getAttributeTotalValue("irons_spellbooks:fire_spell_power")
-        event.amount = event.amount * Math.min((1 + (fireSpellPower / 4)) , 2)
+        event.amount = event.amount * Math.min((1 + (fireSpellPower / 4)), 2)
     }
 };

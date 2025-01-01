@@ -1,6 +1,6 @@
 BlockEvents.rightClicked('alexmobs:capsid', event => {
     const item = event.item
-    if (!event.block.inventory) return
+    if (!event.block.inventory || event.block.inventory.getSlots() <= 0) return
     const capsid_slot = event.block.inventory.getStackInSlot(0)
     if (!item.isEmpty()
         && item.id === capsid_slot.id
