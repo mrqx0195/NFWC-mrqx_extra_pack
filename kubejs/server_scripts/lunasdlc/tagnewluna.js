@@ -4,5 +4,5 @@ ServerEvents.tags('item', event => {
     event.add('chestcavity:digestive_system', ['chestcavity:inner_furnace','chestcavity:mana_reactor','#kubejs:intestine','#kubejs:stomach'])
     event.add('kubejs:heart', ['chestcavity:heart', 'chestcavity:rotten_heart', 'chestcavity:animal_heart', 'chestcavity:fireproof_heart', 'chestcavity:small_animal_heart', 'chestcavity:rabbit_heart', 'chestcavity:ender_heart', 'chestcavity:dragon_heart', 'chestcavity:golem_core', 'chestcavity:blaze_core', 'chestcavity:saltwater_heart'])
     event.add('kubejs:overmagic_only', ['kubejs:plastic_heart'])
-    event.add('kubejs:disluckloot', ['kubejs:genesis','luna_flesh_reforged:archotech_void_heart_engine',"luna_flesh_reforged:fallen_paradise","luna_flesh_reforged:archotech_abyssal_core"])
+    event.add('kubejs:exclued_lucky_block', ['kubejs:genesis','luna_flesh_reforged:archotech_void_heart_engine',"luna_flesh_reforged:fallen_paradise","luna_flesh_reforged:archotech_abyssal_core"])
   })
