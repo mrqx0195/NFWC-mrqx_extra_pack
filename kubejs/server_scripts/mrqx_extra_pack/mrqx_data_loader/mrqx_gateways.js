@@ -369,9 +369,9 @@ ServerEvents.highPriorityData(event => {
                 },
                 "type": "gateways:stack"
             })
-            .addEntity('meetyourfight:rosalyne', '{KubeJSPersistentData:{champion:[\"purify\",\"mrqx_element_attack\",\"mrqx_curse\"]},ActiveEffects:[{\"forge:id\":\"kubejs:pardon_of_god_magic\",Amplifier: 1,Duration: 2147483600,ShowParticles: 0b}]}')
-            .addEntity('meetyourfight:rosalyne', '{KubeJSPersistentData:{champion:[\"purify\",\"mrqx_element_attack\",\"mrqx_curse\"]},ActiveEffects:[{\"forge:id\":\"kubejs:pardon_of_god_melee\",Amplifier: 1,Duration: 2147483600,ShowParticles: 0b}]}')
-            .addEntity('meetyourfight:rosalyne', '{KubeJSPersistentData:{champion:[\"purify\",\"mrqx_element_attack\",\"mrqx_curse\"]},ActiveEffects:[{\"forge:id\":\"kubejs:pardon_of_god_projectile\",Amplifier: 1,Duration: 2147483600,ShowParticles: 0b}]}')
+            .addEntity('twilightforest:snow_queen', '{KubeJSPersistentData:{champion:[\"purify\",\"mrqx_element_attack\",\"mrqx_curse\"]},ActiveEffects:[{\"forge:id\":\"kubejs:pardon_of_god_magic\",Amplifier: 1,Duration: 2147483600,ShowParticles: 0b}]}')
+            .addEntity('twilightforest:snow_queen', '{KubeJSPersistentData:{champion:[\"purify\",\"mrqx_element_attack\",\"mrqx_curse\"]},ActiveEffects:[{\"forge:id\":\"kubejs:pardon_of_god_melee\",Amplifier: 1,Duration: 2147483600,ShowParticles: 0b}]}')
+            .addEntity('twilightforest:snow_queen', '{KubeJSPersistentData:{champion:[\"purify\",\"mrqx_element_attack\",\"mrqx_curse\"]},ActiveEffects:[{\"forge:id\":\"kubejs:pardon_of_god_projectile\",Amplifier: 1,Duration: 2147483600,ShowParticles: 0b}]}')
             .addModifier('minecraft:generic.max_health', 'MULTIPLY_TOTAL', 25)
             .addModifier('minecraft:generic.attack_damage', 'MULTIPLY_TOTAL', 12)
             .addModifier('minecraft:generic.attack_speed', 'MULTIPLY_TOTAL', 15)
