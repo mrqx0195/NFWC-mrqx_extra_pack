@@ -11,4 +11,4 @@ MoreJSEvents.enchantmentTableTooltip((event) => {
     } else {
         event.lines.add([Text.gray(Text.translate(event.clue.enchantment.descriptionId)), Text.gray('. . .?')])
     }
-});
+})

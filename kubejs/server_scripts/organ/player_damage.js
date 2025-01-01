@@ -60,17 +60,8 @@ const tetraEffectPlayerDamageStrategies = {
  * @type {Object<string,function(Internal.LivingHurtEvent, organ, EntityHurtCustomModel):void>}
  */
 const organPlayerDamageStrategies = {
-    'kubejs:flame_muscle': function (event, organ, data) {
-        let player = event.source.player
-        let temperature = ColdSweat.getTemperature(player, 'body')
-        if (temperature > 0) {
-            event.amount += temperature / 2
-            player.server.scheduleInTicks(2, ctx => {
-                ColdSweat.setTemperature(player, 'core', temperature / 2 - ColdSweat.getTemperature(player, 'base'))
-            })
-        }
-    }
-};
+
+}
 
 
 /**
@@ -351,7 +342,7 @@ const organPlayerDamageOnlyStrategies = {
         let temperature = ColdSweat.getTemperature(player, 'body')
         if (entity.isPlayer()) return
         if (event.source.type == 'player') {
-            if (temperature > 50) {
+            if (temperature >= 0) {
                 let degree = (event.amount - 5) / 3 + temperature / 3
                 overLimitSpellCast(new ResourceLocation('irons_spellbooks', 'flaming_strike'), degree, player, false)
             }
@@ -387,5 +378,14 @@ const organPlayerDamageOnlyStrategies = {
         let player = event.source.player
         let fireSpellPower = player.getAttributeTotalValue("irons_spellbooks:fire_spell_power")
         event.amount = event.amount * Math.min((1 + (fireSpellPower / 4)), 2)
+    },
+    'kubejs:flame_muscle': function (event, organ, data) {
+        let player = event.source.player
+        let temperature = ColdSweat.getTemperature(player, 'body')
+        let worldTemperature = ColdSweat.getTemperature(player, 'world')
+        if (temperature > 0) {
+            event.amount += worldTemperature
+            ColdSweat.setTemperature(player, 'core', temperature - ColdSweat.getTemperature(player, 'base') - 3)
+        }
     }
 };

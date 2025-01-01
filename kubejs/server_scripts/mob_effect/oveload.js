@@ -13,11 +13,10 @@ function overloadEntityHurtByPlayer(event, data) {
         if (temperature > 0) {
             event.amount = event.amount * (temperature / 50 + 1 + amplifier / 8) / 2
         }
-        return;
+        return
     }
 }
 
-// priority: 3
 /**
  * 超载受伤效果
  * @param {Internal.LivingHurtEvent} event 
@@ -35,7 +34,6 @@ function overloadEntityHurtByOthers(event, data) {
     }
 }
 
-// priority: 3
 /**
  * 结霜受伤效果
  * @param {Internal.LivingHurtEvent} event 

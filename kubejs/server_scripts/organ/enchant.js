@@ -28,7 +28,7 @@ MoreJSEvents.enchantmentTableChanged(event => {
  */
 const organPlayerEnchantStrategies = {
 
-};
+}
 
 /**
  * 附魔唯一策略
@@ -80,5 +80,29 @@ const organPlayerEnchantOnlyStrategies = {
             updateWarpCount(event.player, count + 1)
         }
     },
-
-};
+    'kubejs:etched_paper': function (event, organ) {
+        let harmfulEffectCount = 0
+        event.player.potionEffects.active.forEach(ctx => {
+            if (ctx.effect.CC_IsHarmful()) {
+                harmfulEffectCount++
+            }
+        })
+        let extraLevel = Math.floor(harmfulEffectCount / 2)
+        slotList.forEach(slot => {
+            let enchantSlot = event.get(slot)
+            enchantSlot.setRequiredLevel(enchantSlot.getRequiredLevel() + harmfulEffectCount * 5)
+            let enchantList = []
+            enchantSlot.forEachEnchantments((enchantment, level) => {
+                enchantList.push({ 'enchant': enchantment, 'level': level })
+            })
+            enchantSlot.clearEnchantments()
+            enchantList.forEach(enchant => {
+                let enchantLevel = enchant.level + extraLevel
+                /**@type {Internal.Enchantment} */
+                let enchantment = enchant.enchant
+                enchantSlot.addEnchantment(enchantment, enchantLevel)
+            })
+            enchantSlot.updateClue()
+        })
+    }
+}

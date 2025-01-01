@@ -140,7 +140,7 @@ const organActiveStrategies = {
     'kubejs:revolution_cable': function (player, organ, attributeMap) {
         let typeMap = getPlayerChestCavityTypeMap(player)
         if (typeMap.has('kubejs:revolution')) {
-            let value = typeMap.get('kubejs:revolution').length * 1
+            let value = typeMap.get('kubejs:revolution').length * 2
             attributeMapValueAddition(attributeMap, global.HEALTH_UP, value)
         }
     },
@@ -487,58 +487,6 @@ const organActiveOnlyStrategies = {
         let instance = player.getChestCavityInstance()
         let breathCapacity = instance.organScores.getOrDefault(new ResourceLocation('chestcavity', 'breath_capacity'), 0) * 1.5
         instance.organScores.put(new ResourceLocation('chestcavity', 'breath_capacity'), new $Float(breathCapacity))
-    },
-    'kubejs:etched_paper': function (player, organ, attributeMap) {
-        let instance = player.getChestCavityInstance()
-        let chestInventory = instance.inventory.tags
-        let enchantOnlyMap = new Map()
-        let enchantList = []
-        let spellPowerUp = 0
-        let manaRegen = 0
-        let cdReduction = 0
-        let buoyant = instance.organScores.getOrDefault(new ResourceLocation('chestcavity', 'buoyant'), 0)
-        for (let i = 0; i < chestInventory.length; i++) {
-            let organ = chestInventory[i]
-            if (!organ.get('tag')) continue
-            if (String(organ.id) == 'minecraft:enchanted_book') {
-                enchantList = organ.get('tag').get('StoredEnchantments')
-            }
-            else {
-                enchantList = organ.get('tag').get('Enchantments')
-            }
-            if (!enchantList) continue
-            // 处理该格物品的每个附魔
-            for (let j = 0; j < enchantList.length; j++) {
-                let currentEnchant = enchantList[j]
-                let enchantName = currentEnchant.id
-                let lvl = currentEnchant.lvl
-                if (!enchantOnlyMap.has(enchantName)) {
-                    enchantOnlyMap.set(enchantName, lvl)
-                } else enchantOnlyMap.set(enchantName, Math.max(enchantOnlyMap.get(enchantName), lvl))
-                // 贪得无厌
-                if (j >= 1) {
-                    cdReduction -= 0.05 * (j - 1)
-                    buoyant += 0.1 * lvl
-                }
-            }
-            buoyant += 0.1
-        }
-        enchantOnlyMap.forEach((value, key) => {
-            if (curseEnchantList.includes(key)) {
-                spellPowerUp -= value * 0.01
-                manaRegen += value * 0.04
-            } else {
-                spellPowerUp += value * 0.03
-                manaRegen -= value * 0.02
-            }
-        })
-        cdReduction = Math.max(-1, cdReduction)
-        manaRegen = Math.max(-1, manaRegen)
-        spellPowerUp = Math.max(-1, spellPowerUp)
-        attributeMapValueAddition(attributeMap, global.SPELL_POWER, spellPowerUp)
-        attributeMapValueAddition(attributeMap, global.MANA_REGEN, manaRegen)
-        attributeMapValueAddition(attributeMap, global.COOLDOWN_REDUCTION, cdReduction)
-        instance.organScores.put(new ResourceLocation('chestcavity', 'buoyant'), new $Float(buoyant))
     },
     'kubejs:hydra_fiery_blood_essence': function (player, organ, attributeMap) {
         let temperature = ColdSweat.getTemperature(player, "body")

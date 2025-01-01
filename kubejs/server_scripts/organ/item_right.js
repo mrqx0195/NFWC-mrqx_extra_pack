@@ -58,7 +58,7 @@ const organRightClickedOnlyStrategies = {
         event.player.swing()
         event.player.potionEffects.add('kubejs:burning_heart', duration, amplifier, false, false);
         event.player.removeEffect('kubejs:flaring_heart')
-        event.item.shrink(1);
+        event.item.shrink(1)
     },
     'kubejs:burning_heart': function (event, organ) {
         let itemMap = getPlayerChestCavityItemMap(event.player)
@@ -83,7 +83,7 @@ const organRightClickedOnlyStrategies = {
         event.player.swing()
         event.player.potionEffects.add('kubejs:flaring_heart', duration, amplifier, false, false);
         event.player.removeEffect('kubejs:burning_heart')
-        event.item.shrink(1);
+        event.item.shrink(1)
     },
     'kubejs:redstone_furnace': function (event, organ) {
         if (event.item != 'minecraft:redstone_block') {

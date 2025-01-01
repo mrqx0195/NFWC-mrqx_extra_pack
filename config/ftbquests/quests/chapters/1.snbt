@@ -927,29 +927,6 @@
 			y: 19.75d
 		}
 		{
-			dependencies: ["5067AA0335B2B396"]
-			description: [
-				"按下&a组队键(默认[键)&r打开组队界面，邀请你的朋友进入你的队伍！"
-				""
-				"在同一队伍中将不会受到友军伤害，这对多人的旅行用处巨大！"
-			]
-			icon: {
-				Count: 1b
-				id: "kubejs:love_between_lava_and_ice"
-				tag: { }
-			}
-			id: "4B547FE8ACF6EF37"
-			subtitle: "组成团队一同出征！"
-			tasks: [{
-				id: "4657C57D8683ADA2"
-				title: "我已了解"
-				type: "checkmark"
-			}]
-			title: "邀请你的朋友！"
-			x: 9.0d
-			y: 21.25d
-		}
-		{
 			dependencies: ["50CE3ADF8E4D6426"]
 			description: [
 				"为了进一步发展&e器官艺术&r，你需要一个高效且稳定的器官来源。血肉重铸的&b肉块&r便能满足你的这一系列要求。"
