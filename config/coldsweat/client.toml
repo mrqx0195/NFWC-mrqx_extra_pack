@@ -10,7 +10,7 @@
 	#Range: 1.0 ~ 2.147483647E9
 	"Temperature Smoothing" = 10.0
 	#Displays a dripping water effect on-screen when the player is wet
-	"Show Water Effect" = true
+	"Show Water Effect" = false
 
 ["UI Options"]
 	"Custom hotbar layout" = true
@@ -39,7 +39,7 @@
 
 [Misc]
 	#Show the config menu button in the Options menu
-	"Enable In-Game Config" = true
+	"Enable In-Game Config" = false
 	#The position (offset) of the config button on the screen
 	"Config Button Position" = [0, 0]
 	#Warns the player about a bug that clears armor insulation when in creative mode

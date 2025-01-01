@@ -78,4 +78,9 @@
 	#Max Durability of polearm weapons.
 	#Range: > 1
 	polearmDurabilityMax = 900
+	#Should the intro book be given to the player on first join.
+	giveBook = true
+	#Flat exp multiplier when gaining weapon levels.
+	#Range: 1.0E-6 ~ 1.7976931348623157E308
+	expMultiplier = 1.0
 
