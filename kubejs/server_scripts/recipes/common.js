@@ -81,11 +81,6 @@ ServerEvents.recipes(event => {
         ['cataclysm:witherite_ingot', '', '']
     ])
 
-    event.shaped('dimdungeons:block_key_charger', [
-        ['hexerei:selenite_shard', 'hexerei:wax_blend', 'hexerei:selenite_shard'],
-        ['minecraft:end_stone', 'minecraft:end_crystal', 'minecraft:end_stone'],
-        ['#forge:obsidian', '#forge:obsidian', '#forge:obsidian']
-    ])
 
     event.shaped('minecraft:elytra', [
         ['', 'alexsmobs:banana_slug_slime', ''],

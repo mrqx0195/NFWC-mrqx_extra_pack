@@ -139,7 +139,6 @@ const SpecialWares = [
     new SimpleWares([Item.of('lightmanscurrency:coin_emerald').withCount(1)], [Item.of('tetra:forged_workbench')], 4),
     new SimpleWares([Item.of('lightmanscurrency:coin_emerald').withCount(1)], [Item.of('tetra:chthonic_extractor')], 4),
     new SimpleWares([Item.of('lightmanscurrency:coin_emerald').withCount(1)], [Item.of('tetra:chthonic_extractor')], 4),
-    new SimpleWares([Item.of('lightmanscurrency:coin_emerald').withCount(1)], [Item.of('dimdungeons:item_blank_theme_key', '{theme:2}')], 4),
     new SimpleWares([Item.of('lightmanscurrency:coin_gold').withCount(1)], [Item.of('somebosses:one_eyed_wrait_in_a_bottle')], 3),
     new SimpleWares([Item.of('lightmanscurrency:coin_gold').withCount(1)], [Item.of('somebosses:rusty_sword_relic')], 3),
     new SimpleWares([Item.of('lightmanscurrency:coin_gold').withCount(1)], [Item.of('somebosses:disgusting_pendant')], 3),

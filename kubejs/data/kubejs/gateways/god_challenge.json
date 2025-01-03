@@ -104,9 +104,9 @@
     },
     {
       "type": "gateways:loot_table",
-      "loot_table": "dimdungeons:chests/chestloot_4",
+      "loot_table": ":chests/chestloot_4",
       "rolls": 10,
-      "desc": "rewards.dimdungeons.loot_table.chest_4"
+      "desc": "rewards..loot_table.chest_4"
     }
   ],
   "failures": [

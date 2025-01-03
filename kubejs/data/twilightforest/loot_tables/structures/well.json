@@ -563,48 +563,6 @@
         },
         {
           "type": "item",
-          "name": "dimdungeons:item_portal_key",
-          "weight": 7,
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "min": 1,
-                "max": 1
-              }
-            }
-          ]
-        },
-        {
-          "type": "item",
-          "name": "dimdungeons:item_secret_bell",
-          "weight": 4,
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "min": 1,
-                "max": 1
-              }
-            }
-          ]
-        },
-        {
-          "type": "item",
-          "name": "dimdungeons:block_key_charger",
-          "weight": 4,
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "min": 1,
-                "max": 1
-              }
-            }
-          ]
-        },
-        {
-          "type": "item",
           "name": "tetra:combustion_chamber",
           "weight": 3,
           "functions": [
@@ -672,25 +630,6 @@
               }
             }
           ]
-        },
-        {
-          "type": "item",
-          "name": "dimdungeons:item_blank_teleporter_key",
-          "weight": 4,
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "min": 1,
-                "max": 1
-              }
-            }
-          ]
-        },
-        {
-          "type": "loot_table",
-          "name": "dimdungeons:chests/chestbooks_3",
-          "weight": 32
         }
       ],
       "rolls": 1.0

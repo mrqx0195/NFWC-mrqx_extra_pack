@@ -115,10 +115,6 @@ StartupEvents.registry('item', event => {
                 let friend = Utils.server.getPlayer(itemstack.nbt.friendName)
                 if (friend && friend.isLiving()) {
                     let targetDim = friend.level.getDimension()
-                    if (targetDim == 'dimdungeons:build_dimension') {
-                        entity.tell('无法传送，目标维度不可用。')
-                        return itemstack;
-                    }
                     entity.teleportTo(targetDim, friend.x, friend.y, friend.z, 0, 0)
                     entity.addItemCooldown(itemstack, 20 * 10)
                 } else {

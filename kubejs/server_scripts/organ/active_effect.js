@@ -357,25 +357,6 @@ const organActiveOnlyStrategies = {
     'kubejs:nether_star_shard': function (player, organ, attributeMap) {
         attributeMapValueAddition(attributeMap, global.CRITICAL_HIT, 0.1)
     },
-    'kubejs:wrath_shard': function (player, organ, attributeMap) {
-        attributeMapValueAddition(attributeMap, global.CRITICAL_HIT, -0.5)
-        attributeMapValueAddition(attributeMap, global.CRITICAL_DAMAGE, 3)
-    },
-    'kubejs:sloth_shard': function (player, organ, attributeMap) {
-        attributeMapValueAddition(attributeMap, global.KNOCKBACK_RESISTANCE, 0.9)
-    },
-    'kubejs:envy_shard': function (player, organ, attributeMap) {
-        attributeMapValueAddition(attributeMap, global.CRITICAL_DAMAGE, 1.2)
-    },
-    'kubejs:gluttony_shard': function (player, organ, attributeMap) {
-        attributeMapValueAddition(attributeMap, global.REGENERATION, 0.8)
-    },
-    'kubejs:lust_shard': function (player, organ, attributeMap) {
-        attributeMapValueAddition(attributeMap, global.MAX_MANA, 200)
-    },
-    'kubejs:pride_shard': function (player, organ, attributeMap) {
-        attributeMapValueAddition(attributeMap, global.SUMMON_DAMAGE, 0.5)
-    },
     'kubejs:infinity_force': function (player, organ, attributeMap) {
         if (organ.tag?.forgeTimes) {
             let value = organ.tag.forgeTimes * 1

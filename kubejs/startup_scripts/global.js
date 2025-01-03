@@ -23,12 +23,8 @@ global.MAX_MANA = { key: 'irons_spellbooks:max_mana', name: 'kubejsMaxMana', ope
 global.KNOCKBACK_RESISTANCE = { key: 'minecraft:generic.knockback_resistance', name: 'kubejsKnockbackResistance', operation: 'addition' }
 global.ATTACK_RANGE = { key: 'forge:attack_range', name: 'kubejsAttackRange', operation: 'addition' }
 global.REACH_DISTANCE = { key: 'forge:reach_distance', name: 'kubejsReachRange', operation: 'addition' }
-global.CRITICAL_HIT = { key: 'obscure_api:critical_hit', name: 'kubejsCriticalHit', operation: 'addition' }
-global.CRITICAL_DAMAGE = { key: 'obscure_api:critical_damage', name: 'kubejsCriticalDamage', operation: 'addition' }
-global.PARRY = { key: 'obscure_api:parry', name: 'kubejsParry', operation: 'addition' }
-global.DODGE = { key: 'obscure_api:dodge', name: 'kubejsDodge', operation: 'addition' }
-global.REGENERATION = { key: 'obscure_api:regeneration', name: 'kubejsRegeneration', operation: 'addition' }
-global.PENETRATION = { key: 'obscure_api:penetration', name: 'kubejsPenetration', operation: 'addition' }
+global.CRITICAL_HIT = { key: 'kubejs:critical_hit', name: 'kubejsCriticalHit', operation: 'addition' }
+global.CRITICAL_DAMAGE = { key: 'kubejs:critical_damage', name: 'kubejsCriticalDamage', operation: 'addition' }
 global.SUMMON_DAMAGE = { key: 'irons_spellbooks:summon_damage', name: 'kubejsSummonDamage', operation: 'addition' }
 global.BLOOD_SPELL_DAMAGE = { key: 'irons_spellbooks:blood_spell_power', name: 'kubejsBloodSpellDamage', operation: 'addition' }
 global.HOLY_SPELL_DAMAGE = { key: 'irons_spellbooks:holy_spell_power', name: 'kubejsHolySpellDamage', operation: 'addition' }
@@ -57,10 +53,6 @@ global.ATTRIBUTE_MAP = {
     'kubejsReachRange': global.REACH_DISTANCE,
     'kubejsCriticalHit': global.CRITICAL_HIT,
     'kubejsCriticalDamage': global.CRITICAL_DAMAGE,
-    'kubejsParry': global.PARRY,
-    'kubejsDodge': global.DODGE,
-    'kubejsRegeneration': global.REGENERATION,
-    'kubejsPenetration': global.PENETRATION,
     'kubejsSummonDamage': global.SUMMON_DAMAGE,
     'kubejsBloodSpellDamage': global.BLOOD_SPELL_DAMAGE,
     'kubejsHolySpellDamage': global.HOLY_SPELL_DAMAGE,

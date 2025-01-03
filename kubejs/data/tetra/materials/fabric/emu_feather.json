@@ -10,9 +10,6 @@
     "magicCapacity": 120,
     "toolLevel": 0,
     "toolEfficiency": 0,
-    "attributes":{
-        "obscure_api:dodge":0.1
-    },
     "tints": {
         "glyph": "8B8378",
         "texture": "8B8378"

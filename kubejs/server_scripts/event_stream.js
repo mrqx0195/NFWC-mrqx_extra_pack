@@ -29,6 +29,7 @@ global.LivingHurtByPlayer = event => {
     organCharmEntityHurtByPlayer(event, data)
     championEntityHurtByPlayer(event, data)
     overloadEntityHurtByPlayer(event, data)
+    criticalAttributeEntityHurtByPlayer(event, data)
     if (data.returnDamage != 0) {
         player.attack(data.damageSource, data.returnDamage)
     }
@@ -83,3 +84,17 @@ global.LivingHurtByOthers = event => {
 }
 
 
+
+/**
+ * 玩家暴击伤害计算
+ * @param {Internal.LivingHurtEvent} event 
+ * @param {EntityHurtCustomModel} data 
+ */
+function criticalAttributeEntityHurtByPlayer(event, data) {
+    let player = event.source.player
+    let criticalChance = player.getAttribute('kubejs:critical_hit').getValue()
+    if (criticalChance > Math.random()) {
+        let criticalBonus = player.getAttribute('kubejs:critical_damage').getValue()
+        event.amount = event.amount * criticalBonus
+    }
+}
