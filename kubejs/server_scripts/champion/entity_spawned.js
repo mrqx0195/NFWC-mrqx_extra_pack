@@ -101,11 +101,6 @@ const championTypeMap = [
         desc: Text.gray('取消攻击伤害，但是每次造成最大生命值10%的真实伤害')
     },
     {
-        type: 'grudge',
-        name: Text.red('咒怨'),
-        desc: Text.gray('攻击时有5%概率为装备加上随机诅咒附魔')
-    },
-    {
         type: 'fate',
         name: Text.red('命运'),
         desc: Text.gray('每次受到近战致死攻击有50%概率免疫此伤害并恢复到20%最大生命值')
