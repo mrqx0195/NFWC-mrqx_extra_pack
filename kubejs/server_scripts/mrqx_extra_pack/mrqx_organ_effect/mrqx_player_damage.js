@@ -72,7 +72,7 @@ const mrqxOrganPlayerDamageStrategies = {
 			else {
 				player.setMotionY(Math.min(fallDistance / 10, 10))
 			}
-			player.attack(0.001)
+			player.hurtMarked = true
 		}
 	},
 

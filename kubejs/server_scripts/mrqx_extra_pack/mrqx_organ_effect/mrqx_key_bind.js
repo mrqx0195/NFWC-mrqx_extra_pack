@@ -88,7 +88,7 @@ const mrqxOrganPlayerKeyPressedOnlyStrategies = {
     // “降神”处理器
     'mrqx_extra_pack:seance_cpu': function (event, organ) {
         let player = event.player
-        let duration = mrqxGetComputingPower(player) * 5
+        let duration = mrqxGetComputingPower(player) * 5 * 20
         let amplifier = Math.floor(mrqxGetComputingPower(player) / 25)
         let effectList = ['kubejs:pardon_of_god_magic', 'kubejs:pardon_of_god_melee', 'kubejs:pardon_of_god_projectile']
         player.getPotionEffects().add(randomGet(effectList), duration, amplifier)

@@ -26,3 +26,17 @@ ForgeEvents.onEvent('net.minecraftforge.event.entity.living.LivingDamageEvent', 
         global.mrqxLivingDamageByPlayer(event)
     }
 })
+
+ForgeEvents.onEvent('net.minecraftforge.event.entity.living.LivingEvent$LivingTickEvent', event => {
+    if (event.getEntity() && !event.getEntity().getLevel().isClientSide()) {
+        if ((event.getEntity().getType() in global.mrqxBossTick)) {
+            global.mrqxBossTick[event.getEntity().getType()](event)
+        }
+    }
+})
+
+ForgeEvents.onEvent('net.minecraftforge.event.entity.living.LivingDropsEvent', event => {
+    if (event.getEntity() && !event.getEntity().getLevel().isClientSide()) {
+        global.mrqxLivingDrops(event)
+    }
+})

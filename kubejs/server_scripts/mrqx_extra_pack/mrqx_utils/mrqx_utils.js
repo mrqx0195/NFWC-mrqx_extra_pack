@@ -5,7 +5,7 @@ const mrqxPlayerLoginTime = new Map()
  * 造成元素损伤
  * @param {Internal.LivingEntity} entity 
  * @param {Number} damage
- * @param {String} type 
+ * @param {"ice" | "fire" | "lighting" | "ender" | "wither"} type 
  * @returns {number}
  */
 function mrqxCauseElementDamage(entity, damage, type) {

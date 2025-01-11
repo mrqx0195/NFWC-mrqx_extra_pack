@@ -111,8 +111,8 @@ const mrqxElementDamageSource = {
 }
 
 const mrqxElementDamageEffect = {
-    'ice': ['minecraft:slowness', 'kubejs:cold_down', 'goety:freezing'],
-    'fire': ['goety:burn_hex', 'goety:flammable', 'kubejs:heat_up'],
+    'ice': ['minecraft:slowness', 'goety:snow_skin', 'goety:freezing', 'kubejs:cold_down'],
+    'fire': ['goety:burn_hex', 'cataclysm:blazing_brand', 'goety:flammable', 'kubejs:heat_up'],
     'lighting': ['cataclysm:stun', 'goety:spasms', 'goety:arrowmantic'],
     'ender': ['cataclysm:abyssal_burn', 'cataclysm:abyssal_fear', 'goety:doom'],
     'wither': ['minecraft:wither', 'witherstormmod:wither_sickness', 'goety:wane'],

@@ -9,7 +9,7 @@
     "enableTextToSpeech": false,
     "ttsMode": "PRESS",
     "fluidMode": "ANY",
-    "reachDistance": 0.0,
+    "reachDistance": 20.0,
     "debug": false,
     "itemModNameTooltip": false,
     "bossBarOverlapMode": "PUSH_DOWN",

@@ -47,3 +47,14 @@ global.mrqxLivingDamageByOthers = event => {
         mrqxAdvancedArchivistEyeGlassBear(event)
     }
 }
+
+/**
+ * 生物死亡掉落
+ * @param {Internal.LivingDropsEvent} event 
+ */
+global.mrqxLivingDrops = event => {
+    if (event.entity.persistentData.getBoolean('mrqxLivingNoItemDrops')) {
+        event.drops.clear()
+        event.setCanceled(true)
+    }
+}

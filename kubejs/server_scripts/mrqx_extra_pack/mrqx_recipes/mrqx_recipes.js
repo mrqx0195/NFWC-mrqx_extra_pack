@@ -1858,6 +1858,17 @@ ServerEvents.recipes(event => {
         Item.of('mrqx_extra_pack:pineapple_shrimp_fried_rice').withCount(1)
     ))
 
+    // 下界之星
+    event.recipes.summoningrituals
+        .altar('minecraft:nether_star')
+        .id('mrqx_extra_pack:ritual_nether_star')
+        .input('kubejs:nether_star_shard')
+        .input('kubejs:nether_star_shard')
+        .input('kubejs:nether_star_shard')
+        .input('kubejs:nether_star_shard')
+        .itemOutput('2x minecraft:nether_star')
+        .recipeTime(500)
+
     // 奥秘·血肉
     event.recipes.summoningrituals
         .altar('goety:unholy_blood')
