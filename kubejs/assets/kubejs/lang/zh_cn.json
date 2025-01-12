@@ -28,7 +28,7 @@
     "enchantment.kubejs.creative_operation.desc": "无视条件打开胸腔",
     "enchantment.kubejs.safe_operation": "安全手术",
     "enchantment.kubejs.safe_operation.desc": "不会把自己作为打开胸腔的目标",
-    "champion.kubejs": "%s 精英",
+    "champion.kubejs": "%s §7精英 %s",
     "champion.kubejs.connect_symbol": "%s · %s",
     "champion.kubejs.type.fight_for_death": "§5死战",
     "champion.kubejs.type.fight_for_death.desc": "攻击时将会为你附加死亡宣告效果",

@@ -36,7 +36,7 @@ EntityEvents.spawned(event => {
     else {
         name = { translate: `champion.kubejs.type.${typeList[0]}` }
     }
-    entity.setCustomName($Serializer.fromJsonLenient({ translate: 'champion.kubejs', with: [name] }))
+    entity.setCustomName($Serializer.fromJsonLenient({ translate: 'champion.kubejs', with: [name, { translate: entity.getEntityType().getDescriptionId() }] }))
     entity.setCustomNameVisible(true)
 })
 
