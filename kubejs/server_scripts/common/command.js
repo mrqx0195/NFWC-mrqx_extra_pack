@@ -1,6 +1,6 @@
 // priority: 500
 ServerEvents.commandRegistry(event => {
-    const { commands: Commands, arguments: Arguments } = event;
+    const { commands: Commands, arguments: Arguments } = event
     event.register(
         Commands.literal('nfwc')
             .requires(src => src.hasPermission(2))
@@ -8,7 +8,7 @@ ServerEvents.commandRegistry(event => {
                 .then(Commands.argument('player', Arguments.PLAYER.create(event))
                     .then(Commands.argument('arg1', Arguments.NBT_COMPOUND.create(event))
                         .executes(ctx => {
-                            let nbtCompound = Arguments.NBT_COMPOUND.getResult(ctx, 'arg1');
+                            let nbtCompound = Arguments.NBT_COMPOUND.getResult(ctx, 'arg1')
                             let player = ctx.source.server.getPlayer(Arguments.PLAYER.getResult(ctx, 'player'))
                             let addStages = nbtCompound.addStages
                             let removeStages = nbtCompound.removeStages
@@ -37,7 +37,7 @@ ServerEvents.commandRegistry(event => {
                 .then(Commands.argument('player', Arguments.PLAYER.create(event))
                     .then(Commands.argument('arg1', Arguments.INTEGER.create(event))
                         .executes(ctx => {
-                            let diffLevelNum = Arguments.INTEGER.getResult(ctx, 'arg1');
+                            let diffLevelNum = Arguments.INTEGER.getResult(ctx, 'arg1')
                             let player = ctx.source.server.getPlayer(Arguments.PLAYER.getResult(ctx, 'player'))
 
                             let oriDiffStage = player.stages.getAll().toArray().find(ele => ele.startsWith('difficult_level_'))
@@ -62,7 +62,7 @@ ServerEvents.command((event) => {
         || event.input.startsWith('kjs stages')
     ) {
         //提示玩家缺少权限
-        player.tell(Text.red(Text.translatable('commands.help.failed')))
+        player.tell($Serializer.fromJsonLenient({ translate: 'commands.help.failed' }))
         event.cancel()
     }
 })

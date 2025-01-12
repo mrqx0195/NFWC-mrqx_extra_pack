@@ -52,7 +52,7 @@ StartupEvents.registry('mob_effect', event => {
                 if (entity.health < entity.maxHealth * 0.67) {
                     entity.level.getEntitiesWithin(AABB.of(entity.x - 10, entity.y - 10, entity.z - 10, entity.x + 10, entity.y + 10, entity.z + 10)).forEach(player => {
                         if (player.isPlayer()) {
-                            player.tell(Text.gray('它的身体似乎发生了什么变化. . .'))
+                            player.tell($Serializer.fromJsonLenient({ translate: 'kubejs.msg.pardon_of_god.1' }))
                         }
                     })
                     entity.removeEffect('kubejs:glimpse_of_god')
@@ -72,7 +72,7 @@ StartupEvents.registry('mob_effect', event => {
                 if (entity.health < entity.maxHealth * 0.33) {
                     entity.level.getEntitiesWithin(AABB.of(entity.x - 10, entity.y - 10, entity.z - 10, entity.x + 10, entity.y + 10, entity.z + 10)).forEach(player => {
                         if (player.isPlayer()) {
-                            player.tell(Text.gray('它的身体似乎发生了什么变化. . .'))
+                            player.tell($Serializer.fromJsonLenient({ translate: 'kubejs.msg.pardon_of_god.1' }))
                         }
                     })
                     entity.removeEffect('kubejs:gaze_of_god')
@@ -92,7 +92,7 @@ StartupEvents.registry('mob_effect', event => {
                 if (entity.getEffect('kubejs:glare_of_god').getDuration() < 41) {
                     entity.level.getEntitiesWithin(AABB.of(entity.x - 10, entity.y - 10, entity.z - 10, entity.x + 10, entity.y + 10, entity.z + 10)).forEach(player => {
                         if (player.isPlayer()) {
-                            player.tell(Text.gray('它的身体似乎发生了什么变化. . .'))
+                            player.tell($Serializer.fromJsonLenient({ translate: 'kubejs.msg.pardon_of_god.1' }))
                         }
                     })
                     entity.removeEffect('kubejs:glare_of_god')

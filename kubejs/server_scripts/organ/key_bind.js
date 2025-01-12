@@ -1,9 +1,9 @@
 // priority: 500
 NetworkEvents.dataReceived('ogran_key_pressed', event => {
     let player = event.player
-    if (!player) return;
+    if (!player) return
     let coolDowns = player.getCooldowns()
-    let typeMap = getPlayerChestCavityTypeMap(player);
+    let typeMap = getPlayerChestCavityTypeMap(player)
     let onlySet = new Set()
     if (typeMap.has('kubejs:key_pressed')) {
         let organList = typeMap.get('kubejs:key_pressed')
@@ -54,9 +54,9 @@ const organPlayerKeyPressedOnlyStrategies = {
         let removedCurse = randomGet(curseList)
         item.nbt.Enchantments = item.nbt.Enchantments.filter(function (item) {
             return item.id != removedCurse
-        });
+        })
         player.addItemCooldown('kubejs:disenchantment_paper', 20 * 600)
-        player.setStatusMessage([Text.lightPurple('祛魔虫'), '吃下了一个', Text.red('诅咒附魔')])
+        player.setStatusMessage($Serializer.fromJsonLenient({ translate: 'kubejs.status_msg.disenchantment_paper.1' }))
         let count = event.player.persistentData.getInt(warpCount) ?? 0
         updateWarpCount(event.player, count + 5)
     },
@@ -142,7 +142,7 @@ const organPlayerKeyPressedOnlyStrategies = {
     },
     'kubejs:excited_appendix': function (event, organ) {
         let player = event.player
-        let itemMap = getPlayerChestCavityItemMap(player);
+        let itemMap = getPlayerChestCavityItemMap(player)
         let amplifier = Math.max(0, player.getChestCavityInstance().organScores.get(new ResourceLocation('chestcavity', 'explosive')) * 0.2)
         let duration = Math.max(0, player.getChestCavityInstance().organScores.get(new ResourceLocation('chestcavity', 'creepy')) * 10)
         let cooldown = 0
@@ -327,7 +327,7 @@ const organPlayerKeyPressedOnlyStrategies = {
                 }
             }
         } else {
-            player.tell(Text.translatable("kubejs.msg.treasure_detector_feather.1"))
+            player.tell($Serializer.fromJsonLenient({ translate: 'kubejs.msg.treasure_detector_feather.1' }))
             return
         }
 
@@ -344,8 +344,8 @@ const organPlayerKeyPressedOnlyStrategies = {
         let mapItem = $MapItem.create(level, pos.x, pos.z, 1, true, true)
         $MapItem.renderBiomePreviewMap(level, mapItem)
         $MapItemSavedData.addTargetDecoration(mapItem, pos, "+", $MapDecorationType.RED_X)
-        mapItem = mapItem.withName(Text.translatable("map.kubejs.lost_treasure"))
-        let placementState = $ModBlocks.CHEST.get().defaultBlockState();
+        mapItem = mapItem.withName($Serializer.fromJsonLenient({ translate: "map.kubejs.lost_treasure" }))
+        let placementState = $ModBlocks.CHEST.get().defaultBlockState()
         level.setBlock(pos, placementState, 2)
         $RandomizableContainerBlockEntity.setLootTable(level, level.getRandom(), pos, table)
         player.give(mapItem)
@@ -428,7 +428,7 @@ const organPlayerKeyPressedOnlyStrategies = {
     },
     'kubejs:creeper_appendix': function (event, organ) {
         let player = event.player
-        let itemMap = getPlayerChestCavityItemMap(player);
+        let itemMap = getPlayerChestCavityItemMap(player)
         let temperature = ColdSweat.getTemperature(player, 'body')
         let causesFire = false
         let explosive = player.getChestCavityInstance().organScores.get(new ResourceLocation('chestcavity', 'explosive'))

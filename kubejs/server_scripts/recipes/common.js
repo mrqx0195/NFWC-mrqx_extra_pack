@@ -138,10 +138,10 @@ ServerEvents.recipes(event => {
             let nbt3 = grid.find('kubejs:god_consciousness', 2).nbt
             if ((nbt1?.mobType != nbt2?.mobType) && (nbt2?.mobType != nbt3?.mobType) && (nbt3?.mobType != nbt1?.mobType)) {
                 stack = Item.of('kubejs:paradise_regained')
-                return stack;
+                return stack
             }
-            return;
-        });
+            return
+        })
 
     event.shapeless('kubejs:infinity_force', ['kubejs:infinity_force', 'kubejs:infinity_force'])
         .modifyResult((grid, stack) => {
@@ -150,10 +150,10 @@ ServerEvents.recipes(event => {
             if ((item1.nbt?.forgeTimes ?? 0) == (item2.nbt?.forgeTimes ?? 0)) {
                 let forgeTimes = item1.nbt?.forgeTimes ?? 0
                 stack = Item.of('kubejs:infinity_force', { forgeTimes: forgeTimes + 1 })
-                return stack;
+                return stack
             }
-            return;
-        });
+            return
+        })
 
     event.shapeless('kubejs:lucky_cookie', ['minecraft:paper', 'minecraft:cookie'])
     event.shapeless(Item.of('kubejs:eye_of_village', 3), ['minecraft:ender_pearl', 'minecraft:emerald'])
@@ -163,16 +163,16 @@ ServerEvents.recipes(event => {
 
     event.shapeless('chestcavity:sausage_skin', ['#kubejs:intestine'])
 
-    event.shapeless(Item.of('chestcavity:appendix').withName(Text.gray(Text.translatable("kubejs.recipe.tip.1"))), [Ingredient.of(['@chestcavity', '#kubejs:organ']), 'biomancy:healing_additive'])
+    event.shapeless(Item.of('chestcavity:appendix').withName($Serializer.fromJsonLenient({ translate: "kubejs.recipe.tip.1" })), [Ingredient.of(['@chestcavity', '#kubejs:organ']), 'biomancy:healing_additive'])
         .modifyResult((grid, stack) => {
             for (let i = 0; i <= 9; i++) {
                 let organ = grid.get(i)
                 if (organ && organ.hasNBT() && organ.nbt.contains('chestcavity:organ_compatibility')) {
-                    return Item.of(organ.id);
+                    return Item.of(organ.id)
                 }
             }
-            return;
-        });
+            return
+        })
 
 
     event.shapeless('kubejs:candy_bag', ['kubejs:candy', 'kubejs:ice_candy', 'kubejs:water_candy', 'kubejs:fire_candy', 'kubejs:wind_candy'])

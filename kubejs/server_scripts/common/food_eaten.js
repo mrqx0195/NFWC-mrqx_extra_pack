@@ -8,7 +8,7 @@ ItemEvents.foodEaten(event => {
     let chance = warpFoodMap[item.id].chance
     if (Math.random() <= chance) {
         updateWarpCount(player, warp + count)
-        player.tell(Text.darkAqua(Text.translatable(`kubejs.msg.warp.${count > 0 ? 1 : 2}`)))
+        player.tell($Serializer.fromJsonLenient({ translate: `kubejs.msg.warp.${count > 0 ? 1 : 2}` }))
     }
 })
 
@@ -27,6 +27,6 @@ ItemEvents.foodEaten('kubejs:colorful_candy', event => {
     let targetChunk = targetLevel.getChunk(chunkX, chunkZ, $ChunkStatus.SURFACE, true)
     let y = targetChunk.getHeight('motion_blocking', blockX, blockZ) + 2
     player.teleportTo(dim, x, y, z, player.yaw, player.pitch)
-    player.setStatusMessage(Text.translatable('kubejs.status_msg.colorful_candy_tp.1', Text.translatable(dim.toLanguageKey()).lightPurple()))
+    player.setStatusMessage($Serializer.fromJsonLenient({ translate: 'kubejs.status_msg.colorful_candy_tp.1', with: [{ translate: dim.toLanguageKey(), color: 'light_purple' }] }))
     player.addItemCooldown(item.id, 20 * 5)
 })

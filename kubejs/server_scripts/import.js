@@ -30,3 +30,5 @@ const $WalletItem = Java.loadClass('io.github.lightman314.lightmanscurrency.comm
 const $CoinValue = Java.loadClass("io.github.lightman314.lightmanscurrency.api.money.value.builtin.CoinValue")
 
 const $CommonForgeEventBusSubscriber = Java.loadClass("net.tigereye.chestcavity.forge.events.CommonForgeEventBusSubscriber")
+
+const $Serializer = Java.loadClass('net.minecraft.network.chat.Component$Serializer')

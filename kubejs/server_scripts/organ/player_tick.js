@@ -2,7 +2,7 @@
 PlayerEvents.tick(event => {
     let player = event.player
     if (player.age % 20 != 0) return
-    let typeMap = getPlayerChestCavityTypeMap(player);
+    let typeMap = getPlayerChestCavityTypeMap(player)
 
 
     let onlySet = new Set()
@@ -100,7 +100,7 @@ const organPlayerTickStrategies = {
         player.absorptionAmount = Math.min(player.absorptionAmount + 0.25, 20)
     }
 
-};
+}
 
 /**
  * 玩家Tick秒级唯一策略
@@ -129,7 +129,7 @@ const organPlayerTickOnlyStrategies = {
             return
         }
         event.player.potionEffects.add('kubejs:hungry_tamagotchi', 60 * 20, 0)
-        event.player.tell(Text.gray(Text.translatable("kubejs.msg.tamagotchi.1")))
+        event.player.tell($Serializer.fromJsonLenient({ translate: 'kubejs.msg.tamagotchi.1' }))
     },
     'kubejs:embers_liver': function (event, organ) {
         let player = event.player
@@ -272,4 +272,4 @@ const organPlayerTickOnlyStrategies = {
             player.potionEffects.add('kubejs:ice', 30, value, false, false)
         }
     },
-};
+}

@@ -11,3 +11,4 @@ const $EntityIceDragon = Java.loadClass('com.github.alexthe666.iceandfire.entity
 const $EntityLightningDragon = Java.loadClass('com.github.alexthe666.iceandfire.entity.EntityLightningDragon')
 const $RangedAttribute = Java.loadClass('net.minecraft.world.entity.ai.attributes.RangedAttribute')
 const $EntityType = Java.loadClass('net.minecraft.world.entity.EntityType')
+const $Serializer = Java.loadClass('net.minecraft.network.chat.Component$Serializer')

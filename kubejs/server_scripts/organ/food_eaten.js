@@ -1,8 +1,8 @@
 // priority: 500
 ItemEvents.foodEaten(event => {
-    let player = event.player;
-    if (!player) return;
-    let typeMap = getPlayerChestCavityTypeMap(player);
+    let player = event.player
+    if (!player) return
+    let typeMap = getPlayerChestCavityTypeMap(player)
     let onlySet = new Set()
     if (typeMap.has('kubejs:eat_effect_only')) {
         typeMap.get('kubejs:eat_effect_only').forEach(organ => {
@@ -28,7 +28,7 @@ const organFoodEatenStrategies = {
     'kubejs:greedy_stomach': function (event, organ) {
         event.player.giveExperiencePoints(30)
     },
-};
+}
 
 /**
  * 器官食物食用唯一策略
@@ -66,7 +66,7 @@ const organFoodEatenOnlyStrategies = {
             player.potionEffects.add('farmersdelight:nourishment', 90 * 20, 0)
             player.potionEffects.add('minecraft:health_boost', 15 * 20, 2)
             player.potionEffects.add('minecraft:resistance', 90 * 20, 1)
-            player.tell(Text.gray(Text.translatable("kubejs.msg.tamagotchi.2")))
+            player.tell($Serializer.fromJsonLenient({ translate: 'kubejs.msg.tamagotchi.2' }))
             updateWarpCount(player, player.persistentData.getInt(warpCount) - 1)
         }
     },
@@ -110,4 +110,4 @@ const organFoodEatenOnlyStrategies = {
             }
         }
     },
-};
+}
