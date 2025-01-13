@@ -4,12 +4,12 @@
   "primary": 7,
   "secondary": 3,
   "tertiary": 6,
-  "durability": 1849,
+  "durability": 936,
   "integrityCost": 3,
-  "integrityGain": 7,
-  "magicCapacity": 275,
+  "integrityGain": 24,
+  "magicCapacity": 216,
   "toolLevel": "minecraft:diamond",
-  "toolEfficiency": 10,
+  "toolEfficiency": 25,
   "tints": {
     "glyph": "62524f",
     "texture": "62524f"
