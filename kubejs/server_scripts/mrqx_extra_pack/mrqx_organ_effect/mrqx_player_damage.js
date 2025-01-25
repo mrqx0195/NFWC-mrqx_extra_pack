@@ -23,9 +23,10 @@ const mrqxOrganPlayerDamageStrategies = {
 			let amplifier = effect.getAmplifier()
 			let duration = effect.getDuration()
 			mrqxCauseElementDamage(event.entity, event.amount * ((amplifier + 1) * 0.4), 'fire')
-			event.amount *= ((amplifier + 1) * 0.4) + 1
+			event.amount *= (((amplifier + 1) * 40 + ColdSweat.getTemperature(player, 'core')) * 0.01) + 1
+			ColdSweat.setTemperature(player, 'core', ColdSweat.getTemperature(player, 'core') - event.amount / 7)
 			player.removeEffect('mrqx_extra_pack:nuclear_power')
-			if (duration - event.amount > 0) player.potionEffects.add('mrqx_extra_pack:nuclear_power', duration - event.amount / 5, amplifier, false, false)
+			if (duration - event.amount / 7 > 0) player.potionEffects.add('mrqx_extra_pack:nuclear_power', duration - event.amount / 7, amplifier, false, false)
 			player.getCooldowns().removeCooldown(Item.of('mrqx_extra_pack:fission_reactor'))
 		}
 	},
@@ -537,6 +538,35 @@ const mrqxOrganPlayerDamageOnlyStrategies = {
 		event.entity.getServer().scheduleInTicks(5, () => {
 			mrqxCauseElementDamage(event.entity, event.amount * mrqxGetSteamCount(event.source.player) * 0.1, 'fire')
 		})
+	},
+
+	// 激活·冰龙宝玉·极光化
+	'mrqx_extra_pack:aurora_active_ice_dragon_bead': function (event, organ, data) {
+		mrqxCauseElementDamage(event.entity, -event.amount * ColdSweat.getTemperature(event.source.player, 'body'), 'ice')
+	},
+
+	// 激活·火龙宝玉·炽血化
+	'mrqx_extra_pack:buring_blood_active_fire_dragon_bead': function (event, organ, data) {
+		mrqxCauseElementDamage(event.entity, event.amount * ColdSweat.getTemperature(event.source.player, 'body'), 'fire')
+	},
+
+	// 幻魔心脏
+	'mrqx_extra_pack:phantom_heart': function (event, organ, data) {
+		let player = event.source.player
+		/** @type {Internal.LivingEntity} */
+		let entity = event.entity
+		if (entity.isLiving() &&player.hasEffect('mrqx_extra_pack:demonization_kill') && Math.random() < 0.2) {
+			let amplifier = 0
+			if (entity.hasEffect('art_of_forging:mortal_wounds')) {
+				amplifier += entity.getEffect('art_of_forging:mortal_wounds').getAmplifier() + 1
+			}
+			entity.potionEffects.add('art_of_forging:mortal_wounds', 20 * 60, amplifier, false, false)
+			amplifier = 0
+			if (entity.hasEffect('tetra:severed')) {
+				amplifier += entity.getEffect('tetra:severed').getAmplifier() + 1
+			}
+			entity.potionEffects.add('tetra:severed', 20 * 60, amplifier, false, false)
+		}
 	},
 }
 

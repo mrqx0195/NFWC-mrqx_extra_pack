@@ -68,16 +68,22 @@ const mrqxBossSpawn = {
         if (diff > 0) {
             /*** @type {Internal.LivingEntity}*/
             let entity = event.entity
-            /** @type {Special.Attribute[]} */
-            let attributeMap = [
-                'minecraft:generic.armor',
-                'minecraft:generic.attack_damage',
-                'minecraft:generic.max_health', 'minecraft:generic.armor_toughness'
-            ]
             entity.modifyAttribute('minecraft:generic.armor', 'mrqxBossDiffWitherAttributeB', diff * 0.2, 'multiply_base')
             entity.modifyAttribute('minecraft:generic.armor_toughness', 'mrqxBossDiffWitherAttributeA', diff * 2, 'addition')
             entity.modifyAttribute('minecraft:generic.armor_toughness', 'mrqxBossDiffWitherAttributeB', diff * 0.2, 'multiply_base')
+            entity.modifyAttribute('minecraft:generic.flying_speed', 'mrqxBossDiffWitherAttributeA', diff * 0.05, 'addition')
             entity.heal(entity.getMaxHealth())
         }
-    }
+    },
+    'minecraft:ender_dragon': function (event, diff, playerCount) {
+        if (diff > 0) {
+            /*** @type {Internal.LivingEntity}*/
+            let entity = event.entity
+            entity.modifyAttribute('minecraft:generic.armor', 'mrqxBossDiffEnderDragonAttributeB', diff * 0.1, 'multiply_base')
+            entity.modifyAttribute('minecraft:generic.armor_toughness', 'mrqxBossDiffEnderDragonAttributeA', diff * 1, 'addition')
+            entity.modifyAttribute('minecraft:generic.armor_toughness', 'mrqxBossDiffEnderDragonAttributeB', diff * 0.1, 'multiply_base')
+            entity.modifyAttribute('minecraft:generic.max_health', 'mrqxBossDiffEnderDragonAttributeA', diff * 20, 'addition')
+            entity.heal(entity.getMaxHealth())
+        }
+    },
 }

@@ -31,4 +31,13 @@ StartupEvents.registry('mob_effect', event => {
         event.create('mrqx_extra_pack:ghost_of_dead_soul')
                 .harmful()
                 .color(Color.DARK_RED)
+
+        event.create('mrqx_extra_pack:demonization_kill')
+                .harmful()
+                .color(Color.DARK_RED)
+                .modifyAttribute('irons_spellbooks:max_mana', 'mrqxDemonizationKillMaxMana', 0.2, 'multiply_base')
+                .modifyAttribute('irons_spellbooks:cooldown_reduction', 'mrqxDemonizationKillCooldown', 0.2, 'multiply_base')
+                .modifyAttribute('minecraft:generic.attack_damage', 'mrqxDemonizationKillDamage', 0.2, 'multiply_base')
+                .modifyAttribute('irons_spellbooks:spell_power', 'mrqxDemonizationKillSpellPower', 0.2, 'multiply_base')
+
 })

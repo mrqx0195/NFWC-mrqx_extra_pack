@@ -12,6 +12,12 @@ function Organ(itemID) {
 
 Organ.prototype = {
     // 注册常规效果
+    /**
+     * 
+     * @param {'filtration'|'breath_recovery'|'nutrition'|'nerves'|'strength'|'health'|'breath_capacity'|'detoxification'|'speed'|'endurance'|'luck'|'defense'|'digestion'|'metabolism'|'fire_resistant'|'buoyant'|'glowing'|'knockback_resistant'|'water_breath'|'explosive'|'pyromancy'|'hydroallergenic'|'photosynthesis'|'ghastly'|'withered'|'dragon_bombs'|'buff_purging'|'herbivorous_digestion'|'herbivorous_nutrition'|'carnivorous_digestion'|'carnivorous_nutrition'|'swim_speed'|'launching'|'furnace_powered'|'iron_repair'|'crystalsynthesis'|'rot_digestion'|'rot_nutrition'|'forceful_spit'|'silk'|'venomous'|'leaping'|'hydrophobia'|'dragon_breath'|'creepy'|'shulker_bullets'|'grazing'|'arrow_dodging'|'impact_resistant'|'rotgut'|'ease_of_access'|'burning_point'|'freezing_point'} score 
+     * @param {number} value 
+     * @returns 
+     */
     addScore: function (score, value) {
         this.organScores.push({ 'id': `chestcavity:${score}`, 'value': value })
         return this
@@ -19,17 +25,17 @@ Organ.prototype = {
     addTextLines: function (type, textLines) {
         switch (type) {
             case 'default':
-                this.defaultTextLines.push(textLines);
-                break;
+                this.defaultTextLines.push(textLines)
+                break
             case 'shift':
-                this.shiftTextLines.push(textLines);
-                break;
+                this.shiftTextLines.push(textLines)
+                break
             case 'ctrl':
-                this.ctrlTextLines.push(textLines);
-                break;
+                this.ctrlTextLines.push(textLines)
+                break
             case 'alt':
-                this.altTextLines.push(textLines);
-                break;
+                this.altTextLines.push(textLines)
+                break
         }
         return this
     },

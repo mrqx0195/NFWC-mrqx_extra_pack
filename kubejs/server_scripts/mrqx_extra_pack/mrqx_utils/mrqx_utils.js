@@ -23,7 +23,7 @@ function mrqxCauseElementDamage(entity, damage, type) {
             if (entity.hasEffect(effect)) {
                 amplifier += entity.getEffect(effect).getAmplifier() + 1
             }
-            entity.potionEffects.add(effect, duration, Math.min(amplifier, 255), false, false)
+            entity.potionEffects.add(effect, duration, amplifier, false, false)
         })
         entity.persistentData.putInt("mrqx_" + type + "_damage", count)
         return damageCount
@@ -51,20 +51,21 @@ function mrqxPaperOrganInWaterRainBubbleFireOrLava(player, organ) {
     }
     let paper = Item.of(organ.id, { organData: {} })
     let organData = organ.tag.organData
+    let temperature = ColdSweat.getTemperature(player, 'core')
     organData.allKeys.forEach(key => {
         let random = Math.random()
         if (!player.isInLava() && !player.isOnFire()) {
-            if (random > (count / 64)) {
-                organData[key] = organData[key] * 0.8
+            if (random > (count / 64) * Math.min(temperature * 0.05, 1)) {
+                organData[key] = organData[key] * 0.9
             }
         }
         else if (!player.isInLava()) {
-            if (random > (count / 256)) {
-                organData[key] = organData[key] * 0.8
+            if (random > (count / 256) * Math.min(temperature * -0.04, 1)) {
+                organData[key] = organData[key] * 0.7
             }
         }
-        else if (random > (count / 1024)) {
-            organData[key] = organData[key] * 0.8
+        else if (random > (count / 1024) * Math.min(temperature * -0.03, 1)) {
+            organData[key] = organData[key] * 0.5
         }
     })
     paper.nbt.put('organData', organData)
@@ -290,25 +291,6 @@ function mrqxMultiplyArrayLength(arr, multiplier) {
         newArray = newArray.concat(arr)
     }
     return newArray
-}
-
-/**
- * 修改玩家的属性
- * @param {Map} attributeMap
- * @param {attribute} attribute
- * @param {number} modifyValue
- * @returns
- */
-function mrqxAttributeMapValueAddition(attributeMap, attribute, modifyValue) {
-    if (attributeMap.has(attribute.name)) {
-        if (attribute.operation == 'multiply_total') {
-            modifyValue = (1 + modifyValue) * (1 + attributeMap.get(attribute.name)) - 1
-        }
-        else {
-            modifyValue = modifyValue + attributeMap.get(attribute.name)
-        }
-    }
-    attributeMap.set(attribute.name, modifyValue)
 }
 
 /**

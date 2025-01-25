@@ -124,6 +124,112 @@ const mrqxOrganPlayerTickStrategies = {
         let criticalPunchCount = player.persistentData.getInt(criticalPunch) ?? 0
         player.persistentData.putInt(criticalPunch, criticalPunchCount + mrqxGetSteamCount(player))
     },
+
+    // 真空冷冻机
+    'mrqx_extra_pack:vacuum_freezer': function (event, organ) {
+        let player = event.player
+        let resCount = player.persistentData.getInt(resourceCount)
+        let comCount = mrqxGetComputingPower(player)
+        ColdSweat.setTemperature(player, 'core', ColdSweat.getTemperature(player, 'core') - Math.min(resCount, comCount))
+        updateResourceCount(player, resCount - Math.min(resCount, comCount))
+    },
+
+    // 扭曲熵变机
+    'mrqx_extra_pack:warp_entropy_change_machine': function (event, organ) {
+        let player = event.player
+        let warCount = player.persistentData.getInt(warpCount)
+        let warCountMax = player.persistentData.getInt(warpCountMax)
+        let comCount = mrqxGetComputingPower(player)
+        if (player.persistentData.getBoolean('mrqxWarpEntropyChangeMachineMode')) {
+            ColdSweat.setTemperature(player, 'core', ColdSweat.getTemperature(player, 'core') - Math.min(warCountMax - warCount, comCount))
+            updateWarpCount(player, warCount + Math.min(warCountMax - warCount, comCount))
+        } else {
+            ColdSweat.setTemperature(player, 'core', ColdSweat.getTemperature(player, 'core') + Math.min(warCount, comCount))
+            updateWarpCount(player, warCount - Math.min(warCount, comCount))
+        }
+    },
+
+    // 扭曲电容
+    'mrqx_extra_pack:warp_capacitance': function (event, organ) {
+        let player = event.player
+        let resCount = player.persistentData.getInt(resourceCount)
+        let warCount = player.persistentData.getInt(warpCount)
+        let resCountMax = player.persistentData.getInt(resourceCountMax)
+        let warCountMax = player.persistentData.getInt(warpCountMax)
+        let comCount = mrqxGetComputingPower(player)
+        if ((resCount / resCountMax) > (warCount / warCountMax)) {
+            let count = Math.min(resCount, comCount)
+            updateResourceCount(player, resCount - count)
+            updateWarpCount(player, warCount + count)
+        }
+        else {
+            let count = Math.min(warCount, comCount)
+            updateResourceCount(player, resCount + count)
+            updateWarpCount(player, warCount - count)
+        }
+    },
+
+    // 反应散热器
+    'mrqx_extra_pack:heat_vent': function (event, organ) {
+        let player = event.player
+        let flag = false
+        let pos = organ.Slot
+        let posMap = getPlayerChestCavityPosMap(event.source.player)
+        fourDirectionList.forEach(direction => {
+            let currentPos = lookPos(direction, pos)
+            if (posMap.has(currentPos) && posMap.get(currentPos).id == 'mrqx_extra_pack:reactor_chamber') {
+                flag = true
+            }
+        })
+        if (flag && player.hasEffect('mrqx_extra_pack:nuclear_power')) {
+            let effect = player.getEffect('mrqx_extra_pack:nuclear_power')
+            ColdSweat.setTemperature(player, 'core', ColdSweat.getTemperature(player, 'core') - 20)
+        }
+    },
+
+    // 反应热隔层
+    'mrqx_extra_pack:thermal_barrier': function (event, organ) {
+        let player = event.player
+        let flag = false
+        let pos = organ.Slot
+        let posMap = getPlayerChestCavityPosMap(event.source.player)
+        fourDirectionList.forEach(direction => {
+            let currentPos = lookPos(direction, pos)
+            if (posMap.has(currentPos) && posMap.get(currentPos).id == 'mrqx_extra_pack:reactor_chamber') {
+                flag = true
+            }
+        })
+        if (flag && player.hasEffect('mrqx_extra_pack:nuclear_power')) {
+            let effect = player.getEffect('mrqx_extra_pack:nuclear_power')
+            let amplifier = effect.getAmplifier()
+            ColdSweat.setTemperature(player, 'core', ColdSweat.getTemperature(player, 'core') + amplifier * 3)
+        }
+    },
+
+    // 反应舱室
+    'mrqx_extra_pack:reactor_chamber': function (event, organ) {
+        let player = event.player
+        let flag = false
+        let pos = organ.Slot
+        let posMap = getPlayerChestCavityPosMap(event.source.player)
+        fourDirectionList.forEach(direction => {
+            let currentPos = lookPos(direction, pos)
+            if (posMap.has(currentPos) && posMap.get(currentPos).id == 'mrqx_extra_pack:fission_reactor') {
+                flag = true
+            }
+        })
+        if (flag && player.hasEffect('mrqx_extra_pack:nuclear_power')) {
+            let effect = player.getEffect('mrqx_extra_pack:nuclear_power')
+            let amplifier = effect.getAmplifier()
+            ColdSweat.setTemperature(player, 'core', ColdSweat.getTemperature(player, 'core') + amplifier * 5)
+        }
+    },
+
+    // ‌太阳光镜
+    'mrqx_extra_pack:solar_mirror': function (event, organ) {
+        let player = event.player
+        ColdSweat.setTemperature(player, 'core', ColdSweat.getTemperature(player, 'core') + player.getBlock().getSkyLight() * 0.5)
+    },
 }
 
 var assign_organ_player_tick = Object.assign(organPlayerTickStrategies, mrqxOrganPlayerTickStrategies)
@@ -431,42 +537,47 @@ const mrqxOrganPlayerTickOnlyStrategies = {
     'mrqx_extra_pack:starry_sky_prism': function (event, organ) {
         let player = event.player
         let typeMap = getPlayerChestCavityTypeMap(player)
-        if (player.getLevel().getDayTime() >= 13000) {
-            switch (player.getLevel().getMoonPhase()) {
-                case 0:
-                    player.removeEffect('cataclysm:monstrous')
-                    player.potionEffects.add('cataclysm:monstrous', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
-                    break
-                case 1:
-                    player.removeEffect('alexsmobs:soulsteal')
-                    player.potionEffects.add('alexsmobs:soulsteal', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
-                    break
-                case 2:
-                    player.removeEffect('goety:insight')
-                    player.potionEffects.add('goety:insight', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
-                    break
-                case 3:
-                    player.removeEffect('goety:soul_armor')
-                    player.potionEffects.add('goety:soul_armor', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
-                    break
-                case 4:
-                    player.removeEffect('minecraft:regeneration')
-                    player.potionEffects.add('minecraft:regeneration', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
-                    break
-                case 5:
-                    player.removeEffect('minecraft:haste')
-                    player.potionEffects.add('minecraft:haste', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
-                    break
-                case 6:
-                    player.removeEffect('minecraft:strength')
-                    player.potionEffects.add('minecraft:strength', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
-                    break
-                case 7:
-                    player.removeEffect('goety:corpse_eater')
-                    player.potionEffects.add('goety:corpse_eater', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
-                    break
-                default:
-                    break
+        if (player.getLevel().dimensionType() == 'twilightforest:twilight_forest_type') {
+            player.potionEffects.add('cataclysm:monstrous', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
+            player.potionEffects.add('alexsmobs:soulsteal', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
+            player.potionEffects.add('goety:insight', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
+            player.potionEffects.add('goety:soul_armor', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
+            player.potionEffects.add('minecraft:regeneration', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
+            player.potionEffects.add('minecraft:haste', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
+            player.potionEffects.add('minecraft:strength', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
+            player.potionEffects.add('goety:corpse_eater', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
+
+        }
+        else {
+            if (player.getLevel().getDayTime() >= 13000) {
+                switch (player.getLevel().getMoonPhase()) {
+                    case 0:
+                        player.potionEffects.add('cataclysm:monstrous', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
+                        break
+                    case 1:
+                        player.potionEffects.add('alexsmobs:soulsteal', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
+                        break
+                    case 2:
+                        player.potionEffects.add('goety:insight', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
+                        break
+                    case 3:
+                        player.potionEffects.add('goety:soul_armor', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
+                        break
+                    case 4:
+                        player.potionEffects.add('minecraft:regeneration', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
+                        break
+                    case 5:
+                        player.potionEffects.add('minecraft:haste', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
+                        break
+                    case 6:
+                        player.potionEffects.add('minecraft:strength', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
+                        break
+                    case 7:
+                        player.potionEffects.add('goety:corpse_eater', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
+                        break
+                    default:
+                        break
+                }
             }
         }
     },
@@ -477,59 +588,45 @@ const mrqxOrganPlayerTickOnlyStrategies = {
         let typeMap = getPlayerChestCavityTypeMap(player)
         switch (Math.floor(player.getLevel().getDayTime() / 1000)) {
             case 0:
-                player.removeEffect('minecraft:jump_boost')
                 player.potionEffects.add('minecraft:jump_boost', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
                 break
             case 1:
-                player.removeEffect('minecraft:speed')
                 player.potionEffects.add('minecraft:speed', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
                 break
             case 2:
-                player.removeEffect('alexsmobs:sunbird_blessing')
                 player.potionEffects.add('alexsmobs:sunbird_blessing', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
                 break
             case 3:
-                player.removeEffect('cataclysm:blessing_of_amethyst')
                 player.potionEffects.add('cataclysm:blessing_of_amethyst', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
                 break
             case 4:
-                player.removeEffect('alexsmobs:orcas_might')
                 player.potionEffects.add('alexsmobs:orcas_might', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
                 break
             case 5:
-                player.removeEffect('minecraft:health_boost')
                 player.potionEffects.add('minecraft:health_boost', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
                 break
             case 6:
-                player.removeEffect('minecraft:fire_resistance')
                 player.potionEffects.add('minecraft:fire_resistance', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
                 break
             case 7:
-                player.removeEffect('alexmobs:knockback_resistance')
-                player.potionEffects.add('alexmobs:knockback_resistance', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
+                player.potionEffects.add('alexsmobs:knockback_resistance', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
                 break
             case 8:
-                player.removeEffect('goety:photosynthesis')
                 player.potionEffects.add('goety:photosynthesis', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
                 break
             case 9:
-                player.removeEffect('goety:fortunate')
                 player.potionEffects.add('goety:fortunate', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
                 break
             case 10:
-                player.removeEffect('goety:flame_hands')
                 player.potionEffects.add('goety:flame_hands', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
                 break
             case 11:
-                player.removeEffect('goety:rampage')
                 player.potionEffects.add('goety:rampage', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
                 break
             case 12:
-                player.removeEffect('goety:fiery_aura')
                 player.potionEffects.add('goety:fiery_aura', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
                 break
             case 13:
-                player.removeEffect('minecraft:saturation')
                 player.potionEffects.add('minecraft:saturation', 60, typeMap.get('kubejs:mrqx_celestial_body').length, false, false)
                 break
             default:
@@ -596,6 +693,30 @@ const mrqxOrganPlayerTickOnlyStrategies = {
                 }
                 return false
             })
+    },
+
+    // 裂变反应堆
+    'mrqx_extra_pack:fission_reactor': function (event, organ) {
+        let player = event.player
+        if (player.hasEffect('mrqx_extra_pack:nuclear_power')) {
+            let effect = player.getEffect('mrqx_extra_pack:nuclear_power')
+            let amplifier = effect.getAmplifier()
+            ColdSweat.setTemperature(player, 'core', ColdSweat.getTemperature(player, 'core') + amplifier * 10)
+        }
+    },
+
+    // 幻魔心脏
+    'mrqx_extra_pack:phantom_heart': function (event, organ) {
+        let player = event.player
+        if (player.persistentData.organActive != 1) {
+            return
+        }
+        let warCount = player.persistentData.getInt(warpCount)
+        if (warCount > 120) {
+            let magicData = getPlayerMagicData(player)
+            magicData.setMana(magicData.getMana() - 200)
+            player.potionEffects.add('minecraft:health_boost', 60, 9, false, false)
+        }
     },
 }
 

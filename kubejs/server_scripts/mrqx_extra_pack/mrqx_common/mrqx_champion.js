@@ -96,6 +96,11 @@ const mrqxChampionTypeMap = [
         name: Text.darkGreen('极光'),
         desc: Text.gray('造成/受到伤害时，对大范围内的生物造成等同于自身攻击力三倍的§b冻结损伤§r，损伤每爆发一次，自身攻击力、最大生命值、盔甲值、移动速度提升10%，并回复5%的最大生命值，召唤一个冰晶（至多4个），同时清空自身的§b冻结损伤§r')
     },
+    {
+        type: 'mrqx_grudge',
+        name: Text.darkGreen('咒怨'),
+        desc: Text.gray('攻击时有5%概率为装备加上随机诅咒附魔')
+    },
 ]
 
 mrqxChampionTypeMap.forEach(type => {
@@ -488,6 +493,39 @@ const mrqxChampionPlayerBearStrategies = {
             }
         })
         entity.persistentData.putInt("mrqx_ice_damage", 0)
+    },
+
+    // 咒怨
+    'mrqx_grudge': function (event, data) {
+        let player = event.entity
+        if (Math.random() < 1) {
+            let random = Math.ceil((Math.random() * curseEnchantList.length))
+            let armor = Item.of('minecraft:air')
+            switch (Math.ceil((Math.random() * 4))) {
+                case 1:
+                    armor = player.getHeadArmorItem()
+                    if (armor.id == 'minecraft:air') return
+                    player.setHeadArmorItem(armor.enchant(curseEnchantList[random - 1], 1))
+                    break
+                case 2:
+                    armor = player.getChestArmorItem()
+                    if (armor.id == 'minecraft:air') return
+                    player.setChestArmorItem(armor.enchant(curseEnchantList[random - 1], 1))
+                    break
+                case 3:
+                    armor = player.getLegsArmorItem()
+                    if (armor.id == 'minecraft:air') return
+                    player.setLegsArmorItem(armor.enchant(curseEnchantList[random - 1], 1))
+                    break
+                case 4:
+                    armor = player.getFeetArmorItem()
+                    if (armor.id == 'minecraft:air') return
+                    player.setFeetArmorItem(armor.enchant(curseEnchantList[random - 1], 1))
+                    break
+                default:
+                    break
+            }
+        }
     },
 }
 

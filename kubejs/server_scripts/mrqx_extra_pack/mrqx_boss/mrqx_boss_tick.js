@@ -145,6 +145,26 @@ global.mrqxBossTick = {
                 e.setTarget(e.level.getNearestPlayer(entity, 256))
                 e.spawn()
             }
+            for (let i = 0; i < diff * playerCount; i++) {
+                if (Math.random() > 0.1 * diff) continue
+                /** @type {Internal.EndCrystal} */
+                let e = entity.level.createEntity('minecraft:end_crystal')
+                e.setPos(entity.x + (Math.random() - 0.5) * 64, entity.y, entity.z + (Math.random() - 0.5) * 64)
+                for (let i = e.y; i >= entity.level.getMinBuildHeight(); i--) {
+                    e.setPos(e.x, i, e.z)
+                    let pos = e.getBlock().getPos()
+                    let chunk = e.level.getChunk(pos)
+                    let blockState = chunk.getBlockState(pos)
+                    if (blockState.isRedstoneConductor(chunk, blockState)) {
+                        e.setPos(e.x, i + 1, e.z)
+                        break
+                    }
+                }
+                if (e.y <= entity.level.getMinBuildHeight() + 1) {
+                    continue
+                }
+                e.spawn()
+            }
         }
         if (entity.age % (20 * 5) == 0) {
             let entityList = entity.level.getEntitiesWithin(new AABB.of(entity.x - 256, entity.y - 256, entity.z - 256, entity.x + 256, entity.y + 256, entity.z + 256))
@@ -172,6 +192,3 @@ global.mrqxBossTick = {
         }
     },
 }
-
-/** @type {Special.EntityType} */
-let e = 'wither_skull'

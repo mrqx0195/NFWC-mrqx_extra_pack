@@ -19,7 +19,7 @@ EntityEvents.death(event => {
         /** @type {Internal.CompoundTag} */
         let diffMap = player.persistentData.get('mrqxBossDiffMap') ?? mrqxGetEmptyCompound()
         if (!diffMap.contains(entity.getType())) diffMap.putInt(entity.getType(), 0)
-        diffMap.putInt(entity.getType(), diffMap.getInt(entity.getType()) + 2)
+        diffMap.putInt(entity.getType(), diffMap.getInt(entity.getType()) + 5)
         player.persistentData.put('mrqxBossDiffMap', diffMap)
         player.tell('§c因卑鄙的手段，强大存在的灵魂迁怒于你……§r')
     }
@@ -44,5 +44,26 @@ global.mrqxBossDeath = {
                 entity.block.popItem('minecraft:nether_star')
             }
         }
-    }
+    },
+    'minecraft:ender_dragon': function (event, diff) {
+        let entity = event.entity
+        for (let i = 0; i < diff; i++) {
+            entity.block.popItem('kubejs:dragon_breath')
+            if (Math.random() < 0.5) {
+                entity.block.popItem('tetra:dragon_sinew')
+            }
+            if (Math.random() < 0.3) {
+                entity.block.popItem('irons_spellbooks:dragonskin')
+            }
+            if (Math.random() < 0.05) {
+                entity.block.popItem('art_of_forging:dragon_soul')
+            }
+        }
+        if (Math.random() < 0.5) {
+            entity.block.popItem('minecraft:dragon_head')
+        }
+        if (Math.random() < 0.01 * diff) {
+            entity.block.popItem('minecraft:dragon_egg')
+        }
+    },
 }

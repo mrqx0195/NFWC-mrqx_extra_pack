@@ -1348,7 +1348,7 @@ ServerEvents.recipes(event => {
 
     // ‌原罪·暴怒「萨迈尔」
     event.recipes.summoningrituals
-        .altar('kubejs:wrath_shard')
+        .altar('minecraft:dragon_egg')
         .id('mrqx_extra_pack:ritual_sin_ira_samael')
         .input('cataclysm:void_forge')
         .input('cataclysm:monstrous_helm')
@@ -1362,7 +1362,7 @@ ServerEvents.recipes(event => {
 
     // ‌‌原罪·懒惰「贝尔芬格」
     event.recipes.summoningrituals
-        .altar('kubejs:sloth_shard')
+        .altar('minecraft:dragon_egg')
         .id('mrqx_extra_pack:ritual_sin_acedia_belphegor')
         .input('#minecraft:beds')
         .input('bosses_of_mass_destruction:mob_ward')
@@ -1377,7 +1377,7 @@ ServerEvents.recipes(event => {
 
     // ‌‌原罪·嫉妒「利维坦」
     event.recipes.summoningrituals
-        .altar('kubejs:envy_shard')
+        .altar('minecraft:dragon_egg')
         .id('mrqx_extra_pack:ritual_sin_invidia_leviathan')
         .input('cataclysm:gauntlet_of_guard')
         .input('7x supplementaries:bomb_blue')
@@ -1391,7 +1391,7 @@ ServerEvents.recipes(event => {
 
     // 原罪·贪食「别西卜」
     event.recipes.summoningrituals
-        .altar('kubejs:gluttony_shard')
+        .altar('minecraft:dragon_egg')
         .id('mrqx_extra_pack:ritual_sin_gula_beelzebub')
         .input('7x unusualprehistory:blue_fruit')
         .input('kubejs:void_worm_stomach')
@@ -1405,7 +1405,7 @@ ServerEvents.recipes(event => {
 
     // ‌原罪·贪婪「玛门」
     event.recipes.summoningrituals
-        .altar('kubejs:greed_shard')
+        .altar('minecraft:dragon_egg')
         .id('mrqx_extra_pack:ritual_sin_avaritia_mammon')
         .input('#minecraft:music_discs')
         .input('7x lightmanscurrency:coinblock_netherite')
@@ -1419,7 +1419,7 @@ ServerEvents.recipes(event => {
 
     // ‌原罪·色欲「阿斯莫德」
     event.recipes.summoningrituals
-        .altar('kubejs:lust_shard')
+        .altar('minecraft:dragon_egg')
         .id('mrqx_extra_pack:ritual_sin_luxuria_asmodeus')
         .input('7x biomancy:breeding_stimulant')
         .input('simplehats:sheep')
@@ -1433,7 +1433,7 @@ ServerEvents.recipes(event => {
 
     // ‌原罪·傲慢「路西法」
     event.recipes.summoningrituals
-        .altar('kubejs:pride_shard')
+        .altar('minecraft:dragon_egg')
         .id('mrqx_extra_pack:ritual_sin_superbia_lucifer')
         .input('mrqx_extra_pack:white_hole')
         .input('mrqx_extra_pack:kings_crown')
@@ -1457,8 +1457,6 @@ ServerEvents.recipes(event => {
         .input('mrqx_extra_pack:sin_luxuria_asmodeus')
         .input('mrqx_extra_pack:sin_superbia_lucifer')
         .itemOutput('mrqx_extra_pack:origin_sin')
-        .sacrifice('goety:apostle', 1)
-        .sacrificeRegion(3, 3)
         .dayTime('night')
         .recipeTime(7777)
 

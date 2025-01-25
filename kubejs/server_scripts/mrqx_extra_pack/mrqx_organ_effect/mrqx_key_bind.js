@@ -80,6 +80,7 @@ const mrqxOrganPlayerKeyPressedOnlyStrategies = {
         let typeMap = getPlayerChestCavityTypeMap(player)
         let count = typeMap.get('kubejs:mrqx_celestial_body').length + mrqxGetComputingPower(player)
         let amplifier = Math.max(Math.sqrt(manaCost), 1) + count * 0.1
+        if (player.getLevel().dimensionType() == 'twilightforest:twilight_forest_type') amplifier *= 1.5
         overLimitSpellCast(new ResourceLocation('irons_spellbooks', 'starfall'), amplifier, player, false)
         magicData.setMana(0)
         player.addItemCooldown('mrqx_extra_pack:meteor_shower_director', 20 * 15)
@@ -101,6 +102,36 @@ const mrqxOrganPlayerKeyPressedOnlyStrategies = {
         let amplifier = mrqxGetSteamCount(player)
         player.getPotionEffects().add('mrqx_extra_pack:steam_supercharge', 20 * 30, amplifier)
         player.addItemCooldown('mrqx_extra_pack:steam_supercharge_engine', 20 * 60)
+    },
+
+    // 扭曲熵变机
+    'mrqx_extra_pack:warp_entropy_change_machine': function (event, organ) {
+        let player = event.player
+        player.persistentData.putBoolean('mrqxWarpEntropyChangeMachineMode', player.persistentData.getBoolean('mrqxWarpEntropyChangeMachineMode') ? false : true)
+        player.addItemCooldown('mrqx_extra_pack:warp_entropy_change_machine', 20)
+    },
+
+    // 幻魔心脏
+    'mrqx_extra_pack:phantom_heart': function (event, organ) {
+        let player = event.player
+        let resCount = player.persistentData.getInt(resourceCount)
+        let warCount = player.persistentData.getInt(warpCount)
+        let cooldown = 20 * 10
+        if (warCount > 60) {
+            let playerChestInstance = player.getChestCavityInstance()
+            let typeMap = getPlayerChestCavityTypeMap(player)
+            let duration = (playerChestInstance.organScores.get(new ResourceLocation('chestcavity', 'strength') ?? 0) + playerChestInstance.organScores.get(new ResourceLocation('chestcavity', 'nerves') ?? 0)) * 20
+            cooldown += (playerChestInstance.organScores.get(new ResourceLocation('chestcavity', 'strength') ?? 0) + playerChestInstance.organScores.get(new ResourceLocation('chestcavity', 'nerves') ?? 0)) * 20
+            let amplifier = typeMap.get('flame').length + typeMap.get('warp').length + typeMap.get('mrqx_seaborn').length + typeMap.get('mrqx_seven_sins').length
+            player.potionEffects.add('mrqx_extra_pack:demonization_kill', duration, amplifier, false, false)
+            updateWarpCount(player, 0)
+        }
+        else {
+            let count = Math.min(resCount, 40)
+            updateResourceCount(player, resCount - count)
+            updateWarpCount(player, warCount + count)
+        }
+        player.addItemCooldown('mrqx_extra_pack:phantom_heart', cooldown)
     },
 }
 

@@ -22,7 +22,7 @@ const mrqxOrganActiveStrategies = {
             let currentId = posMap.get(currentPos)
             currentId = currentId ?? null
             if (currentPos < 0 || currentPos >= 27 || currentId == null || !Item.of(currentId.get('id')).hasTag('kubejs:infected')) {
-                mrqxAttributeMapValueAddition(attributeMap, global.mrqx_HEALTH_UP_MULTI_TOTAL, 0.5)
+                attributeMapValueAddition(attributeMap, global.mrqx_HEALTH_UP_MULTI_TOTAL, 0.5)
             }
         })
         posMap.forEach(pos => {
@@ -55,20 +55,20 @@ const mrqxOrganActiveStrategies = {
     // “肉斩骨断”肌肉
     'mrqx_extra_pack:muscle_bone_fracture': function (player, organ, attributeMap) {
         if (mrqxCheckOrganSuit(player, 'seaborn', 'isAll')) {
-            mrqxAttributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, 0.1)
+            attributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, 0.1)
         }
         else {
-            mrqxAttributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, 0.05)
+            attributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, 0.05)
         }
     },
 
     // “生存的重压”肋骨
     'mrqx_extra_pack:rib_the_pressure_to_survive': function (player, organ, attributeMap) {
         if (mrqxCheckOrganSuit(player, 'seaborn', 'isAll')) {
-            mrqxAttributeMapValueAddition(attributeMap, global.mrqx_HEALTH_UP_MULTI_BASE, 0.1)
+            attributeMapValueAddition(attributeMap, global.mrqx_HEALTH_UP_MULTI_BASE, 0.1)
         }
         else {
-            mrqxAttributeMapValueAddition(attributeMap, global.mrqx_HEALTH_UP_MULTI_BASE, 0.05)
+            attributeMapValueAddition(attributeMap, global.mrqx_HEALTH_UP_MULTI_BASE, 0.05)
         }
     },
 
@@ -77,8 +77,16 @@ const mrqxOrganActiveStrategies = {
         let typeMap = getPlayerChestCavityTypeMap(player)
         if (typeMap.has('kubejs:mrqx_celestial_body')) {
             let count = typeMap.get('kubejs:mrqx_celestial_body').length
-            mrqxAttributeMapValueAddition(attributeMap, global.mrqx_GRAVITY_MULTI_TOTAL, (0.8 ** count) - 1)
+            attributeMapValueAddition(attributeMap, global.mrqx_GRAVITY_MULTI_TOTAL, (0.8 ** count) - 1)
         }
+    },
+
+    // 扭曲电容
+    'mrqx_extra_pack:warp_capacitance': function (player, organ, attributeMap) {
+        let warpMaxCount = player.persistentData.getInt(warpCountMax) ?? defaultWarpMax
+        player.persistentData.putInt(warpCountMax, warpMaxCount + 50)
+        let resMaxCount = player.persistentData.getInt(resourceCountMax) ?? defaultResourceMax
+        player.persistentData.putInt(resourceCountMax, resMaxCount + 50)
     },
 }
 
@@ -116,7 +124,7 @@ const mrqxOrganActiveOnlyStrategies = {
                 playerChestInstance.organScores.put(key, new $Float(minScore))
             }
         })
-        mrqxAttributeMapValueAddition(attributeMap, global.ATTACK_UP, count)
+        attributeMapValueAddition(attributeMap, global.ATTACK_UP, count)
     },
 
     // 冒险者证章
@@ -127,8 +135,8 @@ const mrqxOrganActiveOnlyStrategies = {
             diffLevelNum = diffStage.match('difficult_level_(\\d+)')[1]
         }
         while (diffLevelNum--) {
-            mrqxAttributeMapValueAddition(attributeMap, global.mrqx_HEALTH_UP_MULTI_BASE, 0.1)
-            mrqxAttributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, 0.1)
+            attributeMapValueAddition(attributeMap, global.mrqx_HEALTH_UP_MULTI_BASE, 0.1)
+            attributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, 0.1)
         }
     },
 
@@ -161,7 +169,7 @@ const mrqxOrganActiveOnlyStrategies = {
         let playerChestInstance = player.getChestCavityInstance()
         let typeMap = getPlayerChestCavityTypeMap(player)
         if (player.nbt?.ForgeCaps['goety:lichdom']?.lichdom == 1) return
-        mrqxAttributeMapValueAddition(attributeMap, global.HOLY_SPELL_DAMAGE, playerChestInstance.organScores.get(new ResourceLocation('chestcavity', 'photosynthesis') ?? 0 + typeMap.get('kubejs:mrqx_celestial_body').length) * 0.05)
+        attributeMapValueAddition(attributeMap, global.HOLY_SPELL_DAMAGE, playerChestInstance.organScores.get(new ResourceLocation('chestcavity', 'photosynthesis') ?? 0 + typeMap.get('kubejs:mrqx_celestial_body').length) * 0.05)
     },
 
     // “涌潮悲歌”心脏
@@ -174,9 +182,9 @@ const mrqxOrganActiveOnlyStrategies = {
         if (mrqxCheckOrganSuit(player, 'seaborn', 'isAll')) {
             amplifier *= 2
         }
-        mrqxAttributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, amplifier * 0.1)
-        mrqxAttributeMapValueAddition(attributeMap, global.mrqx_HEALTH_UP_MULTI_BASE, amplifier * 0.1)
-        mrqxAttributeMapValueAddition(attributeMap, global.ARMOR_MULTI_BASE, amplifier * 0.1)
+        attributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, amplifier * 0.1)
+        attributeMapValueAddition(attributeMap, global.mrqx_HEALTH_UP_MULTI_BASE, amplifier * 0.1)
+        attributeMapValueAddition(attributeMap, global.ARMOR_MULTI_BASE, amplifier * 0.1)
     },
 
     // “潮汐守望”肝
@@ -189,7 +197,7 @@ const mrqxOrganActiveOnlyStrategies = {
         if (mrqxCheckOrganSuit(player, 'seaborn', 'isAll')) {
             amplifier *= 2
         }
-        mrqxAttributeMapValueAddition(attributeMap, global.mrqx_MANA_REGEN_MULTI_BASE, amplifier * 0.2)
+        attributeMapValueAddition(attributeMap, global.mrqx_MANA_REGEN_MULTI_BASE, amplifier * 0.2)
     },
 
     // “集群狩猎”胰
@@ -202,7 +210,7 @@ const mrqxOrganActiveOnlyStrategies = {
         if (mrqxCheckOrganSuit(player, 'seaborn', 'isAll')) {
             amplifier *= 2
         }
-        mrqxAttributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, amplifier * 0.1)
+        attributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, amplifier * 0.1)
     },
 
     // “深海直觉”脊柱
@@ -255,18 +263,18 @@ const mrqxOrganActiveOnlyStrategies = {
         if (mrqxCheckOrganSuit(player, 'seaborn', 'isAll')) {
             amplifier *= 2
         }
-        mrqxAttributeMapValueAddition(attributeMap, global.MAX_MANA, amplifier * 50)
+        attributeMapValueAddition(attributeMap, global.MAX_MANA, amplifier * 50)
     },
 
     // 灵魂之翼
     'mrqx_extra_pack:wing_of_soul': function (player, organ, attributeMap) {
-        mrqxAttributeMapValueAddition(attributeMap, global.mrqx_FLYING_SPEED, 2)
-        mrqxAttributeMapValueAddition(attributeMap, global.mrqx_FALL_FLYING, 1)
+        attributeMapValueAddition(attributeMap, global.mrqx_FLYING_SPEED, 2)
+        attributeMapValueAddition(attributeMap, global.mrqx_FALL_FLYING, 1)
     },
 
     // 永恒灵魂之翼
     'mrqx_extra_pack:eternal_wing_of_soul': function (player, organ, attributeMap) {
-        mrqxAttributeMapValueAddition(attributeMap, global.mrqx_FLYING_SPEED, 3)
+        attributeMapValueAddition(attributeMap, global.mrqx_FLYING_SPEED, 3)
         player.getPersistentData().putBoolean('mrqxEternalWingOfSoul', true)
         player.abilities.mayfly = true
         player.onUpdateAbilities()
@@ -274,13 +282,13 @@ const mrqxOrganActiveOnlyStrategies = {
 
     // 指令施法核心
     'mrqx_extra_pack:command_spell_core': function (player, organ, attributeMap) {
-        mrqxAttributeMapValueAddition(attributeMap, global.mrqx_SPELL_POWER_MULTI_BASE, 1)
+        attributeMapValueAddition(attributeMap, global.mrqx_SPELL_POWER_MULTI_BASE, 1)
     },
 
     // 金酒之杯
     'mrqx_extra_pack:golden_chalice': function (player, organ, attributeMap) {
         let count = Math.floor(organ.tag.getInt('mrqxGoldenChaliceMoney') / 5)
-        mrqxAttributeMapValueAddition(attributeMap, global.ATTACK_SPEED, count * 0.1)
+        attributeMapValueAddition(attributeMap, global.ATTACK_SPEED, count * 0.1)
     },
 
     // 复激活药丸
@@ -302,7 +310,7 @@ const mrqxOrganActiveOnlyStrategies = {
 
     // “法师控制强”
     'mrqx_extra_pack:mage_control_strong': function (player, organ, attributeMap) {
-        mrqxAttributeMapValueAddition(attributeMap, global.ICE_SPELL_POWER, 1)
+        attributeMapValueAddition(attributeMap, global.ICE_SPELL_POWER, 1)
     },
 
     // 诸王的冠冕
@@ -310,14 +318,14 @@ const mrqxOrganActiveOnlyStrategies = {
         let typeMap = getPlayerChestCavityTypeMap(player)
         if (typeMap.has('kubejs:mrqx_king')) {
             if (typeMap.get('kubejs:mrqx_king').length >= 5) {
-                mrqxAttributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, 2.5)
+                attributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, 2.5)
             }
             else if (typeMap.get('kubejs:mrqx_king').length >= 3) {
-                mrqxAttributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, 1.5)
+                attributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, 1.5)
             }
             return
         }
-        mrqxAttributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, 0.5)
+        attributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, 0.5)
     },
 
     // 国王的护戒
@@ -344,7 +352,7 @@ const mrqxOrganActiveOnlyStrategies = {
 
     // 远古巫妖之心
     'mrqx_extra_pack:ancient_lich_heart': function (player, organ, attributeMap) {
-        mrqxAttributeMapValueAddition(attributeMap, global.mrqx_CAST_TIME, 2)
+        attributeMapValueAddition(attributeMap, global.mrqx_CAST_TIME, 2)
     },
 
     // 天体“占星”处理器
@@ -389,18 +397,18 @@ const mrqxOrganActiveOnlyStrategies = {
     // 长伸缩攻击臂
     'mrqx_extra_pack:long_telescopic_attack_arm': function (player, organ, attributeMap) {
         let count = mrqxGetComputingPower(player)
-        mrqxAttributeMapValueAddition(attributeMap, global.ATTACK_RANGE, count * 0.5)
+        attributeMapValueAddition(attributeMap, global.ATTACK_RANGE, count * 0.5)
         for (let i = 0; i < count; i++) {
-            mrqxAttributeMapValueAddition(attributeMap, global.mrqx_ATTACK_SPEED_MULTI_TOTAL, 0.5)
+            attributeMapValueAddition(attributeMap, global.mrqx_ATTACK_SPEED_MULTI_TOTAL, 0.5)
         }
     },
 
     // 长伸缩活塞臂
     'mrqx_extra_pack:long_telescopic_piston_arm': function (player, organ, attributeMap) {
         let count = mrqxGetComputingPower(player)
-        mrqxAttributeMapValueAddition(attributeMap, global.REACH_DISTANCE, count * 0.5)
+        attributeMapValueAddition(attributeMap, global.REACH_DISTANCE, count * 0.5)
         for (let i = 0; i < count; i++) {
-            mrqxAttributeMapValueAddition(attributeMap, global.mrqx_ATTACK_SPEED_MULTI_TOTAL, 0.5)
+            attributeMapValueAddition(attributeMap, global.mrqx_ATTACK_SPEED_MULTI_TOTAL, 0.5)
         }
     },
 
@@ -461,18 +469,18 @@ const mrqxOrganActiveOnlyStrategies = {
 
     // ‌机械“会心一击”处理器
     'mrqx_extra_pack:machine_critical_cpu': function (player, organ, attributeMap) {
-        mrqxAttributeMapValueAddition(attributeMap, global.CRITICAL_DAMAGE, mrqxGetComputingPower(player) * 0.015)
-        mrqxAttributeMapValueAddition(attributeMap, global.CRITICAL_HIT, mrqxGetComputingPower(player) * 0.015)
+        attributeMapValueAddition(attributeMap, global.CRITICAL_DAMAGE, mrqxGetComputingPower(player) * 0.015)
+        attributeMapValueAddition(attributeMap, global.CRITICAL_HIT, mrqxGetComputingPower(player) * 0.015)
     },
 
     // ‌机械闪避处理器
     'mrqx_extra_pack:machine_dodge_cpu': function (player, organ, attributeMap) {
-        mrqxAttributeMapValueAddition(attributeMap, global.DODGE, Math.max(mrqxGetComputingPower(player) * 0.005, 0.5))
+        attributeMapValueAddition(attributeMap, global.DODGE, Math.max(mrqxGetComputingPower(player) * 0.005, 0.5))
     },
 
     // ‌机械“午夜狂飙”处理器
     'mrqx_extra_pack:machine_midnight_race_cpu': function (player, organ, attributeMap) {
-        mrqxAttributeMapValueAddition(attributeMap, global.mrqx_MOVEMENT_SPEED_MULTI_BASE, mrqxGetComputingPower(player) * 0.05)
+        attributeMapValueAddition(attributeMap, global.mrqx_MOVEMENT_SPEED_MULTI_BASE, mrqxGetComputingPower(player) * 0.05)
     },
 
     // ‌机械“挖矿”处理器
@@ -483,7 +491,7 @@ const mrqxOrganActiveOnlyStrategies = {
 
     // ‌机械格挡处理器
     'mrqx_extra_pack:machine_parry_cpu': function (player, organ, attributeMap) {
-        mrqxAttributeMapValueAddition(attributeMap, global.PARRY, Math.max(mrqxGetComputingPower(player) * 0.005, 0.5))
+        attributeMapValueAddition(attributeMap, global.PARRY, Math.max(mrqxGetComputingPower(player) * 0.005, 0.5))
     },
 
     // ‌机械储能处理器
@@ -494,21 +502,21 @@ const mrqxOrganActiveOnlyStrategies = {
 
     // 魔能速充处理器
     'mrqx_extra_pack:magic_fast_charging_cpu': function (player, organ, attributeMap) {
-        mrqxAttributeMapValueAddition(attributeMap, global.mrqx_MAX_MANA_MULTI_BASE, mrqxGetComputingPower(player) * -0.02)
-        mrqxAttributeMapValueAddition(attributeMap, global.mrqx_MANA_REGEN_MULTI_BASE, mrqxGetComputingPower(player) * 0.1)
+        attributeMapValueAddition(attributeMap, global.mrqx_MAX_MANA_MULTI_BASE, mrqxGetComputingPower(player) * -0.02)
+        attributeMapValueAddition(attributeMap, global.mrqx_MANA_REGEN_MULTI_BASE, mrqxGetComputingPower(player) * 0.1)
     },
 
     // 魔能“玻璃大炮”处理器
     'mrqx_extra_pack:magic_glass_cannon_cpu': function (player, organ, attributeMap) {
-        mrqxAttributeMapValueAddition(attributeMap, global.mrqx_HEALTH_UP_MULTI_BASE, mrqxGetComputingPower(player) * -0.05)
-        mrqxAttributeMapValueAddition(attributeMap, global.mrqx_SPELL_POWER_MULTI_BASE, mrqxGetComputingPower(player) * 0.2)
+        attributeMapValueAddition(attributeMap, global.mrqx_HEALTH_UP_MULTI_BASE, mrqxGetComputingPower(player) * -0.05)
+        attributeMapValueAddition(attributeMap, global.mrqx_SPELL_POWER_MULTI_BASE, mrqxGetComputingPower(player) * 0.2)
     },
 
     // 魔能过载处理器
     'mrqx_extra_pack:magic_overload_cpu': function (player, organ, attributeMap) {
-        mrqxAttributeMapValueAddition(attributeMap, global.mrqx_MANA_REGEN_MULTI_BASE, mrqxGetComputingPower(player) * -0.02)
-        mrqxAttributeMapValueAddition(attributeMap, global.mrqx_COOLDOWN_REDUCTION_MULTI_BASE, mrqxGetComputingPower(player) * 0.5)
-        mrqxAttributeMapValueAddition(attributeMap, global.mrqx_CAST_TIME_MULTI_BASE, mrqxGetComputingPower(player) * 0.5)
+        attributeMapValueAddition(attributeMap, global.mrqx_MANA_REGEN_MULTI_BASE, mrqxGetComputingPower(player) * -0.02)
+        attributeMapValueAddition(attributeMap, global.mrqx_COOLDOWN_REDUCTION_MULTI_BASE, mrqxGetComputingPower(player) * 0.5)
+        attributeMapValueAddition(attributeMap, global.mrqx_CAST_TIME_MULTI_BASE, mrqxGetComputingPower(player) * 0.5)
     },
 
     // 墨染
@@ -759,9 +767,9 @@ const mrqxOrganActiveOnlyStrategies = {
     // ‌‌原罪·懒惰「贝尔芬格」
     'mrqx_extra_pack:sin_acedia_belphegor': function (player, organ, attributeMap) {
         if (!(organ.id == 'mrqx_extra_pack:sin_and_judgement')) {
-            mrqxAttributeMapValueAddition(attributeMap, global.mrqx_MOVEMENT_SPEED_MULTI_BASE, -0.5)
+            attributeMapValueAddition(attributeMap, global.mrqx_MOVEMENT_SPEED_MULTI_BASE, -0.5)
             if (mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
-                mrqxAttributeMapValueAddition(attributeMap, global.mrqx_MOVEMENT_SPEED_MULTI_BASE, -0.5)
+                attributeMapValueAddition(attributeMap, global.mrqx_MOVEMENT_SPEED_MULTI_BASE, -0.5)
             }
         }
     },
@@ -769,9 +777,9 @@ const mrqxOrganActiveOnlyStrategies = {
     // ‌原罪·贪婪「玛门」
     'mrqx_extra_pack:sin_avaritia_mammon': function (player, organ, attributeMap) {
         if (!(organ.id == 'mrqx_extra_pack:sin_and_judgement')) {
-            mrqxAttributeMapValueAddition(attributeMap, global.LUCK_MULTI_BASE, -1)
+            attributeMapValueAddition(attributeMap, global.LUCK_MULTI_BASE, -1)
             if (mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
-                mrqxAttributeMapValueAddition(attributeMap, global.LUCK_MULTI_BASE, -1)
+                attributeMapValueAddition(attributeMap, global.LUCK_MULTI_BASE, -1)
             }
         }
     },
@@ -790,9 +798,9 @@ const mrqxOrganActiveOnlyStrategies = {
     // ‌‌原罪·嫉妒「利维坦」
     'mrqx_extra_pack:sin_invidia_leviathan': function (player, organ, attributeMap) {
         if (!(organ.id == 'mrqx_extra_pack:sin_and_judgement')) {
-            mrqxAttributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, -0.5)
+            attributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, -0.5)
             if (mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
-                mrqxAttributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, -0.5)
+                attributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, -0.5)
             }
         }
     },
@@ -838,13 +846,13 @@ const mrqxOrganActiveOnlyStrategies = {
     },
 
     // 扭曲变电箱
-    // 'mrqx_extra_pack:warp_electrical_box': function (player, organ, attributeMap) {
-    //     let maxCount = ((player.persistentData.getInt(resourceCountMax) ?? defaultResourceMax) + (player.persistentData.getInt(warpCountMax) ?? defaultWarpMax)) / 2 + 25
-    //     player.persistentData.putInt(resourceCountMax, maxCount)
-    //     updateResourceMaxCount(player, maxCount)
-    //     player.persistentData.putInt(warpCountMax, maxCount)
-    //     updateWarpMaxCount(player, maxCount)
-    // },
+    'mrqx_extra_pack:warp_electrical_box': function (player, organ, attributeMap) {
+        let maxCount = ((player.persistentData.getInt(resourceCountMax) ?? defaultResourceMax) + (player.persistentData.getInt(warpCountMax) ?? defaultWarpMax)) / 2 + 25
+        player.persistentData.putInt(resourceCountMax, maxCount)
+        updateResourceMaxCount(player, maxCount)
+        player.persistentData.putInt(warpCountMax, maxCount)
+        updateWarpMaxCount(player, maxCount)
+    },
 
     // 能量核心
     'mrqx_extra_pack:energy_core': function (player, organ, attributeMap) {
@@ -868,6 +876,11 @@ const mrqxOrganActiveOnlyStrategies = {
             typeMap.set('kubejs:break_only', list)
             playerChestCavityTypeMap.set(player.getUuid(), typeMap)
         }
+    },
+
+    // 幻魔心脏
+    'mrqx_extra_pack:phantom_heart': function (player, organ, attributeMap) {
+        attributeMapValueAddition(attributeMap, global.mrqx_HEALTH_UP_MULTI_BASE, -0.5)
     },
 }
 

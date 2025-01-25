@@ -200,9 +200,25 @@ const mrqxVanillaDamageSource = [
 ]
 
 const mrqxCoeVeinList = [
+    'createoreexcavation:drilling/coal',
+    'createoreexcavation:drilling/copper',
+    'createoreexcavation:drilling/diamond',
+    'createoreexcavation:drilling/emerald',
+    'createoreexcavation:drilling/glowstone',
+    'createoreexcavation:drilling/gold',
+    'createoreexcavation:drilling/hardened_diamond',
+    'createoreexcavation:drilling/iron',
+    'createoreexcavation:drilling/quartz',
+    'createoreexcavation:drilling/redstone',
+    'createoreexcavation:drilling/zinc',
+    'createoreexcavation:drilling/water',
+    'kubejs:drilling_arcane',
+    'kubejs:drilling_lapis',
+    'kubejs:drilling_nether_gold',
+    'kubejs:drilling_netherite',
+    'kubejs:drilling_silver',
+    'minecraft:extracting_lava_nether',
+    'minecraft:extracting_quicksilver',
+    'minecraft:extracting_lava_overworld',
     'mrqx_extra_pack:drilling_raw_uranium'
 ]
-
-mrqxCoeVeinList.forEach(vein => {
-    coeVeinList.push(vein)
-})

@@ -102,6 +102,58 @@ const mrqxOrganBlockBrokenOnlyStrategies = {
         }
         if (cancel) event.cancel()
     },
+
+    // 绿宝石镐之魂
+    'mrqx_extra_pack:soul_of_emerald_pickaxe': function (event, organ) {
+        if (event.player.getCooldowns().isOnCooldown(Item.of(organ.id))) {
+            return
+        }
+        /** @type {Special.BlockTag[]} */
+        let tagList = ['twilightforest:mazestone', 'twilightforest:castle_blocks']
+        let b = true
+        tagList.forEach(tag => {
+            if (event.block.hasTag(tag)) {
+                b = false
+            }
+        })
+        if (b) {
+            return
+        }
+        event.player.addItemCooldown('mrqx_extra_pack:soul_of_emerald_pickaxe', 20 *
+            mrqxGetConnectedBlocksCount(
+                event.getBlock().getX(),
+                event.getBlock().getY(),
+                event.getBlock().getZ(),
+                1561 ** 2,
+                event.getLevel(),
+                new Set(),
+                /**
+                 * @param {Number} count
+                 * @param {Number} x
+                 * @param {Number} y
+                 * @param {Number} z
+                 * @param {Number} max
+                 * @param {Internal.Level} level
+                 * @param {Set<String>} set
+                 * @returns {Boolean}
+                 */
+                (x, y, z, max, level, set) => {
+                    /** @type {Special.BlockTag[]} */
+                    let tagList = ['twilightforest:mazestone', 'twilightforest:castle_blocks']
+                    let b = false
+                    tagList.forEach(tag => {
+                        let block = level.getBlock(x, y, z)
+                        if (block.hasTag(tag)) {
+                            b = true
+                            block.popItem(block.getItem())
+                            block.set('minecraft:air')
+                        }
+                    })
+                    return b
+                }
+            )
+        )
+    },
 }
 
 var assign_organ_block_broken_only = Object.assign(organBlockBrokenOnlyStrategies, mrqxOrganBlockBrokenOnlyStrategies)
