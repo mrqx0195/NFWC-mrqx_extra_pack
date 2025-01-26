@@ -1,0 +1,92 @@
+{
+  "abyssgazer_song": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "mrqx_disc_pack:records/abyssgazer_song",
+        "stream": true
+      }
+    ]
+  },
+  "arghena_song": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "mrqx_disc_pack:records/arghena_song",
+        "stream": true
+      }
+    ]
+  },
+  "dantalion_song": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "mrqx_disc_pack:records/dantalion_song",
+        "stream": true
+      }
+    ]
+  },
+  "desive_song": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "mrqx_disc_pack:records/desive_song",
+        "stream": true
+      }
+    ]
+  },
+  "designant_song": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "mrqx_disc_pack:records/designant_song",
+        "stream": true
+      }
+    ]
+  },
+  "rain_of_conflict_in_a_radiant_abyss_song": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "mrqx_disc_pack:records/rain_of_conflict_in_a_radiant_abyss_song",
+        "stream": true
+      }
+    ]
+  },
+  "inverted_world_song": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "mrqx_disc_pack:records/inverted_world_song",
+        "stream": true
+      }
+    ]
+  },
+  "straight_into_the_lights_song": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "mrqx_disc_pack:records/straight_into_the_lights_song",
+        "stream": true
+      }
+    ]
+  },
+  "kirakira_noel_story_song": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "mrqx_disc_pack:records/kirakira_noel_story_song",
+        "stream": true
+      }
+    ]
+  },
+  "fudahuang_song": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "mrqx_disc_pack:records/fudahuang_song",
+        "stream": true
+      }
+    ]
+  }
+}

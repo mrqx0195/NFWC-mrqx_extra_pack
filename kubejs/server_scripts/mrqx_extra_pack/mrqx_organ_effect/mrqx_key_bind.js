@@ -121,10 +121,10 @@ const mrqxOrganPlayerKeyPressedOnlyStrategies = {
             let playerChestInstance = player.getChestCavityInstance()
             let typeMap = getPlayerChestCavityTypeMap(player)
             let duration = (playerChestInstance.organScores.get(new ResourceLocation('chestcavity', 'strength') ?? 0) + playerChestInstance.organScores.get(new ResourceLocation('chestcavity', 'nerves') ?? 0)) * 20
-            cooldown += (playerChestInstance.organScores.get(new ResourceLocation('chestcavity', 'strength') ?? 0) + playerChestInstance.organScores.get(new ResourceLocation('chestcavity', 'nerves') ?? 0)) * 20
-            let amplifier = typeMap.get('flame').length + typeMap.get('warp').length + typeMap.get('mrqx_seaborn').length + typeMap.get('mrqx_seven_sins').length
-            player.potionEffects.add('mrqx_extra_pack:demonization_kill', duration, amplifier, false, false)
-            updateWarpCount(player, 0)
+            cooldown += duration * 2
+            let amplifier = (typeMap.has('kubejs:flame') ? typeMap.get('kubejs:flame').length : 0) + (typeMap.has('kubejs:warp') ? typeMap.get('kubejs:warp').length : 0) + (typeMap.has('kubejs:mrqx_seaborn') ? typeMap.get('kubejs:mrqx_seaborn').length : 0) + (typeMap.has('kubejs:mrqx_seven_sins') ? typeMap.get('kubejs:mrqx_seven_sins').length : 0)
+            player.potionEffects.add('mrqx_extra_pack:demonization_kill', duration * (amplifier + 1), amplifier, false, false)
+            updateWarpCount(player, warCount - 60)
         }
         else {
             let count = Math.min(resCount, 40)
