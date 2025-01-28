@@ -1346,6 +1346,50 @@ ServerEvents.recipes(event => {
         event.recipes.create.deploying('mrqx_extra_pack:incomplete_cpu', ['mrqx_extra_pack:incomplete_cpu', 'kubejs:revolution_steam_engine'])
     ]).transitionalItem('mrqx_extra_pack:incomplete_cpu').loops(1)
 
+    // 幽匿“感染”处理器
+    event.recipes.create.sequenced_assembly([
+        Item.of('mrqx_extra_pack:sculk_infection_cpu').withChance(50.0),
+        Item.of('mrqx_extra_pack:cpu').withChance(50.0)
+    ], 'mrqx_extra_pack:advanced_uncoded_cpu', [
+        event.recipes.create.deploying('mrqx_extra_pack:incomplete_cpu', ['mrqx_extra_pack:incomplete_cpu', '#kubejs:mrqx_sculk']),
+        event.recipes.create.deploying('mrqx_extra_pack:incomplete_cpu', ['mrqx_extra_pack:incomplete_cpu', 'kubejs:sculk_soul']),
+        event.recipes.create.deploying('mrqx_extra_pack:incomplete_cpu', ['mrqx_extra_pack:incomplete_cpu', 'minecraft:sculk']),
+        event.recipes.create.deploying('mrqx_extra_pack:incomplete_cpu', ['mrqx_extra_pack:incomplete_cpu', 'kubejs:sculk_pieces'])
+    ]).transitionalItem('mrqx_extra_pack:incomplete_cpu').loops(1)
+
+    // 反物质“逆向”处理器
+    event.recipes.create.sequenced_assembly([
+        Item.of('mrqx_extra_pack:antimatter_reverse_cpu').withChance(50.0),
+        Item.of('mrqx_extra_pack:cpu').withChance(50.0)
+    ], 'mrqx_extra_pack:advanced_uncoded_cpu', [
+        event.recipes.create.deploying('mrqx_extra_pack:incomplete_cpu', ['mrqx_extra_pack:incomplete_cpu', '#kubejs:mrqx_antimatter']),
+        event.recipes.create.deploying('mrqx_extra_pack:incomplete_cpu', ['mrqx_extra_pack:incomplete_cpu', '#kubejs:mrqx_antimatter']),
+        event.recipes.create.deploying('mrqx_extra_pack:incomplete_cpu', ['mrqx_extra_pack:incomplete_cpu', '#kubejs:mrqx_antimatter']),
+        event.recipes.create.deploying('mrqx_extra_pack:incomplete_cpu', ['mrqx_extra_pack:incomplete_cpu', '#kubejs:mrqx_antimatter'])
+    ]).transitionalItem('mrqx_extra_pack:incomplete_cpu').loops(1)
+
+    // 龙化“神龙”处理器
+    event.recipes.create.sequenced_assembly([
+        Item.of('mrqx_extra_pack:dragon_long_cpu').withChance(50.0),
+        Item.of('mrqx_extra_pack:cpu').withChance(50.0)
+    ], 'mrqx_extra_pack:advanced_uncoded_cpu', [
+        event.recipes.create.deploying('mrqx_extra_pack:incomplete_cpu', ['mrqx_extra_pack:incomplete_cpu', '#kubejs:dragon']),
+        event.recipes.create.deploying('mrqx_extra_pack:incomplete_cpu', ['mrqx_extra_pack:incomplete_cpu', 'iceandfire:dragon_bone_block']),
+        event.recipes.create.deploying('mrqx_extra_pack:incomplete_cpu', ['mrqx_extra_pack:incomplete_cpu', '#iceandfire:dragon_bloods']),
+        event.recipes.create.deploying('mrqx_extra_pack:incomplete_cpu', ['mrqx_extra_pack:incomplete_cpu', 'minecraft:dragon_head'])
+    ]).transitionalItem('mrqx_extra_pack:incomplete_cpu').loops(1)
+
+    // 糖果“甜腻”处理器
+    event.recipes.create.sequenced_assembly([
+        Item.of('mrqx_extra_pack:candy_sugary_cpu').withChance(50.0),
+        Item.of('mrqx_extra_pack:cpu').withChance(50.0)
+    ], 'mrqx_extra_pack:advanced_uncoded_cpu', [
+        event.recipes.create.deploying('mrqx_extra_pack:incomplete_cpu', ['mrqx_extra_pack:incomplete_cpu', '#kubejs:candy']),
+        event.recipes.create.deploying('mrqx_extra_pack:incomplete_cpu', ['mrqx_extra_pack:incomplete_cpu', 'kubejs:candy_bag']),
+        event.recipes.create.deploying('mrqx_extra_pack:incomplete_cpu', ['mrqx_extra_pack:incomplete_cpu', '#forge:candy']),
+        event.recipes.create.deploying('mrqx_extra_pack:incomplete_cpu', ['mrqx_extra_pack:incomplete_cpu', '#kubejs:candy_focus'])
+    ]).transitionalItem('mrqx_extra_pack:incomplete_cpu').loops(1)
+
     // ‌原罪·暴怒「萨迈尔」
     event.recipes.summoningrituals
         .altar('minecraft:dragon_egg')
@@ -1609,6 +1653,182 @@ ServerEvents.recipes(event => {
         Item.of('hexerei:waxing_kit'),
         Item.of('mrqx_extra_pack:automatic_wax_protector')))
 
+    // 骑士金属板
+    event.recipes.create.compacting([Item.of('mrqx_extra_pack:knight_metal_plate')], [Item.of('twilightforest:knightmetal_ingot', 16)]).superheated()
+
+    // 骑士装甲板
+    event.recipes.create.deploying([Item.of('mrqx_extra_pack:knight_armor_piece')], [Item.of('mrqx_extra_pack:knight_metal_plate'), Item.of('kubejs:lamellar_armor_piece')]).superheated()
+
+    // 幻影骑士甲
+    event.recipes.summoningrituals
+        .altar('mrqx_extra_pack:knight_armor_piece')
+        .id('mrqx_extra_pack:ritual_phantom_knight_armor')
+        .input('16x minecraft:soul_sand')
+        .input('kubejs:knightphantom_ghost')
+        .input('16x iceandfire:ectoplasm')
+        .input('twilightforest:phantom_chestplate')
+        .itemOutput('mrqx_extra_pack:phantom_knight_armor')
+        .recipeTime(1000)
+
+    // 损坏骑士剑
+    event.recipes.kubejs.shapeless('mrqx_extra_pack:broken_knight_sword', ['twilightforest:knightmetal_sword', 'goety:great_hammer'])
+        .damageIngredient('goety:great_hammer')
+
+    // 骑士剑
+    event.recipes.kubejs.shaped(Item.of('mrqx_extra_pack:knight_sword', 1), [
+        '  B',
+        ' S ',
+        'I  ',
+    ],
+        {
+            I: 'twilightforest:knightmetal_ingot',
+            B: 'twilightforest:knightmetal_block',
+            S: 'mrqx_extra_pack:broken_knight_sword'
+        })
+
+    // “耀阳”
+    event.recipes.summoningrituals
+        .altar('mrqx_extra_pack:knight_sword')
+        .id('mrqx_extra_pack:ritual_blazing_sun')
+        .input('mrqx_extra_pack:sun_seed')
+        .input('kubejs:sunbird_crystals')
+        .input('twilightforest:fiery_sword')
+        .itemOutput('mrqx_extra_pack:blazing_sun')
+        .recipeTime(1000)
+
+    // 损坏骑士盾
+    event.recipes.kubejs.shapeless('mrqx_extra_pack:broken_knight_shield', ['twilightforest:knightmetal_shield', 'goety:great_hammer'])
+        .damageIngredient('goety:great_hammer')
+
+    // 骑士盾
+    event.recipes.kubejs.shaped(Item.of('mrqx_extra_pack:knight_shield', 1), [
+        'ISI',
+        'IBI',
+        ' I ',
+    ],
+        {
+            I: 'twilightforest:knightmetal_ingot',
+            B: 'twilightforest:knightmetal_block',
+            S: 'mrqx_extra_pack:broken_knight_shield'
+        })
+
+    // 坚毅骑士盾
+    event.recipes.summoningrituals
+        .altar('mrqx_extra_pack:knight_shield')
+        .id('mrqx_extra_pack:ritual_resolute_knight_shield')
+        .input('shield')
+        .input('64x twilightforest:mazestone')
+        .input('64x twilightforest:castle_brick')
+        .itemOutput('mrqx_extra_pack:resolute_knight_shield')
+        .recipeTime(1000)
+
+    // 无用的圆环
+    event.recipes.kubejs.shapeless('mrqx_extra_pack:useless_ring', ['twilightforest:knightmetal_ring', 'goety:great_hammer'])
+        .damageIngredient('goety:great_hammer')
+
+    // 骑士链锤
+    event.recipes.kubejs.shaped(Item.of('mrqx_extra_pack:knight_chain_hammer', 1), [
+        'BII',
+        '  I',
+        'SII',
+    ],
+        {
+            I: 'twilightforest:knightmetal_ingot',
+            B: 'twilightforest:knightmetal_block',
+            S: 'mrqx_extra_pack:useless_ring'
+        })
+
+    // 湮灭链锤
+    event.recipes.summoningrituals
+        .altar('mrqx_extra_pack:knight_chain_hammer')
+        .id('mrqx_extra_pack:ritual_knight_chain_hammer_of_annihilation')
+        .input('kubejs:void_worm_stomach')
+        .input('mrqx_extra_pack:dark_sun_seed')
+        .input('mrqx_extra_pack:black_hole')
+        .itemOutput('mrqx_extra_pack:knight_chain_hammer_of_annihilation')
+        .recipeTime(1000)
+
+    // 骑士核心
+    event.recipes.summoningrituals
+        .altar('kubejs:origin_knight_core')
+        .id('mrqx_extra_pack:ritual_core_of_knights')
+        .input('mrqx_extra_pack:phantom_knight_armor')
+        .input('mrqx_extra_pack:blazing_sun')
+        .input('mrqx_extra_pack:resolute_knight_shield')
+        .input('mrqx_extra_pack:knight_chain_hammer_of_annihilation')
+        .itemOutput('mrqx_extra_pack:core_of_knights')
+        .recipeTime(2000)
+
+    // 扭曲变电箱
+    event.recipes.create.mechanical_crafting('mrqx_extra_pack:warp_electrical_box', [
+        'IIII',
+        'IRRI',
+        'IPPI',
+        'IIII',
+    ], {
+        I: 'art_of_forging:forged_steel_ingot',
+        R: '#kubejs:resource',
+        P: '#kubejs:warp',
+    })
+
+    // 激活·冰龙宝玉·极光化
+    event.recipes.summoningrituals
+        .altar('mrqx_extra_pack:active_ice_dragon_bead')
+        .id('mrqx_extra_pack:ritual_aurora_active_ice_dragon_bead')
+        .input('twilightforest:snow_queen_trophy')
+        .input('64x twilightforest:aurora_block')
+        .input('kubejs:snow_queen_eternal_sorrow')
+        .itemOutput('mrqx_extra_pack:aurora_active_ice_dragon_bead')
+        .recipeTime(500)
+
+    // 激活·火龙宝玉·炽血化
+    event.recipes.summoningrituals
+        .altar('mrqx_extra_pack:active_fire_dragon_bead')
+        .id('mrqx_extra_pack:ritual_buring_blood_active_fire_dragon_bead')
+        .input('twilightforest:hydra_trophy')
+        .input('16x twilightforest:fiery_blood')
+        .input('kubejs:hydra_fiery_blood_essence')
+        .itemOutput('mrqx_extra_pack:buring_blood_active_fire_dragon_bead')
+        .recipeTime(500)
+
+    // 真空冷冻机
+    event.recipes.create.mechanical_crafting('mrqx_extra_pack:vacuum_freezer', [
+        'III',
+        'UCU',
+        'SAS',
+    ], {
+        I: 'cold_sweat:soulspring_lamp',
+        A: 'kubejs:ancient_chip',
+        C: 'create:railway_casing',
+        S: 'createaddition:electrum_spool',
+        U: 'mrqx_extra_pack:cpu',
+    })
+
+    // 扭曲熵变机
+    event.recipes.create.mechanical_crafting('mrqx_extra_pack:warp_entropy_change_machine', [
+        'IIII',
+        'IWPI',
+        'IPLI',
+        'IIII',
+    ], {
+        I: 'art_of_forging:forged_steel_ingot',
+        L: 'cold_sweat:soulspring_lamp',
+        W: 'cold_sweat:filled_waterskin',
+        P: '#kubejs:warp',
+    })
+
+    // 扭曲电容
+    event.recipes.create.mechanical_crafting('mrqx_extra_pack:warp_capacitance', [
+        ' III',
+        'IRPI',
+        'IPRI',
+        'III ',
+    ], {
+        I: 'art_of_forging:forged_steel_ingot',
+        R: '#kubejs:resource',
+        P: '#kubejs:warp',
+    })
+
     // 世界框架
     event.recipes.summoningrituals
         .altar('kubejs:ritual_catalyst')
@@ -1680,6 +1900,51 @@ ServerEvents.recipes(event => {
             "tag": "mrqx_extra_pack:crone",
             "display_name": "entity.goety.crone"
         }))
+
+    // 富集矿簇析出膜
+    event.recipes.create.mechanical_crafting('mrqx_extra_pack:enriched_ore_cluster_precipitation_membrane', [
+        '  I  ',
+        ' RIR ',
+        'OUMUH',
+        'OB BH',
+    ], {
+        I: 'kubejs:compressed_oxygen_implant',
+        R: 'kubejs:redstone_furnace',
+        M: 'biomancy:impermeable_membrane',
+        O: 'kubejs:ore_lung',
+        H: 'kubejs:harbinger_lung',
+        B: 'kubejs:diamond_bottle',
+        U: 'mrqx_extra_pack:machine_mine_cpu',
+    })
+
+    // 幻魔心脏
+    registerCustomRecipe(new mrqxGoetyRitualRecipe('magic', [
+        Item.of('goety:unholy_blood'),
+        Item.of('kubejs:flame_stomach'),
+        Item.of('art_of_forging:mark_of_the_architect'),
+        Item.of('kubejs:bad_ink'),
+        Item.of('kubejs:flame_heart'),
+        Item.of('kubejs:blood_crystal'),
+        Item.of('kubejs:warp_bubble'),
+        Item.of('iceandfire:hydra_heart'),
+        Item.of('goety:soul_ruby'),
+        Item.of('art_of_forging:demonic_blade')
+    ],
+        Item.of('kubejs:dragon_blood_heart'),
+        Item.of('mrqx_extra_pack:phantom_heart'))
+        .setSoulCost(666).setDuration(222))
+
+    // 销汀·桉柏
+    event.recipes.kubejs.shaped(Item.of('mrqx_extra_pack:xiao_amburm', 1), [
+        'LCL',
+        'CAC',
+        'LCL'
+    ],
+        {
+            A: 'kubejs:polished_amber',
+            L: 'biomancy:living_flesh',
+            C: 'alexsmobs:capsid'
+        })
 
     // 机械狂潮挑战
     event.recipes.summoningrituals

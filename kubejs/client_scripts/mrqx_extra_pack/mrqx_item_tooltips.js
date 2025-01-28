@@ -241,4 +241,8 @@ ItemEvents.tooltip((tooltip) => {
             addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.mechanical_frenzy.1" })]], 1)
         }
     })
+
+    tooltip.addAdvanced('mrqx_extra_pack:xiao_amburm', (item, advanced, text) => {
+        addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.xiao_amburm.1" })]], 1)
+    })
 })

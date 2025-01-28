@@ -35,6 +35,7 @@ JEIEvents.information(event => {
     event.addItem(Ingredient.of('#kubejs:mrqx_element_damage'), Text.black({ "translate": "mrqx_extra_pack.jei.mrqx_element_damage.5" }))
     event.addItem(Ingredient.of('#kubejs:mrqx_element_damage'), Text.black({ "translate": "mrqx_extra_pack.jei.mrqx_element_damage.6" }))
 
+    event.addItem('mrqx_extra_pack:soul_of_emerald_pickaxe', Text.black({ "translate": "mrqx_extra_pack.jei.soul_of_emerald_pickaxe.1" }))
 })
 
 JEIEvents.hideItems(event => {

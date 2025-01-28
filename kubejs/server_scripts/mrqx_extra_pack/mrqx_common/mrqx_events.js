@@ -259,3 +259,27 @@ PlayerEvents.loggedIn(event => {
 ServerEvents.tags('minecraft:entity_type', event => {
     event.add('mrqx_extra_pack:crone', ['goety:crone'])
 })
+
+// 销汀·桉柏
+ItemEvents.foodEaten('mrqx_extra_pack:xiao_amburm', event => {
+    let entity = event.entity
+    if (event.level.isClientSide()) return
+    if (!entity.isPlayer()) return
+    updateWarpCount(entity, entity.persistentData.getInt(warpCount) + 44)
+})
+
+// 绿宝石镐之魂
+BlockEvents.broken(event => {
+    /** @type {Special.BlockTag[]} */
+    let tagList = ['twilightforest:mazestone', 'twilightforest:castle_blocks']
+    let b = true
+    tagList.forEach(tag => {
+        if (event.block.hasTag(tag)) {
+            b = false
+        }
+    })
+    if (b || Math.random() < 0.99) {
+        return
+    }
+    event.block.popItem('mrqx_extra_pack:soul_of_emerald_pickaxe')
+})

@@ -542,7 +542,7 @@ EntityEvents.spawned(event => {
     let typeList = entity.persistentData.get('champion')
     typeList.forEach(type => {
         let typeName = type.getAsString()
-        if (typeName in mrqxBossChampionTypeList && Math.random() < 0.5) entity.discard()
+        if (typeName in mrqxBossChampionTypeList && Math.random() < 0.5) event.cancel()
         if (typeName in mrqxChampionSpawnStrategies) {
             mrqxChampionSpawnStrategies[typeName](event)
         }
