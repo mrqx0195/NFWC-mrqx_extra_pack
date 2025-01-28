@@ -88,6 +88,18 @@ const mrqxOrganActiveStrategies = {
         let resMaxCount = player.persistentData.getInt(resourceCountMax) ?? defaultResourceMax
         player.persistentData.putInt(resourceCountMax, resMaxCount + 50)
     },
+
+    // 无用的圆环
+    'mrqx_extra_pack:useless_ring': function (player, organ, attributeMap) {
+        attributeMapValueAddition(attributeMap, global.CRITICAL_DAMAGE, 0.1)
+        attributeMapValueAddition(attributeMap, global.CRITICAL_HIT, 0.1)
+    },
+
+    // 骑士链锤
+    'mrqx_extra_pack:knight_chain_hammer': function (player, organ, attributeMap) {
+        attributeMapValueAddition(attributeMap, global.CRITICAL_DAMAGE, 0.5)
+        attributeMapValueAddition(attributeMap, global.CRITICAL_HIT, 0.5)
+    },
 }
 
 var assign_organ_active = Object.assign(organActiveStrategies, mrqxOrganActiveStrategies)
@@ -731,6 +743,72 @@ const mrqxOrganActiveOnlyStrategies = {
         playerChestCavityTypeMap.set(uuid, typeMap)
     },
 
+    // 龙化“神龙”处理器
+    'mrqx_extra_pack:dragon_long_cpu': function (player, organ, attributeMap) {
+        let chestInventory = player.getChestCavityInstance().inventory.tags
+        let typeMap = getPlayerChestCavityTypeMap(player)
+        typeMap.delete('kubejs:dragon')
+        for (let i = 0; i < chestInventory.length; i++) {
+            let organ = chestInventory[i]
+            let itemId = String(organ.getString('id'))
+            let tagList = Item.of(itemId).getTags().toArray()
+            for (let i = 0; i < tagList.length; i++) {
+                let tag = tagList[i].location()
+                if (tag != 'kubejs:dragon') {
+                    continue
+                }
+                tag = String(tag)
+                if (typeMap.has(tag)) {
+                    let itemList = typeMap.get(tag)
+                    itemList.push(organ)
+                    typeMap.set(tag, itemList)
+                } else {
+                    typeMap.set(tag, [organ])
+                }
+            }
+        }
+        let itemList = getPlayerChestCavityTypeMap(player).get('kubejs:dragon') ?? []
+        let uuid = String(player.getUuid())
+        typeMap.set('kubejs:dragon', itemList)
+        playerChestCavityTypeMap.set(uuid, typeMap)
+        itemList = itemList.concat(mrqxMultiplyArrayLength([organ], Math.floor(mrqxGetComputingPower(player))))
+        typeMap.set('kubejs:dragon', itemList)
+        playerChestCavityTypeMap.set(uuid, typeMap)
+    },
+
+    // 糖果“甜腻”处理器
+    'mrqx_extra_pack:candy_sugary_cpu': function (player, organ, attributeMap) {
+        let chestInventory = player.getChestCavityInstance().inventory.tags
+        let typeMap = getPlayerChestCavityTypeMap(player)
+        typeMap.delete('kubejs:candy')
+        for (let i = 0; i < chestInventory.length; i++) {
+            let organ = chestInventory[i]
+            let itemId = String(organ.getString('id'))
+            let tagList = Item.of(itemId).getTags().toArray()
+            for (let i = 0; i < tagList.length; i++) {
+                let tag = tagList[i].location()
+                if (tag != 'kubejs:candy') {
+                    continue
+                }
+                tag = String(tag)
+                if (typeMap.has(tag)) {
+                    let itemList = typeMap.get(tag)
+                    itemList.push(organ)
+                    typeMap.set(tag, itemList)
+                } else {
+                    typeMap.set(tag, [organ])
+                }
+            }
+        }
+        let itemList = getPlayerChestCavityTypeMap(player).get('kubejs:candy') ?? []
+        let uuid = String(player.getUuid())
+        typeMap.set('kubejs:candy', itemList)
+        playerChestCavityTypeMap.set(uuid, typeMap)
+        itemList = itemList.concat(mrqxMultiplyArrayLength([organ], Math.floor(mrqxGetComputingPower(player))))
+        typeMap.set('kubejs:candy', itemList)
+        playerChestCavityTypeMap.set(uuid, typeMap)
+    },
+
     // 机械“核能之心”处理器
     'mrqx_extra_pack:machine_nuclear_heart_cpu': function (player, organ, attributeMap) {
         let chestInventory = player.getChestCavityInstance().inventory.tags
@@ -881,6 +959,26 @@ const mrqxOrganActiveOnlyStrategies = {
     // 幻魔心脏
     'mrqx_extra_pack:phantom_heart': function (player, organ, attributeMap) {
         attributeMapValueAddition(attributeMap, global.mrqx_HEALTH_UP_MULTI_BASE, -0.5)
+    },
+
+    // 幻影骑士甲
+    'mrqx_extra_pack:phantom_knight_armor': function (player, organ, attributeMap) {
+        let playerChestInstance = player.getChestCavityInstance()
+        playerChestInstance.organScores.put(new ResourceLocation('chestcavity', 'buoyant'), new $Float(2.9))
+    },
+
+    // 湮灭链锤
+    'mrqx_extra_pack:knight_chain_hammer_of_annihilation': function (player, organ, attributeMap) {
+        attributeMapValueAddition(attributeMap, global.CRITICAL_DAMAGE, 1)
+        attributeMapValueAddition(attributeMap, global.CRITICAL_HIT, 1)
+    },
+
+    // 骑士核心
+    'mrqx_extra_pack:core_of_knights': function (player, organ, attributeMap) {
+        let count = mrqxGetCoreOfKnightCount(player)
+        attributeMapValueAddition(attributeMap, global.mrqx_HEALTH_UP_MULTI_BASE, count * 0.1)
+        attributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, count * 0.1)
+        attributeMapValueAddition(attributeMap, global.ARMOR_MULTI_BASE, count * 0.1)
     },
 }
 

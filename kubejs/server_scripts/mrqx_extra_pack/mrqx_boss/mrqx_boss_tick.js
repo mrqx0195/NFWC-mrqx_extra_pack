@@ -98,7 +98,7 @@ global.mrqxBossTick = {
         let entity = event.entity
         let diff = entity.persistentData.getInt('mrqxBossDiff')
         let playerCount = entity.persistentData.getInt('mrqxBossPlayerCount')
-        if (entity.age % (20 * 10) == 0) {
+        if (entity.age % (20 * 20) == 0) {
             for (let i = 0; i < diff * playerCount; i++) {
                 if (Math.random() < 0.5) continue
                 let id = 'minecraft:enderman'
@@ -170,7 +170,7 @@ global.mrqxBossTick = {
             let entityList = entity.level.getEntitiesWithin(new AABB.of(entity.x - 256, entity.y - 256, entity.z - 256, entity.x + 256, entity.y + 256, entity.z + 256))
             entityList.forEach(e => {
                 if (!e.isPlayer()) return
-                mrqxCauseElementDamage(e, entity.getAttributeTotalValue('minecraft:generic.attack_damage') * diff * 0.1, 'ender')
+                mrqxCauseElementDamage(e, diff * 100, 'ender')
                 if (Math.random() < diff * 0.1 && e.distanceToEntity(entity) <= 128) {
                     for (let i = 0; i < diff * 0.1; i++) {
                         /** @type {Internal.DragonFireball} */
@@ -189,6 +189,63 @@ global.mrqxBossTick = {
                     }
                 }
             })
+        }
+    },
+
+    'witherstormmod:wither_storm': function (event) {
+
+        let entity = event.entity
+        let diff = entity.persistentData.getInt('mrqxBossDiff')
+        let playerCount = entity.persistentData.getInt('mrqxBossPlayerCount')
+        let entityList = entity.level.getEntitiesWithin(new AABB.of(entity.x - 2048, entity.y - 2048, entity.z - 2048, entity.x + 2048, entity.y + 2048, entity.z + 2048))
+        entityList.forEach(e => {
+            if (!e.isPlayer()) return
+            let itemMap = getPlayerChestCavityItemMap(e)
+            if (itemMap.has('mrqx_extra_pack:framework_of_world')) return
+            mrqxCauseElementDamage(e, diff * 0.1, 'wither')
+        })
+        if (entity.age % (20 * 20) == 0) {
+            for (let i = 0; i < diff * playerCount; i++) {
+                let e = entity.level.createEntity('witherstormmod:withered_symbiont')
+                e.setPos(entity.x, entity.y, entity.z)
+                /** @type {Special.Attribute[]} */
+                let attributeAdditionMap = [
+                    'minecraft:generic.armor'
+                ]
+                /** @type {Special.Attribute[]} */
+                let attributeMultiplyBaseMap = [
+                    'minecraft:generic.movement_speed',
+                    'minecraft:generic.attack_damage',
+                    'minecraft:generic.max_health'
+                ]
+                attributeAdditionMap.forEach(attribute => [
+                    e.modifyAttribute(attribute, 'mrqxBossDiffAddition', diff * 2, 'addition')
+                ])
+                attributeMultiplyBaseMap.forEach(attribute => [
+                    e.modifyAttribute(attribute, 'mrqxBossDiffMultiplyBase', diff * 0.1, 'multiply_base')
+                ])
+                if (Math.random() < diff * 0.1) {
+                    if (Math.random() < 0.5) {
+                        if (diff >= 4) {
+                            e.setMainHandItem(Item.of('minecraft:netherite_sword'))
+                        }
+                        else {
+                            e.setMainHandItem(Item.of('minecraft:stone_sword'))
+                        }
+                    }
+                    else {
+                        if (diff >= 4) {
+                            e.setMainHandItem(Item.of('minecraft:crossbow'))
+                        }
+                        else {
+                            e.setMainHandItem(Item.of('minecraft:bow'))
+                        }
+                    }
+                }
+                e.persistentData.putBoolean('mrqxLivingNoItemDrops', true)
+                e.setTarget(e.level.getNearestPlayer(entity, 64))
+                e.spawn()
+            }
         }
     },
 }

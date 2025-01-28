@@ -338,30 +338,31 @@ const mrqxChampionPlayerDamageStrategies = {
     // 极光
     'mrqx_aurora': function (event, data) {
         let entity = event.entity
+        let count = 0
         let entityList = entity.level.getEntitiesWithin(new AABB.of(entity.x - 64, entity.y - 64, entity.z - 64, entity.x + 64, entity.y + 64, entity.z + 64))
         entityList.forEach(e => {
             if (!e.isLiving()) return
-            let count = mrqxCauseElementDamage(e, entity.getAttributeTotalValue('minecraft:generic.attack_damage') * 3, 'ice')
-            if (count > 0) {
-                for (let i = 0; i < Math.min(count, 4); i++) {
-                    let crystal = entity.level.createEntity('twilightforest:ice_crystal')
-                    crystal.setPos(entity.x, entity.y, entity.z)
-                    crystal.spawn()
-                }
-                let level = (entity.getPersistentData().getInt('mrqxChampionAuroraLevel') ?? 0) + count
-                let attributeMap = [
-                    'minecraft:generic.armor',
-                    'minecraft:generic.movement_speed',
-                    'minecraft:generic.attack_damage',
-                    'minecraft:generic.max_health'
-                ]
-                attributeMap.forEach(attribute => [
-                    entity.modifyAttribute(attribute, 'mrqxChampionAurora', level * 0.1, 'multiply_total')
-                ])
-                entity.getPersistentData().putInt('mrqxChampionAuroraLevel', level)
-                entity.heal(count * entity.getMaxHealth() * 0.05)
-            }
+            count += mrqxCauseElementDamage(e, entity.getAttributeTotalValue('minecraft:generic.attack_damage') * 3, 'ice')
         })
+        if (count > 0) {
+            for (let i = 0; i < Math.min(count, 4); i++) {
+                let crystal = entity.level.createEntity('twilightforest:ice_crystal')
+                crystal.setPos(entity.x, entity.y, entity.z)
+                crystal.spawn()
+            }
+            let level = (entity.getPersistentData().getInt('mrqxChampionAuroraLevel') ?? 0) + count
+            let attributeMap = [
+                'minecraft:generic.armor',
+                'minecraft:generic.movement_speed',
+                'minecraft:generic.attack_damage',
+                'minecraft:generic.max_health'
+            ]
+            attributeMap.forEach(attribute => [
+                entity.modifyAttribute(attribute, 'mrqxChampionAurora', level * 0.1, 'multiply_total')
+            ])
+            entity.getPersistentData().putInt('mrqxChampionAuroraLevel', level)
+            entity.heal(count * entity.getMaxHealth() * 0.05)
+        }
         entity.persistentData.putInt("mrqx_ice_damage", 0)
     },
 }
@@ -468,30 +469,31 @@ const mrqxChampionPlayerBearStrategies = {
     'mrqx_aurora': function (event, data) {
         /** @type {Internal.LivingEntity} */
         let entity = event.source.actual
+        let count = 0
         let entityList = entity.level.getEntitiesWithin(new AABB.of(entity.x - 64, entity.y - 64, entity.z - 64, entity.x + 64, entity.y + 64, entity.z + 64))
         entityList.forEach(e => {
             if (!e.isLiving()) return
-            let count = mrqxCauseElementDamage(e, entity.getAttributeTotalValue('minecraft:generic.attack_damage') * 3, 'ice')
-            if (count > 0) {
-                for (let i = 0; i < Math.min(count, 4); i++) {
-                    let crystal = entity.level.createEntity('twilightforest:ice_crystal')
-                    crystal.setPos(entity.x, entity.y, entity.z)
-                    crystal.spawn()
-                }
-                let level = (entity.getPersistentData().getInt('mrqxChampionAuroraLevel') ?? 0) + count
-                let attributeMap = [
-                    'minecraft:generic.armor',
-                    'minecraft:generic.movement_speed',
-                    'minecraft:generic.attack_damage',
-                    'minecraft:generic.max_health'
-                ]
-                attributeMap.forEach(attribute => [
-                    entity.modifyAttribute(attribute, 'mrqxChampionAurora', level * 0.1, 'multiply_total')
-                ])
-                entity.getPersistentData().putInt('mrqxChampionAuroraLevel', level)
-                entity.heal(count * entity.getMaxHealth() * 0.05)
-            }
+            count += mrqxCauseElementDamage(e, entity.getAttributeTotalValue('minecraft:generic.attack_damage') * 3, 'ice')
         })
+        if (count > 0) {
+            for (let i = 0; i < Math.min(count, 4); i++) {
+                let crystal = entity.level.createEntity('twilightforest:ice_crystal')
+                crystal.setPos(entity.x, entity.y, entity.z)
+                crystal.spawn()
+            }
+            let level = (entity.getPersistentData().getInt('mrqxChampionAuroraLevel') ?? 0) + count
+            let attributeMap = [
+                'minecraft:generic.armor',
+                'minecraft:generic.movement_speed',
+                'minecraft:generic.attack_damage',
+                'minecraft:generic.max_health'
+            ]
+            attributeMap.forEach(attribute => [
+                entity.modifyAttribute(attribute, 'mrqxChampionAurora', level * 0.1, 'multiply_total')
+            ])
+            entity.getPersistentData().putInt('mrqxChampionAuroraLevel', level)
+            entity.heal(count * entity.getMaxHealth() * 0.05)
+        }
         entity.persistentData.putInt("mrqx_ice_damage", 0)
     },
 
@@ -540,6 +542,7 @@ EntityEvents.spawned(event => {
     let typeList = entity.persistentData.get('champion')
     typeList.forEach(type => {
         let typeName = type.getAsString()
+        if (typeName in mrqxBossChampionTypeList && Math.random() < 0.5) entity.discard()
         if (typeName in mrqxChampionSpawnStrategies) {
             mrqxChampionSpawnStrategies[typeName](event)
         }

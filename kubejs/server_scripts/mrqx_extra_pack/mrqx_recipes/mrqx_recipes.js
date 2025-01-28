@@ -1974,12 +1974,12 @@ ServerEvents.recipes(event => {
 
     // 奥秘·星辰
     event.recipes.summoningrituals
-        .altar('witherstormmod:withered_nether_star')
+        .altar('#forge:spyglasses')
         .id('mrqx_extra_pack:ritual_mystery_stars')
         .input('#forge:nether_stars')
-        .input('#forge:spyglasses')
+        .input('#forge:nether_stars')
+        .input('#forge:nether_stars')
         .input('mrqx_extra_pack:celestial_body_astrology_cpu')
-        .input('#kubejs:mrqx_celestial_body')
         .input('#kubejs:mrqx_celestial_body')
         .input('#kubejs:mrqx_celestial_body')
         .input('#kubejs:mrqx_celestial_body')
@@ -2035,7 +2035,7 @@ ServerEvents.recipes(event => {
 
     // 奥秘·灾难
     event.recipes.summoningrituals
-        .altar('witherstormmod:withered_nether_star')
+        .altar('#forge:nether_stars')
         .id('mrqx_extra_pack:ritual_mystery_disasters')
         .input('kubejs:void_worm_stomach')
         .input('irons_spellbooks:fire_upgrade_orb')
@@ -2043,7 +2043,7 @@ ServerEvents.recipes(event => {
         .input('kubejs:storm_metal_plate')
         .input('alexsmobs:farseer_arm')
         .input('cataclysm:sandstorm_in_a_bottle')
-        .input('witherstormmod:formidibomb')
+        .input('minecraft:tnt')
         .input('#forge:tools')
         .itemOutput('mrqx_extra_pack:mystery_disasters')
         .recipeTime(2000)

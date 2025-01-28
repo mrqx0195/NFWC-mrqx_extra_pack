@@ -157,6 +157,22 @@ const mrqxComputingPowerOnlyStrategies = {
         }
     },
 
+    // 龙化“神龙”处理器
+    'mrqx_extra_pack:dragon_long_cpu': function (player, organ) {
+        let typeMap = getPlayerChestCavityTypeMap(player)
+        if (typeMap.has('kubejs:dragon')) {
+            return getPlayerChestCavityTypeMap(player).get('kubejs:dragon').length
+        }
+    },
+
+    // 糖果“甜腻”处理器
+    'mrqx_extra_pack:candy_sugary_cpu': function (player, organ) {
+        let typeMap = getPlayerChestCavityTypeMap(player)
+        if (typeMap.has('kubejs:candy')) {
+            return getPlayerChestCavityTypeMap(player).get('kubejs:candy').length
+        }
+    },
+
     // “降神”处理器
     'mrqx_extra_pack:seance_cpu': function (player, organ) {
         let typeMap = getPlayerChestCavityTypeMap(player)

@@ -36,6 +36,24 @@ const mrqxOrganPlayerBearStrategies = {
         let count = Math.min(mrqxGetSteamCount(player) * 0.02, 0.2)
         event.amount *= 1 - count
     },
+
+    // 骑士装甲板
+    'mrqx_extra_pack:knight_armor_piece': function (event, organ) {
+        let player = event.entity
+        let playerChestInstance = player.getChestCavityInstance()
+        let typeMap = getPlayerChestCavityTypeMap(player)
+        event.amount *= 1 - Math.min(playerChestInstance.organScores.get(new ResourceLocation('chestcavity', 'defense')) ?? 0, typeMap.get('kubejs:mrqx_knight').length) * 0.01
+    },
+
+    // 损坏骑士盾
+    'mrqx_extra_pack:broken_knight_shield': function (event, organ, data) {
+        event.amount *= 0.95
+    },
+
+    // 骑士盾
+    'mrqx_extra_pack:knight_shield': function (event, organ, data) {
+        event.amount *= 0.9
+    },
 }
 
 var assign_organ_player_bear = Object.assign(organPlayerBearStrategies, mrqxOrganPlayerBearStrategies)
@@ -160,7 +178,86 @@ const mrqxOrganPlayerBearOnlyStrategies = {
         let player = event.entity
         if (event.source.type == 'outOfWorld') {
             player.invulnerableTime = 0
-            event.amount = Math.min(player.getMaxHealth() / 20, event.amount)
+            event.source.bypassEnchantments()
+            event.source.bypassMagic()
+            event.amount = Math.max(Math.max(player.getMaxHealth() / 20, event.amount), 4)
+        }
+    },
+
+    // 幻影骑士甲
+    'mrqx_extra_pack:phantom_knight_armor': function (event, organ) {
+        let player = event.entity
+        let playerChestInstance = player.getChestCavityInstance()
+        let typeMap = getPlayerChestCavityTypeMap(player)
+        let count = 2
+        if (mrqxGetCoreOfKnightCount(player) > 0) {
+            for (let i = mrqxGetCoreOfKnightCount(player); i > 0; i--) {
+                count++
+            }
+            event.amount *= 1 - Math.min(playerChestInstance.organScores.get(new ResourceLocation('chestcavity', 'defense')) ?? 0, typeMap.get('kubejs:mrqx_knight').length) * 0.01 * count
+            if (event.source.isBypassArmor() && !data?.mrqxBypassArmor) {
+                event.amount = mrqxGetDamageAfterArmorAbsorb(player, event.source, event.amount, true, true)
+                data.mrqxBypassArmor = true
+            }
+        }
+    },
+
+    // 坚毅骑士盾
+    'mrqx_extra_pack:resolute_knight_shield': function (event, organ, data) {
+        event.amount *= 0.8
+
+        if (event.source.isBypassInvul()) return
+        let player = event.entity
+        switch (Math.floor(Math.random() * 3)) {
+            case 0:
+                if (event.source.isBypassArmor() && !data?.mrqxBypassArmor) {
+                    event.amount = mrqxGetDamageAfterArmorAbsorb(player, event.source, event.amount, true, true)
+                    data.mrqxBypassArmor = true
+                }
+                break
+            case 1:
+                if (event.source.isBypassEnchantments() && !data?.mrqxBypassEnchantments) {
+                    event.amount = mrqxGetDamageAfterMagicAbsorb(player, event.source, event.amount, false, true)
+                    data.mrqxBypassEnchantments = true
+                }
+                break
+            case 2:
+                if (event.source.isBypassMagic() && !data?.mrqxBypassMagic) {
+                    event.amount = mrqxGetDamageAfterMagicAbsorb(player, event.source, event.amount, true, false)
+                    data.mrqxBypassMagic = true
+                }
+                break
+            default:
+                break
+        }
+        if (event.source.isExplosion() || event.source.isProjectile()) {
+            switch (Math.floor(Math.random() * 3)) {
+                case 0:
+                    if (event.source.isBypassArmor() && !data?.mrqxBypassArmor) {
+                        event.amount = mrqxGetDamageAfterArmorAbsorb(player, event.source, event.amount, true, true)
+                        data.mrqxBypassArmor = true
+                    }
+                    break
+                case 1:
+                    if (event.source.isBypassEnchantments() && !data?.mrqxBypassEnchantments) {
+                        event.amount = mrqxGetDamageAfterMagicAbsorb(player, event.source, event.amount, false, true)
+                        data.mrqxBypassEnchantments = true
+                    }
+                    break
+                case 2:
+                    if (event.source.isBypassMagic() && !data?.mrqxBypassMagic) {
+                        event.amount = mrqxGetDamageAfterMagicAbsorb(player, event.source, event.amount, true, false)
+                        data.mrqxBypassMagic = true
+                    }
+                    break
+                default:
+                    break
+            }
+        }
+        if (mrqxGetCoreOfKnightCount(player) > 0 && player.isShiftKeyDown()) {
+            for (let i = mrqxGetCoreOfKnightCount(player); i > 0; i--) {
+                event.amount *= 0.8
+            }
         }
     },
 }

@@ -117,6 +117,16 @@ const mrqxOrganPlayerDamageStrategies = {
 			player.addItemCooldown(organ.id, 19)
 		})
 	},
+
+	// 损坏骑士剑
+	'mrqx_extra_pack:broken_knight_sword': function (event, organ, data) {
+		event.amount *= 1.05
+	},
+
+	// 骑士剑
+	'mrqx_extra_pack:knight_sword': function (event, organ, data) {
+		event.amount *= 1.1
+	},
 }
 
 var assign_organ_player_damage = Object.assign(organPlayerDamageStrategies, mrqxOrganPlayerDamageStrategies)
@@ -555,7 +565,7 @@ const mrqxOrganPlayerDamageOnlyStrategies = {
 		let player = event.source.player
 		/** @type {Internal.LivingEntity} */
 		let entity = event.entity
-		if (entity.isLiving() &&player.hasEffect('mrqx_extra_pack:demonization_kill') && Math.random() < 0.2) {
+		if (entity.isLiving() && player.hasEffect('mrqx_extra_pack:demonization_kill') && Math.random() < 0.2) {
 			let amplifier = 0
 			if (entity.hasEffect('art_of_forging:mortal_wounds')) {
 				amplifier += entity.getEffect('art_of_forging:mortal_wounds').getAmplifier() + 1
@@ -568,6 +578,71 @@ const mrqxOrganPlayerDamageOnlyStrategies = {
 			entity.potionEffects.add('tetra:severed', 20 * 60, amplifier, false, false)
 		}
 	},
+
+	// 幻影骑士甲
+	'mrqx_extra_pack:phantom_knight_armor': function (event, organ, data) {
+		if (Math.random() < 0.125) {
+			event.source.bypassArmor()
+		}
+	},
+
+	// “耀阳”
+	'mrqx_extra_pack:blazing_sun': function (event, organ, data) {
+		event.amount *= 1.2
+
+		let player = event.source.player
+		let entity = event.entity
+		if (entity.position().distanceTo(new Vec3(player.x, player.y, player.z)) < 3) {
+			event.source.bypassArmor()
+			event.source.bypassEnchantments()
+			event.source.bypassInvul()
+			event.source.bypassMagic()
+		}
+		if (mrqxGetCoreOfKnightCount(player) > 0) {
+			for (let i = mrqxGetCoreOfKnightCount(player); i > 0; i--) {
+				let entityList = getLivingWithinRadius(player.getLevel(), new Vec3(player.x, player.y, player.z), 3)
+				entityList.forEach(e => {
+					if (!e.isPlayer() && e.isLiving()) {
+						e.getServer().scheduleInTicks(1, () => {
+							e.attack(DamageSource.playerAttack(player).bypassArmor().bypassEnchantments().bypassInvul().bypassMagic(), player.getAttributeTotalValue('minecraft:generic.attack_damage') * 0.2)
+						})
+					}
+				})
+			}
+		}
+	},
+
+	// 湮灭链锤
+	'mrqx_extra_pack:knight_chain_hammer_of_annihilation': function (event, organ, data) {
+		let player = event.source.player
+		let entity = event.entity
+		let entityList = entity.level.getEntitiesWithin(entity.boundingBox.inflate(0.5))
+		entityList.forEach(e => {
+			if (e.getType() == 'twilightforest:cube_of_annihilation') {
+				entity.invulnerableTime = 0
+			}
+		})
+		if (Math.random() < 0.1) {
+			/** @type {Internal.ThrowableProjectile} */
+			let e = event.entity.level.createEntity('twilightforest:cube_of_annihilation')
+			e.setPos(entity.getX(), entity.getY(), entity.getZ())
+			e.setOwner(player)
+			e.spawn()
+			entity.invulnerableTime = 0
+		}
+		if (mrqxGetCoreOfKnightCount(player) > 0) {
+			for (let i = mrqxGetCoreOfKnightCount(player); i > 0; i--) {
+				if (Math.random() < 0.1) {
+					/** @type {Internal.ThrowableProjectile} */
+					let e = event.entity.level.createEntity('twilightforest:cube_of_annihilation')
+					e.setPos(entity.getX(), entity.getY(), entity.getZ())
+					e.setOwner(player)
+					e.spawn()
+					entity.invulnerableTime = 0
+				}
+			}
+		}
+	}
 }
 
 var assign_organ_player_damage_only = Object.assign(organPlayerDamageOnlyStrategies, mrqxOrganPlayerDamageOnlyStrategies)

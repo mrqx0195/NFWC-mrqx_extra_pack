@@ -427,3 +427,63 @@ function mrqxEditChestItem(player, item, slot, ignoreEmpty, ignoreDifferent, upd
 function mrqxGetEmptyCompound() {
     return Item.of('minecraft:air').getOrCreateTag().copy()
 }
+
+/**
+ * 获取骑士核心计数
+ * @param {Internal.ServerPlayer} player
+ * @returns {number}
+ */
+function mrqxGetCoreOfKnightCount(player) {
+    let itemMap = getPlayerChestCavityItemMap(player)
+    let typeMap = getPlayerChestCavityTypeMap(player)
+    if (itemMap.has('mrqx_extra_pack:core_of_knights') && typeMap.has('kubejs:mrqx_king')) {
+        return typeMap.get('kubejs:mrqx_king').length
+    }
+    return 0
+}
+
+/**
+ * 获取盔甲减伤后伤害值
+ * @param {Internal.ServerPlayer} player
+ * @param {DamageSource} damageSource
+ * @param {number} initialDamage
+ * @param {boolean} ignoreBypassArmor
+ * @param {boolean} isDamageArmor
+ * @returns {number}
+ */
+function mrqxGetDamageAfterArmorAbsorb(player, damageSource, initialDamage, ignoreBypassArmor, isDamageArmor) {
+    if (!damageSource.isBypassArmor() || ignoreBypassArmor) {
+        if (isDamageArmor) player.getInventory().hurtArmor(damageSource, initialDamage, $mrqxInventory.ALL_ARMOR_SLOTS)
+        initialDamage = $mrqxCombatRules.getDamageAfterAbsorb(initialDamage, Math.floor(player.getAttributeTotalValue('minecraft:generic.armor')), player.getAttributeTotalValue('minecraft:generic.armor_toughness'))
+    }
+    return initialDamage
+}
+
+/**
+ * 获取魔法减伤后伤害值
+ * @param {Internal.ServerPlayer} player
+ * @param {DamageSource} damageSource
+ * @param {number} initialDamage
+ * @param {boolean} ignoreBypassMagic
+ * @param {boolean} ignoreBypassEnchantments
+ * @returns {number}
+ */
+function mrqxGetDamageAfterMagicAbsorb(player, damageSource, initialDamage, ignoreBypassMagic, ignoreBypassEnchantments) {
+    if (damageSource.isBypassMagic() && !ignoreBypassMagic) {
+        return initialDamage
+    }
+    if (player.hasEffect('minecraft:resistance') && damageSource.getType() != 'outOfWorld') {
+        initialDamage = Math.max(initialDamage * (25 - (player.getEffect('minecraft:resistance').getAmplifier() + 1) * 5) / 25, 0)
+    }
+    if (initialDamage <= 0) {
+        return 0
+    }
+    if (damageSource.isBypassEnchantments() && !ignoreBypassEnchantments) {
+        return initialDamage
+    }
+    let enchantmentProtection = $mrqxEnchantmentHelper.getDamageProtection(player.getArmorSlots(), damageSource)
+    if (enchantmentProtection > 0) {
+        initialDamage = $mrqxCombatRules.getDamageAfterMagicAbsorb(initialDamage, enchantmentProtection)
+    }
+    return initialDamage
+}

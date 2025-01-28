@@ -58,7 +58,7 @@
 	#Range: -5 ~ 5
 	potGap = 0
 	#Potion HUD mini mode
-	potMini = false
+	potMini = true
 	#Potion HUD horizontal mode
 	potHor = false
 	#Full bar duration
@@ -99,10 +99,10 @@
 	potHalign = "LEFT"
 	#Potion HUD position (X)
 	#Range: -9999 ~ 9999
-	xPotionPos = 10
+	xPotionPos = 0
 	#Potion HUD position (Y)
 	#Range: -9999 ~ 9999
-	yPotionPos = 12
+	yPotionPos = 21
 	#Helmet position (X)
 	#Range: -9999 ~ 9999
 	helmPosX = 103

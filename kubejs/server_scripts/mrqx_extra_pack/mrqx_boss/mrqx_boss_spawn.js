@@ -11,8 +11,11 @@ const mrqxBossChampionMap = {
     'twilightforest:snow_queen': 'mrqx_aurora',
 }
 
+const mrqxBossChampionTypeList = ['mrqx_somite', 'mrqx_slave_owner', 'mrqx_spore_aggregation', 'mrqx_buring_blood', 'mrqx_co_frequency', 'mrqx_infinity_tear', 'mrqx_snowstorm', 'mrqx_aurora']
+
 const mrqxBossTypeList = bossTypeList
 mrqxBossTypeList.push('twilightforest:yeti_alpha')
+mrqxBossTypeList.push('witherstormmod:wither_storm')
 
 EntityEvents.spawned(event => {
     /*** @type {Internal.LivingEntity}*/
@@ -75,6 +78,7 @@ const mrqxBossSpawn = {
             entity.heal(entity.getMaxHealth())
         }
     },
+
     'minecraft:ender_dragon': function (event, diff, playerCount) {
         if (diff > 0) {
             /*** @type {Internal.LivingEntity}*/
@@ -83,6 +87,24 @@ const mrqxBossSpawn = {
             entity.modifyAttribute('minecraft:generic.armor_toughness', 'mrqxBossDiffEnderDragonAttributeA', diff * 1, 'addition')
             entity.modifyAttribute('minecraft:generic.armor_toughness', 'mrqxBossDiffEnderDragonAttributeB', diff * 0.1, 'multiply_base')
             entity.modifyAttribute('minecraft:generic.max_health', 'mrqxBossDiffEnderDragonAttributeA', diff * 20, 'addition')
+            entity.heal(entity.getMaxHealth())
+        }
+    },
+
+    'witherstormmod:wither_storm': function (event, diff, playerCount) {
+        if (diff > 0) {
+            /*** @type {Internal.LivingEntity}*/
+            let entity = event.entity
+            entity.modifyAttribute('witherstormmod:evolution_speed', 'mrqxBossDiffWitherStormAttributeA', diff * 1, 'addition')
+            entity.modifyAttribute('witherstormmod:evolution_speed', 'mrqxBossDiffWitherStormAttributeB', diff * 0.1, 'multiply_base')
+            entity.modifyAttribute('witherstormmod:target_stationary_flying_speed', 'mrqxBossDiffWitherStormAttributeA', diff * 0.02, 'addition')
+            entity.modifyAttribute('witherstormmod:target_stationary_flying_speed', 'mrqxBossDiffWitherStormAttributeB', diff * 0.1, 'multiply_base')
+            entity.modifyAttribute('witherstormmod:slow_flying_speed', 'mrqxBossDiffWitherStormAttributeA', diff * 0.02, 'addition')
+            entity.modifyAttribute('witherstormmod:slow_flying_speed', 'mrqxBossDiffWitherStormAttributeB', diff * 0.1, 'multiply_base')
+            entity.modifyAttribute('witherstormmod:hunchback_follow_range', 'mrqxBossDiffWitherStormAttributeA', diff * 1, 'addition')
+            entity.modifyAttribute('witherstormmod:hunchback_follow_range', 'mrqxBossDiffWitherStormAttributeB', diff * 0.1, 'multiply_base')
+            entity.modifyAttribute('minecraft:generic.max_health', 'mrqxBossDiffWitherStormAttributeA', diff * 20, 'addition')
+            entity.modifyAttribute('minecraft:generic.flying_speed', 'mrqxBossDiffWitherStormAttributeA', diff * 0.05, 'addition')
             entity.heal(entity.getMaxHealth())
         }
     },

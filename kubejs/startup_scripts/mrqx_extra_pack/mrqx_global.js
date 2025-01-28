@@ -12,6 +12,7 @@ global.mrqxTYPE_MAP = {
     'kubejs:mrqx_seven_sins': Text.of({ "translate": "mrqx_extra_pack.tooltips.mrqx_seven_sins" }).color('#800000'),
     'kubejs:mrqx_steam': Text.of({ "translate": "mrqx_extra_pack.tooltips.mrqx_steam" }).color('#bbbbbb'),
     'kubejs:mrqx_celestial_body': Text.of({ "translate": "mrqx_extra_pack.tooltips.mrqx_celestial_body" }).color('#0000a9'),
+    'kubejs:mrqx_knight': Text.of({ "translate": "mrqx_extra_pack.tooltips.mrqx_knight" }).color('#c4d6ae'),
     'kubejs:mrqx_obtain_effect': Text.gold({ "translate": "mrqx_extra_pack.tooltips.mrqx_obtain_effect" }),
     'kubejs:mrqx_obtain_effect_only': Text.gold({ "translate": "mrqx_extra_pack.tooltips.mrqx_obtain_effect_only" }),
     'kubejs:mrqx_change_target': Text.gold({ "translate": "mrqx_extra_pack.tooltips.mrqx_change_target" }),

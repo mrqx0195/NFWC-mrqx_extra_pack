@@ -133,6 +133,22 @@ const mrqxOrganPlayerKeyPressedOnlyStrategies = {
         }
         player.addItemCooldown('mrqx_extra_pack:phantom_heart', cooldown)
     },
+
+    // 骑士链锤
+    'mrqx_extra_pack:knight_chain_hammer': function (event, organ) {
+        let player = event.player
+        let item = Item.of('twilightforest:block_and_chain')
+        let typeMap = getPlayerChestCavityTypeMap(player)
+        if (typeMap.has('kubejs:mrqx_knight')) {
+            let count = typeMap.get('kubejs:mrqx_knight').length
+            item = item.enchant('twilightforest:destruction', Math.floor(count / 3))
+            item = item.enchant('minecraft:sharpness', Math.floor(count / 1.5))
+        }
+        let entity = new $mrqxChainBlock($mrqxTFEntities.CHAIN_BLOCK.get(), player.level, player, 'main_hand', item)
+        entity.spawn()
+        item.getOrCreateTag().putUUID('chainEntity', entity.getUuid())
+        player.addItemCooldown('mrqx_extra_pack:knight_chain_hammer', 20)
+    }
 }
 
 var assign_organ_player_key_pressed_only = Object.assign(organPlayerKeyPressedOnlyStrategies, mrqxOrganPlayerKeyPressedOnlyStrategies)
