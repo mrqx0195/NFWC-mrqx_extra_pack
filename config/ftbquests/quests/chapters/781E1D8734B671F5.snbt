@@ -26,6 +26,8 @@
 				""
 				"&e当然，在支持墨染之前，最好还是先支持一下野营组。没有脆骨症，也就没有本拓展包。&r"
 				"{\"text\":\"点击前往野营组的爱发电\",\"color\":\"yellow\",\"underlined\":\"true\",\"clickEvent\":{\"action\":\"open_url\",\"value\":\"https://afdian.com/a/yorunina\"}}"
+				""
+				"（下方赞助者名单按赞助档位排序，同档位则时间近的靠前）"
 			]
 			icon: {
 				Count: 1b
@@ -52,7 +54,14 @@
 			y: 0.0d
 		}
 		{
+			dependencies: ["6BC9F6B3A988D413"]
 			id: "10388E5D88508947"
+			rewards: [{
+				id: "2DA1795AC0F58F31"
+				item: "lightmanscurrency:coin_netherite"
+				type: "item"
+			}]
+			subtitle: "第一位大额赞助！——2024-08-22"
 			tasks: [{
 				id: "69B2BC2CE321E01B"
 				item: {
@@ -62,8 +71,122 @@
 				}
 				type: "item"
 			}]
+			title: "蓝蔷薇"
+			x: 1.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["6BC9F6B3A988D413"]
+			icon: "kubejs:sponsor_badge"
+			id: "1F1E1780614DE0FD"
+			subtitle: "第一位赞助者！——2024-07-27"
+			tasks: [{
+				id: "7B6AC6BBBA7B6108"
+				title: "真绝"
+				type: "checkmark"
+			}]
+			x: 1.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["6BC9F6B3A988D413"]
+			icon: "kubejs:sponsor_badge"
+			id: "3751AA8CACBC312E"
+			subtitle: "第二位赞助者！——2024-08-21"
+			tasks: [{
+				id: "3DD52C8A9C0DD12D"
+				title: "C7H5N3O6"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["6BC9F6B3A988D413"]
+			icon: "kubejs:sponsor_badge"
+			id: "7E83AF4F21F29870"
+			subtitle: "第三位赞助者！——2024-08-21"
+			tasks: [{
+				id: "44C316A730DB3D1A"
+				title: "guguguguGuest"
+				type: "checkmark"
+			}]
+			x: -1.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["6BC9F6B3A988D413"]
+			icon: "kubejs:sponsor_badge"
+			id: "07FEC65B06580F37"
+			subtitle: "第五位赞助者！——2024-08-24"
+			tasks: [{
+				id: "3634F8BAA4A5F70E"
+				title: "顺天一方"
+				type: "checkmark"
+			}]
+			x: -2.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["6BC9F6B3A988D413"]
+			id: "056C9D4D3B5E42F6"
+			rewards: [{
+				id: "6F7DDF5E19323DBB"
+				item: "lightmanscurrency:coin_netherite"
+				type: "item"
+			}]
+			subtitle: "第二位大额赞助！——2024-10-03"
+			tasks: [{
+				id: "133CAA5611681E1D"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:enriched_ore_cluster_precipitation_membrane"
+					tag: { }
+				}
+				type: "item"
+			}]
+			title: "凸Owo"
+			x: 0.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["6BC9F6B3A988D413"]
+			id: "3A57B00F46523918"
+			rewards: [{
+				id: "010CA77DE76F0A76"
+				item: "lightmanscurrency:coin_netherite"
+				type: "item"
+			}]
+			subtitle: "第三位大额赞助！——2025-01-01"
+			tasks: [{
+				id: "73C79ACC2D3A8E43"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:phantom_heart"
+					tag: { }
+				}
+				type: "item"
+			}]
+			title: "索多玛浪人"
+			x: -0.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["6BC9F6B3A988D413"]
+			id: "05017F985A259B91"
+			rewards: [{
+				id: "0FABA3F9A950C376"
+				item: "lightmanscurrency:coin_netherite"
+				type: "item"
+			}]
+			subtitle: "第四位大额赞助！——2025-01-03"
+			tasks: [{
+				id: "38AF595CDE702A6F"
+				item: "mrqx_extra_pack:xiao_amburm"
+				type: "item"
+			}]
 			x: -1.5d
-			y: 3.0d
+			y: 1.5d
 		}
 	]
 	title: "赞助者名单"

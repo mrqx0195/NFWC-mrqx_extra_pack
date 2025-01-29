@@ -154,6 +154,18 @@
 			x: 6.0d
 			y: 8.5d
 		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 4.46d
+			hover: [ ]
+			image: "kubejs:textures/task/collection_1.png"
+			rotation: 0.0d
+			width: 17.0d
+			x: -9.75d
+			y: 10.0d
+		}
 	]
 	order_index: 2
 	quest_links: [ ]
@@ -2371,7 +2383,7 @@
 				}
 				type: "item"
 			}]
-			x: 8.0d
+			x: 10.0d
 			y: -4.25d
 		}
 		{
@@ -3543,6 +3555,437 @@
 			}]
 			x: 5.0d
 			y: 7.5d
+		}
+		{
+			dependencies: ["267847C6D3DBEB9C"]
+			description: ["能够均分并提升你的&6资源值&r与&5扭曲值&r上限，可以让你更容易见到词条数量多的精英怪（？"]
+			id: "4CA30141D3239ECE"
+			rewards: [{
+				id: "5FFA0B03D8678623"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "扭曲的统一"
+			tasks: [{
+				id: "193A98785EE5D4E1"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:warp_electrical_box"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 7.0d
+			y: 9.5d
+		}
+		{
+			dependencies: ["2B1A1B95F863B332"]
+			description: ["&e元素损伤&r器官之一，能够根据体温造成额外的&b冻结损伤&r。"]
+			id: "0D4AF457A891BF7F"
+			subtitle: "它在你手里映射极光"
+			tasks: [{
+				id: "4012704CD40B328B"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:aurora_active_ice_dragon_bead"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -9.75d
+			y: 6.75d
+		}
+		{
+			dependencies: ["2B1A1B95F863B332"]
+			description: ["&e元素损伤&r器官之一，能够根据体温造成额外的&c灼燃损伤&r。"]
+			id: "747B42E978D851B2"
+			subtitle: "它在你手里愈加炙热"
+			tasks: [{
+				id: "7C5E9B09D792FB60"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:buring_blood_active_fire_dragon_bead"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -8.75d
+			y: 6.75d
+		}
+		{
+			dependencies: ["267847C6D3DBEB9C"]
+			description: ["根据&7算力&r消耗&6资源值&r持续降低你的体温，能够在下界之类的地方提供一些帮助。"]
+			id: "0E3DBDA1E90A85C6"
+			rewards: [{
+				id: "287FAAD2B28F2637"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "一个“冷”笑话"
+			tasks: [{
+				id: "6310A6D9D5412707"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:vacuum_freezer"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 8.0d
+			y: 9.5d
+		}
+		{
+			dependencies: ["267847C6D3DBEB9C"]
+			description: ["能够在&5扭曲值&r和&e体温&r之间进行转化。"]
+			id: "17A693D0A2CEEE58"
+			rewards: [{
+				id: "0DEF5D86831882DB"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "不正常的转变"
+			tasks: [{
+				id: "7B283E59997333CC"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:warp_entropy_change_machine"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 9.0d
+			y: 9.5d
+		}
+		{
+			dependencies: ["267847C6D3DBEB9C"]
+			description: ["能够控制你的&6资源值&r与&5扭曲值&r，或许可以帮助控制（通常难以控制的）&5扭曲值。"]
+			id: "718693C2206D8A8B"
+			subtitle: "只是充放电"
+			tasks: [{
+				id: "1322429AA437B575"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:warp_capacitance"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 10.0d
+			y: 9.5d
+		}
+		{
+			dependencies: ["267847C6D3DBEB9C"]
+			description: [
+				"能够帮助你快速破坏迷宫/城堡。"
+				""
+				"&m啊！我的审稿！&r"
+			]
+			id: "7B0B806A47E2D044"
+			rewards: [{
+				id: "651A9FA060FB13ED"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "……什么声音？是错觉吗？"
+			tasks: [{
+				id: "2B86EED9F0D06297"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:soul_of_emerald_pickaxe"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 11.0d
+			y: 9.5d
+		}
+		{
+			dependencies: ["1B75F5835B3F3E31"]
+			description: ["&2处理器&r器官之一，能够根据&5龙&r器官数提供&7算力&r，并根据&7算力&r提供&5龙&r器官数。"]
+			id: "63721309F1CE86F5"
+			subtitle: "如果你是龙"
+			tasks: [{
+				id: "0309C7DC8BEDDA6F"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:dragon_long_cpu"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 8.0d
+			y: -4.25d
+		}
+		{
+			dependencies: ["1B75F5835B3F3E31"]
+			description: ["&2处理器&r器官之一，能够根据&d糖果&r器官数提供&7算力&r，并根据&7算力&r提供&d糖果&r器官数。"]
+			id: "1D7A376803AB5715"
+			subtitle: "牙齿掉了"
+			tasks: [{
+				id: "4009CDCFEF0F81A2"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:candy_sugary_cpu"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 9.0d
+			y: -4.25d
+		}
+		{
+			dependencies: ["0E165E778629BB61"]
+			description: [
+				"&2骑士&r是一类较为简单的器官，大多提供纯粹的数值。"
+				""
+				"其材料大多需要在&5暮色森林&r中取得。"
+			]
+			id: "1FC488E047F5FBE7"
+			shape: "rsquare"
+			subtitle: "忠诚！忠诚！还是**的忠诚！"
+			tasks: [{
+				id: "79DFF686DEA9F741"
+				item: {
+					Count: 1b
+					ForgeCaps: {
+						"cold_sweat:item_insulation": {
+							Insulation: [ ]
+						}
+					}
+					id: "twilightforest:knightmetal_helmet"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			title: "骑士：永远的忠诚"
+			x: -15.75d
+			y: 8.75d
+		}
+		{
+			dependencies: ["1FC488E047F5FBE7"]
+			description: ["&2骑士&r器官之一，类似遗物金属板，在提供一定生存能力的基础上，额外提供了一些战斗能力。"]
+			id: "0A00B7AC1458D9E8"
+			tasks: [{
+				id: "13698EFDD20500A0"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:knight_metal_plate"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -14.75d
+			y: 9.75d
+		}
+		{
+			dependencies: ["1FC488E047F5FBE7"]
+			description: ["&2骑士&r器官之一，能够根据防御（胸腔数值）提供额外的伤害减免。"]
+			id: "45F160ACBBC7A3B5"
+			subtitle: "骑士的防护用具"
+			tasks: [{
+				id: "76A459A51C1B96FD"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:knight_armor_piece"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -13.75d
+			y: 9.75d
+		}
+		{
+			dependencies: ["1FC488E047F5FBE7"]
+			description: [
+				"&2骑士&r器官之一，能够根据防御（胸腔数值）提供额外的伤害减免，并有概率使造成的伤害无视护甲。激活后还能重设你的漂浮（胸腔数值）。"
+				""
+				"&3强化：每点防御（胸腔数值）提供额外的伤害减免增加，且使这次伤害失去穿甲特性。&r"
+			]
+			id: "41BEF26D237D19AC"
+			subtitle: "“哪怕身死，灵魂也仍坚守信条”"
+			tasks: [{
+				id: "1DE7E447B0A2404B"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:phantom_knight_armor"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -12.75d
+			y: 9.75d
+		}
+		{
+			dependencies: ["1FC488E047F5FBE7"]
+			description: ["&2骑士&r器官之一，能够提供少量增益。"]
+			icon: {
+				Count: 1b
+				id: "mrqx_extra_pack:broken_knight_sword"
+				tag: { }
+			}
+			id: "22B2AB943E30F9AE"
+			tasks: [
+				{
+					id: "481E245C68583B28"
+					item: {
+						Count: 1b
+						id: "mrqx_extra_pack:broken_knight_sword"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					id: "117630B9B4C97683"
+					item: {
+						Count: 1b
+						id: "mrqx_extra_pack:broken_knight_shield"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					id: "7F7FFF8CF7A54289"
+					item: {
+						Count: 1b
+						id: "mrqx_extra_pack:useless_ring"
+						tag: { }
+					}
+					type: "item"
+				}
+			]
+			title: "损坏之物"
+			x: -11.75d
+			y: 9.75d
+		}
+		{
+			dependencies: ["1FC488E047F5FBE7"]
+			description: ["&2骑士&r器官之一，能够提供伤害增益。"]
+			id: "0B19186677FC085B"
+			subtitle: "骑士的右手"
+			tasks: [{
+				id: "156B56815EAF4993"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:knight_sword"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -10.75d
+			y: 9.75d
+		}
+		{
+			dependencies: ["1FC488E047F5FBE7"]
+			description: ["&2骑士&r器官之一，在提供伤害增益的同时还能额外造成真实伤害。"]
+			id: "466F9B70BF290681"
+			subtitle: "“手执威光，便是为了扫尽世间恶行。”"
+			tasks: [{
+				id: "7B0D966BF3A3EBB6"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:blazing_sun"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -9.75d
+			y: 9.75d
+		}
+		{
+			dependencies: ["1FC488E047F5FBE7"]
+			description: ["&2骑士&r器官之一，能够提供伤害减免。"]
+			id: "331F7EDF79A16BC7"
+			subtitle: "骑士的左手"
+			tasks: [{
+				id: "01518C5018A4E77C"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:knight_shield"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -8.75d
+			y: 9.75d
+		}
+		{
+			dependencies: ["1FC488E047F5FBE7"]
+			description: [
+				"&2骑士&r器官之一，在提供伤害减免的同时还能额外使这次伤害失去一些特性。"
+				""
+				"&3强化：潜行时提供额外的伤害减免。&r"
+			]
+			id: "5ADFB34B80F2CDF9"
+			subtitle: "“以&k史蒂夫&r的名义起誓！”"
+			tasks: [{
+				id: "63E24E78A43B57AA"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:resolute_knight_shield"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -7.75d
+			y: 9.75d
+		}
+		{
+			dependencies: ["1FC488E047F5FBE7"]
+			description: ["&2骑士&r器官之一，能够提供暴击概率与伤害，按下主动技能按键还能掷出一枚链锤。"]
+			id: "43A4482FF9F5C3CD"
+			subtitle: "破坏性的一击"
+			tasks: [{
+				id: "60989766D2FFD184"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:knight_chain_hammer"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -6.75d
+			y: 9.75d
+		}
+		{
+			dependencies: ["1FC488E047F5FBE7"]
+			description: [
+				"&2骑士&r器官之一，能够提供暴击概率与伤害，造成伤害时还有概率在敌人脚下生成一个湮灭立方。"
+				""
+				"&7注：如果你正在使用物品，湮灭立方会远离你，可以借此控制湮灭立方的位置。&r"
+				""
+				"&3强化：有额外的概率召唤湮灭立方。&r"
+			]
+			id: "4385D7348CED65F9"
+			tasks: [{
+				id: "61E20F2DD45C3907"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:knight_chain_hammer_of_annihilation"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -5.75d
+			y: 9.75d
+		}
+		{
+			dependencies: ["1FC488E047F5FBE7"]
+			description: ["&2骑士&r器官的核心，能够与&6国王&r器官联动，使部分&2骑士&r器官产生更为强大的效果。"]
+			id: "0DDECDD005AFD8EF"
+			subtitle: "骑士精神的凝结"
+			tasks: [{
+				id: "5F87C956A90F052F"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:core_of_knights"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -4.75d
+			y: 9.75d
 		}
 	]
 	title: "额外器官：看看你的器官"

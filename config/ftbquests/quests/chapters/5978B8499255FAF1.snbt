@@ -1,5 +1,5 @@
 {
-	default_hide_dependency_lines: false
+	default_hide_dependency_lines: true
 	default_quest_shape: ""
 	filename: "5978B8499255FAF1"
 	group: "16675FCA19680C36"
@@ -7,6 +7,205 @@
 	id: "5978B8499255FAF1"
 	order_index: 3
 	quest_links: [ ]
-	quests: [ ]
+	quests: [
+		{
+			dependencies: ["51F52E312D5B0D30"]
+			description: [
+				"所有的唱片都可以通过交货协议获取。&m（概率？别问我）&r"
+				""
+				"&l&e注意：需要安装对应的分包后才能使用！！！&r"
+			]
+			icon: "minecraft:jukebox"
+			id: "3006D350038B7178"
+			subtitle: "只是一些好听的歌而已"
+			tasks: [{
+				id: "7B9C97F0B6733729"
+				title: "墨染的精选唱片"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["3006D350038B7178"]
+			id: "77EF20EBD0635689"
+			rewards: [{
+				id: "43C6403A42359EEC"
+				item: "lightmanscurrency:coin_diamond"
+				type: "item"
+			}]
+			subtitle: "干什么.jpg"
+			tasks: [{
+				id: "01EDD194F9A3FFE8"
+				item: "mrqx_disc_pack:arghena_disc"
+				type: "item"
+			}]
+			title: "Laur VS Feryquitous - Arghena"
+			x: -1.0d
+			y: -2.25d
+		}
+		{
+			dependencies: ["3006D350038B7178"]
+			id: "45B55A2FFE83ACBA"
+			rewards: [{
+				id: "73675D371220A748"
+				item: "lightmanscurrency:coin_diamond"
+				type: "item"
+			}]
+			subtitle: "蛋挞林"
+			tasks: [{
+				id: "0605E1865BCEC030"
+				item: "mrqx_disc_pack:dantalion_disc"
+				type: "item"
+			}]
+			title: "Team Grimoire - Dantalion"
+			x: 0.0d
+			y: -2.25d
+		}
+		{
+			dependencies: ["3006D350038B7178"]
+			id: "3459488BE7664A7B"
+			rewards: [{
+				id: "60245B69D2C8DE78"
+				item: "lightmanscurrency:coin_diamond"
+				type: "item"
+			}]
+			subtitle: "贪吃的后果"
+			tasks: [{
+				id: "5EECF21501B94972"
+				item: "mrqx_disc_pack:desive_disc"
+				type: "item"
+			}]
+			title: "MisomyL - Désive"
+			x: 1.0d
+			y: -2.25d
+		}
+		{
+			dependencies: ["3006D350038B7178"]
+			id: "0C1AF1872D8D708A"
+			rewards: [{
+				id: "26CBFB77A19C595F"
+				item: "lightmanscurrency:coin_diamond"
+				type: "item"
+			}]
+			subtitle: "被深不可测的伟力所侵……"
+			tasks: [{
+				id: "0E0CEFAE21105BED"
+				item: "mrqx_disc_pack:designant_disc"
+				type: "item"
+			}]
+			title: "Designant - Designant."
+			x: 2.0d
+			y: -2.25d
+		}
+		{
+			dependencies: ["3006D350038B7178"]
+			id: "789819F93C794F48"
+			rewards: [{
+				id: "6E274A9286F96528"
+				item: "lightmanscurrency:coin_diamond"
+				type: "item"
+			}]
+			subtitle: "“对立”之雨"
+			tasks: [{
+				id: "3BA22C40F58CE740"
+				item: "mrqx_disc_pack:rain_of_conflict_in_a_radiant_abyss_disc"
+				type: "item"
+			}]
+			title: "ak＋q - Rain of Conflict in a Radiant Abyss"
+			x: -2.0d
+			y: 2.25d
+		}
+		{
+			dependencies: ["3006D350038B7178"]
+			id: "3AC6C66979F112CC"
+			rewards: [{
+				id: "0F86CBD7D2CE13BD"
+				item: "lightmanscurrency:coin_diamond"
+				type: "item"
+			}]
+			subtitle: "本拓展包第一个宣传片的bgm"
+			tasks: [{
+				id: "4270EE187DB6BAE5"
+				item: "mrqx_disc_pack:inverted_world_disc"
+				type: "item"
+			}]
+			title: "ARForest - Inverted World"
+			x: -1.0d
+			y: 2.25d
+		}
+		{
+			dependencies: ["3006D350038B7178"]
+			id: "1FCFDD64A92D203A"
+			rewards: [{
+				id: "32DAA3B376E425DC"
+				item: "lightmanscurrency:coin_diamond"
+				type: "item"
+			}]
+			subtitle: "直入光是什么歌.jpg"
+			tasks: [{
+				id: "5546458FC4166F40"
+				item: "mrqx_disc_pack:straight_into_the_lights_disc"
+				type: "item"
+			}]
+			title: "Cosmograph - Straight into the lights"
+			x: 0.0d
+			y: 2.25d
+		}
+		{
+			dependencies: ["3006D350038B7178"]
+			id: "19C6FFA408D63D7B"
+			rewards: [{
+				id: "564944C5DC1D1ACA"
+				item: "lightmanscurrency:coin_diamond"
+				type: "item"
+			}]
+			subtitle: "拼好歌？"
+			tasks: [{
+				id: "6C270294E311536B"
+				item: "mrqx_disc_pack:kirakira_noel_story_disc"
+				type: "item"
+			}]
+			title: "Reku Mochizuki - Kirakira Noel Story!!"
+			x: 1.0d
+			y: 2.25d
+		}
+		{
+			dependencies: ["3006D350038B7178"]
+			id: "37F93425C547E2CF"
+			rewards: [{
+				id: "2F836C1A69F88322"
+				item: "lightmanscurrency:coin_diamond"
+				type: "item"
+			}]
+			subtitle: "种田的小曲"
+			tasks: [{
+				id: "46D705DD96D2EBBF"
+				item: "mrqx_disc_pack:fudahuang_disc"
+				type: "item"
+			}]
+			title: "塞壬唱片-MSR / Kirara Magic - 赴大荒"
+			x: 2.0d
+			y: 2.25d
+		}
+		{
+			dependencies: ["3006D350038B7178"]
+			id: "4D8AA954F36F36B4"
+			rewards: [{
+				id: "4FC7B9BF3AB47898"
+				item: "lightmanscurrency:coin_diamond"
+				type: "item"
+			}]
+			subtitle: "深渊凝视者"
+			tasks: [{
+				id: "56B51612982BB2DD"
+				item: "mrqx_disc_pack:abyssgazer_disc"
+				type: "item"
+			}]
+			title: "xi VS Sakuzyo - Abyssgazer"
+			x: -2.0d
+			y: -2.25d
+		}
+	]
 	title: "额外唱片：墨染精选"
 }
