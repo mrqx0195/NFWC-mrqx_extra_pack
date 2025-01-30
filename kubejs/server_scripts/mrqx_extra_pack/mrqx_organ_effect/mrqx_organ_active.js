@@ -81,6 +81,15 @@ const mrqxOrganActiveStrategies = {
         }
     },
 
+    // 扭曲变电箱
+    'mrqx_extra_pack:warp_electrical_box': function (player, organ, attributeMap) {
+        let maxCount = ((player.persistentData.getInt(resourceCountMax) ?? defaultResourceMax) + (player.persistentData.getInt(warpCountMax) ?? defaultWarpMax)) / 2 + 25
+        player.persistentData.putInt(resourceCountMax, maxCount)
+        updateResourceMaxCount(player, maxCount)
+        player.persistentData.putInt(warpCountMax, maxCount)
+        updateWarpMaxCount(player, maxCount)
+    },
+
     // 扭曲电容
     'mrqx_extra_pack:warp_capacitance': function (player, organ, attributeMap) {
         let warpMaxCount = player.persistentData.getInt(warpCountMax) ?? defaultWarpMax
@@ -921,15 +930,6 @@ const mrqxOrganActiveOnlyStrategies = {
     // 实际运行逻辑不在这，这只是为了防止报错
     'mrqx_extra_pack:automatic_wax_protector': function (player, organ, attributeMap) {
         return
-    },
-
-    // 扭曲变电箱
-    'mrqx_extra_pack:warp_electrical_box': function (player, organ, attributeMap) {
-        let maxCount = ((player.persistentData.getInt(resourceCountMax) ?? defaultResourceMax) + (player.persistentData.getInt(warpCountMax) ?? defaultWarpMax)) / 2 + 25
-        player.persistentData.putInt(resourceCountMax, maxCount)
-        updateResourceMaxCount(player, maxCount)
-        player.persistentData.putInt(warpCountMax, maxCount)
-        updateWarpMaxCount(player, maxCount)
     },
 
     // 能量核心

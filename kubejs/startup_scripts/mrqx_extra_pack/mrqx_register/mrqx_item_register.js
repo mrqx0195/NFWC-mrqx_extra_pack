@@ -2040,7 +2040,7 @@ StartupEvents.registry('item', event => {
         .tag('itemborders:diamond')
         .tag('kubejs:resource')
         .tag('kubejs:warp')
-        .tag('kubejs:active_only')
+        .tag('kubejs:active')
 
     // 激活·冰龙宝玉·极光化
     registerOrgan(new Organ('mrqx_extra_pack:aurora_active_ice_dragon_bead')

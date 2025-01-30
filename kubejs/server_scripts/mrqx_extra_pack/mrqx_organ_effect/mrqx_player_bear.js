@@ -27,7 +27,7 @@ const mrqxOrganPlayerBearStrategies = {
 
     // 幽匿沉积体
     'mrqx_extra_pack:sculk_depositer': function (event, organ, data) {
-        event.amount *= 1 - Math.max(mrqxGetSculkCount(event.entity), 0.1)
+        event.amount *= 1 - Math.min(mrqxGetSculkCount(event.entity), 0.1)
     },
 
     // 蒸汽甲胄
@@ -38,7 +38,7 @@ const mrqxOrganPlayerBearStrategies = {
     },
 
     // 骑士装甲板
-    'mrqx_extra_pack:knight_armor_piece': function (event, organ) {
+    'mrqx_extra_pack:knight_armor_piece': function (event, organ, data) {
         let player = event.entity
         let playerChestInstance = player.getChestCavityInstance()
         let typeMap = getPlayerChestCavityTypeMap(player)
@@ -185,7 +185,7 @@ const mrqxOrganPlayerBearOnlyStrategies = {
     },
 
     // 幻影骑士甲
-    'mrqx_extra_pack:phantom_knight_armor': function (event, organ) {
+    'mrqx_extra_pack:phantom_knight_armor': function (event, organ, data) {
         let player = event.entity
         let playerChestInstance = player.getChestCavityInstance()
         let typeMap = getPlayerChestCavityTypeMap(player)

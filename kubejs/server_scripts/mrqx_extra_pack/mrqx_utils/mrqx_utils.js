@@ -369,7 +369,12 @@ function mrqxSentientGreatscytheDamageByOthers(event) {
  * @returns {Internal.ItemStack[]}
  */
 function mrqxGetCuriosItemList(player) {
-    return new $CuriosApi.getCuriosHelper().getEquippedCurios(player).resolve().get().getAllItems()
+    let curios = new $CuriosApi.getCuriosHelper().getEquippedCurios(player).resolve()
+    if (curios.isPresent()) {
+        return curios.get().getAllItems()
+    } else {
+        return []
+    }
 }
 
 /**

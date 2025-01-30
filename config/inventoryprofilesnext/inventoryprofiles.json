@@ -32,5 +32,12 @@
         "show_move_all_button": {
             "value": false
         }
+    },
+    "LockedSlotsSettings": {
+        "lock_slots_switch_config_modifier": {
+            "main": {
+                "keys": ""
+            }
+        }
     }
 }

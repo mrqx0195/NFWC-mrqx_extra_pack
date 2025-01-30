@@ -617,12 +617,14 @@ const mrqxOrganPlayerDamageOnlyStrategies = {
 		let player = event.source.player
 		let entity = event.entity
 		let entityList = entity.level.getEntitiesWithin(entity.boundingBox.inflate(0.5))
+		let count = 0
 		entityList.forEach(e => {
 			if (e.getType() == 'twilightforest:cube_of_annihilation') {
-				entity.invulnerableTime = 0
+				event.source.callBypassArmor().bypassEnchantments().callBypassInvul().callBypassMagic()
+				count++
 			}
 		})
-		if (Math.random() < 0.1) {
+		if (Math.random() < 0.1 / (count + 1) ** 2) {
 			/** @type {Internal.ThrowableProjectile} */
 			let e = event.entity.level.createEntity('twilightforest:cube_of_annihilation')
 			e.setPos(entity.getX(), entity.getY(), entity.getZ())
@@ -631,16 +633,7 @@ const mrqxOrganPlayerDamageOnlyStrategies = {
 			entity.invulnerableTime = 0
 		}
 		if (mrqxGetCoreOfKnightCount(player) > 0) {
-			for (let i = mrqxGetCoreOfKnightCount(player); i > 0; i--) {
-				if (Math.random() < 0.1) {
-					/** @type {Internal.ThrowableProjectile} */
-					let e = event.entity.level.createEntity('twilightforest:cube_of_annihilation')
-					e.setPos(entity.getX(), entity.getY(), entity.getZ())
-					e.setOwner(player)
-					e.spawn()
-					entity.invulnerableTime = 0
-				}
-			}
+			event.amount *= count + 1
 		}
 	}
 }

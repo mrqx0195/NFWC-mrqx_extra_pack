@@ -14,7 +14,7 @@ const mrqxBossChampionMap = {
 const mrqxBossChampionTypeList = ['mrqx_somite', 'mrqx_slave_owner', 'mrqx_spore_aggregation', 'mrqx_buring_blood', 'mrqx_co_frequency', 'mrqx_infinity_tear', 'mrqx_snowstorm', 'mrqx_aurora']
 
 const mrqxBossTypeList = bossTypeList
-mrqxBossTypeList.push('twilightforest:yeti_alpha')
+mrqxBossTypeList.push('twilightforest:alpha_yeti')
 mrqxBossTypeList.push('witherstormmod:wither_storm')
 
 EntityEvents.spawned(event => {
@@ -42,7 +42,7 @@ EntityEvents.spawned(event => {
             player.persistentData.put('mrqxBossDiffMap', diffMap)
         }
     })
-    if (diff > 0) {
+    if (diff > 5) {
         /** @type {Special.Attribute[]} */
         let attributeMap = [
             'minecraft:generic.armor',
@@ -50,7 +50,7 @@ EntityEvents.spawned(event => {
             'minecraft:generic.max_health'
         ]
         attributeMap.forEach(attribute => [
-            entity.modifyAttribute(attribute, 'mrqxBossDiffBaseAttribute', diff * 0.1, 'multiply_base')
+            entity.modifyAttribute(attribute, 'mrqxBossDiffBaseAttribute', (diff - 5) * 0.1, 'multiply_base')
         ])
         entity.getPersistentData().putInt('mrqxBossDiff', diff)
         entity.getPersistentData().putInt('mrqxBossPlayerCount', playerCount)
@@ -107,5 +107,17 @@ const mrqxBossSpawn = {
             entity.modifyAttribute('minecraft:generic.flying_speed', 'mrqxBossDiffWitherStormAttributeA', diff * 0.05, 'addition')
             entity.heal(entity.getMaxHealth())
         }
+    },
+    'twilightforest:knight_phantom': function (event, diff, playerCount) {
+        /** @type {Special.Attribute[]} */
+        let attributeMap = [
+            'minecraft:generic.armor',
+            'minecraft:generic.attack_damage',
+            'minecraft:generic.max_health'
+        ]
+        attributeMap.forEach(attribute => [
+            entity.modifyAttribute(attribute, 'mrqxBossDiffBaseAttribute', (diff / 6 - 5) * 0.1, 'multiply_base')
+        ])
+        entity.heal(entity.getMaxHealth())
     },
 }
