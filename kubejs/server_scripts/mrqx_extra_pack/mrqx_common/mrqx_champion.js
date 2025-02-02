@@ -210,7 +210,7 @@ const mrqxChampionPlayerDamageStrategies = {
                 }
             })
         }
-        event.amount /= count
+        if (count > 0) event.amount /= count
     },
 
     // 奴主
@@ -542,7 +542,9 @@ EntityEvents.spawned(event => {
     let typeList = entity.persistentData.get('champion')
     typeList.forEach(type => {
         let typeName = type.getAsString()
-        if (typeName in mrqxBossChampionTypeList && Math.random() < 0.5) event.cancel()
+        if (mrqxBossChampionTypeList.find((value, index, obj) => (typeName == value)) && !(entity.getType() in mrqxBossChampionMap) && Math.random() > 0.2) {
+            event.cancel()
+        }
         if (typeName in mrqxChampionSpawnStrategies) {
             mrqxChampionSpawnStrategies[typeName](event)
         }

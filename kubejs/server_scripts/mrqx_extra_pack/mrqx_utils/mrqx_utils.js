@@ -492,3 +492,31 @@ function mrqxGetDamageAfterMagicAbsorb(player, damageSource, initialDamage, igno
     }
     return initialDamage
 }
+
+/**
+ * Boss增强是否启用
+ * @param {Internal.ServerPlayer} player
+ * @returns {boolean}
+ */
+function mrqxIsBossEnhanceEnabled(player) {
+    /** @type {string} */
+    let isDisnabled = player.stages.getAll().toArray().find(ele => ele.startsWith('mrqx_boss_enhance_is_disabled_'))
+    if (!isDisnabled) {
+        return true
+    }
+    return !(isDisnabled.includes('true'))
+}
+
+/**
+ * Boss词条是否启用
+ * @param {Internal.ServerPlayer} player
+ * @returns {boolean}
+ */
+function mrqxIsBossChampionEnabled(player) {
+    /** @type {string} */
+    let isDisnabled = player.stages.getAll().toArray().find(ele => ele.startsWith('mrqx_boss_champion_is_disabled_'))
+    if (!isDisnabled) {
+        return true
+    }
+    return !(isDisnabled.includes('true'))
+}

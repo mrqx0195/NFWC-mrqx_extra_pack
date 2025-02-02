@@ -1,6 +1,5 @@
 {
   "abyssgazer_song": {
-    "category": "record",
     "sounds": [
       {
         "name": "mrqx_disc_pack:records/abyssgazer_song",
@@ -9,7 +8,6 @@
     ]
   },
   "arghena_song": {
-    "category": "record",
     "sounds": [
       {
         "name": "mrqx_disc_pack:records/arghena_song",
@@ -18,7 +16,6 @@
     ]
   },
   "dantalion_song": {
-    "category": "record",
     "sounds": [
       {
         "name": "mrqx_disc_pack:records/dantalion_song",
@@ -27,7 +24,6 @@
     ]
   },
   "desive_song": {
-    "category": "record",
     "sounds": [
       {
         "name": "mrqx_disc_pack:records/desive_song",
@@ -36,7 +32,6 @@
     ]
   },
   "designant_song": {
-    "category": "record",
     "sounds": [
       {
         "name": "mrqx_disc_pack:records/designant_song",
@@ -45,7 +40,6 @@
     ]
   },
   "rain_of_conflict_in_a_radiant_abyss_song": {
-    "category": "record",
     "sounds": [
       {
         "name": "mrqx_disc_pack:records/rain_of_conflict_in_a_radiant_abyss_song",
@@ -54,7 +48,6 @@
     ]
   },
   "inverted_world_song": {
-    "category": "record",
     "sounds": [
       {
         "name": "mrqx_disc_pack:records/inverted_world_song",
@@ -63,7 +56,6 @@
     ]
   },
   "straight_into_the_lights_song": {
-    "category": "record",
     "sounds": [
       {
         "name": "mrqx_disc_pack:records/straight_into_the_lights_song",
@@ -72,7 +64,6 @@
     ]
   },
   "kirakira_noel_story_song": {
-    "category": "record",
     "sounds": [
       {
         "name": "mrqx_disc_pack:records/kirakira_noel_story_song",
@@ -81,7 +72,6 @@
     ]
   },
   "fudahuang_song": {
-    "category": "record",
     "sounds": [
       {
         "name": "mrqx_disc_pack:records/fudahuang_song",

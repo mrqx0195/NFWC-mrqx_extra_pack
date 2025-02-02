@@ -54,13 +54,13 @@ const mrqxOrganBlockBrokenOnlyStrategies = {
             }
             count += typeMap.get('kubejs:resource').length
             updateResourceCount(player, count)
+            cancel = true
         }
         if (Math.random() <= 0.05 && !player.isShiftKeyDown()) {
             let resource = 0
             let warp = 0
             let magicData = getPlayerMagicData(player)
             let mana = magicData.getMana()
-            player.tell(3)
             if (player.persistentData.contains(resourceCount)) {
                 resource = player.persistentData.getInt(resourceCount)
             }

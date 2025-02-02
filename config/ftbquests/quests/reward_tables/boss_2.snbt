@@ -1,0 +1,33 @@
+{
+	icon: {
+		Count: 1b
+		id: "kubejs:twilight_broken_lich_crown"
+		tag: { }
+	}
+	id: "42D6CCD50A8CEF2B"
+	loot_size: 1
+	order_index: 5
+	rewards: [
+		{
+			command: "/mrqx boss_champion disable mrqx0195 false"
+			icon: {
+				Count: 1b
+				id: "kubejs:prismarine_crown"
+				tag: { }
+			}
+			title: "启用Boss词条"
+			type: "command"
+		}
+		{
+			command: "/mrqx boss_champion disable mrqx0195 true"
+			icon: {
+				Count: 1b
+				id: "kubejs:broken_prismarine_crown"
+				tag: { }
+			}
+			title: "禁用Boss词条"
+			type: "command"
+		}
+	]
+	title: "Boss词条是否启用"
+}

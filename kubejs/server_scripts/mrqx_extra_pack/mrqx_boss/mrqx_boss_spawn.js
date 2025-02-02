@@ -21,7 +21,10 @@ EntityEvents.spawned(event => {
     /*** @type {Internal.LivingEntity}*/
     let entity = event.entity
     if (!mrqxBossTypeList.find((value) => (value == entity.getType()))) return
-    if (entity.getType() in mrqxBossChampionMap) {
+    let player = entity.getLevel().getNearestPlayer(entity, 64)
+    if (!player || !player.isPlayer()) return
+
+    if (entity.getType() in mrqxBossChampionMap && mrqxIsBossChampionEnabled(player)) {
         /** @type {String[]} */
         let typeList = entity.persistentData.get('champion') ?? []
         if (typeList.find((value, index, obj) => (value == mrqxBossChampionMap[entity.getType()]))) return
@@ -33,7 +36,7 @@ EntityEvents.spawned(event => {
     let diff = 0
     let playerCount = 0
     entityList.forEach(player => {
-        if (player.isPlayer()) {
+        if (player.isPlayer() && mrqxIsBossEnhanceEnabled(player)) {
             playerCount++
             /** @type {Internal.CompoundTag} */
             let diffMap = player.persistentData.get('mrqxBossDiffMap') ?? mrqxGetEmptyCompound()
@@ -42,6 +45,8 @@ EntityEvents.spawned(event => {
             player.persistentData.put('mrqxBossDiffMap', diffMap)
         }
     })
+    diff /= playerCount
+
     if (diff > 5) {
         /** @type {Special.Attribute[]} */
         let attributeMap = [
@@ -56,6 +61,7 @@ EntityEvents.spawned(event => {
         entity.getPersistentData().putInt('mrqxBossPlayerCount', playerCount)
         entity.heal(entity.getMaxHealth())
     }
+
     if ((event.getEntity().getType() in mrqxBossSpawn)) {
         mrqxBossSpawn[event.getEntity().getType()](event)
     }

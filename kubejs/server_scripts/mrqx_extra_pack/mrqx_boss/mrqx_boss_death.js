@@ -5,7 +5,7 @@ EntityEvents.death(event => {
     if (!mrqxBossTypeList.find((value) => (value == entity.getType()))) return
     let entityList = entity.level.getEntitiesWithin(new AABB.of(entity.x - 256, entity.y - 256, entity.z - 256, entity.x + 256, entity.y + 256, entity.z + 256))
     entityList.forEach(player => {
-        if (player.isPlayer()) {
+        if (player.isPlayer() && mrqxIsBossEnhanceEnabled(player)) {
             /** @type {Internal.CompoundTag} */
             let diffMap = player.persistentData.get('mrqxBossDiffMap') ?? mrqxGetEmptyCompound()
             if (!diffMap.contains(entity.getType())) diffMap.putInt(entity.getType(), 0)

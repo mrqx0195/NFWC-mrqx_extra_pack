@@ -93,8 +93,8 @@
 				title: "额外物品"
 				type: "checkmark"
 			}]
-			x: 2.5d
-			y: 0.0d
+			x: 2.0d
+			y: 1.25d
 		}
 		{
 			dependencies: ["0D93EB9A703A8946"]
@@ -110,8 +110,8 @@
 				title: "世界的奥秘"
 				type: "checkmark"
 			}]
-			x: -2.5d
-			y: 0.0d
+			x: 2.0d
+			y: -1.25d
 		}
 		{
 			dependencies: ["0D93EB9A703A8946"]
@@ -151,6 +151,74 @@
 			}]
 			x: 0.0d
 			y: 2.5d
+		}
+		{
+			can_repeat: true
+			dependencies: ["0D93EB9A703A8946"]
+			description: [
+				"随着玩家的增强，各大Boss已经失去了它们的威严，甚至被关在机器里处死。"
+				""
+				"所以，某个&m不做人的家伙&r墨染给了那些可怜的Boss一点点的加成。"
+				""
+				"——当你击杀某种Boss超过&e5&r次后，接下来你面对的这种Boss将会得到强化。"
+				""
+				"强化包括数值上的强化（取决于强化等级），也包括额外的能力（由强化等级与周围玩家数量共同决定）。"
+				""
+				"&e强化等级 = ( 周围玩家总击杀次数 ÷ 周围玩家数量) &r"
+				""
+				"当然，某人给了玩家一点选择——只要在这个任务中进行选择，你就能禁用大部分的Boss强化。"
+				""
+				"&e注意：Boss是否被强化取决于生成时大范围内的玩家的设置！只要有玩家启用就会计算其击杀次数！&r"
+			]
+			icon: "twilightforest:final_boss_boss_spawner"
+			id: "756D65DE00A23ACA"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "75F740E24F484C2D"
+				table_id: 610797343002689019L
+				type: "choice"
+			}]
+			subtitle: "太弱小了！没有力量！"
+			tasks: [{
+				id: "7423FB2151DD9491"
+				title: "Boss增强"
+				type: "checkmark"
+			}]
+			x: -2.0d
+			y: -1.25d
+		}
+		{
+			can_repeat: true
+			dependencies: ["0D93EB9A703A8946"]
+			description: [
+				"这部分强化也属于Boss强化的一部分，但目前只适用于&5暮色森林&r的Boss——当然，未来会有更多。"
+				""
+				"启用后，这些Boss会在生成时获得一个固定的词条——这会让它们获得一些额外的能力。"
+				""
+				"普通怪物也有可能获得这些词条……但因为其中所蕴含的强大力量，每个Boss词条会有&e80%&r的概率使这个怪物在生成时消亡。"
+				""
+				"&e注意：Boss是否有词条取决于生成时最近的玩家的设置！&r"
+			]
+			icon: {
+				Count: 1b
+				id: "kubejs:twilight_broken_lich_crown"
+				tag: { }
+			}
+			id: "2EC32FABFDB3F1EE"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "08E151D3A15B6C8C"
+				table_id: 4816262066896432939L
+				type: "choice"
+			}]
+			subtitle: "另一个强化"
+			tasks: [{
+				id: "328329558A0A08D3"
+				title: "Boss词条"
+				type: "checkmark"
+			}]
+			x: -2.0d
+			y: 1.25d
 		}
 	]
 	title: "简介"
