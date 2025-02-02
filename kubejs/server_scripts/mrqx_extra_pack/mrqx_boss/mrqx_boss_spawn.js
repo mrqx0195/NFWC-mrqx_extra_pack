@@ -13,7 +13,7 @@ const mrqxBossChampionMap = {
 
 const mrqxBossChampionTypeList = ['mrqx_somite', 'mrqx_slave_owner', 'mrqx_spore_aggregation', 'mrqx_buring_blood', 'mrqx_co_frequency', 'mrqx_infinity_tear', 'mrqx_snowstorm', 'mrqx_aurora']
 
-const mrqxBossTypeList = bossTypeList
+const mrqxBossTypeList = [...bossTypeList]
 mrqxBossTypeList.push('twilightforest:alpha_yeti')
 mrqxBossTypeList.push('witherstormmod:wither_storm')
 
