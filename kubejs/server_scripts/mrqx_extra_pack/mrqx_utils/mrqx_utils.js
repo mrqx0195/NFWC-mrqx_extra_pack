@@ -10,7 +10,7 @@ const mrqxPlayerLoginTime = new Map()
  */
 function mrqxCauseElementDamage(entity, damage, type) {
     if (!damage || damage <= 0) return 0
-    let count = (entity.persistentData.getInt("mrqx_" + type + "_damage") ?? 0) + damage
+    let count = Math.min((entity.persistentData.getInt("mrqx_" + type + "_damage") ?? 0) + damage, 2147483647)
     let elementDamageSource = mrqxElementDamageSource[type]
     let elementDamageEffect = mrqxElementDamageEffect[type]
     if (count >= 100) {
@@ -23,7 +23,7 @@ function mrqxCauseElementDamage(entity, damage, type) {
             if (entity.hasEffect(effect)) {
                 amplifier += entity.getEffect(effect).getAmplifier() + 1
             }
-            entity.potionEffects.add(effect, duration, amplifier, false, false)
+            entity.potionEffects.add(effect, duration, Math.min(amplifier, 2147483647), false, false)
         })
         entity.persistentData.putInt("mrqx_" + type + "_damage", count)
         return damageCount
@@ -500,11 +500,11 @@ function mrqxGetDamageAfterMagicAbsorb(player, damageSource, initialDamage, igno
  */
 function mrqxIsBossEnhanceEnabled(player) {
     /** @type {string} */
-    let isDisnabled = player.stages.getAll().toArray().find(ele => ele.startsWith('mrqx_boss_enhance_is_disabled_'))
-    if (!isDisnabled) {
+    let isDisabled = player.stages.getAll().toArray().find(ele => ele.startsWith('mrqx_boss_enhance_is_disabled_'))
+    if (!isDisabled) {
         return true
     }
-    return !(isDisnabled.includes('true'))
+    return !(isDisabled.includes('true'))
 }
 
 /**
@@ -514,9 +514,9 @@ function mrqxIsBossEnhanceEnabled(player) {
  */
 function mrqxIsBossChampionEnabled(player) {
     /** @type {string} */
-    let isDisnabled = player.stages.getAll().toArray().find(ele => ele.startsWith('mrqx_boss_champion_is_disabled_'))
-    if (!isDisnabled) {
+    let isDisabled = player.stages.getAll().toArray().find(ele => ele.startsWith('mrqx_boss_champion_is_disabled_'))
+    if (!isDisabled) {
         return true
     }
-    return !(isDisnabled.includes('true'))
+    return !(isDisabled.includes('true'))
 }

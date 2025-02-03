@@ -65,7 +65,6 @@ const mrqxOrganRightClickedOnlyStrategies = {
 		if (player.getCooldowns().isOnCooldown(Item.of(organ.id))) {
 			return
 		}
-		player.addItemCooldown(organ.id, 6000)
 		let posMap = getPlayerChestCavityPosMap(player)
 		let itemMap = getPlayerChestCavityItemMap(player)
 		let amplifier = 0
@@ -108,6 +107,7 @@ const mrqxOrganRightClickedOnlyStrategies = {
 		else {
 			player.level.playSound(player, player.blockPosition(), 'minecraft:entity.blaze.shoot', 'players', 1, 1)
 			player.potionEffects.add('mrqx_extra_pack:nuclear_power', duration * durationMultiplier, amplifier, false, false)
+			player.addItemCooldown(organ.id, 20 * 60 * 3)
 			event.item.shrink(count)
 			global.updatePlayerActiveStatus(player)
 			player.persistentData.putInt(organActive, 1)

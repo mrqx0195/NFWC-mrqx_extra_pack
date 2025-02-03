@@ -458,7 +458,7 @@
     "mrqx_extra_pack.tooltips.fission_reactor.5": "反应时，根据§c核能动力§r等级持续提升体温",
     "mrqx_extra_pack.tooltips.fission_reactor.6": "如果在效果结束前取下§e裂变反应堆§r或§e反应舱室§r，则会发生大爆炸",
     "mrqx_extra_pack.tooltips.fission_reactor.7": "若要安全地取下反应堆，请先使自身保持在未激活状态，待效果结束后再取下反应堆",
-    "mrqx_extra_pack.tooltips.fission_reactor.8": "冷却时间5分钟",
+    "mrqx_extra_pack.tooltips.fission_reactor.8": "冷却时间3分钟",
     "mrqx_extra_pack.tooltips.fox_soul.1": "狐仙的真挚祝福",
     "mrqx_extra_pack.tooltips.fox_soul.2": "激活后，攻击回复伤害值5%的饱和度",
     "mrqx_extra_pack.tooltips.fox_soul.3": "§c集齐四魂时，回复量变为5倍§r",

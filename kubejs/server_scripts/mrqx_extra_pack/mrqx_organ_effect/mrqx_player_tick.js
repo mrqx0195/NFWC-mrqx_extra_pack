@@ -174,7 +174,7 @@ const mrqxOrganPlayerTickStrategies = {
         let player = event.player
         let flag = false
         let pos = organ.Slot
-        let posMap = getPlayerChestCavityPosMap(event.source.player)
+        let posMap = getPlayerChestCavityPosMap(event.player)
         fourDirectionList.forEach(direction => {
             let currentPos = lookPos(direction, pos)
             if (posMap.has(currentPos) && posMap.get(currentPos).id == 'mrqx_extra_pack:reactor_chamber') {
@@ -192,7 +192,7 @@ const mrqxOrganPlayerTickStrategies = {
         let player = event.player
         let flag = false
         let pos = organ.Slot
-        let posMap = getPlayerChestCavityPosMap(event.source.player)
+        let posMap = getPlayerChestCavityPosMap(event.player)
         fourDirectionList.forEach(direction => {
             let currentPos = lookPos(direction, pos)
             if (posMap.has(currentPos) && posMap.get(currentPos).id == 'mrqx_extra_pack:reactor_chamber') {
@@ -211,7 +211,7 @@ const mrqxOrganPlayerTickStrategies = {
         let player = event.player
         let flag = false
         let pos = organ.Slot
-        let posMap = getPlayerChestCavityPosMap(event.source.player)
+        let posMap = getPlayerChestCavityPosMap(event.player)
         fourDirectionList.forEach(direction => {
             let currentPos = lookPos(direction, pos)
             if (posMap.has(currentPos) && posMap.get(currentPos).id == 'mrqx_extra_pack:fission_reactor') {
