@@ -2,7 +2,7 @@
 
 ServerEvents.highPriorityData(event => {
     function registerLootTable(dataModel, id) {
-        event.addJson(`mrqx_extra_pack:loot_tables/mrqx_${id}.json`, dataModel)
+        event.addJson(`mrqx_extra_pack:loot_tables/${id}.json`, dataModel)
     }
 
     registerLootTable({
