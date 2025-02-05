@@ -115,15 +115,19 @@ const mrqxBossSpawn = {
         }
     },
     'twilightforest:knight_phantom': function (event, diff, playerCount) {
-        /** @type {Special.Attribute[]} */
-        let attributeMap = [
-            'minecraft:generic.armor',
-            'minecraft:generic.attack_damage',
-            'minecraft:generic.max_health'
-        ]
-        attributeMap.forEach(attribute => [
-            entity.modifyAttribute(attribute, 'mrqxBossDiffBaseAttribute', (diff / 6 - 5) * 0.1, 'multiply_base')
-        ])
-        entity.heal(entity.getMaxHealth())
+        if (diff > 0) {
+            /*** @type {Internal.LivingEntity}*/
+            let entity = event.entity
+            /** @type {Special.Attribute[]} */
+            let attributeMap = [
+                'minecraft:generic.armor',
+                'minecraft:generic.attack_damage',
+                'minecraft:generic.max_health'
+            ]
+            attributeMap.forEach(attribute => [
+                entity.modifyAttribute(attribute, 'mrqxBossDiffBaseAttribute', (diff / 6 - 5) * 0.1, 'multiply_base')
+            ])
+            entity.heal(entity.getMaxHealth())
+        }
     },
 }
