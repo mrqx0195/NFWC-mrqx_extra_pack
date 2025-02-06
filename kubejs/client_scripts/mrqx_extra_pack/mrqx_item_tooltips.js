@@ -245,4 +245,8 @@ ItemEvents.tooltip((tooltip) => {
     tooltip.addAdvanced('mrqx_extra_pack:xiao_amburm', (item, advanced, text) => {
         addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.xiao_amburm.1" })]], 1)
     })
+
+    tooltip.addAdvanced('minecraft:dragon_egg', (item, advanced, text) => {
+        addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.dragon_egg.1" })]], 1)
+    })
 })

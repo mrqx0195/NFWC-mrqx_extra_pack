@@ -7,7 +7,7 @@ ClientEvents.highPriorityAssets(event => {
     }
 
     // 玩家词条注册
-    for (let i = 0; i <= 24; i++) {
+    for (let i = 0; i <= 33; i++) {
         registeTips(`tip_${i + 1}`)
     }
 })

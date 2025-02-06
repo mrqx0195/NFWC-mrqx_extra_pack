@@ -19,7 +19,7 @@ EntityEvents.death(event => {
         /** @type {Internal.CompoundTag} */
         let diffMap = player.persistentData.get('mrqxBossDiffMap') ?? mrqxGetEmptyCompound()
         if (!diffMap.contains(entity.getType())) diffMap.putInt(entity.getType(), 0)
-        diffMap.putInt(entity.getType(), diffMap.getInt(entity.getType()) + 5)
+        diffMap.putInt(entity.getType(), diffMap.getInt(entity.getType()) + 10)
         player.persistentData.put('mrqxBossDiffMap', diffMap)
         player.tell('§c因卑鄙的手段，强大存在的灵魂迁怒于你……§r')
     }
@@ -62,7 +62,7 @@ global.mrqxBossDeath = {
         if (Math.random() < 0.5) {
             entity.block.popItem('minecraft:dragon_head')
         }
-        if (Math.random() < 0.01 * diff) {
+        if (Math.random() < 0.01 * (diff ** 2)) {
             entity.block.popItem('minecraft:dragon_egg')
         }
     },

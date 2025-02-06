@@ -5,7 +5,7 @@
 	order_index: 4
 	rewards: [
 		{
-			command: "/mrqx boss_enhance disable mrqx0195 false"
+			command: "/mrqx boss_enhance disable @p false"
 			icon: {
 				Count: 1b
 				id: "mrqx_extra_pack:knight_sword"
@@ -15,7 +15,7 @@
 			type: "command"
 		}
 		{
-			command: "/mrqx boss_enhance disable mrqx0195 true"
+			command: "/mrqx boss_enhance disable @p true"
 			icon: {
 				Count: 1b
 				id: "mrqx_extra_pack:broken_knight_sword"

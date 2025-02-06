@@ -145,7 +145,7 @@ const mrqxOrganBlockBrokenOnlyStrategies = {
                         let block = level.getBlock(x, y, z)
                         if (block.hasTag(tag)) {
                             b = true
-                            block.popItem(block.getItem())
+                            event.player.give(block.getItem())
                             block.set('minecraft:air')
                         }
                     })

@@ -9,7 +9,7 @@
 	order_index: 5
 	rewards: [
 		{
-			command: "/mrqx boss_champion disable mrqx0195 false"
+			command: "/mrqx boss_champion disable @p false"
 			icon: {
 				Count: 1b
 				id: "kubejs:prismarine_crown"
@@ -19,7 +19,7 @@
 			type: "command"
 		}
 		{
-			command: "/mrqx boss_champion disable mrqx0195 true"
+			command: "/mrqx boss_champion disable @p true"
 			icon: {
 				Count: 1b
 				id: "kubejs:broken_prismarine_crown"

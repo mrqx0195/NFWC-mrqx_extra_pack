@@ -2132,6 +2132,22 @@ ServerEvents.recipes(event => {
         .itemOutput('2x minecraft:nether_star')
         .recipeTime(500)
 
+    // 凋零风暴召唤
+    event.recipes.summoningrituals
+        .altar('kubejs:ritual_catalyst')
+        .id('mrqx_extra_pack:wither_strom_summon')
+        .mobOutput(
+            SummoningOutput.mob('witherstormmod:wither_storm')
+                .count(1)
+                .offset(0, 3, 0)
+                .spread(3, 0, 3)
+        )
+        .input('#forge:nether_stars')
+        .input('4x cataclysm:witherite_ingot')
+        .input('16x minecraft:wither_rose')
+        .input('bosses_of_mass_destruction:void_thorn')
+        .recipeTime(200)
+
     // 奥秘·血肉
     event.recipes.summoningrituals
         .altar('goety:unholy_blood')
