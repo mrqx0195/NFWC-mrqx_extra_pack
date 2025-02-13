@@ -9,3 +9,4 @@ const $mrqxInventory = Java.loadClass('net.minecraft.world.entity.player.Invento
 const $mrqxEnchantmentHelper = Java.loadClass('net.minecraft.world.item.enchantment.EnchantmentHelper')
 const $mrqxChainBlock = Java.loadClass('twilightforest.entity.ChainBlock')
 const $mrqxTFEntities = Java.loadClass('twilightforest.init.TFEntities')
+const $mrqxSerializer = Java.loadClass('net.minecraft.network.chat.Component$Serializer')

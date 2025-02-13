@@ -44,7 +44,7 @@ PlayerEvents.tick(event => {
     let player = event.player
     if (player.age % 5 != 0) return
     if (event.level.isClientSide()) return
-    if (event.getServer().getTickCount() <= (mrqxGetLoggedInTime(player) + 6)) {
+    if (event.getServer().getTickCount() <= (mrqxGetPlayerNonPersistentData(player, 'loginTime') + 6)) {
         return
     }
     let playerChest = getPlayerChestCavityItemMap(player)
@@ -99,7 +99,7 @@ PlayerEvents.tick(event => {
     if (!player.getPersistentData().getBoolean('mrqxEternalWingOfSoul')) {
         return
     }
-    if (event.getServer().getTickCount() <= (mrqxGetLoggedInTime(player) + 6)) {
+    if (event.getServer().getTickCount() <= (mrqxGetPlayerNonPersistentData(player, 'loginTime') + 6)) {
         return
     }
     player.onUpdateAbilities()
@@ -135,7 +135,7 @@ PlayerEvents.tick(event => {
     if (!player) return
     if (player.age % 5 != 0) return
     if (event.level.isClientSide()) return
-    if (event.getServer().getTickCount() <= (mrqxGetLoggedInTime(player) + 6)) {
+    if (event.getServer().getTickCount() <= (mrqxGetPlayerNonPersistentData(player, 'loginTime') + 6)) {
         return
     }
     if (player.getCooldowns().isOnCooldown(Item.of('mrqx_extra_pack:sages_book'))) {
@@ -252,8 +252,7 @@ ItemEvents.foodEaten('mrqx_extra_pack:mint_milk_tea', event => {
  */
 PlayerEvents.loggedIn(event => {
     let player = event.player
-    let uuid = String(player.getUuid())
-    mrqxPlayerLoginTime.set(uuid, event.getServer().getTickCount())
+    mrqxSetPlayerNonPersistentData(player, 'loginTime', event.getServer().getTickCount())
 })
 
 ServerEvents.tags('minecraft:entity_type', event => {
@@ -282,4 +281,19 @@ BlockEvents.broken(event => {
         return
     }
     event.block.popItem('mrqx_extra_pack:soul_of_emerald_pickaxe')
+})
+
+// 销汀·桉柏
+PlayerEvents.tick(event => {
+    let player = event.player
+    if (!player) return
+    if (player.age % (20 * 1) != 0) return
+    if (event.level.isClientSide()) return
+    if (player.age < (mrqxGetPlayerNonPersistentData(player, 'xiaoAmburmTalkNextTick') ?? 0)) return
+    /** @type {Internal.Inventory} */
+    let inventory = player.inventory
+    if (inventory.hasAnyMatching(item => item.id == 'mrqx_extra_pack:xiao_amburm')) {
+        player.tell($mrqxSerializer.fromJsonLenient({ "translate": "mrqx_extra_pack.msg.xiao_amburm.0", "with": [{ "translate": `mrqx_extra_pack.msg.xiao_amburm.${Math.floor(Math.random() * 22 + 1)}` }] }))
+        mrqxSetPlayerNonPersistentData(player, 'xiaoAmburmTalkNextTick', player.age + 20 * (30 + Math.random() * 150))
+    }
 })

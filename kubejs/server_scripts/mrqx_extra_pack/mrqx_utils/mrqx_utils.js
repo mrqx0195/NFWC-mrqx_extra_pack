@@ -1,6 +1,7 @@
 // priority: 999
 
-const mrqxPlayerLoginTime = new Map()
+const mrqxPlayerNonPersistentDataMap = new Map()
+
 /**
  * 造成元素损伤
  * @param {Internal.LivingEntity} entity 
@@ -55,16 +56,16 @@ function mrqxPaperOrganInWaterRainBubbleFireOrLava(player, organ) {
     organData.allKeys.forEach(key => {
         let random = Math.random()
         if (!player.isInLava() && !player.isOnFire()) {
-            if (random > (count / 64) * Math.min(temperature * 0.05, 1)) {
+            if (random / Math.max(temperature * 0.05, 1) > (count / 64) || random > temperature * 0.005) {
                 organData[key] = organData[key] * 0.9
             }
         }
         else if (!player.isInLava()) {
-            if (random > (count / 256) * Math.min(temperature * -0.04, 1)) {
+            if (random / Math.max(temperature * -0.04, 1) > (count / 256) || random > temperature * -0.004) {
                 organData[key] = organData[key] * 0.7
             }
         }
-        else if (random > (count / 1024) * Math.min(temperature * -0.03, 1)) {
+        else if (random / Math.max(temperature * -0.03, 1) > (count / 1024) || random > temperature * -0.003) {
             organData[key] = organData[key] * 0.5
         }
     })
@@ -243,15 +244,36 @@ function mrqxIsBlockExposedToAir(level, x, y, z) {
 }
 
 /**
- * 获取玩家登录时间
- * @param {Internal.ServerPlayer} player 
- * @returns {Number}
+ * 获取非持久化玩家数据
+ * @param {Internal.ServerPlayer} player
+ * @param {string} key
+ * @returns {any}
  */
-function mrqxGetLoggedInTime(player) {
-    let uuid = String(player.getUuid())
-    return mrqxPlayerLoginTime.get(uuid)
+function mrqxGetPlayerNonPersistentData(player, key) {
+    return mrqxGetPlayerNonPersistentDataMap(player).get(key)
 }
 
+/**
+ * 设置非持久化玩家数据
+ * @param {Internal.ServerPlayer} player
+ * @param {string} key
+ * @param {any} value
+ * @returns {Map<string,any>}
+ */
+function mrqxSetPlayerNonPersistentData(player, key, value) {
+    return mrqxGetPlayerNonPersistentDataMap(player).set(key, value)
+}
+
+/**
+ * 获取非持久化玩家数据表
+ * @param {Internal.ServerPlayer} player
+ * @returns {Map<string,any>}
+ */
+function mrqxGetPlayerNonPersistentDataMap(player) {
+    let uuid = String(player.getUuid())
+    if (!mrqxPlayerNonPersistentDataMap.has(uuid)) mrqxPlayerNonPersistentDataMap.set(uuid, new Map())
+    return mrqxPlayerNonPersistentDataMap.get(uuid)
+}
 /**
  * 空值检测
  * @returns {Boolean}

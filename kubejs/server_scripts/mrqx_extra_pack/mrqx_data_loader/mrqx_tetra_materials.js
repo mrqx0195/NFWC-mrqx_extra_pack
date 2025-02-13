@@ -88,7 +88,7 @@ mrqxTetraMaterial.prototype = {
         return this
     },
     /**
-     * @param {"hammer_dig" | "pickaxe_dig" | "axe_dig" | "cut" | "pry"} tool
+     * @param {"hammer_dig" | "pickaxe_dig" | "axe_dig" | "cut" | "pry" | "shovel_dig" | "hoe_dig"} tool
      * @param {"minecraft:wood" | "minecraft:stone" | "minecraft:iron" | "minecraft:gold" | "minecraft:diamond" | "minecraft:netherite" | number} level
      * @returns {mrqxTetraMaterial}
      */
@@ -362,5 +362,4 @@ ServerEvents.highPriorityData(event => {
         .addItemMaterial('mrqx_extra_pack:sun_seed')
         .setCategory('socket'), 'socket'
     )
-
 })

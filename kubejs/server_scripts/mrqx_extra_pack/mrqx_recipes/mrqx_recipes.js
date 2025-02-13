@@ -2210,7 +2210,7 @@ ServerEvents.recipes(event => {
 
     // 奥秘·工艺
     event.recipes.summoningrituals
-        .altar('tetra:forged_workbench')
+        .altar('tetra:holo')
         .id('mrqx_extra_pack:ritual_mystery_craftsmanship')
         .input('tetra:modular_bow')
         .input('tetra:modular_crossbow')
@@ -2219,7 +2219,7 @@ ServerEvents.recipes(event => {
         .input('tetra:modular_single')
         .input('tetra:modular_sword')
         .input('tetra:modular_toolbelt')
-        .input('tetra:holo')
+        .input('art_of_forging:curious_artifact')
         .itemOutput('mrqx_extra_pack:mystery_craftsmanship')
         .recipeTime(2000)
 
@@ -2463,10 +2463,6 @@ const mrqxRitualsStartStrategies = {
     // 奥秘·血肉
     'mrqx_extra_pack:ritual_mystery_flesh_and_blood': function (event) {
         let player = event.player
-        if (!player) {
-            event.cancel()
-            return
-        }
         let count = 0
         let b = false
         for (let adv in mrqxAdvancementsCheck['mystery_flesh_and_blood']) {
@@ -2486,10 +2482,6 @@ const mrqxRitualsStartStrategies = {
     // 奥秘·灵魂
     'mrqx_extra_pack:ritual_mystery_soul': function (event) {
         let player = event.player
-        if (!player) {
-            event.cancel()
-            return
-        }
         let count = 0
         let b = false
         for (let adv in mrqxAdvancementsCheck['mystery_soul']) {
@@ -2509,10 +2501,6 @@ const mrqxRitualsStartStrategies = {
     // 奥秘·机械
     'mrqx_extra_pack:ritual_mystery_machine': function (event) {
         let player = event.player
-        if (!player) {
-            event.cancel()
-            return
-        }
         let count = 0
         let b = false
         for (let adv in mrqxAdvancementsCheck['mystery_machine']) {
@@ -2532,10 +2520,6 @@ const mrqxRitualsStartStrategies = {
     // 奥秘·魔法
     'mrqx_extra_pack:ritual_mystery_magic': function (event) {
         let player = event.player
-        if (!player) {
-            event.cancel()
-            return
-        }
         let count = 0
         let b = false
         for (let adv in mrqxAdvancementsCheck['mystery_magic']) {
@@ -2555,10 +2539,6 @@ const mrqxRitualsStartStrategies = {
     // 奥秘·工艺
     'mrqx_extra_pack:ritual_mystery_craftsmanship': function (event) {
         let player = event.player
-        if (!player) {
-            event.cancel()
-            return
-        }
         let count = 0
         let b = false
         for (let adv in mrqxAdvancementsCheck['mystery_craftsmanship']) {
@@ -2578,10 +2558,6 @@ const mrqxRitualsStartStrategies = {
     // 奥秘·学者
     'mrqx_extra_pack:ritual_mystery_scholar': function (event) {
         let player = event.player
-        if (!player) {
-            event.cancel()
-            return
-        }
         let count = 0
         let b = false
         for (let adv in mrqxAdvancementsCheck['mystery_scholar']) {
@@ -2601,10 +2577,6 @@ const mrqxRitualsStartStrategies = {
     // 奥秘·自然
     'mrqx_extra_pack:ritual_mystery_nature': function (event) {
         let player = event.player
-        if (!player) {
-            event.cancel()
-            return
-        }
         let count = 0
         let b = false
         for (let adv in mrqxAdvancementsCheck['mystery_nature']) {
@@ -2624,10 +2596,6 @@ const mrqxRitualsStartStrategies = {
     // 奥秘·星辰
     'mrqx_extra_pack:ritual_mystery_stars': function (event) {
         let player = event.player
-        if (!player) {
-            event.cancel()
-            return
-        }
         let count = 0
         let b = false
         for (let adv in mrqxAdvancementsCheck['mystery_stars']) {
@@ -2646,10 +2614,6 @@ const mrqxRitualsStartStrategies = {
     // 奥秘·资源
     'mrqx_extra_pack:ritual_mystery_resources': function (event) {
         let player = event.player
-        if (!player) {
-            event.cancel()
-            return
-        }
         let count = 0
         let b = false
         for (let adv in mrqxAdvancementsCheck['mystery_resources']) {
@@ -2669,10 +2633,6 @@ const mrqxRitualsStartStrategies = {
     // 奥秘·食物
     'mrqx_extra_pack:ritual_mystery_food': function (event) {
         let player = event.player
-        if (!player) {
-            event.cancel()
-            return
-        }
         let count = 0
         let b = false
         for (let adv in mrqxAdvancementsCheck['mystery_food']) {
@@ -2692,10 +2652,6 @@ const mrqxRitualsStartStrategies = {
     // 奥秘·罪者
     'mrqx_extra_pack:ritual_mystery_sinners': function (event) {
         let player = event.player
-        if (!player) {
-            event.cancel()
-            return
-        }
         let count = 0
         let b = false
         for (let adv in mrqxAdvancementsCheck['mystery_sinners']) {
@@ -2715,10 +2671,6 @@ const mrqxRitualsStartStrategies = {
     // 奥秘·灾变
     'mrqx_extra_pack:ritual_mystery_disasters': function (event) {
         let player = event.player
-        if (!player) {
-            event.cancel()
-            return
-        }
         let count = 0
         let b = false
         for (let adv in mrqxAdvancementsCheck['mystery_disasters']) {
@@ -2738,10 +2690,6 @@ const mrqxRitualsStartStrategies = {
     // 奥秘·领主
     'mrqx_extra_pack:ritual_mystery_lords': function (event) {
         let player = event.player
-        if (!player) {
-            event.cancel()
-            return
-        }
         let count = 0
         let b = false
         for (let adv in mrqxAdvancementsCheck['mystery_lords']) {
@@ -2761,10 +2709,6 @@ const mrqxRitualsStartStrategies = {
     // 奥秘·从者
     'mrqx_extra_pack:ritual_mystery_followers': function (event) {
         let player = event.player
-        if (!player) {
-            event.cancel()
-            return
-        }
         let count = 0
         let b = false
         for (let adv in mrqxAdvancementsCheck['mystery_followers']) {
@@ -2784,10 +2728,6 @@ const mrqxRitualsStartStrategies = {
     // 奥秘·回忆
     'mrqx_extra_pack:ritual_mystery_memories': function (event) {
         let player = event.player
-        if (!player) {
-            event.cancel()
-            return
-        }
         let count = 0
         let b = false
         for (let adv in mrqxAdvancementsCheck['mystery_memories']) {
@@ -2806,3 +2746,7 @@ const mrqxRitualsStartStrategies = {
 }
 
 var assign_rituals_start_strategies = Object.assign(ritualsStartStrategies, mrqxRitualsStartStrategies)
+
+SummoningRituals.start(event => {
+    if (!event.player && (String)(event.recipe.getId()).startsWith('mrqx_extra_pack:ritual_mystery_')) event.cancel()
+})

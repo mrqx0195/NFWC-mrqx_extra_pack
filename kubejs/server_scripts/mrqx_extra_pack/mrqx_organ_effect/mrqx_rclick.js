@@ -23,11 +23,11 @@ const mrqxOrganRightClickedOnlyStrategies = {
 		let typeMap = getPlayerChestCavityTypeMap(player)
 		if (event.item.getId() in mrqxDivinePenAttriBute) {
 			if (!(player.getOffHandItem().getId() in mrqxDivinePenInkPower)) {
-				player.tell(Text.gray({ "translate": "mrqx_extra_pack.msg.divine_pen.1" }))
+				player.tell($mrqxSerializer.fromJsonLenient({ "translate": "mrqx_extra_pack.msg.divine_pen.1" }))
 				return
 			}
 			if (typeMap.has('kubejs:mrqx_paper')) {
-				player.tell(Text.gray({ "translate": "mrqx_extra_pack.msg.divine_pen.2" }))
+				player.tell($mrqxSerializer.fromJsonLenient({ "translate": "mrqx_extra_pack.msg.divine_pen.2" }))
 				return
 			}
 			let writtenItem = Item.of(mrqxDivinePenOrgan[event.item.getId()], { organData: {} })
@@ -59,7 +59,7 @@ const mrqxOrganRightClickedOnlyStrategies = {
 			return
 		}
 		if (player.hasEffect('mrqx_extra_pack:nuclear_power')) {
-			player.tell(Text.gray({ "translate": "mrqx_extra_pack.msg.fission_reactor.2" }))
+			player.tell($mrqxSerializer.fromJsonLenient({ "translate": "mrqx_extra_pack.msg.fission_reactor.2" }))
 			return
 		}
 		if (player.getCooldowns().isOnCooldown(Item.of(organ.id))) {
@@ -101,7 +101,7 @@ const mrqxOrganRightClickedOnlyStrategies = {
 			duration += mrqxGetComputingPower(player) * 3
 		}
 		if (event.item.count < count) {
-			player.tell(Text.gray({ "translate": "mrqx_extra_pack.msg.fission_reactor.1" }))
+			player.tell($mrqxSerializer.fromJsonLenient({ "translate": "mrqx_extra_pack.msg.fission_reactor.1" }))
 			return
 		}
 		else {

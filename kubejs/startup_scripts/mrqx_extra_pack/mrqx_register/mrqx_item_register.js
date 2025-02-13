@@ -2236,6 +2236,12 @@ StartupEvents.registry('item', event => {
                 .addDefaultAttribute('irons_spellbooks:mana_regen', 'sagesBookManaRegen', 1, 'addition')
                 .addDefaultAttribute('irons_spellbooks:max_mana', 'sagesBookMaxMana', 1, 'multiply_base')
                 .addDefaultAttribute('irons_spellbooks:spell_resist', 'sagesBookSpellResist', 0.5, 'addition')
+
+            // 匠艺核心
+            // event.create('mrqx_extra_pack:craftsmanship_core')
+            //     .texture('mrqx_extra_pack:item/craftsmanship_core')
+            //     .maxStackSize(1)
+            //     .tag('itemborders:diamond')
         }
 
         // 先进单片镜

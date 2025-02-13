@@ -38,13 +38,17 @@ mrqxTetraModuleVariant.prototype = {
         return this
     },
     /**
-     * @param {"hammer_dig" | "pickaxe_dig" | "axe_dig" | "cut" | "pry"} tool
+     * @param {"hammer_dig" | "pickaxe_dig" | "axe_dig" | "cut" | "pry" | "shovel_dig" | "hoe_dig"} tool
      * @param {"minecraft:wood" | "minecraft:stone" | "minecraft:iron" | "minecraft:gold" | "minecraft:diamond" | "minecraft:netherite" | number} level
      * @param {number} value
      * @returns {mrqxTetraModuleVariant}
      */
     addTool: function (tool, level, value) {
-        this.tools[tool] = [level, value]
+        if (mrqxIsEmpty(value)) {
+            this.tools[tool] = level
+        } else {
+            this.tools[tool] = [level, value]
+        }
         return this
     },
     /**
@@ -115,8 +119,8 @@ mrqxTetraModuleVariant.prototype = {
         return this
     },
     /**
-     * @param {string} model
-     * @returns {mrqxTetraModule}
+     * @param {object} model
+     * @returns {mrqxTetraModuleVariant}
      */
     addModel: function (model) {
         this.models.push(model)
@@ -163,7 +167,7 @@ mrqxTetraModule.prototype = {
         return this
     },
     /**
-     * @param {"LOWEST" | "LOWER" | "LOW" | "BASE" | "HIGH" | "HIGHER" | "HIGHEST"} renderLayer
+     * @param {Internal.Priority_} renderLayer
      * @returns {mrqxTetraModule}
      */
     setRenderLayer: function (renderLayer) {
@@ -225,7 +229,7 @@ mrqxTetraSchematic.prototype = {
         return this
     },
     /**
-     * @param {"hammer_dig" | "pickaxe_dig" | "axe_dig" | "cut" | "pry"} tool
+     * @param {"hammer_dig" | "pickaxe_dig" | "axe_dig" | "cut" | "pry" | "shovel_dig" | "hoe_dig"} tool
      * @param {"minecraft:wood" | "minecraft:stone" | "minecraft:iron" | "minecraft:gold" | "minecraft:diamond" | "minecraft:netherite" | number} level
      * @returns {mrqxTetraSchematic}
      */
@@ -237,25 +241,32 @@ mrqxTetraSchematic.prototype = {
     },
 }
 
-/**
- * @param {string} moduleKey
- * @param {string} moduleVariant
- */
-function mrqxTetraOutcome(moduleKey, moduleVariant) {
-    this.moduleKey = moduleKey
-    this.moduleVariant = moduleVariant
+function mrqxTetraOutcome() {
     this.requiredTools = {}
     this.material = {}
 }
 
 mrqxTetraOutcome.prototype = {
     /**
-     * @param {"hammer_dig" | "pickaxe_dig" | "axe_dig" | "cut" | "pry"} tool
+     * @param {"hammer_dig" | "pickaxe_dig" | "axe_dig" | "cut" | "pry" | "shovel_dig" | "hoe_dig"} tool
      * @param {"minecraft:wood" | "minecraft:stone" | "minecraft:iron" | "minecraft:gold" | "minecraft:diamond" | "minecraft:netherite" | number} level
      * @returns {mrqxTetraOutcome}
      */
     addRequiredTool: function (tool, level) {
         this.requiredTools[tool] = level
+        return this
+    },
+    /**
+     * @param {Special.Item} item
+     * @returns {mrqxTetraOutcome}
+     */
+    addItemMaterial: function (item) {
+        if (!this.material.items) {
+            this.material.items = [item]
+        }
+        else {
+            this.material.items.push(item)
+        }
         return this
     },
     /**
@@ -282,6 +293,16 @@ mrqxTetraOutcome.prototype = {
         this.material.count = count
         return this
     },
+    /**
+     * @param {string} moduleKey
+     * @param {string} moduleVariant
+     * @returns {mrqxTetraOutcome}
+     */
+    setModule: function (moduleKey, moduleVariant) {
+        this.moduleKey = moduleKey
+        this.moduleVariant = moduleVariant
+        return this
+    },
 }
 
 ServerEvents.highPriorityData(event => {
@@ -306,7 +327,7 @@ ServerEvents.highPriorityData(event => {
     function createSchematicFromModule(module, displayType, hone, materialRevealSlot, materialSlotCount, rarity, key, category) {
         let schematic = new mrqxTetraSchematic(displayType, module.replace, hone, materialRevealSlot, materialSlotCount, rarity)
         module.variants.forEach(variant => {
-            let outcome = new mrqxTetraOutcome(category + '/' + key, variant.key)
+            let outcome = new mrqxTetraOutcome().setModule(category + '/' + key, variant.key)
             outcome.material = variant.material
             schematic.addOutcome(outcome)
         })
@@ -336,12 +357,11 @@ ServerEvents.highPriorityData(event => {
         .addImprovement('tetra:crossbow/stock/')
         .addImprovement('tetra:crossbow/shared/')
         .addImprovement('tetra:shared/')
-        .setRenderLayer('HIGHER')
+        .setRenderLayer('higher')
         .addSlot('crossbow/stock')
         .addVariant(new mrqxTetraModuleVariant('mrqx_fission_reactor', 1100, 2, 8, 100)
             .addAspect('breakable', 2)
             .addAspect('crossbow', 2)
-            .addAspect('infinity', 1)
             .addAttribute('tetra:draw_speed', 'ADDITION', 5)
             .addEffect('velocity', 200)
             .setGlyph(64, 32, '3B3B39', 'tetra:textures/gui/aof_glyph.png')
@@ -358,7 +378,7 @@ ServerEvents.highPriorityData(event => {
 
     // 反应散热器
     registerTetraSchematic(registerModuleAndReturnSchematic(new mrqxTetraModule('tetra:basic_module', false)
-        .setRenderLayer('HIGHER')
+        .setRenderLayer('higher')
         .addSlot('crossbow/attachment_0')
         .addVariant(new mrqxTetraModuleVariant('mrqx_heat_vent', 120, 0.8, -4, 0)
             .addAttribute('tetra:draw_speed', 'ADDITION', 4.5)
@@ -380,7 +400,7 @@ ServerEvents.highPriorityData(event => {
         .addImprovement('tetra:crossbow/stave/')
         .addImprovement('tetra:crossbow/shared/')
         .addImprovement('tetra:shared/')
-        .setRenderLayer('HIGHER')
+        .setRenderLayer('higher')
         .addSlot('crossbow/stave')
         .addVariant(new mrqxTetraModuleVariant('mrqx_reactor_chamber', 60, 1, 3, 100)
             .addAspect('breakable', 2)
@@ -402,7 +422,7 @@ ServerEvents.highPriorityData(event => {
 
     // 反应热隔层
     registerTetraSchematic(registerModuleAndReturnSchematic(new mrqxTetraModule('tetra:basic_module', false)
-        .setRenderLayer('HIGHER')
+        .setRenderLayer('higher')
         .addSlot('crossbow/attachment_0')
         .addVariant(new mrqxTetraModuleVariant('mrqx_thermal_barrier', 120, 1.2, -4, 0)
             .addAttribute('tetra:draw_speed', 'ADDITION', 1)
@@ -422,7 +442,7 @@ ServerEvents.highPriorityData(event => {
     // 反应热喷口
     registerTetraSchematic(registerModuleAndReturnSchematic(new mrqxTetraModule('tetra:basic_module', true)
         .addImprovement('tetra:shared/')
-        .setRenderLayer('HIGHER')
+        .setRenderLayer('higher')
         .addSlot('crossbow/string')
         .addVariant(new mrqxTetraModuleVariant('mrqx_thermal_injector', 30, 1, 1, 0)
             .addAttribute('tetra:draw_speed', 'ADDITION', -5.5)
@@ -554,7 +574,7 @@ ServerEvents.highPriorityData(event => {
     registerTetraSchematic(registerModuleAndReturnSchematic(new mrqxTetraModule('tetra:basic_major_module', true)
         .addImprovement('tetra:shared/')
         .addSlot('sword/guard')
-        .setRenderLayer('HIGHER')
+        .setRenderLayer('higher')
         .addVariant(new mrqxTetraModuleVariant('mrqx_kings_crown', 120, 1.1, -1, 0)
             .addAttribute('minecraft:generic.armor', 'ADDITION', 5)
             .addAttribute('minecraft:generic.armor_toughness', 'ADDITION', 5)
@@ -701,6 +721,8 @@ ServerEvents.highPriorityData(event => {
         .addImprovement('tetra:shared/')
         .addSlot('sword/blade')
         .addVariant(new mrqxTetraModuleVariant('mrqx_steam_rapier', 1000, 1, -3, 0)
+            .addAspect('edgedWeapon', 2)
+            .addAspect('breakable', 2)
             .addAttribute('minecraft:generic.attack_damage', 'ADDITION', 12)
             .addAttribute('minecraft:generic.attack_speed', 'ADDITION', 0.6)
             .addEffect('puncture', [100, 100])
@@ -733,4 +755,55 @@ ServerEvents.highPriorityData(event => {
         .setGlyph(176, 0, '3ED4F9', 'tetra:textures/gui/aof_glyph.png'),
         'mrqx_steam_supercharge_engine', 'sword'
     )
+
+    // 销汀·桉柏
+    registerTetraSchematic(registerModuleAndReturnSchematic(new mrqxTetraModule('tetra:basic_major_module', true)
+        .addImprovement('tetra:sword/shared_blade/')
+        .addImprovement('tetra:sword/shared/')
+        .addImprovement('tetra:shared/')
+        .addSlot('sword/blade')
+        .addVariant(new mrqxTetraModuleVariant('mrqx_xiao_amburm', 2048, 1, -5, -1000)
+            .addAspect('edgedWeapon', 2)
+            .addAspect('breakable', 2)
+            .addAttribute('minecraft:generic.attack_damage', 'ADDITION', 15)
+            .addAttribute('minecraft:generic.attack_speed', 'ADDITION', 3)
+            .addAttribute('forge:attack_range', 'ADDITION', -1)
+            .addEffect('workable', 0.25)
+            .addEffect('art_of_forging:beheading', 95)
+            .setGlyph(128, 16, 'AAA15F', 'tetra:textures/gui/aof_glyph.png')
+            .addItemMaterial('mrqx_extra_pack:xiao_amburm')
+            .addModel({
+                "location": "tetra:items/module/sword/mrqx_extra_pack/mrqx_xiao_amburm"
+            })
+        ), 'major', false, 0, 1, 'temporary', 'mrqx_xiao_amburm', 'sword')
+        .addAllRequiredTools('hammer_dig', 'minecraft:netherite')
+        .setGlyph(128, 16, null, 'tetra:textures/gui/aof_glyph.png'),
+        'mrqx_xiao_amburm', 'sword'
+    )
+
+    // 匠艺核心
+    // registerTetraSchematic(registerModuleAndReturnSchematic(new mrqxTetraModule('tetra:basic_major_module', true)
+    //     .addSlot('holo/core')
+    //     .setRenderLayer('highest')
+    //     .addVariant(new mrqxTetraModuleVariant('mrqx_craftsmanship_core', 0, 0, 10, 0)
+    //         .addTool('axe_dig', 99)
+    //         .addTool('cut', 99)
+    //         .addTool('hammer_dig', 99)
+    //         .addTool('hoe_dig', 99)
+    //         .addTool('pickaxe_dig', 99)
+    //         .addTool('pry', 99)
+    //         .addTool('shovel_dig', 99)
+    //         .setGlyph(96, 48)
+    //         .addItemMaterial('mrqx_extra_pack:craftsmanship_core')
+    //         .addModel({
+    //             "location": "tetra:items/module/holo/mrqx_extra_pack/mrqx_craftsmanship_core"
+    //         })
+    //     ), 'major', false, 0, 1, 'temporary', 'mrqx_craftsmanship_core', 'holo')
+    //     .addAllRequiredTools('hammer_dig', 'minecraft:netherite')
+    //     .setGlyph(96, 48),
+    //     'mrqx_craftsmanship_core', 'holo'
+    // )
+    // registerTetraSchematic(new mrqxTetraSchematic('improvement', false, false, 0, 0, 'temporary')
+    //     .addOutcome(new mrqxTetraOutcome().addItemMaterial('mrqx_extra_pack:craftsmanship_core'))
+    // )
 }) 

@@ -16,13 +16,17 @@ function mrqxTetraSynergy(name) {
 
 mrqxTetraSynergy.prototype = {
     /**
-     * @param {"hammer_dig" | "pickaxe_dig" | "axe_dig" | "cut" | "pry"} tool
+     * @param {"hammer_dig" | "pickaxe_dig" | "axe_dig" | "cut" | "pry" | "shovel_dig" | "hoe_dig"} tool
      * @param {"minecraft:wood" | "minecraft:stone" | "minecraft:iron" | "minecraft:gold" | "minecraft:diamond" | "minecraft:netherite" | number} level
      * @param {number} value
      * @returns {mrqxTetraSynergy}
      */
     addTool: function (tool, level, value) {
-        this.tools[tool] = [level, value]
+        if (mrqxIsEmpty(value)) {
+            this.tools[tool] = level
+        } else {
+            this.tools[tool] = [level, value]
+        }
         return this
     },
     /**

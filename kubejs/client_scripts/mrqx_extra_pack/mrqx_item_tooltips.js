@@ -230,6 +230,12 @@ ItemEvents.tooltip((tooltip) => {
         addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.sages_book.3" })]], 3)
     })
 
+    // tooltip.addAdvanced('mrqx_extra_pack:craftsmanship_core', (item, advanced, text) => {
+    //     addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.craftsmanship_core.1" })]], 1)
+    //     addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.craftsmanship_core.2" })]], 2)
+    //     addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.craftsmanship_core.3" })]], 3)
+    // })
+
     tooltip.addAdvanced('gateways:gate_pearl', (/** @type {Internal.ItemStack} */item, advanced, text) => {
         if (item.nbt.isEmpty() || !item.nbt.getString('gateway')) {
             addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.gate_pearl_craft.1" })]], 1)
