@@ -113,8 +113,8 @@
 				item: "nameless_trinkets:cracked_crown"
 				type: "item"
 			}]
-			x: 0.75d
-			y: 3.75d
+			x: 9.5d
+			y: 2.5d
 		}
 		{
 			dependencies: ["6E502CA178ED4148"]
@@ -150,22 +150,6 @@
 		}
 		{
 			dependencies: ["6E502CA178ED4148"]
-			id: "627473F1602D9217"
-			rewards: [{
-				id: "59E09C6006F21E4C"
-				item: "lightmanscurrency:coin_gold"
-				type: "item"
-			}]
-			tasks: [{
-				id: "31B57BBCD3294548"
-				item: "nameless_trinkets:miners_soul"
-				type: "item"
-			}]
-			x: 7.0d
-			y: -1.25d
-		}
-		{
-			dependencies: ["6E502CA178ED4148"]
 			id: "315C8B4E4C57C364"
 			rewards: [{
 				id: "3D98EF8A77B26D68"
@@ -194,22 +178,6 @@
 				type: "item"
 			}]
 			x: 0.75d
-			y: 0.0d
-		}
-		{
-			dependencies: ["6E502CA178ED4148"]
-			id: "5A5BBBE15B718FD0"
-			rewards: [{
-				id: "75C501F7E6E39A97"
-				item: "lightmanscurrency:coin_gold"
-				type: "item"
-			}]
-			tasks: [{
-				id: "20ED5A03D8C10F97"
-				item: "nameless_trinkets:broken_ankh"
-				type: "item"
-			}]
-			x: 4.5d
 			y: 0.0d
 		}
 		{
@@ -342,22 +310,6 @@
 		}
 		{
 			dependencies: ["6E502CA178ED4148"]
-			id: "564B7ACD0CF2A57A"
-			rewards: [{
-				id: "7AFB7AA38F6D1708"
-				item: "lightmanscurrency:coin_gold"
-				type: "item"
-			}]
-			tasks: [{
-				id: "1895EC942DD8A58F"
-				item: "nameless_trinkets:gills"
-				type: "item"
-			}]
-			x: -1.75d
-			y: 0.0d
-		}
-		{
-			dependencies: ["6E502CA178ED4148"]
 			id: "28E705C54F0C2873"
 			rewards: [{
 				id: "4EE484F7ED720B20"
@@ -465,7 +417,7 @@
 				item: "nameless_trinkets:gods_crown"
 				type: "item"
 			}]
-			x: -0.5d
+			x: -1.75d
 			y: 3.75d
 		}
 		{
@@ -625,8 +577,8 @@
 				item: "nameless_trinkets:light_gloves"
 				type: "item"
 			}]
-			x: 9.5d
-			y: 2.5d
+			x: -1.75d
+			y: 0.0d
 		}
 		{
 			dependencies: ["6E502CA178ED4148"]
@@ -641,8 +593,8 @@
 				item: "nameless_trinkets:fate_emerald"
 				type: "item"
 			}]
-			x: -1.75d
-			y: 3.75d
+			x: 4.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["6E502CA178ED4148"]
@@ -653,8 +605,8 @@
 				type: "item"
 			}]
 			tasks: [{
-				id: "1A499F67D5C70388"
-				item: "nameless_trinkets:four_leaf_clover"
+				id: "44F008AE5A2AE605"
+				item: "nameless_trinkets:ethereal_wings"
 				type: "item"
 			}]
 			x: 4.5d
@@ -723,6 +675,22 @@
 			title: "无名饰品"
 			x: -2.75d
 			y: -2.25d
+		}
+		{
+			dependencies: ["6E502CA178ED4148"]
+			id: "5736E43FE8089027"
+			rewards: [{
+				id: "46A0EB4D9E608D7D"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "7D979CF92274742E"
+				item: "kubejs:bunny_hoppers"
+				type: "item"
+			}]
+			x: 7.0d
+			y: -1.25d
 		}
 	]
 	title: "饰品：偶尔获得的小奖励"

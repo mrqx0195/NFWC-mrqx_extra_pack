@@ -1,14 +1,10 @@
 ItemEvents.tooltip((tooltip) => {
     tooltip.addAdvanced('kubejs:active_pill', (item, advanced, text) => {
-        if (tooltip.shift) {
-            addForTextLines(text, [[Text.red({ "translate": "kubejs.tooltips.active_pill.4" })], [Text.red({ "translate": "kubejs.tooltips.active_pill.5" })]], 1);
-        } else {
-            addForTextLines(text, [[Text.gold({ "translate": "kubejs.tooltips.active_pill.1" }), Text.aqua({ "translate": "kubejs.tooltips.active_pill.2" })], [Text.gray({ "translate": "kubejs.tooltips.active_pill.3" })]], 1);
-        }
+        addForTextLines(text, [[Text.gold({ "translate": "kubejs.tooltips.active_pill.1" }), Text.aqua({ "translate": "kubejs.tooltips.active_pill.2" })], [Text.gray({ "translate": "kubejs.tooltips.active_pill.3" })]], 1);
     })
 
     tooltip.addAdvanced('kubejs:ceremonial_knife', (item, advanced, text) => {
-        addForTextLines(text, [[LEADING_SYMBOL, Text.gray({ "translate": "kubejs.tooltips.ceremonial_knife.1" })], [LEADING_SYMBOL, Text.gray({ "translate": "kubejs.tooltips.ceremonial_knife.2" }), Text.gold('10'), Text.gray({ "translate": "kubejs.tooltips.ceremonial_knife.3" })]], 1);
+        addForTextLines(text, [[LEADING_SYMBOL, Text.gray({ "translate": "kubejs.tooltips.ceremonial_knife.1" })], [LEADING_SYMBOL, Text.gray({ "translate": "kubejs.tooltips.ceremonial_knife.2" }), Text.gold('5'), Text.gray({ "translate": "kubejs.tooltips.ceremonial_knife.3" })]], 1);
     })
 
     tooltip.addAdvanced('biomancy:healing_additive', (item, advanced, text) => {
@@ -61,6 +57,10 @@ ItemEvents.tooltip((tooltip) => {
         text.add(1, Text.gray({ "translate": "kubejs.tooltips.empty_organ_charm.1" }));
     })
 
+    tooltip.addAdvanced('kubejs:bunny_hoppers', (item, advanced, text) => {
+        text.add(1, Text.gray({ "translate": "kubejs.tooltips.bunny_hoppers.1" }));
+    })
+
     tooltip.addAdvanced('kubejs:rapier_wand', (item, advanced, text) => {
         text.add(Text.gray({ "translate": "kubejs.tooltips.rapier_wand.1" }));
     })
@@ -69,9 +69,22 @@ ItemEvents.tooltip((tooltip) => {
     })
     tooltip.addAdvanced('kubejs:unholy_grail', (item, advanced, text) => {
         text.add(Text.red({ "translate": "kubejs.tooltips.unholy_grail.1" }));
+        text.add(Text.darkGray({ "translate": "kubejs.tooltips.unholy_grail.2" }));
     })
-    tooltip.addAdvanced('kubejs:stardust_fragment', (item, advanced, text) => {
-        text.add(Text.gold({ "translate": "kubejs.tooltips.stardust_fragment.1" }));
+    tooltip.addAdvanced('kubejs:dark_stardust_fragment', (item, advanced, text) => {
+        text.add(Text.gray({ "translate": "kubejs.tooltips.dark_stardust_fragment.1" }));
+        text.add(Text.gold({ "translate": "kubejs.tooltips.dark_stardust_fragment.2" }));
+    })
+    tooltip.addAdvanced('kubejs:unbreakable_core', (item, advanced, text) => {
+        text.add(Text.gray({ "translate": "kubejs.tooltips.unbreakable_core.1" }));
+        text.add(Text.gold({ "translate": "kubejs.tooltips.unbreakable_core.2" }));
+    })
+    tooltip.addAdvanced('kubejs:disenchantment_book', (item, advanced, text) => {
+        text.add(Text.gray({ "translate": "kubejs.tooltips.disenchantment_book.1" }));
+        text.add(Text.gold({ "translate": "kubejs.tooltips.disenchantment_book.2" }));
+    })
+    tooltip.addAdvanced('kubejs:advanced_chest_opener', (item, advanced, text) => {
+        text.add(Text.darkGray({ "translate": "kubejs.tooltips.advanced_chest_opener.1" }));
     })
     tooltip.addAdvanced('kubejs:god_bless_empty_necklace', (item, advanced, text) => {
         text.add(Text.gray({ "translate": "kubejs.tooltips.god_bless_empty_necklace.1" }));
@@ -79,7 +92,83 @@ ItemEvents.tooltip((tooltip) => {
     tooltip.addAdvanced('kubejs:god_bless_full_necklace', (item, advanced, text) => {
         text.add(Text.gold({ "translate": "kubejs.tooltips.god_bless_full_necklace.1" }));
     })
-    
+
+    tooltip.addAdvanced('somebosses:illegal_beacon', (item, advanced, text) => {
+        text.add(Text.gray({ "translate": "kubejs.tooltips.illegal_beacon.1" }));
+    })
+    tooltip.addAdvanced('somebosses:rusty_sword_relic', (item, advanced, text) => {
+        text.add(Text.gray({ "translate": "kubejs.tooltips.rusty_sword_relic.1" }));
+    })
+    tooltip.addAdvanced('somebosses:monochrome_mask', (item, advanced, text) => {
+        text.add(Text.gray({ "translate": "kubejs.tooltips.monochrome_mask.1" }));
+    })
+    tooltip.addAdvanced('somebosses:gilded_dynamite', (item, advanced, text) => {
+        text.add(Text.gray({ "translate": "kubejs.tooltips.gilded_dynamite.1" }));
+    })
+    tooltip.addAdvanced('somebosses:burning_volcanic_rock', (item, advanced, text) => {
+        text.add(Text.gray({ "translate": "kubejs.tooltips.burning_volcanic_rock.1" }));
+    })
+    tooltip.addAdvanced('somebosses:vampire_bait', (item, advanced, text) => {
+        text.add(Text.gray({ "translate": "kubejs.tooltips.vampire_bait.1" }));
+    })
+    tooltip.addAdvanced('somebosses:slab_of_command', (item, advanced, text) => {
+        text.add(Text.gray({ "translate": "kubejs.tooltips.slab_of_command.1" }));
+    })
+    tooltip.addAdvanced('somebosses:bone_of_curse', (item, advanced, text) => {
+        text.add(Text.gray({ "translate": "kubejs.tooltips.bone_of_curse.1" }));
+    })
+    tooltip.addAdvanced('somebosses:cactus_relic', (item, advanced, text) => {
+        text.add(Text.gray({ "translate": "kubejs.tooltips.cactus_relic.1" }));
+    })
+    tooltip.addAdvanced('somebosses:prismarine_eye', (item, advanced, text) => {
+        text.add(Text.gray({ "translate": "kubejs.tooltips.prismarine_eye.1" }));
+    })
+    tooltip.addAdvanced('somebosses:disgusting_pendant', (item, advanced, text) => {
+        text.add(Text.gray({ "translate": "kubejs.tooltips.disgusting_pendant.1" }));
+    })
+    tooltip.addAdvanced('somebosses:necromancy_staff', (item, advanced, text) => {
+        text.add(Text.gray({ "translate": "kubejs.tooltips.necromancy_staff.1" }));
+    })
+    tooltip.addAdvanced('somebosses:one_eyed_wrait_in_a_bottle', (item, advanced, text) => {
+        text.add(Text.gray({ "translate": "kubejs.tooltips.one_eyed_wrait_in_a_bottle.1" }));
+    })
+    tooltip.addAdvanced('somebosses:token_of_the_ninja', (item, advanced, text) => {
+        text.add(Text.gray({ "translate": "kubejs.tooltips.token_of_the_ninja.1" }));
+    })
+    tooltip.addAdvanced('somebosses:cursed_spring_water', (item, advanced, text) => {
+        text.add(Text.gray({ "translate": "kubejs.tooltips.cursed_spring_water.1" }));
+    })
+    tooltip.addAdvanced('somebosses:chaos_insignia', (item, advanced, text) => {
+        text.add(Text.gray({ "translate": "kubejs.tooltips.chaos_insignia.1" }));
+    })
+    tooltip.addAdvanced('somebosses:dark_magic_gauntlet', (item, advanced, text) => {
+        text.add(Text.gray({ "translate": "kubejs.tooltips.dark_magic_gauntlet.1" }));
+    })
+    tooltip.addAdvanced('somebosses:frozen_shield_plate', (item, advanced, text) => {
+        text.add(Text.gray({ "translate": "kubejs.tooltips.frozen_shield_plate.1" }));
+    })
+    tooltip.addAdvanced('somebosses:ice_lantern', (item, advanced, text) => {
+        text.add(Text.gray({ "translate": "kubejs.tooltips.ice_lantern.1" }));
+    })
+    tooltip.addAdvanced('somebosses:furnace_torch', (item, advanced, text) => {
+        text.add(Text.gray({ "translate": "kubejs.tooltips.furnace_torch.1" }));
+    })
+    tooltip.addAdvanced('somebosses:power_generator_core', (item, advanced, text) => {
+        text.add(Text.gray({ "translate": "kubejs.tooltips.power_generator_core.1" }));
+    })
+
+    tooltip.addAdvanced('kubejs:candy_bag', (item, advanced, text) => {
+        text.add(Text.darkGray({ "translate": "kubejs.tooltips.candy_bag.1" }));
+    })
+
+    /*tooltip.addAdvanced('art_of_forging:potent_mixture', (item, advanced, text) => {
+        text.add(Text.gray({ "translate": "kubejs.tooltips.potent_mixture.1" }));
+    })*/
+
+    tooltip.addAdvanced('witherstormmod:withered_nether_star', (item, advanced, text) => {
+        text.add(Text.darkGray({ "translate": "kubejs.tooltips.withered_nether_star.1" }));
+    })
+
     tooltip.addAdvanced('kubejs:organ_charm', (item, advanced, text) => {
         let lineNum = 1
         if (item.nbt?.organ?.id) {
@@ -102,8 +191,8 @@ ItemEvents.tooltip((tooltip) => {
                     blockList.push(Text.translate(Item.of(ctx).descriptionId).string)
                 })
             }
-            text.add(lineNum++,[Text.gold({ "translate": "kubejs.tooltips.organ_charm.12" }), Text.yellow(blockList.join('/'))])
-            
+            text.add(lineNum++, [Text.gold({ "translate": "kubejs.tooltips.organ_charm.12" }), Text.yellow(blockList.join('/'))])
+
             text.add(lineNum++, [Text.gray({ "translate": "kubejs.tooltips.organ_charm.13" }), Text.gray(`${item.nbt.miningTask.counter}/${item.nbt.miningTask.miningAmount}`), Text.gray({ "translate": "kubejs.tooltips.organ_charm.14" })]);
         }
         if (item.nbt?.type == 'damage') {
@@ -121,8 +210,11 @@ ItemEvents.tooltip((tooltip) => {
             }
             text.add(lineNum++, [Text.gray({ "translate": "kubejs.tooltips.organ_charm.19" }), Text.gray(`${item.nbt.damageTask.minDamage}`), Text.gray({ "translate": "kubejs.tooltips.organ_charm.20" }), Text.gray(typeName), Text.gray({ "translate": "kubejs.tooltips.organ_charm.21" }), Text.gray(`${item.nbt.damageTask.counter.toFixed(2)}/${item.nbt.damageTask.damageAmount}`), Text.gray({ "translate": "kubejs.tooltips.organ_charm.22" })]);
         }
+        if (item.nbt?.type == 'warp') {
+            text.add(lineNum++, [Text.gray({ "translate": "kubejs.tooltips.organ_charm.23" }), Text.gold(`${item.nbt.warpTask.warpMin}`), Text.gray({ "translate": "kubejs.tooltips.organ_charm.24" })]);
+        }
         if (item.nbt?.status == 1) {
-            text.add(lineNum++, [Text.red({ "translate": "kubejs.tooltips.organ_charm.23" })]);
+            text.add(lineNum++, [Text.red({ "translate": "kubejs.tooltips.organ_charm.25" })]);
         }
     })
 })

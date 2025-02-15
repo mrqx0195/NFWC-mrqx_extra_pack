@@ -15,8 +15,56 @@
 			image: "kubejs:textures/task/collection_1.png"
 			rotation: 0.0d
 			width: 17.0d
+			x: 12.5d
+			y: 23.75d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 4.467948717948718d
+			hover: [ ]
+			image: "kubejs:textures/task/collection_1.png"
+			rotation: 0.0d
+			width: 17.0d
+			x: 12.5d
+			y: 26.75d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 4.467948717948718d
+			hover: [ ]
+			image: "kubejs:textures/task/collection_1.png"
+			rotation: 0.0d
+			width: 17.0d
+			x: -2.75d
+			y: 29.5d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 4.467948717948718d
+			hover: [ ]
+			image: "kubejs:textures/task/collection_1.png"
+			rotation: 0.0d
+			width: 17.0d
 			x: -2.75d
 			y: 5.75d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 4.467948717948718d
+			hover: [ ]
+			image: "kubejs:textures/task/collection_1.png"
+			rotation: 0.0d
+			width: 17.0d
+			x: -2.75d
+			y: 23.0d
 		}
 		{
 			click: ""
@@ -28,7 +76,7 @@
 			rotation: 0.0d
 			width: 17.0d
 			x: -2.75d
-			y: 8.75d
+			y: 15.5d
 		}
 		{
 			click: ""
@@ -40,7 +88,7 @@
 			rotation: 0.0d
 			width: 17.0d
 			x: -2.75d
-			y: 12.75d
+			y: 19.5d
 		}
 		{
 			click: ""
@@ -52,31 +100,7 @@
 			rotation: 0.0d
 			width: 17.0d
 			x: -2.75d
-			y: 15.75d
-		}
-		{
-			click: ""
-			corner: false
-			dev: false
-			height: 4.467948717948718d
-			hover: [ ]
-			image: "kubejs:textures/task/collection_1.png"
-			rotation: 0.0d
-			width: 17.0d
-			x: -2.75d
-			y: 18.75d
-		}
-		{
-			click: ""
-			corner: false
-			dev: false
-			height: 4.467948717948718d
-			hover: [ ]
-			image: "kubejs:textures/task/collection_1.png"
-			rotation: 0.0d
-			width: 17.0d
-			x: -2.75d
-			y: 21.75d
+			y: 26.25d
 		}
 		{
 			click: ""
@@ -149,6 +173,90 @@
 			width: 17.0d
 			x: 12.5d
 			y: 17.75d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 7.3d
+			hover: [ ]
+			image: "kubejs:textures/task/collection_7.png"
+			rotation: 0.0d
+			width: 17.0d
+			x: -2.5d
+			y: 10.0d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 4.467948717948718d
+			hover: [ ]
+			image: "kubejs:textures/task/collection_1.png"
+			rotation: 0.0d
+			width: 17.0d
+			x: 12.5d
+			y: 20.75d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 4.467948717948718d
+			hover: [ ]
+			image: "kubejs:textures/task/collection_1.png"
+			rotation: 0.0d
+			width: 17.0d
+			x: -2.75d
+			y: 32.75d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 4.467948717948718d
+			hover: [ ]
+			image: "kubejs:textures/task/collection_1.png"
+			rotation: 0.0d
+			width: 17.0d
+			x: 12.5d
+			y: 29.75d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 4.467948717948718d
+			hover: [ ]
+			image: "kubejs:textures/task/collection_2.png"
+			rotation: 0.0d
+			width: 17.0d
+			x: 12.5d
+			y: 32.75d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 4.467948717948718d
+			hover: [ ]
+			image: "kubejs:textures/task/collection_1.png"
+			rotation: 0.0d
+			width: 17.0d
+			x: 12.5d
+			y: 36.5d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 4.467948717948718d
+			hover: [ ]
+			image: "kubejs:textures/task/collection_1.png"
+			rotation: 0.0d
+			width: 17.0d
+			x: -2.75d
+			y: 35.75d
 		}
 	]
 	order_index: 0
@@ -295,16 +403,16 @@
 			}]
 			title: "Boss遗物器官"
 			x: -8.75d
-			y: 7.5d
+			y: 7.75d
 		}
 		{
 			dependencies: ["795DE8D8EF4D3A01"]
 			description: [
-				"&5糖果胰&r能够在&d甜蜜之梦&r效果因为受伤抵消消失时，给予你&6伤害吸收 Ⅴ&r 效果。"
+				"&5糖果胰&r能够在&d甜蜜之梦&r效果因为受伤抵消消失时，给予你&6伤害吸收 Ⅴ&r 和&6生命提升 Ⅴ&r效果。"
 				""
 				"这往往会为你争取到宝贵的生存时间。"
 				""
-				"糖果胰被喜爱甜食的&2无名巫师&r视为珍宝，或许可以从它身上找到这个器官的蛛丝马迹。"
+				"糖果胰被喜爱甜食的&2远古巫师&r视为珍宝，或许可以从它身上找到这个器官的蛛丝马迹。"
 			]
 			id: "0AA6C02B13BD7CEC"
 			rewards: [{
@@ -371,11 +479,7 @@
 		}
 		{
 			dependencies: ["795DE8D8EF4D3A01"]
-			description: [
-				"&5魔法海马体&r在受到&610&r点及其以上伤害时会根据其他器官的拥有情况，获得对应的&d甜蜜之梦&r效果。"
-				""
-				"&5仪式匕首&r刚好能够满足10点伤害的阈值，同时又能为你恢复一定量的魔法值。"
-			]
+			description: ["&5魔法海马体&r在受到&65&r点及其以上伤害时会根据其他器官的拥有情况，获得对应的&d甜蜜之梦&r效果。每次触发该效果时，都会有&65s&r冷却时间。"]
 			icon: "kubejs:magic_hippocampus"
 			id: "0B70995B04FD8E9A"
 			rewards: [{
@@ -449,7 +553,7 @@
 		{
 			dependencies: ["24E73A64F055728A"]
 			description: [
-				"无尽节律在你没有手持物品、没有装备胸甲时，每次攻击会额外提供2的&2临时攻击力&r加成，可&6无限叠加&r。"
+				"无尽节律在你没有手持物品、没有装备胸甲时，每次攻击会额外提供4的&2临时攻击力&r加成，可&6无限叠加&r。"
 				""
 				"代价是，&2每次攻击自身会受到等同于增加攻击力的固定伤害&r。"
 				""
@@ -500,7 +604,7 @@
 			description: [
 				"革命系列的&6核心器官&r，通过消耗煤炭来获得临时的效果增益。"
 				""
-				"&c熔火效果&r每有一级，将会提供额外&63&r点的固定攻击伤害加成。"
+				"&c熔火效果&r每有一级，将会提供额外&64&r点的固定攻击伤害加成。"
 			]
 			id: "55C12BA0AF6395BA"
 			rewards: [{
@@ -635,7 +739,7 @@
 			}]
 			title: "进化器官"
 			x: -8.75d
-			y: 14.5d
+			y: 18.25d
 		}
 		{
 			dependencies: ["437705D28D92B135"]
@@ -664,7 +768,7 @@
 			}]
 			title: "模板器官进化"
 			x: -6.75d
-			y: 15.5d
+			y: 19.25d
 		}
 		{
 			dependencies: ["437705D28D92B135"]
@@ -691,14 +795,14 @@
 			}]
 			title: "伸缩臂"
 			x: -7.75d
-			y: 15.5d
+			y: 19.25d
 		}
 		{
 			dependencies: ["6794388AA5357126"]
 			description: [
 				"碎片系列器官以&4七宗罪&r为契机，如果将其&6收集完全&r，或许可以触发意想不到的效果. . ."
 				""
-				"&7但是，现在，它们还在沉睡. . .&r"
+				"&7现在，它们已不再沉睡. . .&r"
 			]
 			icon: "minecraft:amethyst_shard"
 			id: "235753780EE3782C"
@@ -711,14 +815,14 @@
 			}]
 			title: "碎片"
 			x: -8.75d
-			y: 17.5d
+			y: 21.75d
 		}
 		{
 			dependencies: ["6662469DC72EA384"]
 			description: [
 				"从&2冷血杀手&r的胸腔中获得，能够给予弱小的敌人强大的反弹伤害。"
 				""
-				"可以将其放置在器官容器中进化为心之剑。"
+				"可以将其放置在器官容器中进化为&6心之剑&r。"
 			]
 			icon: {
 				Count: 1b
@@ -1051,7 +1155,7 @@
 				type: "item"
 			}]
 			x: -0.75d
-			y: 18.5d
+			y: 22.75d
 		}
 		{
 			dependencies: ["235753780EE3782C"]
@@ -1071,7 +1175,7 @@
 				type: "item"
 			}]
 			x: -6.75d
-			y: 18.5d
+			y: 22.75d
 		}
 		{
 			dependencies: ["235753780EE3782C"]
@@ -1091,7 +1195,7 @@
 				type: "item"
 			}]
 			x: -5.75d
-			y: 18.5d
+			y: 22.75d
 		}
 		{
 			dependencies: ["235753780EE3782C"]
@@ -1111,7 +1215,7 @@
 				type: "item"
 			}]
 			x: -4.75d
-			y: 18.5d
+			y: 22.75d
 		}
 		{
 			dependencies: ["235753780EE3782C"]
@@ -1131,7 +1235,7 @@
 				type: "item"
 			}]
 			x: -3.75d
-			y: 18.5d
+			y: 22.75d
 		}
 		{
 			dependencies: ["235753780EE3782C"]
@@ -1151,7 +1255,7 @@
 				type: "item"
 			}]
 			x: -2.75d
-			y: 18.5d
+			y: 22.75d
 		}
 		{
 			dependencies: ["235753780EE3782C"]
@@ -1171,16 +1275,22 @@
 				type: "item"
 			}]
 			x: -1.75d
-			y: 18.5d
+			y: 22.75d
 		}
 		{
 			dependencies: ["235753780EE3782C"]
+			description: [
+				"下界之星碎片的主动能力能够使其指向的凋零风暴生长阶段增加。"
+				""
+				"这会使得某些情况下，跳过一些凋零风暴的主要流程，使用时请确保你了解凋零风暴当前的阶段，以及下一个阶段需要做些什么！"
+			]
 			id: "41B89386FBDB06AE"
 			rewards: [{
 				id: "6CF03D0FB70139FD"
 				item: "lightmanscurrency:coin_gold"
 				type: "item"
 			}]
+			subtitle: "凋零身体的一部分"
 			tasks: [{
 				id: "516CD9AA8B9190CA"
 				item: {
@@ -1191,7 +1301,7 @@
 				type: "item"
 			}]
 			x: -7.75d
-			y: 18.5d
+			y: 22.75d
 		}
 		{
 			dependencies: ["309791281FE1F06A"]
@@ -1213,7 +1323,7 @@
 				type: "item"
 			}]
 			x: -7.75d
-			y: 21.5d
+			y: 26.0d
 		}
 		{
 			dependencies: ["309791281FE1F06A"]
@@ -1235,7 +1345,7 @@
 				type: "item"
 			}]
 			x: -6.75d
-			y: 21.5d
+			y: 26.0d
 		}
 		{
 			dependencies: ["309791281FE1F06A"]
@@ -1257,7 +1367,7 @@
 				type: "item"
 			}]
 			x: -5.75d
-			y: 21.5d
+			y: 26.0d
 		}
 		{
 			dependencies: ["309791281FE1F06A"]
@@ -1279,7 +1389,7 @@
 				type: "item"
 			}]
 			x: -4.75d
-			y: 21.5d
+			y: 26.0d
 		}
 		{
 			dependencies: ["6794388AA5357126"]
@@ -1295,7 +1405,7 @@
 			}]
 			title: "食物器官"
 			x: -8.75d
-			y: 20.5d
+			y: 25.0d
 		}
 		{
 			dependencies: ["4F074296A3A9D918"]
@@ -1317,7 +1427,7 @@
 				type: "item"
 			}]
 			x: -4.75d
-			y: 12.5d
+			y: 15.0d
 		}
 		{
 			dependencies: ["4F074296A3A9D918"]
@@ -1339,7 +1449,7 @@
 				type: "item"
 			}]
 			x: -3.75d
-			y: 12.5d
+			y: 15.0d
 		}
 		{
 			dependencies: ["7CFE03E2610EA31B"]
@@ -1387,7 +1497,7 @@
 				type: "item"
 			}]
 			x: -3.75d
-			y: 21.5d
+			y: 26.0d
 		}
 		{
 			dependencies: ["6794388AA5357126"]
@@ -1416,7 +1526,7 @@
 			description: [
 				"由&2胃瘤&r在器官容器中&2进化&r获得。"
 				""
-				"能够在激活后稳定的提供100的&2资源点数上限&r，并且在资源点数累积到150以上时，每次挖掘有2%的概率触发&6点石成金&r，使掉落物强制转换成为金块，并损失100资源点。"
+				"能够在激活后稳定的提供100的&2资源点数上限&r，并且在资源点数累积到150以上时，每次挖掘有5%的概率触发&6点石成金&r，使掉落物强制转换成为金块，或小概率转化为金币，并损失150资源点。"
 			]
 			id: "77AA2FDAEE799E7A"
 			rewards: [{
@@ -1533,7 +1643,7 @@
 			}]
 			title: "机械"
 			x: -8.75d
-			y: 11.5d
+			y: 14.25d
 		}
 		{
 			dependencies: ["4F074296A3A9D918"]
@@ -1555,7 +1665,7 @@
 				type: "item"
 			}]
 			x: -7.75d
-			y: 12.5d
+			y: 15.0d
 		}
 		{
 			dependencies: ["4F074296A3A9D918"]
@@ -1577,7 +1687,7 @@
 				type: "item"
 			}]
 			x: -6.75d
-			y: 12.5d
+			y: 15.0d
 		}
 		{
 			dependencies: ["4F074296A3A9D918"]
@@ -1599,7 +1709,7 @@
 				type: "item"
 			}]
 			x: -5.75d
-			y: 12.5d
+			y: 15.0d
 		}
 		{
 			dependencies: ["4F074296A3A9D918"]
@@ -1621,7 +1731,7 @@
 				type: "item"
 			}]
 			x: -2.75d
-			y: 12.5d
+			y: 15.0d
 		}
 		{
 			dependencies: ["6662469DC72EA384"]
@@ -1702,7 +1812,7 @@
 			description: [
 				"在&c焰魔&r的胸腔中获得。"
 				""
-				"玩家在着火状态下会逐渐累积&2最高为5级的力量效果&r，能够造成相当可观额外输出。但需要注意力量的持续时间极短，而判定时间间隔为2s，因此很容导致buff断续。"
+				"玩家在着火状态下会逐渐累积&2最高为8级的力量效果&r，能够造成相当可观额外输出。但需要注意力量的持续时间极短，而判定时间间隔为2s，因此很容导致buff断续。"
 			]
 			id: "271802F527EBA289"
 			rewards: [{
@@ -1822,7 +1932,7 @@
 			description: [
 				"通过器官容器进化&6二重身&r获得。"
 				""
-				"能够在&2生命值低于30%的时候给予玩家吸血效果&r，20%的时候效果变化为2级，10%的时候变化为3级。"
+				"能够在&2生命值低于50%的时候给予玩家吸血效果&r，30%的时候效果变化为2级，20%的时候变化为3级。"
 			]
 			id: "54066B06BF4DCAD7"
 			rewards: [{
@@ -1841,7 +1951,7 @@
 				type: "item"
 			}]
 			x: -2.75d
-			y: 21.5d
+			y: 26.0d
 		}
 		{
 			dependencies: ["4F074296A3A9D918"]
@@ -1857,13 +1967,13 @@
 				id: "20B01C7DD0952A2C"
 				item: {
 					Count: 1b
-					id: "kubejs:enery_bottle_max"
+					id: "kubejs:energy_bottle_max"
 					tag: { }
 				}
 				type: "item"
 			}]
 			x: -1.75d
-			y: 12.5d
+			y: 15.0d
 		}
 		{
 			dependencies: ["6662469DC72EA384"]
@@ -1911,7 +2021,7 @@
 				type: "item"
 			}]
 			x: -0.75d
-			y: 12.5d
+			y: 15.0d
 		}
 		{
 			dependencies: ["6794388AA5357126"]
@@ -1945,7 +2055,7 @@
 		{
 			dependencies: ["7FF071C02D97C693"]
 			description: [
-				"能够将&2法力值直接转化为伤害&r，配合&6大艺术家法杖&r能够打出相当炸裂的输出。"
+				"能够将&2法力值直接转化为伤害&r，配合&6艺术家法杖&r能够打出相当炸裂的输出。"
 				""
 				"大艺术家法杖提供的&e色彩&r效果可以进一步强化该器官提供的伤害增强。你可以在古代都市的箱子中寻找到大艺术家法杖。"
 			]
@@ -2010,7 +2120,7 @@
 		}
 		{
 			dependencies: ["7FF071C02D97C693"]
-			description: ["根据受伤值回复法力，在某些&6受伤流派&r的构筑中可能有所帮助。"]
+			description: ["根据受伤值回复法力，受伤回复的法力值和魔法器官数量挂钩，在某些&6受伤流派&r的构筑中可能有所帮助。"]
 			id: "2765573B3F088673"
 			rewards: [{
 				id: "6CC1DE3D63A2A651"
@@ -2037,7 +2147,11 @@
 				""
 				"它们的效果非常杂乱且强大，因此很难用某个类型来进行描述。"
 				""
-				"&5禁忌类器官&r则更多的与&d扭曲&r设计相关，但目前扭曲的设计仍处于早期，因此可以忽略掉其带来的影响。"
+				"&5禁忌类器官&r则更多的与&d扭曲&r相关。在世界中进行某些行为的时候，会导致扭曲值的增加。"
+				""
+				"较高的扭曲值会引发&6精英怪物&r的生成，精英怪物有着其独特的机制，能够在不同的情况下对玩家产生极大的威胁。"
+				""
+				"通过食用附魔金苹果、受祝福的紫水晶蟹肉类的的食物，扭曲值可以快速的降低。"
 			]
 			icon: {
 				Count: 1b
@@ -2045,6 +2159,11 @@
 				tag: { }
 			}
 			id: "3910C8340AB4ECE9"
+			rewards: [{
+				id: "5FBCBABF5E40B5BB"
+				item: "cataclysm:blessed_amethyst_crab_meat"
+				type: "item"
+			}]
 			shape: "rsquare"
 			subtitle: "我不知为何，它不止为何，祂不值为何"
 			tasks: [{
@@ -2307,9 +2426,9 @@
 		{
 			dependencies: ["4F074296A3A9D918"]
 			description: [
-				"&c玫瑰&r系列以激活后提供的大量属性为主要核心。"
+				"&c玫瑰系列&r的器官之一。"
 				""
-				"玫瑰石英心脏便是其中的关键部件之一。"
+				"能够提供少许的健康，并且在激活的情况下能够提供可观的生命值上限。"
 			]
 			id: "20385C663BC4CBAD"
 			rewards: [{
@@ -2328,14 +2447,14 @@
 				type: "item"
 			}]
 			x: 0.25d
-			y: 12.5d
+			y: 15.0d
 		}
 		{
 			dependencies: ["4F074296A3A9D918"]
 			description: [
-				"&c玫瑰石英&r的白板器官之一。"
+				"&c玫瑰系列&r的器官之一。"
 				""
-				"能够提供少许的解毒效率，其意义在于配合玫瑰石英系列其他的种类激活器官。"
+				"能够提供少许的解毒效率，并且在激活的情况下能够提供可观的魔力上限。"
 			]
 			id: "4609B0E23FB50956"
 			rewards: [{
@@ -2354,14 +2473,14 @@
 				type: "item"
 			}]
 			x: 1.25d
-			y: 12.5d
+			y: 15.0d
 		}
 		{
 			dependencies: ["4F074296A3A9D918"]
 			description: [
-				"&c玫瑰石英&r的白板器官之一。"
+				"&c玫瑰系列&r的器官之一。"
 				""
-				"能够提供少许的力量，其意义在于配合玫瑰石英系列其他的种类激活器官。"
+				"能够提供少许的力量，在激活的情况下能够给予可观的攻击力加成。"
 			]
 			id: "5704DDF15A4710BF"
 			rewards: [{
@@ -2380,7 +2499,7 @@
 				type: "item"
 			}]
 			x: 2.25d
-			y: 12.5d
+			y: 15.0d
 		}
 		{
 			dependencies: ["309791281FE1F06A"]
@@ -2406,12 +2525,12 @@
 				type: "item"
 			}]
 			x: -1.75d
-			y: 21.5d
+			y: 26.0d
 		}
 		{
 			dependencies: ["6662469DC72EA384"]
 			description: [
-				"在&c监守者&r的胸腔中获得，能够通过使用主动技能按键释放音爆攻击。"
+				"在&c监守者&r的胸腔中获得，能够通过使用主动技能按键释放音爆攻击。玩家的经验等级会为音爆攻击提供更多伤害。"
 				""
 				"音爆波及的敌人越多，其冷却时间越短。"
 			]
@@ -2459,6 +2578,2583 @@
 			}]
 			x: -5.75d
 			y: 9.5d
+		}
+		{
+			dependencies: ["309791281FE1F06A"]
+			description: [
+				"小型动物的器官刚好适合用于制作炸鸡套餐。"
+				""
+				"通过炸鸡套餐在胸腔里的摆放，你可以实现一个幸运最大化的方案。"
+			]
+			icon: {
+				Count: 1b
+				id: "kubejs:chicken_strip"
+				tag: { }
+			}
+			id: "494CC4D745FB4B92"
+			rewards: [{
+				count: 4
+				id: "03374923FA9C0A51"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "幸运炸鸡！"
+			tasks: [
+				{
+					id: "41855308F7541D3D"
+					item: {
+						Count: 1b
+						id: "kubejs:chicken_heart"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					id: "0687142B2327A43B"
+					item: {
+						Count: 1b
+						id: "kubejs:chicken_kidney"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					id: "40DE11B32767A562"
+					item: {
+						Count: 1b
+						id: "kubejs:chicken_lung"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					id: "76315CF02807B8A7"
+					item: {
+						Count: 1b
+						id: "kubejs:chicken_strip"
+						tag: { }
+					}
+					type: "item"
+				}
+			]
+			title: "麦乐鸡套餐！"
+			x: -0.75d
+			y: 26.0d
+		}
+		{
+			dependencies: ["6662469DC72EA384"]
+			description: [
+				"带血骨剑在&c沼泽巨颌怪&r的胸腔中可以获得。"
+				""
+				"其在胸腔中时，根据长弓射出的弓箭击中时的双方距离进行伤害结算。在距离低于20时，伤害会&c平方下降&r；而在距离高于20时，伤害会&6平方上升&r。最高提高5倍伤害。"
+			]
+			id: "0A9C7FE4A4E11D23"
+			rewards: [{
+				id: "1B393E241E049C92"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "鲜血直流. . .但它却从未悔改"
+			tasks: [{
+				id: "3D78F57AB00EFCFF"
+				item: {
+					Count: 1b
+					id: "kubejs:bloody_bone_arrow"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -6.75d
+			y: 10.5d
+		}
+		{
+			dependencies: ["6662469DC72EA384"]
+			description: [
+				"紫水晶魔力核心在击败&d黑曜石巨柱&r的时候会掉落。"
+				""
+				"将其装备在胸腔中，使用主动按键（默认X）会消耗当前所有的法力值来释放&6超限法术:魔法箭&r。超限等级随着消耗法力值的数量而提高。"
+			]
+			id: "0F9C204D570E1601"
+			rewards: [{
+				id: "59C0991598FC8020"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "它时刻准备着破碎"
+			tasks: [{
+				id: "6BEB4CDE60A33C76"
+				item: {
+					Count: 1b
+					id: "kubejs:amethyst_magic_core"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -7.75d
+			y: 10.5d
+		}
+		{
+			dependencies: ["6662469DC72EA384"]
+			description: [
+				"奥林匹斯熔炉可以在&c火神&r的胸腔中获得。"
+				""
+				"在启用&c熔火/心火&r状态时，其会源源不断的提供大量资源点数。资源点数的提供数量取决于两个buff的剩余时长/效果等级。"
+			]
+			id: "209ECD988658572E"
+			rewards: [{
+				id: "678E1C3F4F18279B"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "它一直都在燃烧，它也在等待你的燃烧"
+			tasks: [{
+				id: "0F962208EB06DF56"
+				item: {
+					Count: 1b
+					id: "kubejs:vulcan_furnace"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -5.75d
+			y: 10.5d
+		}
+		{
+			dependencies: ["6662469DC72EA384"]
+			description: [
+				"原始骑士核心能够在&c最初的骑士&r的胸腔中发现。"
+				""
+				"其能够将你的额外临时生命转换成伤害。"
+			]
+			id: "3DEFAC7D9ECACE04"
+			rewards: [{
+				id: "55EEA4D07289184A"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "他还活着，他在等待一个人"
+			tasks: [{
+				id: "4844783204781FA7"
+				item: {
+					Count: 1b
+					id: "kubejs:origin_knight_core"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -4.75d
+			y: 10.5d
+		}
+		{
+			dependencies: ["6662469DC72EA384"]
+			description: [
+				"破碎的海晶王冠可以在&c海晶监视者&r的胸腔中发现。"
+				""
+				"能够被修复成&6海晶王冠&r。"
+			]
+			id: "6CFD4B15BBC3AE7D"
+			rewards: [{
+				id: "7439EBFFF0DAA91B"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "破碎的皇冠正是昔日权利的证明"
+			tasks: [{
+				id: "7B2B32A7AB75FDAD"
+				item: {
+					Count: 1b
+					id: "kubejs:broken_prismarine_crown"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -3.75d
+			y: 10.5d
+		}
+		{
+			dependencies: ["3910C8340AB4ECE9"]
+			description: [
+				"通过修复&6破碎的海晶王冠&r获得。"
+				""
+				"能够让你为负数的胸腔属性变为1。"
+			]
+			id: "0127B35736599543"
+			rewards: [{
+				id: "709281020A0D9529"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "神灵降世"
+			tasks: [{
+				id: "3379B7D27A69CE09"
+				item: {
+					Count: 1b
+					id: "kubejs:prismarine_crown"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 16.5d
+			y: 17.5d
+		}
+		{
+			dependencies: ["575ADA02AEE66047"]
+			description: [
+				"来源于&b冰龙&r体内的强大器官，是冰龙力量的源泉。"
+				""
+				"提供&d结晶&r效果，使得末影水晶也可以为你充能。"
+				""
+				"你可以通过消耗法力值释放&b主动技能——超限：刺骨寒风&r。使用者的&e最大生命值&r越多，其&e超限等级&r越高。"
+			]
+			id: "5784F57C0810747F"
+			rewards: [{
+				id: "68975D76407EFF17"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "你可曾听见……凛冽寒风"
+			tasks: [{
+				id: "7C95771351B964E1"
+				item: {
+					Count: 1b
+					id: "kubejs:ice_dragon_bead"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 7.5d
+			y: 20.5d
+		}
+		{
+			dependencies: ["575ADA02AEE66047"]
+			description: [
+				"来源于&4火龙&r体内的强大器官，是火龙力量的源泉。"
+				""
+				"提供&d结晶&r效果，使得末影水晶也可以为你充能。"
+				""
+				"你可以通过消耗法力值释放&4主动技能——超限：火焰吐息&r。使用者的&e最大生命值&r越多，其&e超限等级&r越高。"
+			]
+			id: "7AA8D25C679C5531"
+			rewards: [{
+				id: "4AEA942C351C274B"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "烈焰啊，焚尽一切！"
+			tasks: [{
+				id: "114923DFFBB40689"
+				item: {
+					Count: 1b
+					id: "kubejs:fire_dragon_bead"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 8.5d
+			y: 20.5d
+		}
+		{
+			dependencies: ["575ADA02AEE66047"]
+			description: [
+				"来源于&5电龙&r体内的强大器官，是电龙力量的源泉。"
+				""
+				"提供&d结晶&r效果，使得末影水晶也可以为你充能。"
+				""
+				"你可以通过消耗法力值释放&5主动技能——超限：电刑&r。使用者的&e最大生命值&r越多，其&e超限等级&r越高。"
+			]
+			id: "51B95DC783E4F9D6"
+			rewards: [{
+				id: "5B00FF6DFE39FF72"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "我以雷霆，击碎黑暗"
+			tasks: [{
+				id: "394E2D3D632B27A6"
+				item: {
+					Count: 1b
+					id: "kubejs:lightning_dragon_bead"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 9.5d
+			y: 20.5d
+		}
+		{
+			dependencies: ["6794388AA5357126"]
+			description: [
+				"当巨龙生命垂危之际，你可以打开它们的胸腔，并从中夺取&e龙之器官&r。"
+				""
+				"不同种类的巨龙，其器官的属性也并不相同："
+				"&4火龙器官&r会为你提供无与伦比的&4力量&r；"
+				"&b冰龙器官&r会为你提供坚不可摧的&b防御&r；"
+				"&5电龙器官&r会为你提供风驰电掣的&5速度&r。"
+				""
+				"在巨龙体内，你还可以找到它们强大力量的核心——&e巨龙宝玉&r。"
+			]
+			icon: {
+				Count: 1b
+				id: "iceandfire:dragon_skull_fire"
+				tag: {
+					DragonAge: 75
+					Stage: 4
+				}
+			}
+			id: "575ADA02AEE66047"
+			shape: "rsquare"
+			subtitle: "来源于巨龙体内的强大力量"
+			tasks: [{
+				id: "6C1E41C836C7813A"
+				title: "我已了解"
+				type: "checkmark"
+			}]
+			title: "龙之器官"
+			x: 6.5d
+			y: 19.5d
+		}
+		{
+			dependencies: ["575ADA02AEE66047"]
+			description: [
+				"&c龙血器官&r由&e模板器官&r在&e龙钢锻炉&r中沐浴任意龙血而来。"
+				""
+				"其中&c龙血心脏&r会给予你&c主动技能——龙化&r。在龙化状态下，龙类器官会给予你减伤效果，在减伤溢出时会将伤害转化为额外生命。"
+				""
+				"神经效率影响龙化状态的持续时间，龙类器官种类影响龙化状态的效果。"
+			]
+			icon: {
+				Count: 1b
+				id: "kubejs:dragon_blood_heart"
+				tag: { }
+			}
+			id: "4E5E0F7CE3150DCF"
+			rewards: [{
+				id: "0BB2C1D411983AF5"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "沐浴了龙血的器官宛若新生"
+			tasks: [{
+				id: "02417E9496B389CA"
+				item: {
+					Count: 1b
+					id: "kubejs:dragon_blood_heart"
+					tag: { }
+				}
+				type: "item"
+			}]
+			title: "龙血器官"
+			x: 10.5d
+			y: 20.5d
+		}
+		{
+			dependencies: ["6662469DC72EA384"]
+			description: [
+				"塑封心在&c远古巫师&r的胸腔中可以获得。"
+				""
+				"塑封心能够提高所有用器官释放出的&b超限法术&r的等级，在超限法术为核心的构筑之中用处广泛。"
+			]
+			id: "445067B21A9D25A9"
+			rewards: [{
+				id: "364F7BD63EECD010"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "它依旧在跳动着"
+			tasks: [{
+				id: "189552414B4F2355"
+				item: {
+					Count: 1b
+					id: "kubejs:plastic_heart"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -2.75d
+			y: 10.5d
+		}
+		{
+			dependencies: ["6662469DC72EA384"]
+			description: [
+				"千咒之魂在&c使徒&r的胸腔中可以获得。"
+				""
+				"根据自身装备的诅咒附魔数量和等级减免&e近战和弹射物伤害&r，最多减免&650%&r伤害。"
+				""
+				"作为代价，大幅度增加玩家自己受到的&e其他类型伤害&r"
+			]
+			id: "57F8576015302D03"
+			rewards: [{
+				id: "51C9425FEF13B3F6"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "以恶意偏转刀刃与箭锋"
+			tasks: [{
+				id: "4A665ADCA4387524"
+				item: {
+					Count: 1b
+					id: "kubejs:cursed_soul"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -1.75d
+			y: 10.5d
+		}
+		{
+			dependencies: ["6662469DC72EA384"]
+			description: [
+				"胸中鱼缸在&c水人&r的胸腔中可以获得。"
+				""
+				"可以根据胸中器官的&e数量&r倍增所有器官的基础属性，器官越多，倍率越低；器官越少，倍率越高。"
+				""
+				"需要注意的是，一切&b“物品”&r不视作&4“器官”&r，因此使得一些特殊的流派构建成为可能。"
+			]
+			id: "4F158B7BE4B8ED42"
+			rewards: [{
+				id: "6DC275E755E1F423"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "“鱼”需要广阔的空间，但也需要特殊的点缀"
+			tasks: [{
+				id: "4D39D6D138800422"
+				item: {
+					Count: 1b
+					id: "kubejs:fish_in_chest"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -0.75d
+			y: 10.5d
+		}
+		{
+			dependencies: ["7FF071C02D97C693"]
+			description: ["激活后提高&b5%暴击概率&r和&e30%神圣法术强度&r。"]
+			id: "2DDE82092A265AD9"
+			rewards: [{
+				id: "12B95770A8AE1C73"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "神圣的血肉散发出某种违和感"
+			tasks: [{
+				id: "5AE0EBB3B258B85E"
+				item: {
+					Count: 1b
+					id: "kubejs:holy_eyeball"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 10.5d
+			y: 14.5d
+		}
+		{
+			dependencies: ["07080DC68B62B221"]
+			description: [
+				"从&6曦鹤&r胸腔中取出的器官。"
+				""
+				"释放主动技能，给予自身&b曦鹤之佑效果&r并移除自身&b曦鹤之咒效果&r。"
+				""
+				"攻击&e亡灵生物&r时，&c点燃&r该生物并增加其受到的&c燃烧伤害&r。"
+			]
+			id: "0ADE78497C79553D"
+			rewards: [{
+				id: "17E4FAD24050C738"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "仙气飘飘"
+			tasks: [{
+				id: "01D06926CAD06A28"
+				item: {
+					Count: 1b
+					id: "kubejs:sunbird_crystals"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 7.5d
+			y: 26.5d
+		}
+		{
+			dependencies: ["07080DC68B62B221"]
+			description: [
+				"从&6末影噬菌体&r胸腔中取出的器官。"
+				""
+				"释放主动技能，给予目标生物&b末影流感效果&r。"
+				""
+				"可用于更方便地克隆末影噬菌体，或者单纯作为某种输出手段。"
+			]
+			id: "1F6C73B5DA08138B"
+			rewards: [{
+				id: "5D5D5E0024D7DF67"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "破胸而出"
+			tasks: [{
+				id: "4390C334267414F4"
+				item: {
+					Count: 1b
+					id: "kubejs:enderiophage_heart"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 8.5d
+			y: 26.5d
+		}
+		{
+			dependencies: ["4EDC05BC7B3BB700"]
+			description: [
+				"释放主动技能，给予自身&b一触即发效果&r。"
+				""
+				"胸腔内器官的&e怪异属性&r总和提供效果的&b持续时间&r，&e爆炸属性&r总和提供效果的&b等级&r。"
+				""
+				"若胸腔内存在&e火药或TNT&r，每一格该物品提供额外的&b技能冷却时间&r。"
+			]
+			id: "7978787EA7DA5F9D"
+			rewards: [{
+				id: "122C5A466D4E223C"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "艺术就是爆炸！"
+			tasks: [{
+				id: "5E798E01E9D2BE3D"
+				item: {
+					Count: 1b
+					id: "kubejs:excited_appendix"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -7.75d
+			y: 29.25d
+		}
+		{
+			dependencies: ["4F074296A3A9D918"]
+			description: [
+				"&c玫瑰系列&r的器官之一。"
+				""
+				"能够将所有&6机械类&r的器官识别为&c玫瑰类&r，如果一个器官同时拥有两种类型，那么他会被计算为两个&c玫瑰类器官&r。"
+			]
+			id: "7E589F9002AC7D92"
+			rewards: [{
+				id: "6F83AEC801ECC4EB"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "分割健康与污浊的屏障"
+			tasks: [{
+				id: "0DA5A4968165DE74"
+				item: {
+					Count: 1b
+					id: "kubejs:rose_quartz_dialyzer"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 3.25d
+			y: 15.0d
+		}
+		{
+			dependencies: ["4F074296A3A9D918"]
+			description: [
+				"根据下落的高度提升&e攻击伤害&r，下落高度越高收益越大，最高能达到&e5倍伤害&r。"
+				""
+				"如果你已经接触到地面，那么下落高度将会被清零。"
+			]
+			id: "3FAAA0CA520EC4E5"
+			rewards: [{
+				id: "1B954C1ADACD18C8"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "跃下，一击贯彻天灵"
+			tasks: [{
+				id: "63D2F20257E16E1C"
+				item: {
+					Count: 1b
+					id: "kubejs:mace"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -7.75d
+			y: 16.0d
+		}
+		{
+			dependencies: ["4F074296A3A9D918"]
+			description: ["激活后根据所有器官的&b防御属性&r总和增加&6护甲值&r，每2点防御属性增加1点护甲值，最多增加&630点&r护甲值。"]
+			id: "4D64258340E3F762"
+			rewards: [{
+				id: "5F2F87D9DCDFF341"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "防御立场生成"
+			tasks: [{
+				id: "1BF81189953BD97C"
+				item: {
+					Count: 1b
+					id: "kubejs:aegis"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -6.75d
+			y: 16.0d
+		}
+		{
+			dependencies: ["4F074296A3A9D918"]
+			description: ["释放主动技能，消耗&b60资源点数&r获得&6240s&r夜视效果。"]
+			id: "01437DF1F8978DC2"
+			rewards: [{
+				id: "5BDDB5C2E9AE1674"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "通上电了！"
+			tasks: [{
+				id: "46B505C586A668F0"
+				item: {
+					Count: 1b
+					id: "kubejs:lowlight_vision"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -5.75d
+			y: 16.0d
+		}
+		{
+			dependencies: ["4F074296A3A9D918"]
+			description: [
+				"释放主动技能，消耗&6资源点数&r获得短时间的&b加速效果&r。"
+				""
+				"胸腔内&6资源类器官&r越多，速度效果的&b持续时间越长&r，&b等级越高&r，&b技能冷却时间越短&r，但同时&c消耗的资源点数也越多&r。"
+				""
+				"除了用于日常探索，也可以在战斗中发挥奇效。"
+			]
+			id: "2B03695632E3D7A2"
+			rewards: [{
+				id: "793C05A2687BA68D"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "加速过弯！"
+			tasks: [{
+				id: "1DB752C87475FCFF"
+				item: {
+					Count: 1b
+					id: "kubejs:jet_propeller"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -4.75d
+			y: 16.0d
+		}
+		{
+			dependencies: ["10A83C18E396D17E"]
+			description: [
+				"扭曲值大于50时，击杀肉块有&b10%&r概率掉落。"
+				""
+				"胸腔内存在&6肿瘤之源&r时，吃下无形肿瘤可以将该无形肿瘤的&b优势属性&r转移到胸腔的随意一枚无形肿瘤上。"
+				""
+				"转移的条件为：胸腔内的无形肿瘤存在与吃下的无形肿瘤&e相同类型的属性&r，且该属性最终取两个瘤子的相同该属性的&e最大值&r。"
+			]
+			id: "1B8E16CB19BDDCF9"
+			rewards: [{
+				id: "0D371E7521C97EF0"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "吞噬，进化"
+			tasks: [{
+				id: "43FDF21F36371350"
+				item: {
+					Count: 1b
+					id: "kubejs:origin_of_tumor"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 8.5d
+			y: 23.5d
+		}
+		{
+			dependencies: ["6662469DC72EA384"]
+			description: [
+				"鲜血水晶在&c吸血鬼恶魔&r的胸腔中可以获得。"
+				""
+				"释放主动技能可以将自身所有&e负面效果&r持续时间缩短至一半，但是&4效果等级提升一级&r；"
+				"同时将自身所有&e正面效果&r持续时间翻倍，但是&4效果等级降低一级&r，不满一级的效果会直接消失。"
+				""
+				"在特殊情况下可以避免一些致命的负面效果，或者延长一些重要的正面效果。"
+			]
+			id: "2481E5444AB2CA1E"
+			rewards: [{
+				id: "62154A41719028C2"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "纯净的宝石，却受到吸血鬼的青睐"
+			tasks: [{
+				id: "6CDEE920D731103B"
+				item: {
+					Count: 1b
+					id: "kubejs:blood_crystal"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 0.25d
+			y: 10.5d
+		}
+		{
+			dependencies: ["6662469DC72EA384"]
+			description: [
+				"凋落之末在&c薄暮之锋，罗莎琳&r的胸腔中可以获得。"
+				""
+				"释放主动技能将血量降低至&41&r，若最大生命值&e低于20&r，会根据最大生命值与20的差值的2.5倍&6增加伤害吸收值&r；若&e高于20&r，则根据与20的差值&6增加经验值&r。"
+				""
+				"可以用于将血量转化为临时生命，或是单纯的作为获取经验值的手段。"
+			]
+			id: "490143EF6C3179F8"
+			rewards: [{
+				id: "4B28F83F3230B99F"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "置死地而后生，或是普通的绽放"
+			tasks: [{
+				id: "3C92BB5E6CDF86CC"
+				item: {
+					Count: 1b
+					id: "kubejs:wither_and_fall"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 1.25d
+			y: 10.5d
+		}
+		{
+			dependencies: ["6662469DC72EA384"]
+			description: [
+				"黑白面具的左残片，可以在&c暗黑面具&r的胸腔里获得。"
+				""
+				"对称激活后提供&6护甲值&r的同时，根据&b幸运值&r将&6受到的伤害值&r分布到一定范围内。"
+			]
+			id: "0BB7BB1CF9441A8E"
+			rewards: [{
+				id: "6285D515AAD279F1"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "讥讽的是敌人，或是自己？"
+			tasks: [{
+				id: "18C6AAEAC37947B2"
+				item: {
+					Count: 1b
+					id: "kubejs:sarcasm"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 2.25d
+			y: 10.5d
+		}
+		{
+			dependencies: ["6662469DC72EA384"]
+			description: [
+				"黑白面具的右残片，可以在&c暗黑面具&r的胸腔里获得。"
+				""
+				"对称激活后提供&6伤害值&r的同时，根据&b幸运值&r将&6造成的伤害值&r分布到一定范围内。"
+			]
+			id: "58F43033EED45D69"
+			rewards: [{
+				id: "70468339DF56D4A9"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "嘲弄的是自身，或是他人？"
+			tasks: [{
+				id: "59B60BF9C2F3B40B"
+				item: {
+					Count: 1b
+					id: "kubejs:mockery"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 3.25d
+			y: 10.5d
+		}
+		{
+			dependencies: ["6662469DC72EA384"]
+			description: [
+				"断桥残血在&c裂刃帝王&r的胸腔中可以获得。"
+				""
+				"根据&b幸运值&r造成高额伤害，幸运越高&e造成伤害的几率&r和&e伤害的倍率&r越高。"
+				""
+				"造成高额伤害的同时也会&4禁锢玩家的行动&r一段时间，幸运越高&4禁锢的时间&r同样越高。"
+			]
+			id: "0EA781613AEACEDF"
+			rewards: [{
+				id: "068CB473614C23AF"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "渴血之刃，亦觊觎着主人的鲜血"
+			tasks: [{
+				id: "6B1617F53964C445"
+				item: {
+					Count: 1b
+					id: "kubejs:melty_blood"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -7.75d
+			y: 11.5d
+		}
+		{
+			dependencies: ["6662469DC72EA384"]
+			description: [
+				"烈焰高炉在&c烈焰狂战士&r的胸腔中可以获得。"
+				""
+				"若自身处于&6燃烧状态&r，你会额外造成等同于&c已损失生命值&r两倍的额外伤害。"
+			]
+			id: "49CFA9DBC6DCF03E"
+			rewards: [{
+				id: "29FD066B644A8AA1"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "火焰使血液沸腾"
+			tasks: [{
+				id: "710BDD22397573A7"
+				item: {
+					Count: 1b
+					id: "kubejs:frenzy_blast_furance"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -6.75d
+			y: 11.5d
+		}
+		{
+			dependencies: ["6662469DC72EA384"]
+			description: [
+				"不灭火山岩在&c火山&r的胸腔中可以获得。"
+				""
+				"判定时玩家视为处于&6燃烧状态&r，无需借助原版的着火机制。"
+				""
+				"可以更方便地触发某些火焰类器官的特殊效果。"
+			]
+			id: "74BC328468CC0C1C"
+			rewards: [{
+				id: "3A4558E5B04EF4F8"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "无需借助火焰，你自己便在燃烧"
+			tasks: [{
+				id: "4A8EB0920E9C7946"
+				item: {
+					Count: 1b
+					id: "kubejs:immortal_volcanic_rock"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -5.75d
+			y: 11.5d
+		}
+		{
+			dependencies: ["4EDC05BC7B3BB700"]
+			description: ["吃下食物后，每一个贪婪之胃都会给予玩家30点&b经验值&r。"]
+			id: "404A0458EEA1C22D"
+			rewards: [{
+				id: "359D381EBD304B44"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "贪欲永远无法满足……"
+			tasks: [{
+				id: "73AFAA7DC1D3A3DB"
+				item: {
+					Count: 1b
+					id: "kubejs:greedy_stomach"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -6.75d
+			y: 29.25d
+		}
+		{
+			dependencies: ["4EDC05BC7B3BB700"]
+			description: ["激活后，若一个胃瘤周围8格存在至少&b3个&r胃瘤，额外提供&68点&r最大生命值上限。"]
+			id: "5221CD9AE43CA777"
+			rewards: [{
+				id: "18F4CA47BD62A1B5"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "看起来有点胀气？"
+			tasks: [{
+				id: "5468CF17D04A059D"
+				item: {
+					Count: 1b
+					id: "kubejs:stomach_tumor"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -5.75d
+			y: 29.25d
+		}
+		{
+			dependencies: ["4EDC05BC7B3BB700"]
+			description: ["胸腔内存在该器官时，玩家可以精准采集玻璃类方块。"]
+			id: "37A85E9B0DDFFDCA"
+			rewards: [{
+				id: "30B698CD8B0A45AB"
+				item: "lightmanscurrency:coin_iron"
+				type: "item"
+			}]
+			subtitle: "精细的切割手段"
+			tasks: [{
+				id: "25E1726256AAD7BC"
+				item: {
+					Count: 1b
+					id: "kubejs:silk_for_cutting"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -4.75d
+			y: 29.25d
+		}
+		{
+			dependencies: ["6794388AA5357126"]
+			description: [
+				"&6感染器官&r是一种特殊的血肉器官，目前体系构建以无形肿瘤为主。"
+				""
+				"搜索战利品箱时获得的&e怪异血肉&r，经过筛选与融合，就能提供&6强大&r、同时&4禁忌&r的力量……"
+			]
+			icon: "biomancy:creator_mix"
+			id: "10A83C18E396D17E"
+			shape: "rsquare"
+			subtitle: "源于血肉，融于血肉"
+			tasks: [{
+				id: "49C365F849143F81"
+				title: "我已了解"
+				type: "checkmark"
+			}]
+			title: "感染器官"
+			x: 6.5d
+			y: 22.5d
+		}
+		{
+			dependencies: ["10A83C18E396D17E"]
+			description: [
+				"当胸腔内存在D8时，从战利品箱子中获取的谜之血肉结构。"
+				""
+				"玩家&b幸运值&r越高，获取的无形肿瘤的&6属性方差&r越大，且幸运的&b收益&r会随着幸运值升高而逐渐减小。"
+				""
+				"高属性的无形肿瘤将是极好的器官补位，用于提供大量白值属性。"
+			]
+			id: "1AECC8F5579C0728"
+			rewards: [{
+				id: "68C36D4DF7FBC051"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "“沙里淘金”"
+			tasks: [{
+				id: "4BF3EFB83DF42779"
+				item: "kubejs:random_tumor"
+				type: "item"
+			}]
+			x: 7.5d
+			y: 23.5d
+		}
+		{
+			dependencies: ["6794388AA5357126"]
+			description: [
+				"&6Alex生物器官&r是可以从Alex's Mobs模组生物胸腔中取出的器官。"
+				""
+				"这些器官足够特殊，某些特殊效果也具有强力的辅助效果。"
+				""
+				"抱着收集的心态去尝试获取，说不定会有意外惊喜呢。"
+			]
+			icon: "alexsmobs:void_worm_eye"
+			id: "07080DC68B62B221"
+			shape: "rsquare"
+			subtitle: "多彩的生态，多变的功能"
+			tasks: [{
+				id: "79F94302BD12DF63"
+				title: "我已了解"
+				type: "checkmark"
+			}]
+			title: "Alex生物器官"
+			x: 6.5d
+			y: 25.5d
+		}
+		{
+			dependencies: ["6794388AA5357126"]
+			description: [
+				"&6杂项特殊器官&r是那些未归类于某个体系，但是有特殊效果的器官。"
+				""
+				"器官效果往往偏向辅助效果，但是同样存在其运用的场景，只待一时发掘……"
+			]
+			icon: "minecraft:experience_bottle"
+			id: "4EDC05BC7B3BB700"
+			shape: "rsquare"
+			subtitle: "虽然无奇，亦可一用"
+			tasks: [{
+				id: "6BE46B32C69C6AE3"
+				title: "我已了解"
+				type: "checkmark"
+			}]
+			title: "杂项特殊器官"
+			x: -8.75d
+			y: 28.25d
+		}
+		{
+			dependencies: ["4EDC05BC7B3BB700"]
+			description: [
+				"这是一只兔子，谁会忍心伤害一只可爱的兔子呢？将它放进胸腔，你将免于灾厄猎杀事件的针对。"
+				"但是，针对你好友的灾厄猎杀仍有可能会波及到你。"
+			]
+			icon: {
+				Count: 1b
+				id: "kubejs:is_rabbit"
+				tag: { }
+			}
+			id: "3772E8A85AD5D276"
+			rewards: [{
+				id: "3ABC6E84B8433017"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "这真的只是一只兔子？"
+			tasks: [{
+				id: "1AD6378FE8C6E353"
+				item: {
+					Count: 1b
+					id: "kubejs:is_rabbit"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -3.75d
+			y: 29.25d
+		}
+		{
+			dependencies: ["3910C8340AB4ECE9"]
+			description: [
+				"扭曲泡泡通过使用&6气囊&r在器官容器中&5扭曲化&r后获得。"
+				""
+				"携带扭曲泡泡被攻击时，泡泡将会破碎，将你身上的所有&d负面效果&r扩散到一定范围的敌人上。"
+			]
+			id: "3FCCDA897459C2F7"
+			rewards: [{
+				id: "6EAEEA39770E86CE"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "它濒临破碎"
+			tasks: [{
+				id: "51FF121FC385B7A1"
+				item: {
+					Count: 1b
+					id: "kubejs:warp_bubble"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 18.5d
+			y: 17.5d
+		}
+		{
+			dependencies: ["3910C8340AB4ECE9"]
+			description: [
+				"扭曲鱼缸通过将&6胸中鱼缸&r在器官容器中进行&5扭曲化&r后获得。（即在满足扭曲条件的情况下饮用不洁圣杯）"
+				""
+				"扭曲鱼缸可以在各种&2包含器官数量计算&r的器官中，忽略掉&5禁忌&r类器官的数量。"
+			]
+			id: "4F7841C5C82C20E1"
+			rewards: [{
+				id: "4E2945B56D03792C"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "它好像是一只章鱼？"
+			tasks: [{
+				id: "205EC3E49949F013"
+				item: {
+					Count: 1b
+					id: "kubejs:fish_in_warp"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 17.5d
+			y: 17.5d
+		}
+		{
+			dependencies: ["10A83C18E396D17E"]
+			description: [
+				"在衣壳体中，由&4恶性经脉&r转化而成。"
+				""
+				"蠕虫神经元每30s会尝试在胸腔中的任意位置产下一枚肿瘤。肿瘤的属性取决于你当前胸腔的&6空白格子数量&r和你当前的&6新陈代谢效率&r。"
+				""
+				"经由蠕虫神经元产生的肿瘤，拥有着更高的词条属性，并且&2没有负健康的负面效果&r。"
+				""
+				"巫妖的身体由于过于空虚，因此无法催生出肿瘤。"
+			]
+			id: "3380E5D6B9B1B98A"
+			rewards: [{
+				id: "09694E633733637C"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "它知道你想要什么. . ."
+			tasks: [{
+				id: "155451F5B4F5867A"
+				item: {
+					Count: 1b
+					id: "kubejs:worm_neuron"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 9.5d
+			y: 23.5d
+		}
+		{
+			dependencies: ["7CFE03E2610EA31B"]
+			description: [
+				"革命之钟能够在你&c熔火&r状态仅剩5s时，&6自动激活&r胸腔里的革命蒸汽机的效果，将其扭转为心火状态。"
+				""
+				"这个过程&2不需要消耗水瓶&r，但仍旧会引发水瓶/药水进入冷却。"
+			]
+			id: "0E182B80FFCD52F4"
+			rewards: [{
+				id: "2487B546B07C684D"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "蹲踞墙角，候钟声敲响"
+			tasks: [{
+				id: "065901BF7B379DDA"
+				item: {
+					Count: 1b
+					id: "kubejs:revolution_bell"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 14.5d
+			y: 11.5d
+		}
+		{
+			dependencies: ["7CFE03E2610EA31B"]
+			description: [
+				"烈焰加压器可以从下界哥布林交易和下界箱子中获得。它允许你使用&6强效药剂&r来代替煤炭激活心火/熔火效果。并且，通过这种方式激活的心火/熔火效果具有额外&6+2&r的效果等级。"
+				""
+				"&7强效药剂通过具有纳米融合的Tetra武器击杀爬行者获得。&r"
+			]
+			id: "08F7376BC7085350"
+			rewards: [
+				{
+					id: "3E724A877DE9AF1F"
+					item: "lightmanscurrency:coin_gold"
+					type: "item"
+				}
+				{
+					count: 3
+					id: "78D401D5A87E068F"
+					item: "art_of_forging:potent_mixture"
+					type: "item"
+				}
+			]
+			subtitle: "先进的燃料代表革命的更新动力"
+			tasks: [{
+				id: "4851188C021D92C2"
+				item: {
+					Count: 1b
+					id: "kubejs:blaze_pressurizer"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 15.5d
+			y: 11.5d
+		}
+		{
+			dependencies: ["4EDC05BC7B3BB700"]
+			description: [
+				"胎生百合能够在&c渊灵祭司&r的胸腔内获得。"
+				""
+				"通过按下主动按键，其会暂时性的&2打乱你胸腔内所有属性的分布&r，并且在打乱的期间内，全胸腔属性提高3点。"
+			]
+			id: "5581A7E09D101055"
+			rewards: [{
+				id: "5870AE835BBE9D81"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "漩涡、混沌与生命"
+			tasks: [{
+				id: "1A2AF00C012D784B"
+				item: {
+					Count: 1b
+					id: "kubejs:viviparous_crinoidea"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -2.75d
+			y: 29.25d
+		}
+		{
+			dependencies: ["309791281FE1F06A"]
+			description: [
+				"在&2食用幸运饼干器官&r的时候有2%的概率获得。"
+				""
+				"携带它攻击&6其他玩家&r的时候，会为其赋予等同于你幸运值20%的幸运效果。"
+			]
+			id: "005EF44B85B20755"
+			rewards: [{
+				id: "2DC1743847B106C4"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "饼干点点点点点！"
+			tasks: [{
+				id: "13F7AB5E0D1FB66F"
+				item: {
+					Count: 1b
+					id: "kubejs:golden_lucky_cookie_organ"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 0.25d
+			y: 26.0d
+		}
+		{
+			dependencies: ["07080DC68B62B221"]
+			description: ["鲸肺可以从&6鲸鱼&r的胸腔中获得。激活后，会为你提高1.5倍的肺活量。"]
+			id: "7EDF95C3F9E84326"
+			rewards: [{
+				id: "54F34EBB056A7749"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "它大而有力"
+			tasks: [{
+				id: "3B2EF525B56080EA"
+				item: {
+					Count: 1b
+					id: "kubejs:whale_lung"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 9.5d
+			y: 26.5d
+		}
+		{
+			dependencies: ["07080DC68B62B221"]
+			description: [
+				"跨坐兽的卵可以从&6跨座兽&r的胸腔中获得。"
+				""
+				"携带跨座兽的卵时，每秒有1/20的概率会向周围最近的实体发射无伤害的跨座蝌蚪。蝌蚪在30s后会自动消亡。"
+			]
+			id: "1FC61B8E417DA5D4"
+			rewards: [{
+				id: "58B422A6D3F0A413"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "发射！"
+			tasks: [{
+				id: "6D370B17B78D62FF"
+				item: {
+					Count: 1b
+					id: "kubejs:egg_of_straddler"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 10.5d
+			y: 26.5d
+		}
+		{
+			dependencies: ["07080DC68B62B221"]
+			description: [
+				"灵魂鹫羽毛能够在&c灵魂鹫&r的胸腔内获得。"
+				""
+				"灵魂鹫羽毛能够根据敌方身上拥有的&c负面效果&r数量，给予你额外的伤害加成。"
+			]
+			id: "28BC24592A1FDE16"
+			rewards: [{
+				id: "6493909A1E7AFD44"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "这是一切灵魂的归宿"
+			tasks: [{
+				id: "6DA6347357987BE9"
+				item: {
+					Count: 1b
+					id: "kubejs:soul_vulture_feather"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 11.5d
+			y: 26.5d
+		}
+		{
+			dependencies: ["07080DC68B62B221"]
+			description: [
+				"獠牙能够从&6獠牙兽&r的胸腔中获得。"
+				""
+				"携带它时，使用空手攻击，能够每次积累1&6重拳计数器&r。当计数器达到10时，下一次攻击将会造成&c重拳一击&r并伴随着紫水晶破碎的音效。"
+				""
+				"当计数器超过10时，触发重拳一击时的伤害会根据溢出的计数器数量，得到额外的伤害加成。"
+			]
+			id: "6F48435C9C9E6AF5"
+			rewards: [{
+				id: "38711361A477F9F9"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "牙突猛进"
+			tasks: [{
+				id: "230A542522B4A644"
+				item: {
+					Count: 1b
+					id: "kubejs:tusk"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 12.5d
+			y: 26.5d
+		}
+		{
+			dependencies: ["07080DC68B62B221"]
+			description: [
+				"螳螂虾拳能够从&6螳螂虾&r的胸腔中获得。"
+				""
+				"携带螳螂虾拳时，每3秒会使玩家获得一个重拳计数器，最高累积50点。"
+			]
+			id: "4097BCA76C47D8F0"
+			rewards: [{
+				id: "2B74C47BE1269311"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "如音速子弹！"
+			tasks: [{
+				id: "1A49C97A72E8DDE8"
+				item: {
+					Count: 1b
+					id: "kubejs:mantis_shrimp_fist"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 13.5d
+			y: 26.5d
+		}
+		{
+			dependencies: ["07080DC68B62B221"]
+			description: [
+				"石化胆囊可以从&6岩磙兽&r的胸腔中获得。"
+				""
+				"携带石化胆囊时，你的&5龙化效果&r获得的额外生命值上限会受到你的&6力量属性&r的影响而提高。"
+			]
+			id: "57A39965B3A46AD3"
+			rewards: [{
+				id: "2CB8023BCC8D9EA4"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "从中流出的早就不是胆汁"
+			tasks: [{
+				id: "0F0CB1F1D07124CB"
+				item: {
+					Count: 1b
+					id: "kubejs:fossil_gallbladder"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 14.5d
+			y: 26.5d
+		}
+		{
+			dependencies: ["07080DC68B62B221"]
+			description: [
+				"诡异纸人能够从&6轻语灵&r的胸腔中获得。"
+				""
+				"携带诡异纸人的情况下，你受到的攻击会优先使用你的&b气泡值&r（呼吸值）来进行抵消。"
+				""
+				"巫妖无法使用诡异纸人。"
+			]
+			id: "7734BD5D42067408"
+			rewards: [{
+				id: "5FAD84B285D498E3"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "你呼出了成片的血雾"
+			tasks: [{
+				id: "1BA7F094DB4BD1C7"
+				item: {
+					Count: 1b
+					id: "kubejs:weird_paperman"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 15.5d
+			y: 26.5d
+		}
+		{
+			dependencies: ["07080DC68B62B221"]
+			description: [
+				"宝藏探测羽能够从&6海鸥&r的胸腔中获得。"
+				""
+				"使用主动按键激活，其能够生成一处&6藏宝地&r，并且给予你对应的&6藏宝图&r。藏宝地的奖励品表随着维度和你自身幸运值的影响而变化。"
+				""
+				"藏宝地的距离最远不超过1400m。"
+			]
+			id: "6E09AD98DD379844"
+			rewards: [{
+				id: "6CD8713A545C8D5E"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "海鸥的尾羽总是指向着宝藏"
+			tasks: [{
+				id: "0EF511AF0D215F36"
+				item: {
+					Count: 1b
+					id: "kubejs:treasure_detector_feather"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 16.5d
+			y: 26.5d
+		}
+		{
+			dependencies: ["07080DC68B62B221"]
+			description: [
+				"林鸱喙能够从&6林鸱&r的胸腔中获得。"
+				""
+				"当你站在不同材质的方块上时，按下主动技能按键，其会播放不同的音效。"
+				""
+				"目前支持的音效种类较少，但允许其他开发者轻松的添加自己的音效。"
+			]
+			id: "609D94FF3722555D"
+			rewards: [{
+				id: "749D8A966FC10A2B"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "它在模仿一些. . .奇怪的叫声？"
+			tasks: [{
+				id: "2906BAD743E453E5"
+				item: {
+					Count: 1b
+					id: "kubejs:potoo_beak"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 17.5d
+			y: 26.5d
+		}
+		{
+			dependencies: ["6794388AA5357126"]
+			description: [
+				"异彩化合物是Create曾经的“奇迹”。"
+				""
+				"如今，[CRC]彩虹化合物将异彩化合物重新带回了游戏之中，而该模组的作者LunaGlaze（幽月琉璃Luna）也为脆骨症额外添加了一些基于“异彩化合物”、“光辉石”、“暗影钢”的全新器官！"
+			]
+			icon: {
+				Count: 1b
+				id: "create:chromatic_compound"
+				tag: { }
+			}
+			id: "6BC97F1AB1610C78"
+			shape: "rsquare"
+			subtitle: "Luna's扩展包：异彩回归！"
+			tasks: [{
+				id: "2244816FE899ABAD"
+				title: "我已了解"
+				type: "checkmark"
+			}]
+			title: "异彩器官"
+			x: -8.75d
+			y: 31.5d
+		}
+		{
+			dependencies: ["6BC97F1AB1610C78"]
+			description: [
+				"&5异彩系列&f的器官之一。"
+				""
+				"作为玫瑰石英心脏的升级版。"
+			]
+			id: "5017D57FDA279C9E"
+			rewards: [{
+				id: "62BCD5C871AC7D16"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "混合的色彩"
+			tasks: [{
+				id: "61A230592A446A4A"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:chromatic_rose_heart"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -7.75d
+			y: 32.5d
+		}
+		{
+			dependencies: ["6BC97F1AB1610C78"]
+			description: [
+				"&5异彩系列&f的器官之一。"
+				""
+				"作为玫瑰石英肌肉的升级版。"
+			]
+			id: "5E42865B687247CE"
+			rewards: [{
+				id: "3C0901529AD7D40B"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "幻想的颜色"
+			tasks: [{
+				id: "745BFAECEFF977D7"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:chromatic_rose_muscle"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -6.75d
+			y: 32.5d
+		}
+		{
+			dependencies: ["6BC97F1AB1610C78"]
+			id: "58D250ED6D1F5A42"
+			rewards: [{
+				id: "0583DDF5CD899169"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "它是不是隔壁Terraria片场来的？"
+			tasks: [{
+				id: "47934D67F8C75C9C"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:lights_bane"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -5.75d
+			y: 32.5d
+		}
+		{
+			dependencies: ["6BC97F1AB1610C78"]
+			id: "4F3E298769A5DA20"
+			rewards: [{
+				id: "65221BD74D08C429"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "1E1EB833CD4C6E50"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:radiance_reaper"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -4.75d
+			y: 32.5d
+		}
+		{
+			dependencies: ["6BC97F1AB1610C78"]
+			id: "017B6AA22BDAF5D2"
+			rewards: [{
+				id: "455F46B88C3EFF4E"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6CA87CF5F2CF5C00"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:lager_bone_soul"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -3.75d
+			y: 32.5d
+		}
+		{
+			dependencies: ["6BC97F1AB1610C78"]
+			id: "7ABEE13598E9BF1E"
+			rewards: [{
+				id: "58043577C0636C99"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "蓝……绿瓶的钙？"
+			tasks: [{
+				id: "668DB026CFDA319E"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:ender_bottle_max"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -2.75d
+			y: 32.5d
+		}
+		{
+			dependencies: ["6BC97F1AB1610C78"]
+			id: "5498DDD56A633501"
+			rewards: [{
+				id: "7F8D51F6A0E0F4BE"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "忘关了不算开"
+			tasks: [{
+				id: "1E24A5E82081ED43"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:variable_speed_gear"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -1.75d
+			y: 32.5d
+		}
+		{
+			dependencies: ["6794388AA5357126"]
+			description: [
+				"“邪术”器官本质上是Luna's扩展包额外添加的禁忌器官，其基于提交PR（拉去请求）后因“开发理念不合”未能被整合包本体收录的扭曲系统。因为目前脆骨症本体扭曲值系统完善程度仍然并不够高，所以该套系统在最新版Luna's扩展包中仍然得到了保留。"
+				""
+				"当前Luna's扩展包的扭曲系统与本体的扭曲系统并不冲突，且Luna's扩展包作者LunaGlaze（幽月琉璃Luna）为整合包本体的扭曲系统添加了设置选项，可以放心游玩。"
+			]
+			icon: "luna_flesh_reforged:charm_azathoth"
+			id: "38DAD49C96B24ABF"
+			shape: "rsquare"
+			subtitle: "Luna's扩展包：神秘时代还是深渊国度？"
+			tasks: [{
+				id: "64447C3556CC0DD4"
+				title: "我已知晓"
+				type: "checkmark"
+			}]
+			title: "邪术"
+			x: 6.5d
+			y: 28.5d
+		}
+		{
+			dependencies: ["38DAD49C96B24ABF"]
+			id: "5CB728EBF7FE458C"
+			rewards: [{
+				id: "6206D4D6477B2889"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "62BA8AB536B71109"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:sanitizing_soap"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 7.5d
+			y: 29.5d
+		}
+		{
+			dependencies: ["38DAD49C96B24ABF"]
+			id: "1F6C43C15AEEA9E6"
+			rewards: [{
+				id: "48B5B169188F195C"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6BB58D8515D8705E"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:silverwood_heart"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 8.5d
+			y: 29.5d
+		}
+		{
+			dependencies: ["38DAD49C96B24ABF"]
+			id: "136DC8F0E436BABB"
+			rewards: [{
+				id: "3D73E0E14ECCF2F0"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6AC53219E098CC70"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:warped_battery"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 9.5d
+			y: 29.5d
+		}
+		{
+			dependencies: ["38DAD49C96B24ABF"]
+			id: "04C2EA1F2FE469FB"
+			rewards: [{
+				id: "41B6F5DB48E58C61"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "0933F947333237BD"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:eldritch_hammer"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 10.5d
+			y: 29.5d
+		}
+		{
+			dependencies: ["38DAD49C96B24ABF"]
+			description: [
+				"将深渊魔契之眼放入胸腔之中即可与外神或旧日支配者结缔魔契（误），获得将巫术爆破转化为魔能爆的能力。"
+				"其本质上是借助&5“不可名状的伟大者”&r的力量为巫术爆破附加额外的效果（#确信）"
+			]
+			id: "225DC2748256A755"
+			rewards: [{
+				id: "0BA229B7CCD169D1"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "你是DND来的邪术师吗？"
+			tasks: [{
+				id: "5821422EB530AC75"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:abyssalwarlock_eye"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 11.5d
+			y: 29.5d
+		}
+		{
+			dependencies: ["6794388AA5357126"]
+			description: [
+				"超凡系列器官是Luna's扩展包的主要器官内容。"
+				"“Archotech”超凡科技的灵感源自于游戏Rimworld（环世界/边缘世界），其原本的含义是某种发展到人类无法理解、无法交流的、远超人类科技水平并掌握了多种在人类看上去犹如玄幻法术的能力的超级智能及其产物。"
+			]
+			icon: {
+				Count: 1b
+				id: "luna_flesh_reforged:psylink_neuro"
+				tag: { }
+			}
+			id: "0A6CC03C488E72C3"
+			shape: "rsquare"
+			subtitle: "Luna's扩展包：Archotech，小子！"
+			tasks: [{
+				id: "3271FDC8A9000062"
+				title: "我已知晓"
+				type: "checkmark"
+			}]
+			title: "超凡器官"
+			x: 6.5d
+			y: 31.5d
+		}
+		{
+			dependencies: ["0A6CC03C488E72C3"]
+			id: "73CBC6836AA79452"
+			rewards: [{
+				id: "2DA81C92BC18D451"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "1DC1B548AB154217"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:archotech_lung_left"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 8.5d
+			y: 32.25d
+		}
+		{
+			dependencies: ["0A6CC03C488E72C3"]
+			id: "6F1F42A856DFD56F"
+			rewards: [{
+				id: "1CEC17BF174047B4"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "7339F1D0195029B8"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:archotech_lung_right"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 9.5d
+			y: 32.25d
+		}
+		{
+			dependencies: ["0A6CC03C488E72C3"]
+			id: "31B3888529362FBA"
+			rewards: [{
+				id: "6F6C76F1287EE7C1"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "03A14F4029EA8387"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:archotech_doublerib_left"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 10.5d
+			y: 32.25d
+		}
+		{
+			dependencies: ["0A6CC03C488E72C3"]
+			id: "44183229DA4A36FA"
+			rewards: [{
+				id: "0CD16BE3A92B685F"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "2CB1B3C506CF134D"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:archotech_doublerib_right"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 12.5d
+			y: 32.25d
+		}
+		{
+			dependencies: ["0A6CC03C488E72C3"]
+			id: "0ECEC5A0F23A4880"
+			rewards: [{
+				id: "58D1F8F647B17965"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "39F8C9F16A6DBEAE"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:archotech_toughspine"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 11.5d
+			y: 32.25d
+		}
+		{
+			dependencies: ["0A6CC03C488E72C3"]
+			id: "3B2C7D2B549BA84F"
+			rewards: [{
+				id: "2FEF3761014CBD26"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "62A99E795D018552"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:archotech_toughskin_gland"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 7.5d
+			y: 32.25d
+		}
+		{
+			dependencies: ["0A6CC03C488E72C3"]
+			id: "5577A5CA96C9B656"
+			rewards: [{
+				id: "22375171B06111FE"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "675E11BDD01D5BA4"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:archotech_kidney_left"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 13.5d
+			y: 32.25d
+		}
+		{
+			dependencies: ["0A6CC03C488E72C3"]
+			id: "6C3CA28E6685C443"
+			rewards: [{
+				id: "6C7B8D098C4A2EB9"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "1416423CBB1BEB4A"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:archotech_kidney_right"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 14.5d
+			y: 32.25d
+		}
+		{
+			dependencies: ["0A6CC03C488E72C3"]
+			id: "00468F5B1AB8B981"
+			rewards: [{
+				id: "471B5A0E6CE57C01"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "60216DF3B9D990C6"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:psylink_neuro"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 15.5d
+			y: 32.25d
+		}
+		{
+			dependencies: ["0A6CC03C488E72C3"]
+			id: "6DFBD2B7F72F8C42"
+			rewards: [{
+				id: "4D2331304AFFD903"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "0E94601CEC1AADB4"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:enchanted_psylink_neuro"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 16.5d
+			y: 32.25d
+		}
+		{
+			dependencies: ["0A6CC03C488E72C3"]
+			id: "74F1F071A74106A5"
+			rewards: [{
+				id: "1AC4D69A22330A29"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "236691C374821D71"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:archotech_lastinger"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 17.5d
+			y: 32.25d
+		}
+		{
+			dependencies: ["0A6CC03C488E72C3"]
+			id: "418FF222983086CD"
+			rewards: [{
+				id: "715FA5893CCA320E"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "2D16B075D4B9AA1C"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:archotech_dragon_appendix"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 18.5d
+			y: 32.25d
+		}
+		{
+			dependencies: ["0A6CC03C488E72C3"]
+			id: "733B53036DCDD2D2"
+			rewards: [{
+				id: "7234314BEAFAAC6A"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "05F8602E6A9333FF"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:archotech_mana_reactor"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 7.5d
+			y: 33.25d
+		}
+		{
+			dependencies: ["0A6CC03C488E72C3"]
+			id: "28AB0E9F48EB2349"
+			rewards: [{
+				id: "519965EABCF8B6E7"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "588CD01B038218FC"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:archotech_magic_digestive_system"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 8.5d
+			y: 33.25d
+		}
+		{
+			dependencies: ["0A6CC03C488E72C3"]
+			id: "6662D1C1FD8E0919"
+			rewards: [{
+				id: "7E6EA695CB036611"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "04F00FA8CEA124D3"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:jump_second_spiritual_heart"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 9.5d
+			y: 33.25d
+		}
+		{
+			dependencies: ["0A6CC03C488E72C3"]
+			id: "4726DE14A6516DB7"
+			rewards: [{
+				id: "6FA22E6C95B9A647"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "0FFA1C30B171C1A1"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:archotech_warden_core"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 10.5d
+			y: 33.25d
+		}
+		{
+			dependencies: ["6794388AA5357126"]
+			description: [""]
+			icon: "luna_flesh_reforged:dark_archotech_shard"
+			id: "35D3B627CA5A5931"
+			shape: "rsquare"
+			subtitle: "Luna's扩展包：你这里也有异象DLC？"
+			tasks: [{
+				id: "632585BE3500E887"
+				title: "我已知晓"
+				type: "checkmark"
+			}]
+			title: "黑暗超凡"
+			x: 6.5d
+			y: 35.25d
+		}
+		{
+			dependencies: ["35D3B627CA5A5931"]
+			description: [
+				"虚空之心引擎能为其他超凡器官/黑暗超凡器官的特殊能力提供加成，并且其亦可以根据体内具有的超凡器官的种类提供额外的属性加成，使得玩家的属性到达一个可怖的境地（也许？）"
+				"{@pagebreak}"
+				"任意&6启灵神经&r：超凡器官数量² 的最大魔力值、 0.05吟唱缩减（高速神言）"
+				"&6觉醒启灵神经&r：0.1冷却缩减"
+				"&6超凡虚空之脾&r：0.1法力恢复"
+				"&6超凡虚空肝脏&r：超凡器官数量*2%的攻击力加成（独立乘区）"
+				"&6超凡回响核心&r或&6虚空震击聚晶&r：超凡器官数量*1%的巫术（学派）法术强度加成"
+				"&6虚空震击聚晶&r：超凡器官数量*1%的法术强度加成"
+				"任意&6超凡肌肉&r：相当于超凡肌肉类器官数量的攻击力"
+				"三种&6黑暗超凡肌肉&r俱全：胸腔属性中的速度与力量提升 超凡肌肉类器官数量*10%（最高80%）"
+				"&6跃动灵能心脏&r：0.1吟唱缩减（高速神言）与法术强度加成"
+				"整对&6超凡仿生肝脏&r：超凡器官数量的攻击力、禁忌器官数量*1.52%（1/66）的攻击力加成（独立乘区）"
+				"整对&6超凡双重肋骨&r：超凡器官数量*1.52%（1/66）的护甲提升"
+				"&6超凡韧性脊柱&r：超凡器官数量*3.03%（1/33）的盔甲韧性提升"
+			]
+			id: "5B25A6C675B6CD3A"
+			rewards: [{
+				id: "288301F6371E90C6"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "黑暗超凡之核心"
+			tasks: [{
+				id: "4437AED9AC06D816"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:archotech_void_heart_engine"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 7.5d
+			y: 36.25d
+		}
+		{
+			dependencies: ["35D3B627CA5A5931"]
+			id: "11EA688CBB5E6E58"
+			rewards: [{
+				id: "224BB66765CDD7A8"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "195494090C9590EF"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:archotech_void_spleen"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 8.5d
+			y: 36.25d
+		}
+		{
+			dependencies: ["35D3B627CA5A5931"]
+			id: "4EA21A5F194EBF2C"
+			rewards: [{
+				id: "7D9D71C18AF64306"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "425B3571D6517486"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:archotech_void_liver"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 9.5d
+			y: 36.25d
+		}
+		{
+			dependencies: ["35D3B627CA5A5931"]
+			id: "52DEE49C8E9DBA9A"
+			rewards: [{
+				id: "707814B01A3E222B"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "3BB8997895ED3C6E"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:bioferrite_fluid_muscle"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 10.5d
+			y: 36.25d
+		}
+		{
+			dependencies: ["35D3B627CA5A5931"]
+			id: "415E6AC781988E98"
+			rewards: [{
+				id: "1ACF98C0CAA55196"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "0C6E2DBB40B37900"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:archotech_void_tentacle"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 11.5d
+			y: 36.25d
+		}
+		{
+			dependencies: ["35D3B627CA5A5931"]
+			id: "2916336B1792B049"
+			rewards: [{
+				id: "63969B5ED2C00B7F"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "422A8045E9BB6BD6"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:archotech_void_whip"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 12.5d
+			y: 36.25d
+		}
+		{
+			dependencies: ["35D3B627CA5A5931"]
+			description: ["&b虚空震击&r是Luna's扩展包所添加的巫术学派新法术，虽然具有&6多段伤害&r、&6能够穿墙&r、&6不会被神恩BOSS免疫&r的特点，但其本身具有非常之长的&l冷却时间&r，而法术卷轴不能堆叠以及卷轴的成本又使得使用卷轴不是那么容易……这个器官便是相应的对策，只不过你也许需要小小地提高一点自己的&5扭曲&r……"]
+			id: "32C42A37A1899D49"
+			rewards: [{
+				id: "2C3E98D18368F990"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "1CAA9AC77C4B2048"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:void_shock_core"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 13.5d
+			y: 36.25d
+		}
+		{
+			dependencies: ["35D3B627CA5A5931"]
+			description: [
+				"失乐园、复乐园与无尽之力优点的结合版。"
+				""
+				"脆骨症本体与Luna's扩展包的&6毕业证明&r。"
+			]
+			id: "6202A070DE32DE4A"
+			rewards: [{
+				id: "4BBB1C3CA65853A6"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "乐园亦将陨落"
+			tasks: [{
+				id: "7BA17AD888EC68DA"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:fallen_paradise"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 15.5d
+			y: 36.25d
+		}
+		{
+			dependencies: ["35D3B627CA5A5931"]
+			id: "60F16F88CD4F1EDF"
+			rewards: [{
+				id: "6E2290ED42671457"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "552D73AEF037A917"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:archotech_abyssal_core"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 14.5d
+			y: 36.25d
+		}
+		{
+			dependencies: ["6794388AA5357126"]
+			description: [
+				"Luna's扩展包中的感染系列器官是一个具有多个灵感来源的系列，例如1.12.2的mod[SRP]逃逸：寄生体、warframe中的感染者派系，乃至Rimworld的异象DLC。"
+				""
+				"该系列器官最初是在脆骨症本体出现了感染tag但有且仅有无形肿瘤时为感染tag添加的扩充内容，最初期想法是模拟SRP中的寄生虫制作伤害适应性、最小击杀次数等能力的生存特化套装，但因技术力限制与档期安排问题，最终简化成了如今的状态。"
+			]
+			icon: {
+				Count: 1b
+				id: "luna_flesh_reforged:infested_heart"
+				tag: { }
+			}
+			id: "4EB0120D536E17C0"
+			shape: "rsquare"
+			subtitle: "Luna's扩展包：Infestation 不仅仅是一种疾病"
+			tasks: [{
+				id: "5B0897675F96CB48"
+				title: "我已知晓"
+				type: "checkmark"
+			}]
+			title: "感染畸变"
+			x: -8.75d
+			y: 34.5d
+		}
+		{
+			dependencies: ["4EB0120D536E17C0"]
+			id: "00BE0587F80EB4D6"
+			rewards: [{
+				id: "4FD7F826407B3193"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "太黑的看不清怎么办？我有夜视！"
+			tasks: [{
+				id: "52FDFC132AB4D6B9"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:nightvision_cholecyst"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -7.75d
+			y: 35.5d
+		}
+		{
+			dependencies: ["4EB0120D536E17C0"]
+			description: [
+				"畸变Infested心脏是Luna's扩展包中感染系列器官的核心，唯有该器官存在时才能提供“Infestion计数”，由此为其他感染器官提供特殊能力。"
+				""
+				"如果在其他器官中看见“Infestion计数”的描述，可以等价于“具有畸变Infested心脏时体内感染器官的总数”。"
+			]
+			id: "219ED75DE06E47A8"
+			rewards: [{
+				id: "66D892C860AB6C9F"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "我们的血肉……"
+			tasks: [{
+				id: "1568216657EFB352"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:infested_heart_distortion"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -6.75d
+			y: 35.5d
+		}
+		{
+			dependencies: ["4EB0120D536E17C0"]
+			id: "4B64186512CC6114"
+			rewards: [{
+				id: "2DF7C0F5F916CD05"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "2DD6EEE3FCED6D92"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:infested_spine_distortion"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -5.75d
+			y: 35.5d
+		}
+		{
+			dependencies: ["4EB0120D536E17C0"]
+			id: "07F33878543C58E3"
+			rewards: [{
+				id: "13D8DD11FEF02D01"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "2FB06A84790A7582"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:infested_stomach_distortion"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -4.75d
+			y: 35.5d
+		}
+		{
+			dependencies: ["4EB0120D536E17C0"]
+			id: "36D4C19C1E992E0A"
+			rewards: [{
+				id: "3A8671F5D2CA3FFA"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "74963F8E35379463"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:infested_tumour_distortion"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -3.75d
+			y: 35.5d
+		}
+		{
+			dependencies: ["4EB0120D536E17C0"]
+			id: "35B2813663D46206"
+			rewards: [{
+				id: "2789F2F1536A21CC"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "41BEB5B9260F1A33"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:flesh_tentacle"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -2.75d
+			y: 35.5d
+		}
+		{
+			dependencies: ["4EB0120D536E17C0"]
+			id: "4EBB02DC7A16D74C"
+			rewards: [{
+				id: "195D2250B37549F5"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			tasks: [{
+				id: "37E31A96A8137957"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:flesh_whip"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -1.75d
+			y: 35.5d
+		}
+		{
+			dependencies: ["6BC97F1AB1610C78"]
+			description: [
+				"异彩弹力活塞本质上是添加了特殊效果的异彩玫瑰肌肉，但本身不具备玫瑰tag。"
+				""
+				"其能够根据体内同种器官的数量来选择对近战与远程能力进行强化。"
+			]
+			id: "28288E6F940495F8"
+			rewards: [{
+				id: "2D2FDA5DED20A0D2"
+				item: "lightmanscurrency:coin_gold"
+				type: "item"
+			}]
+			subtitle: "粉色立方体"
+			tasks: [{
+				id: "3B10983CA39975E4"
+				item: {
+					Count: 1b
+					id: "luna_flesh_reforged:chromatic_piston"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -0.75d
+			y: 32.5d
 		}
 	]
 	title: "胸腔：器官收集指南"

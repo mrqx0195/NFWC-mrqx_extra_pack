@@ -1,0 +1,38 @@
+{
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+        "has_flesh_bits": {
+            "conditions": {
+                "items": [
+                    {
+                        "items": [
+                            "luna_flesh_reforged:archotech_capsule"
+                        ]
+                    }
+                ]
+            },
+            "trigger": "minecraft:inventory_changed"
+        }
+    },
+    "requirements": [
+        [
+            "has_flesh_bits"
+        ]
+    ],
+    "rewards": {
+        "recipes": [
+            "luna_flesh_reforged:bio_forging/archotech_heart",
+            "luna_flesh_reforged:bio_forging/archotech_lung",
+            "luna_flesh_reforged:bio_forging/archotech_muscle",
+            "luna_flesh_reforged:bio_forging/archotech_intestine",
+            "luna_flesh_reforged:bio_forging/archotech_rib",
+            "luna_flesh_reforged:bio_forging/archotech_spleen",
+            "luna_flesh_reforged:bio_forging/archotech_spine",
+            "luna_flesh_reforged:bio_forging/archotech_stomach",
+            "luna_flesh_reforged:bio_forging/archotech_kidney",
+            "luna_flesh_reforged:bio_forging/archotech_liver",
+            "luna_flesh_reforged:bio_forging/archotech_appendix",
+            "luna_flesh_reforged:bio_forging/archotech_toughskin_gland"
+        ]
+    }
+}

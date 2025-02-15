@@ -1,0 +1,27 @@
+{
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+        "has_flesh_bits": {
+            "conditions": {
+                "items": [
+                    {
+                        "items": [
+                            "kubejs:common_mineral_cluster"
+                        ]
+                    }
+                ]
+            },
+            "trigger": "minecraft:inventory_changed"
+        }
+    },
+    "requirements": [
+        [
+            "has_flesh_bits"
+        ]
+    ],
+    "rewards": {
+        "recipes": [
+            "luna_flesh_reforged:bio_forging/stoneskin_gland"
+        ]
+    }
+}

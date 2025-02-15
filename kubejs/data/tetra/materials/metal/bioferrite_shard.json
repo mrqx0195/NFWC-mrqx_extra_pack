@@ -1,0 +1,42 @@
+{
+  "key": "bioferrite",
+  "category": "metal",
+  "primary": 7,
+  "secondary": 3,
+  "tertiary": 6,
+  "durability": 936,
+  "integrityCost": 3,
+  "integrityGain": 24,
+  "magicCapacity": 216,
+  "toolLevel": "minecraft:diamond",
+  "toolEfficiency": 25,
+  "tints": {
+    "glyph": "62524f",
+    "texture": "62524f"
+  },
+  "attributes": {
+    "irons_spellbooks:max_mana":100,
+    "irons_spellbooks:eldritch_spell_power": 0.2,
+    "irons_spellbooks:spell_power": 0.1,
+    "irons_spellbooks:mana_regen":0.1,
+    "irons_spellbooks:cooldown_reduction":0.1,
+    "irons_spellbooks:cast_time_reduction":0.05
+  },
+  "effects": {
+    "irons_spellbooks:mana_siphon": 75,
+    "unstable": 8,
+    "manaRepair": 3
+  },
+  "textures": [
+    "metal",
+    "default"
+  ],
+  "material": {
+    "items": [
+      "luna_flesh_reforged:bioferrite_shard"
+    ]
+  },
+  "requiredTools": {
+    "hammer_dig": "minecraft:diamond"
+  }
+}

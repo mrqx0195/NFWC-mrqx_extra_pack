@@ -1,0 +1,8 @@
+ServerEvents.tags('item', event => {
+    event.add('kubejs:intestine', ['chestcavity:intestine', 'chestcavity:rotten_intestine', 'chestcavity:animal_intestine', 'chestcavity:carnivore_intestine', 'chestcavity:herbivore_intestine', 'chestcavity:fireproof_intestine', 'chestcavity:small_animal_intestine', 'chestcavity:small_carnivore_intestine', 'chestcavity:small_herbivore_intestine', 'chestcavity:insect_intestine', 'chestcavity:ender_intestine'])
+    event.add('kubejs:stomach', ['chestcavity:stomach', 'chestcavity:rotten_stomach', 'chestcavity:animal_stomach', 'chestcavity:carnivore_stomach', 'chestcavity:herbivore_stomach', 'chestcavity:herbivore_rumen', 'chestcavity:fireproof_stomach', 'chestcavity:small_animal_stomach', 'chestcavity:small_carnivore_stomach', 'chestcavity:small_herbivore_stomach', 'chestcavity:insect_stomach', 'chestcavity:ender_stomach', 'chestcavity:volatile_stomach'])
+    event.add('chestcavity:digestive_system', ['chestcavity:inner_furnace','chestcavity:mana_reactor','#kubejs:intestine','#kubejs:stomach'])
+    event.add('kubejs:heart', ['chestcavity:heart', 'chestcavity:rotten_heart', 'chestcavity:animal_heart', 'chestcavity:fireproof_heart', 'chestcavity:small_animal_heart', 'chestcavity:rabbit_heart', 'chestcavity:ender_heart', 'chestcavity:dragon_heart', 'chestcavity:golem_core', 'chestcavity:blaze_core', 'chestcavity:saltwater_heart'])
+    event.add('kubejs:overmagic_only', ['kubejs:plastic_heart'])
+    event.add('kubejs:exclued_lucky_block', ['kubejs:genesis','luna_flesh_reforged:archotech_void_heart_engine',"luna_flesh_reforged:fallen_paradise","luna_flesh_reforged:archotech_abyssal_core"])
+  })

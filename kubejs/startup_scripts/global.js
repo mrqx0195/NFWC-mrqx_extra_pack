@@ -1,9 +1,10 @@
+// priority: 1
 Platform.mods.kubejs.name = 'No Flesh Within Chest'
-global.ORGAN_LIST = [];
+global.ORGAN_LIST = []
 
 global.OPERATION_ADD = 'addition'
-global.OPERATION_MUTI_TOTAL = 'multiply_total'
-global.OPERATION_MUTI_BASE = 'multiply_base'
+global.OPERATION_MULTI_TOTAL = 'multiply_total'
+global.OPERATION_MULTI_BASE = 'multiply_base'
 
 global.HEALTH_UP = { key: 'minecraft:generic.max_health', name: 'kubejsMaxHealth', operation: 'addition' }
 global.ATTACK_UP = { key: 'minecraft:generic.attack_damage', name: 'kubejsAttackDamage', operation: 'addition' }
@@ -12,6 +13,7 @@ global.COOLDOWN_REDUCTION = { key: 'irons_spellbooks:cooldown_reduction', name: 
 global.SPELL_POWER = { key: 'irons_spellbooks:spell_power', name: 'kubejsSpellPower', operation: 'addition' }
 global.ICE_SPELL_POWER = { key: 'irons_spellbooks:ice_spell_power', name: 'kubejsIceSpellPower', operation: 'addition' }
 global.FIRE_SPELL_POWER = { key: 'irons_spellbooks:fire_spell_power', name: 'kubejsFireSpellPower', operation: 'addition' }
+global.CANDY_SPELL_POWER = { key: 'kubejs:candy_spell_power', name: 'kubejsCandySpellPower', operation: 'addition' }
 global.ARMOR_TOUGHNESS = { key: 'minecraft:generic.armor_toughness', name: 'kubejsArmorToughness', operation: 'addition' }
 global.ARMOR = { key: 'minecraft:generic.armor', name: 'kubejsArmor', operation: 'addition' }
 global.ATTACK_SPEED = { key: 'minecraft:generic.attack_speed', name: 'kubejsAttackSpeed', operation: 'addition' }
@@ -29,6 +31,11 @@ global.REGENERATION = { key: 'obscure_api:regeneration', name: 'kubejsRegenerati
 global.PENETRATION = { key: 'obscure_api:penetration', name: 'kubejsPenetration', operation: 'addition' }
 global.SUMMON_DAMAGE = { key: 'irons_spellbooks:summon_damage', name: 'kubejsSummonDamage', operation: 'addition' }
 global.BLOOD_SPELL_DAMAGE = { key: 'irons_spellbooks:blood_spell_power', name: 'kubejsBloodSpellDamage', operation: 'addition' }
+global.HOLY_SPELL_DAMAGE = { key: 'irons_spellbooks:holy_spell_power', name: 'kubejsHolySpellDamage', operation: 'addition' }
+global.LUCK = { key: 'minecraft:generic.luck', name: 'kubejsLuck', operation: 'addition' }
+global.LUCK_MULTI_BASE = { key: 'minecraft:generic.luck', name: 'kubejsLuckMultiBase', operation: 'multiply_base' }
+global.ATTACK_UP_MULTI_BASE = { key: 'minecraft:generic.attack_damage', name: 'kubejsAttackDamageMultiBase', operation: 'multiply_base' }
+global.ARMOR_MULTI_BASE = { key: 'minecraft:generic.armor', name: 'kubejsArmorMultiBase', operation: 'multiply_base' }
 
 global.ATTRIBUTE_MAP = {
     'kubejsAttackDamage': global.ATTACK_UP,
@@ -55,6 +62,12 @@ global.ATTRIBUTE_MAP = {
     'kubejsPenetration': global.PENETRATION,
     'kubejsSummonDamage': global.SUMMON_DAMAGE,
     'kubejsBloodSpellDamage': global.BLOOD_SPELL_DAMAGE,
+    'kubejsHolySpellDamage': global.HOLY_SPELL_DAMAGE,
+    'kubejsLuck': global.LUCK,
+    'kubejsLuckMultiBase': global.LUCK_MULTI_BASE,
+    'kubejsAttackDamageMultiBase': global.ATTACK_UP_MULTI_BASE,
+    'kubejsArmorMultiBase': global.ARMOR_MULTI_BASE,
+    'kubejsCandySpellPower': global.CANDY_SPELL_POWER,
 }
 
 global.TYPE_MAP = {
@@ -71,7 +84,6 @@ global.TYPE_MAP = {
     'kubejs:pancreas': Text.aqua({ "translate": "kubejs.tooltips.pancreas" }),
     'kubejs:stomach': Text.aqua({ "translate": "kubejs.tooltips.stomach" }),
     'kubejs:infinity': Text.lightPurple({ "translate": "kubejs.tooltips.infinity" }),
-    'kubejs:active': Text.gold({ "translate": "kubejs.tooltips.active" }),
     'kubejs:machine': Text.gray({ "translate": "kubejs.tooltips.machine" }),
     'kubejs:magic': Text.of({ "translate": "kubejs.tooltips.magic" }).color('#00eded'),
     'kubejs:candy': Text.of({ "translate": "kubejs.tooltips.candy" }).color('#e8a0dc'),
@@ -82,14 +94,35 @@ global.TYPE_MAP = {
     'kubejs:legends': Text.of({ "translate": "kubejs.tooltips.legends" }).color('#d6e5ff'),
     'kubejs:evolution': Text.green({ "translate": "kubejs.tooltips.evolution" }),
     'kubejs:food': Text.of({ "translate": "kubejs.tooltips.food" }).color('#f1b500'),
-    'kubejs:active_only': Text.gold({ "translate": "kubejs.tooltips.active_only" }),
+    'kubejs:huge': Text.of({ "translate": "kubejs.tooltips.huge" }).color('#a900fd'),
+    'kubejs:warp': Text.darkPurple({ "translate": "kubejs.tooltips.warp" }),
+    'kubejs:prehistory': Text.of({ "translate": "kubejs.tooltips.prehistory" }).color('#d6d124'),
+    'kubejs:dragon': Text.of({ "translate": "kubejs.tooltips.dragon" }).color('#bc00bc'),
+    'kubejs:void': Text.of({ "translate": "kubejs.tooltips.void" }).color('#c2bec2'),
+    'kubejs:fantasy': Text.of({ "translate": "kubejs.tooltips.fantasy" }).color('#cd9b9b'),
+    'kubejs:infected': Text.of({ "translate": "kubejs.tooltips.infected" }).color('#00ba03'),
+    'kubejs:botany': Text.of({ "translate": "kubejs.tooltips.botany" }).color('#0ed400'),
     'kubejs:loot_entity': Text.gold({ "translate": "kubejs.tooltips.loot_entity" }),
     'kubejs:loot_entity_only': Text.gold({ "translate": "kubejs.tooltips.loot_entity_only" }),
     'kubejs:loot_chest': Text.gold({ "translate": "kubejs.tooltips.loot_chest" }),
     'kubejs:loot_chest_only': Text.gold({ "translate": "kubejs.tooltips.loot_chest_only" }),
-    'kubejs:huge': Text.of({ "translate": "kubejs.tooltips.huge" }).color('#a900fd'),
-    'kubejs:warp': Text.darkPurple({ "translate": "kubejs.tooltips.warp" }),
-    'kubejs:prehistory': Text.of({ "translate": "kubejs.tooltips.prehistory" }).color('#d6d124'),
+    'kubejs:active_only': Text.gold({ "translate": "kubejs.tooltips.active_only" }),
+    'kubejs:active': Text.gold({ "translate": "kubejs.tooltips.active" }),
+    'kubejs:rclick_only': Text.gold({ "translate": "kubejs.tooltips.rclick_only" }),
+    'kubejs:rclick': Text.gold({ "translate": "kubejs.tooltips.rclick" }),
+    'kubejs:player_tick_only': Text.gold({ "translate": "kubejs.tooltips.player_tick_only" }),
+    'kubejs:player_tick': Text.gold({ "translate": "kubejs.tooltips.player_tick" }),
+    'kubejs:key_pressed': Text.gold({ "translate": "kubejs.tooltips.key_pressed" }),
+    'kubejs:damage_only': Text.gold({ "translate": "kubejs.tooltips.damage_only" }),
+    'kubejs:damage': Text.gold({ "translate": "kubejs.tooltips.damage" }),
+    'kubejs:eat_effect_only': Text.gold({ "translate": "kubejs.tooltips.eat_effect_only" }),
+    'kubejs:eat_effect': Text.gold({ "translate": "kubejs.tooltips.eat_effect" }),
+    'kubejs:break_only': Text.gold({ "translate": "kubejs.tooltips.break_only" }),
+    'kubejs:break': Text.gold({ "translate": "kubejs.tooltips.break" }),
+    'kubejs:bear_only': Text.gold({ "translate": "kubejs.tooltips.bear_only" }),
+    'kubejs:bear': Text.gold({ "translate": "kubejs.tooltips.bear" }),
+    'kubejs:enchant_only': Text.gold({ "translate": "kubejs.tooltips.enchant_only" }),
+    'kubejs:enchant': Text.gold({ "translate": "kubejs.tooltips.enchant" }),
 }
 
 
@@ -132,7 +165,7 @@ global.SCORE_MAP = {
     'chestcavity:crystalsynthesis': { "translate": "kubejs.chestcavity.crystalsynthesis" },
     'chestcavity:rot_digestion': { "translate": "kubejs.chestcavity.rot_digestion" },
     'chestcavity:rot_nutrition': { "translate": "kubejs.chestcavity.rot_nutrition" },
-    
+
     'chestcavity:forceful_spit': { "translate": "kubejs.chestcavity.forceful_spit" },
     'chestcavity:silk': { "translate": "kubejs.chestcavity.silk" },
     'chestcavity:venomous': { "translate": "kubejs.chestcavity.venomous" },
@@ -145,6 +178,7 @@ global.SCORE_MAP = {
     'chestcavity:arrow_dodging': { "translate": "kubejs.chestcavity.arrow_dodging" },
     'chestcavity:impact_resistant': { "translate": "kubejs.chestcavity.impact_resistant" },
     'chestcavity:rotgut': { "translate": "kubejs.chestcavity.rotgut" },
+    'chestcavity:ease_of_access': { "translate": "kubejs.chestcavity.ease_of_access" },
 }
 
 global.SCORE_HOVER_MAP = {
@@ -198,4 +232,5 @@ global.SCORE_HOVER_MAP = {
     'chestcavity:arrow_dodging': { "translate": "kubejs.chestcavity.hover.arrow_dodging" },
     'chestcavity:impact_resistant': { "translate": "kubejs.chestcavity.hover.impact_resistant" },
     'chestcavity:rotgut': { "translate": "kubejs.chestcavity.hover.rotgut" },
+    'chestcavity:ease_of_access': { "translate": "kubejs.chestcavity.hover.ease_of_access" },
 }
