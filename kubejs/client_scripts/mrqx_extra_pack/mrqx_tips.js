@@ -1,4 +1,4 @@
-// priority: -1
+// priority: -50
 
 ClientEvents.highPriorityAssets(event => {
     function registeTips(key) {

@@ -1,4 +1,4 @@
-// priority: 901
+// priority: 950
 
 const mrqxBossChampionMap = {
     'twilightforest:naga': 'mrqx_somite',

@@ -1,4 +1,4 @@
-// priority: 499
+// priority: 450
 
 /**
  * 器官实体掉落策略
@@ -39,8 +39,7 @@ const mrqxEntityLootOnlyStrategies = {
     'mrqx_extra_pack:prison_soul': function (event, organ) {
         let player = event.getPlayer()
         let count = player.persistentData.getInt('mrqx_kill_count') ?? 0
-        count++
-        player.persistentData.putInt('mrqx_kill_count', count)
+        player.persistentData.putInt('mrqx_kill_count', count + 1)
     },
 
     // “镜花水月”肾

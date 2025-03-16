@@ -1,4 +1,4 @@
-// priority: -1
+// priority: -50
 
 StartupEvents.registry('item', event => {
     /**
@@ -2238,10 +2238,31 @@ StartupEvents.registry('item', event => {
                 .addDefaultAttribute('irons_spellbooks:spell_resist', 'sagesBookSpellResist', 0.5, 'addition')
 
             // 匠艺核心
-            // event.create('mrqx_extra_pack:craftsmanship_core')
-            //     .texture('mrqx_extra_pack:item/craftsmanship_core')
-            //     .maxStackSize(1)
-            //     .tag('itemborders:diamond')
+            event.create('mrqx_extra_pack:craftsmanship_core')
+                .texture('mrqx_extra_pack:item/craftsmanship_core')
+                .maxStackSize(1)
+                .tag('itemborders:diamond')
+
+            // 超魔之书
+            event.create('mrqx_extra_pack:book_of_over_enchantment')
+                .texture('mrqx_extra_pack:item/book_of_over_enchantment')
+                .maxStackSize(1)
+                .tag('itemborders:diamond')
+                .glow(true)
+
+            // 永恒常春藤
+            event.create('mrqx_extra_pack:timeless_ivy')
+                .texture('mrqx_extra_pack:item/timeless_ivy')
+                .maxStackSize(1)
+                .tag('curios:trinkets')
+                .tag('itemborders:diamond')
+                .attachCapability(CuriosCapabilityBuilder.CURIOS.itemStack()
+                    .canEquip(() => true)
+                    .curioTick((item, ctx) => {
+                        if (ctx.entity().level.isClientSide()) return
+                        global.mrqxTimelessIvyTick(item, ctx)
+                    })
+                )
         }
 
         // 先进单片镜
@@ -2296,9 +2317,9 @@ StartupEvents.registry('item', event => {
 
     {// 其他物品
         // 核反应燃料
-        event.create('mrqx_extra_pack:uranium').texture('mrqx_extra_pack:item/uranium')
-        event.create('mrqx_extra_pack:raw_uranium').texture('mrqx_extra_pack:item/raw_uranium')
-        event.create('mrqx_extra_pack:nuclear_fuel').texture('mrqx_extra_pack:item/nuclear_fuel').tag('kubejs:mrqx_nuclear')
+        event.create('mrqx_extra_pack:uranium').texture('mrqx_extra_pack:item/uranium').tag('kubejs:mrqx_nuclear').tag('forge:ingots/uranium')
+        event.create('mrqx_extra_pack:raw_uranium').texture('mrqx_extra_pack:item/raw_uranium').tag('kubejs:mrqx_nuclear').tag('forge:raw_materials/uranium')
+        event.create('mrqx_extra_pack:nuclear_fuel').texture('mrqx_extra_pack:item/nuclear_fuel').tag('kubejs:mrqx_nuclear').tag('create_new_age:nuclear/is_nuclear_fuel').tag('create_new_age:nuclear/time_28800')
 
         // 便携式体检仪
         event.create('mrqx_extra_pack:portable_medical_checkup_device').texture('mrqx_extra_pack:item/portable_medical_checkup_device')
@@ -2395,66 +2416,54 @@ StartupEvents.registry('item', event => {
             .addDefaultSpell('mrqx_extra_pack:earth_without_earth', 1)
             .addDefaultAttribute('irons_spellbooks:spell_power', 'commandBookSpellPower', 0.5, 'addition')
 
-        // 生铁锭
-        // event.create('mrqx_extra_pack:pig_iron_ingot').texture('mrqx_extra_pack:item/pig_iron_ingot')
-
-        // 日金锭
-        // event.create('mrqx_extra_pack:sun_metal_ingot').texture('mrqx_extra_pack:item/sun_metal_ingot')
-
-        // 龙金锭
-        // event.create('mrqx_extra_pack:dragon_metal_ingot').texture('mrqx_extra_pack:item/dragon_metal_ingot')
-
-        // 灵魂合金锭
-        // event.create('mrqx_extra_pack:soul_metal_ingot').texture('mrqx_extra_pack:item/soul_metal_ingot')
-
         {// 奥秘
             // 奥秘·血肉
-            event.create('mrqx_extra_pack:mystery_flesh_and_blood').texture('mrqx_extra_pack:item/mystery/mystery_flesh_and_blood').parentModel('mrqx_extra_pack:item/mystery_item')
+            event.create('mrqx_extra_pack:mystery_flesh_and_blood').texture('mrqx_extra_pack:item/mystery/mystery_flesh_and_blood').parentModel('mrqx_extra_pack:item/mystery_item').tag('mrqx_extra_pack:mystery')
 
             // 奥秘·灵魂
-            event.create('mrqx_extra_pack:mystery_soul').texture('mrqx_extra_pack:item/mystery/mystery_soul').parentModel('mrqx_extra_pack:item/mystery_item')
+            event.create('mrqx_extra_pack:mystery_soul').texture('mrqx_extra_pack:item/mystery/mystery_soul').parentModel('mrqx_extra_pack:item/mystery_item').tag('mrqx_extra_pack:mystery')
 
             // 奥秘·机械
-            event.create('mrqx_extra_pack:mystery_machine').texture('mrqx_extra_pack:item/mystery/mystery_machine').parentModel('mrqx_extra_pack:item/mystery_item')
+            event.create('mrqx_extra_pack:mystery_machine').texture('mrqx_extra_pack:item/mystery/mystery_machine').parentModel('mrqx_extra_pack:item/mystery_item').tag('mrqx_extra_pack:mystery')
 
             // 奥秘·魔法
-            event.create('mrqx_extra_pack:mystery_magic').texture('mrqx_extra_pack:item/mystery/mystery_magic').parentModel('mrqx_extra_pack:item/mystery_item')
+            event.create('mrqx_extra_pack:mystery_magic').texture('mrqx_extra_pack:item/mystery/mystery_magic').parentModel('mrqx_extra_pack:item/mystery_item').tag('mrqx_extra_pack:mystery')
 
             // 奥秘·工艺
-            event.create('mrqx_extra_pack:mystery_craftsmanship').texture('mrqx_extra_pack:item/mystery/mystery_craftsmanship').parentModel('mrqx_extra_pack:item/mystery_item')
+            event.create('mrqx_extra_pack:mystery_craftsmanship').texture('mrqx_extra_pack:item/mystery/mystery_craftsmanship').parentModel('mrqx_extra_pack:item/mystery_item').tag('mrqx_extra_pack:mystery')
 
             // 奥秘·学者
-            event.create('mrqx_extra_pack:mystery_scholar').texture('mrqx_extra_pack:item/mystery/mystery_scholar').parentModel('mrqx_extra_pack:item/mystery_item')
+            event.create('mrqx_extra_pack:mystery_scholar').texture('mrqx_extra_pack:item/mystery/mystery_scholar').parentModel('mrqx_extra_pack:item/mystery_item').tag('mrqx_extra_pack:mystery')
 
             // 奥秘·自然
-            event.create('mrqx_extra_pack:mystery_nature').texture('mrqx_extra_pack:item/mystery/mystery_nature').parentModel('mrqx_extra_pack:item/mystery_item')
+            event.create('mrqx_extra_pack:mystery_nature').texture('mrqx_extra_pack:item/mystery/mystery_nature').parentModel('mrqx_extra_pack:item/mystery_item').tag('mrqx_extra_pack:mystery')
 
             // 奥秘·星辰
-            event.create('mrqx_extra_pack:mystery_stars').texture('mrqx_extra_pack:item/mystery/mystery_stars').parentModel('mrqx_extra_pack:item/mystery_item')
+            event.create('mrqx_extra_pack:mystery_stars').texture('mrqx_extra_pack:item/mystery/mystery_stars').parentModel('mrqx_extra_pack:item/mystery_item').tag('mrqx_extra_pack:mystery')
 
             // 奥秘·资源
-            event.create('mrqx_extra_pack:mystery_resources').texture('mrqx_extra_pack:item/mystery/mystery_resources').parentModel('mrqx_extra_pack:item/mystery_item')
+            event.create('mrqx_extra_pack:mystery_resources').texture('mrqx_extra_pack:item/mystery/mystery_resources').parentModel('mrqx_extra_pack:item/mystery_item').tag('mrqx_extra_pack:mystery')
 
             // 奥秘·食物
-            event.create('mrqx_extra_pack:mystery_food').texture('mrqx_extra_pack:item/mystery/mystery_food').parentModel('mrqx_extra_pack:item/mystery_item')
+            event.create('mrqx_extra_pack:mystery_food').texture('mrqx_extra_pack:item/mystery/mystery_food').parentModel('mrqx_extra_pack:item/mystery_item').tag('mrqx_extra_pack:mystery')
 
             // 奥秘·罪者
-            event.create('mrqx_extra_pack:mystery_sinners').texture('mrqx_extra_pack:item/mystery/mystery_sinners').parentModel('mrqx_extra_pack:item/mystery_item')
+            event.create('mrqx_extra_pack:mystery_sinners').texture('mrqx_extra_pack:item/mystery/mystery_sinners').parentModel('mrqx_extra_pack:item/mystery_item').tag('mrqx_extra_pack:mystery')
 
             // 奥秘·灾难
-            event.create('mrqx_extra_pack:mystery_disasters').texture('mrqx_extra_pack:item/mystery/mystery_disasters').parentModel('mrqx_extra_pack:item/mystery_item')
+            event.create('mrqx_extra_pack:mystery_disasters').texture('mrqx_extra_pack:item/mystery/mystery_disasters').parentModel('mrqx_extra_pack:item/mystery_item').tag('mrqx_extra_pack:mystery')
 
             // 奥秘·领主
-            event.create('mrqx_extra_pack:mystery_lords').texture('mrqx_extra_pack:item/mystery/mystery_lords').parentModel('mrqx_extra_pack:item/mystery_item')
+            event.create('mrqx_extra_pack:mystery_lords').texture('mrqx_extra_pack:item/mystery/mystery_lords').parentModel('mrqx_extra_pack:item/mystery_item').tag('mrqx_extra_pack:mystery')
 
             // 奥秘·从者
-            event.create('mrqx_extra_pack:mystery_followers').texture('mrqx_extra_pack:item/mystery/mystery_followers').parentModel('mrqx_extra_pack:item/mystery_item')
+            event.create('mrqx_extra_pack:mystery_followers').texture('mrqx_extra_pack:item/mystery/mystery_followers').parentModel('mrqx_extra_pack:item/mystery_item').tag('mrqx_extra_pack:mystery')
 
             // 奥秘·回忆
-            event.create('mrqx_extra_pack:mystery_memories').texture('mrqx_extra_pack:item/mystery/mystery_memories').parentModel('mrqx_extra_pack:item/mystery_item')
+            event.create('mrqx_extra_pack:mystery_memories').texture('mrqx_extra_pack:item/mystery/mystery_memories').parentModel('mrqx_extra_pack:item/mystery_item').tag('mrqx_extra_pack:mystery')
 
             // 奥秘·未来
-            event.create('mrqx_extra_pack:mystery_future').texture('mrqx_extra_pack:item/mystery/mystery_future').parentModel('mrqx_extra_pack:item/mystery_item')
+            event.create('mrqx_extra_pack:mystery_future').texture('mrqx_extra_pack:item/mystery/mystery_future').parentModel('mrqx_extra_pack:item/mystery_item').tag('mrqx_extra_pack:mystery')
         }
 
         // 未完成的物品

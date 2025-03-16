@@ -1,4 +1,4 @@
-// priority: 998
+// priority: 940
 
 /**
  * 获取算力

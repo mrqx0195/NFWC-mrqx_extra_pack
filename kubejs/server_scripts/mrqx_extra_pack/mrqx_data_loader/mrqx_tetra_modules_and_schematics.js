@@ -1,309 +1,16 @@
-// priority: 799
+// priority: 750
 
-/**
- * @param {string} key
- * @param {number} durability
- * @param {number} durabilityMultiplier
- * @param {number} integrity
- * @param {number} magicCapacity
- */
-function mrqxTetraModuleVariant(key, durability, durabilityMultiplier, integrity, magicCapacity) {
-    this.key = key
-    this.durability = durability
-    this.durabilityMultiplier = durabilityMultiplier
-    this.integrity = integrity
-    this.magicCapacity = magicCapacity
-    this.tools = {}
-    this.aspects = {}
-    this.attributes = {}
-    this.effects = {}
-    this.models = []
-    this.glyph = {}
-    this.material = {}
-}
-
-mrqxTetraModuleVariant.prototype = {
-    /**
-     * @param {number} textureX
-     * @param {number} textureY
-     * @param {string} tintColor
-     * @param {string} textureLocation
-     * @returns {mrqxTetraModuleVariant}
-     */
-    setGlyph: function (textureX, textureY, tintColor, textureLocation) {
-        if (!mrqxIsEmpty(textureX)) this.glyph['textureX'] = textureX
-        if (!mrqxIsEmpty(textureY)) this.glyph['textureY'] = textureY
-        if (!mrqxIsEmpty(tintColor)) this.glyph['tint'] = tintColor
-        if (!mrqxIsEmpty(textureLocation)) this.glyph['textureLocation'] = textureLocation
-        return this
-    },
-    /**
-     * @param {"hammer_dig" | "pickaxe_dig" | "axe_dig" | "cut" | "pry" | "shovel_dig" | "hoe_dig"} tool
-     * @param {"minecraft:wood" | "minecraft:stone" | "minecraft:iron" | "minecraft:gold" | "minecraft:diamond" | "minecraft:netherite" | number} level
-     * @param {number} value
-     * @returns {mrqxTetraModuleVariant}
-     */
-    addTool: function (tool, level, value) {
-        if (mrqxIsEmpty(value)) {
-            this.tools[tool] = level
-        } else {
-            this.tools[tool] = [level, value]
-        }
-        return this
-    },
-    /**
-     * @param {Special.Attribute} attribute
-     * @param {"ADDITION" | "MULTIPLY_BASE" | "MULTIPLY_TOTAL"} operation
-     * @param {number} value
-     * @returns {mrqxTetraModuleVariant}
-     */
-    addAttribute: function (attribute, operation, value) {
-        if (operation == 'MULTIPLY_BASE') attribute = '*' + attribute
-        else if (operation == 'MULTIPLY_TOTAL') attribute = '**' + attribute
-        this.attributes[attribute] = value
-        return this
-    },
-    /**
-     * @param {string} key
-     * @param {number | number[]} value
-     * @returns {mrqxTetraModuleVariant}
-     */
-    addEffect: function (key, value) {
-        this.effects[key] = value
-        return this
-    },
-    /**
-     * @param {string} key
-     * @param {number} value
-     * @returns {mrqxTetraModuleVariant}
-     */
-    addAspect: function (key, value) {
-        this.aspects[key] = value
-        return this
-    },
-    /**
-     * @param {Special.Item} item
-     * @returns {mrqxTetraModuleVariant}
-     */
-    addItemMaterial: function (item) {
-        if (!this.material.items) {
-            this.material.items = [item]
-        }
-        else {
-            this.material.items.push(item)
-        }
-        return this
-    },
-    /**
-     * @param {Special.ItemTag} tag
-     * @returns {mrqxTetraModuleVariant}
-     */
-    setTagMaterial: function (tag) {
-        this.material.tag = tag
-        return this
-    },
-    /**
-     * @param {string} nbt
-     * @returns {mrqxTetraModuleVariant}
-     */
-    setMaterialNbt: function (nbt) {
-        this.material.nbt = nbt
-        return this
-    },
-    /**
-     * @param {number} count
-     * @returns {mrqxTetraModuleVariant}
-     */
-    setMaterialCount: function (count) {
-        this.material.count = count
-        return this
-    },
-    /**
-     * @param {object} model
-     * @returns {mrqxTetraModuleVariant}
-     */
-    addModel: function (model) {
-        this.models.push(model)
-        return this
-    },
-}
-
-/**
- * @param {string} type
- * @param {boolean} replace
- */
-function mrqxTetraModule(type, replace) {
-    this.type = type
-    this.replace = replace
-    this.improvements = []
-    this.slots = []
-    /** @type {mrqxTetraModuleVariant[]} */
-    this.variants = []
-}
-
-mrqxTetraModule.prototype = {
-    /**
-     * @param {string} slot
-     * @returns {mrqxTetraModule}
-     */
-    addSlot: function (slot) {
-        this.slots.push(slot)
-        return this
-    },
-    /**
-     * @param {string} improvement
-     * @returns {mrqxTetraModule}
-     */
-    addImprovement: function (improvement) {
-        this.improvements.push(improvement)
-        return this
-    },
-    /**
-     * @param {mrqxTetraModuleVariant} variant
-     * @returns {mrqxTetraModule}
-     */
-    addVariant: function (variant) {
-        this.variants.push(variant)
-        return this
-    },
-    /**
-     * @param {Internal.Priority_} renderLayer
-     * @returns {mrqxTetraModule}
-     */
-    setRenderLayer: function (renderLayer) {
-        this.renderLayer = renderLayer
-        return this
-    },
-}
-
-/**
- * @param {"other" | "improvement" | "minor" | "major"} displayType
- * @param {boolean} replace
- * @param {boolean} hone
- * @param {number} materialRevealSlot
- * @param {number} materialSlotCount
- * @param {"temporary" | "hone" | "basic"} rarity
- */
-function mrqxTetraSchematic(displayType, replace, hone, materialRevealSlot, materialSlotCount, rarity) {
-    this.displayType = displayType
-    this.replace = replace
-    this.hone = hone
-    this.materialRevealSlot = materialRevealSlot
-    this.materialSlotCount = materialSlotCount
-    this.rarity = rarity
-    this.slots = []
-    /** @type {mrqxTetraOutcome[]} */
-    this.outcomes = []
-    this.glyph = {}
-}
-
-mrqxTetraSchematic.prototype = {
-    /**
-     * @param {string} slot
-     * @returns {mrqxTetraSchematic}
-     */
-    addSlot: function (slot) {
-        this.slots.push(slot)
-        return this
-    },
-    /**
-     * @param {number} textureX
-     * @param {number} textureY
-     * @param {string} tintColor
-     * @param {string} textureLocation
-     * @returns {mrqxTetraSchematic}
-     */
-    setGlyph: function (textureX, textureY, tintColor, textureLocation) {
-        if (!mrqxIsEmpty(textureX)) this.glyph['textureX'] = textureX
-        if (!mrqxIsEmpty(textureY)) this.glyph['textureY'] = textureY
-        if (!mrqxIsEmpty(tintColor)) this.glyph['tint'] = tintColor
-        if (!mrqxIsEmpty(textureLocation)) this.glyph['textureLocation'] = textureLocation
-        return this
-    },
-    /**
-     * @param {mrqxTetraOutcome} outcome
-     * @returns {mrqxTetraSchematic}
-     */
-    addOutcome: function (outcome) {
-        this.outcomes.push(outcome)
-        return this
-    },
-    /**
-     * @param {"hammer_dig" | "pickaxe_dig" | "axe_dig" | "cut" | "pry" | "shovel_dig" | "hoe_dig"} tool
-     * @param {"minecraft:wood" | "minecraft:stone" | "minecraft:iron" | "minecraft:gold" | "minecraft:diamond" | "minecraft:netherite" | number} level
-     * @returns {mrqxTetraSchematic}
-     */
-    addAllRequiredTools: function (tool, level) {
-        this.outcomes.forEach(outcome => {
-            outcome.addRequiredTool(tool, level)
-        })
-        return this
-    },
-}
-
-function mrqxTetraOutcome() {
-    this.requiredTools = {}
-    this.material = {}
-}
-
-mrqxTetraOutcome.prototype = {
-    /**
-     * @param {"hammer_dig" | "pickaxe_dig" | "axe_dig" | "cut" | "pry" | "shovel_dig" | "hoe_dig"} tool
-     * @param {"minecraft:wood" | "minecraft:stone" | "minecraft:iron" | "minecraft:gold" | "minecraft:diamond" | "minecraft:netherite" | number} level
-     * @returns {mrqxTetraOutcome}
-     */
-    addRequiredTool: function (tool, level) {
-        this.requiredTools[tool] = level
-        return this
-    },
-    /**
-     * @param {Special.Item} item
-     * @returns {mrqxTetraOutcome}
-     */
-    addItemMaterial: function (item) {
-        if (!this.material.items) {
-            this.material.items = [item]
-        }
-        else {
-            this.material.items.push(item)
-        }
-        return this
-    },
-    /**
-     * @param {Special.ItemTag} tag
-     * @returns {mrqxTetraOutcome}
-     */
-    setTagMaterial: function (tag) {
-        this.material.tag = tag
-        return this
-    },
-    /**
-     * @param {string} nbt
-     * @returns {mrqxTetraOutcome}
-     */
-    setMaterialNbt: function (nbt) {
-        this.material.nbt = nbt
-        return this
-    },
-    /**
-     * @param {number} count
-     * @returns {mrqxTetraOutcome}
-     */
-    setMaterialCount: function (count) {
-        this.material.count = count
-        return this
-    },
-    /**
-     * @param {string} moduleKey
-     * @param {string} moduleVariant
-     * @returns {mrqxTetraOutcome}
-     */
-    setModule: function (moduleKey, moduleVariant) {
-        this.moduleKey = moduleKey
-        this.moduleVariant = moduleVariant
-        return this
-    },
-}
+const mrqxCraftsmanshipCoreCraftingRequirement = new mrqxTetraCraftingRequirementNot(new mrqxTetraCraftingRequirementOr()
+    .addRequirement(new mrqxTetraCraftingRequirementImprovement('mrqx_craftsmanship_core_ultimate_stability'))
+    .addRequirement(new mrqxTetraCraftingRequirementImprovement('mrqx_craftsmanship_core_ultimate_stability_holo'))
+    .addRequirement(new mrqxTetraCraftingRequirementImprovement('mrqx_craftsmanship_core_ultimate_stability_toolbelt'))
+    .addRequirement(new mrqxTetraCraftingRequirementImprovement('mrqx_craftsmanship_core_flame_and_steel'))
+    .addRequirement(new mrqxTetraCraftingRequirementImprovement('mrqx_craftsmanship_core_thresher'))
+    .addRequirement(new mrqxTetraCraftingRequirementImprovement('mrqx_craftsmanship_core_final_tactics'))
+    .addRequirement(new mrqxTetraCraftingRequirementImprovement('mrqx_craftsmanship_core_truesilver_slash'))
+    .addRequirement(new mrqxTetraCraftingRequirementImprovement('mrqx_craftsmanship_core_trial_of_thorns'))
+    .addRequirement(new mrqxTetraCraftingRequirementImprovement('mrqx_craftsmanship_core_paths_must_be_opened'))
+)
 
 ServerEvents.highPriorityData(event => {
     function registerTetraModule(dataModel, key, category) {
@@ -782,28 +489,128 @@ ServerEvents.highPriorityData(event => {
     )
 
     // 匠艺核心
-    // registerTetraSchematic(registerModuleAndReturnSchematic(new mrqxTetraModule('tetra:basic_major_module', true)
-    //     .addSlot('holo/core')
-    //     .setRenderLayer('highest')
-    //     .addVariant(new mrqxTetraModuleVariant('mrqx_craftsmanship_core', 0, 0, 10, 0)
-    //         .addTool('axe_dig', 99)
-    //         .addTool('cut', 99)
-    //         .addTool('hammer_dig', 99)
-    //         .addTool('hoe_dig', 99)
-    //         .addTool('pickaxe_dig', 99)
-    //         .addTool('pry', 99)
-    //         .addTool('shovel_dig', 99)
-    //         .setGlyph(96, 48)
-    //         .addItemMaterial('mrqx_extra_pack:craftsmanship_core')
-    //         .addModel({
-    //             "location": "tetra:items/module/holo/mrqx_extra_pack/mrqx_craftsmanship_core"
-    //         })
-    //     ), 'major', false, 0, 1, 'temporary', 'mrqx_craftsmanship_core', 'holo')
-    //     .addAllRequiredTools('hammer_dig', 'minecraft:netherite')
-    //     .setGlyph(96, 48),
-    //     'mrqx_craftsmanship_core', 'holo'
-    // )
-    // registerTetraSchematic(new mrqxTetraSchematic('improvement', false, false, 0, 0, 'temporary')
-    //     .addOutcome(new mrqxTetraOutcome().addItemMaterial('mrqx_extra_pack:craftsmanship_core'))
-    // )
-}) 
+    registerTetraSchematic(registerModuleAndReturnSchematic(new mrqxTetraModule('tetra:basic_major_module', true)
+        .addSlot('holo/core')
+        .setRenderLayer('highest')
+        .addVariant(new mrqxTetraModuleVariant('mrqx_craftsmanship_core', 0, 0, 10, 0)
+            .addTool('axe_dig', 99)
+            .addTool('cut', 99)
+            .addTool('hammer_dig', 99)
+            .addTool('hoe_dig', 99)
+            .addTool('pickaxe_dig', 99)
+            .addTool('pry', 99)
+            .addTool('shovel_dig', 99)
+            .setGlyph(96, 48)
+            .addItemMaterial('mrqx_extra_pack:craftsmanship_core')
+            .addModel({
+                "location": "tetra:items/module/holo/mrqx_extra_pack/mrqx_craftsmanship_core"
+            })
+        ), 'major', false, 0, 1, 'temporary', 'mrqx_craftsmanship_core', 'holo')
+        .addAllRequiredTools('hammer_dig', 'minecraft:netherite')
+        .setGlyph(96, 48),
+        'mrqx_craftsmanship_core', 'holo'
+    )
+
+    // 匠艺核心·终极稳固
+    registerTetraSchematic(new mrqxTetraSchematic('improvement', false, false, 0, 0, 'temporary')
+        .addSlot("double/handle")
+        .addSlot("double/head_left")
+        .addSlot("double/head_right")
+        .addSlot("single/handle")
+        .addSlot("single/head")
+        .addSlot("sword/blade")
+        .addSlot("sword/hilt")
+        .addSlot("bow/stave")
+        .addSlot("bow/string")
+        .addSlot("shield/plate")
+        .addSlot("shield/grip")
+        .addSlot("crossbow/stave")
+        .addSlot("crossbow/stock")
+        .addOutcome(new mrqxTetraOutcome()
+            .addItemMaterial('mrqx_extra_pack:craftsmanship_core')
+            .setExperienceCost(30)
+            .addImprovement('mrqx_craftsmanship_core_ultimate_stability', 0)
+        )
+        .setRequirement(mrqxCraftsmanshipCoreCraftingRequirement)
+        .setGlyph(80, 32, null, 'tetra:textures/gui/workbench.png')
+        , 'mrqx_craftsmanship_core_ultimate_stability', 'shared'
+    )
+
+    // 匠艺核心·火与钢
+    registerTetraSchematic(new mrqxTetraSchematic('improvement', false, false, 0, 0, 'temporary')
+        .addSlot("sword/blade")
+        .addOutcome(new mrqxTetraOutcome()
+            .addItemMaterial('mrqx_extra_pack:craftsmanship_core')
+            .setExperienceCost(30)
+            .addImprovement('mrqx_craftsmanship_core_flame_and_steel', 0)
+        )
+        .setRequirement(mrqxCraftsmanshipCoreCraftingRequirement)
+        .setGlyph(80, 32, null, 'tetra:textures/gui/workbench.png')
+        , 'mrqx_craftsmanship_core_flame_and_steel', 'sword'
+    )
+
+    // 匠艺核心·剥壳
+    registerTetraSchematic(new mrqxTetraSchematic('improvement', false, false, 0, 0, 'temporary')
+        .addSlot("bow/stave")
+        .addOutcome(new mrqxTetraOutcome()
+            .addItemMaterial('mrqx_extra_pack:craftsmanship_core')
+            .setExperienceCost(30)
+            .addImprovement('mrqx_craftsmanship_core_thresher', 0)
+        )
+        .setRequirement(mrqxCraftsmanshipCoreCraftingRequirement)
+        .setGlyph(80, 32, null, 'tetra:textures/gui/workbench.png')
+        , 'mrqx_craftsmanship_core_thresher', 'bow'
+    )
+
+    // 匠艺核心·战术的终结
+    registerTetraSchematic(new mrqxTetraSchematic('improvement', false, false, 0, 0, 'temporary')
+        .addSlot("crossbow/stave")
+        .addOutcome(new mrqxTetraOutcome()
+            .addItemMaterial('mrqx_extra_pack:craftsmanship_core')
+            .setExperienceCost(30)
+            .addImprovement('mrqx_craftsmanship_core_final_tactics', 0)
+        )
+        .setRequirement(mrqxCraftsmanshipCoreCraftingRequirement)
+        .setGlyph(80, 32, null, 'tetra:textures/gui/workbench.png')
+        , 'mrqx_craftsmanship_core_final_tactics', 'crossbow'
+    )
+
+    // 匠艺核心·真银斩
+    registerTetraSchematic(new mrqxTetraSchematic('improvement', false, false, 0, 0, 'temporary')
+        .addSlot("single/head")
+        .addOutcome(new mrqxTetraOutcome()
+            .addItemMaterial('mrqx_extra_pack:craftsmanship_core')
+            .setExperienceCost(30)
+            .addImprovement('mrqx_craftsmanship_core_truesilver_slash', 0)
+        )
+        .setRequirement(mrqxCraftsmanshipCoreCraftingRequirement)
+        .setGlyph(80, 32, null, 'tetra:textures/gui/workbench.png')
+        , 'mrqx_craftsmanship_core_truesilver_slash', 'single'
+    )
+
+    // 匠艺核心·披荆斩棘
+    registerTetraSchematic(new mrqxTetraSchematic('improvement', false, false, 0, 0, 'temporary')
+        .addSlot("shield/plate")
+        .addOutcome(new mrqxTetraOutcome()
+            .addItemMaterial('mrqx_extra_pack:craftsmanship_core')
+            .setExperienceCost(30)
+            .addImprovement('plate/mrqx_craftsmanship_core_trial_of_thorns', 0)
+        )
+        .setRequirement(mrqxCraftsmanshipCoreCraftingRequirement)
+        .setGlyph(80, 32, null, 'tetra:textures/gui/workbench.png')
+        , 'mrqx_craftsmanship_core_trial_of_thorns', 'shield/plate'
+    )
+
+    // 匠艺核心·必须开辟的通路
+    registerTetraSchematic(new mrqxTetraSchematic('improvement', false, false, 0, 0, 'temporary')
+        .addSlot("double/handle")
+        .addOutcome(new mrqxTetraOutcome()
+            .addItemMaterial('mrqx_extra_pack:craftsmanship_core')
+            .setExperienceCost(30)
+            .addImprovement('mrqx_craftsmanship_core_paths_must_be_opened', 0)
+        )
+        .setRequirement(mrqxCraftsmanshipCoreCraftingRequirement)
+        .setGlyph(80, 32, null, 'tetra:textures/gui/workbench.png')
+        , 'mrqx_craftsmanship_core_paths_must_be_opened', 'double'
+    )
+})

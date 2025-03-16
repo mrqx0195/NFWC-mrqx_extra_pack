@@ -1,4 +1,4 @@
-// priority: 999
+// priority: 950
 
 const mrqxPlayerNonPersistentDataMap = new Map()
 
@@ -541,4 +541,28 @@ function mrqxIsBossChampionEnabled(player) {
         return true
     }
     return !(isDisabled.includes('true'))
+}
+
+
+/**
+ * 分割整数
+ * @param {number} sum
+ * @param {number} length
+ * @returns {number[]}
+ */
+function mrqxGenerateRandomArray(sum, length) {
+    let arr = []
+    let remainingSum = sum
+    for (let i = 0; i < length; i++) {
+        let num
+        if (i === length - 1) {
+            num = remainingSum
+        } else {
+            num = Math.floor(Math.random() * (remainingSum + 1))
+        }
+        arr.push(num)
+        remainingSum -= num
+    }
+    mrqxShuffleArray(arr)
+    return arr
 }

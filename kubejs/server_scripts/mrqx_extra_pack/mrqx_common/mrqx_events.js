@@ -1,4 +1,4 @@
-// priority: 499
+// priority: 450
 
 // 肿瘤诱变剂
 ItemEvents.foodEaten('mrqx_extra_pack:tumor_mutagen', event => {
@@ -247,9 +247,7 @@ ItemEvents.foodEaten('mrqx_extra_pack:mint_milk_tea', event => {
     return
 })
 
-/**
- * 处理玩家登录时间
- */
+// 处理玩家登录时间
 PlayerEvents.loggedIn(event => {
     let player = event.player
     mrqxSetPlayerNonPersistentData(player, 'loginTime', event.getServer().getTickCount())
@@ -296,4 +294,77 @@ PlayerEvents.tick(event => {
         player.tell($mrqxSerializer.fromJsonLenient({ "translate": "mrqx_extra_pack.msg.xiao_amburm.0", "with": [{ "translate": `mrqx_extra_pack.msg.xiao_amburm.${Math.floor(Math.random() * 22 + 1)}` }] }))
         mrqxSetPlayerNonPersistentData(player, 'xiaoAmburmTalkNextTick', player.age + 20 * (30 + Math.random() * 150))
     }
+})
+
+// 学者奥秘·超魔之书
+MoreJSEvents.enchantmentTableChanged(event => {
+    let player = event.player
+    if (!player) return
+    /** @type {Internal.Inventory} */
+    let inventory = player.inventory
+    if (!inventory.hasAnyMatching(item => item.id == 'mrqx_extra_pack:book_of_over_enchantment')) return
+    let typeMap = getPlayerChestCavityTypeMap(player)
+    if (typeMap.has('kubejs:enchant_only')) {
+        typeMap.get('kubejs:enchant_only').forEach(organ => {
+            organPlayerEnchantOnlyStrategies[organ.id](event, organ)
+        })
+    }
+    if (typeMap.has('kubejs:enchant')) {
+        typeMap.get('kubejs:enchant').forEach(organ => {
+            organPlayerEnchantStrategies[organ.id](event, organ)
+        })
+    }
+    if (!player.getMainHandItem().getId() == 'mrqx_extra_pack:book_of_over_enchantment') return
+    slotList.forEach(slot => {
+        let enchantSlot = event.get(slot)
+        let level = Math.min(enchantSlot.getRequiredLevel(), player.getXpLevel())
+        let addLevel = 0
+        if (level <= 0) return
+        let needEnchantList = []
+        enchantSlot.removeEnchantments((/** @type {Internal.Enchantment} */enchantment, lvl) => {
+            if (enchantment.getId() in curseEnchantList) {
+                addLevel += lvl
+                return false
+            }
+            needEnchantList.push({ enchant: enchantment, level: lvl })
+            return true
+        })
+        if (needEnchantList.length <= 0) return
+        let arr = mrqxGenerateRandomArray(level, needEnchantList.length)
+        let i = 0
+        needEnchantList.forEach(needEnchant => {
+            enchantSlot.addEnchantment(needEnchant.enchant, needEnchant.level + arr[i])
+            addLevel += needEnchant.level + arr[i]
+            i++
+        })
+        enchantSlot.setRequiredLevel(enchantSlot.getRequiredLevel() + addLevel)
+        enchantSlot.updateClue()
+    })
+})
+
+// Tetra掉落策略
+LootJS.modifiers(event => {
+    event.addLootTypeModifier(LootType.ENTITY)
+        .apply(event => {
+            if (!(event.killerEntity && event.killerEntity.isPlayer())) {
+                return
+            }
+            let player = event.killerEntity
+            getItemEffectsInBothHands(player).forEach(itemEffectRes => {
+                if (mrqxTetraEffectPlayerEntityLootStrategies[itemEffectRes.itemEffect.getKey()]) {
+                    mrqxTetraEffectPlayerEntityLootStrategies[itemEffectRes.itemEffect.getKey()](event, itemEffectRes)
+                }
+            })
+        })
+
+    // event.addLootTypeModifier(LootType.CHEST)
+    //     .apply(event => {
+    //         let player = event.player
+    //         if (!player) { return }
+    //         getItemEffectsInBothHands(player).forEach(itemEffectRes => {
+    //             if (mrqxTetraEffectPlayerChestLootStrategies[itemEffectRes.itemEffect.getKey()]) {
+    //                 mrqxTetraEffectPlayerChestLootStrategies[itemEffectRes.itemEffect.getKey()](event, itemEffectRes)
+    //             }
+    //         })
+    //     })
 })

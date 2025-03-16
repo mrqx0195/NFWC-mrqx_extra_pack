@@ -1,4 +1,4 @@
-// priority: 799
+// priority: 750
 
 /**
  * @param {Internal.ItemStack} itemFrom 
@@ -560,4 +560,38 @@ function mrqxAdvancedArchivistEyeGlassBear(event) {
     player.level.spawnParticles('dummmmmmy:number', true,
         player.x + rayX, player.y + rayY, player.z + rayZ,
         event.amount, $mrqxDamageType.get(event.source, false).ordinal(), Math.floor(Math.random() * 5), 0, 1)
+}
+
+/**
+ * @param {Internal.LivingDamageEvent} event
+ */
+function mrqxTimelessIvyDamage(event) {
+    let player = event.source.player
+    let magicData = getPlayerMagicData(player)
+    let mana = magicData.getMana()
+    let entity = event.entity
+    entity.server.scheduleInTicks(2, event => {
+        entity.attack(DamageSource.indirectMagic(player, player), mana * 0.005 * player.getAttributeTotalValue('minecraft:generic.attack_damage'))
+    })
+}
+
+/**
+ * @param {Internal.ItemStack} item
+ * @param {Internal.SlotContext} ctx 
+ */
+global.mrqxTimelessIvyTick = (item, ctx) => {
+    /**@type {Internal.ServerPlayer} */
+    let player = ctx.entity()
+    if (!player || !player.isPlayer() || player.level.isClientSide()) return
+    let magicData = getPlayerMagicData(player)
+    let mana = magicData.getMana()
+    let slots = ["mainhand", "offhand", "head", "chest", "legs", "feet"]
+    for (let i = 0; i < slots.length; i++) {
+        let item = player.getEquipment(slots[i])
+        if (item && item.isDamageableItem() && item.damageValue > 0 && mana > 50) {
+            let count = Math.min(Math.floor(mana / 50), item.damageValue)
+            item.setDamageValue(item.damageValue - count)
+            magicData.setMana(mana - count * 50)
+        }
+    }
 }

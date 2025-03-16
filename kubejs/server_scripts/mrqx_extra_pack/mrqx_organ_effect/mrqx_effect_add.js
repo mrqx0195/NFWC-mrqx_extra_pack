@@ -1,4 +1,4 @@
-// priority: 499
+// priority: 450
 /**
  * @param {Internal.MobEffectEvent$Added} event 
  * @returns 

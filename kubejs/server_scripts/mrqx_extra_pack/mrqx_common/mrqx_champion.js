@@ -1,4 +1,4 @@
-// priority: 499
+// priority: 450
 
 const mrqxChampionTypeMap = [
     {
@@ -553,7 +553,9 @@ EntityEvents.spawned(event => {
     typeList.forEach(type => {
         let typeName = type.getAsString()
         if (mrqxBossChampionTypeList.find((value, index, obj) => (typeName == value)) && !(entity.getType() in mrqxBossChampionMap) && Math.random() > 0.2) {
-            event.cancel()
+            entity.persistentData.put('champion', [])
+            entity.setCustomName(null)
+            entity.setCustomNameVisible(false)
         }
         if (typeName in mrqxChampionSpawnStrategies) {
             mrqxChampionSpawnStrategies[typeName](event)

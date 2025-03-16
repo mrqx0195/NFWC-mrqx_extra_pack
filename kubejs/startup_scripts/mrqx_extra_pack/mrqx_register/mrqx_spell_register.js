@@ -1,4 +1,4 @@
-// priority: 499
+// priority: 450
 StartupEvents.registry('irons_spellbooks:spells', event => {
     event.create('mrqx_extra_pack:earth_without_earth')
         .setCastTime(20 * 15)

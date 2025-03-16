@@ -1,4 +1,4 @@
-// priority: -1
+// priority: -50
 // 最终还是选择了自己造轮子（趴
 ForgeEvents.onEvent('net.minecraftforge.event.entity.living.LivingChangeTargetEvent', event => {
     if (event.getOriginalTarget() && !event.getOriginalTarget().getLevel().isClientSide() && event.getOriginalTarget().isPlayer()) {

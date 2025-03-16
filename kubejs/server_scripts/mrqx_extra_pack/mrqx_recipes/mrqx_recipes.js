@@ -1,4 +1,4 @@
-// priority: 499
+// priority: 450
 
 /**
  * @param {Internal.ItemStack} container 
@@ -371,7 +371,7 @@ ServerEvents.recipes(event => {
     event.recipes.createMixing('mrqx_extra_pack:uranium', [
         'create:powdered_obsidian',
         'createaddition:diamond_grit',
-        'mrqx_extra_pack:raw_uranium'
+        '#forge:raw_materials/uranium'
     ]).superheated()
 
     // 反应燃料
@@ -381,7 +381,7 @@ ServerEvents.recipes(event => {
         Item.of('minecraft:tnt').withChance(0.09),
         Item.of('witherstormmod:super_tnt').withChance(0.01),
     ], 'create:iron_sheet', [
-        event.recipes.create.deploying('mrqx_extra_pack:incomplete_nuclear_fuel', ['mrqx_extra_pack:incomplete_nuclear_fuel', 'mrqx_extra_pack:uranium']),
+        event.recipes.create.deploying('mrqx_extra_pack:incomplete_nuclear_fuel', ['mrqx_extra_pack:incomplete_nuclear_fuel', '#forge:ingots/uranium']),
         event.recipes.create.deploying('mrqx_extra_pack:incomplete_nuclear_fuel', ['mrqx_extra_pack:incomplete_nuclear_fuel', 'create:iron_sheet']),
         event.recipes.create.pressing('mrqx_extra_pack:incomplete_nuclear_fuel', 'mrqx_extra_pack:incomplete_nuclear_fuel'),
     ]).transitionalItem('mrqx_extra_pack:incomplete_nuclear_fuel').loops(3)
@@ -2270,15 +2270,15 @@ ServerEvents.recipes(event => {
 
     // 奥秘·资源
     event.recipes.summoningrituals
-        .altar('#kubejs:resource')
+        .altar('minecraft:netherite_pickaxe')
         .id('mrqx_extra_pack:ritual_mystery_resources')
         .input('16x #forge:storage_blocks')
         .input('16x #forge:ores')
         .input('#kubejs:resource')
         .input('mrqx_extra_pack:machine_mine_cpu')
-        .input('mrqx_extra_pack:machine_storage_cpu')
         .input('16x #forge:ingots')
         .input('16x #create:crushed_ores')
+        .input('mrqx_extra_pack:machine_storage_cpu')
         .input('#forge:tools')
         .itemOutput('mrqx_extra_pack:mystery_resources')
         .recipeTime(2000)
@@ -2441,6 +2441,26 @@ ServerEvents.recipes(event => {
         .itemOutput('mrqx_extra_pack:sages_book')
         .recipeTime(2000)
 
+    // 匠艺核心
+    registerCustomRecipe(new mrqxCataclysmWeaponFusion(
+        Item.of('mrqx_extra_pack:mystery_craftsmanship'),
+        Item.of('art_of_forging:enigmatic_construct'),
+        Item.of('mrqx_extra_pack:craftsmanship_core')))
+
+    // 超魔之书
+    event.recipes.summoningrituals
+        .altar('mrqx_extra_pack:mystery_scholar')
+        .id('mrqx_extra_pack:ritual_book_of_over_enchantment')
+        .input('minecraft:enchanted_book')
+        .input('64x minecraft:experience_bottle')
+        .input('64x create:experience_block')
+        .input('goety:ring_of_want')
+        .input('meetyourfight:blossoming_mind')
+        .input('nameless_trinkets:experience_battery')
+        .input('nameless_trinkets:experience_magnet')
+        .input('irons_spellbooks:emerald_stoneplate_ring')
+        .itemOutput('mrqx_extra_pack:book_of_over_enchantment')
+        .recipeTime(2000)
 })
 
 /**

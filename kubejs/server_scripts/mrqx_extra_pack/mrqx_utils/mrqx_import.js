@@ -1,4 +1,4 @@
-// priority: 999
+// priority: 950
 const $mrqxArrayList = Java.loadClass('java.util.ArrayList')
 const $mrqxSculkTaintEffect = Java.loadClass('se.mickelus.tetra.effect.SculkTaintEffect')
 const $mrqxTamableAnimal = Java.loadClass('net.minecraft.world.entity.TamableAnimal')

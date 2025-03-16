@@ -1,4 +1,4 @@
-// priority: 999
+// priority: 950
 const mrqxDiscWares = [
     new SimpleWares([Item.of('lightmanscurrency:coin_diamond').withCount(1)], [Item.of('mrqx_disc_pack:abyssgazer_disc')], 1),
     new SimpleWares([Item.of('lightmanscurrency:coin_diamond').withCount(1)], [Item.of('mrqx_disc_pack:arghena_disc')], 1),

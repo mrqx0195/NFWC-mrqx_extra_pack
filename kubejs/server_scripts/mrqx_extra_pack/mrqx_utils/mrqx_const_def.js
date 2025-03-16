@@ -1,4 +1,4 @@
-// priority: 999
+// priority: 950
 
 const mrqxDivinePenAttriBute = {
     'mrqx_extra_pack:lung_paper': [

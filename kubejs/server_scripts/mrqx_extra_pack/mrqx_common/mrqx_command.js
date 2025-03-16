@@ -1,4 +1,4 @@
-// priority: 499
+// priority: 450
 ServerEvents.commandRegistry(event => {
     const { commands: Commands, arguments: Arguments } = event
     event.register(

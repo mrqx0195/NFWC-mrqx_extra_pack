@@ -1,4 +1,4 @@
-// priority: 499
+// priority: 450
 
 /**
  * 玩家Tick秒级策略

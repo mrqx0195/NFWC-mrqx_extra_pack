@@ -1,4 +1,4 @@
-// priority: 99
+// priority: 50
 StartupEvents.registry('sound_event', event => {
     event.create("mrqx_disc_pack:abyssgazer_song")
     event.create("mrqx_disc_pack:arghena_song")

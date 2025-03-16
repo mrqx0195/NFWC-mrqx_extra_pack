@@ -1,4 +1,4 @@
-// priority: -1
+// priority: -50
 
 StartupEvents.registry('mob_effect', event => {
         event.create('mrqx_extra_pack:nuclear_power')
@@ -39,5 +39,9 @@ StartupEvents.registry('mob_effect', event => {
                 .modifyAttribute('irons_spellbooks:cooldown_reduction', 'mrqxDemonizationKillCooldown', 0.2, 'multiply_base')
                 .modifyAttribute('minecraft:generic.attack_damage', 'mrqxDemonizationKillDamage', 0.2, 'multiply_base')
                 .modifyAttribute('irons_spellbooks:spell_power', 'mrqxDemonizationKillSpellPower', 0.2, 'multiply_base')
+
+        event.create('mrqx_extra_pack:thresher_effect')
+                .harmful()
+                .color(Color.YELLOW_DYE)
 
 })

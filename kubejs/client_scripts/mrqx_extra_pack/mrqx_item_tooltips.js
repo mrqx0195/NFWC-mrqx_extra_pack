@@ -230,11 +230,23 @@ ItemEvents.tooltip((tooltip) => {
         addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.sages_book.3" })]], 3)
     })
 
-    // tooltip.addAdvanced('mrqx_extra_pack:craftsmanship_core', (item, advanced, text) => {
-    //     addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.craftsmanship_core.1" })]], 1)
-    //     addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.craftsmanship_core.2" })]], 2)
-    //     addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.craftsmanship_core.3" })]], 3)
-    // })
+    tooltip.addAdvanced('mrqx_extra_pack:craftsmanship_core', (item, advanced, text) => {
+        addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.craftsmanship_core.1" })]], 1)
+        addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.craftsmanship_core.2" })]], 2)
+        addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.craftsmanship_core.3" })]], 3)
+    })
+
+    tooltip.addAdvanced('mrqx_extra_pack:book_of_over_enchantment', (item, advanced, text) => {
+        addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.book_of_over_enchantment.1" })]], 1)
+        addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.book_of_over_enchantment.2" })]], 2)
+        addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.book_of_over_enchantment.3" })]], 3)
+    })
+
+    tooltip.addAdvanced('mrqx_extra_pack:timeless_ivy', (item, advanced, text) => {
+        addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.timeless_ivy.1" })]], 1)
+        addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.timeless_ivy.2" })]], 2)
+        addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.timeless_ivy.3" })]], 3)
+    })
 
     tooltip.addAdvanced('gateways:gate_pearl', (/** @type {Internal.ItemStack} */item, advanced, text) => {
         if (item.nbt.isEmpty() || !item.nbt.getString('gateway')) {

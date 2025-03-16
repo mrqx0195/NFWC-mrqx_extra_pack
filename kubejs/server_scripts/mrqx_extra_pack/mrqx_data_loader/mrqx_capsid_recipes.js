@@ -1,4 +1,4 @@
-// priority: 799
+// priority: 750
 
 /**
  * @param {Internal.ItemStack[]} ingredients
