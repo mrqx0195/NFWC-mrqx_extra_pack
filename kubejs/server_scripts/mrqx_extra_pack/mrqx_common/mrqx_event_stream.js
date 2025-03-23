@@ -25,6 +25,10 @@ global.mrqxLivingHurtByPlayer = event => {
         }
     }
 
+    if (event.source.player && event.source.player.getMainHandItem().id == 'mrqx_extra_pack:atomic_disassembler') {
+        mrqxAtomicDisassemblerDamage(event)
+    }
+
     if (event.getSource().getImmediate() && event.getSource().getImmediate().getType() == 'tetra:thrown_modular_item') {
         TetraEffect.getAllItemEffectResults(event.getSource().getImmediate().getThrownStack()).forEach(itemEffectRes => {
             if (mrqxTetraEffectPlayerThrownDamageStrategies[itemEffectRes.itemEffect.getKey()]) {
@@ -75,6 +79,13 @@ global.mrqxLivingDamageByOthers = event => {
     let curiosAdvancedArchivistEyeGlassItems = mrqxGetCurioInfo(event.entity, 'mrqx_extra_pack:advanced_eyeglass')
     if (curiosAdvancedArchivistEyeGlassItems.hasItem && mrqxCheckAdvancedArchivistEyeGlass(curiosAdvancedArchivistEyeGlassItems.stacks[0])[10]) {
         mrqxAdvancedArchivistEyeGlassBear(event)
+    }
+
+    let curiosRingFromGodItems = mrqxGetCurioInfo(event.entity, 'mrqx_extra_pack:ring_from_god')
+    if (curiosRingFromGodItems.hasItem) {
+        for (let i = 0; i < curiosRingFromGodItems.count; i++) {
+            mrqxRingFromGodBear(event)
+        }
     }
 
     getItemEffectsInBothHands(event.entity).forEach(itemEffectRes => {

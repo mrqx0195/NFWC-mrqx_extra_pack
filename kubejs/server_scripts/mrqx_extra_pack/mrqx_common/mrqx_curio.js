@@ -595,3 +595,36 @@ global.mrqxTimelessIvyTick = (item, ctx) => {
         }
     }
 }
+
+/**
+ * @param {Internal.ItemStack} item
+ * @param {Internal.SlotContext} ctx 
+ */
+global.mrqxRadiantStarTick = (item, ctx) => {
+    /**@type {Internal.ServerPlayer} */
+    let player = ctx.entity()
+    if (!player || !player.isPlayer() || player.level.isClientSide() || player.age % (20 * 10) != 0) return
+    player.potionEffects.getMap().forEach((effect, effectInstance) => {
+        if (effect.getCategory().name() == 'BENEFICIAL') {
+            player.server.scheduleInTicks(1, event => {
+                player.potionEffects.add(effect, effectInstance.getDuration() + 20 * 5, effectInstance.getAmplifier(), effectInstance.ambient, false)
+            })
+        }
+    })
+}
+
+/**
+ * @param {Internal.LivingDamageEvent} event 
+ * @param {Internal.ItemStack} item
+ */
+function mrqxRingFromGodBear(event, item) {
+    let player = event.entity
+    if (!player || player.level.isClientSide()) return
+    let typeMap = getPlayerChestCavityTypeMap(player)
+    if (!typeMap.get('kubejs:mrqx_seven_sins')) return
+    let count = typeMap.get('kubejs:mrqx_seven_sins').length
+    event.amount = Math.min(event.amount, 180 / count)
+    player.server.scheduleInTicks(1, event => {
+        player.invulnerableTime = 20 + count * 10
+    })
+}

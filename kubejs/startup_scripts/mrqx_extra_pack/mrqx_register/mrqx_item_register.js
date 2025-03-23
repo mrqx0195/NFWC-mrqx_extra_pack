@@ -1,5 +1,4 @@
-// priority: -50
-
+// priority: 50
 StartupEvents.registry('item', event => {
     /**
      * 
@@ -2262,6 +2261,82 @@ StartupEvents.registry('item', event => {
                         if (ctx.entity().level.isClientSide()) return
                         global.mrqxTimelessIvyTick(item, ctx)
                     })
+                )
+
+            // 灿芒之星
+            event.create('mrqx_extra_pack:radiant_star')
+                .texture('mrqx_extra_pack:item/radiant_star')
+                .maxStackSize(1)
+                .tag('curios:trinkets')
+                .tag('itemborders:diamond')
+                .attachCapability(CuriosCapabilityBuilder.CURIOS.itemStack()
+                    .canEquip(() => true)
+                    .curioTick((item, ctx) => {
+                        if (ctx.entity().level.isClientSide()) return
+                        global.mrqxRadiantStarTick(item, ctx)
+                    })
+                )
+                .useAnimation('bow')
+                .use((level, player, hand) => {
+                    return true
+                })
+                .useDuration(itemStack => 72000)
+
+            // 原子分解机
+            event.create('mrqx_extra_pack:atomic_disassembler', 'pickaxe')
+                .texture('mrqx_extra_pack:item/atomic_disassembler')
+                .maxStackSize(1)
+                .tag('itemborders:diamond')
+                .tag('forge:tools/pickaxes')
+                .maxDamage(1024)
+                .attackDamageBaseline(10)
+                .speedBaseline(20)
+                .modifyTier(tier => {
+                    tier.setLevel(10)
+                    tier.setAttackDamageBonus(10)
+                    tier.setSpeed(20)
+                    tier.setEnchantmentValue(10)
+                    tier.setUses(1024)
+                })
+
+            // 无尽煲
+            event.create('mrqx_extra_pack:ultimate_stew')
+                .texture('mrqx_extra_pack:item/ultimate_stew')
+                .maxStackSize(1)
+                .tag('curios:trinkets')
+                .tag('itemborders:diamond')
+                .attachCapability(CuriosCapabilityBuilder.CURIOS.itemStack()
+                    .canEquip(() => true)
+                )
+                .useAnimation('eat')
+                .use((level, player, hand) => {
+                    return true
+                })
+                .useDuration(itemStack => 32)
+                .finishUsing((itemStack, level, entity) => {
+                    if (level.isClientSide()) return itemStack
+                    let nbt = itemStack.getOrCreateTag()
+                    /** @type {Internal.ListTag} */
+                    let listTag = nbt.get("mrqxFoodEffect")
+                    /** @type {Internal.ItemStack[]} */
+                    let list = []
+                    listTag.forEach(id => {
+                        list.push(Item.of(id.getAsString()))
+                    })
+                    let item = list[Math.floor(Math.random() * list.length)]
+                    entity.eat(level, item)
+                    item.finishUsingItem(level, entity)
+                    return itemStack
+                })
+
+            // 神授指环
+            event.create('mrqx_extra_pack:ring_from_god')
+                .texture('mrqx_extra_pack:item/ring_from_god')
+                .maxStackSize(1)
+                .tag('curios:ring')
+                .tag('itemborders:diamond')
+                .attachCapability(CuriosCapabilityBuilder.CURIOS.itemStack()
+                    .canEquip(() => true)
                 )
         }
 

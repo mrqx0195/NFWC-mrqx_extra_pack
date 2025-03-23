@@ -1,5 +1,4 @@
-// priority: -50
-
+// priority: 450
 ClientEvents.highPriorityAssets(event => {
     function registeTips(key) {
         let translateKey = `mrqx_extra_pack.tip.${key}`

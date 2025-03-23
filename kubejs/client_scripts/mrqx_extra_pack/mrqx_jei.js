@@ -1,5 +1,4 @@
-// priority: 4
-
+// priority: 450
 JEIEvents.information(event => {
     const $MysteriousItemConversionCategory = Java.loadClass('com.simibubi.create.compat.jei.category.MysteriousItemConversionCategory')
     const $ConversionRecipe = Java.loadClass('com.simibubi.create.compat.jei.ConversionRecipe')

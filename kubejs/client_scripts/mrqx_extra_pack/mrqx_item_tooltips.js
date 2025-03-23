@@ -1,4 +1,4 @@
-// priority: 4
+// priority: 450
 ItemEvents.tooltip((tooltip) => {
     tooltip.addAdvanced('mrqx_extra_pack:tumor_mutagen', (item, advanced, text) => {
         addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.tumor_mutagen.1" })]], 1)
@@ -246,6 +246,30 @@ ItemEvents.tooltip((tooltip) => {
         addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.timeless_ivy.1" })]], 1)
         addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.timeless_ivy.2" })]], 2)
         addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.timeless_ivy.3" })]], 3)
+    })
+
+    tooltip.addAdvanced('mrqx_extra_pack:radiant_star', (item, advanced, text) => {
+        addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.radiant_star.1" })]], 1)
+        addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.radiant_star.2" })]], 2)
+        addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.radiant_star.3" })]], 3)
+    })
+
+    tooltip.addAdvanced('mrqx_extra_pack:atomic_disassembler', (item, advanced, text) => {
+        addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.atomic_disassembler.1" })]], 1)
+        addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.atomic_disassembler.2" })]], 2)
+        addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.atomic_disassembler.3" })]], 3)
+    })
+
+    tooltip.addAdvanced('mrqx_extra_pack:ultimate_stew', (item, advanced, text) => {
+        addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.ultimate_stew.1" })]], 1)
+        addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.ultimate_stew.2" })]], 2)
+        addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.ultimate_stew.3" })]], 3)
+    })
+
+    tooltip.addAdvanced('mrqx_extra_pack:ring_from_god', (item, advanced, text) => {
+        addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.ring_from_god.1" })]], 1)
+        addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.ring_from_god.2" })]], 2)
+        addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.ring_from_god.3" })]], 3)
     })
 
     tooltip.addAdvanced('gateways:gate_pearl', (/** @type {Internal.ItemStack} */item, advanced, text) => {

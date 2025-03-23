@@ -853,7 +853,7 @@ const mrqxOrganActiveOnlyStrategies = {
 
     // ‌‌原罪·懒惰「贝尔芬格」
     'mrqx_extra_pack:sin_acedia_belphegor': function (player, organ, attributeMap) {
-        if (!(organ.id == 'mrqx_extra_pack:sin_and_judgement')) {
+        if (!(organ.id == 'mrqx_extra_pack:sin_and_judgement' || mrqxGetCurioInfo(player, 'mrqx_extra_pack:ring_from_god').hasItem)) {
             attributeMapValueAddition(attributeMap, global.mrqx_MOVEMENT_SPEED_MULTI_BASE, -0.5)
             if (mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
                 attributeMapValueAddition(attributeMap, global.mrqx_MOVEMENT_SPEED_MULTI_BASE, -0.5)
@@ -863,7 +863,7 @@ const mrqxOrganActiveOnlyStrategies = {
 
     // ‌原罪·贪婪「玛门」
     'mrqx_extra_pack:sin_avaritia_mammon': function (player, organ, attributeMap) {
-        if (!(organ.id == 'mrqx_extra_pack:sin_and_judgement')) {
+        if (!(organ.id == 'mrqx_extra_pack:sin_and_judgement' || mrqxGetCurioInfo(player, 'mrqx_extra_pack:ring_from_god').hasItem)) {
             attributeMapValueAddition(attributeMap, global.LUCK_MULTI_BASE, -1)
             if (mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
                 attributeMapValueAddition(attributeMap, global.LUCK_MULTI_BASE, -1)
@@ -873,7 +873,7 @@ const mrqxOrganActiveOnlyStrategies = {
 
     // 原罪·贪食「别西卜」
     'mrqx_extra_pack:sin_gula_beelzebub': function (player, organ, attributeMap) {
-        if (!(organ.id == 'mrqx_extra_pack:sin_and_judgement')) {
+        if (!(organ.id == 'mrqx_extra_pack:sin_and_judgement' || mrqxGetCurioInfo(player, 'mrqx_extra_pack:ring_from_god').hasItem)) {
             let playerChestInstance = player.getChestCavityInstance()
             playerChestInstance.organScores.put(new ResourceLocation('chestcavity', 'digestion'), new $Float(playerChestInstance.getOrganScores().get(new ResourceLocation('chestcavity', 'digestion')) * 0.1))
             if (mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
@@ -884,7 +884,7 @@ const mrqxOrganActiveOnlyStrategies = {
 
     // ‌‌原罪·嫉妒「利维坦」
     'mrqx_extra_pack:sin_invidia_leviathan': function (player, organ, attributeMap) {
-        if (!(organ.id == 'mrqx_extra_pack:sin_and_judgement')) {
+        if (!(organ.id == 'mrqx_extra_pack:sin_and_judgement' || mrqxGetCurioInfo(player, 'mrqx_extra_pack:ring_from_god').hasItem)) {
             attributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, -0.5)
             if (mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
                 attributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, -0.5)

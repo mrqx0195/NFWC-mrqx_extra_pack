@@ -368,3 +368,121 @@ LootJS.modifiers(event => {
     //         })
     //     })
 })
+
+// 灿芒之星
+PlayerEvents.tick(event => {
+    if (event.level.isClientSide()) return
+    let player = event.player
+    if (player.getUseItem().id == 'mrqx_extra_pack:radiant_star') {
+        /** @type {Internal.ServerLevelData} */
+        let levelData = event.level.levelData
+        levelData.setGameTime(levelData.getGameTime() + 60 - 1)
+        levelData.setDayTime(levelData.getDayTime() + 60 - 1)
+    }
+})
+
+// 无尽煲-食物食用
+ItemEvents.foodEaten(event => {
+    let curiosUltimateStewItems = mrqxGetCurioInfo(event.entity, 'mrqx_extra_pack:ultimate_stew')
+    if (curiosUltimateStewItems.hasItem) {
+        for (let i = 0; i < curiosUltimateStewItems.count; i++) {
+            let item = curiosUltimateStewItems.stacks[i]
+            let nbt = item.getOrCreateTag()
+            if (!nbt.contains("mrqxFoodLevel")) nbt.putInt("mrqxFoodLevel", event.getItem().getItem().getFoodProperties().getNutrition())
+            else nbt.putInt("mrqxFoodLevel", nbt.getInt("mrqxFoodLevel") + event.getItem().getItem().getFoodProperties().getNutrition())
+            if (!nbt.contains("mrqxSaturation")) nbt.putInt("mrqxSaturation", event.getItem().getItem().getFoodProperties().getNutrition() * event.getItem().getItem().getFoodProperties().getSaturationModifier() * 2)
+            else nbt.putInt("mrqxSaturation", nbt.getInt("mrqxSaturation") + event.getItem().getItem().getFoodProperties().getNutrition() * event.getItem().getItem().getFoodProperties().getSaturationModifier() * 2)
+            if (!nbt.contains("mrqxFoodEffect")) nbt.put("mrqxFoodEffect", [])
+            /** @type {Internal.ListTag} */
+            let list = nbt.get("mrqxFoodEffect")
+            if (!list.contains(event.getItem().getId())) {
+                let newList = [event.getItem().getId()]
+                list.forEach(str => newList.push(str.getAsString()))
+                nbt.put("mrqxFoodEffect", newList)
+            }
+        }
+    }
+})
+
+// 无尽煲-使用
+PlayerEvents.tick(event => {
+    if (event.level.isClientSide()) return
+    let player = event.player
+    if (player.getUseItem().id == 'mrqx_extra_pack:ultimate_stew') {
+        let nbt = player.getUseItem().getOrCreateTag()
+        if (nbt.getInt("mrqxFoodLevel") && nbt.getInt("mrqxFoodLevel") > 0 && player.getFoodLevel() < 20) {
+            nbt.putInt("mrqxFoodLevel", nbt.getInt("mrqxFoodLevel") - 1)
+            player.setFoodLevel(Math.min(player.getFoodLevel() + 1, 20))
+        }
+        if (nbt.getInt("mrqxSaturation") && nbt.getInt("mrqxSaturation") > 0 && player.getSaturation() < player.getFoodLevel()) {
+            nbt.putInt("mrqxSaturation", nbt.getInt("mrqxSaturation") - 1)
+            player.setSaturation(Math.min(player.getSaturation() + 1, player.getFoodLevel()))
+        }
+    }
+})
+
+// 原子分解机
+BlockEvents.broken(event => {
+    /** @type {Internal.ServerPlayer} */
+    let player = event.player
+    if (!player || event.level.isClientSide()) return
+    if (player.getMainHandItem().id == 'mrqx_extra_pack:atomic_disassembler') {
+        if (event.block.item.hasTag('forge:stone')) {
+            if (!player.getCooldowns().isOnCooldown(Item.of('mrqx_extra_pack:atomic_disassembler'))) {
+                player.addItemCooldown('mrqx_extra_pack:atomic_disassembler', 2)
+                for (let i = -1; i <= 1; i++) {
+                    for (let j = -1; j <= 1; j++) {
+                        for (let k = -1; k <= 1; k++) {
+                            let block = event.block.level.getBlock(event.block.x + i, event.block.y + j, event.block.z + k)
+                            if (block.item.hasTag('forge:stone')) {
+                                event.server.scheduleInTicks(1, event => {
+                                    player.gameMode.destroyBlock(block.pos)
+                                })
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        event.server.scheduleInTicks(1, event => {
+            let item = player.getMainHandItem()
+            let playerResourceCount = player.persistentData.getInt(resourceCount) ?? 0
+            if (playerResourceCount > 0) {
+                let count = Math.min(playerResourceCount, item.getDamageValue())
+                item.setDamageValue(item.getDamageValue() - count)
+                updateResourceCount(player, playerResourceCount - count)
+            }
+        })
+    }
+})
+
+// 原子分解机
+LootJS.modifiers(event => {
+    event.addLootTypeModifier(LootType.BLOCK)
+        .apply((ctx) => {
+            let player = ctx.getPlayer()
+            if (!player || ctx.level.isClientSide()) return
+            if (player.getMainHandItem().id == 'mrqx_extra_pack:atomic_disassembler') {
+                let block = ctx.destroyedBlock
+                if (block && block.item.hasTag('forge:ores')) {
+                    ctx.forEachLoot(itemStack => {
+                        itemStack.setCount(itemStack.getCount() * 5)
+                    })
+                }
+            }
+        })
+})
+
+/**
+ * 原子分解机造成伤害
+ * @param {Internal.LivingDamageEvent} event
+ */
+function mrqxAtomicDisassemblerDamage(event) {
+    let player = event.source.player
+    if (!player || player.level.isClientSide()) return
+    let damage = event.amount
+    if (damage >= 1024) {
+        player.give(Item.of('kubejs:rare_mineral_cluster').withCount(Math.max(Math.floor(65 - 1024 / damage), 1)))
+    }
+    player.give(Item.of('kubejs:common_mineral_cluster').withCount(Math.max(Math.floor(65 - 64 / damage), 1)))
+}

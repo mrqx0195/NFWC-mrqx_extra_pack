@@ -469,7 +469,7 @@ const mrqxOrganPlayerTickOnlyStrategies = {
         }
         let entityList = mrqxGetLivingWithinRadius(player.getLevel(), new Vec3(player.x, player.y, player.z), 16)
         entityList.forEach(entity => {
-            if (entity.getType() == 'minecraft:item' && player.age % (20 * 60) == 0 && !(organ.id == 'mrqx_extra_pack:sin_and_judgement')) {
+            if (entity.getType() == 'minecraft:item' && player.age % (20 * 60) == 0 && !(organ.id == 'mrqx_extra_pack:sin_and_judgement' || mrqxGetCurioInfo(player, 'mrqx_extra_pack:ring_from_god').hasItem)) {
                 entity.kill()
                 player.getServer().scheduleInTicks(1, () => {
                     player.attack(DamageSource.playerAttack(player).bypassArmor().bypassEnchantments().bypassInvul().bypassMagic(), player.getMaxHealth() * 0.05)
@@ -489,16 +489,16 @@ const mrqxOrganPlayerTickOnlyStrategies = {
         if (player.persistentData.organActive != 1) {
             return
         }
-        let entityList = getLivingWithinRadius(player.getLevel(), new Vec3(player.x, player.y, player.z), 16)
+        let entityList = getLivingWithinRadius(player.getLevel(), new Vec3(player.x, player.y, player.z), 8)
         entityList.forEach(entity => {
             if (entity instanceof $mrqxTamableAnimal && !mrqxIsEmpty(entity.nbt.Age)) {
                 if (entity.nbt.Age >= 0) {
                     entity.setAge(0)
                     entity.setInLove(player)
-                    if (!(organ.id == 'mrqx_extra_pack:sin_and_judgement')) {
-                        entity.setHealth(entity.getHealth() - entity.getMaxHealth() * 0.05)
+                    if (!(organ.id == 'mrqx_extra_pack:sin_and_judgement' || mrqxGetCurioInfo(player, 'mrqx_extra_pack:ring_from_god').hasItem)) {
+                        entity.setHealth(entity.getHealth() - entity.getMaxHealth() * 0.1)
                         if (mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
-                            entity.setHealth(entity.getHealth() - entity.getMaxHealth() * 0.05)
+                            entity.setHealth(entity.getHealth() - entity.getMaxHealth() * 0.1)
                         }
                     }
                 }
@@ -522,15 +522,10 @@ const mrqxOrganPlayerTickOnlyStrategies = {
     'mrqx_extra_pack:sin_and_judgement': function (event, organ) {
         organPlayerTickOnlyStrategies['mrqx_extra_pack:origin_sin'](event, organ)
         let player = event.player
-        if (player.getLevel().getDayTime() <= 21) {
-            player.removeEffect('kubejs:glimpse_of_god')
-            player.removeEffect('kubejs:gaze_of_god')
-            player.removeEffect('kubejs:glare_of_god')
-            player.removeEffect('kubejs:pardon_of_god_magic')
-            player.removeEffect('kubejs:pardon_of_god_melee')
-            player.removeEffect('kubejs:pardon_of_god_projectile')
-            player.potionEffects.add('kubejs:glimpse_of_god', 3600 * 20, 0, false, false)
-        }
+        let typeMap = getPlayerChestCavityTypeMap(player)
+        let count = typeMap.get('kubejs:mrqx_seven_sins').length
+        let effectList = ['kubejs:pardon_of_god_magic', 'kubejs:pardon_of_god_melee', 'kubejs:pardon_of_god_projectile']
+        player.potionEffects.add(randomGet(effectList), count * 30, Math.floor(count / 3), false, false)
     },
 
     // ‌星空棱镜

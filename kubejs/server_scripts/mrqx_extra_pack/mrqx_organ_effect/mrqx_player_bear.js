@@ -126,7 +126,7 @@ const mrqxOrganPlayerBearOnlyStrategies = {
         if (player.persistentData.organActive != 1) {
             return
         }
-        if (!(organ.id == 'mrqx_extra_pack:sin_and_judgement')) {
+        if (!(organ.id == 'mrqx_extra_pack:sin_and_judgement' || mrqxGetCurioInfo(player, 'mrqx_extra_pack:ring_from_god').hasItem)) {
             event.amount *= 5
             if (mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
                 event.amount *= 5
@@ -144,11 +144,11 @@ const mrqxOrganPlayerBearOnlyStrategies = {
             event.amount *= 0.85
             if (mrqxCheckOrganSuit(player, 'seven_sins', 'isAll')) {
                 event.amount *= 0.85
-                if (!(organ.id == 'mrqx_extra_pack:sin_and_judgement')) {
+                if (!(organ.id == 'mrqx_extra_pack:sin_and_judgement' || mrqxGetCurioInfo(player, 'mrqx_extra_pack:ring_from_god').hasItem)) {
                     event.source.bypassArmor().bypassEnchantments().bypassInvul().bypassMagic()
                 }
             }
-            else if (!(organ.id == 'mrqx_extra_pack:sin_and_judgement')) {
+            else if (!(organ.id == 'mrqx_extra_pack:sin_and_judgement' || mrqxGetCurioInfo(player, 'mrqx_extra_pack:ring_from_god').hasItem)) {
                 event.source.setMagic()
             }
         }
