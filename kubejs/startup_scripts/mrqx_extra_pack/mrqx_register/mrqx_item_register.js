@@ -936,7 +936,6 @@ StartupEvents.registry('item', event => {
             .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.taoist_fifteen_dogs.1" })])
             .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.taoist_fifteen_dogs.2" })])
             .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.taoist_fifteen_dogs.3" })])
-            .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.taoist_fifteen_dogs.4" })])
             .addScore('health', 1)
             .build())
             .texture('mrqx_extra_pack:item/organs/taoist_fifteen_dogs')
@@ -2157,13 +2156,9 @@ StartupEvents.registry('item', event => {
     // 世界框架
     registerOrgan(new Organ('mrqx_extra_pack:framework_of_world')
         .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.framework_of_world.1" })])
-        .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.framework_of_world.2" })])
         .build())
         .texture('mrqx_extra_pack:item/organs/framework_of_world')
-        .maxDamage(60 * 60 * 24)
         .tag('itemborders:diamond')
-        .tag('kubejs:player_tick_only')
-        .tag('kubejs:bear_only')
         .tag('kubejs:active_only')
         .tag('kubejs:exclued_lucky_block')
 
@@ -2183,7 +2178,6 @@ StartupEvents.registry('item', event => {
         {// 奥秘
             // 觉知巨镰
             event.create('mrqx_extra_pack:sentient_greatscythe', 'sword')
-                .texture('mrqx_extra_pack:item/sentient_greatscythe')
                 .maxStackSize(1)
                 .maxDamage(1024)
                 .tag('itemborders:diamond')
@@ -2197,7 +2191,7 @@ StartupEvents.registry('item', event => {
 
             // 死魂灵的余息
             event.create('mrqx_extra_pack:residual_breath_of_dead_soul')
-                .texture('mrqx_extra_pack:item/residual_breath_of_dead_soul')
+                .texture('mrqx_extra_pack:item/mystery/mystery_items/residual_breath_of_dead_soul')
                 .maxStackSize(1)
                 .maxDamage(5 * 20 + 1)
                 .tag('curios:trinkets')
@@ -2212,7 +2206,7 @@ StartupEvents.registry('item', event => {
 
             // 护盾发生器
             event.create('mrqx_extra_pack:shield_generator')
-                .texture('mrqx_extra_pack:item/shield_generator')
+                .texture('mrqx_extra_pack:item/mystery/mystery_items/shield_generator')
                 .maxStackSize(1)
                 .maxDamage(100)
                 .tag('curios:trinkets')
@@ -2238,20 +2232,20 @@ StartupEvents.registry('item', event => {
 
             // 匠艺核心
             event.create('mrqx_extra_pack:craftsmanship_core')
-                .texture('mrqx_extra_pack:item/craftsmanship_core')
+                .texture('mrqx_extra_pack:item/mystery/mystery_items/craftsmanship_core')
                 .maxStackSize(1)
                 .tag('itemborders:diamond')
 
             // 超魔之书
             event.create('mrqx_extra_pack:book_of_over_enchantment')
-                .texture('mrqx_extra_pack:item/book_of_over_enchantment')
+                .texture('mrqx_extra_pack:item/mystery/mystery_items/book_of_over_enchantment')
                 .maxStackSize(1)
                 .tag('itemborders:diamond')
                 .glow(true)
 
             // 永恒常春藤
             event.create('mrqx_extra_pack:timeless_ivy')
-                .texture('mrqx_extra_pack:item/timeless_ivy')
+                .texture('mrqx_extra_pack:item/mystery/mystery_items/timeless_ivy')
                 .maxStackSize(1)
                 .tag('curios:trinkets')
                 .tag('itemborders:diamond')
@@ -2265,7 +2259,7 @@ StartupEvents.registry('item', event => {
 
             // 灿芒之星
             event.create('mrqx_extra_pack:radiant_star')
-                .texture('mrqx_extra_pack:item/radiant_star')
+                .texture('mrqx_extra_pack:item/mystery/mystery_items/radiant_star')
                 .maxStackSize(1)
                 .tag('curios:trinkets')
                 .tag('itemborders:diamond')
@@ -2284,7 +2278,6 @@ StartupEvents.registry('item', event => {
 
             // 原子分解机
             event.create('mrqx_extra_pack:atomic_disassembler', 'pickaxe')
-                .texture('mrqx_extra_pack:item/atomic_disassembler')
                 .maxStackSize(1)
                 .tag('itemborders:diamond')
                 .tag('forge:tools/pickaxes')
@@ -2301,7 +2294,6 @@ StartupEvents.registry('item', event => {
 
             // 无尽煲
             event.create('mrqx_extra_pack:ultimate_stew')
-                .texture('mrqx_extra_pack:item/ultimate_stew')
                 .maxStackSize(1)
                 .tag('curios:trinkets')
                 .tag('itemborders:diamond')
@@ -2331,13 +2323,69 @@ StartupEvents.registry('item', event => {
 
             // 神授指环
             event.create('mrqx_extra_pack:ring_from_god')
-                .texture('mrqx_extra_pack:item/ring_from_god')
+                .texture('mrqx_extra_pack:item/mystery/mystery_items/ring_from_god')
                 .maxStackSize(1)
                 .tag('curios:ring')
                 .tag('itemborders:diamond')
                 .attachCapability(CuriosCapabilityBuilder.CURIOS.itemStack()
                     .canEquip(() => true)
                 )
+
+            // 存档点
+            event.create('mrqx_extra_pack:save_point')
+                .texture('mrqx_extra_pack:item/mystery/mystery_items/save_point')
+                .maxStackSize(1)
+                .tag('curios:trinkets')
+                .tag('itemborders:diamond')
+                .attachCapability(CuriosCapabilityBuilder.CURIOS.itemStack()
+                    .canEquip(() => true)
+                )
+
+            // “我的王冠”
+            event.create('mrqx_extra_pack:my_crown')
+                .texture('mrqx_extra_pack:item/mystery/mystery_items/my_crown')
+                .maxStackSize(1)
+                .tag('curios:head')
+                .tag('itemborders:diamond')
+                .attachCapability(CuriosCapabilityBuilder.CURIOS.itemStack()
+                    .canEquip(() => true)
+                    .curioTick((item, ctx) => {
+                        if (ctx.entity().level.isClientSide()) return
+                        global.mrqxMyCrownTick(item, ctx)
+                    })
+                )
+
+            // 散轶诗简
+            event.create('mrqx_extra_pack:timeworn_poetry_strips')
+                .texture('mrqx_extra_pack:item/mystery/mystery_items/timeworn_poetry_strips')
+                .maxStackSize(1)
+                .tag('curios:trinkets')
+                .tag('itemborders:diamond')
+                .attachCapability(CuriosCapabilityBuilder.CURIOS.itemStack()
+                    .canEquip(() => true)
+                )
+
+            // “过去之章”
+            event.create('mrqx_extra_pack:page_of_past')
+                .texture('minecraft:item/paper')
+                .maxStackSize(1)
+                .useAnimation('bow')
+                .use((level, player, hand) => {
+                    return true
+                })
+                .useDuration(itemStack => 72000)
+                .tag('itemborders:diamond')
+
+            // “未来之章”
+            event.create('mrqx_extra_pack:page_of_future')
+                .texture('minecraft:item/paper')
+                .maxStackSize(1)
+                .useAnimation('bow')
+                .use((level, player, hand) => {
+                    return true
+                })
+                .useDuration(itemStack => 72000)
+                .tag('itemborders:diamond')
         }
 
         // 先进单片镜

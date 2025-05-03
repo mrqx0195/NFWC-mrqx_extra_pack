@@ -1,0 +1,662 @@
+{
+	default_hide_dependency_lines: true
+	default_quest_shape: ""
+	filename: "56647A42675FB930"
+	group: "16675FCA19680C36"
+	hide_quest_details_until_startable: true
+	icon: {
+		Count: 1b
+		id: "mrqx_extra_pack:framework_of_world"
+		tag: {
+			Damage: 0
+		}
+	}
+	id: "56647A42675FB930"
+	images: [{
+		alpha: 128
+		click: ""
+		corner: false
+		dev: false
+		height: 10.0d
+		hover: [ ]
+		image: "mrqx_extra_pack:item/organs/framework_of_world"
+		rotation: 0.0d
+		width: 10.0d
+		x: -0.25d
+		y: 0.5d
+	}]
+	order_index: 3
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [
+				"174B3BCCCE4ECFB5"
+				"1548EC9F7D82BC62"
+				"5D4ACFF93C749618"
+				"0852C3FCD737251D"
+				"090B1092E9E48A19"
+				"7A6F4147CB87F413"
+				"1B767DF599796DD2"
+				"244370516A2D2596"
+				"336C0190FF8AAB2E"
+				"7F15559AE2BFF42D"
+				"10A5B645C1813F2E"
+				"456ECF109B8F26FA"
+				"1BD01CC757C709FB"
+				"04C1A27848C375C7"
+				"0CE7DD4210A9F4BC"
+				"4F828DEC29334F57"
+			]
+			id: "6BEF24FDB976771F"
+			invisible: true
+			rewards: [{
+				id: "4EAA1F308B2CAF9B"
+				item: "lightmanscurrency:coin_netherite"
+				type: "item"
+			}]
+			tasks: [{
+				id: "7C410DAE0E4034B3"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:framework_of_world"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "456ECF109B8F26FA"
+			invisible: true
+			rewards: [{
+				id: "376001C3CF58B56C"
+				item: "lightmanscurrency:coin_netherite"
+				type: "item"
+			}]
+			subtitle: "“取自肉体”"
+			tasks: [{
+				id: "44CC868253F0E110"
+				item: "mrqx_extra_pack:mystery_flesh_and_blood"
+				type: "item"
+			}]
+			x: -2.0d
+			y: -6.5d
+		}
+		{
+			id: "244370516A2D2596"
+			invisible: true
+			rewards: [{
+				id: "2E07A1AF32F717DE"
+				item: "lightmanscurrency:coin_netherite"
+				type: "item"
+			}]
+			subtitle: "“取自心灵”"
+			tasks: [{
+				id: "36CF3B6EF9DD77E8"
+				item: "mrqx_extra_pack:mystery_soul"
+				type: "item"
+			}]
+			x: 2.0d
+			y: -6.5d
+		}
+		{
+			id: "1B767DF599796DD2"
+			invisible: true
+			rewards: [{
+				id: "64E8BE90DAEC9B0C"
+				item: "lightmanscurrency:coin_netherite"
+				type: "item"
+			}]
+			subtitle: "“人造物的极点”"
+			tasks: [{
+				id: "5268175B3ECCF2F3"
+				item: "mrqx_extra_pack:mystery_machine"
+				type: "item"
+			}]
+			x: -3.5d
+			y: -5.0d
+		}
+		{
+			id: "4F828DEC29334F57"
+			invisible: true
+			rewards: [{
+				id: "4F9A611BDBAF98C6"
+				item: "lightmanscurrency:coin_netherite"
+				type: "item"
+			}]
+			subtitle: "“神创物的极点”"
+			tasks: [{
+				id: "53BEF6ADC59254B1"
+				item: "mrqx_extra_pack:mystery_magic"
+				type: "item"
+			}]
+			x: 3.5d
+			y: -5.0d
+		}
+		{
+			id: "0852C3FCD737251D"
+			invisible: true
+			rewards: [{
+				id: "79CED3A8CB19571D"
+				item: "lightmanscurrency:coin_netherite"
+				type: "item"
+			}]
+			subtitle: "“工匠精神”"
+			tasks: [{
+				id: "01D6E579DE9B89F5"
+				item: "mrqx_extra_pack:mystery_craftsmanship"
+				type: "item"
+			}]
+			x: -5.0d
+			y: -3.5d
+		}
+		{
+			id: "5D4ACFF93C749618"
+			invisible: true
+			rewards: [{
+				id: "11EFD50C7C3E9409"
+				item: "lightmanscurrency:coin_netherite"
+				type: "item"
+			}]
+			subtitle: "“求知精神”"
+			tasks: [{
+				id: "5228D98B5796D8A0"
+				item: "mrqx_extra_pack:mystery_scholar"
+				type: "item"
+			}]
+			x: 5.0d
+			y: -3.5d
+		}
+		{
+			id: "10A5B645C1813F2E"
+			invisible: true
+			rewards: [{
+				id: "76B1F09EDA7449C9"
+				item: "lightmanscurrency:coin_netherite"
+				type: "item"
+			}]
+			subtitle: "“脚下之丰饶”"
+			tasks: [{
+				id: "757E9E6D999F82BE"
+				item: "mrqx_extra_pack:mystery_nature"
+				type: "item"
+			}]
+			x: -6.5d
+			y: -2.0d
+		}
+		{
+			id: "090B1092E9E48A19"
+			invisible: true
+			rewards: [{
+				id: "2CB35C318B4E555F"
+				item: "lightmanscurrency:coin_netherite"
+				type: "item"
+			}]
+			subtitle: "“头顶之无尽”"
+			tasks: [{
+				id: "432400719A8AA2F3"
+				item: "mrqx_extra_pack:mystery_stars"
+				type: "item"
+			}]
+			x: 6.5d
+			y: -2.0d
+		}
+		{
+			id: "1BD01CC757C709FB"
+			invisible: true
+			rewards: [{
+				id: "1E8311711CD8139C"
+				item: "lightmanscurrency:coin_netherite"
+				type: "item"
+			}]
+			subtitle: "“发展必须之物”"
+			tasks: [{
+				id: "76E71FA09D79C2A3"
+				item: "mrqx_extra_pack:mystery_resources"
+				type: "item"
+			}]
+			x: -6.5d
+			y: 2.0d
+		}
+		{
+			id: "0CE7DD4210A9F4BC"
+			invisible: true
+			rewards: [{
+				id: "4410D79182B0CEB0"
+				item: "lightmanscurrency:coin_netherite"
+				type: "item"
+			}]
+			subtitle: "“衣食住行之首”"
+			tasks: [{
+				id: "39D7FD32E41F2E5C"
+				item: "mrqx_extra_pack:mystery_food"
+				type: "item"
+			}]
+			x: 6.5d
+			y: 2.0d
+		}
+		{
+			id: "7F15559AE2BFF42D"
+			invisible: true
+			rewards: [{
+				id: "333B6939BE5C3B9D"
+				item: "lightmanscurrency:coin_netherite"
+				type: "item"
+			}]
+			subtitle: "“负罪者”"
+			tasks: [{
+				id: "258615D747292124"
+				item: "mrqx_extra_pack:mystery_sinners"
+				type: "item"
+			}]
+			x: -5.0d
+			y: 3.5d
+		}
+		{
+			id: "336C0190FF8AAB2E"
+			invisible: true
+			rewards: [{
+				id: "7B53DF70DE4E4C44"
+				item: "lightmanscurrency:coin_netherite"
+				type: "item"
+			}]
+			subtitle: "“携灾者”"
+			tasks: [{
+				id: "45F394C9C201269A"
+				item: "mrqx_extra_pack:mystery_disasters"
+				type: "item"
+			}]
+			x: 5.0d
+			y: 3.5d
+		}
+		{
+			id: "04C1A27848C375C7"
+			invisible: true
+			rewards: [{
+				id: "1DF1A20B59A232DF"
+				item: "lightmanscurrency:coin_netherite"
+				type: "item"
+			}]
+			subtitle: "“一地之主”"
+			tasks: [{
+				id: "7B70F34C4371FE92"
+				item: "mrqx_extra_pack:mystery_lords"
+				type: "item"
+			}]
+			x: -3.5d
+			y: 5.0d
+		}
+		{
+			id: "174B3BCCCE4ECFB5"
+			invisible: true
+			rewards: [{
+				id: "6E3CD2A93BD4235C"
+				item: "lightmanscurrency:coin_netherite"
+				type: "item"
+			}]
+			subtitle: "“一人之仆”"
+			tasks: [{
+				id: "074971B7DE1FD098"
+				item: "mrqx_extra_pack:mystery_followers"
+				type: "item"
+			}]
+			x: 3.5d
+			y: 5.0d
+		}
+		{
+			id: "1548EC9F7D82BC62"
+			invisible: true
+			rewards: [{
+				id: "1136F239185FED94"
+				item: "lightmanscurrency:coin_netherite"
+				type: "item"
+			}]
+			subtitle: "“回望过去”"
+			tasks: [{
+				id: "461A11CADDC86427"
+				item: "mrqx_extra_pack:mystery_memories"
+				type: "item"
+			}]
+			x: -2.0d
+			y: 6.5d
+		}
+		{
+			id: "7A6F4147CB87F413"
+			invisible: true
+			rewards: [{
+				id: "170AF2390F4562AC"
+				item: "lightmanscurrency:coin_netherite"
+				type: "item"
+			}]
+			subtitle: "“展望未来”"
+			tasks: [{
+				id: "2ED4D0BC4D460A75"
+				item: "mrqx_extra_pack:mystery_future"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 6.5d
+		}
+		{
+			dependencies: ["456ECF109B8F26FA"]
+			id: "1DCDBD663AD03245"
+			rewards: [{
+				id: "370C9FCCF352108A"
+				item: "lightmanscurrency:coin_netherite"
+				type: "item"
+			}]
+			subtitle: "“它是活着的……”"
+			tasks: [{
+				id: "49EE0DCBD4FF0896"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:sentient_greatscythe"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -0.75d
+			y: -5.25d
+		}
+		{
+			dependencies: ["244370516A2D2596"]
+			id: "2A3CF24BD2311606"
+			rewards: [{
+				id: "0483CBBE9A60E82E"
+				item: "lightmanscurrency:coin_netherite"
+				type: "item"
+			}]
+			subtitle: "“别急别急，人人有份~”"
+			tasks: [{
+				id: "76988754FA150FEF"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:residual_breath_of_dead_soul"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 0.75d
+			y: -5.25d
+		}
+		{
+			dependencies: ["1B767DF599796DD2"]
+			id: "5CC50B6E24C6B062"
+			rewards: [{
+				id: "69AEAD45B7A9B7A6"
+				item: "lightmanscurrency:coin_netherite"
+				type: "item"
+			}]
+			subtitle: "“啥都能挡，大概”"
+			tasks: [{
+				id: "2531021A563C6CB0"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:shield_generator"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -2.25d
+			y: -3.75d
+		}
+		{
+			dependencies: ["4F828DEC29334F57"]
+			id: "4808F463574AFC96"
+			rewards: [{
+				id: "26AA260CC7E3F90A"
+				item: "lightmanscurrency:coin_netherite"
+				type: "item"
+			}]
+			subtitle: "扉页书写着无数的签名，即便他们/她们/它们/衪们从未降临于此……"
+			tasks: [{
+				id: "30EA4D2F27866468"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:sages_book"
+					tag: {
+						ISB_Spells: {
+							data: [ ]
+							maxSpells: 15
+							mustEquip: 1b
+							spellWheel: 1b
+						}
+					}
+				}
+				type: "item"
+			}]
+			x: 2.25d
+			y: -3.75d
+		}
+		{
+			dependencies: ["0852C3FCD737251D"]
+			id: "2CC3AF6AA4A94058"
+			rewards: [{
+				id: "7922B70D7DDA71D2"
+				item: "lightmanscurrency:coin_netherite"
+				type: "item"
+			}]
+			subtitle: "这个世界过去失传的无数工艺凝结于此……你知道这意味着什么"
+			tasks: [{
+				id: "0B9B735E5025C068"
+				item: "mrqx_extra_pack:craftsmanship_core"
+				type: "item"
+			}]
+			x: -3.75d
+			y: -2.25d
+		}
+		{
+			dependencies: ["5D4ACFF93C749618"]
+			id: "75D3B111664985C1"
+			rewards: [{
+				id: "2584B136F0B03DE1"
+				item: "lightmanscurrency:coin_netherite"
+				type: "item"
+			}]
+			subtitle: "阅历无数的知识后，你写就了这本你自己都难以阅读的书籍"
+			tasks: [{
+				id: "33E3D9DCCA6466C5"
+				item: "mrqx_extra_pack:book_of_over_enchantment"
+				type: "item"
+			}]
+			x: 3.75d
+			y: -2.25d
+		}
+		{
+			dependencies: ["10A5B645C1813F2E"]
+			id: "6087DA74E81BCD6B"
+			rewards: [{
+				id: "75B2198B2EC500E7"
+				item: "lightmanscurrency:coin_netherite"
+				type: "item"
+			}]
+			subtitle: "它缠绕在你……和你的工具上"
+			tasks: [{
+				id: "61607109E04AAABA"
+				item: "mrqx_extra_pack:timeless_ivy"
+				type: "item"
+			}]
+			x: -5.25d
+			y: -0.75d
+		}
+		{
+			dependencies: ["090B1092E9E48A19"]
+			id: "4EE111D79A09EB49"
+			rewards: [{
+				id: "74215090BD8A037D"
+				item: "lightmanscurrency:coin_netherite"
+				type: "item"
+			}]
+			subtitle: "它所指向的星座，名为：时钟座"
+			tasks: [{
+				id: "5FF65D9AAC123695"
+				item: "mrqx_extra_pack:radiant_star"
+				type: "item"
+			}]
+			x: 5.25d
+			y: -0.75d
+		}
+		{
+			dependencies: ["7F15559AE2BFF42D"]
+			id: "0B6B6451997C5E64"
+			rewards: [{
+				id: "0B36C8FBD8849790"
+				item: "lightmanscurrency:coin_netherite"
+				type: "item"
+			}]
+			subtitle: "罪孽与使命"
+			tasks: [{
+				id: "7FED7ECD3615ED04"
+				item: "mrqx_extra_pack:ring_from_god"
+				type: "item"
+			}]
+			x: -3.75d
+			y: 2.25d
+		}
+		{
+			dependencies: ["0CE7DD4210A9F4BC"]
+			id: "6C2DB94B92A640CD"
+			rewards: [{
+				id: "131AA651665159BE"
+				item: "lightmanscurrency:coin_netherite"
+				type: "item"
+			}]
+			subtitle: "仍待填充，如同你的胃……"
+			tasks: [{
+				id: "4ADA0CA03E417810"
+				item: "mrqx_extra_pack:ultimate_stew"
+				type: "item"
+			}]
+			x: 5.25d
+			y: 0.75d
+		}
+		{
+			dependencies: ["1BD01CC757C709FB"]
+			id: "562B8610FC6036FE"
+			rewards: [{
+				id: "32ED6F02140D3ED1"
+				item: "lightmanscurrency:coin_netherite"
+				type: "item"
+			}]
+			subtitle: "万物皆为原子所构"
+			tasks: [{
+				id: "4AE8B97F7615B80D"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:atomic_disassembler"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -5.25d
+			y: 0.75d
+		}
+		{
+			dependencies: ["336C0190FF8AAB2E"]
+			id: "3612167D9DD492FB"
+			rewards: [{
+				id: "0A9D679019B123F0"
+				item: "lightmanscurrency:coin_netherite"
+				type: "item"
+			}]
+			subtitle: "……吾名为，第四天灾"
+			tasks: [{
+				id: "77E54EAA48A331CD"
+				item: "mrqx_extra_pack:save_point"
+				type: "item"
+			}]
+			x: 3.75d
+			y: 2.25d
+		}
+		{
+			dependencies: ["174B3BCCCE4ECFB5"]
+			id: "646CBD14B213F46D"
+			rewards: [{
+				id: "05542C70CF84C945"
+				item: "lightmanscurrency:coin_netherite"
+				type: "item"
+			}]
+			subtitle: "“酣然失千山，万物得其灵”"
+			tasks: [{
+				id: "69884A7167B27079"
+				item: "mrqx_extra_pack:timeworn_poetry_strips"
+				type: "item"
+			}]
+			x: 2.25d
+			y: 3.75d
+		}
+		{
+			dependencies: ["04C1A27848C375C7"]
+			id: "50B8558BBFC80B65"
+			rewards: [{
+				id: "334B0CF02E6B9D63"
+				item: "lightmanscurrency:coin_netherite"
+				type: "item"
+			}]
+			subtitle: "“疆土回应我的意志，万族呼唤我的尊名”"
+			tasks: [{
+				id: "23DCC9830B0AF00F"
+				item: "mrqx_extra_pack:my_crown"
+				type: "item"
+			}]
+			x: -2.25d
+			y: 3.75d
+		}
+		{
+			dependencies: ["1548EC9F7D82BC62"]
+			description: ["……它上面写了什么？"]
+			id: "322DF7D1E92F84EE"
+			rewards: [{
+				id: "3E564B727B463FCC"
+				item: "lightmanscurrency:coin_netherite"
+				type: "item"
+			}]
+			subtitle: "模糊不清"
+			tasks: [{
+				id: "41BD811B2E950C07"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:page_of_past"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -0.75d
+			y: 5.25d
+		}
+		{
+			dependencies: ["7A6F4147CB87F413"]
+			description: ["……它上面写了什么？"]
+			id: "07429C6330F54932"
+			rewards: [{
+				id: "79C565947EF65997"
+				item: "lightmanscurrency:coin_netherite"
+				type: "item"
+			}]
+			subtitle: "模糊不清"
+			tasks: [{
+				id: "1A646AF016DE5C27"
+				item: {
+					Count: 1b
+					id: "mrqx_extra_pack:page_of_future"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 0.75d
+			y: 5.25d
+		}
+	]
+	title: "世界之奥秘"
+}

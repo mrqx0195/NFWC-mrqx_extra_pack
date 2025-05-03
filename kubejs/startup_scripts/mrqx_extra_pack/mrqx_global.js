@@ -39,6 +39,9 @@ global.mrqx_HEALTH_UP_MULTI_TOTAL = { key: 'minecraft:generic.max_health', name:
 global.mrqx_KINGS_NEW_LANCE = { key: 'minecraft:generic.attack_speed', name: 'mrqxKingsNewLance', operation: 'multiply_base' }
 global.mrqx_KINGS_BUCKLER_A = { key: 'minecraft:generic.armor', name: 'mrqxKingsBucklerA', operation: 'multiply_base' }
 global.mrqx_KINGS_BUCKLER_B = { key: 'minecraft:generic.armor_toughness', name: 'mrqxKingsBucklerB', operation: 'multiply_base' }
+global.mrqx_MY_CROWN_A = { key: 'minecraft:generic.attack_damage', name: 'mrqxMyCrownA', operation: 'multiply_base' }
+global.mrqx_MY_CROWN_B = { key: 'minecraft:generic.attack_speed', name: 'mrqxMyCrownB', operation: 'multiply_base' }
+global.mrqx_MY_CROWN_C = { key: 'minecraft:generic.attack_damage', name: 'mrqxMyCrownC', operation: 'multiply_base' }
 
 global.mrqx_ATTRIBUTE_MAP = {
     'mrqxMaxHealthMultiBase': global.mrqx_HEALTH_UP_MULTI_BASE,
@@ -59,6 +62,9 @@ global.mrqx_ATTRIBUTE_MAP = {
     'mrqxKingsNewLance': global.mrqx_KINGS_NEW_LANCE,
     'mrqxKingsBucklerA': global.mrqx_KINGS_BUCKLER_A,
     'mrqxKingsBucklerB': global.mrqx_KINGS_BUCKLER_B,
+    'mrqxMyCrownA': global.mrqx_MY_CROWN_A,
+    'mrqxMyCrownB': global.mrqx_MY_CROWN_B,
+    'mrqxMyCrownC': global.mrqx_MY_CROWN_C,
 }
 
 var assign2 = Object.assign(global.ATTRIBUTE_MAP, global.mrqx_ATTRIBUTE_MAP)

@@ -105,7 +105,7 @@ const mrqxOrganRightClickedOnlyStrategies = {
 			return
 		}
 		else {
-			player.level.playSound(player, player.blockPosition(), 'minecraft:entity.blaze.shoot', 'players', 1, 1)
+			player.level.playSound(null, player.getX(), player.getY(), player.getZ(), 'minecraft:entity.blaze.shoot', 'players', 1, 1)
 			player.potionEffects.add('mrqx_extra_pack:nuclear_power', duration * durationMultiplier, amplifier, false, false)
 			player.addItemCooldown(organ.id, 20 * 60 * 3)
 			event.item.shrink(count)
@@ -134,7 +134,7 @@ const mrqxOrganRightClickedOnlyStrategies = {
 			if (itemMap.has('mrqx_extra_pack:steam_engine')) {
 				amplifier = Math.min(amplifier, typeMap.get('kubejs:mrqx_steam').length * 1 + 1)
 				duration = Math.min(duration, amplifier * 2 * 20 * 60)
-				player.level.playSound(player, player.blockPosition(), 'minecraft:entity.player.splash', 'players', 1, 1)
+				player.level.playSound(null, player.getX(), player.getY(), player.getZ(), 'minecraft:entity.player.splash', player.getSoundSource(), 1, 1)
 				player.potionEffects.add('mrqx_extra_pack:steam_power', duration, amplifier, false, false)
 			}
 			event.player.removeEffect('kubejs:burning_heart')
@@ -152,7 +152,7 @@ const mrqxOrganRightClickedOnlyStrategies = {
 			if (itemMap.has('mrqx_extra_pack:steam_engine')) {
 				amplifier = Math.min(amplifier, typeMap.get('kubejs:mrqx_steam').length * 1 + 1)
 				duration = Math.min(duration, amplifier * 2 * 20 * 60)
-				player.level.playSound(player, player.blockPosition(), 'minecraft:entity.player.splash', 'players', 1, 1)
+				player.level.playSound(null, player.getX(), player.getY(), player.getZ(), 'minecraft:entity.player.splash', player.getSoundSource(), 1, 1)
 				player.potionEffects.add('mrqx_extra_pack:steam_power', duration, amplifier, false, false)
 			}
 			event.player.removeEffect('kubejs:flaring_heart')
@@ -179,7 +179,7 @@ const mrqxOrganRightClickedOnlyStrategies = {
 			if (itemMap.has('mrqx_extra_pack:steam_engine')) {
 				amplifier = Math.min(amplifier, typeMap.get('kubejs:mrqx_steam').length * 2 + 2)
 				duration = Math.min(duration, amplifier * 2 * 20 * 60)
-				player.level.playSound(player, player.blockPosition(), 'minecraft:entity.player.splash.high_speed', 'players', 1, 1)
+				player.level.playSound(null, player.getX(), player.getY(), player.getZ(), 'minecraft:entity.player.splash.high_speed', player.getSoundSource(), 1, 1)
 				player.potionEffects.add('mrqx_extra_pack:steam_power', duration, amplifier, false, false)
 			}
 			event.player.removeEffect('mrqx_extra_pack:nuclear_power')

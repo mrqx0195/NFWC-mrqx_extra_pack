@@ -272,6 +272,24 @@ ItemEvents.tooltip((tooltip) => {
         addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.ring_from_god.3" })]], 3)
     })
 
+    tooltip.addAdvanced('mrqx_extra_pack:save_point', (item, advanced, text) => {
+        addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.save_point.1" })]], 1)
+        addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.save_point.2" })]], 2)
+        addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.save_point.3" })]], 3)
+    })
+
+    tooltip.addAdvanced('mrqx_extra_pack:my_crown', (item, advanced, text) => {
+        addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.my_crown.1" })]], 1)
+        addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.my_crown.2" })]], 2)
+        addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.my_crown.3" })]], 3)
+    })
+
+    tooltip.addAdvanced('mrqx_extra_pack:timeworn_poetry_strips', (item, advanced, text) => {
+        addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.timeworn_poetry_strips.1" })]], 1)
+        addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.timeworn_poetry_strips.2" })]], 2)
+        addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.timeworn_poetry_strips.3" })]], 3)
+    })
+
     tooltip.addAdvanced('gateways:gate_pearl', (/** @type {Internal.ItemStack} */item, advanced, text) => {
         if (item.nbt.isEmpty() || !item.nbt.getString('gateway')) {
             addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.gate_pearl_craft.1" })]], 1)

@@ -3,8 +3,8 @@
 	"parent": "irons_spellbooks:item/template_spell_book_model",
 	"texture_size": [128, 128],
 	"textures": {
-		"0": "mrqx_extra_pack:item/spell_book_models/sages_book",
-		"particle": "mrqx_extra_pack:item/spell_book_models/sages_book"
+		"0": "mrqx_extra_pack:item/mystery/mystery_items/sages_book",
+		"particle": "mrqx_extra_pack:item/mystery/mystery_items/sages_book"
 	},
 	"display": {
 		"gui": {

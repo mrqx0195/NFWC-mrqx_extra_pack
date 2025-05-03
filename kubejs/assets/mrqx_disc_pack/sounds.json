@@ -78,5 +78,13 @@
         "stream": true
       }
     ]
+  },
+  "legend_of_bloodywolf": {
+    "sounds": [
+      {
+        "name": "mrqx_disc_pack:records/legend_of_bloodywolf",
+        "stream": true
+      }
+    ]
   }
 }

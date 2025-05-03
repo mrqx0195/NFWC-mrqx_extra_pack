@@ -10,6 +10,7 @@ StartupEvents.registry('sound_event', event => {
     event.create("mrqx_disc_pack:straight_into_the_lights_song")
     event.create("mrqx_disc_pack:kirakira_noel_story_song")
     event.create("mrqx_disc_pack:fudahuang_song")
+    event.create("mrqx_disc_pack:legend_of_bloodywolf")
 })
 
 StartupEvents.registry('item', event => {
@@ -80,6 +81,13 @@ StartupEvents.registry('item', event => {
         .song("mrqx_disc_pack:fudahuang_song", 219)
         .analogOutput(1)
         .texture("mrqx_disc_pack:item/fudahuang_song_disc")
+        .maxStackSize(1)
+        .tag('minecraft:music_discs')
+
+    event.create("mrqx_disc_pack:legend_of_bloodywolf_disc", "music_disc")
+        .song("mrqx_disc_pack:legend_of_bloodywolf", 154)
+        .analogOutput(1)
+        .texture("mrqx_disc_pack:item/legend_of_bloodywolf")
         .maxStackSize(1)
         .tag('minecraft:music_discs')
 })

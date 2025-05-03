@@ -51,6 +51,8 @@ global.mrqxLivingDamageByPlayer = event => {
     if (curiosAdvancedArchivistEyeGlassItems.hasItem && mrqxCheckAdvancedArchivistEyeGlass(curiosAdvancedArchivistEyeGlassItems.stacks[0])[10]) {
         mrqxAdvancedArchivistEyeGlassDamage(event)
     }
+
+    if (event.source.player && mrqxIsMysteryQuestUnlocked(event.source.player) && !event.source.player.stages.has("mrqx_future_3") && event.amount > event.source.player.getAttributeTotalValue("minecraft:generic.attack_damage") * 100) event.source.player.stages.add("mrqx_future_3", true)
 }
 
 /**
@@ -107,5 +109,29 @@ global.mrqxLivingDrops = event => {
     if (event.entity.persistentData.getBoolean('mrqxLivingNoItemDrops')) {
         event.drops.clear()
         event.setCanceled(true)
+    }
+}
+
+/**
+ * 受伤前事件
+ * @param {Internal.LivingHurtEvent} event
+ */
+global.mrqxLivingHurtByEntity = event => {
+    /** @type {Internal.TamableAnimal} */
+    let entity = event.getSource().getActual()
+    if (!entity || !entity.isLiving()) return
+    if (!(entity instanceof $mrqxTamableAnimal)) return
+    /** @type {Internal.ServerPlayer} */
+    let owner = entity.getOwner()
+    if (!owner || !owner.isPlayer()) return
+
+
+    let curiosTimewornPoetryStripsItems = mrqxGetCurioInfo(owner, 'mrqx_extra_pack:timeworn_poetry_strips')
+    if (curiosTimewornPoetryStripsItems.hasItem) {
+        for (let i = 0; i < curiosTimewornPoetryStripsItems.count; i++) {
+            if (curiosTimewornPoetryStripsItems.stacks[i].getDamageValue() == 0) {
+                mrqxTimewornPoetryStripsDamage(event, owner)
+            }
+        }
     }
 }

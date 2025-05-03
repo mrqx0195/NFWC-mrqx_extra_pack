@@ -13,8 +13,11 @@ ForgeEvents.onEvent('net.minecraftforge.event.entity.living.MobEffectEvent$Added
 })
 
 ForgeEvents.onEvent('net.minecraftforge.event.entity.living.LivingHurtEvent', event => {
-    if (event.getSource() && event.getSource().getPlayer() && !event.getSource().getPlayer().getLevel().isClientSide()) {
-        global.mrqxLivingHurtByPlayer(event)
+    if (!event.getEntity().getLevel().isClientSide()) {
+        global.mrqxLivingHurtByEntity(event)
+        if (event.getSource() && event.getSource().getPlayer() && !event.getSource().getPlayer().getLevel().isClientSide()) {
+            global.mrqxLivingHurtByPlayer(event)
+        }
     }
 })
 
@@ -40,3 +43,66 @@ ForgeEvents.onEvent('net.minecraftforge.event.entity.living.LivingDropsEvent', e
         global.mrqxLivingDrops(event)
     }
 })
+
+ForgeEvents.onEvent('net.minecraftforge.event.entity.player.ItemTooltipEvent', event => {
+    global.mrqxTooltip(event)
+})
+
+/**
+ * @param {Internal.ItemTooltipEvent} event 
+ */
+global.mrqxTooltip = (event) => {
+    let player = event.entity
+    let item = event.itemStack
+    if (player && (item.getId() == 'mrqx_extra_pack:page_of_past' || item.getId() == 'mrqx_extra_pack:page_of_future')) {
+        if (player.getPersistentData().getBoolean(`mrqx_mq`)) {
+            if (item.getOrCreateTag().hasUUID('owner')) {
+                if (UUID.toString(item.getOrCreateTag().getUUID('owner')) == UUID.toString(player.getUuid())) {
+                    switch (item.getId()) {
+                        case 'mrqx_extra_pack:page_of_past':
+                            if (item.nbt && item.nbt.getInt('mrqx_quest') < 4) {
+                                event.toolTip.add(1, Text.of({ "translate": "mrqx_extra_pack.tooltips.page_of_past.1", "with": [`${item.nbt.getInt('mrqx_quest').toFixed(0)}`] }))
+                            }
+                            else if (item.nbt && item.nbt.getInt('mrqx_quest') == 4) {
+                                event.toolTip.add(1, Text.of({ "translate": "mrqx_extra_pack.tooltips.page_of_past.2" }))
+                            }
+                            break
+                        case 'mrqx_extra_pack:page_of_future':
+                            if (item.nbt && item.nbt.getInt('mrqx_quest') < 4) {
+                                event.toolTip.add(1, Text.of({ "translate": "mrqx_extra_pack.tooltips.page_of_future.1", "with": [`${item.nbt.getInt('mrqx_quest').toFixed(0)}`] }))
+                            }
+                            else if (item.nbt && item.nbt.getInt('mrqx_quest') == 4) {
+                                event.toolTip.add(1, Text.of({ "translate": "mrqx_extra_pack.tooltips.page_of_future.2" }))
+                            }
+                            break
+                    }
+                }
+                else {
+                    event.toolTip.add(1, Text.of({ "translate": "mrqx_extra_pack.tooltips.pages.1" }))
+                }
+            } else {
+                switch (item.getId()) {
+                    case 'mrqx_extra_pack:page_of_past':
+                        if (item.nbt && item.nbt.getInt('mrqx_quest') < 4 && item.nbt.getInt('mrqx_quest') != 0) {
+                            event.toolTip.add(1, Text.of({ "translate": "mrqx_extra_pack.tooltips.page_of_past.1", "with": [`${item.nbt.getInt('mrqx_quest').toFixed(0)}`] }))
+                        }
+                        else if (item.nbt && item.nbt.getInt('mrqx_quest') == 4) {
+                            event.toolTip.add(1, Text.of({ "translate": "mrqx_extra_pack.tooltips.page_of_past.2" }))
+                        }
+                        break
+                    case 'mrqx_extra_pack:page_of_future':
+                        if (item.nbt && item.nbt.getInt('mrqx_quest') < 4 && item.nbt.getInt('mrqx_quest') != 0) {
+                            event.toolTip.add(1, Text.of({ "translate": "mrqx_extra_pack.tooltips.page_of_future.1", "with": [`${item.nbt.getInt('mrqx_quest').toFixed(0)}`] }))
+                        }
+                        else if (item.nbt && item.nbt.getInt('mrqx_quest') == 4) {
+                            event.toolTip.add(1, Text.of({ "translate": "mrqx_extra_pack.tooltips.page_of_future.2" }))
+                        }
+                        break
+                }
+            }
+        }
+        else {
+            event.toolTip.add(1, Text.of({ "translate": "mrqx_extra_pack.tooltips.pages.0" }))
+        }
+    }
+}

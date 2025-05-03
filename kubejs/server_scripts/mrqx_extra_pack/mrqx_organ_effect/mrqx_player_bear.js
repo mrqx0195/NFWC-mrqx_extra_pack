@@ -174,15 +174,15 @@ const mrqxOrganPlayerBearOnlyStrategies = {
     },
 
     // 世界框架
-    'mrqx_extra_pack:framework_of_world': function (event, organ, data) {
-        let player = event.entity
-        if (event.source.type == 'outOfWorld') {
-            player.invulnerableTime = 0
-            event.source.bypassEnchantments()
-            event.source.bypassMagic()
-            event.amount = Math.max(Math.max(player.getMaxHealth() / 20, event.amount), 4)
-        }
-    },
+    // 'mrqx_extra_pack:framework_of_world': function (event, organ, data) {
+    //     let player = event.entity
+    //     if (event.source.type == 'outOfWorld') {
+    //         player.invulnerableTime = 0
+    //         event.source.bypassEnchantments()
+    //         event.source.bypassMagic()
+    //         event.amount = Math.max(Math.max(player.getMaxHealth() / 20, event.amount), 4)
+    //     }
+    // },
 
     // 幻影骑士甲
     'mrqx_extra_pack:phantom_knight_armor': function (event, organ, data) {

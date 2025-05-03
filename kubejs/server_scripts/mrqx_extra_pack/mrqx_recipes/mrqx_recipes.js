@@ -2461,6 +2461,127 @@ ServerEvents.recipes(event => {
         .input('irons_spellbooks:emerald_stoneplate_ring')
         .itemOutput('mrqx_extra_pack:book_of_over_enchantment')
         .recipeTime(2000)
+
+    // 永恒常春藤
+    event.recipes.summoningrituals
+        .altar('mrqx_extra_pack:mystery_nature')
+        .id('mrqx_extra_pack:ritual_timeless_ivy')
+        .input("64x minecraft:tall_grass")
+        .input("64x minecraft:bone_meal")
+        .input("64x goety:magic_thorn")
+        .input("64x irons_spellbooks:arcane_essence")
+        .input("32x #irons_spellbooks:nature_focus")
+        .input("32x irons_spellbooks:nature_rune")
+        .input("art_of_forging:dragon_soul")
+        .itemOutput('mrqx_extra_pack:timeless_ivy')
+        .recipeTime(2000)
+
+    // 灿芒之星
+    event.recipes.summoningrituals
+        .altar('mrqx_extra_pack:mystery_stars')
+        .id('mrqx_extra_pack:ritual_radiant_star')
+        .input('#forge:nether_stars')
+        .input('mrqx_extra_pack:celestial_body_astrology_cpu')
+        .input('#kubejs:mrqx_celestial_body')
+        .input('#kubejs:mrqx_celestial_body')
+        .input('#kubejs:mrqx_celestial_body')
+        .input('#kubejs:mrqx_celestial_body')
+        .input("goety:star_amulet")
+        .itemOutput('mrqx_extra_pack:radiant_star')
+        .recipeTime(2000)
+
+    // 原子分解机
+    event.recipes.create.mechanical_crafting('mrqx_extra_pack:atomic_disassembler', [
+        ' EIOLOPK ',
+        'EERLMLFPG',
+        'EEINLNPKG',
+        'EJBBBDDJG',
+        '   IAI   ',
+        '    C    ',
+        '    Q    ',
+        '    J    ',
+        '    H    ',
+    ], {
+        A: 'mrqx_extra_pack:mystery_resources',
+        B: "create:shadow_steel",
+        C: "create:sturdy_sheet",
+        D: "createaddition:accumulator",
+        E: "mrqx_extra_pack:uranium",
+        F: "mrqx_extra_pack:machine_nuclear_heart_cpu",
+        G: "createaddition:electrum_sheet",
+        H: "create:wrench",
+        I: "create:refined_radiance",
+        J: "create:chromatic_compound",
+        K: "create:precision_mechanism",
+        L: "mrqx_extra_pack:reactor_chamber",
+        M: "mrqx_extra_pack:fission_reactor",
+        N: "mrqx_extra_pack:thermal_barrier",
+        O: "mrqx_extra_pack:heat_vent",
+        P: "mrqx_extra_pack:advanced_uncoded_cpu",
+        Q: "createaddition:electrum_sheet",
+        R: "mrqx_extra_pack:thermal_injector",
+    })
+
+    // 无尽煲
+    event.recipes.summoningrituals
+        .altar('mrqx_extra_pack:mystery_food')
+        .id('mrqx_extra_pack:ritual_ultimate_stew')
+        .input("64x minecraft:bowl")
+        .input("kubejs:king_of_stomach")
+        .itemOutput('mrqx_extra_pack:ultimate_stew')
+        .recipeTime(2000)
+
+    // 神授指环
+    event.recipes.kubejs.shaped("mrqx_extra_pack:ring_from_god", [
+        "ABC",
+        "DIE",
+        "FGH",
+    ], {
+        A: "mrqx_extra_pack:sin_and_judgement",
+        B: "mrqx_extra_pack:sin_acedia_belphegor",
+        C: "mrqx_extra_pack:sin_avaritia_mammon",
+        D: "mrqx_extra_pack:sin_gula_beelzebub",
+        E: "mrqx_extra_pack:sin_invidia_leviathan",
+        F: "mrqx_extra_pack:sin_ira_samael",
+        G: "mrqx_extra_pack:sin_luxuria_asmodeus",
+        H: "mrqx_extra_pack:sin_superbia_lucifer",
+        I: "mrqx_extra_pack:mystery_sinners",
+    })
+
+    // 存档点
+    event.recipes.kubejs.shapeless("mrqx_extra_pack:save_point", [
+        "mrqx_extra_pack:mystery_disasters",
+        "minecraft:red_bed",
+    ])
+
+    // “我的王冠”
+    event.recipes.summoningrituals
+        .altar('mrqx_extra_pack:mystery_lords')
+        .id('mrqx_extra_pack:ritual_my_crown')
+        .input("simplehats:crown")
+        .input("goety:necro_crown")
+        .input("goety:nameless_crown")
+        .input("mrqx_extra_pack:kings_crown")
+        .input("nameless_trinkets:gods_crown")
+        .input("nameless_trinkets:cracked_crown")
+        .itemOutput('mrqx_extra_pack:my_crown')
+        .recipeTime(2000)
+
+    // “未来之章”
+    event.recipes.create.sandpaper_polishing(["mrqx_extra_pack:page_of_future"], ['mrqx_extra_pack:mystery_future'], 200)
+
+    // 创世纪
+    let pastItem = Item.of("mrqx_extra_pack:page_of_past")
+    let futureItem = Item.of("mrqx_extra_pack:page_of_future")
+    pastItem.getOrCreateTag().putInt('mrqx_quest', 4)
+    futureItem.getOrCreateTag().putInt('mrqx_quest', 4)
+    event.recipes.summoningrituals
+        .altar('mrqx_extra_pack:framework_of_world')
+        .id('mrqx_extra_pack:ritual_genesis')
+        .input(IngredientHelper.weakNBT(pastItem))
+        .input(IngredientHelper.weakNBT(futureItem))
+        .itemOutput('kubejs:genesis')
+        .recipeTime(2000)
 })
 
 /**
@@ -2763,10 +2884,36 @@ const mrqxRitualsStartStrategies = {
             event.cancel()
         }
     },
+
+    // 创世纪
+    'mrqx_extra_pack:ritual_genesis': function (event) {
+        let player = event.player
+        let questsPast = mrqxGetMysteryQuests(player, true)
+        let questsFuture = mrqxGetMysteryQuests(player, false)
+        let stage = 0
+        questsPast.forEach((value, index, array) => {
+            if (value) {
+                stage++
+            }
+        })
+        questsFuture.forEach((value, index, array) => {
+            if (value) {
+                stage++
+            }
+        })
+        if (stage != 8) {
+            event.cancel()
+        }
+        let inventory = event.level.getBlock(event.pos).inventory
+        if ((UUID.toString(inventory.allItems[0].getOrCreateTag().getUUID('owner')) != UUID.toString(player.getUuid())) ||
+            (UUID.toString(inventory.allItems[1].getOrCreateTag().getUUID('owner')) != UUID.toString(player.getUuid()))) {
+            event.cancel()
+        }
+    },
 }
 
 var assign_rituals_start_strategies = Object.assign(ritualsStartStrategies, mrqxRitualsStartStrategies)
 
 SummoningRituals.start(event => {
-    if (!event.player && (String)(event.recipe.getId()).startsWith('mrqx_extra_pack:ritual_mystery_')) event.cancel()
+    if (!event.player && ((String)(event.recipe.getId()).startsWith('mrqx_extra_pack:ritual_mystery_') || (String)(event.recipe.getId()).startsWith('mrqx_extra_pack:ritual_genesis'))) event.cancel()
 })

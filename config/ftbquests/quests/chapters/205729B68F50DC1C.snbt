@@ -1,0 +1,272 @@
+{
+	default_hide_dependency_lines: true
+	default_quest_shape: ""
+	filename: "205729B68F50DC1C"
+	group: "16675FCA19680C36"
+	hide_quest_details_until_startable: true
+	icon: {
+		Count: 1b
+		id: "kubejs:genesis"
+		tag: { }
+	}
+	id: "205729B68F50DC1C"
+	images: [{
+		alpha: 128
+		click: ""
+		corner: false
+		dev: false
+		height: 10.0d
+		hover: [ ]
+		image: "kubejs:item/organs/legends/genesis"
+		rotation: 0.0d
+		width: 10.0d
+		x: -0.25d
+		y: 0.5d
+	}]
+	order_index: 4
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [
+				"07429C6330F54932"
+				"322DF7D1E92F84EE"
+				"6BEF24FDB976771F"
+			]
+			description: [
+				"前方，是一场前所未有的斗争。"
+				""
+				""
+				"在它面前，任何挑战都将相形见绌，任何异象都将黯然失色。"
+				""
+				""
+				"那些曾经存在过的&k&0玩家&r&r，他们这一路所经历的过往……又或者，还必须承受什么.……"
+				""
+				"现在，你也要踏上这条无人知晓的道路，这条见证过去的道路，这条揭示未来的道路，这条通向终点的道路。"
+				""
+				""
+				"来吧，深入这个世界的命运，然后&l揭开Minecraft最后的面纱&r。"
+				""
+				"但是请务必记住……这条道路，&l&c远不是一人的力量就能企及&r。"
+			]
+			id: "1DB27164B853D60D"
+			subtitle: "Axiom of the End"
+			tasks: [{
+				id: "7891C779F7C7705A"
+				title: "终焉之理"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 6.25d
+		}
+		{
+			dependencies: [
+				"2E9841B24ADD9029"
+				"6382D471AAD266FF"
+				"42D39732CBC66EE6"
+				"1AA20ECFEFE5A4D8"
+				"642CC6AD2B24EC91"
+				"690828E129E2731D"
+				"2795D5C0E8A9727E"
+				"6D8F0DCF8A16A076"
+			]
+			description: [
+				"这就是终点了——至高之位，已无需多言。"
+				""
+				"回望这一切，一路以来，你所经历的无数……"
+				""
+				"你已无遗憾。"
+				""
+				"&l你将与Minecraft一同，走向未来。&r"
+			]
+			hide: true
+			hide_text_until_complete: true
+			id: "5E05CCC8569A3BAE"
+			tasks: [{
+				id: "2AA22699B43E106A"
+				item: {
+					Count: 1b
+					id: "kubejs:genesis"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["52F897F3E243C07D"]
+			id: "2E9841B24ADD9029"
+			invisible: true
+			tasks: [{
+				icon: {
+					Count: 1b
+					id: "tetra:modular_toolbelt"
+					tag: { }
+				}
+				id: "6F8F1B422B5DA052"
+				stage: "mrqx_past_0"
+				title: "当下，正是终焉"
+				type: "gamestage"
+			}]
+			x: -10.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["52F897F3E243C07D"]
+			id: "6382D471AAD266FF"
+			invisible: true
+			tasks: [{
+				icon: {
+					Count: 1b
+					id: "tetra:modular_toolbelt"
+					tag: { }
+				}
+				id: "29AB99C52B7B3133"
+				stage: "mrqx_past_1"
+				title: "时初之间的歌曲"
+				type: "gamestage"
+			}]
+			x: -6.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["52F897F3E243C07D"]
+			id: "42D39732CBC66EE6"
+			invisible: true
+			tasks: [{
+				icon: {
+					Count: 1b
+					id: "tetra:modular_toolbelt"
+					tag: { }
+				}
+				id: "1BB517390A1832F6"
+				stage: "mrqx_past_2"
+				title: "在功亏一篑中屈服"
+				type: "gamestage"
+			}]
+			x: -10.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["52F897F3E243C07D"]
+			id: "1AA20ECFEFE5A4D8"
+			invisible: true
+			tasks: [{
+				icon: {
+					Count: 1b
+					id: "tetra:modular_toolbelt"
+					tag: { }
+				}
+				id: "3F1E19C79C85F8AA"
+				stage: "mrqx_past_3"
+				title: "玻璃相聚，却无法成对"
+				type: "gamestage"
+			}]
+			x: -6.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["4CEC6076994CA25A"]
+			id: "642CC6AD2B24EC91"
+			invisible: true
+			tasks: [{
+				icon: {
+					Count: 1b
+					id: "tetra:modular_toolbelt"
+					tag: { }
+				}
+				id: "72C012DBFA96D9BD"
+				stage: "mrqx_future_0"
+				title: "回忆旅途的过往"
+				type: "gamestage"
+			}]
+			x: 6.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["4CEC6076994CA25A"]
+			id: "690828E129E2731D"
+			invisible: true
+			tasks: [{
+				icon: {
+					Count: 1b
+					id: "tetra:modular_toolbelt"
+					tag: { }
+				}
+				id: "64FBFB43F9C74CCA"
+				stage: "mrqx_future_1"
+				title: "牵着&k她&r的手"
+				type: "gamestage"
+			}]
+			x: 10.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["4CEC6076994CA25A"]
+			id: "6D8F0DCF8A16A076"
+			invisible: true
+			tasks: [{
+				icon: {
+					Count: 1b
+					id: "tetra:modular_toolbelt"
+					tag: { }
+				}
+				id: "60C29A0FE45EAB46"
+				stage: "mrqx_future_3"
+				title: "超越你的极限"
+				type: "gamestage"
+			}]
+			x: 10.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["4CEC6076994CA25A"]
+			id: "2795D5C0E8A9727E"
+			invisible: true
+			tasks: [{
+				icon: {
+					Count: 1b
+					id: "tetra:modular_toolbelt"
+					tag: { }
+				}
+				id: "3726921CC337C2E9"
+				stage: "mrqx_future_2"
+				title: "注视一切的终结"
+				type: "gamestage"
+			}]
+			x: 6.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["1DB27164B853D60D"]
+			description: ["提示：手持&e“过去之章”&r右键"]
+			hide: true
+			icon: "mrqx_extra_pack:mystery_memories"
+			id: "52F897F3E243C07D"
+			subtitle: "Axiom of the Past"
+			tasks: [{
+				id: "2282F809BF4FB0F2"
+				title: "“过去”之理"
+				type: "checkmark"
+			}]
+			x: -8.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["1DB27164B853D60D"]
+			description: ["提示：手持&e“未来之章”&r右键"]
+			hide: true
+			icon: "mrqx_extra_pack:mystery_future"
+			id: "4CEC6076994CA25A"
+			subtitle: "Axiom of the Future"
+			tasks: [{
+				id: "2B25345257114B46"
+				title: "“未来”之理"
+				type: "checkmark"
+			}]
+			x: 8.0d
+			y: 0.0d
+		}
+	]
+	title: "创世纪"
+}

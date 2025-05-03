@@ -410,9 +410,15 @@ const mrqxOrganActiveOnlyStrategies = {
     },
 
     // 世界框架
-    // 实际运行逻辑不在这，这只是为了防止报错
     'mrqx_extra_pack:framework_of_world': function (player, organ, attributeMap) {
-        return
+        if (!mrqxIsMysteryQuestUnlocked(player)) {
+            /** @type {Internal.LightningBolt} */
+            let lightning = player.level.createEntity("minecraft:lightning_bolt")
+            lightning.moveTo(player.block.pos)
+            lightning.setVisualOnly(false)
+            lightning.spawn()
+            player.getPersistentData().putBoolean("mrqx_mq", true)
+        }
     },
 
     // 长伸缩攻击臂
@@ -541,9 +547,9 @@ const mrqxOrganActiveOnlyStrategies = {
     },
 
     // 墨染
-    // 实际运行逻辑不在这，这只是为了防止报错
     'mrqx_extra_pack:mrqx0195': function (player, organ, attributeMap) {
-        return
+        if (!mrqxIsMysteryQuestUnlocked(player) || player.stages.has("mrqx_future_1")) return
+        player.stages.add("mrqx_future_1", true)
     },
 
     // ‌复激活药丸·温和化

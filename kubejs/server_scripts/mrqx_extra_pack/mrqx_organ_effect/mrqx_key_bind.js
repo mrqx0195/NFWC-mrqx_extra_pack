@@ -18,6 +18,7 @@ const mrqxOrganPlayerKeyPressedOnlyStrategies = {
                 if (player.persistentData.organActive == 1) {
                     count *= playerChestInstance.organScores.get(new ResourceLocation('chestcavity', 'photosynthesis') ?? 0) / (player.getArmorValue() + 1) * player.persistentData.getInt(warpCount) * 0.1
                 }
+                entity.invulnerableTime = 0
                 entity.attack(DamageSource.playerAttack(player).bypassArmor().bypassEnchantments().bypassInvul().bypassMagic(), count)
                 entity.invulnerableTime = 0
             }

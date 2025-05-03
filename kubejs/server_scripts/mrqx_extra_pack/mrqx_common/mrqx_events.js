@@ -49,7 +49,7 @@ PlayerEvents.tick(event => {
     }
     let playerChest = getPlayerChestCavityItemMap(player)
     if (player.hasEffect('mrqx_extra_pack:nuclear_power') && !playerChest.has("mrqx_extra_pack:fission_reactor")) {
-        player.getServer().runCommandSilent('playsound minecraft:entity.generic.explode player @a ' + player.x + ' ' + player.y + ' ' + player.z)
+        player.level.playSound(null, player.getX(), player.getY(), player.getZ(), 'minecraft:entity.generic.explode', player.getSoundSource(), 1, 1)
         event.level.spawnParticles('minecraft:explosion', true, player.x, player.y + 1, player.z, 1, 1, 1, 10, 0.5)
         let explosion = event.player.block.createExplosion()
         let effect = player.getEffect('mrqx_extra_pack:nuclear_power')
@@ -486,3 +486,341 @@ function mrqxAtomicDisassemblerDamage(event) {
     }
     player.give(Item.of('kubejs:common_mineral_cluster').withCount(Math.max(Math.floor(65 - 64 / damage), 1)))
 }
+
+// 存档点
+ItemEvents.rightClicked("mrqx_extra_pack:save_point", event => {
+    /** @type {Internal.ServerPlayer} */
+    let player = event.player
+    if (!player || player.level.isClientSide()) return
+    player.setRespawnPosition(player.level.dimensionTypeId(), player.block.pos, player.yRot, true, true)
+    player.level.playSound(null, player.getX(), player.getY(), player.getZ(), 'mrqx_extra_pack:save', player.getSoundSource(), 0.5, 1)
+})
+
+// 过去之章 & 未来之章
+PlayerEvents.tick(event => {
+    if (event.level.isClientSide()) return
+    let player = event.player
+    let visible = (player.getUseItem().id == 'mrqx_extra_pack:page_of_past' || player.getUseItem().id == 'mrqx_extra_pack:page_of_future')
+    if (player.getUseItem().getOrCreateTag().hasUUID('owner')) {
+        if (UUID.toString(player.getUseItem().getOrCreateTag().getUUID('owner')) != UUID.toString(player.getUuid())) return
+    }
+    else player.getUseItem().getOrCreateTag().putUUID('owner', player.getUuid())
+
+    let unlock = mrqxIsMysteryQuestUnlocked(player)
+    let time = player.ticksUsingItem
+    let is_past = (player.getUseItem().id == 'mrqx_extra_pack:page_of_past')
+    let quests = mrqxGetMysteryQuests(player, is_past)
+    let stage = 0
+    quests.forEach((value, index, array) => {
+        if (value) {
+            stage++
+        }
+    })
+    player.getUseItem().getOrCreateTag().putInt('mrqx_quest', stage)
+
+    player.sendData('mrqx_mq_sync', {
+        unlock: mrqxIsMysteryQuestUnlocked(player),
+    })
+
+    let paintElement = {
+        mrqx99: {
+            type: 'rectangle',
+            x: 0,
+            y: 0,
+            w: `$screenW`,
+            h: `$screenH`,
+            alignX: 'center',
+            alignY: 'center',
+            texture: 'mrqx_extra_pack:textures/gui/background.png',
+            color: `#${Math.min(Math.max(time, 2) * 9, 191).toString(16).toUpperCase()}FFFFFF`,
+            visible: visible && unlock
+        },
+        mrqx100: {
+            type: 'rectangle',
+            x: 0,
+            y: 0,
+            w: `$screenW`,
+            h: `$screenW/0.9235`,
+            alignX: 'center',
+            alignY: 'center',
+            texture: `mrqx_extra_pack:textures/gui/background${stage}.png`,
+            color: `#${Math.min(Math.max(time, 2) * 9, 255).toString(16).toUpperCase()}FFFFFF`,
+            visible: (stage > 0) && visible && unlock
+        },
+
+        // 重复段别用foreach，也别用for，总之别用循环，否则会炸
+        mrqx0: {
+            type: 'rectangle',
+            x: `-$screenH/6`,
+            y: `-$screenH/6`,
+            w: `$screenH/6`,
+            h: `$screenH/6`,
+            alignX: 'center',
+            alignY: 'center',
+            texture: `mrqx_extra_pack:textures/gui/line0.png`,
+            color: `#${Math.min(Math.max(time, 2) * 9, 255).toString(16).toUpperCase()}FFFFFF`,
+            visible: visible && !quests[0] && unlock
+        },
+        mrqx1: {
+            type: 'rectangle',
+            x: `$screenH/6`,
+            y: `-$screenH/6`,
+            w: `$screenH/6`,
+            h: `$screenH/6`,
+            alignX: 'center',
+            alignY: 'center',
+            texture: `mrqx_extra_pack:textures/gui/line1.png`,
+            color: `#${Math.min(Math.max(time, 2) * 9, 255).toString(16).toUpperCase()}FFFFFF`,
+            visible: visible && !quests[1] && unlock
+        },
+        mrqx2: {
+            type: 'rectangle',
+            x: `-$screenH/6`,
+            y: `$screenH/6`,
+            w: `$screenH/6`,
+            h: `$screenH/6`,
+            alignX: 'center',
+            alignY: 'center',
+            texture: `mrqx_extra_pack:textures/gui/line2.png`,
+            color: `#${Math.min(Math.max(time, 2) * 9, 255).toString(16).toUpperCase()}FFFFFF`,
+            visible: visible && !quests[2] && unlock
+        },
+        mrqx3: {
+            type: 'rectangle',
+            x: `$screenH/6`,
+            y: `$screenH/6`,
+            w: `$screenH/6`,
+            h: `$screenH/6`,
+            alignX: 'center',
+            alignY: 'center',
+            texture: `mrqx_extra_pack:textures/gui/line3.png`,
+            color: `#${Math.min(Math.max(time, 2) * 9, 255).toString(16).toUpperCase()}FFFFFF`,
+            visible: visible && !quests[3] && unlock
+        },
+        mrqx4: {
+            type: 'rectangle',
+            x: `-$screenH/4`,
+            y: `-$screenH/4`,
+            w: `$screenH/16`,
+            h: `$screenH/16`,
+            alignX: 'center',
+            alignY: 'center',
+            texture: `mrqx_extra_pack:textures/gui/${quests[0] ? 'numeric_complete' : 'numeric'}.png`,
+            color: `#${Math.min(Math.max(time, 2) * 9, 255).toString(16).toUpperCase()}FFFFFF`,
+            visible: visible
+        },
+        mrqx5: {
+            type: 'rectangle',
+            x: `$screenH/4`,
+            y: `-$screenH/4`,
+            w: `$screenH/16`,
+            h: `$screenH/16`,
+            alignX: 'center',
+            alignY: 'center',
+            texture: `mrqx_extra_pack:textures/gui/${quests[1] ? 'numeric_complete' : 'numeric'}.png`,
+            color: `#${Math.min(Math.max(time, 2) * 9, 255).toString(16).toUpperCase()}FFFFFF`,
+            visible: visible
+        },
+        mrqx6: {
+            type: 'rectangle',
+            x: `-$screenH/4`,
+            y: `$screenH/4`,
+            w: `$screenH/16`,
+            h: `$screenH/16`,
+            alignX: 'center',
+            alignY: 'center',
+            texture: `mrqx_extra_pack:textures/gui/${quests[2] ? 'numeric_complete' : 'numeric'}.png`,
+            color: `#${Math.min(Math.max(time, 2) * 9, 255).toString(16).toUpperCase()}FFFFFF`,
+            visible: visible
+        },
+        mrqx7: {
+            type: 'rectangle',
+            x: `$screenH/4`,
+            y: `$screenH/4`,
+            w: `$screenH/16`,
+            h: `$screenH/16`,
+            alignX: 'center',
+            alignY: 'center',
+            texture: `mrqx_extra_pack:textures/gui/${quests[3] ? 'numeric_complete' : 'numeric'}.png`,
+            color: `#${Math.min(Math.max(time, 2) * 9, 255).toString(16).toUpperCase()}FFFFFF`,
+            visible: visible
+        },
+        mrqx8: {
+            type: 'rectangle',
+            x: `-$screenH*5/12`,
+            y: `-$screenH*5/16`,
+            w: `$screenH/16*5.76`,
+            h: `$screenH/16*0.6`,
+            alignX: 'center',
+            alignY: 'center',
+            texture: `mrqx_extra_pack:textures/gui/label.png`,
+            color: `#${Math.min(Math.max(time, 2) * 9, 255).toString(16).toUpperCase()}FFFFFF`,
+            visible: visible
+        },
+        mrqx9: {
+            type: 'rectangle',
+            x: `$screenH*5/12`,
+            y: `-$screenH*5/16`,
+            w: `$screenH/16*5.76`,
+            h: `$screenH/16*0.6`,
+            alignX: 'center',
+            alignY: 'center',
+            texture: `mrqx_extra_pack:textures/gui/label.png`,
+            color: `#${Math.min(Math.max(time, 2) * 9, 255).toString(16).toUpperCase()}FFFFFF`,
+            visible: visible
+        },
+        mrqx10: {
+            type: 'rectangle',
+            x: `-$screenH*5/12`,
+            y: `$screenH*5/16`,
+            w: `$screenH/16*5.76`,
+            h: `$screenH/16*0.6`,
+            alignX: 'center',
+            alignY: 'center',
+            texture: `mrqx_extra_pack:textures/gui/label.png`,
+            color: `#${Math.min(Math.max(time, 2) * 9, 255).toString(16).toUpperCase()}FFFFFF`,
+            visible: visible
+        },
+        mrqx11: {
+            type: 'rectangle',
+            x: `$screenH*5/12`,
+            y: `$screenH*5/16`,
+            w: `$screenH/16*5.76`,
+            h: `$screenH/16*0.6`,
+            alignX: 'center',
+            alignY: 'center',
+            texture: `mrqx_extra_pack:textures/gui/label.png`,
+            color: `#${Math.min(Math.max(time, 2) * 9, 255).toString(16).toUpperCase()}FFFFFF`,
+            visible: visible
+        },
+        mrqx12: {
+            type: 'text',
+            x: `-$screenH*5/12`,
+            y: `-$screenH*0.311`,
+            alignX: 'center',
+            alignY: 'center',
+            text: `{"translate": "mrqx_extra_pack.text.quest_${is_past ? 'past' : 'future'}.0", "strikethrough": ${quests[0] ? 'true' : 'false'}, "obfuscated": ${!unlock ? 'true' : 'false'}}`,
+            color: `#${Math.min(Math.max(time, 2) * 9, 255).toString(16).toUpperCase()}${quests[0] ? '777777' : 'FFFFFF'}`,
+            centered: false,
+            visible: visible
+        },
+        mrqx13: {
+            type: 'text',
+            x: `$screenH*5/12`,
+            y: `-$screenH*0.311`,
+            alignX: 'center',
+            alignY: 'center',
+            text: `{"translate": "mrqx_extra_pack.text.quest_${is_past ? 'past' : 'future'}.1", "strikethrough": ${quests[1] ? 'true' : 'false'}, "obfuscated": ${!unlock ? 'true' : 'false'}}`,
+            color: `#${Math.min(Math.max(time, 2) * 9, 255).toString(16).toUpperCase()}${quests[1] ? '777777' : 'FFFFFF'}`,
+            centered: false,
+            visible: visible
+        },
+        mrqx14: {
+            type: 'text',
+            x: `-$screenH*5/12`,
+            y: `$screenH*0.314`,
+            alignX: 'center',
+            alignY: 'center',
+            text: `{"translate": "mrqx_extra_pack.text.quest_${is_past ? 'past' : 'future'}.2", "strikethrough": ${quests[2] ? 'true' : 'false'}, "obfuscated": ${!unlock ? 'true' : 'false'}}`,
+            color: `#${Math.min(Math.max(time, 2) * 9, 255).toString(16).toUpperCase()}${quests[2] ? '777777' : 'FFFFFF'}`,
+            centered: false,
+            visible: visible
+        },
+        mrqx15: {
+            type: 'text',
+            x: `$screenH*5/12`,
+            y: `$screenH*0.314`,
+            alignX: 'center',
+            alignY: 'center',
+            text: `{"translate": "mrqx_extra_pack.text.quest_${is_past ? 'past' : 'future'}.3", "strikethrough": ${quests[3] ? 'true' : 'false'}, "obfuscated": ${!unlock ? 'true' : 'false'}}`,
+            color: `#${Math.min(Math.max(time, 2) * 9, 255).toString(16).toUpperCase()}${quests[3] ? '777777' : 'FFFFFF'}`,
+            centered: false,
+            visible: visible
+        },
+    }
+    player.paint(paintElement)
+})
+
+PlayerEvents.tick(event => {
+    let player = event.player
+    if (player.age % 20 != 0) return
+    if (event.level.isClientSide()) return
+    if (!mrqxIsMysteryQuestUnlocked(player) || player.stages.has("mrqx_past_3")) return
+    let b = true
+    let set = new Set()
+    for (let i = 0; i < 9; i++) {
+        let item = player.getInventory().getStackInSlot(i)
+        if (item.isEmpty() || set.has(item.id.hashCode()) || (item.getCount() % 2 != 1) || (!item.hasTag("forge:glass") && !item.hasTag("forge:glass_panes") && !item.hasTag("forge:stained_glass") && !item.hasTag("forge:stained_glass_panes"))) {
+            b = false
+            break
+        }
+        set.add(item.id.hashCode())
+    }
+    if (b && set.size == 9) player.stages.add("mrqx_past_3")
+})
+
+PlayerEvents.tick(event => {
+    let player = event.player
+    if (player.age % 20 != 0) return
+    if (event.level.isClientSide()) return
+    if (!mrqxIsMysteryQuestUnlocked(player) || player.stages.has("mrqx_future_0")) return
+    if (player.block.pos.distToCenterSqr(player.level.getSharedSpawnPos().x, player.level.getSharedSpawnPos().y, player.level.getSharedSpawnPos().z) < 100) player.stages.add("mrqx_future_0")
+})
+
+PlayerEvents.tick(event => {
+    let player = event.player
+    if (player.age % 20 != 0) return
+    if (event.level.isClientSide()) return
+    if (!mrqxIsMysteryQuestUnlocked(player) || player.stages.has("mrqx_future_2")) return
+    let ray = player.rayTrace(100)
+    if (ray.block && ray.block.getId() == "minecraft:end_portal") {
+        let tick = player.getPersistentData().getLong('mrqx_ftr2_tick') ?? 0
+        if (tick >= 1200) {
+            player.stages.add("mrqx_future_2")
+            player.getPersistentData().remove('mrqx_ftr2_tick')
+        }
+        else {
+            player.getPersistentData().putLong('mrqx_ftr2_tick', tick + 1)
+        }
+    }
+    else {
+        player.getPersistentData().remove('mrqx_ftr2_tick')
+    }
+})
+
+EntityEvents.death('minecraft:player', event => {
+    /** @type {Internal.ServerPlayer} */
+    let player = event.player
+    let entity = event.source.actual
+    if (!player) return
+    if (event.level.isClientSide()) return
+    if (!mrqxIsMysteryQuestUnlocked(player) || player.stages.has("mrqx_past_2")) return
+    if (entity.getHealth() > entity.getMaxHealth() * 0.02) return
+    if (!mrqxBossTypeList.find((value) => (value == entity.getType()))) return
+    player.stages.add("mrqx_past_2")
+    if (event.level.levelData.isHardcore()) {
+        player.setHealth(player.maxHealth)
+        player.setFoodLevel(20)
+        player.setSaturation(5)
+        player.potionEffects.clear()
+        player.teleportTo(player.getRespawnDimension(), player.getRespawnPosition().x, player.getRespawnPosition().y, player.getRespawnPosition().z, player.yRot, player.xRot)
+        event.cancel()
+    }
+})
+
+BlockEvents.rightClicked("minecraft:jukebox", event => {
+    let player = event.player
+    if (!player) return
+    if (event.level.isClientSide()) return
+    if (event.level.levelData.getDayTime() % 24000 > 60) return
+    if (!mrqxIsMysteryQuestUnlocked(player) || player.stages.has("mrqx_past_1")) return
+    /** @type {Internal.JukeboxBlockEntity} */
+    let blockEntity = event.level.getBlockEntity(event.getBlock().pos)
+    if (blockEntity && blockEntity['getRecord'] && blockEntity.getRecord().isEmpty()) {
+        event.server.scheduleInTicks(2, () => {
+            if (!blockEntity.getRecord().isEmpty()) {
+                player.stages.add("mrqx_past_1")
+            }
+        })
+    }
+})

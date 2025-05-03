@@ -248,7 +248,7 @@ const mrqxOrganPlayerDamageOnlyStrategies = {
 		entityList.forEach(entity => {
 			if (!entity.isPlayer()) {
 				event.entity.getServer().scheduleInTicks(1, () => {
-					if (entity.isLiving()) {
+					if (mrqxCheckTarget(entity, player)) {
 						entity.attack(DamageSource.playerAttack(player).bypassArmor().bypassEnchantments().bypassInvul().bypassMagic(), player.getAttributeTotalValue('minecraft:generic.attack_damage') * damage * 0.05)
 					}
 				})
@@ -273,14 +273,14 @@ const mrqxOrganPlayerDamageOnlyStrategies = {
 			if (damage > 0 && !entity.isPlayer()) {
 				if (mrqxCheckOrganSuit(player, 'seaborn', 'isAll')) {
 					event.entity.getServer().scheduleInTicks(1, () => {
-						if (entity.isLiving()) {
+						if (mrqxCheckTarget(entity, player)) {
 							entity.attack(DamageSource.playerAttack(player), player.getAttributeTotalValue('minecraft:generic.attack_damage') * 2)
 						}
 					})
 				}
 				else {
 					event.entity.getServer().scheduleInTicks(1, () => {
-						if (entity.isLiving()) {
+						if (mrqxCheckTarget(entity, player)) {
 							entity.attack(DamageSource.playerAttack(player), player.getAttributeTotalValue('minecraft:generic.attack_damage'))
 						}
 					})
@@ -406,7 +406,9 @@ const mrqxOrganPlayerDamageOnlyStrategies = {
 		player.getServer().getEntities().forEach(entity => {
 			if (entity.getPersistentData().getString('mrqxTaoistFifteenDogs') && entity.getPersistentData().getString('mrqxTaoistFifteenDogs') == player.getStringUuid()) {
 				count++
-				entity.attack(1)
+				let move = entity.getDeltaMovement()
+				entity.attack(DamageSource.mobAttack(event.entity), 1)
+				entity.setDeltaMovement(move)
 			}
 		})
 		event.amount += count ** 2
@@ -602,7 +604,7 @@ const mrqxOrganPlayerDamageOnlyStrategies = {
 			for (let i = mrqxGetCoreOfKnightCount(player); i > 0; i--) {
 				let entityList = getLivingWithinRadius(player.getLevel(), new Vec3(player.x, player.y, player.z), 3)
 				entityList.forEach(e => {
-					if (!e.isPlayer() && e.isLiving()) {
+					if (!e.isPlayer() && mrqxCheckTarget(e, player)) {
 						e.getServer().scheduleInTicks(1, () => {
 							e.attack(DamageSource.playerAttack(player).bypassArmor().bypassEnchantments().bypassInvul().bypassMagic(), player.getAttributeTotalValue('minecraft:generic.attack_damage') * 0.2)
 						})

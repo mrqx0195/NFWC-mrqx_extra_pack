@@ -566,3 +566,57 @@ function mrqxGenerateRandomArray(sum, length) {
     mrqxShuffleArray(arr)
     return arr
 }
+
+/**
+ * 玩家是否位于自己队伍的已认领区块中
+ * @param {Internal.ServerPlayer} player
+ * @param {Internal.Level} level
+ * @param {BlockPos} pos
+ * @returns {boolean}
+ */
+function mrqxIsInTeamsClaimedChunk(player, level, pos) {
+    if (!$mrqxFTBChunksAPI.isManagerLoaded()) return false
+    let chunk = $mrqxFTBChunksAPI.getManager().getChunk(new $mrqxChunkDimPos(level, pos))
+    if (!chunk) return false
+    let flag = false
+    if (chunk.getTeamData().getTeam().getMembers().toArray().find((id) => UUID.toString(id) == UUID.toString(player.uuid))) flag = true
+    return flag
+}
+
+/**
+ * 目标检查
+ * @param {Internal.LivingEntity} target
+ * @param {Internal.LivingEntity} attacker
+ * @returns {boolean}
+ */
+function mrqxCheckTarget(target, attacker) {
+    if (!target.isLiving() || !attacker.isLiving()) return false
+    if (target['getOwner'] && target.getOwner() && (UUID.toString(target.getOwnerUUID()) == UUID.toString(attacker.uuid))) return false
+    return true
+}
+
+/**
+ * 奥秘资格检查
+ * @param {Internal.LivingEntity} player
+ * @returns {boolean}
+ */
+function mrqxIsMysteryQuestUnlocked(player) {
+    if (player.getPersistentData().getBoolean(`mrqx_mq`)) return true
+    else return false
+}
+
+/**
+ * 奥秘任务检查
+ * @param {Internal.ServerPlayer} player
+ * @param {boolean} is_past
+ * @returns {boolean[]}
+ */
+function mrqxGetMysteryQuests(player, is_past) {
+    let list = []
+    for (let i = 0; i < 4; i++) {
+        // if (player.getPersistentData().getBoolean(`mrqx_${is_past ? 'past' : 'future'}_${i}`)) list.push(true)
+        if (player.stages.has(`mrqx_${is_past ? 'past' : 'future'}_${i}`)) list.push(true)
+        else list.push(false)
+    }
+    return list
+}

@@ -2,7 +2,7 @@
 	"credit": "Made with Blockbench",
 	"parent": "item/handheld",
 	"textures": {
-		"layer0": "mrqx_extra_pack:item/sentient_greatscythe"
+		"layer0": "mrqx_extra_pack:item/mystery/mystery_items/sentient_greatscythe"
 	},
 	"overrides": [
 		{"predicate": {"vinni": 1}, "model": "mrqx_extra_pack:item/sentient_greatscythe_v"}

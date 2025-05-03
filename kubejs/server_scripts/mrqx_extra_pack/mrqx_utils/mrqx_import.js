@@ -10,3 +10,5 @@ const $mrqxEnchantmentHelper = Java.loadClass('net.minecraft.world.item.enchantm
 const $mrqxChainBlock = Java.loadClass('twilightforest.entity.ChainBlock')
 const $mrqxTFEntities = Java.loadClass('twilightforest.init.TFEntities')
 const $mrqxSerializer = Java.loadClass('net.minecraft.network.chat.Component$Serializer')
+const $mrqxFTBChunksAPI = Java.loadClass('dev.ftb.mods.ftbchunks.data.FTBChunksAPI')
+const $mrqxChunkDimPos = Java.loadClass('dev.ftb.mods.ftblibrary.math.ChunkDimPos')

@@ -283,9 +283,12 @@ const mrqxOrganPlayerTickOnlyStrategies = {
         let player = event.player
         if (player.age % 1200 != 0) return
         for (let i = 0; i < 15; i++) {
+            /** @type {Internal.Wolf} */
             let entity = event.getLevel().createEntity('minecraft:wolf')
             entity.getPersistentData().putString('mrqxTaoistFifteenDogs', player.getStringUuid())
             entity.setPosition(player.x, player.y, player.z)
+            entity.tame(player)
+            entity.setOrderedToSit(false)
             entity.spawn()
         }
     },
@@ -411,27 +414,27 @@ const mrqxOrganPlayerTickOnlyStrategies = {
     },
 
     // 世界框架
-    'mrqx_extra_pack:framework_of_world': function (event, organ) {
-        let player = event.player
-        let instance = player.getChestCavityInstance()
-        if ((Math.abs(player.x) + Math.abs(player.z)) >= 29999000 * 2 && player.y <= -129 && player.persistentData.getInt(organActive) == 1) {
-            let newItem = Item.of(organ.id)
-            let oldItem = instance.inventory.getItem(organ.Slot)
-            if (oldItem.getDamageValue() >= (60 * 60 * 24)) {
-                newItem = Item.of('kubejs:genesis')
-                mrqxEditChestItem(player, newItem, organ.Slot, false, true, false)
-            }
-            else {
-                newItem.setDamageValue(oldItem.getDamageValue() + 1)
-                mrqxEditChestItem(player, newItem, organ.Slot, false, false, false)
-            }
-        }
-        else {
-            let newItem = Item.of(organ.id)
-            newItem.setDamageValue(0)
-            mrqxEditChestItem(player, newItem, organ.Slot, false, false, false)
-        }
-    },
+    // 'mrqx_extra_pack:framework_of_world': function (event, organ) {
+    //     let player = event.player
+    //     let instance = player.getChestCavityInstance()
+    //     if ((Math.abs(player.x) + Math.abs(player.z)) >= 29999000 * 2 && player.y <= -129 && player.persistentData.getInt(organActive) == 1) {
+    //         let newItem = Item.of(organ.id)
+    //         let oldItem = instance.inventory.getItem(organ.Slot)
+    //         if (oldItem.getDamageValue() >= (60 * 60 * 24)) {
+    //             newItem = Item.of('kubejs:genesis')
+    //             mrqxEditChestItem(player, newItem, organ.Slot, false, true, false)
+    //         }
+    //         else {
+    //             newItem.setDamageValue(oldItem.getDamageValue() + 1)
+    //             mrqxEditChestItem(player, newItem, organ.Slot, false, false, false)
+    //         }
+    //     }
+    //     else {
+    //         let newItem = Item.of(organ.id)
+    //         newItem.setDamageValue(0)
+    //         mrqxEditChestItem(player, newItem, organ.Slot, false, false, false)
+    //     }
+    // },
 
     // ‌机械“午夜狂飙”处理器
     'mrqx_extra_pack:machine_midnight_race_cpu': function (event, organ) {
@@ -491,7 +494,7 @@ const mrqxOrganPlayerTickOnlyStrategies = {
         }
         let entityList = getLivingWithinRadius(player.getLevel(), new Vec3(player.x, player.y, player.z), 8)
         entityList.forEach(entity => {
-            if (entity instanceof $mrqxTamableAnimal && !mrqxIsEmpty(entity.nbt.Age)) {
+            if ((entity instanceof $mrqxTamableAnimal) && !mrqxIsEmpty(entity.nbt.Age)) {
                 if (entity.nbt.Age >= 0) {
                     entity.setAge(0)
                     entity.setInLove(player)

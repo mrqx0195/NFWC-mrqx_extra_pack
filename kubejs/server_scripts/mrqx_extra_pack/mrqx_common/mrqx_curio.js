@@ -391,6 +391,7 @@ global.mrqxResidualBreathOfDeadSoulTick = (item, ctx) => {
         let particles = 'goety:redstone_explode'
         player.level.spawnParticles(particles, true, pos.x(), pos.y(), pos.z(), entity.x - player.x, entity.y - player.y, entity.z - player.z, 0, 10)
     })
+    entity.invulnerableTime = 0
     entity.attack(DamageSource.indirectMagic(player, player), 7)
     entity.invulnerableTime = 0
     let amplifier = 0
@@ -414,18 +415,25 @@ function mrqxResidualBreathOfDeadSoulDamage(event) {
     if (mrqxGetCurioInfo(player, 'mrqx_extra_pack:residual_breath_of_dead_soul').count >= 3) {
         let entityList = getLivingWithinRadius(player.getLevel(), new Vec3(entity.x, entity.y, entity.z), 8)
         entity.level.spawnParticles('minecraft:explosion', true, entity.x, entity.y + 1, entity.z, 1.3, 1.3, 1.3, 20, 1)
-        entityList.forEach(entitys => {
-            entitys.attack(DamageSource.playerAttack(player), player.getAttributeTotalValue('minecraft:generic.attack_damage') * amplifier * 5)
-            entitys.attack(DamageSource.indirectMagic(player, player), player.getAttributeTotalValue('minecraft:generic.attack_damage') * amplifier * 5)
-            entitys.invulnerableTime = 0
+        entityList.forEach(e => {
+            if (mrqxCheckTarget(e, player)) {
+                e.invulnerableTime = 0
+                e.attack(DamageSource.playerAttack(player), player.getAttributeTotalValue('minecraft:generic.attack_damage') * amplifier * 5)
+                e.invulnerableTime = 0
+                e.attack(DamageSource.indirectMagic(player, player), player.getAttributeTotalValue('minecraft:generic.attack_damage') * amplifier * 5)
+                e.invulnerableTime = 0
+            }
         })
     }
     else {
         let entityList = getLivingWithinRadius(player.getLevel(), new Vec3(entity.x, entity.y, entity.z), 3)
         entity.level.spawnParticles('minecraft:explosion', true, entity.x, entity.y + 1, entity.z, 0.5, 0.5, 0.5, 10, 1)
-        entityList.forEach(entitys => {
-            entitys.attack(DamageSource.indirectMagic(player, player), player.getAttributeTotalValue('minecraft:generic.attack_damage') * amplifier)
-            entitys.invulnerableTime = 0
+        entityList.forEach(e => {
+            if (mrqxCheckTarget(e, player)) {
+                e.invulnerableTime = 0
+                e.attack(DamageSource.indirectMagic(player, player), player.getAttributeTotalValue('minecraft:generic.attack_damage') * amplifier)
+                e.invulnerableTime = 0
+            }
         })
     }
 }
@@ -531,7 +539,7 @@ global.mrqxInfinityForceContainerTick = (item, ctx) => {
             countList.putInt('max', Math.max(countList.getInt('max') ?? 0, i + 2))
         }
         else {
-            countList.putByte(i.toFixed(1), countList.getByte(i) ?? 0)
+            countList.putByte(i.toFixed(1), countList.getByte(i.toFixed(1)) ?? 0)
             i++
         }
     }
@@ -627,4 +635,118 @@ function mrqxRingFromGodBear(event, item) {
     player.server.scheduleInTicks(1, event => {
         player.invulnerableTime = 20 + count * 10
     })
+}
+
+/**
+ * @param {Internal.LivingHurtEvent} event
+ * @param {Internal.ServerPlayer} owner
+ */
+function mrqxTimewornPoetryStripsDamage(event, owner) {
+    event.entity.invulnerableTime = 0
+    event.entity.attack(DamageSource.indirectMagic(owner, owner), owner.getAttributeTotalValue('minecraft:generic.attack_damage') * 0.1)
+    event.entity.invulnerableTime = 0
+}
+
+EntityEvents.death(event => {
+    /** @type {Internal.TamableAnimal} */
+    let entity = event.getEntity()
+    if (!entity || !entity.isLiving()) return
+    if (!(entity instanceof $mrqxTamableAnimal)) return
+
+    if (!entity.getOwner() || !entity.getOwner().isPlayer()) return
+    let curioInfo = mrqxGetCurioInfo(entity.getOwner(), 'mrqx_extra_pack:timeworn_poetry_strips')
+    if (!curioInfo.hasItem) return
+
+    let uuid = UUID.toString(entity.getOwnerUUID())
+
+    /** @type {Internal.TamableAnimal[]} */
+    let entityList = []
+
+    entity.level.entities.forEach(e => {
+        if (!e || !e.isLiving()) return
+        if (!(e instanceof $mrqxTamableAnimal)) return
+        if (!e.getOwner() || !e.getOwner().isPlayer()) return
+        let euuid = UUID.toString(e.getOwnerUUID())
+        if (uuid == euuid) entityList.push(e)
+    })
+
+    entityList.forEach(e => {
+        e.heal(entity.maxHealth * curioInfo.count)
+    })
+
+    /** @type {Internal.LivingEntity} */
+    let killer = event.getSource().getActual()
+    if (!killer || !killer.isLiving()) return
+    killer.invulnerableTime = 0
+    killer.attack(DamageSource.indirectMagic(entity, entity), entity.getAttributeTotalValue('minecraft:generic.attack_damage') * 4.5 * curioInfo.count)
+    killer.invulnerableTime = 0
+})
+
+EntityEvents.death(event => {
+    /** @type {Internal.ServerPlayer} */
+    let player = event.player
+    if (!player || player.level.isClientSide()) return
+    let curioInfo = mrqxGetCurioInfo(player, 'mrqx_extra_pack:save_point')
+    if (!curioInfo.hasItem) return
+    player.setHealth(player.maxHealth)
+    player.setFoodLevel(20)
+    player.setSaturation(5)
+    player.potionEffects.clear()
+    player.teleportTo(player.getRespawnDimension(), player.getRespawnPosition().x, player.getRespawnPosition().y, player.getRespawnPosition().z, player.yRot, player.xRot)
+    event.cancel()
+})
+
+/**
+ * @param {Internal.ItemStack} item
+ * @param {Internal.SlotContext} ctx 
+ */
+global.mrqxMyCrownTick = (item, ctx) => {
+    /**@type {Internal.ServerPlayer} */
+    let player = ctx.entity()
+    if (!player || !player.isPlayer() || player.level.isClientSide() || player.age % 20 != 0) return
+
+    let attriMap = getPlayerAttributeMap(player)
+
+    if (mrqxIsInTeamsClaimedChunk(player, player.level, player.block.pos)) {
+        attriMap.set(global.mrqx_MY_CROWN_A.name, 0.5)
+        player.modifyAttribute(global.mrqx_MY_CROWN_A.key, global.mrqx_MY_CROWN_A.name, 0.5, global.mrqx_MY_CROWN_A.operation)
+        attriMap.set(global.mrqx_MY_CROWN_B.name, 0.5)
+        player.modifyAttribute(global.mrqx_MY_CROWN_B.key, global.mrqx_MY_CROWN_B.name, 0.5, global.mrqx_MY_CROWN_B.operation)
+        setPlayerAttributeMap(player, attriMap)
+        player.heal(player.maxHealth * 0.05)
+    } else {
+        player.removeAttribute(global.mrqx_MY_CROWN_A.key, global.mrqx_MY_CROWN_A.name)
+        attriMap.set(global.mrqx_MY_CROWN_A.name, 0)
+        player.removeAttribute(global.mrqx_MY_CROWN_B.key, global.mrqx_MY_CROWN_B.name)
+        attriMap.set(global.mrqx_MY_CROWN_B.name, 0)
+        setPlayerAttributeMap(player, attriMap)
+    }
+
+    let uuid = UUID.toString(player.getUuid())
+
+    let count = 0
+    let entityTypeSet = new Set()
+
+    player.level.entities.forEach(e => {
+        if (!e || !e.isLiving()) return
+        if (!(e instanceof $mrqxTamableAnimal)) return
+        if (!e.getOwner() || !e.getOwner().isPlayer()) return
+        let euuid = UUID.toString(e.getOwnerUUID())
+        if (uuid == euuid) {
+            count++
+            entityTypeSet.add(e.getType())
+        }
+    })
+
+    count += entityTypeSet.size * 10 * 0.05
+    if (count != 0) {
+        attriMap.set(global.mrqx_MY_CROWN_C.name, count)
+        player.modifyAttribute(global.mrqx_MY_CROWN_C.key, global.mrqx_MY_CROWN_C.name, count, global.mrqx_MY_CROWN_C.operation)
+        setPlayerAttributeMap(player, attriMap)
+    }
+    else {
+        player.removeAttribute(global.mrqx_MY_CROWN_C.key, global.mrqx_MY_CROWN_C.name)
+        attriMap.set(global.mrqx_MY_CROWN_C.name, 0)
+        setPlayerAttributeMap(player, attriMap)
+    }
 }
