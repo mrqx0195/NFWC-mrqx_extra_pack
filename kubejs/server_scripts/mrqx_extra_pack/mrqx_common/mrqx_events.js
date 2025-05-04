@@ -699,7 +699,7 @@ PlayerEvents.tick(event => {
             y: `-$screenH*0.311`,
             alignX: 'center',
             alignY: 'center',
-            text: `{"translate": "mrqx_extra_pack.text.quest_${is_past ? 'past' : 'future'}.0", "strikethrough": ${quests[0] ? 'true' : 'false'}, "obfuscated": ${!unlock ? 'true' : 'false'}}`,
+            text: `{"translate": "mrqx_extra_pack.text.quest_${is_past ? 'past' : 'future'}.0", "strikethrough": ${quests[0] ? 'true' : 'false'}, "obfuscated": ${!unlock && quests[0] ? 'true' : 'false'}}`,
             color: `#${Math.min(Math.max(time, 2) * 9, 255).toString(16).toUpperCase()}${quests[0] ? '777777' : 'FFFFFF'}`,
             centered: false,
             visible: visible
@@ -710,7 +710,7 @@ PlayerEvents.tick(event => {
             y: `-$screenH*0.311`,
             alignX: 'center',
             alignY: 'center',
-            text: `{"translate": "mrqx_extra_pack.text.quest_${is_past ? 'past' : 'future'}.1", "strikethrough": ${quests[1] ? 'true' : 'false'}, "obfuscated": ${!unlock ? 'true' : 'false'}}`,
+            text: `{"translate": "mrqx_extra_pack.text.quest_${is_past ? 'past' : 'future'}.1", "strikethrough": ${quests[1] ? 'true' : 'false'}, "obfuscated": ${!unlock && quests[1] ? 'true' : 'false'}}`,
             color: `#${Math.min(Math.max(time, 2) * 9, 255).toString(16).toUpperCase()}${quests[1] ? '777777' : 'FFFFFF'}`,
             centered: false,
             visible: visible
@@ -721,7 +721,7 @@ PlayerEvents.tick(event => {
             y: `$screenH*0.314`,
             alignX: 'center',
             alignY: 'center',
-            text: `{"translate": "mrqx_extra_pack.text.quest_${is_past ? 'past' : 'future'}.2", "strikethrough": ${quests[2] ? 'true' : 'false'}, "obfuscated": ${!unlock ? 'true' : 'false'}}`,
+            text: `{"translate": "mrqx_extra_pack.text.quest_${is_past ? 'past' : 'future'}.2", "strikethrough": ${quests[2] ? 'true' : 'false'}, "obfuscated": ${!unlock && quests[2] ? 'true' : 'false'}}`,
             color: `#${Math.min(Math.max(time, 2) * 9, 255).toString(16).toUpperCase()}${quests[2] ? '777777' : 'FFFFFF'}`,
             centered: false,
             visible: visible
@@ -732,7 +732,7 @@ PlayerEvents.tick(event => {
             y: `$screenH*0.314`,
             alignX: 'center',
             alignY: 'center',
-            text: `{"translate": "mrqx_extra_pack.text.quest_${is_past ? 'past' : 'future'}.3", "strikethrough": ${quests[3] ? 'true' : 'false'}, "obfuscated": ${!unlock ? 'true' : 'false'}}`,
+            text: `{"translate": "mrqx_extra_pack.text.quest_${is_past ? 'past' : 'future'}.3", "strikethrough": ${quests[3] ? 'true' : 'false'}, "obfuscated": ${!unlock && quests[3] ? 'true' : 'false'}}`,
             color: `#${Math.min(Math.max(time, 2) * 9, 255).toString(16).toUpperCase()}${quests[3] ? '777777' : 'FFFFFF'}`,
             centered: false,
             visible: visible
