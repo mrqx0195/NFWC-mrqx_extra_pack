@@ -1,6 +1,6 @@
 {
   "general": {
-    "displayTooltip": true,
+    "displayTooltip": false,
     "displayBlocks": true,
     "displayEntities": true,
     "displayMode": "TOGGLE",
