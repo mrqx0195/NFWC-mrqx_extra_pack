@@ -52,7 +52,7 @@ global.mrqxLivingDamageByPlayer = event => {
         mrqxAdvancedArchivistEyeGlassDamage(event)
     }
 
-    if (event.source.player && mrqxIsMysteryQuestUnlocked(event.source.player) && !event.source.player.stages.has("mrqx_future_3") && event.amount > event.source.player.getAttributeTotalValue("minecraft:generic.attack_damage") * 100) event.source.player.stages.add("mrqx_future_3", true)
+    if (event.source.player && mrqxIsMysteryQuestUnlocked(event.source.player) && !event.source.player.stages.has("mrqx_future_3") && event.amount > event.source.player.getAttributeTotalValue("minecraft:generic.attack_damage") * 100) event.source.player.stages.add("mrqx_future_3")
 }
 
 /**

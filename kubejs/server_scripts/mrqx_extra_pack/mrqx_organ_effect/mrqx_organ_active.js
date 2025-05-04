@@ -549,7 +549,7 @@ const mrqxOrganActiveOnlyStrategies = {
     // 墨染
     'mrqx_extra_pack:mrqx0195': function (player, organ, attributeMap) {
         if (!mrqxIsMysteryQuestUnlocked(player) || player.stages.has("mrqx_future_1")) return
-        player.stages.add("mrqx_future_1", true)
+        player.stages.add("mrqx_future_1")
     },
 
     // ‌复激活药丸·温和化

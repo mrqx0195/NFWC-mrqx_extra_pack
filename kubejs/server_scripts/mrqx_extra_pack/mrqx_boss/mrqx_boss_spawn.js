@@ -44,7 +44,7 @@ EntityEvents.spawned(event => {
             diff += diffMap.getInt(entity.getType())
             player.persistentData.put('mrqxBossDiffMap', diffMap)
             if (event.getEntity().getType() == 'minecraft:ender_dragon' && mrqxIsMysteryQuestUnlocked(player) && !player.stages.has("mrqx_past_0")) {
-                player.stages.add("mrqx_past_0", true)
+                player.stages.add("mrqx_past_0")
             }
         }
     })
