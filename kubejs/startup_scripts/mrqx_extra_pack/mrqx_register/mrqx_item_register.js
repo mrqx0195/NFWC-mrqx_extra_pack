@@ -1910,6 +1910,7 @@ StartupEvents.registry('item', event => {
         .tag('kubejs:active_only')
 
     // 永恒灵魂之翼
+    // TODO: 脆2记得改
     registerOrgan(new Organ('mrqx_extra_pack:eternal_wing_of_soul')
         .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.eternal_wing_of_soul.1" })])
         .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.eternal_wing_of_soul.2" })])
@@ -2604,7 +2605,7 @@ StartupEvents.registry('item', event => {
     }
 
 
-    {// 赞助者
+    {// 杰出赞助者
         // 远古巫妖之心
         registerOrgan(new Organ('mrqx_extra_pack:ancient_lich_heart')
             .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.ancient_lich_heart.1" })])
@@ -2684,6 +2685,55 @@ StartupEvents.registry('item', event => {
             .useDuration(itemStack => 20)
             .food(food => {
                 food.hunger(25).saturation(1)
+            })
+
+        // 龙皇核心
+        registerOrgan(new Organ('mrqx_extra_pack:core_of_dragon_emperor')
+            .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.core_of_dragon_emperor.1" })])
+            .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.core_of_dragon_emperor.2" })])
+            .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.core_of_dragon_emperor.3" })])
+            .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.core_of_dragon_emperor.4" })])
+            .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.core_of_dragon_emperor.5" })])
+            .addTextLines('ctrl', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.core_of_dragon_emperor.6" })])
+            .addScore('health', 5)
+            .addScore('nerves', 5)
+            .addScore('strength', 5)
+            .addScore('luck', 5)
+            .addScore('speed', 5)
+            .addScore('defense', 5)
+            .build())
+            .texture('mrqx_extra_pack:item/organs/core_of_dragon_emperor')
+            .tag('kubejs:heart')
+            .tag('kubejs:rose')
+            .tag('kubejs:dragon')
+            .tag('kubejs:active_only')
+            .tag('kubejs:damage_only')
+            .tag('kubejs:bear_only')
+            .tag('kubejs:key_pressed')
+
+        // 梅吉多
+        registerOrgan(new Organ('mrqx_extra_pack:meijiduo')
+            .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.meijiduo.1" })])
+            .addTextLines('default', [Text.gray({ "translate": "mrqx_extra_pack.tooltips.meijiduo.2" })])
+            .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.meijiduo.3" })])
+            .addTextLines('alt', [LEADING_SYMBOL, Text.gray({ "translate": "mrqx_extra_pack.tooltips.meijiduo.4" })])
+            .build())
+            .texture('mrqx_extra_pack:item/organs/meijiduo')
+            .tag('kubejs:key_pressed')
+            .tag('kubejs:bear_only')
+    }
+
+    {// 杰出贡献者
+        // Sakuya的冰淇淋
+        event.create('mrqx_extra_pack:sakuya_ice_cream').texture('mrqx_extra_pack:item/sakuya_ice_cream')
+            .maxStackSize(64)
+            .useAnimation('eat')
+            .use((level, player, hand) => {
+                return true
+            })
+            .useDuration(itemStack => 20)
+            .food(food => {
+                food.hunger(22).saturation(1)
             })
     }
 })

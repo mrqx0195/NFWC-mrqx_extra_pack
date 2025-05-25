@@ -260,6 +260,38 @@ const mrqxOrganPlayerBearOnlyStrategies = {
             }
         }
     },
+
+    // 龙皇核心
+    'mrqx_extra_pack:spleen_adhering_to_nature': function (event, organ, data) {
+        let player = event.entity
+        let typeMap = getPlayerChestCavityTypeMap(player)
+        let count = 0
+        if (typeMap.has('kubejs:dragon')) {
+            count += typeMap.get('kubejs:dragon').length
+        }
+        if (player.hasEffect('dragon_emperor_passion')) {
+            event.amount *= (1 - count * 0.02)
+        }
+        else if (player.hasEffect('dragon_emperor_brilliant')) {
+            event.amount *= (1 - count * 0.05)
+        }
+    },
+
+    // 梅吉多
+    'mrqx_extra_pack:meijiduo': function (event, organ, data) {
+        let player = event.entity
+        if (event.amount >= player.getHealth()) {
+            let instance = player.getChestCavityInstance()
+            let oldItem = instance.inventory.getItem(organ.Slot)
+            let name = randomGet(mrqxAllOrganScore)
+            let count = oldItem.getOrCreateTag().getCompound('organData').get(name)
+            if (count) {
+                let newItem = oldItem.copy()
+                newItem.getOrCreateTag().getCompound('organData').put(name, count + (name == 'chestcavity:freezing_point' ? -0.5 : 0.5))
+                mrqxEditChestItem(player, newItem, organ.Slot, false, true, true)
+            }
+        }
+    },
 }
 
 var assign_organ_player_bear_only = Object.assign(organPlayerBearOnlyStrategies, mrqxOrganPlayerBearOnlyStrategies)

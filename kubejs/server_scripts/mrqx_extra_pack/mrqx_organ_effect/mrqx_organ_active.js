@@ -986,6 +986,37 @@ const mrqxOrganActiveOnlyStrategies = {
         attributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, count * 0.1)
         attributeMapValueAddition(attributeMap, global.ARMOR_MULTI_BASE, count * 0.1)
     },
+
+    // 龙皇核心
+    'mrqx_extra_pack:core_of_dragon_emperor': function (player, organ, attributeMap) {
+        let chestInventory = player.getChestCavityInstance().inventory.tags
+        let typeMap = getPlayerChestCavityTypeMap(player)
+        typeMap.delete('kubejs:rose')
+        for (let i = 0; i < chestInventory.length; i++) {
+            let organ = chestInventory[i]
+            let itemId = String(organ.getString('id'))
+            let tagList = Item.of(itemId).getTags().toArray()
+            for (let i = 0; i < tagList.length; i++) {
+                let tag = tagList[i].location()
+                if (tag != 'kubejs:rose' && tag != 'kubejs:dragon') {
+                    continue
+                }
+                tag = 'kubejs:rose'
+                if (typeMap.has(tag)) {
+                    let itemList = typeMap.get(tag)
+                    itemList.push(organ)
+                    typeMap.set(tag, itemList)
+                } else {
+                    typeMap.set(tag, [organ])
+                }
+            }
+        }
+        let uuid = String(player.getUuid())
+        playerChestCavityTypeMap.set(uuid, typeMap)
+        if (typeMap.has('kubejs:rose')) {
+            attributeMapValueAddition(attributeMap, global.ATTACK_UP_MULTI_BASE, typeMap.get('kubejs:rose').length * 0.05)
+        }
+    },
 }
 
 var assign_organ_active_only = Object.assign(organActiveOnlyStrategies, mrqxOrganActiveOnlyStrategies)

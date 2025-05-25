@@ -44,4 +44,12 @@ StartupEvents.registry('mob_effect', event => {
                 .harmful()
                 .color(Color.YELLOW_DYE)
 
+        event.create('mrqx_extra_pack:dragon_emperor_passion')
+                .harmful()
+                .color(Color.YELLOW_DYE)
+
+        event.create('mrqx_extra_pack:dragon_emperor_brilliant')
+                .harmful()
+                .color(Color.YELLOW_DYE)
+
 })

@@ -304,9 +304,16 @@ ItemEvents.tooltip((tooltip) => {
 
     tooltip.addAdvanced('mrqx_extra_pack:xiao_amburm', (item, advanced, text) => {
         addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.xiao_amburm.1" })]], 1)
+        addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.xiao_amburm.2" })]], 2)
     })
 
     tooltip.addAdvanced('minecraft:dragon_egg', (item, advanced, text) => {
         addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.dragon_egg.1" })]], 1)
+    })
+
+    tooltip.addAdvanced('mrqx_extra_pack:sakuya_ice_cream', (item, advanced, text) => {
+        addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.sakuya_ice_cream.1" })]], 1)
+        addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.sakuya_ice_cream.2" })]], 2)
+        addForTextLines(text, [[Text.gray({ "translate": "mrqx_extra_pack.tooltips.sakuya_ice_cream.3" })]], 3)
     })
 })

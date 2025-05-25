@@ -149,7 +149,53 @@ const mrqxOrganPlayerKeyPressedOnlyStrategies = {
         entity.spawn()
         item.getOrCreateTag().putUUID('chainEntity', entity.getUuid())
         player.addItemCooldown('mrqx_extra_pack:knight_chain_hammer', 20)
-    }
+    },
+
+    // 龙皇核心
+    'mrqx_extra_pack:core_of_dragon_emperor': function (event, organ) {
+        let player = event.player
+        let resCount = player.persistentData.getInt(resourceCount)
+        let typeMap = getPlayerChestCavityTypeMap(player)
+        let duration = 0
+        if (typeMap.has('kubejs:dragon')) {
+            duration += typeMap.get('kubejs:dragon').length * 30 * 20
+        }
+        if (typeMap.has('kubejs:rose')) {
+            duration += typeMap.get('kubejs:rose').length * 30 * 20
+        }
+        if (duration > 0) {
+            player.potionEffects.add((resCount >= 50) ? 'mrqx_extra_pack:dragon_emperor_passion' : 'mrqx_extra_pack:dragon_emperor_brilliant', duration, 0, false, false)
+            player.addItemCooldown('mrqx_extra_pack:core_of_dragon_emperor', 360 * 20)
+        }
+    },
+
+    // 梅吉多
+    'mrqx_extra_pack:meijiduo': function (event, organ) {
+        let player = event.player
+        let instance = player.getChestCavityInstance()
+        let oldItem = instance.inventory.getItem(organ.Slot)
+        if (!oldItem.getOrCreateTag().getCompound('organData')) return
+        let b = true
+        mrqxAllOrganScore.forEach(os => {
+            let count = oldItem.getOrCreateTag().getCompound('organData').get(os)
+            if (count && (os == 'chestcavity:freezing_point' ? (count > -10) : (count < 10))) b = false
+        })
+        if (b) {
+            mrqxAllOrganScore.forEach(os => {
+                let count = oldItem.getOrCreateTag().getCompound('organData').get(os)
+                if (count) {
+                    newItem.getOrCreateTag().getCompound('organData').put(os, count - (os == 'chestcavity:freezing_point' ? -10 : 10))
+                }
+            })
+            player.inventory.allItems.forEach(item => {
+                if (item.id == "minecraft:enchanted_book") {
+                    item.getEnchantments().forEach((id, lvl) => {
+                        lvl += 1
+                    })
+                }
+            })
+        }
+    },
 }
 
 var assign_organ_player_key_pressed_only = Object.assign(organPlayerKeyPressedOnlyStrategies, mrqxOrganPlayerKeyPressedOnlyStrategies)

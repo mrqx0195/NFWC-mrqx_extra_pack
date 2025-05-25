@@ -832,7 +832,7 @@ ServerEvents.recipes(event => {
         Item.of('minecraft:feather'),
         Item.of('nameless_trinkets:ethereal_wings')],
         Item.of('mrqx_extra_pack:wing_of_soul'),
-        Item.of('mrqx_extra_pack:eternal_wing_of_soul')).setSoulCost(1000))
+        Item.of('mrqx_extra_pack:eternal_wing_of_soul')).setSoulCost(2000))
 
     // 指令施法核心
     event.recipes.create.sequenced_assembly([
@@ -1946,6 +1946,41 @@ ServerEvents.recipes(event => {
             C: 'alexsmobs:capsid'
         })
 
+    // 龙皇核心
+    registerCustomRecipe(new mrqxGoetyRitualRecipe('necroturgy', [
+        Item.of("goety:unholy_blood"),
+        Item.of("mrqx_extra_pack:dragon_long_cpu"),
+        Item.of("kubejs:lost_paradise"),
+        Item.of("kubejs:dragon_blood_heart"),
+        Item.of("mrqx_extra_pack:rose_language_cpu"),
+        Item.of("mrqx_extra_pack:rose_second_bloom_cpu"),
+        Item.of("witherstormmod:withered_nether_star"),
+        Item.of("art_of_forging:mark_of_the_architect"),
+        Item.of("kubejs:god_consciousness"),
+        Item.of("iceandfire:dragonegg_copper"),
+        Item.of("iceandfire:dragonegg_silver"),
+        Item.of("iceandfire:dragonegg_bronze"),
+    ],
+        Item.of("goety:philosophers_stone"),
+        Item.of('mrqx_extra_pack:core_of_dragon_emperor')).setEntityToSacrifice({
+            "tag": "mrqx_extra_pack:modern_remnant",
+            "display_name": "entity.cataclysm.modern_remnant"
+        }).setSoulCost(7365).setDuration(12))
+
+    // Sakuya的冰淇淋
+    registerCustomRecipe(new mrqxCookingRecipe(
+        Item.of("minecraft:glass_bottle"),
+        [
+            Ingredient.of("#kubejs:mrqx_antimatter"),
+            Ingredient.of("minecraft:blue_ice"),
+            Ingredient.of("#kubejs:mrqx_antimatter"),
+            Ingredient.of("minecraft:blue_ice"),
+            Ingredient.of("#kubejs:mrqx_antimatter"),
+            Ingredient.of("minecraft:blue_ice"),
+        ],
+        Item.of('mrqx_extra_pack:sakuya_ice_cream').withCount(1)
+    ))
+
     // 机械狂潮挑战
     event.recipes.summoningrituals
         .altar('gateways:gate_pearl')
@@ -2581,7 +2616,7 @@ ServerEvents.recipes(event => {
         .input(IngredientHelper.weakNBT(pastItem))
         .input(IngredientHelper.weakNBT(futureItem))
         .itemOutput('kubejs:genesis')
-        .recipeTime(2000)
+        .recipeTime(24000)
 })
 
 /**

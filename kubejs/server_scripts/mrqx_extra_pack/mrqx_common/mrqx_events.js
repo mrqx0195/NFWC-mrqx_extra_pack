@@ -37,6 +37,23 @@ LootJS.modifiers(event => {
         .addLoot(LootEntry.of('mrqx_extra_pack:basic_uncoded_cpu').when((c) => c.randomChance(0.2)))
         .addLoot(LootEntry.of('mrqx_extra_pack:advanced_uncoded_cpu').when((c) => c.randomChance(0.05)))
         .addLoot(LootEntry.of('mrqx_extra_pack:worn_out_steam_engine').when((c) => c.randomChance(0.3)))
+
+    event.addLootTypeModifier(LootType.CHEST)
+        .anyStructure(["#minecraft:village"], false)
+        .apply(ctx => {
+            if (Math.random() < 0.01) {
+                let item = Item.of('mrqx_extra_pack:meijiduo', { organData: {} })
+                mrqxAllOrganScore.forEach(os => {
+                    if (os == 'chestcavity:freezing_point') {
+                        item.nbt.organData.put(os, Math.floor(-Math.random() * 10))
+                    }
+                    else {
+                        item.nbt.organData.put(os, Math.floor(Math.random() * 10))
+                    }
+                })
+                ctx.addLoot(item)
+            }
+        })
 })
 
 // 核能检测
@@ -255,6 +272,7 @@ PlayerEvents.loggedIn(event => {
 
 ServerEvents.tags('minecraft:entity_type', event => {
     event.add('mrqx_extra_pack:crone', ['goety:crone'])
+    event.add('mrqx_extra_pack:modern_remnant', ["cataclysm:modern_remnant"])
 })
 
 // 销汀·桉柏
@@ -262,7 +280,7 @@ ItemEvents.foodEaten('mrqx_extra_pack:xiao_amburm', event => {
     let entity = event.entity
     if (event.level.isClientSide()) return
     if (!entity.isPlayer()) return
-    updateWarpCount(entity, entity.persistentData.getInt(warpCount) + 44)
+    updateWarpCount(entity, entity.persistentData.getInt(warpCount) + entity.persistentData.getInt(warpCountMax) * 0.44)
 })
 
 // 绿宝石镐之魂
@@ -823,4 +841,12 @@ BlockEvents.rightClicked("minecraft:jukebox", event => {
             }
         })
     }
+})
+
+// Sakuya的冰淇淋
+ItemEvents.foodEaten('mrqx_extra_pack:sakuya_ice_cream', event => {
+    let entity = event.entity
+    if (event.level.isClientSide()) return
+    if (!entity.isPlayer()) return
+    organActiveOnlyStrategies['mrqx_extra_pack:heart_antimatter'](entity, null, null)
 })
