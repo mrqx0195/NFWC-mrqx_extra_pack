@@ -643,13 +643,13 @@ const mrqxOrganPlayerDamageOnlyStrategies = {
 	'mrqx_extra_pack:core_of_dragon_emperor': function (event, organ, data) {
 		let player = event.source.player
 		let entity = event.entity
-		if (player.hasEffect('dragon_emperor_passion')) {
-			let duration = player.getEffect('dragon_emperor_passion').duration
+		if (player.hasEffect('mrqx_extra_pack:dragon_emperor_passion')) {
+			let duration = player.getEffect('mrqx_extra_pack:dragon_emperor_passion').duration
 			entity.invulnerableTime = 0
 			overLimitSpellCast(new ResourceLocation('irons_spellbooks', 'eldritch_blast'), Math.max(1, Math.sqrt(duration / 20)), player, false)
 			entity.invulnerableTime = 0
 		}
-		else if (player.hasEffect('dragon_emperor_brilliant')) {
+		else if (player.hasEffect('mrqx_extra_pack:dragon_emperor_brilliant')) {
 			entity.modifyAttribute("minecraft:generic.attack_damage", 'mrqxDragonEmperorBrilliant', -0.5, 'multiply_total')
 		}
 	},

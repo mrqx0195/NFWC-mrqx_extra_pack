@@ -269,10 +269,10 @@ const mrqxOrganPlayerBearOnlyStrategies = {
         if (typeMap.has('kubejs:dragon')) {
             count += typeMap.get('kubejs:dragon').length
         }
-        if (player.hasEffect('dragon_emperor_passion')) {
+        if (player.hasEffect('mrqx_extra_pack:dragon_emperor_passion')) {
             event.amount *= (1 - count * 0.02)
         }
-        else if (player.hasEffect('dragon_emperor_brilliant')) {
+        else if (player.hasEffect('mrqx_extra_pack:dragon_emperor_brilliant')) {
             event.amount *= (1 - count * 0.05)
         }
     },

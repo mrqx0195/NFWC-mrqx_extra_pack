@@ -519,11 +519,12 @@ PlayerEvents.tick(event => {
     if (event.level.isClientSide()) return
     let player = event.player
     let visible = (player.getUseItem().id == 'mrqx_extra_pack:page_of_past' || player.getUseItem().id == 'mrqx_extra_pack:page_of_future')
-    if (player.getUseItem().getOrCreateTag().hasUUID('owner')) {
-        if (UUID.toString(player.getUseItem().getOrCreateTag().getUUID('owner')) != UUID.toString(player.getUuid())) return
+    if (visible) {
+        if (player.getUseItem().getOrCreateTag().hasUUID('owner')) {
+            if (UUID.toString(player.getUseItem().getOrCreateTag().getUUID('owner')) != UUID.toString(player.getUuid())) return
+        }
+        else player.getUseItem().getOrCreateTag().putUUID('owner', player.getUuid())
     }
-    else player.getUseItem().getOrCreateTag().putUUID('owner', player.getUuid())
-
     let unlock = mrqxIsMysteryQuestUnlocked(player)
     let time = player.ticksUsingItem
     let is_past = (player.getUseItem().id == 'mrqx_extra_pack:page_of_past')
